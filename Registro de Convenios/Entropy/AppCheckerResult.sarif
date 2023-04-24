@@ -5474,17 +5474,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.extension_extra5"
+                  "fullyQualifiedName": "App.extension_extra4"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.extension_extra5",
+                  "fullyQualifiedName": "App.extension_extra4",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "extension_extra5",
+                "member": "extension_extra4",
                 "module": "App",
                 "type": "App"
               }
@@ -5504,17 +5504,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.extension_extra4"
+                  "fullyQualifiedName": "App.extension_extra5"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.extension_extra4",
+                  "fullyQualifiedName": "App.extension_extra5",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "extension_extra4",
+                "member": "extension_extra5",
                 "module": "App",
                 "type": "App"
               }
@@ -6357,51 +6357,51 @@
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused variable"
+                  "text": "Variable no utilizada"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused variable."
+                  "Quite la variable no utilizada."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+                "whyFix": "Esta variable está declarada, pero ningún control hace referencia a ella, por lo que no es necesaria."
               }
             },
             {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused media files"
+                  "text": "Archivos multimedia sin usar"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused media file in the Media pane."
+                  "Quite el archivo multimedia que no se use en el panel Medios."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+                "whyFix": "No hay ninguna fórmula de control que haga referencia a este archivo multimedia, por lo que no es necesario. Si se quita, mejorará el rendimiento."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Inefficient delay loading"
+                  "text": "Retraso de carga ineficiente"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Use variables, collections, and navigation context to share state across screens instead."
+                  "Use variables, colecciones y contexto de navegación para compartir el estado entre pantallas en su lugar."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
+                "whyFix": "Los controles que hacen referencia a controles en otras pantallas pueden ralentizar la carga y la navegación de la aplicación. Al hacer esto, puede que se fuerce a la aplicación a cargar las otras pantallas de inmediato, en lugar de esperar hasta que el usuario navegue a esa pantalla."
               }
             }
           ],

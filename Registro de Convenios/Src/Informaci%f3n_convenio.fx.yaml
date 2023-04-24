@@ -299,7 +299,7 @@ Información_convenio As screen:
                     Size: =10
                     Text: ="ÁMBITO DE LA POLÍTICA DE VINCULACIÓN CON EL MEDIO"
                     VerticalAlign: =VerticalAlign.Top
-                    Width: =300
+                    Width: =500
                     ZIndex: =3
 
             Contenedor_s_d_p As groupContainer.manualLayoutContainer:
