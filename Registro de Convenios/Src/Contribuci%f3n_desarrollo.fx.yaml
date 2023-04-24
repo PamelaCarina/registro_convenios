@@ -58,25 +58,25 @@ Contribución_desarrollo As screen:
                     ClearCollect(datos_ods_cargados,{});
                     Clear(datos_ods_cargados);
                     If(cb_ods_ninguno.Value=true,
-                        Collect(datos_ods_cargados,{ods:"ninguna"})
+                        Collect(datos_ods_cargados,{Value:"ninguna"})
                     ,
-                        If(cb_ods_1.Value=true,Collect(datos_ods_cargados,"1. Erradicar la pobreza en todas sus formas en todo el mundo."));
-                        If(cb_ods_2.Value=true,Collect(datos_ods_cargados,"2. Poner fin al hambre, conseguir la seguridad alimentaria y una mejor nutrición, y promover la agricultura sostenible."));
-                        If(cb_ods_3.Value=true,Collect(datos_ods_cargados,"3. Garantizar una vida saludable y promover el bienestar para todos y todas en todas las edades."));
-                        If(cb_ods_4.Value=true,Collect(datos_ods_cargados,"4. Garantizar una educación de calidad inclusiva y equitativa, y promover las oportunidades de aprendizaje permanente para todos."));
-                        If(cb_ods_5.Value=true,Collect(datos_ods_cargados,"5. Alcanzar la igualdad entre los géneros y empoderar a todas las mujeres y niñas."));
-                        If(cb_ods_6.Value=true,Collect(datos_ods_cargados,"6. Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos."));
-                        If(cb_ods_7.Value=true,Collect(datos_ods_cargados,"7. Asegurar el acceso a energías asequibles, fiables, sostenibles y modernas para todos."));
-                        If(cb_ods_8.Value=true,Collect(datos_ods_cargados,"8. Fomentar el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo, y el trabajo decente para todos."));
-                        If(cb_ods_9.Value=true,Collect(datos_ods_cargados,"9. Desarrollar infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación."));
-                        If(cb_ods_10.Value=true,Collect(datos_ods_cargados,"10. Reducir las desigualdades entre países y dentro de ellos."));
-                        If(cb_ods_11.Value=true,Collect(datos_ods_cargados,"11. Conseguir que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles."));
-                        If(cb_ods_12.Value=true,Collect(datos_ods_cargados,"12. Garantizar las pautas de consumo y de producción sostenibles."));
-                        If(cb_ods_13.Value=true,Collect(datos_ods_cargados,"13. Tomar medidas urgentes para combatir el cambio climático y sus efectos."));
-                        If(cb_ods_14.Value=true,Collect(datos_ods_cargados,"14. Conservar y utilizar de forma sostenible los océanos, mares y recursos marinos para lograr el desarrollo sostenible."));
-                        If(cb_ods_15.Value=true,Collect(datos_ods_cargados,"15. Proteger, restaurar y promover la utilización sostenible de los ecosistemas terrestres, gestionar de manera sostenible los bosques, combatir la desertificación y detener y revertir la degradación de la tierra, y frenar la pérdida de diversidad biológica."));
-                        If(cb_ods_16.Value=true,Collect(datos_ods_cargados,"16. Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles."));
-                        If(cb_ods_17.Value=true,Collect(datos_ods_cargados,"17. Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."));
+                        If(cb_ods_1.Value=true,Collect(datos_ods_cargados,{Value: "1. Erradicar la pobreza en todas sus formas en todo el mundo."}));
+                        If(cb_ods_2.Value=true,Collect(datos_ods_cargados,{Value: "2. Poner fin al hambre, conseguir la seguridad alimentaria y una mejor nutrición, y promover la agricultura sostenible."}));
+                        If(cb_ods_3.Value=true,Collect(datos_ods_cargados,{Value: "3. Garantizar una vida saludable y promover el bienestar para todos y todas en todas las edades."}));
+                        If(cb_ods_4.Value=true,Collect(datos_ods_cargados,{Value: "4. Garantizar una educación de calidad inclusiva y equitativa, y promover las oportunidades de aprendizaje permanente para todos."}));
+                        If(cb_ods_5.Value=true,Collect(datos_ods_cargados,{Value: "5. Alcanzar la igualdad entre los géneros y empoderar a todas las mujeres y niñas."}));
+                        If(cb_ods_6.Value=true,Collect(datos_ods_cargados,{Value: "6. Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos."}));
+                        If(cb_ods_7.Value=true,Collect(datos_ods_cargados,{Value: "7. Asegurar el acceso a energías asequibles, fiables, sostenibles y modernas para todos."}));
+                        If(cb_ods_8.Value=true,Collect(datos_ods_cargados,{Value: "8. Fomentar el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo, y el trabajo decente para todos."}));
+                        If(cb_ods_9.Value=true,Collect(datos_ods_cargados,{Value: "9. Desarrollar infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación."}));
+                        If(cb_ods_10.Value=true,Collect(datos_ods_cargados,{Value: "10. Reducir las desigualdades entre países y dentro de ellos."}));
+                        If(cb_ods_11.Value=true,Collect(datos_ods_cargados,{Value: "11. Conseguir que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles."}));
+                        If(cb_ods_12.Value=true,Collect(datos_ods_cargados,{Value: "12. Garantizar las pautas de consumo y de producción sostenibles."}));
+                        If(cb_ods_13.Value=true,Collect(datos_ods_cargados,{Value: "13. Tomar medidas urgentes para combatir el cambio climático y sus efectos."}));
+                        If(cb_ods_14.Value=true,Collect(datos_ods_cargados,{Value: "14. Conservar y utilizar de forma sostenible los océanos, mares y recursos marinos para lograr el desarrollo sostenible."}));
+                        If(cb_ods_15.Value=true,Collect(datos_ods_cargados,{Value: "15. Proteger, restaurar y promover la utilización sostenible de los ecosistemas terrestres, gestionar de manera sostenible los bosques, combatir la desertificación y detener y revertir la degradación de la tierra, y frenar la pérdida de diversidad biológica."}));
+                        If(cb_ods_16.Value=true,Collect(datos_ods_cargados,{Value: "16. Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles."}));
+                        If(cb_ods_17.Value=true,Collect(datos_ods_cargados,{Value: "17. Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."}));
                     );
                     UpdateContext({popup_enviar:true});
                     
