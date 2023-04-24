@@ -100,7 +100,10 @@ Información_convenio As screen:
                     Val: "servicios"
                 }
             )
-        })
+        });
+        UpdateContext({sin_convenio_tipo:false});
+        UpdateContext({sin_ambito_politica:false});
+        UpdateContext({sin_sector_politica:false});
 
     Botones_atras_siguiente_5 As groupContainer.manualLayoutContainer:
         Height: =44

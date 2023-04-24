@@ -6164,6 +6164,96 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Información_convenio.sin_ambito_politica"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.sin_ambito_politica",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "sin_ambito_politica",
+                "module": "Información_convenio",
+                "type": "Información_convenio"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.sin_convenio_tipo"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.sin_convenio_tipo",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "sin_convenio_tipo",
+                "module": "Información_convenio",
+                "type": "Información_convenio"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.sin_sector_politica"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.sin_sector_politica",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "sin_sector_politica",
+                "module": "Información_convenio",
+                "type": "Información_convenio"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Area_contribución.faltan_datos_notif"
                 }
               ],
@@ -6357,51 +6447,51 @@
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Variable no utilizada"
+                  "text": "Unused variable"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Quite la variable no utilizada."
+                  "Remove the unused variable."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Esta variable está declarada, pero ningún control hace referencia a ella, por lo que no es necesaria."
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
               }
             },
             {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Archivos multimedia sin usar"
+                  "text": "Unused media files"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Quite el archivo multimedia que no se use en el panel Medios."
+                  "Remove the unused media file in the Media pane."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "No hay ninguna fórmula de control que haga referencia a este archivo multimedia, por lo que no es necesario. Si se quita, mejorará el rendimiento."
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Retraso de carga ineficiente"
+                  "text": "Inefficient delay loading"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Use variables, colecciones y contexto de navegación para compartir el estado entre pantallas en su lugar."
+                  "Use variables, collections, and navigation context to share state across screens instead."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Los controles que hacen referencia a controles en otras pantallas pueden ralentizar la carga y la navegación de la aplicación. Al hacer esto, puede que se fuerce a la aplicación a cargar las otras pantallas de inmediato, en lugar de esperar hasta que el usuario navegue a esa pantalla."
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
               }
             }
           ],
