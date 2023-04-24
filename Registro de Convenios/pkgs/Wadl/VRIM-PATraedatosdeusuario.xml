@@ -1,0 +1,213 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="VRIM-PATraedatosdeusuario" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="VRIM - PA Trae datos de usuario" />
+  <grammars>
+    <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="ManualTriggerInput_InitializevariableEmail_Value_def" />
+      <object name="ManualTriggerInput">
+        <property name="InitializevariableEmail_Value" type="string" />
+      </object>
+      <string name="ResponseActionOutput_id_persona_def" />
+      <string name="ResponseActionOutput_rut_def" />
+      <string name="ResponseActionOutput_dv_rut_def" />
+      <string name="ResponseActionOutput_nro_identificacion_def" />
+      <string name="ResponseActionOutput_paterno_def" />
+      <string name="ResponseActionOutput_paterno_social_def" />
+      <string name="ResponseActionOutput_materno_def" />
+      <string name="ResponseActionOutput_materno_social_def" />
+      <string name="ResponseActionOutput_nombres_def" />
+      <string name="ResponseActionOutput_nombres_social_def" />
+      <string name="ResponseActionOutput_nombre_completo_o_def" />
+      <string name="ResponseActionOutput_nombre_completo_def" />
+      <string name="ResponseActionOutput_correo_udec_def" />
+      <string name="ResponseActionOutput_alternativo_def" />
+      <string name="ResponseActionOutput_telefono_def" />
+      <string name="ResponseActionOutput_movil_def" />
+      <string name="ResponseActionOutput_direccion_def" />
+      <string name="ResponseActionOutput_comuna_def" />
+      <string name="ResponseActionOutput_region_def" />
+      <string name="ResponseActionOutput_fecha_nacimiento_def" />
+      <string name="ResponseActionOutput_sexo_def" />
+      <string name="ResponseActionOutput_sexo_social_def" />
+      <string name="ResponseActionOutput_estado_civil_def" />
+      <string name="ResponseActionOutput_nacionalidad_def" />
+      <string name="ResponseActionOutput_colegio_origen_def" />
+      <string name="ResponseActionOutput_rama_educacional_def" />
+      <string name="ResponseActionOutput_tipo_colegio_def" />
+      <string name="ResponseActionOutput_numero_matricula_def" />
+      <string name="ResponseActionOutput_situacion_actual_def" />
+      <string name="ResponseActionOutput_periodo_actual_def" />
+      <string name="ResponseActionOutput_agno_ingreso_pregrado_def" />
+      <string name="ResponseActionOutput_matricula_pregrado_def" />
+      <string name="ResponseActionOutput_carrera_pregrado_def" />
+      <string name="ResponseActionOutput_facultad_pregrado_def" />
+      <string name="ResponseActionOutput_gratuidad_def" />
+      <string name="ResponseActionOutput_pace_def" />
+      <string name="ResponseActionOutput_agno_ingreso_postgrado_def" />
+      <string name="ResponseActionOutput_matricula_postgrado_def" />
+      <string name="ResponseActionOutput_programa_postgrado_def" />
+      <string name="ResponseActionOutput_facultad_postgrado_def" />
+      <string name="ResponseActionOutput_personal_def" />
+      <string name="ResponseActionOutput_designaciones_def" />
+      <string name="ResponseActionOutput_tigrado_def" />
+      <string name="ResponseActionOutput_id_zendesk_def" />
+      <string name="ResponseActionOutput_asig_inscritas_def" />
+      <string name="ResponseActionOutput_pregrado_def" />
+      <string name="ResponseActionOutput_postgrado_def" />
+      <string name="ResponseActionOutput_especialidad_def" />
+      <string name="ResponseActionOutput_formacion_permanente_def" />
+      <string name="ResponseActionOutput_exalumno_tigrado_def" />
+      <string name="ResponseActionOutput_dirper_def" />
+      <string name="ResponseActionOutput_indefinido_def" />
+      <string name="ResponseActionOutput_academico_def" />
+      <string name="ResponseActionOutput_jerarquia_def" />
+      <string name="ResponseActionOutput_cargo_def" />
+      <string name="ResponseActionOutput_codigo_organismo_def" />
+      <string name="ResponseActionOutput_organismo_def" />
+      <string name="ResponseActionOutput_id_organismo_zendesk_def" />
+      <string name="ResponseActionOutput_json_inscripcion_def" />
+      <string name="ResponseActionOutput_json_pregrado_def" />
+      <string name="ResponseActionOutput_json_postgrado_def" />
+      <string name="ResponseActionOutput_json_personal_def" />
+      <string name="ResponseActionOutput_json_designaciones_def" />
+      <string name="ResponseActionOutput_json_tigrado_def" />
+      <string name="ResponseActionOutput_fecha_modif_def" />
+      <string name="ResponseActionOutput_codigo_dependencia_def" />
+      <string name="ResponseActionOutput_dependencia_def" />
+      <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Codigo_ux20_Reparticion_def" />
+      <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Reparticion_def" />
+      <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Cargo_def" />
+      <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Jornada_def" />
+      <object name="ResponseActionOutput_array_ux20_personal_def_items_def">
+        <property name="Codigo Reparticion" type="string" />
+        <property name="Reparticion" type="string" />
+        <property name="Cargo" type="string" />
+        <property name="Jornada" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_array_ux20_personal_def_items_def" name="ResponseActionOutput_array_ux20_personal_def" />
+      <string name="ResponseActionOutput_array_ux20_designaciones_def_items_def_Designacion_def" />
+      <object name="ResponseActionOutput_array_ux20_designaciones_def_items_def">
+        <property name="Designacion" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_array_ux20_designaciones_def_items_def" name="ResponseActionOutput_array_ux20_designaciones_def" />
+      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Titulo_ux20_o_ux20_Grado_def" />
+      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Codigo_def" />
+      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Documento_def" />
+      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Id_def" />
+      <object name="ResponseActionOutput_array_ux20_tigrado_def_items_def">
+        <property name="Titulo o Grado" type="string" />
+        <property name="Codigo" type="string" />
+        <property name="Documento" type="string" />
+        <property name="Id" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_array_ux20_tigrado_def_items_def" name="ResponseActionOutput_array_ux20_tigrado_def" />
+      <string name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def_Codigo_ux20_Reparticion_def" />
+      <string name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def_Reparticion_def" />
+      <object name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def">
+        <property name="Codigo Reparticion" type="string" />
+        <property name="Reparticion" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def" name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def" />
+      <object name="ResponseActionOutput">
+        <property name="id_persona" type="string" />
+        <property name="rut" type="string" />
+        <property name="dv_rut" type="string" />
+        <property name="nro_identificacion" type="string" />
+        <property name="paterno" type="string" />
+        <property name="paterno_social" type="string" />
+        <property name="materno" type="string" />
+        <property name="materno_social" type="string" />
+        <property name="nombres" type="string" />
+        <property name="nombres_social" type="string" />
+        <property name="nombre_completo_o" type="string" />
+        <property name="nombre_completo" type="string" />
+        <property name="correo_udec" type="string" />
+        <property name="alternativo" type="string" />
+        <property name="telefono" type="string" />
+        <property name="movil" type="string" />
+        <property name="direccion" type="string" />
+        <property name="comuna" type="string" />
+        <property name="region" type="string" />
+        <property name="fecha_nacimiento" type="string" />
+        <property name="sexo" type="string" />
+        <property name="sexo_social" type="string" />
+        <property name="estado_civil" type="string" />
+        <property name="nacionalidad" type="string" />
+        <property name="colegio_origen" type="string" />
+        <property name="rama_educacional" type="string" />
+        <property name="tipo_colegio" type="string" />
+        <property name="numero_matricula" type="string" />
+        <property name="situacion_actual" type="string" />
+        <property name="periodo_actual" type="string" />
+        <property name="agno_ingreso_pregrado" type="string" />
+        <property name="matricula_pregrado" type="string" />
+        <property name="carrera_pregrado" type="string" />
+        <property name="facultad_pregrado" type="string" />
+        <property name="gratuidad" type="string" />
+        <property name="pace" type="string" />
+        <property name="agno_ingreso_postgrado" type="string" />
+        <property name="matricula_postgrado" type="string" />
+        <property name="programa_postgrado" type="string" />
+        <property name="facultad_postgrado" type="string" />
+        <property name="personal" type="string" />
+        <property name="designaciones" type="string" />
+        <property name="tigrado" type="string" />
+        <property name="id_zendesk" type="string" />
+        <property name="asig_inscritas" type="string" />
+        <property name="pregrado" type="string" />
+        <property name="postgrado" type="string" />
+        <property name="especialidad" type="string" />
+        <property name="formacion_permanente" type="string" />
+        <property name="exalumno_tigrado" type="string" />
+        <property name="dirper" type="string" />
+        <property name="indefinido" type="string" />
+        <property name="academico" type="string" />
+        <property name="jerarquia" type="string" />
+        <property name="cargo" type="string" />
+        <property name="codigo_organismo" type="string" />
+        <property name="organismo" type="string" />
+        <property name="id_organismo_zendesk" type="string" />
+        <property name="json_inscripcion" type="string" />
+        <property name="json_pregrado" type="string" />
+        <property name="json_postgrado" type="string" />
+        <property name="json_personal" type="string" />
+        <property name="json_designaciones" type="string" />
+        <property name="json_tigrado" type="string" />
+        <property name="fecha_modif" type="string" />
+        <property name="codigo_dependencia" type="string" />
+        <property name="dependencia" type="string" />
+        <property name="array personal" typeRef="ResponseActionOutput_array_ux20_personal_def" />
+        <property name="array designaciones" typeRef="ResponseActionOutput_array_ux20_designaciones_def" />
+        <property name="array tigrado" typeRef="ResponseActionOutput_array_ux20_tigrado_def" />
+        <property name="array organismo actividad" typeRef="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def" />
+      </object>
+      <object name="Run_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="InitializevariableEmail_Value" path="/InitializevariableEmail_Value" type="xs:string" required="true" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

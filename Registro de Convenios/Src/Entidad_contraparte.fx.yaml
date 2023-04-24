@@ -1,0 +1,510 @@
+Entidad_contraparte As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |-
+        =UpdateContext({tab_seleccionada:1});
+
+    Botones_atras_siguiente_2 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_2 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =//AL MENOS UNA CONTRAPARTE CARGADA
+                If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
+                    Set(entidades_contraparte_cargadas,{
+                        nacionales: {
+                            cantidad: CountRows(contrapartes_nacionales),
+                            contrapartes: contrapartes_nacionales
+                        },
+                        internacionales: {
+                            cantidad: CountRows(contrapartes_internacionales),
+                            contrapartes: contrapartes_internacionales
+                        }
+                    });
+                    Navigate(Información_convenio,ScreenTransition.Fade)
+                );
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Atrás_2 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Datos_convenio,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            X: =2
+            Y: =2
+            ZIndex: =2
+
+    Entidades_contraparte As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =3
+
+        Contenedor_e_c As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =1
+
+            fondo_blanco_5 As image:
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            cont_contraparte_internacional As groupContainer.manualLayoutContainer:
+                Height: =313
+                Visible: =tab_seleccionada=2
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =2
+
+                "gal_contraparte_internacional As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    FocusedBorderThickness: =0
+                    Height: =283
+                    Items: =contrapartes_internacionales
+                    Layout: =Layout.Vertical
+                    TabIndex: =1
+                    TemplatePadding: =0
+                    TemplateSize: =140
+                    Width: =1198
+                    ZIndex: =1
+
+                    img_contraparte_1 As image:
+                        Height: =80
+                        Image: ='logo-udec'
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =Select(Parent)
+                        RadiusBottomLeft: =200
+                        RadiusBottomRight: =200
+                        RadiusTopLeft: =200
+                        RadiusTopRight: =200
+                        Width: =0
+                        X: =16
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =1
+
+                    lbl_contraparte_nacional_rut_1 As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =70
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        Size: =16
+                        Text: =ThisItem.pais_responsable_institucional
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =lbl_contraparte_nacional_nombre_1.Width
+                        X: =20
+                        Y: =70
+                        ZIndex: =2
+
+                    lbl_contraparte_nacional_nombre_1 As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =70
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.nombre_entidad_contraparte
+                        VerticalAlign: =VerticalAlign.Bottom
+                        Width: =Parent.TemplateWidth - img_contraparte_1.Width - 104
+                        X: =20
+                        Y: =4
+                        ZIndex: =3
+
+                    fig_contraparte_arrow_1 As rectangle:
+                        Fill: =RGBA(112, 139, 166, 1)
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =1198
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =4
+
+                    img_arrow_contraparte_nacional_1 As image:
+                        Height: =25
+                        Image: =ico_arrow
+                        OnSelect: |-
+                            =Select(Parent);
+                            Set(reset_externo, false);
+                            //Navigate(Registro_Actividad_6)
+                        Width: =14
+                        X: =1150
+                        Y: =60
+                        ZIndex: =5
+
+                    btn_detalle_contraparte_nacional_1 As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =140
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnSelect: |-
+                            =Select(Parent);
+                            Set(contraparte, ThisItem);
+                            Set(popup_contraparte_in,false);
+                            Set(contraparte_in, {});
+                            Set(nueva_contraparte,false);
+                            Navigate(Datos_contraparte_internacional,ScreenTransition.Fade)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        TabIndex: =2
+                        Text: =""
+                        Width: =14
+                        X: =1150
+                        ZIndex: =6
+
+            cont_contraparte_nacional As groupContainer.manualLayoutContainer:
+                Height: =313
+                Visible: =tab_seleccionada=1
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =3
+
+                "gal_contraparte_nacional As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    FocusedBorderThickness: =0
+                    Height: =283
+                    Items: =contrapartes_nacionales
+                    Layout: =Layout.Vertical
+                    OnSelect: =
+                    TabIndex: =1
+                    TemplatePadding: =0
+                    TemplateSize: =140
+                    Width: =1198
+                    ZIndex: =1
+
+                    img_contraparte As image:
+                        Height: =80
+                        Image: ='logo-udec'
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =Select(Parent)
+                        RadiusBottomLeft: =200
+                        RadiusBottomRight: =200
+                        RadiusTopLeft: =200
+                        RadiusTopRight: =200
+                        Width: =0
+                        X: =16
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =1
+
+                    lbl_contraparte_nacional_rut As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =70
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        Size: =16
+                        Text: =Concatenate(ThisItem.rut_entidad_contraparte,"-",ThisItem.dv_entidad_contraparte)
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =lbl_contraparte_nacional_nombre.Width
+                        X: =20
+                        Y: =70
+                        ZIndex: =2
+
+                    lbl_contraparte_nacional_nombre As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =70
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.nombre_entidad_contraparte
+                        VerticalAlign: =VerticalAlign.Bottom
+                        Width: =Parent.TemplateWidth - img_contraparte.Width - 104
+                        X: =20
+                        Y: =4
+                        ZIndex: =3
+
+                    fig_contraparte_arrow As rectangle:
+                        Fill: =RGBA(112, 139, 166, 1)
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =1198
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =4
+
+                    img_arrow_contraparte_nacional As image:
+                        Height: =25
+                        Image: =ico_arrow
+                        OnSelect: |-
+                            =Select(Parent);
+                            Set(reset_externo, false);
+                            //Navigate(Registro_Actividad_6)
+                        Width: =14
+                        X: =1150
+                        Y: =60
+                        ZIndex: =5
+
+                    btn_detalle_contraparte_nacional As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =140
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnSelect: |-
+                            =Select(Parent);
+                            Set(contraparte, ThisItem);
+                            Set(popup_contraparte_na,false);
+                            Set(contraparte_na, {});
+                            Set(nueva_contraparte,false);
+                            Navigate(Datos_contraparte_nacional,ScreenTransition.Fade)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        TabIndex: =2
+                        Text: =""
+                        Width: =14
+                        X: =1150
+                        ZIndex: =6
+
+            cont_vacio_na As groupContainer.manualLayoutContainer:
+                Height: =313
+                Visible: =CountRows(contrapartes_nacionales)=0 && tab_seleccionada=1
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =4
+
+                Image1 As image:
+                    Height: =200
+                    Image: =vacio
+                    Width: =200
+                    X: =40
+                    Y: =57
+                    ZIndex: =1
+
+                no_contraparte_na_lb As label:
+                    Color: =RGBA(159, 156, 183, 1)
+                    Height: =60
+                    Size: =16
+                    Text: ="No encontramos ninguna contraparte nacional asociada"
+                    Width: =370
+                    X: =284
+                    Y: =155
+                    ZIndex: =2
+
+                sin_contraparte_na_lb As label:
+                    Color: =RGBA(17, 61, 107, 0.6)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =43
+                    Size: =23
+                    Text: ="Sin contraparte nacional"
+                    Width: =500
+                    X: =284
+                    Y: =112
+                    ZIndex: =3
+
+            cont_vacio_in As groupContainer.manualLayoutContainer:
+                Height: =313
+                Visible: =CountRows(contrapartes_internacionales)=0 && tab_seleccionada=2
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =5
+
+                Image1_1 As image:
+                    Height: =200
+                    Image: =vacio
+                    Width: =200
+                    X: =40
+                    Y: =57
+                    ZIndex: =1
+
+                no_contraparte_in_lb As label:
+                    Color: =RGBA(159, 156, 183, 1)
+                    Height: =60
+                    Size: =16
+                    Text: ="No encontramos ninguna contraparte internacional asociada"
+                    Width: =370
+                    X: =284
+                    Y: =155
+                    ZIndex: =2
+
+                sin_contraparte_in_lb As label:
+                    Color: =RGBA(17, 61, 107, 0.6)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =43
+                    Size: =23
+                    Text: ="Sin contraparte internacional"
+                    Width: =500
+                    X: =284
+                    Y: =112
+                    ZIndex: =3
+
+            "gal_tabs As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+                Height: =45
+                Items: |-
+                    =Table({id:1,nombre: "Nacional"},{id:2,nombre:"Internacional"})
+                TemplateSize: =153
+                Width: =1198
+                X: =40
+                Y: |
+                    =37
+                ZIndex: =6
+
+                Button1 As button:
+                    BorderThickness: =0
+                    Color: |-
+                        =If(tab_seleccionada=ThisItem.id,RGBA(255,255,255,1),ColorValue("#6F8BA7"))
+                    Fill: |-
+                        =If(tab_seleccionada=ThisItem.id,ColorValue("#F79E40"),ColorValue("#EBEEFB"))
+                    FontWeight: =FontWeight.Normal
+                    HoverBorderColor: =Self.BorderColor
+                    HoverColor: =Self.Color
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =UpdateContext({tab_seleccionada: ThisItem.id})
+                    PaddingBottom: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    Size: =14
+                    Text: =ThisItem.nombre
+                    Width: =150
+                    ZIndex: =4
+
+            icon_tabs_contenido_separador As icon.HorizontalLine:
+                BorderColor: |-
+                    =ColorValue("#F79E40")
+                Color: |-
+                    =ColorValue("#F79E40")
+                DisabledBorderColor: |-
+                    =ColorValue("#F79E40")
+                Fill: |-
+                    =ColorValue("#F79E40")
+                FocusedBorderColor: |-
+                    =ColorValue("#F79E40")
+                FocusedBorderThickness: =0
+                Height: =1
+                HoverBorderColor: |-
+                    =ColorValue("#F79E40")
+                HoverColor: |-
+                    =ColorValue("#F79E40")
+                Icon: =Icon.HorizontalLine
+                PressedBorderColor: |-
+                    =ColorValue("#F79E40")
+                PressedColor: |-
+                    =ColorValue("#F79E40")
+                Width: =gal_tabs.Width-5
+                X: =gal_tabs.X+5
+                Y: =gal_tabs.Y+gal_tabs.Height
+                ZIndex: =7
+
+            btn_registro_4_e_agregar As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Fill: =RGBA(139, 195, 74, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =42
+                HoverBorderColor: =RGBA(139, 195, 74, 1)
+                HoverFill: =RGBA(139, 195, 74, 0.4)
+                OnSelect: |
+                    =Set(contraparte, {});
+                    If(tab_seleccionada=1,
+                        Navigate(Datos_contraparte_nacional,ScreenTransition.Fade);
+                        Set(contraparte_na, {});
+                        Set(popup_contraparte_na,true);
+                        Set(nueva_contraparte,true);
+                        ,
+                        Navigate(Datos_contraparte_internacional, ScreenTransition.Fade);
+                        Set(contraparte_in, {});
+                        Set(popup_contraparte_in,true);
+                        Set(nueva_contraparte,true);
+                        );
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(95, 160, 20, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =20
+                TabIndex: =
+                Text: ="+"
+                Width: =42
+                X: =1195
+                Y: =412
+                ZIndex: =8
+
+        entidades_contraparte As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Entidades contraparte de la Universidad de Concepción"
+            Width: =1366
+            ZIndex: =3
+
+    BannerUdeC_2 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =4
+

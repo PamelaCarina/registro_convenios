@@ -1,0 +1,74 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PATraeinstituciónnacional" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="DTI - PA Trae institución nacional" />
+  <grammars>
+    <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="ManualTriggerInput_Ejecutarunflujosecundario_rut_institucion_def" />
+      <object name="ManualTriggerInput">
+        <property name="Ejecutarunflujosecundario_rut_institucion" type="string" />
+      </object>
+      <string name="ResponseActionOutput_items_def_id_persona_def" />
+      <string name="ResponseActionOutput_items_def_rut_def" />
+      <string name="ResponseActionOutput_items_def_dv_def" />
+      <string name="ResponseActionOutput_items_def_razon_social_def" />
+      <string name="ResponseActionOutput_items_def_razon_social_sii_def" />
+      <string name="ResponseActionOutput_items_def_publica_def" />
+      <string name="ResponseActionOutput_items_def_tipo_empresa_def" />
+      <string name="ResponseActionOutput_items_def_tipo_de_contribuyente_def" />
+      <string name="ResponseActionOutput_items_def_subtipo_de_contribuyente_def" />
+      <string name="ResponseActionOutput_items_def_rubro_economico_def" />
+      <string name="ResponseActionOutput_items_def_subrubro_economico_def" />
+      <string name="ResponseActionOutput_items_def_actividad_economica_def" />
+      <string name="ResponseActionOutput_items_def_codigo_comuna_def" />
+      <string name="ResponseActionOutput_items_def_comuna_def" />
+      <string name="ResponseActionOutput_items_def_clasificacion_vrid_def" />
+      <string name="ResponseActionOutput_items_def_tipo_clasificacion_vrid_def" />
+      <object name="ResponseActionOutput_items_def">
+        <property name="id_persona" type="string" />
+        <property name="rut" type="string" />
+        <property name="dv" type="string" />
+        <property name="razon_social" type="string" />
+        <property name="razon_social_sii" type="string" />
+        <property name="publica" type="string" />
+        <property name="tipo_empresa" type="string" />
+        <property name="tipo_de_contribuyente" type="string" />
+        <property name="subtipo_de_contribuyente" type="string" />
+        <property name="rubro_economico" type="string" />
+        <property name="subrubro_economico" type="string" />
+        <property name="actividad_economica" type="string" />
+        <property name="codigo_comuna" type="string" />
+        <property name="comuna" type="string" />
+        <property name="clasificacion_vrid" type="string" />
+        <property name="tipo_clasificacion_vrid" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_items_def" name="ResponseActionOutput" />
+      <object name="Run_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="Ejecutarunflujosecundario_rut_institucion" path="/Ejecutarunflujosecundario_rut_institucion" type="xs:string" required="true" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

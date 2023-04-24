@@ -1,0 +1,99 @@
+HeaderUdeC As CanvasComponent:
+    Bienvenido: ="Texto"
+    Fill: =RGBA(42, 82, 159, 1)
+    Height: =96
+    Subtitulo: ="Texto"
+    Titulo: ="Texto"
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    img_logo_udec As image:
+        Height: =48
+        Image: ='logo-udec'
+        Width: =148
+        X: =24
+        Y: =24
+        ZIndex: =1
+
+    fig_background_perfil As circle:
+        BorderColor: =RGBA(247, 158, 64, 1)
+        BorderThickness: =2
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =76
+        Width: =77
+        X: =1265
+        Y: =10
+        ZIndex: =2
+
+    img_perfil As image:
+        Height: =70
+        Image: =User().Image
+        RadiusBottomLeft: =200
+        RadiusBottomRight: =200
+        RadiusTopLeft: =200
+        RadiusTopRight: =200
+        Width: =70
+        X: =1268
+        Y: =13
+        ZIndex: =3
+
+    lbl_bienvenido As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =48
+        Size: =14
+        Text: =HeaderUdeC.Bienvenido
+        VerticalAlign: =VerticalAlign.Bottom
+        X: =1107
+        ZIndex: =4
+
+    lbl_nombre_usuario As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =48
+        PaddingBottom: =0
+        PaddingTop: =0
+        Size: =14
+        Text: =User().FullName
+        VerticalAlign: =VerticalAlign.Top
+        Width: =418
+        X: =839
+        Y: =47
+        ZIndex: =5
+
+    lbl_titulo As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =48
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =20
+        Text: =HeaderUdeC.Titulo
+        VerticalAlign: =VerticalAlign.Bottom
+        Width: =650
+        X: =358
+        ZIndex: =6
+
+    lbl_subtitulo As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =48
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =12
+        Text: =HeaderUdeC.Subtitulo
+        VerticalAlign: =VerticalAlign.Top
+        Width: =650
+        X: =358
+        Y: =48
+        ZIndex: =7
+
