@@ -1,0 +1,499 @@
+Información_convenio As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |-
+        =UpdateContext({
+            dd_tipo: Table(
+                {
+                    Text: "Seleccionar...",
+                    Val: "sin_seleccion"
+                },
+                {
+                    Text: "Formación (pregrado, postgrado, formación permanente)",
+                    Val: "formacion"
+                },
+                {
+                    Text: "Extensión Académica",
+                    Val: "extension_academica"
+                },
+                {
+                    Text: "Extensión Cultural",
+                    Val: "extension_cultural"
+                },
+                {
+                    Text: "Bidireccional",
+                    Val: "bidireccional"
+                },
+                {
+                    Text: "Otra",
+                    Val: "otra"
+                }
+            ),
+            dd_sectores: Table(
+                {
+                    Text: "Seleccionar...",
+                    Val: "sin_seleccion"
+                },
+                {
+                    Text: "Público - Político",
+                    Val: "publico_politico"
+                },
+                {
+                    Text: "Social Comunitario",
+                    Val: "social_comunitario"
+                },
+                {
+                    Text: "Cultural",
+                    Val: "cultural"
+                },
+                {
+                    Text: "Productivo",
+                    Val: "productivo"
+                },
+                {
+                    Text: "Comunidad Universitaria",
+                    Val: "comunidad_uni"
+                }
+            ),
+            dd_ambito: Table(
+                {
+                    Text: "Seleccionar...",
+                    Val: "sin_seleccion"
+                },
+                {
+                    Text: "Extensión",
+                    Val: "extension"
+                },
+                {
+                    Text: "Comunicaciones",
+                    Val: "comunicaciones"
+                },
+                {
+                    Text: "Emprendimiento",
+                    Val: "emprendimiento"
+                },
+                {
+                    Text: "Transferencia tecnológica",
+                    Val: "transferencia_tecnologica"
+                },
+                {
+                    Text: "Asistencia técnica",
+                    Val: "asistencia_tecnica"
+                },
+                {
+                    Text: "Interacción con red alumni",
+                    Val: "red_alumni"
+                },
+                {
+                    Text: "Relaciones institucionales",
+                    Val: "rel_institucionales"
+                },
+                {
+                    Text: "Relaciones internacionales",
+                    Val: "rel_internacionales"
+                },
+                {
+                    Text: "Prácticas profesionales, pasantías estudiantiles y académicas",
+                    Val: "practicas_pasantia"
+                },
+                {
+                    Text: "Servicios",
+                    Val: "servicios"
+                }
+            )
+        })
+
+    Botones_atras_siguiente_5 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_5 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(datos_vinculacion_cargados,{
+                    tipo: convenio_tipo.Selected.Text,
+                    sector: sector_politica.Selected.Text,
+                    ambito: ambito_politica.Selected.Text
+                });
+                Navigate(Area_contribución,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Atrás_5 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            X: =2
+            Y: =2
+            ZIndex: =2
+
+    Información_de_convenio As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =2
+
+        Contenedor_d_i_c As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =1
+
+            fondo_blanco_9 As image:
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            btn_registro_10_politica As button:
+                OnSelect: |-
+                    =Launch("https://intranet.udec.cl/sites/default/files/POLITICA_VRIM_UdeC%202021.pdf")
+                Size: =12
+                Text: ="Política de Vinculación con el Medio"
+                Width: =312
+                X: =42
+                Y: =230
+                ZIndex: =2
+
+            Contenedor_a_d_p As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =1198
+                X: =42
+                Y: =146
+                ZIndex: =3
+
+                nombre_unidad_input_3 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    DisplayMode: =
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    HintText: =""
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =60
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Visible: =false
+                    Width: =1198
+                    Y: =20
+                    ZIndex: =1
+
+                Contenedor_seleccionable_6 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    Width: =1198
+                    Y: =20
+                    ZIndex: =2
+
+                    fondo_celeste_10 As image:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Height: =40
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =1198
+                        ZIndex: =1
+
+                    ambito_politica As dropdown:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        ChevronBackground: =RGBA(241, 244, 255, 1)
+                        ChevronFill: =RGBA(111, 139, 167, 1)
+                        ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                        ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                        Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HoverBorderColor: =RGBA(241,244,255,1)
+                        HoverColor: =RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(207, 210, 232, 1)
+                        Items: =dd_ambito
+                        OnChange: =
+                        PaddingBottom: =12
+                        PaddingLeft: =12
+                        PaddingTop: =12
+                        PressedColor: =RGBA(17, 61, 107, 1)
+                        PressedFill: =RGBA(241, 244, 255, 1)
+                        SelectionColor: =RGBA(111, 139, 167, 1)
+                        SelectionFill: =RGBA(241, 244, 255, 1)
+                        Size: =14
+                        TabIndex: =
+                        Width: =fondo_celeste_10.Width-24
+                        X: =fondo_celeste_10.X+12
+                        Y: =fondo_celeste_10.Y
+                        ZIndex: =2
+
+                    tapar_ambito_politica As rectangle:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(244, 244, 244, 1)
+                        Height: =40
+                        Visible: =false
+                        Width: =40
+                        X: =ambito_politica.X+ambito_politica.Width-Self.Width+1
+                        Y: =fondo_celeste_10.Y
+                        ZIndex: =3
+
+                ambito_de_politica As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="ÁMBITO DE LA POLÍTICA DE VINCULACIÓN CON EL MEDIO"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =300
+                    ZIndex: =3
+
+            Contenedor_s_d_p As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =584
+                X: =656
+                Y: =62
+                ZIndex: =4
+
+                Contenedor_seleccionable_7 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    Width: =584
+                    Y: =20
+                    ZIndex: =1
+
+                    fondo_celeste_11 As image:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Height: =40
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =584
+                        ZIndex: =1
+
+                    sector_politica As dropdown:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        ChevronBackground: =RGBA(241, 244, 255, 1)
+                        ChevronFill: =RGBA(111, 139, 167, 1)
+                        ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                        ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                        Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HoverBorderColor: =RGBA(241,244,255,1)
+                        HoverColor: =RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(207, 210, 232, 1)
+                        Items: =dd_sectores
+                        OnChange: =
+                        PaddingBottom: =12
+                        PaddingLeft: =12
+                        PaddingTop: =12
+                        PressedColor: =RGBA(17, 61, 107, 1)
+                        PressedFill: =RGBA(241, 244, 255, 1)
+                        SelectionColor: =RGBA(111, 139, 167, 1)
+                        SelectionFill: =RGBA(241, 244, 255, 1)
+                        Size: =14
+                        TabIndex: =
+                        Width: =fondo_celeste_11.Width-24
+                        X: =fondo_celeste_11.X+12
+                        Y: =fondo_celeste_11.Y
+                        ZIndex: =2
+
+                    tapar_convenio_tipo_1 As rectangle:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(244, 244, 244, 1)
+                        Height: =40
+                        Visible: =false
+                        Width: =40
+                        X: =sector_politica.X+sector_politica.Width-Self.Width+1
+                        Y: =fondo_celeste_11.Y
+                        ZIndex: =3
+
+                sector_de_politica As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="SECTOR DE LA POLÍTICA DE VINCULACIÓN CON EL MEDIO"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =584
+                    ZIndex: =2
+
+            Contenedor_c_d_t As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =584
+                X: =42
+                Y: =62
+                ZIndex: =5
+
+                Contenedor_seleccionable_5 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    Width: =584
+                    Y: =20
+                    ZIndex: =1
+
+                    fondo_celeste_9 As image:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Height: =40
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =584
+                        ZIndex: =1
+
+                    convenio_tipo As dropdown:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        ChevronBackground: =RGBA(241, 244, 255, 1)
+                        ChevronFill: =RGBA(111, 139, 167, 1)
+                        ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                        ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                        Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HoverBorderColor: =RGBA(241,244,255,1)
+                        HoverColor: =RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(207, 210, 232, 1)
+                        Items: =dd_tipo
+                        OnChange: =
+                        PaddingBottom: =12
+                        PaddingLeft: =12
+                        PaddingTop: =12
+                        PressedColor: =RGBA(17, 61, 107, 1)
+                        PressedFill: =RGBA(241, 244, 255, 1)
+                        SelectionColor: =RGBA(111, 139, 167, 1)
+                        SelectionFill: =RGBA(241, 244, 255, 1)
+                        Size: =14
+                        TabIndex: =
+                        Width: =fondo_celeste_9.Width-24
+                        X: =fondo_celeste_9.X+12
+                        Y: =fondo_celeste_9.Y
+                        ZIndex: =2
+
+                    tapar_convenio_tipo As rectangle:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(244, 244, 244, 1)
+                        Height: =40
+                        Visible: =false
+                        Width: =40
+                        X: =convenio_tipo.X+convenio_tipo.Width-Self.Width+1
+                        Y: =fondo_celeste_9.Y
+                        ZIndex: =3
+
+                convenio_de_tipo As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="CONVENIO DE TIPO"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =584
+                    ZIndex: =2
+
+            alcance_territorial_convenio_solicitado_1 As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =50
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                Size: =16
+                Text: ="Categorías de vinculación con el medio"
+                Width: =626
+                X: =42
+                ZIndex: =6
+
+        datos_info_convenio As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Información de convenio"
+            Width: =1366
+            ZIndex: =3
+
+    BannerUdeC_5 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =3
+

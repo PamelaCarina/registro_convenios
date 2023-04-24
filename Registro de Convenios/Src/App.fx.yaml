@@ -1,0 +1,48 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =//USUARIO LOGEADO
+        //Set(persona_solicitante; 'VRIM-PATraedatosdeusuario'.Run(User().Email));;
+        Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run("melissa@udec.cl"));
+        
+        //UNIDAD SOLICITANTE
+        ClearCollect(organismos_actividad,{'Codigo Reparticion':"aaaa",Reparticion:"Seleccionar..."});
+        Set(arraypersonaltest,persona_solicitante.'array organismo actividad');
+        Collect(organismos_actividad,arraypersonaltest);
+        
+        //¿Esto qué hace?
+        Set(nueva_unidad_solicitante, false);
+        
+        //LISTAS DESPLEGABLES
+        ClearCollect(datos,Listaespecificacionesconvenio.Run());
+        
+        ClearCollect(lista_alcance,{id:"-",valor:"Seleccionar..."});
+        Set(a_t,First(datos).'alcance territorial');
+        Collect(lista_alcance,a_t);
+        
+        ClearCollect(lista_tipologia,{id:"-",valor:"Seleccionar..."});
+        Set(t,First(datos).tipologia);
+        Collect(lista_tipologia,t);
+        
+        ClearCollect(lista_tipo_solicitud,{id:"-",valor:"Seleccionar..."});
+        Set(t_s,First(datos).'tipo solicitud');
+        Collect(lista_tipo_solicitud,t_s);
+        
+        ClearCollect(lista_modalidad,{id:"-",valor:"Seleccionar..."});
+        Set(m,First(datos).modalidad);
+        Collect(lista_modalidad,m);
+        
+        //NACIONALES
+        Clear(contrapartes_nacionales);
+        
+        //INTERNACIONALES
+        Clear(contrapartes_internacionales);
+        
+        //OBTENER AUTORIDAD SOLICITANTE
+        Set(autoridad,'VRIM-PA-Traeaprobadordetrabajador'.Run(persona_solicitante.id_persona));
+        Set(autoridad_solicitante,'VRIM-PATraedatosdeusuario'.Run(autoridad.correo_aprobador));
+        
+        //MENSAJES DE CAMPOS FALTANTES
+        Set(msj_campo_faltante,"Debe completar el campo faltante.");
+        Set(msj_campos_faltantes,"Debe completar los campos faltantes.");
+

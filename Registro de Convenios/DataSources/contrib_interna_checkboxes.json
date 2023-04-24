@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "contrib_interna_checkboxes",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

@@ -1,0 +1,1406 @@
+Contribución_desarrollo As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |-
+        =ClearCollect(ods_checkboxes,
+            {cb: cb_ods_1, ods:"ods_1"},
+            {cb: cb_ods_2, ods:"ods_2"},
+            {cb: cb_ods_3, ods:"ods_3"},
+            {cb: cb_ods_4, ods:"ods_4"},
+            {cb: cb_ods_5, ods:"ods_5"},
+            {cb: cb_ods_6, ods:"ods_6"},
+            {cb: cb_ods_7, ods:"ods_7"},
+            {cb: cb_ods_8, ods:"ods_8"},
+            {cb: cb_ods_9, ods:"ods_9"},
+            {cb: cb_ods_10, ods:"ods_10"},
+            {cb: cb_ods_11, ods:"ods_11"},
+            {cb: cb_ods_12, ods:"ods_12"},
+            {cb: cb_ods_13, ods:"ods_13"},
+            {cb: cb_ods_14, ods:"ods_14"},
+            {cb: cb_ods_15, ods:"ods_15"},
+            {cb: cb_ods_16, ods:"ods_16"},
+            {cb: cb_ods_17, ods:"ods_17"},
+            {cb: cb_ods_ninguno, ods:"ninguno"}
+        );
+        UpdateContext({faltan_datos_notif:false,
+            faltan_datos_text:"",
+            popup_done:false});
+        ClearCollect(datosContribucion_desarrollo,
+            {dato:"ods",falta:false, text:"Contribución al desarrollo sustentable"}
+        );
+
+    Botones_atras_siguiente_7 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_7 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |+
+                =Patch(datosContribucion_desarrollo,First(Filter(datosContribucion_desarrollo, dato="ods")),
+                    If(CountRows(Filter(ods_checkboxes,cb.Value=true))=0, 
+                        {falta:true},
+                        {falta:false}
+                    )
+                );
+                
+                If(CountRows(Filter(datosContribucion_desarrollo,falta = true))=0,
+                    UpdateContext({faltan_datos_notif:false});
+                    Set(ods, Filter(ods_checkboxes, cb.Value=true&&ods<>"ninguno").ods);
+                    Set(popup_confirmacion, true);
+                
+                    //GUARDAR SELECCIONES ODS
+                    ClearCollect(datos_ods_cargados,{});
+                    Clear(datos_ods_cargados);
+                    If(cb_ods_ninguno.Value=true,
+                        Collect(datos_ods_cargados,{ods:"ninguna"})
+                    ,
+                        If(cb_ods_1.Value=true,Collect(datos_ods_cargados,{ods:"1"}));
+                        If(cb_ods_2.Value=true,Collect(datos_ods_cargados,{ods:"2"}));
+                        If(cb_ods_3.Value=true,Collect(datos_ods_cargados,{ods:"3"}));
+                        If(cb_ods_4.Value=true,Collect(datos_ods_cargados,{ods:"4"}));
+                        If(cb_ods_5.Value=true,Collect(datos_ods_cargados,{ods:"5"}));
+                        If(cb_ods_6.Value=true,Collect(datos_ods_cargados,{ods:"6"}));
+                        If(cb_ods_7.Value=true,Collect(datos_ods_cargados,{ods:"7"}));
+                        If(cb_ods_8.Value=true,Collect(datos_ods_cargados,{ods:"8"}));
+                        If(cb_ods_9.Value=true,Collect(datos_ods_cargados,{ods:"9"}));
+                        If(cb_ods_10.Value=true,Collect(datos_ods_cargados,{ods:"10"}));
+                        If(cb_ods_11.Value=true,Collect(datos_ods_cargados,{ods:"11"}));
+                        If(cb_ods_12.Value=true,Collect(datos_ods_cargados,{ods:"12"}));
+                        If(cb_ods_13.Value=true,Collect(datos_ods_cargados,{ods:"13"}));
+                        If(cb_ods_14.Value=true,Collect(datos_ods_cargados,{ods:"14"}));
+                        If(cb_ods_15.Value=true,Collect(datos_ods_cargados,{ods:"15"}));
+                        If(cb_ods_16.Value=true,Collect(datos_ods_cargados,{ods:"16"}));
+                        If(cb_ods_17.Value=true,Collect(datos_ods_cargados,{ods:"17"}));
+                    );
+                    UpdateContext({popup_enviar:true});
+                    
+                    , 
+                    UpdateContext({faltan_datos_text:"Ingresar: "&Concat(Filter(datosContribucion_desarrollo,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true})
+                )
+                
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="ENVIAR"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Atrás_7 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Area_contribución,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            X: =2
+            Y: =2
+            ZIndex: =2
+
+    Contribución_al_desarrollo As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =2
+
+        Contenedor_c_d_s As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =1
+
+            fondo_blanco_12 As image:
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            cont_ods_ninguno As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =989
+                Y: =297
+                ZIndex: =2
+
+                cb_ods_ninguno As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =/*
+                        If(faltan_datos_notif=true; UpdateContext({faltan_datos_notif:false}));;
+                        ForAll(Filter(ods_checkboxes; ods<>"ninguno");
+                            Reset(ThisRecord.cb)
+                        )
+                        */
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_ods_18 As image:
+                    BorderStyle: =BorderStyle.None
+                    Height: =113
+                    Image: ='0'
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Tooltip: ="Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."
+                    Transparency: =If(cb_ods_ninguno.Value=true,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =3
+
+            cont_ods_17 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =823
+                Y: =297
+                ZIndex: =3
+
+                img_ods_17 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='17'
+                    Tooltip: ="Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_17 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_17 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_17 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/globalpartnerships/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_16 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =657
+                Y: =297
+                ZIndex: =4
+
+                img_ods_16 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='16'
+                    Tooltip: ="Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_16 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_16 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_16 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/peace-justice/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_15 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =491
+                Y: =297
+                ZIndex: =5
+
+                img_ods_15 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='15'
+                    Tooltip: ="Proteger, restaurar y promover la utilización sostenible de los ecosistemas terrestres, gestionar de manera sostenible los bosques, combatir la desertificación y detener y revertir la degradación de la tierra, y frenar la pérdida de diversidad biológica."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_15 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Proteger, restaurar y promover la utilización sostenible de los ecosistemas terrestres, gestionar de manera sostenible los bosques, combatir la desertificación y detener y revertir la degradación de la tierra, y frenar la pérdida de diversidad biológica."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_15 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_15 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/biodiversity/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_14 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =325
+                Y: =297
+                ZIndex: =6
+
+                img_ods_14 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='14'
+                    Tooltip: ="Conservar y utilizar de forma sostenible los océanos, mares y recursos marinos para lograr el desarrollo sostenible."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_14 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Conservar y utilizar de forma sostenible los océanos, mares y recursos marinos para lograr el desarrollo sostenible."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_14 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_14 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/oceans/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_13 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =155
+                Y: =297
+                ZIndex: =7
+
+                img_ods_13 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='13'
+                    Tooltip: ="Tomar medidas urgentes para combatir el cambio climático y sus efectos."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_13 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Tomar medidas urgentes para combatir el cambio climático y sus efectos."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_13 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_13 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/climate-change-2/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_12 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =989
+                Y: =167
+                ZIndex: =8
+
+                img_ods_12 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='12'
+                    Tooltip: ="Garantizar las pautas de consumo y de producción sostenibles."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_12 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Garantizar las pautas de consumo y de producción sostenibles."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_12 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_12 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/sustainable-consumption-production/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_11 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =823
+                Y: =167
+                ZIndex: =9
+
+                img_ods_11 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='11'
+                    Tooltip: ="Conseguir que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_11 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Conseguir que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_11 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_11 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/cities/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_10 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =657
+                Y: =167
+                ZIndex: =10
+
+                img_ods_10 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='10'
+                    Tooltip: ="Reducir las desigualdades entre países y dentro de ellos."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_10 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Reducir las desigualdades entre países y dentro de ellos."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_10 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_10 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/inequality/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_9 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =491
+                Y: |
+                    =167
+                ZIndex: =11
+
+                img_ods_9 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='9'
+                    Tooltip: ="Desarrollar infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_9 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Desarrollar infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_9 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_9 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/infrastructure/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_8 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =325
+                Y: |
+                    =167
+                ZIndex: =12
+
+                img_ods_8 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='8'
+                    Tooltip: ="Fomentar el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo, y el trabajo decente para todos."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_8 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Fomentar el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo, y el trabajo decente para todos."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_8 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_8 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/economic-growth/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_7 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =155
+                Y: |
+                    =167
+                ZIndex: =13
+
+                img_ods_7 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='7'
+                    Tooltip: ="Asegurar el acceso a energías asequibles, fiables, sostenibles y modernas para todos."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_7 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Asegurar el acceso a energías asequibles, fiables, sostenibles y modernas para todos."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_7 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_7 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/energy/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_6 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =989
+                Y: =37
+                ZIndex: =14
+
+                img_ods_6 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='6'
+                    Tooltip: ="Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_6 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_6 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_6 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/water-and-sanitation/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_5 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =823
+                Y: =37
+                ZIndex: =15
+
+                img_ods_5 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='5'
+                    Tooltip: ="Alcanzar la igualdad entre los géneros y empoderar a todas las mujeres y niñas."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_5 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Alcanzar la igualdad entre los géneros y empoderar a todas las mujeres y niñas."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_5 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_5 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/gender-equality/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_4 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =657
+                Y: =37
+                ZIndex: =16
+
+                img_ods_4 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='4'
+                    Tooltip: ="Garantizar una educación de calidad inclusiva y equitativa, y promover las oportunidades de aprendizaje permanente para todos."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_4 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Garantizar una educación de calidad inclusiva y equitativa, y promover las oportunidades de aprendizaje permanente para todos."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_4 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_4 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/education/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_3 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =491
+                Y: =37
+                ZIndex: =17
+
+                img_ods_3 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='3'
+                    Tooltip: ="Garantizar una vida saludable y promover el bienestar para todos y todas en todas las edades."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_3 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Garantizar una vida saludable y promover el bienestar para todos y todas en todas las edades."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_3 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_3 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/health/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_2 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =325
+                Y: =37
+                ZIndex: =18
+
+                img_ods_2 As image:
+                    BorderStyle: =BorderStyle.None
+                    Image: ='2'
+                    OnSelect: =
+                    Tooltip: ="Poner fin al hambre, conseguir la seguridad alimentaria y una mejor nutrición, y promover la agricultura sostenible."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_2 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Poner fin al hambre, conseguir la seguridad alimentaria y una mejor nutrición, y promover la agricultura sostenible."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_2 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =4
+
+                btn_ods_2 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/hunger/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =37
+                    Y: =100
+                    ZIndex: =5
+
+            cont_ods_1 As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =138
+                X: =155
+                Y: =37
+                ZIndex: =19
+
+                img_ods_1 As image:
+                    BorderStyle: =BorderStyle.None
+                    Height: =101
+                    Image: ='1'
+                    Tooltip: ="Erradicar la pobreza en todas sus formas en todo el mundo."
+                    Transparency: =If(cb_ods_ninguno.Value=false,0,0.3)
+                    X: =38
+                    Y: =5
+                    ZIndex: =1
+
+                cb_ods_1 As checkbox:
+                    BorderStyle: =BorderStyle.None
+                    CheckboxBorderColor: |-
+                        =If(faltan_datos_notif=false,
+                        RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                    CheckboxSize: =30
+                    CheckmarkFill: =RGBA(152, 208, 70, 1)
+                    Color: =RGBA(139, 195, 74, 1)
+                    FocusedBorderColor: =Self.CheckboxBorderColor
+                    Height: =30
+                    OnCheck: |-
+                        =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
+                        Reset(cb_ods_ninguno)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =8
+                    TabIndex: =1
+                    Text: =""
+                    Tooltip: ="Erradicar la pobreza en todas sus formas en todo el mundo."
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =30
+                    ZIndex: =2
+
+                img_info_ods_1 As image:
+                    Height: =18
+                    Image: =informacion
+                    Width: =101
+                    X: =37
+                    Y: =100
+                    ZIndex: =3
+
+                btn_ods_1 As button:
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =18
+                    HoverFill: =Self.Fill
+                    OnSelect: |-
+                        =Launch("https://www.un.org/sustainabledevelopment/es/poverty/",{},LaunchTarget.New)
+                    Text: =""
+                    Width: =100
+                    X: =38
+                    Y: =100
+                    ZIndex: =4
+
+        btn_registro_11_agenda As button:
+            OnSelect: |-
+                =Launch("http://www.chileagenda2030.gob.cl")
+            Text: ="Agenda 2030"
+            X: =585
+            Y: =28
+            ZIndex: =2
+
+        contribución_al_desarrollo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Contribución al desarrollo sustentable"
+            Width: =1366
+            ZIndex: =3
+
+    BannerUdeC_7 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =3
+
+    grp_registro_5_popup_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =10
+
+        fig_registro_5_popup_bg_4 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =popup_confirmacion
+            Width: =1366
+            ZIndex: =4
+
+        img_registro_5_popup_bg_1 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Visible: =popup_confirmacion
+            Width: =709
+            X: =388
+            Y: =268
+            ZIndex: =5
+
+        lbl_registro_popup_5_titulo_1 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Confirmación"
+            Visible: =popup_confirmacion
+            Width: =412
+            X: =420
+            Y: =294
+            ZIndex: =6
+
+        lbl_registro_popup_5_correo_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(17, 61, 107, 1)
+            Height: =117
+            Size: =14
+            Text: ="Su solicitud será ingresada y no podrá ser modificada."
+            Visible: =popup_confirmacion
+            Width: =645
+            X: =420
+            Y: =374
+            ZIndex: =7
+
+        btn_registro_5_popup_enviar As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(cargando,true);
+                
+                /*
+                Set(datos_solicitud_convenio;{
+                    unidad_solicitante: datos_unidad_solicitante_cargados;
+                    detalle_convenio: datos_convenio_cargados;
+                    entidad_contraparte: entidades_contraparte_cargadas;
+                    vinculacion: datos_vinculacion_cargados;
+                    area_contribucion: datos_contribucion_cargados;
+                    ods: datos_ods_cargados
+                });;
+                */
+                Set(ods_cargados,{
+                    ods_seleccionados: datos_ods_cargados
+                });
+                
+                //ClearCollect(a;JSON(datos_solicitud_convenio));;
+                Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(JSON(datos_unidad_solicitante_cargados),
+                                                        JSON(datos_convenio_cargados),
+                                                        JSON(entidades_contraparte_cargadas),
+                                                        JSON(datos_vinculacion_cargados),
+                                                        JSON(datos_contribucion_cargados),
+                                                        JSON(ods_cargados)).id);
+                //JSON(datos_solicitud_convenio)
+                
+                
+                /*
+                
+                Set(
+                    status_saved;
+                    'VRIM-PAGuardarsolicituddeactividad'.Run(
+                        JSON(datos_nueva_solicitud);
+                        adjunto
+                    )
+                );;
+                */
+                
+                Set(popup_confirmacion,false);
+                UpdateContext({popup_done:true});
+                Set(cargando,false);
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,1,-1)
+            Text: ="ENVIAR"
+            Visible: =popup_confirmacion
+            X: =905
+            Y: =548
+            ZIndex: =8
+
+        btn_registro_5_popup_atras_1 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Set(popup_confirmacion, false)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,0,-1)
+            Text: ="CANCELAR"
+            Visible: =popup_confirmacion
+            X: =713
+            Y: =548
+            ZIndex: =9
+
+    cont_loading_3 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =12
+
+        fig_registro_5_bg_3 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =10
+
+        img_loading_3 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =632
+            Y: =323
+            ZIndex: =11
+

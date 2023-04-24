@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "2a02cf25-10c3-4eed-babe-1e87326e43e4",
+    "Name": "VRIM-PATraedatosdeusuario",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "14de6ef5-55e0-ec11-bb3d-000d3a5b4ab0"
+  }
+]

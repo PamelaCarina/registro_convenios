@@ -1,0 +1,778 @@
+Area_contribución As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |-
+        =ClearCollect(contrib_interna_checkboxes,
+            {cb:cb_formacion_pregrado, areas_internas: "Formación de pregrado"},
+            {cb:cb_formacion_postgrado, areas_internas: "Formación de postgrado"},
+            {cb:cb_formacion_permanente, areas_internas: "Formación permanente"},
+            {cb:cb_formacion_investigacion, areas_internas:"Investigación y creación artística"}
+        );
+        ClearCollect(contrib_externa_checkboxes,
+            {cb:cb_desarrollo_ambiental, areas_externas:"Desarrollo ambiental y recursos naturales"},
+            {cb:cb_desarrollo_productivo, areas_externas:"Desarrollo productivo y comercial"},
+            {cb:cb_desarrollo_social, areas_externas:"Desarrollo social y comunitario"},
+            {cb:cb_educacion, areas_externas:"Educación"},
+            {cb:cb_inclusion, areas_externas:"Inclusión, equidad de género y diversidad"},
+            {cb:cb_salud, areas_externas:"Salud"},
+            {cb:cb_sector_publico, areas_externas:"Sector público"},
+            {cb:cb_patrimonio, areas_externas:"Patrimonio"},
+            {cb:cb_desarrollo_cultural, areas_externas:"Desarrollo cultural"},
+            {cb:cb_interculturalidad, areas_externas:"Interculturalidad"}
+        );
+        
+        UpdateContext({faltan_datos_notif:false, num_campos_faltantes: 0,
+            faltan_datos_text:""});
+        ClearCollect(datosArea_contribucion,
+            {dato:"contrib_interna",falta:false, text:"Área de contribución interna"},
+            {dato:"contrib_externa",falta:false, text:"Área de contribución externa"}
+        );
+
+    Botones_atras_siguiente_6 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_6 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                    If(CountRows(Filter(contrib_externa_checkboxes,cb.Value=true))=0, 
+                        {falta:true},
+                        {falta:false}
+                    )
+                );
+                Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
+                    If(CountRows(Filter(contrib_interna_checkboxes,cb.Value=true))=0, 
+                        {falta:true},
+                        {falta:false}
+                    )
+                );
+                
+                If(CountRows(Filter(datosArea_contribucion,falta = true))=0,
+                    UpdateContext({faltan_datos_notif:false});
+                    Set(areas_internas,Filter(contrib_interna_checkboxes,cb.Value=true).areas_internas);
+                    Set(areas_externas,Filter(contrib_externa_checkboxes,cb.Value=true).areas_externas);
+                
+                
+                    //GUARDAR SELECCIONES CONTRIBUCION INTERNA
+                    ClearCollect(datos_contribucion_interna,{});
+                    Clear(datos_contribucion_interna);
+                
+                    If(cb_formacion_pregrado.Value=true,Collect(datos_contribucion_interna,
+                    lbl_registro_9_formacion_pregrado.Text));
+                    If(cb_formacion_postgrado.Value=true,Collect(datos_contribucion_interna,
+                    lbl_registro_9_formacion_postgrado.Text));
+                    If(cb_formacion_investigacion.Value=true,Collect(datos_contribucion_interna,
+                    lbl_registro_9_investigacion.Text));
+                    If(cb_formacion_permanente.Value=true,Collect(datos_contribucion_interna,
+                    lbl_registro_9_formacion_permanente.Text));
+                
+                    //GUARDAR SELECCIONES CONTRIBUCION EXTERNA
+                    ClearCollect(datos_contribucion_externa,{});
+                    Clear(datos_contribucion_externa);
+                
+                    If(cb_desarrollo_ambiental.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_desarrollo_ambiental.Text));
+                    If(cb_desarrollo_productivo.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_desarrollo_productivo.Text));
+                    If(cb_desarrollo_social.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_desarrollo_social.Text));
+                    If(cb_educacion.Value=true,Collect(datos_contribucion_externa,
+                    lbl_educacion.Text));
+                    If(cb_inclusion.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_inclusion.Text));
+                    If(cb_salud.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_salud.Text));
+                    If(cb_sector_publico.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_sector_publico.Text));
+                    If(cb_patrimonio.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_patrimonio.Text));
+                    If(cb_desarrollo_cultural.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_desarrollo_cultural.Text));
+                    If(cb_interculturalidad.Value=true,Collect(datos_contribucion_externa,
+                    lbl_registro_9_interculturalidad.Text));
+                
+                    Set(datos_contribucion_cargados,{
+                        interna: datos_contribucion_interna,
+                        externa: datos_contribucion_externa 
+                    });
+                
+                    Navigate(Contribución_desarrollo, ScreenTransition.Fade);
+                    , 
+                    UpdateContext({num_campos_faltantes:CountRows(Filter(datosArea_contribucion,falta=true)),faltan_datos_text:"Ingresar: "&Concat(Filter(datosArea_contribucion,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Atrás_6 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Información_convenio,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            X: =2
+            Y: =2
+            ZIndex: =2
+
+    Area_de_contribución As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =2
+
+        Contenedor_a_d_c As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =1
+
+            fondo_blanco_10 As image:
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            a_d_c_e As groupContainer.manualLayoutContainer:
+                Height: =248
+                Width: =1198
+                X: =40
+                Y: =152
+                ZIndex: =2
+
+                Contenedor_casilla_13 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    X: =634
+                    Y: =152
+                    ZIndex: =1
+
+                    lbl_registro_9_interculturalidad As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Interculturalidad"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_interculturalidad As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_12 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    X: =634
+                    Y: =122
+                    ZIndex: =2
+
+                    lbl_registro_9_desarrollo_cultural As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Desarrollo cultural"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_desarrollo_cultural As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_11 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    X: =634
+                    Y: =92
+                    ZIndex: =3
+
+                    lbl_registro_9_patrimonio As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Patrimonio"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_patrimonio As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_10 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    X: =634
+                    Y: =62
+                    ZIndex: =4
+
+                    lbl_registro_9_sector_publico As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Desarrollo e implementación de políticas públicas"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_sector_publico As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_9 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =212
+                    ZIndex: =5
+
+                    lbl_registro_9_salud As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Salud y bienestar"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_salud As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_8 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =182
+                    ZIndex: =6
+
+                    lbl_registro_9_inclusion As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Inclusión, equidad de género, diversidad y disidencias sexuales"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_inclusion As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_7 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =152
+                    ZIndex: =7
+
+                    lbl_educacion As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Educación"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_educacion As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_6 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =122
+                    ZIndex: =8
+
+                    lbl_registro_9_desarrollo_social As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Desarrollo socio-territorial y comunitario"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_desarrollo_social As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_5 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =92
+                    ZIndex: =9
+
+                    lbl_registro_9_desarrollo_productivo As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Desarrollo productivo, económico y tecnológico"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_desarrollo_productivo As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_4 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =62
+                    ZIndex: =10
+
+                    lbl_registro_9_desarrollo_ambiental As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Conservación del medioambiente y su biodiversidad"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_desarrollo_ambiental As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                area_contribución_externa As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =24
+                    Size: =16
+                    Text: ="Área de contribución externa"
+                    Width: =626
+                    ZIndex: =11
+
+            a_d_c_i As groupContainer.manualLayoutContainer:
+                Height: =152
+                Width: =1198
+                X: =42
+                ZIndex: =3
+
+                area_contribución_interna As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =24
+                    Size: =16
+                    Text: ="Área de contribución interna"
+                    Width: =626
+                    ZIndex: =1
+
+                Contenedor_casilla_3 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    X: =634
+                    Y: =62
+                    ZIndex: =2
+
+                    lbl_registro_9_formacion_permanente As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Formación permanente"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_formacion_permanente As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_2 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =122
+                    ZIndex: =3
+
+                    lbl_registro_9_investigacion As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Investigación y creación artística"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_formacion_investigacion As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla_1 As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =92
+                    ZIndex: =4
+
+                    lbl_registro_9_formacion_postgrado As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Formación de postgrado"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_formacion_postgrado As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+                Contenedor_casilla As groupContainer.manualLayoutContainer:
+                    Height: =30
+                    Width: =564
+                    Y: =62
+                    ZIndex: =5
+
+                    lbl_registro_9_formacion_pregrado As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =30
+                        Text: ="Formación de pregrado"
+                        Width: =530
+                        X: =30
+                        ZIndex: =1
+
+                    cb_formacion_pregrado As checkbox:
+                        BorderStyle: =BorderStyle.None
+                        CheckboxBorderColor: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=false,
+                            RGBA(152, 208, 70, 1),RGBA(238,110,126,1))
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(152, 208, 70, 1)
+                        Color: =RGBA(139, 195, 74, 1)
+                        Default: =
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        Height: =30
+                        OnCheck: |-
+                            =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
+                            Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
+                            	{falta:false}
+                            ))
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =8
+                        TabIndex: =
+                        Text: =""
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =30
+                        ZIndex: =2
+
+        area_de_contribución As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Área de Contribución de acuerdo a la política de Vinculación con el medio"
+            Width: =1366
+            ZIndex: =3
+
+    BannerUdeC_6 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =3
+

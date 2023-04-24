@@ -1,0 +1,1260 @@
+Datos_convenio As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |-
+        =UpdateContext({sin_alcance_territorial:false});
+        UpdateContext({sin_tipologia:false});
+        UpdateContext({sin_solicitud:false});
+        UpdateContext({sin_modalidad:false});
+        UpdateContext({sin_proposito_central:false});
+        UpdateContext({sin_documento_oficial:false});
+        UpdateContext({sin_documentacion_extra:false});
+
+    Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_1 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |+
+                =//ESPECIFICACIONES
+                If(tipo_alcance.Selected.valor ="Seleccionar...", UpdateContext({sin_alcance_territorial:true}), UpdateContext({sin_alcance_territorial:false}));
+                If(tipo_tipologia.Selected.valor ="Seleccionar...", UpdateContext({sin_tipologia:true}), UpdateContext({sin_tipologia:false}));
+                If(tipo_solicitud.Selected.valor ="Seleccionar...", UpdateContext({sin_solicitud:true}), UpdateContext({sin_solicitud:false}));
+                If(tipo_modalidades.Selected.valor ="Seleccionar...", UpdateContext({sin_modalidad:true}), UpdateContext({sin_modalidad:false}));
+                
+                //SIN PROPOSITO CENTRAL
+                If(IsBlank(descripcion_proposito_1.Text), UpdateContext({sin_proposito_central:true}), UpdateContext({sin_proposito_central:false}));
+                
+                //CONDICION DE APROBACION
+                If(!sin_alcance_territorial && !sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central,
+                
+                    //CREA COLECCIÓN QUE ALMACENA LOS DOCUMENTOS CARGADOS
+                    ClearCollect(documentos_cargados,{});
+                    Clear(documentos_cargados);
+                
+                    //ARCHIVO OFICIAL
+                    Set(nombre_documento,ForAll(Split(First(Contenido_oficial).Name,"."), {Result: ThisRecord.Value}));
+                    Set(extension_oficial,Last(nombre_documento).Result);
+                    Collect(documentos_cargados,{
+                        tipo: "oficial",
+                        nombre: Concatenate("documento_oficial.",extension_oficial),
+                        contenido: First(Contenido_oficial).Value
+                    });
+                
+                    //AL MENOS 1 ARCHIVO EXTRA
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 1 ,
+                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,1).Name,"."), {Result: ThisRecord.Value}));
+                        Set(extension_extra1,Last(nombre_documento).Result);
+                        Collect(documentos_cargados,{
+                            tipo: "extra1",
+                            nombre: Concatenate("documento_extra1.",extension_extra1),
+                            contenido: Index(Contenido_extra,1).Value
+                        });
+                    );
+                
+                    //AL MENOS 2 ARCHIVOS EXTRA
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 2 ,
+                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,2).Name,"."), {Result: ThisRecord.Value}));
+                        Set(extension_extra2,Last(nombre_documento).Result);
+                        Collect(documentos_cargados,{
+                            tipo: "extra2",
+                            nombre: Concatenate("documento_extra2.",extension_extra2),
+                            contenido: Index(Contenido_extra,2).Value
+                        });
+                    );
+                
+                    //AL MENOS 3 ARCHIVOS EXTRA
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 3 ,
+                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,3).Name,"."), {Result: ThisRecord.Value}));
+                        Set(extension_extra3,Last(nombre_documento).Result);
+                        Collect(documentos_cargados,{
+                            tipo: "extra3",
+                            nombre: Concatenate("documento_extra3.",extension_extra3),
+                            contenido: Index(Contenido_extra,3).Value
+                        });
+                    );
+                
+                    //AL MENOS 4 ARCHIVOS EXTRA
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 4 ,
+                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,4).Name,"."), {Result: ThisRecord.Value}));
+                        Set(extension_extra4,Last(nombre_documento).Result);
+                        Collect(documentos_cargados,{
+                            tipo: "extra4",
+                            nombre: Concatenate("documento_extra4.",extension_extra3),
+                            contenido: Index(Contenido_extra,4).Value
+                        });
+                    );
+                
+                    //AL MENOS 5 ARCHIVOS EXTRA
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 5 ,
+                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,5).Name,"."), {Result: ThisRecord.Value}));
+                        Set(extension_extra5,Last(nombre_documento).Result);
+                        Collect(documentos_cargados,{
+                            tipo: "extra5",
+                            nombre: Concatenate("documento_extra5.",extension_extra3),
+                            contenido: Index(Contenido_extra,5).Value
+                        });
+                    );
+                
+                    //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
+                    Set(datos_convenio_cargados,{
+                        alcance: tipo_alcance.Selected.valor,
+                        tipologia: tipo_tipologia.Selected.valor,
+                        tipo: tipo_solicitud.Selected.valor,
+                        modalidad: tipo_modalidades.Selected.valor,
+                        proposito: descripcion_proposito_1.Text,
+                        documentacion: documentos_cargados
+                    });
+                
+                    Navigate(Entidad_contraparte,ScreenTransition.Fade));
+                
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Atrás_1 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Unidad_solicitante,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            X: =2
+            Y: =2
+            ZIndex: =2
+
+    Contenedor_datos_convenio As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =3
+
+        Contenedor_d_c_s As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =2
+
+            fondo_blanco_1 As image:
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            Documentacion As groupContainer.manualLayoutContainer:
+                Height: =220
+                Width: =575
+                X: =666
+                Y: =256
+                ZIndex: =2
+
+                Adjuntar_documento_oficial As groupContainer.manualLayoutContainer:
+                    Height: =140
+                    Width: =280
+                    X: =4
+                    Y: =62
+                    ZIndex: =1
+
+                    sin_documento_oficial As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_registro_1.Height+1
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Width: =fondo_registro_1.Width+1
+                        X: =fondo_registro_1.X
+                        Y: =fondo_registro_1.Y
+                        ZIndex: =1
+
+                    fondo_registro_1 As image:
+                        Height: =111
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =274
+                        X: =2
+                        Y: =18
+                        ZIndex: =2
+
+                    img_subir_1 As image:
+                        Height: =74
+                        Image: |
+                            =If(existe_adjunto,attach,upload)
+                        Width: =68
+                        X: =12
+                        Y: =40
+                        ZIndex: =3
+
+                    btn_adjuntar_1 As button:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =74
+                        HoverFill: =RGBA(255,255,255,0)
+                        OnSelect: |-
+                            =UpdateContext({show_popup_oficial: true})
+                        PressedFill: =RGBA(255,255,255,0)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        TabIndex: =1
+                        Text: =""
+                        Width: =68
+                        X: =12
+                        Y: =40
+                        ZIndex: =4
+
+                    adjuntar_documento_label_1 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="DOCUMENTO OFICIAL"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =331
+                        ZIndex: =5
+
+                    "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                        Height: =82
+                        Items: =att_registro_10_attach_oficial.Attachments
+                        Layout: =Layout.Vertical
+                        TemplatePadding: =0
+                        TemplateSize: =Min(160, Self.Height - 60)
+                        Width: =173
+                        X: =92
+                        Y: =36
+                        ZIndex: =6
+
+                        Title1_1 As label:
+                            Color: =RGBA(17, 61, 107, 1)
+                            FontWeight: =FontWeight.Bold
+                            Height: =82
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =14
+                            Text: =Upper(ThisItem.Name)
+                            Width: =173
+                            Wrap: =false
+                            ZIndex: =2
+
+                documentacion As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =24
+                    Size: =16
+                    Text: ="Adjuntar documentación"
+                    Width: =389
+                    ZIndex: =2
+
+                Adjuntar_documento_extra As groupContainer.manualLayoutContainer:
+                    Height: =140
+                    Width: =280
+                    X: =299
+                    Y: =62
+                    ZIndex: =3
+
+                    sin_documento_extra As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_registro_2.Height+1
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Width: =fondo_registro_2.Width+1
+                        X: =fondo_registro_2.X
+                        Y: =fondo_registro_2.Y
+                        ZIndex: =1
+
+                    fondo_registro_2 As image:
+                        Height: =111
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =272
+                        X: =2
+                        Y: =18
+                        ZIndex: =2
+
+                    img_subir_2 As image:
+                        Height: =74
+                        Image: |
+                            =If(existe_adjunto_extra,attach,upload)
+                        Width: =68
+                        X: =12
+                        Y: =40
+                        ZIndex: =3
+
+                    btn_adjuntar_2 As button:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =74
+                        HoverFill: =RGBA(255,255,255,0)
+                        OnSelect: |-
+                            =UpdateContext({show_popup_extra: true})
+                        PressedFill: =RGBA(255,255,255,0)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        TabIndex: =1
+                        Text: =""
+                        Width: =68
+                        X: =12
+                        Y: =40
+                        ZIndex: =4
+
+                    adjuntar_documento_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="DOCUMENTOS ADICIONALES"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =276
+                        ZIndex: =5
+
+                    "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                        Height: =82
+                        Items: =att_registro_10_attach_extra.Attachments
+                        Layout: =Layout.Vertical
+                        TemplatePadding: =0
+                        TemplateSize: =25
+                        Width: =173
+                        WrapCount: =0
+                        X: =92
+                        Y: =36
+                        ZIndex: =6
+
+                        Title1_2 As label:
+                            Color: =RGBA(17, 61, 107, 1)
+                            FontWeight: =FontWeight.Bold
+                            Height: =25
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =14
+                            Text: =Upper(ThisItem.Name)
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =173
+                            Wrap: =false
+                            ZIndex: =2
+
+            Propósito As groupContainer.manualLayoutContainer:
+                Height: =260
+                Width: =584
+                X: =666
+                ZIndex: =3
+
+                sin_proposito_central As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =descripcion_proposito_1.Height+2
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    TabIndex: =-1
+                    Visible: =sin_proposito_central
+                    Width: =576
+                    X: =descripcion_proposito_1.X
+                    Y: |
+                        =descripcion_proposito_1.Y-1
+                    ZIndex: =1
+
+                descripcion_proposito_1 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =""
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    DisplayMode: =
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    Height: =194
+                    HintText: ="Describa el propósito central de su convenio..."
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =1000
+                    Mode: =TextMode.MultiLine
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Width: =572
+                    X: =5
+                    Y: =62
+                    ZIndex: =2
+
+                propósito_central As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =24
+                    Size: =16
+                    Text: ="Propósito central"
+                    Width: =500
+                    X: =2
+                    ZIndex: =3
+
+            Especificaciones_convenio As groupContainer.manualLayoutContainer:
+                Height: =375
+                Width: =590
+                X: =42
+                ZIndex: =4
+
+                Contenedor_m_c As groupContainer.manualLayoutContainer:
+                    Height: =64
+                    Width: =590
+                    Y: =314
+                    ZIndex: =1
+
+                    modalidades As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="MODALIDAD"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =584
+                        ZIndex: =1
+
+                    Contenedor_seleccionable As groupContainer.manualLayoutContainer:
+                        Height: =49
+                        Width: =584
+                        Y: =20
+                        ZIndex: =2
+
+                        fondo_celeste As image:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            Height: =40
+                            HoverFill: =RGBA(186, 202, 226, 1)
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =584
+                            ZIndex: =1
+
+                        sin_modalidad As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: |
+                                =sin_modalidad
+                            Width: =584
+                            Y: =1
+                            ZIndex: =2
+
+                        tipo_modalidades As dropdown:
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(241, 244, 255, 1)
+                            ChevronFill: =RGBA(111, 139, 167, 1)
+                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                            Color: =RGBA(17, 61, 107, 1)
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            Height: =38
+                            HoverBorderColor: =RGBA(241,244,255,1)
+                            HoverColor: =RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(207, 210, 232, 1)
+                            Items: =lista_modalidad
+                            OnChange: =
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingTop: =12
+                            PressedColor: =RGBA(17, 61, 107, 1)
+                            PressedFill: =RGBA(241, 244, 255, 1)
+                            SelectionColor: =RGBA(111, 139, 167, 1)
+                            SelectionFill: =RGBA(241, 244, 255, 1)
+                            Size: =14
+                            TabIndex: =
+                            Width: =fondo_celeste.Width-24
+                            X: =fondo_celeste.X+12
+                            Y: =fondo_celeste.Y+2
+                            ZIndex: =3
+
+                        tapar_tipo_modalidades As rectangle:
+                            BorderStyle: =BorderStyle.None
+                            Fill: =RGBA(244, 244, 244, 1)
+                            Height: =40
+                            Visible: =false
+                            Width: =40
+                            X: =tipo_modalidades.X+tipo_modalidades.Width-Self.Width+1
+                            Y: =fondo_celeste.Y
+                            ZIndex: =4
+
+                Contenedor_t_s As groupContainer.manualLayoutContainer:
+                    Height: =64
+                    Width: =590
+                    Y: =230
+                    ZIndex: =2
+
+                    Contenedor_seleccionable_tipo_solicitud As groupContainer.manualLayoutContainer:
+                        Height: =49
+                        Width: =584
+                        Y: =20
+                        ZIndex: =2
+
+                        fondo_celeste_3 As image:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            Height: =40
+                            HoverFill: =RGBA(186, 202, 226, 1)
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =584
+                            ZIndex: =1
+
+                        sin_solicitud As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: |
+                                =sin_solicitud
+                            Width: =584
+                            Y: =1
+                            ZIndex: =2
+
+                        tipo_solicitud As dropdown:
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(241, 244, 255, 1)
+                            ChevronFill: =RGBA(111, 139, 167, 1)
+                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                            Color: =RGBA(17, 61, 107, 1)
+                            Default: ="0"
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            Height: =38
+                            HoverBorderColor: =RGBA(241,244,255,1)
+                            HoverColor: =RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(207, 210, 232, 1)
+                            Items: =lista_tipo_solicitud
+                            OnChange: =
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingTop: =12
+                            PressedColor: =RGBA(17, 61, 107, 1)
+                            PressedFill: =RGBA(241, 244, 255, 1)
+                            SelectionColor: =RGBA(111, 139, 167, 1)
+                            SelectionFill: =RGBA(241, 244, 255, 1)
+                            Size: =14
+                            TabIndex: =
+                            Width: =fondo_celeste_3.Width-24
+                            X: =fondo_celeste_3.X+12
+                            Y: =fondo_celeste_3.Y+2
+                            ZIndex: =3
+
+                        tapar_tipo_solicitud As rectangle:
+                            BorderStyle: =BorderStyle.None
+                            Fill: =RGBA(244, 244, 244, 1)
+                            Height: =40
+                            Visible: =false
+                            Width: =40
+                            X: =533
+                            Y: =fondo_celeste_3.Y
+                            ZIndex: =4
+
+                    solicitud As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="TIPO SOLICITUD"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =584
+                        ZIndex: =3
+
+                Contenedor_t_c As groupContainer.manualLayoutContainer:
+                    Height: =64
+                    Width: =590
+                    Y: =146
+                    ZIndex: =3
+
+                    Contenedor_seleccionable_tipología As groupContainer.manualLayoutContainer:
+                        Height: =49
+                        Width: =584
+                        Y: =20
+                        ZIndex: =2
+
+                        fondo_celeste_1 As image:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            Height: =40
+                            HoverFill: =RGBA(186, 202, 226, 1)
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =584
+                            ZIndex: =1
+
+                        sin_tipologia As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: |+
+                                =sin_tipologia
+                                
+                            Width: =584
+                            Y: =1
+                            ZIndex: =2
+
+                        tipo_tipologia As dropdown:
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(241, 244, 255, 1)
+                            ChevronFill: =RGBA(111, 139, 167, 1)
+                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                            Color: =RGBA(17, 61, 107, 1)
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            Height: =38
+                            HoverBorderColor: =RGBA(241,244,255,1)
+                            HoverColor: =RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(207, 210, 232, 1)
+                            Items: =lista_tipologia
+                            OnChange: =
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingTop: =12
+                            PressedColor: =RGBA(17, 61, 107, 1)
+                            PressedFill: =RGBA(241, 244, 255, 1)
+                            SelectionColor: =RGBA(111, 139, 167, 1)
+                            SelectionFill: =RGBA(241, 244, 255, 1)
+                            Size: =14
+                            TabIndex: =
+                            Width: =fondo_celeste_1.Width-24
+                            X: =fondo_celeste_1.X+12
+                            Y: =fondo_celeste_1.Y+2
+                            ZIndex: =3
+
+                        tapar_tipo_tipologia As rectangle:
+                            BorderStyle: =BorderStyle.None
+                            Fill: =RGBA(244, 244, 244, 1)
+                            Height: =40
+                            Visible: =false
+                            Width: =40
+                            X: =tipo_tipologia.X+tipo_tipologia.Width-Self.Width+1
+                            Y: =fondo_celeste_1.Y
+                            ZIndex: =4
+
+                    tipologia As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="TIPOLOGÍA"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =584
+                        ZIndex: =3
+
+                Contenedor_a_t As groupContainer.manualLayoutContainer:
+                    Height: =64
+                    Width: =590
+                    X: =1
+                    Y: =62
+                    ZIndex: =4
+
+                    Contenedor_seleccionable_1 As groupContainer.manualLayoutContainer:
+                        Height: =49
+                        Width: =584
+                        Y: =20
+                        ZIndex: =1
+
+                        fondo_celeste_2 As image:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            Height: =40
+                            HoverFill: =RGBA(186, 202, 226, 1)
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =584
+                            ZIndex: =1
+
+                        sin_alcance_territorial As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: |
+                                =sin_alcance_territorial
+                            Width: =584
+                            Y: =fondo_celeste_8.Y+1
+                            ZIndex: =2
+
+                        tipo_alcance As dropdown:
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(241, 244, 255, 1)
+                            ChevronFill: =RGBA(111, 139, 167, 1)
+                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                            Color: =RGBA(17, 61, 107, 1)
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            Height: =38
+                            HoverBorderColor: =RGBA(241,244,255,1)
+                            HoverColor: =RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(207, 210, 232, 1)
+                            Items: =lista_alcance
+                            OnChange: =
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingTop: =12
+                            PressedColor: =RGBA(17, 61, 107, 1)
+                            PressedFill: =RGBA(241, 244, 255, 1)
+                            SelectionColor: =RGBA(111, 139, 167, 1)
+                            SelectionFill: =RGBA(241, 244, 255, 1)
+                            Size: =14
+                            TabIndex: =
+                            Width: =fondo_celeste_2.Width-24
+                            X: =fondo_celeste_2.X+12
+                            Y: =fondo_celeste_2.Y+2
+                            ZIndex: =3
+
+                        tapar_tipo_alcance As rectangle:
+                            BorderStyle: =BorderStyle.None
+                            Fill: =RGBA(244, 244, 244, 1)
+                            Height: =40
+                            Visible: =false
+                            Width: =40
+                            X: =tipo_alcance.X+tipo_alcance.Width-Self.Width+1
+                            Y: =fondo_celeste_2.Y
+                            ZIndex: =4
+
+                    alcance_territorial As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="ALCANCE TERRITORIAL"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =584
+                        ZIndex: =2
+
+                alcance_territorial_convenio_solicitado As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =24
+                    Size: =16
+                    Text: ="Especificaciones"
+                    Width: =626
+                    ZIndex: =5
+
+        datos_convenio_solicitado As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Datos del convenio solicitado"
+            Width: =1366
+            ZIndex: =3
+
+    Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
+        Height: =Datos_convenio.Height
+        Visible: =show_popup_oficial
+        Width: =Datos_convenio.Width
+        ZIndex: =4
+
+        fig_registro_10_popup_bg As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        img_registro_10_popup_bg As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_registro_10_popup_titulo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            PaddingLeft: =0
+            Size: =18
+            Text: ="Adjuntar documento oficial"
+            Width: =400
+            X: =360
+            Y: =238
+            ZIndex: =3
+
+        btn_registro_10_popup_guardar As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =If(CountRows(att_registro_10_attach_oficial.Attachments) > 0,  
+                    Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
+                    Set(test_attachment,First(att_registro_10_attach_oficial.Attachments).Value);
+                    If(attachment_extension="exe",
+                        Set(existe_adjunto, false);
+                        UpdateContext({archivo_invalido:true})
+                        ,
+                        Set(existe_adjunto, true);
+                        UpdateContext({archivo_invalido:false});
+                
+                        //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
+                        Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
+                
+                        UpdateContext({show_popup_oficial: false});
+                    ), 
+                    Set(existe_adjunto, false);
+                    UpdateContext({archivo_invalido:false});
+                    UpdateContext({show_popup_oficial: false})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(show_popup_oficial,1,-1)
+            Text: ="ACEPTAR"
+            X: =845
+            Y: =490
+            ZIndex: =4
+
+        btn_registro_10_popup_cancelar As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({show_popup_oficial: false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(show_popup_oficial,0,-1)
+            Text: ="CANCELAR"
+            X: =655
+            Y: =490
+            ZIndex: =5
+
+        img_registro_10_popup As image:
+            Height: =94
+            Image: ='background-input'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =645
+            X: =360
+            Y: =326
+            ZIndex: =6
+
+        att_registro_10_attach_oficial As attachments:
+            AddAttachmentText: ="Adjuntar archivo"
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(111, 139, 167, 1)
+            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            DropTargetTextColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(255, 255, 255, 0)
+            Height: =94
+            HoverColor: =RGBA(111, 139, 167, 1)
+            IsInDataCard: =true
+            Items: =
+            MaxAttachments: =1
+            MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
+            NoAttachmentsText: ="No hay ningún archivo adjunto."
+            OnRemoveFile: |-
+                =UpdateContext({archivo_invalido:false})
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedFill: =RGBA(111, 139, 167, 1)
+            Size: =10
+            TabIndex: =If(show_popup_oficial,1,-1)
+            Tooltip: =
+            Width: =645
+            X: =360
+            Y: =326
+            ZIndex: =7
+
+        lbl_registro_10_faltandatos_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =72
+            Text: ="Tipo de archivo no permitido"
+            Visible: =archivo_invalido
+            Width: =img_registro_10_popup_bg.Width
+            X: =img_registro_10_popup_bg.X
+            Y: =btn_registro_10_popup_cancelar.Y-Self.Height
+            ZIndex: =8
+
+    BannerUdeC_1 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =5
+
+    Adjuntar_popup_extra As groupContainer.manualLayoutContainer:
+        Height: =Datos_convenio.Height
+        Visible: =show_popup_extra
+        Width: =Datos_convenio.Width
+        ZIndex: =6
+
+        fig_registro_10_popup_bg_1 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        img_registro_10_popup_bg_1 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_registro_10_popup_titulo_1 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            PaddingLeft: =0
+            Size: =18
+            Text: ="Adjuntar documentación adicional"
+            Width: =434
+            X: =360
+            Y: =238
+            ZIndex: =3
+
+        btn_registro_10_popup_guardar_1 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =If(CountRows(att_registro_10_attach_extra.Attachments) > 0,  
+                    Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_extra.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
+                    Set(test_attachment,First(att_registro_10_attach_extra.Attachments).Value);
+                    If(attachment_extension="exe",
+                        Set(existe_adjunto_extra, false);
+                        UpdateContext({archivo_invalido_extra:true})
+                        ,
+                        Set(existe_adjunto_extra, true);
+                        UpdateContext({archivo_invalido_extra:false});
+                
+                        //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
+                        Set(Contenido_extra,att_registro_10_attach_extra.Attachments);
+                
+                        UpdateContext({show_popup_extra: false});
+                    ), 
+                    Set(existe_adjunto_extra, false);
+                    UpdateContext({archivo_invalido_extra:false});
+                    UpdateContext({show_popup_extra: false})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(show_popup_oficial,1,-1)
+            Text: ="ACEPTAR"
+            X: =845
+            Y: =490
+            ZIndex: =4
+
+        btn_registro_10_popup_cancelar_1 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({show_popup_extra: false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(show_popup_oficial,0,-1)
+            Text: ="CANCELAR"
+            X: =655
+            Y: =490
+            ZIndex: =5
+
+        img_registro_10_popup_1 As image:
+            Height: =94
+            Image: ='background-input'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =645
+            X: =360
+            Y: =326
+            ZIndex: =6
+
+        att_registro_10_attach_extra As attachments:
+            AddAttachmentText: ="Adjuntar archivo"
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(111, 139, 167, 1)
+            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            DropTargetTextColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(255, 255, 255, 0)
+            Height: =94
+            HoverColor: =RGBA(111, 139, 167, 1)
+            IsInDataCard: =true
+            Items: =
+            MaxAttachments: =5
+            MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
+            NoAttachmentsText: ="No hay ningún archivo adjunto."
+            OnRemoveFile: |-
+                =UpdateContext({archivo_invalido:false})
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedFill: =RGBA(111, 139, 167, 1)
+            Size: =10
+            TabIndex: =If(show_popup_oficial,1,-1)
+            Tooltip: =
+            Width: =645
+            X: =360
+            Y: =326
+            ZIndex: =7
+
+        lbl_registro_10_faltandatos_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =72
+            Text: ="Tipo de archivo no permitido"
+            Visible: =archivo_invalido_extra
+            Width: =img_registro_10_popup_bg_1.Width
+            X: =img_registro_10_popup_bg_1.X
+            Y: =btn_registro_10_popup_cancelar_1.Y-Self.Height
+            ZIndex: =8
+
+    lbl_faltan_datos_1 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(sin_alcance_territorial || sin_tipologia || sin_solicitud || sin_modalidad, true)
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =7
+

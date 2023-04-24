@@ -1,0 +1,1562 @@
+Unidad_solicitante As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |
+        =UpdateContext({sin_unidad:false});
+        UpdateContext({sin_promotor:false});
+        UpdateContext({sin_cargo_promotor:false});
+        UpdateContext({sin_correo_promotor:false});
+        UpdateContext({sin_telefono_promotor:false});
+        UpdateContext({sin_responsable:false});
+        UpdateContext({sin_cargo_responsable:false});
+        UpdateContext({sin_correo_responsable:false});
+        UpdateContext({sin_telefono_responsable:false});
+
+    Botones_atras_siguiente As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =//SIN NOMBRE UNIDAD SOLICITANTE
+                If(nombre_unidad_solicitante.Selected.Reparticion="Seleccionar...", UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}));
+                
+                //SIN PROMOTOR
+                If(IsBlank(nombre_promotor_input_2.Text), UpdateContext({sin_promotor:true}), UpdateContext({sin_promotor:false}));
+                If(IsBlank(cargo_promotor_input_2.Text), UpdateContext({sin_cargo_promotor:true}), UpdateContext({sin_cargo_promotor:false}));
+                If(IsBlank(correo_promotor_input_2.Text), UpdateContext({sin_correo_promotor:true}), UpdateContext({sin_correo_promotor:false}));
+                If(IsBlank(telefono_promotor_input_2.Text), UpdateContext({sin_telefono_promotor:true}), UpdateContext({sin_telefono_promotor:false}));
+                
+                //SIN RESPONSABLE
+                If(IsBlank(nombre_responsable_input_2.Text), UpdateContext({sin_responsable:true}), UpdateContext({sin_responsable:false}));
+                If(IsBlank(cargo_responsable_input_2.Text), UpdateContext({sin_cargo_responsable:true}), UpdateContext({sin_cargo_responsable:false}));
+                If(IsBlank(correo_responsable_input_2.Text), UpdateContext({sin_correo_responsable:true}), UpdateContext({sin_correo_responsable:false}));
+                If(IsBlank(telefono_responsable_input_2.Text), UpdateContext({sin_telefono_responsable:true}), UpdateContext({sin_telefono_responsable:false}));
+                
+                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_telefono_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_telefono_responsable, 
+                
+                    //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
+                    Set(datos_unidad_solicitante_cargados,{
+                        correo_solicitante: persona_solicitante.correo_udec,
+                        unidad: nombre_unidad_solicitante.Selected.Reparticion,
+                        autoridad: {
+                            nombre: nombre_autoridad_solicitante_input_2.Text,
+                            cargo: cargo_autoridad_input_2.Text,
+                            correo: correo_autoridad_input_2.Text,
+                            telefono: telefono_autoridad_input_2.Text
+                        },
+                        promotor: {
+                            nombre: nombre_promotor_input_2.Text,
+                            cargo: cargo_promotor_input_2.Text,
+                            correo:correo_promotor_input_2.Text,
+                            telefono:telefono_promotor_input_2.Text
+                        },
+                        responsable: {
+                            nombre: nombre_responsable_input_2.Text,
+                            cargo: cargo_responsable_input_2.Text,
+                            correo: correo_responsable_input_2.Text,
+                            telefono: telefono_responsable_input_2.Text
+                        }
+                        
+                    });
+                
+                
+                    Navigate(Datos_convenio,ScreenTransition.Fade));
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Atrás As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            Visible: =false
+            X: =2
+            Y: =2
+            ZIndex: =2
+
+    Datos_unidad_solicitante As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =2
+
+        Contenedor_d_u_s_op3 As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =1
+
+            fondo_blanco_11 As image:
+                AutoDisableOnSelect: =false
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            Responsable_institucional_2 As groupContainer.manualLayoutContainer:
+                Height: =312
+                Width: =337.3
+                X: =904
+                Y: =152
+                ZIndex: =2
+
+                Telefono_responsable_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =252
+                    ZIndex: =1
+
+                    telefono_responsable_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =responsable.telefono
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Format: =TextFormat.Number
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    telefono_responsable_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="TELÉFONO CONTACTO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_telefono_responsable As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_telefono_responsable
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+                Correo_responsable_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =168
+                    ZIndex: =3
+
+                    correo_responsable_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =responsable.correo
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    correo_responsable_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CORREO ELECTRÓNICO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_correo_responsable As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_correo_responsable
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+                Cargo_responsable_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =84
+                    ZIndex: =4
+
+                    cargo_responsable_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =responsable.cargo
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    cargo_responsable_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CARGO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_cargo_responsable As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_cargo_responsable
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+                Nombre_responsable_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    ZIndex: =5
+
+                    nombre_responsable_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =responsable.nombre
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    nombre_responsable_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="NOMBRE"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_nombre_responsable As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_responsable
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+            separador_1 As rectangle:
+                BorderColor: =RGBA(112, 139, 166, 1)
+                Fill: =RGBA(112, 139, 166, 1)
+                Height: =312
+                Width: =1
+                X: =856
+                Y: =152
+                ZIndex: =3
+
+            Promotor_unidad_2 As groupContainer.manualLayoutContainer:
+                Height: =312
+                Width: =337.3
+                X: =473
+                Y: =152
+                ZIndex: =4
+
+                Telefono_promotor_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =252
+                    ZIndex: =1
+
+                    telefono_promotor_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =promotor.telefono
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Format: =TextFormat.Number
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    telefono_promotor_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="TELÉFONO CONTACTO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_telefono_promotor As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: =sin_telefono_promotor
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+                Correo_promotor_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =168
+                    ZIndex: =3
+
+                    correo_promotor_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =promotor.correo
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    correo_promotor_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CORREO ELECTRÓNICO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_correo_promotor As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: =sin_correo_promotor
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+                Cargo_promotor_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =84
+                    ZIndex: =4
+
+                    cargo_promotor_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =promotor.cargo
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    cargo_promotor_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CARGO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                    sin_cargo_promotor_1 As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: =sin_cargo_promotor
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =3
+
+                Nombre_promotor_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    ZIndex: =5
+
+                    sin_nombre_promotor As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_promotor
+                        Width: =nombre_promotor_input_2.Width+2
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
+                        ZIndex: =1
+
+                    nombre_promotor_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =promotor.nombre
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =332
+                        X: =2
+                        Y: =20
+                        ZIndex: =2
+
+                    nombre_promotor_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="NOMBRE"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =3
+
+            separador As rectangle:
+                BorderColor: =RGBA(112, 139, 166, 1)
+                Fill: =RGBA(112, 139, 166, 1)
+                Height: =312
+                Width: =1
+                X: =425
+                Y: =152
+                ZIndex: =5
+
+            Autoridad_solicitante_2 As groupContainer.manualLayoutContainer:
+                Height: =312
+                Width: =337.3
+                X: =42
+                Y: =152
+                ZIndex: =6
+
+                Telefono_autoridad_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =252
+                    ZIndex: =1
+
+                    telefono_autoridad_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =autoridad_solicitante.telefono
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Format: =TextFormat.Number
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    telefono_autoridad_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="TELÉFONO CONTACTO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                Correo_autoridad_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =168
+                    ZIndex: =3
+
+                    correo_autoridad_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =autoridad_solicitante.correo_udec
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    correo_autoridad_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CORREO ELECTRÓNICO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                Cargo_autoridad_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    Y: =84
+                    ZIndex: =4
+
+                    cargo_autoridad_input_2 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =autoridad_solicitante.cargo
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    cargo_autoridad_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CARGO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+                Nombre_autoridad_2 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =337.3
+                    ZIndex: =5
+
+                    nombre_autoridad_solicitante_input_2 As text:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =autoridad_solicitante.nombre_completo
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        HintText: =""
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =337.3
+                        Y: =20
+                        ZIndex: =1
+
+                    nombre_autoridad_solicitante_label_2 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="NOMBRE"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =337.3
+                        ZIndex: =2
+
+            datos_del_responsable_1 As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =50
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                Size: =16
+                Text: ="Responsable institucional"
+                Width: =337.3
+                X: =904
+                Y: =84
+                ZIndex: =7
+
+            datos_del_promotor_1 As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =50
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                Size: =16
+                Text: ="Promotor unidad solicitante"
+                Width: =337.3
+                X: =473
+                Y: =84
+                ZIndex: =8
+
+            datos_de_la_unidad_1 As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =50
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                Size: =16
+                Text: ="Autoridad solicitante"
+                Width: =337.3
+                X: =42
+                Y: =84
+                ZIndex: =9
+
+            Nombre_unidad_solicitante_2 As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =1198
+                X: =42
+                Y: =24
+                ZIndex: =10
+
+                nombre_unidad_input_2 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    DisplayMode: =
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    HintText: =""
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =60
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Visible: =false
+                    Width: =1198
+                    Y: =20
+                    ZIndex: =1
+
+                Contenedor_seleccionable_4 As groupContainer.manualLayoutContainer:
+                    Height: =40
+                    Width: =1198
+                    Y: =20
+                    ZIndex: =2
+
+                    fondo_celeste_8 As image:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Height: =40
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =1198
+                        ZIndex: =1
+
+                    sin_nombre_unidad As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_celeste_8.Height-2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: =sin_unidad
+                        Width: =fondo_celeste_8.Width-3
+                        X: =fondo_celeste_8.X+2
+                        Y: =fondo_celeste_8.Y+1
+                        ZIndex: =2
+
+                    nombre_unidad_solicitante As dropdown:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        ChevronBackground: =RGBA(241, 244, 255, 1)
+                        ChevronFill: =RGBA(111, 139, 167, 1)
+                        ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                        ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                        Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =36
+                        HoverBorderColor: =RGBA(241,244,255,1)
+                        HoverColor: =RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(207, 210, 232, 1)
+                        Items: =organismos_actividad
+                        OnChange: =
+                        PaddingBottom: =12
+                        PaddingLeft: =12
+                        PaddingTop: =12
+                        PressedColor: =RGBA(17, 61, 107, 1)
+                        PressedFill: =RGBA(241, 244, 255, 1)
+                        SelectionColor: =RGBA(111, 139, 167, 1)
+                        SelectionFill: =RGBA(241, 244, 255, 1)
+                        Size: =14
+                        TabIndex: =
+                        Width: =fondo_celeste_8.Width-24
+                        X: =fondo_celeste_8.X+12
+                        Y: =fondo_celeste_8.Y+2
+                        ZIndex: =3
+
+                    tapar_nombre_unidad_solicitante As rectangle:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(244, 244, 244, 1)
+                        Height: =40
+                        Visible: =false
+                        Width: =40
+                        X: =nombre_unidad_solicitante.X+nombre_unidad_solicitante.Width-Self.Width+1
+                        Y: =fondo_celeste_8.Y
+                        ZIndex: =4
+
+                nombre_unidad_label_2 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="NOMBRE UNIDAD SOLICITANTE"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =300
+                    ZIndex: =3
+
+            buscar_1 As image:
+                Height: =20
+                Image: =ico_search
+                Width: =20
+                X: =790
+                Y: =114
+                ZIndex: =11
+
+            btn_buscar_promotor As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(207, 210, 232, 0.4)
+                OnSelect: |-
+                    =//Set(promotor;{});;
+                    UpdateContext({popup_promotor: true});
+                    Reset(inp_promotor_popup_search);
+                    UpdateContext({popup_faltacorreo:false})
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(207, 210, 232, 0.4)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =20
+                TabIndex: =
+                Text: =""
+                Width: =30
+                X: =785
+                Y: =109
+                ZIndex: =12
+
+            buscar_3 As image:
+                Height: =20
+                Image: =ico_search
+                Width: =20
+                X: =1215
+                Y: =114
+                ZIndex: =13
+
+            btn_buscar_responsable As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(207, 210, 232, 0.4)
+                OnSelect: |-
+                    =//Set(responsable;{});;
+                    UpdateContext({popup_responsable: true});
+                    Reset(inp_responsable_popup_search);
+                    UpdateContext({popup_faltacorreo:false})
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(207, 210, 232, 0.4)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =20
+                TabIndex: =
+                Text: =""
+                Width: =30
+                X: =1210
+                Y: =109
+                ZIndex: =14
+
+        datos_unidad_solicitante_3 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Datos de la unidad solicitante de la Universidad de Concepción"
+            Width: =1366
+            ZIndex: =2
+
+    lbl_faltan_datos As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(sin_unidad || sin_promotor || sin_cargo_promotor, true)
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =3
+
+    BannerUdeC As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =4
+
+    promotor_popup As groupContainer.manualLayoutContainer:
+        Height: =Unidad_solicitante.Height
+        Visible: =popup_promotor
+        Width: =Unidad_solicitante.Width
+        ZIndex: =5
+
+        fig_registro_5_popup_bg As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        fondo_blanco As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_promotor_popup_titulo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Búsqueda de promotor unidad solicitante"
+            Width: =650
+            X: =360
+            Y: =234
+            ZIndex: =3
+
+        inp_promotor_popup_search As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(17, 61, 107, 1)
+            Default: =""
+            DisabledColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(241, 244, 255, 1)
+            Height: =46
+            HintText: ="Ingresar correo electrónico"
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(241, 244, 255, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_promotor,1,-1)
+            Width: =645
+            X: =360
+            Y: =353
+            ZIndex: =5
+
+        buscar As image:
+            Height: =20
+            Image: =ico_search
+            Width: =20
+            X: =970
+            Y: =366
+            ZIndex: =6
+
+        lbl_promotor_popup_correo As label:
+            Color: =RGBA(111, 139, 167, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="CORREO ELECTRÓNICO"
+            Width: =250
+            X: =360
+            Y: =314
+            ZIndex: =7
+
+        btn_promotor_popup_buscar As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |
+                =UpdateContext({popup_usuarionoencontrado:false, popup_faltacorreo:false,popup_correonoudec:false});
+                
+                If(IsMatch(inp_promotor_popup_search.Text,Match.Email)=true&&IsEmpty(inp_promotor_popup_search.Text)=false,
+                    Set(dominio_correo,Lower(Last(ForAll(Split(inp_promotor_popup_search.Text,"@"), {Result: ThisRecord.Value})).Result));
+                    If(dominio_correo="udec.cl",
+                        UpdateContext({popup_correonoudec:false}),
+                        UpdateContext({popup_correonoudec:true});
+                        UpdateContext({popup_faltacorreo:true})     
+                    );
+                    If(popup_correonoudec=false,
+                        Set(cargando, true);
+                        Set(datos_promotor, 'VRIM-PATraedatosdeusuario'.Run(inp_promotor_popup_search));
+                        Set(promotor,{
+                            id_persona: Value(datos_promotor.id_persona),
+                            nombre: datos_promotor.nombre_completo,
+                            cargo: datos_promotor.cargo,
+                            correo: datos_promotor.correo_udec,
+                            telefono: datos_promotor.telefono
+                        });
+                        Set(cargando, false);
+                        If(IsBlank(promotor.id_persona),
+                            UpdateContext({popup_usuarionoencontrado:true}),
+                            UpdateContext({popup_promotor:false})
+                        ),
+                        UpdateContext({popup_faltacorreo:true})
+                    )
+                ,
+                UpdateContext({popup_faltacorreo:true})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_promotor,1,-1)
+            Text: ="BUSCAR"
+            X: =845
+            Y: =488
+            ZIndex: =8
+
+        btn_promotor_popup_cancelar As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_promotor: false});
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_promotor,0,-1)
+            Text: ="CANCELAR"
+            X: =653
+            Y: =488
+            ZIndex: =9
+
+        lbl_promotor_popup_noencontrado As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Usuario no encontrado. Por favor intente nuevamente"
+            Visible: =popup_usuarionoencontrado
+            Width: =481
+            X: =(fondo_blanco.X+fondo_blanco.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =10
+
+        lbl_promotor_popup_faltandatos As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Ingresar correo electrónico UdeC"
+            Visible: =popup_faltacorreo
+            Width: =540
+            X: =(fondo_blanco.X+fondo_blanco.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =12
+
+    responsable_popup As groupContainer.manualLayoutContainer:
+        Height: =Unidad_solicitante.Height
+        Visible: =popup_responsable
+        Width: =Unidad_solicitante.Width
+        ZIndex: =7
+
+        fig_registro_5_popup_bg_1 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        fondo_blanco_3 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_responsable_popup_titulo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Búsqueda de responsable institucional"
+            Width: =650
+            X: =360
+            Y: =234
+            ZIndex: =3
+
+        inp_responsable_popup_search As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(17, 61, 107, 1)
+            Default: =""
+            DisabledColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(241, 244, 255, 1)
+            Height: =46
+            HintText: ="Ingresar correo electrónico"
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(241, 244, 255, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_promotor,1,-1)
+            Width: =645
+            X: =360
+            Y: =353
+            ZIndex: =5
+
+        buscar_2 As image:
+            Height: =20
+            Image: =ico_search
+            Width: =20
+            X: =970
+            Y: =366
+            ZIndex: =6
+
+        lbl_responsable_popup_correo As label:
+            Color: =RGBA(111, 139, 167, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="CORREO ELECTRÓNICO"
+            Width: =250
+            X: =360
+            Y: =314
+            ZIndex: =7
+
+        btn_responsable_popup_buscar As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |
+                =UpdateContext({popup_usuarionoencontrado:false, popup_faltacorreo:false,popup_correonoudec:false});
+                
+                If(IsMatch(inp_responsable_popup_search.Text,Match.Email)=true&&IsEmpty(inp_responsable_popup_search.Text)=false,
+                    Set(dominio_correo,Lower(Last(ForAll(Split(inp_responsable_popup_search.Text,"@"), {Result: ThisRecord.Value})).Result));
+                    If(dominio_correo="udec.cl",
+                        UpdateContext({popup_correonoudec:false}),
+                        UpdateContext({popup_correonoudec:true});
+                        UpdateContext({popup_faltacorreo:true})     
+                    );
+                    If(popup_correonoudec=false,
+                        Set(cargando, true);
+                        Set(datos_responsable, 'VRIM-PATraedatosdeusuario'.Run(inp_responsable_popup_search));
+                        Set(responsable,{
+                            id_persona: Value(datos_responsable.id_persona),
+                            nombre: datos_responsable.nombre_completo,
+                            cargo: datos_responsable.cargo,
+                            correo: datos_responsable.correo_udec,
+                            telefono: datos_responsable.telefono
+                        });
+                        Set(cargando, false);
+                        If(IsBlank(responsable.id_persona),
+                            UpdateContext({popup_usuarionoencontrado:true}),
+                            UpdateContext({popup_responsable:false})
+                        ),
+                        UpdateContext({popup_faltacorreo:true})
+                    )
+                ,
+                UpdateContext({popup_faltacorreo:true})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_promotor,1,-1)
+            Text: ="BUSCAR"
+            X: =845
+            Y: =488
+            ZIndex: =8
+
+        btn_responsable_popup_cancelar As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_responsable: false});
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_promotor,0,-1)
+            Text: ="CANCELAR"
+            X: =653
+            Y: =488
+            ZIndex: =9
+
+        lbl_responsable_popup_noencontrado As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Usuario no encontrado. Por favor intente nuevamente"
+            Visible: =popup_usuarionoencontrado
+            Width: =481
+            X: =(fondo_blanco_3.X+fondo_blanco_3.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =10
+
+        lbl_responsable_popup_faltandatos As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Ingresar correo electrónico UdeC"
+            Visible: =popup_faltacorreo
+            Width: =540
+            X: =(fondo_blanco_3.X+fondo_blanco_3.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =12
+
+    cont_loading As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =9
+
+        fig_registro_5_bg As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =6
+
+        img_loading As image:
+            Image: =loading
+            Visible: =cargando
+            X: =632
+            Y: =323
+            ZIndex: =8
+
