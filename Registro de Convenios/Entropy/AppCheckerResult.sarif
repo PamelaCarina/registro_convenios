@@ -5564,17 +5564,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.msj_campo_faltante"
+                  "fullyQualifiedName": "App.msj_campos_faltantes"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.msj_campo_faltante",
+                  "fullyQualifiedName": "App.msj_campos_faltantes",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "msj_campo_faltante",
+                "member": "msj_campos_faltantes",
                 "module": "App",
                 "type": "App"
               }
@@ -5594,17 +5594,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.msj_campos_faltantes"
+                  "fullyQualifiedName": "App.msj_campo_faltante"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.msj_campos_faltantes",
+                  "fullyQualifiedName": "App.msj_campo_faltante",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "msj_campos_faltantes",
+                "member": "msj_campo_faltante",
                 "module": "App",
                 "type": "App"
               }
