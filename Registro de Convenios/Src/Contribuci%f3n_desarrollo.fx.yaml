@@ -27,6 +27,8 @@ Contribución_desarrollo As screen:
         ClearCollect(datosContribucion_desarrollo,
             {dato:"ods",falta:false, text:"Contribución al desarrollo sustentable"}
         );
+        
+        UpdateContext({campos_faltantes:false});
 
     Botones_atras_siguiente_7 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -44,7 +46,7 @@ Contribución_desarrollo As screen:
             OnSelect: |+
                 =Patch(datosContribucion_desarrollo,First(Filter(datosContribucion_desarrollo, dato="ods")),
                     If(CountRows(Filter(ods_checkboxes,cb.Value=true))=0, 
-                        {falta:true},
+                        {falta:true, campos_faltantes:true},
                         {falta:false}
                     )
                 );
@@ -81,7 +83,8 @@ Contribución_desarrollo As screen:
                     UpdateContext({popup_enviar:true});
                     
                     , 
-                    UpdateContext({faltan_datos_text:"Ingresar: "&Concat(Filter(datosContribucion_desarrollo,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true})
+                    UpdateContext({faltan_datos_text:"Ingresar: "&Concat(Filter(datosContribucion_desarrollo,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true});
+                    UpdateContext({campos_faltantes:true});
                 )
                 
             PressedBorderColor: =RGBA(247, 158, 64, 1)
@@ -1381,6 +1384,18 @@ Contribución_desarrollo As screen:
             X: =713
             Y: =548
             ZIndex: =9
+
+    lbl_faltan_datos_6 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =campos_faltantes
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =12
 
     cont_loading_3 As group:
         Height: =5

@@ -27,8 +27,7 @@ Area_contribución As screen:
             {dato:"contrib_externa",falta:false, text:"Área de contribución externa"}
         );
         
-        UpdateContext({sin_contribucion_interna:false});
-        UpdateContext({sin_contribucion_externa:false});
+        UpdateContext({campos_faltantes:false});
 
     Botones_atras_siguiente_6 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -46,13 +45,13 @@ Area_contribución As screen:
             OnSelect: |-
                 =Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                     If(CountRows(Filter(contrib_externa_checkboxes,cb.Value=true))=0, 
-                        {falta:true},
+                        {falta:true, campos_faltantes:true},
                         {falta:false}
                     )
                 );
                 Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                     If(CountRows(Filter(contrib_interna_checkboxes,cb.Value=true))=0, 
-                        {falta:true},
+                        {falta:true, campos_faltantes:true},
                         {falta:false}
                     )
                 );
@@ -108,7 +107,8 @@ Area_contribución As screen:
                 
                     Navigate(Contribución_desarrollo, ScreenTransition.Fade);
                     , 
-                    UpdateContext({num_campos_faltantes:CountRows(Filter(datosArea_contribucion,falta=true)),faltan_datos_text:"Ingresar: "&Concat(Filter(datosArea_contribucion,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true})
+                    UpdateContext({num_campos_faltantes:CountRows(Filter(datosArea_contribucion,falta=true)),faltan_datos_text:"Ingresar: "&Concat(Filter(datosArea_contribucion,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true});
+                    UpdateContext({campos_faltantes:true});
                 )
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -772,6 +772,18 @@ Area_contribución As screen:
             Text: ="Área de Contribución de acuerdo a la política de Vinculación con el medio"
             Width: =1366
             ZIndex: =3
+
+    lbl_faltan_datos_5 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =campos_faltantes
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =3
 
     BannerUdeC_6 As HeaderUdeC:
         Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")

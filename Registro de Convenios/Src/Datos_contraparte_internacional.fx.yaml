@@ -620,7 +620,7 @@ Datos_contraparte_internacional As screen:
 
     contraparte_internacional_popup As groupContainer.manualLayoutContainer:
         Height: =Unidad_solicitante.Height
-        Visible: =//popup_contraparte_in
+        Visible: =popup_contraparte_in
         Width: =Unidad_solicitante.Width
         ZIndex: =6
 
