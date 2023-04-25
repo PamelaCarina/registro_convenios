@@ -1264,7 +1264,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="CORREO ELECTRÓNICO"
+            Text: ="CORREO ELECTRÓNICO UDEC"
             Width: =250
             X: =360
             Y: =314
@@ -1436,7 +1436,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="CORREO ELECTRÓNICO"
+            Text: ="CORREO ELECTRÓNICO UDEC"
             Width: =250
             X: =360
             Y: =314

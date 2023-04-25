@@ -6,7 +6,7 @@ Datos_convenio As screen:
         UpdateContext({sin_solicitud:false});
         UpdateContext({sin_modalidad:false});
         UpdateContext({sin_proposito_central:false});
-        UpdateContext({sin_documento_oficial:false});
+        UpdateContext({sin_documentacion_oficial:false});
         UpdateContext({sin_documentacion_extra:false});
 
     Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
@@ -32,8 +32,14 @@ Datos_convenio As screen:
                 //SIN PROPOSITO CENTRAL
                 If(IsBlank(descripcion_proposito_1.Text), UpdateContext({sin_proposito_central:true}), UpdateContext({sin_proposito_central:false}));
                 
+                //SIN DOCUMENTO OFICIAL
+                If(IsBlank(Gallery1_1), UpdateContext({sin_documentacion_oficial:true}), UpdateContext({sin_documentacion_oficial:false}));
+                
+                //SIN DOCUMENTACION EXTRA
+                If(IsBlank(Gallery1_2), UpdateContext({sin_documentacion_extra:true}), UpdateContext({sin_documentacion_extra:false}));
+                
                 //CONDICION DE APROBACION
-                If(!sin_alcance_territorial && !sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central,
+                If(!sin_alcance_territorial && !sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && !sin_documentacion_extra,
                 
                     //CREA COLECCIÓN QUE ALMACENA LOS DOCUMENTOS CARGADOS
                     ClearCollect(documentos_cargados,{});
@@ -156,7 +162,7 @@ Datos_convenio As screen:
         Height: =584
         Width: =1366
         Y: =96
-        ZIndex: =3
+        ZIndex: =2
 
         Contenedor_d_c_s As groupContainer.manualLayoutContainer:
             Height: =488
@@ -205,6 +211,7 @@ Datos_convenio As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
+                        Visible: =sin_documentacion_oficial
                         Width: =fondo_registro_1.Width+1
                         X: =fondo_registro_1.X
                         Y: =fondo_registro_1.Y
@@ -326,6 +333,7 @@ Datos_convenio As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
+                        Visible: =sin_documentacion_extra
                         Width: =fondo_registro_2.Width+1
                         X: =fondo_registro_2.X
                         Y: =fondo_registro_2.Y
@@ -925,6 +933,18 @@ Datos_convenio As screen:
             Width: =1366
             ZIndex: =3
 
+    lbl_faltan_datos_1 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(sin_alcance_territorial || sin_tipologia || sin_solicitud || sin_modalidad, true)
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =3
+
     Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_oficial
@@ -1245,16 +1265,4 @@ Datos_convenio As screen:
             X: =img_registro_10_popup_bg_1.X
             Y: =btn_registro_10_popup_cancelar_1.Y-Self.Height
             ZIndex: =8
-
-    lbl_faltan_datos_1 As label:
-        Align: =Align.Right
-        Color: =RGBA(238, 110, 126, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =72
-        Text: ="Debe completar los campos faltantes."
-        Visible: =If(sin_alcance_territorial || sin_tipologia || sin_solicitud || sin_modalidad, true)
-        Width: =856
-        X: =278
-        Y: =684
-        ZIndex: =7
 

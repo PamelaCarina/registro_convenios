@@ -326,7 +326,7 @@ Datos_contraparte_nacional As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =cargo_responsable_institucional_na_input.Height+2
+                        Height: =cargo_responsable_institucional_na_input.Height+1
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -347,6 +347,7 @@ Datos_contraparte_nacional As screen:
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
+                        Height: =38
                         HintText: =""
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
@@ -392,7 +393,7 @@ Datos_contraparte_nacional As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_responsable_institucional_na_input.Height
+                        Height: =nombre_responsable_institucional_na_input.Height+1
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -401,7 +402,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: =sin_nombre_responsable_institucional_na
-                        Width: =nombre_responsable_institucional_na_input.Width
+                        Width: =nombre_responsable_institucional_na_input.Width+1
                         X: =nombre_responsable_institucional_na_input.X
                         Y: =nombre_responsable_institucional_na_input.Y
                         ZIndex: =1
