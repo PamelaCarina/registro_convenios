@@ -7,6 +7,7 @@ Datos_contraparte_nacional As screen:
         UpdateContext({sin_cargo_na:false});
         UpdateContext({correo_na_invalido_na:false});
         UpdateContext({popup_institucionnoencontrada:false});
+        UpdateContext({hide_border_correo_na:true});
         Reset(inp_contraparte_na_popup_search)
 
     Botones_atras_siguiente_3 As groupContainer.manualLayoutContainer:
@@ -214,9 +215,10 @@ Datos_contraparte_nacional As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |-
-                            =If(IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+                            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-                            || correo_na_vacio,true,false)
+                            || correo_na_vacio) && !hide_border_correo_na
+                            ,true,false)
                         Width: =correo_electronico_na_input.Width + 2
                         X: =correo_electronico_na_input.X - 1
                         Y: =correo_electronico_na_input.Y-1
@@ -235,6 +237,8 @@ Datos_contraparte_nacional As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({hide_border_correo_na:false})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -586,9 +590,10 @@ Datos_contraparte_nacional As screen:
         Size: =9
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
-            =If(IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-            || correo_na_vacio,true,false)
+            || correo_na_vacio) && !hide_border_correo_na
+            ,true,false)
         Width: =676
         X: =608
         Y: =424

@@ -8,6 +8,7 @@ Datos_contraparte_internacional As screen:
         UpdateContext({sin_nombre_responsable_institucional_in:false});
         UpdateContext({sin_cargo_in:false});
         UpdateContext({correo_in_invalido:false});
+        UpdateContext({hide_border_correo_in:true});
         Reset(inp_contraparte_in_popup_search)
 
     Botones_atras_siguiente_4 As groupContainer.manualLayoutContainer:
@@ -213,9 +214,10 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |-
-                            =If(IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
-                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false || correo_in_vacio
-                            , true,false)
+                            =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
+                            || correo_in_vacio) && !hide_border_correo_in
+                            ,true,false)
                         Width: =correo_electronico_in_input.Width + 2
                         X: =correo_electronico_in_input.X
                         Y: =correo_electronico_in_input.Y-1
@@ -234,6 +236,8 @@ Datos_contraparte_internacional As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({hide_border_correo_in:false})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -587,9 +591,10 @@ Datos_contraparte_internacional As screen:
         Size: =9
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
-            =If(IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+            =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-            || correo_in_vacio,true,false)
+            || correo_in_vacio) && !hide_border_correo_in
+            ,true,false)
         Width: =676
         X: =608
         Y: =424

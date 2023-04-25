@@ -4484,6 +4484,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.convenio_tipo.AccessibleLabel"
                 }
               ],
@@ -4538,6 +4598,66 @@
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4658,6 +4778,66 @@
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5348,186 +5528,6 @@
           },
           "ruleId": "acc-TabOrderShouldBeChecked",
           "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
         },
         {
           "locations": [
@@ -6597,51 +6597,51 @@
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused variable"
+                  "text": "Variable no utilizada"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused variable."
+                  "Quite la variable no utilizada."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+                "whyFix": "Esta variable está declarada, pero ningún control hace referencia a ella, por lo que no es necesaria."
               }
             },
             {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused media files"
+                  "text": "Archivos multimedia sin usar"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused media file in the Media pane."
+                  "Quite el archivo multimedia que no se use en el panel Medios."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+                "whyFix": "No hay ninguna fórmula de control que haga referencia a este archivo multimedia, por lo que no es necesario. Si se quita, mejorará el rendimiento."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Inefficient delay loading"
+                  "text": "Retraso de carga ineficiente"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Use variables, collections, and navigation context to share state across screens instead."
+                  "Use variables, colecciones y contexto de navegación para compartir el estado entre pantallas en su lugar."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
+                "whyFix": "Los controles que hacen referencia a controles en otras pantallas pueden ralentizar la carga y la navegación de la aplicación. Al hacer esto, puede que se fuerce a la aplicación a cargar las otras pantallas de inmediato, en lugar de esperar hasta que el usuario navegue a esa pantalla."
               }
             }
           ],
