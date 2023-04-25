@@ -1538,12 +1538,6 @@ Unidad_solicitante As screen:
             Y: =418
             ZIndex: =12
 
-    Label1 As label:
-        Text: =First(persona_solicitante.'array personal').'Codigo Reparticion'
-        X: =336
-        Y: =689
-        ZIndex: =9
-
     cont_loading As group:
         Height: =5
         Width: =5
