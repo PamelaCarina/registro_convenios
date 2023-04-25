@@ -154,6 +154,36 @@
     "dependents": [],
     "id": "bd7cd86a-a6c9-4c76-9a35-563e3da2372b"
   },
+  "c8c7ef2c-b970-414a-b7c0-1e77275b1c3c": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "14de6ef5-55e0-ec11-bb3d-000d3a5b4ab0"
+        },
+        "workflowName": {
+          "value": "996b7d29-8f96-0981-44b8-a7cfa3d7c136"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "14de6ef5-55e0-ec11-bb3d-000d3a5b4ab0"
+        },
+        "workflowName": {
+          "value": "996b7d29-8f96-0981-44b8-a7cfa3d7c136"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "VRIM-PATraedatosdeusuario"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c8c7ef2c-b970-414a-b7c0-1e77275b1c3c"
+  },
   "d7aaf4a1-bfd3-474c-8f13-3fdc192d1739": {
     "connectionRef": {
       "apiTier": "Standard",
@@ -184,35 +214,5 @@
     "dependencies": {},
     "dependents": [],
     "id": "d7aaf4a1-bfd3-474c-8f13-3fdc192d1739"
-  },
-  "d7ae79a9-dcee-45f4-82af-ecff13633aa3": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "14de6ef5-55e0-ec11-bb3d-000d3a5b4ab0"
-        },
-        "workflowName": {
-          "value": "996b7d29-8f96-0981-44b8-a7cfa3d7c136"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "14de6ef5-55e0-ec11-bb3d-000d3a5b4ab0"
-        },
-        "workflowName": {
-          "value": "996b7d29-8f96-0981-44b8-a7cfa3d7c136"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "VRIM-PATraedatosdeusuario"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "d7ae79a9-dcee-45f4-82af-ecff13633aa3"
   }
 }
