@@ -118,13 +118,19 @@ Información_convenio As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |-
-                =Set(datos_vinculacion_cargados,{
+            OnSelect: |
+                =//CATEGORIAS VINCULACION CON EL MEDIO
+                If(convenio_tipo.Selected.Text="Seleccionar...", UpdateContext({sin_convenio_tipo:true}), UpdateContext({sin_convenio_tipo:false}));
+                If(sector_politica.Selected.Text="Seleccionar...", UpdateContext({sin_sector_politica:true}), UpdateContext({sin_sector_politica:false}));
+                If(ambito_politica.Selected.Text="Seleccionar...", UpdateContext({sin_ambito_politica:true}), UpdateContext({sin_ambito_politica:false}));
+                
+                If(!sin_convenio_tipo && !sin_sector_politica && !sin_ambito_politica,
+                    Set(datos_vinculacion_cargados,{
                     tipo: convenio_tipo.Selected.Text,
                     sector: sector_politica.Selected.Text,
                     ambito: ambito_politica.Selected.Text
-                });
-                Navigate(Area_contribución,ScreenTransition.Fade)
+                    });
+                    Navigate(Area_contribución,ScreenTransition.Fade));
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -197,8 +203,8 @@ Información_convenio As screen:
                 ZIndex: =2
 
             Contenedor_a_d_p As groupContainer.manualLayoutContainer:
-                Height: =60
-                Width: =1198
+                Height: =70
+                Width: =1200
                 X: =42
                 Y: =146
                 ZIndex: =3
@@ -232,14 +238,14 @@ Información_convenio As screen:
                     ZIndex: =1
 
                 Contenedor_seleccionable_6 As groupContainer.manualLayoutContainer:
-                    Height: =40
-                    Width: =1198
+                    Height: =50
+                    Width: =1200
                     Y: =20
                     ZIndex: =2
 
                     fondo_celeste_10 As image:
                         BorderColor: =RGBA(255, 255, 255, 1)
-                        Height: =40
+                        Height: =38
                         HoverFill: =RGBA(186, 202, 226, 1)
                         Image: ='background-input'
                         ImagePosition: =ImagePosition.Fill
@@ -247,8 +253,31 @@ Información_convenio As screen:
                         RadiusBottomRight: =12
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
-                        Width: =1198
+                        Width: =1174
+                        X: =12
                         ZIndex: =1
+
+                    sin_ambito_politica As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_celeste_10.Height+1
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_ambito_politica
+                        Width: =fondo_celeste_10.Width+1
+                        X: =fondo_celeste_10.X
+                        Y: =fondo_celeste_10.Y
+                        ZIndex: =2
 
                     ambito_politica As dropdown:
                         BorderStyle: =BorderStyle.None
@@ -278,8 +307,8 @@ Información_convenio As screen:
                         TabIndex: =
                         Width: =fondo_celeste_10.Width-24
                         X: =fondo_celeste_10.X+12
-                        Y: =fondo_celeste_10.Y
-                        ZIndex: =2
+                        Y: =fondo_celeste_10.Y+1
+                        ZIndex: =3
 
                     tapar_ambito_politica As rectangle:
                         BorderStyle: =BorderStyle.None
@@ -289,7 +318,7 @@ Información_convenio As screen:
                         Width: =40
                         X: =ambito_politica.X+ambito_politica.Width-Self.Width+1
                         Y: =fondo_celeste_10.Y
-                        ZIndex: =3
+                        ZIndex: =4
 
                 ambito_de_politica As label:
                     Color: =RGBA(111, 139, 167, 1)
@@ -306,21 +335,21 @@ Información_convenio As screen:
                     ZIndex: =3
 
             Contenedor_s_d_p As groupContainer.manualLayoutContainer:
-                Height: =60
+                Height: =70
                 Width: =584
                 X: =656
                 Y: =62
                 ZIndex: =4
 
                 Contenedor_seleccionable_7 As groupContainer.manualLayoutContainer:
-                    Height: =40
-                    Width: =584
+                    Height: =50
+                    Width: =594
                     Y: =20
                     ZIndex: =1
 
                     fondo_celeste_11 As image:
                         BorderColor: =RGBA(255, 255, 255, 1)
-                        Height: =40
+                        Height: =38
                         HoverFill: =RGBA(186, 202, 226, 1)
                         Image: ='background-input'
                         ImagePosition: =ImagePosition.Fill
@@ -328,8 +357,31 @@ Información_convenio As screen:
                         RadiusBottomRight: =12
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
-                        Width: =584
+                        Width: =560
+                        X: =12
                         ZIndex: =1
+
+                    sin_sector_politica As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_celeste_11.Height+3
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_sector_politica
+                        Width: =fondo_celeste_11.Width+2
+                        X: =fondo_celeste_11.X-2
+                        Y: =fondo_celeste_11.Y+2
+                        ZIndex: =2
 
                     sector_politica As dropdown:
                         BorderStyle: =BorderStyle.None
@@ -342,7 +394,7 @@ Información_convenio As screen:
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
-                        Height: =38
+                        Height: =34
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
@@ -357,10 +409,10 @@ Información_convenio As screen:
                         SelectionFill: =RGBA(241, 244, 255, 1)
                         Size: =14
                         TabIndex: =
-                        Width: =fondo_celeste_11.Width-24
-                        X: =fondo_celeste_11.X+12
-                        Y: =fondo_celeste_11.Y
-                        ZIndex: =2
+                        Width: =fondo_celeste_11.Width-4
+                        X: =fondo_celeste_11.X
+                        Y: =fondo_celeste_11.Y+5
+                        ZIndex: =3
 
                     tapar_convenio_tipo_1 As rectangle:
                         BorderStyle: =BorderStyle.None
@@ -370,7 +422,7 @@ Información_convenio As screen:
                         Width: =40
                         X: =sector_politica.X+sector_politica.Width-Self.Width+1
                         Y: =fondo_celeste_11.Y
-                        ZIndex: =3
+                        ZIndex: =4
 
                 sector_de_politica As label:
                     Color: =RGBA(111, 139, 167, 1)
@@ -387,21 +439,21 @@ Información_convenio As screen:
                     ZIndex: =2
 
             Contenedor_c_d_t As groupContainer.manualLayoutContainer:
-                Height: =60
+                Height: =70
                 Width: =584
                 X: =42
                 Y: =62
                 ZIndex: =5
 
                 Contenedor_seleccionable_5 As groupContainer.manualLayoutContainer:
-                    Height: =40
-                    Width: =584
+                    Height: =50
+                    Width: =594
                     Y: =20
                     ZIndex: =1
 
                     fondo_celeste_9 As image:
                         BorderColor: =RGBA(255, 255, 255, 1)
-                        Height: =40
+                        Height: =38
                         HoverFill: =RGBA(186, 202, 226, 1)
                         Image: ='background-input'
                         ImagePosition: =ImagePosition.Fill
@@ -409,8 +461,32 @@ Información_convenio As screen:
                         RadiusBottomRight: =12
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
-                        Width: =584
+                        Width: =560
+                        X: =12
+                        Y: =2
                         ZIndex: =1
+
+                    sin_convenio_tipo As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_celeste_9.Height+3
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_convenio_tipo
+                        Width: =fondo_celeste_9.Width+2
+                        X: =fondo_celeste_9.X-2
+                        Y: =fondo_celeste_9.Y
+                        ZIndex: =2
 
                     convenio_tipo As dropdown:
                         BorderStyle: =BorderStyle.None
@@ -423,7 +499,7 @@ Información_convenio As screen:
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
-                        Height: =38
+                        Height: =34
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
@@ -438,10 +514,11 @@ Información_convenio As screen:
                         SelectionFill: =RGBA(241, 244, 255, 1)
                         Size: =14
                         TabIndex: =
-                        Width: =fondo_celeste_9.Width-24
-                        X: =fondo_celeste_9.X+12
-                        Y: =fondo_celeste_9.Y
-                        ZIndex: =2
+                        Width: =fondo_celeste_9.Width-4
+                        X: |
+                            =fondo_celeste_9.X
+                        Y: =fondo_celeste_9.Y+3
+                        ZIndex: =3
 
                     tapar_convenio_tipo As rectangle:
                         BorderStyle: =BorderStyle.None
@@ -451,7 +528,7 @@ Información_convenio As screen:
                         Width: =40
                         X: =convenio_tipo.X+convenio_tipo.Width-Self.Width+1
                         Y: =fondo_celeste_9.Y
-                        ZIndex: =3
+                        ZIndex: =4
 
                 convenio_de_tipo As label:
                     Color: =RGBA(111, 139, 167, 1)
@@ -494,9 +571,21 @@ Información_convenio As screen:
             Width: =1366
             ZIndex: =3
 
+    lbl_faltan_datos_4 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(sin_convenio_tipo || sin_sector_politica || sin_ambito_politica, true)
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =3
+
     BannerUdeC_5 As HeaderUdeC:
         Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
-        ZIndex: =3
+        ZIndex: =4
 

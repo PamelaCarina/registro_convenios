@@ -162,7 +162,7 @@ Datos_convenio As screen:
         Height: =584
         Width: =1366
         Y: =96
-        ZIndex: =3
+        ZIndex: =2
 
         Contenedor_d_c_s As groupContainer.manualLayoutContainer:
             Height: =488
@@ -933,6 +933,18 @@ Datos_convenio As screen:
             Width: =1366
             ZIndex: =3
 
+    lbl_faltan_datos_1 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(sin_alcance_territorial || sin_tipologia || sin_solicitud || sin_modalidad, true)
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =3
+
     Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_oficial
@@ -1253,16 +1265,4 @@ Datos_convenio As screen:
             X: =img_registro_10_popup_bg_1.X
             Y: =btn_registro_10_popup_cancelar_1.Y-Self.Height
             ZIndex: =8
-
-    lbl_faltan_datos_1 As label:
-        Align: =Align.Right
-        Color: =RGBA(238, 110, 126, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =72
-        Text: ="Debe completar los campos faltantes."
-        Visible: =If(sin_alcance_territorial || sin_tipologia || sin_solicitud || sin_modalidad, true)
-        Width: =856
-        X: =278
-        Y: =684
-        ZIndex: =7
 
