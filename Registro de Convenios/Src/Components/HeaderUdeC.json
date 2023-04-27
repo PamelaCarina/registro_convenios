@@ -152,7 +152,7 @@
         "Name": "lbl_titulo",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 513,
+        "PublishOrderIndex": 514,
         "Rules": [
           {
             "Category": "Data",
@@ -518,7 +518,7 @@
         "Name": "lbl_bienvenido",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 514,
+        "PublishOrderIndex": 515,
         "Rules": [
           {
             "Category": "Data",
@@ -852,7 +852,7 @@
         "Name": "fig_background_perfil",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 515,
+        "PublishOrderIndex": 516,
         "Rules": [
           {
             "Category": "Design",
@@ -1065,7 +1065,7 @@
         "Name": "img_perfil",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 516,
+        "PublishOrderIndex": 517,
         "Rules": [
           {
             "Category": "Data",
@@ -1340,7 +1340,7 @@
         "Name": "img_logo_udec",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 517,
+        "PublishOrderIndex": 518,
         "Rules": [
           {
             "Category": "Data",
@@ -1674,7 +1674,7 @@
         "Name": "lbl_nombre_usuario",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 518,
+        "PublishOrderIndex": 519,
         "Rules": [
           {
             "Category": "Data",
@@ -2082,7 +2082,7 @@
         "Name": "lbl_subtitulo",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 519,
+        "PublishOrderIndex": 520,
         "Rules": [
           {
             "Category": "Data",
@@ -2368,7 +2368,7 @@
       "Subtitulo",
       "Bienvenido"
     ],
-    "LastModifiedTimestamp": "638180675381543982",
+    "LastModifiedTimestamp": "638182228760328278",
     "Name": "HeaderUdeC",
     "Rules": [
       {
@@ -2473,7 +2473,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638180675381543982",
+  "LastModifiedTimestamp": "638182228760328278",
   "Name": "561f66e7d0a2482e9212edb43132f4a8",
   "OverridableProperties": {},
   "TemplateOriginalName": "3c4cfc3a7f754a9ea5fb1d2e7cfc0cc0",

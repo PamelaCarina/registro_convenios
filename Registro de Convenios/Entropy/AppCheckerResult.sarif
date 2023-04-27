@@ -5534,6 +5534,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_convenio.Attachment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_convenio.Attachment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_convenio",
+                "type": "Datos_convenio.Attachment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],

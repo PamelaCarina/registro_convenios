@@ -274,7 +274,8 @@ Datos_convenio As screen:
 
                     "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                         Height: =82
-                        Items: =att_registro_10_attach_oficial.Attachments
+                        Items: |
+                            =att_registro_10_attach_oficial.Attachments
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
                         TemplateSize: =Min(160, Self.Height - 60)
@@ -920,6 +921,16 @@ Datos_convenio As screen:
                     Width: =626
                     ZIndex: =5
 
+            Button2 As button:
+                OnSelect: |-
+                    =Almacenamiento.Run(Last(Attachment.Attachments).Name,
+                    {name:Last(Attachment.Attachments).Name, contentBytes:Last(Attachment.Attachments).Value})
+                Text: ="Botón"
+                Visible: =false
+                X: =364
+                Y: =412
+                ZIndex: =5
+
         datos_convenio_solicitado As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
@@ -1265,4 +1276,36 @@ Datos_convenio As screen:
             X: =img_registro_10_popup_bg_1.X
             Y: =btn_registro_10_popup_cancelar_1.Y-Self.Height
             ZIndex: =8
+
+    Attachment As attachments:
+        AddAttachmentText: ="Adjuntar archivo"
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(111, 139, 167, 1)
+        DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+        DropTargetBorderStyle: =BorderStyle.None
+        DropTargetTextColor: =RGBA(111, 139, 167, 1)
+        Fill: =RGBA(255, 255, 255, 0)
+        Height: =94
+        HoverColor: =RGBA(111, 139, 167, 1)
+        IsInDataCard: =true
+        Items: =
+        MaxAttachments: =1
+        MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
+        NoAttachmentsText: ="No hay ningún archivo adjunto."
+        OnRemoveFile: |-
+            =UpdateContext({archivo_invalido:false})
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedFill: =RGBA(111, 139, 167, 1)
+        Size: =10
+        TabIndex: =If(show_popup_oficial,1,-1)
+        Tooltip: =
+        Visible: =false
+        Width: =645
+        X: =291
+        Y: =674
+        ZIndex: =7
 
