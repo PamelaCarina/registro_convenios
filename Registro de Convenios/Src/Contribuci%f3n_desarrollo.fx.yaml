@@ -44,7 +44,15 @@ Contribución_desarrollo As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |+
-                =Patch(datosContribucion_desarrollo,First(Filter(datosContribucion_desarrollo, dato="ods")),
+                =// Almacenamiento borrador oficial en sharepoint
+                Almacenamiento.Run(Last(att_registro_10_attach_oficial.Attachments).Name,
+                {name:Last(att_registro_10_attach_oficial.Attachments).Name, contentBytes:Last(att_registro_10_attach_oficial.Attachments).Value});
+                
+                // Almacenamiento documentación adicional en sharepoint
+                ForAll(att_registro_10_attach_extra.Attachments, Almacenamiento.Run(Name,{name:Name, contentBytes:Value})
+                );
+                
+                Patch(datosContribucion_desarrollo,First(Filter(datosContribucion_desarrollo, dato="ods")),
                     If(CountRows(Filter(ods_checkboxes,cb.Value=true))=0, 
                         {falta:true, campos_faltantes:true},
                         {falta:false}
