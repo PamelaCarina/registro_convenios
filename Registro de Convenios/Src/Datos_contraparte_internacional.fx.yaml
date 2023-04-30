@@ -200,27 +200,28 @@ Datos_contraparte_internacional As screen:
 
                     sin_correo_in As text:
                         BorderColor: =RGBA(238, 110, 126, 1)
+                        BorderThickness: =4
                         Default: =""
                         DisabledBorderColor: =RGBA(238, 110, 126, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =correo_electronico_in_input.Height+2
+                        Height: =correo_electronico_in_input.Height
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
+                        RadiusBottomLeft: =13
+                        RadiusBottomRight: =13
+                        RadiusTopLeft: =13
+                        RadiusTopRight: =13
                         TabIndex: =-1
                         Visible: |-
                             =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
                             || correo_in_vacio) && !hide_border_correo_in
                             ,true,false)
-                        Width: =correo_electronico_in_input.Width + 2
-                        X: =correo_electronico_in_input.X
-                        Y: =correo_electronico_in_input.Y-1
+                        Width: =correo_electronico_in_input.Width - 2
+                        X: =correo_electronico_in_input.X + 1
+                        Y: =correo_electronico_in_input.Y 
                         ZIndex: =1
 
                     correo_electronico_in_input As text:
@@ -322,23 +323,24 @@ Datos_contraparte_internacional As screen:
 
                     sin_cargo_in As text:
                         BorderColor: =RGBA(238, 110, 126, 1)
+                        BorderThickness: =4
                         Default: =""
                         DisabledBorderColor: =RGBA(238, 110, 126, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =cargo_responsable_institucional_na_input.Height+2
+                        Height: =cargo_responsable_institucional_na_input.Height
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
+                        RadiusBottomLeft: =13
+                        RadiusBottomRight: =13
+                        RadiusTopLeft: =13
+                        RadiusTopRight: =13
                         TabIndex: =-1
                         Visible: =sin_cargo_in
-                        Width: =230
-                        X: =1
-                        Y: =18
+                        Width: =cargo_responsable_institucional_na_input.Width - 2
+                        X: =cargo_responsable_institucional_na_input.X + 1
+                        Y: =cargo_responsable_institucional_na_input.Y
                         ZIndex: =1
 
                     cargo_responsable_institucional_in_input As text:
@@ -391,22 +393,23 @@ Datos_contraparte_internacional As screen:
 
                     sin_nombre_responsable_institucional_in As text:
                         BorderColor: =RGBA(238, 110, 126, 1)
+                        BorderThickness: =4
                         Default: =""
                         DisabledBorderColor: =RGBA(238, 110, 126, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_responsable_institucional_in_input.Height+1
+                        Height: =nombre_responsable_institucional_in_input.Height
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
+                        RadiusBottomLeft: =13
+                        RadiusBottomRight: =13
+                        RadiusTopLeft: =13
+                        RadiusTopRight: =13
                         TabIndex: =-1
                         Visible: =sin_nombre_responsable_institucional_in
-                        Width: =nombre_responsable_institucional_in_input.Width+1
-                        X: =nombre_responsable_institucional_in_input.X
+                        Width: =nombre_responsable_institucional_in_input.Width - 2
+                        X: =nombre_responsable_institucional_in_input.X + 1
                         Y: =nombre_responsable_institucional_in_input.Y
                         ZIndex: =1
 
@@ -461,22 +464,23 @@ Datos_contraparte_internacional As screen:
 
                 sin_nombre_representante_legal_in As text:
                     BorderColor: =RGBA(238, 110, 126, 1)
+                    BorderThickness: =4
                     Default: =""
                     DisabledBorderColor: =RGBA(238, 110, 126, 1)
                     DisabledFill: =RGBA(0, 0, 0, 0)
                     DisplayMode: =DisplayMode.Disabled
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =nombre_representante_legal_in_input.Height+1
+                    Height: =nombre_representante_legal_in_input.Height
                     HoverBorderColor: =RGBA(238, 110, 126, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
+                    RadiusBottomLeft: =13
+                    RadiusBottomRight: =13
+                    RadiusTopLeft: =13
+                    RadiusTopRight: =13
                     TabIndex: =-1
                     Visible: =sin_nombre_representante_legal_in
-                    Width: =nombre_representante_legal_in_input.Width+1
-                    X: =nombre_representante_legal_in_input.X
+                    Width: =nombre_representante_legal_in_input.Width - 2
+                    X: =nombre_representante_legal_in_input.X + 1
                     Y: =nombre_representante_legal_in_input.Y
                     ZIndex: =1
 

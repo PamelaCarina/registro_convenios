@@ -2047,7 +2047,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "cargo_responsable_institucional_in_input",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3445,7 +3445,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "correo_electronico_in_input",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9033,7 +9033,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "nombre_representante_legal_in_input",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10022,7 +10022,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "nombre_responsable_institucional_in_input",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13295,7 +13295,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FocusedBorderThickness",
         "Size",
         "Italic",
@@ -13328,7 +13335,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_cargo_in",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13682,7 +13689,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FocusedBorderThickness",
         "Size",
         "Italic",
@@ -13715,7 +13729,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_correo_in",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14069,7 +14083,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FocusedBorderThickness",
         "Size",
         "Italic",
@@ -14102,7 +14123,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_nombre_representante_legal_in",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14456,7 +14477,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FocusedBorderThickness",
         "Size",
         "Italic",
@@ -14489,7 +14517,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_nombre_responsable_institucional_in",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

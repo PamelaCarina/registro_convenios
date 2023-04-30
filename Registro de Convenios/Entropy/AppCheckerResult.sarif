@@ -6284,6 +6284,96 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.X"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.X",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "X",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.Y",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.Width"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.Width",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Width",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.Height"
                 }
               ],
