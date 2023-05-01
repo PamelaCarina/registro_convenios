@@ -45,11 +45,11 @@ Contribución_desarrollo As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |+
                 =// Almacenamiento borrador oficial en sharepoint
-                Almacenamiento.Run(Last(att_registro_10_attach_oficial.Attachments).Name,
+                Almacenamientoarchivosensharepoint.Run(Last(att_registro_10_attach_oficial.Attachments).Name,
                 {name:Last(att_registro_10_attach_oficial.Attachments).Name, contentBytes:Last(att_registro_10_attach_oficial.Attachments).Value});
                 
                 // Almacenamiento documentación adicional en sharepoint
-                ForAll(att_registro_10_attach_extra.Attachments, Almacenamiento.Run(Name,{name:Name, contentBytes:Value})
+                ForAll(att_registro_10_attach_extra.Attachments, Almacenamientoarchivosensharepoint.Run(Name,{name:Name, contentBytes:Value})
                 );
                 
                 Patch(datosContribucion_desarrollo,First(Filter(datosContribucion_desarrollo, dato="ods")),

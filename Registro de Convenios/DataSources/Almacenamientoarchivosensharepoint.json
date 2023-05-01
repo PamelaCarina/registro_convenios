@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "57eae6a4-dd0e-415b-a73b-a96f4598d46d",
+    "Name": "Almacenamientoarchivosensharepoint",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "b320b70a-b9e7-ed11-a7c6-6045bd006f89"
+  }
+]
