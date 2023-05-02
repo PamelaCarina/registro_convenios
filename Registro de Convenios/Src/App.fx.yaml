@@ -17,9 +17,9 @@ App As appinfo:
         //LISTAS DESPLEGABLES
         ClearCollect(datos,Listaespecificacionesconvenio.Run());
         
-        ClearCollect(lista_alcance,{id:"-",valor:"Seleccionar..."});
+        //ClearCollect(lista_alcance;{id:"-";valor:"Seleccionar..."});;
         Set(a_t,First(datos).'alcance territorial');
-        Collect(lista_alcance,a_t);
+        ClearCollect(lista_alcance,a_t);
         
         ClearCollect(lista_tipologia,{id:"-",valor:"Seleccionar..."});
         Set(t,First(datos).tipologia);

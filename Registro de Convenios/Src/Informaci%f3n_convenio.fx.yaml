@@ -503,7 +503,9 @@ Información_convenio As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: =dd_tipo
+                        Items: |-
+                            =dd_tipo
+                            //SortByColumns(dd_tipo;"Text")
                         OnChange: =
                         PaddingBottom: =12
                         PaddingLeft: =12

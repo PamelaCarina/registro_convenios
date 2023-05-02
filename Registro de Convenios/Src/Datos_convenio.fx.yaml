@@ -854,6 +854,7 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_alcance As dropdown:
+                            AllowEmptySelection: =true
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -868,8 +869,10 @@ Datos_convenio As screen:
                             HoverBorderColor: =RGBA(241,244,255,1)
                             HoverColor: =RGBA(17, 61, 107, 1)
                             HoverFill: =RGBA(207, 210, 232, 1)
-                            Items: =lista_alcance
-                            OnChange: =
+                            Items: |-
+                                =//lista_alcance
+                                Filter(lista_alcance, buscador_a_t_input.Text in valor)
+                            OnChange: =Reset(buscador_a_t_input)
                             PaddingBottom: =12
                             PaddingLeft: =12
                             PaddingTop: =12
@@ -893,6 +896,37 @@ Datos_convenio As screen:
                             X: =tipo_alcance.X+tipo_alcance.Width-Self.Width+1
                             Y: =fondo_celeste_2.Y
                             ZIndex: =4
+
+                        buscador_a_t_input As text:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =0
+                            Color: |-
+                                =//RGBA(17; 61; 107; 1)
+                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                                RGBA(17, 61, 107, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(17, 61, 107, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            HintText: =If(IsBlank(tipo_alcance.SelectedText),"Buscar...","")
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: |-
+                                =//RGBA(17; 61; 107; 1)
+                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                                RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            OnChange: =
+                            OnSelect: |-
+                                =Reset(tipo_alcance);
+                                Reset(buscador_a_t_input)
+                            PaddingBottom: =1
+                            PaddingLeft: =24
+                            PaddingRight: =10
+                            PaddingTop: =0
+                            Size: =14
+                            Width: =520
+                            ZIndex: =5
 
                     alcance_territorial As label:
                         Color: =RGBA(111, 139, 167, 1)
