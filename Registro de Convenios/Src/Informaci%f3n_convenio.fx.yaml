@@ -488,10 +488,7 @@ Información_convenio As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: |-
-                            =//dd_tipo
-                            //SortByColumns(dd_tipo;"Text")
-                            Filter(SortByColumns(dd_tipo,"Text"), buscador_c_t_input.Text in Text)
+                        Items: =Filter(SortByColumns(dd_tipo,"Text"), buscador_c_t_input.Text in Text)
                         OnChange: =Reset(buscador_c_t_input)
                         PaddingBottom: =12
                         PaddingLeft: =12
