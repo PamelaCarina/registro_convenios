@@ -1,94 +1,95 @@
 Información_convenio As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |-
-        =UpdateContext({
-            dd_tipo: Table(
-                {
-                    Text: "Formación (pregrado, postgrado, formación permanente)",
-                    Val: "formacion"
-                },
-                {
-                    Text: "Extensión Académica",
-                    Val: "extension_academica"
-                },
-                {
-                    Text: "Extensión Cultural",
-                    Val: "extension_cultural"
-                },
-                {
-                    Text: "Bidireccional",
-                    Val: "bidireccional"
-                },
-                {
-                    Text: "Otra",
-                    Val: "otra"
-                }
-            ),
-            dd_sectores: Table(
-                {
-                    Text: "Público - Político",
-                    Val: "publico_politico"
-                },
-                {
-                    Text: "Social Comunitario",
-                    Val: "social_comunitario"
-                },
-                {
-                    Text: "Cultural",
-                    Val: "cultural"
-                },
-                {
-                    Text: "Productivo",
-                    Val: "productivo"
-                },
-                {
-                    Text: "Comunidad Universitaria",
-                    Val: "comunidad_uni"
-                }
-            ),
-            dd_ambito: Table(
-                {
-                    Text: "Extensión",
-                    Val: "extension"
-                },
-                {
-                    Text: "Comunicaciones",
-                    Val: "comunicaciones"
-                },
-                {
-                    Text: "Emprendimiento",
-                    Val: "emprendimiento"
-                },
-                {
-                    Text: "Transferencia tecnológica",
-                    Val: "transferencia_tecnologica"
-                },
-                {
-                    Text: "Asistencia técnica",
-                    Val: "asistencia_tecnica"
-                },
-                {
-                    Text: "Interacción con red alumni",
-                    Val: "red_alumni"
-                },
-                {
-                    Text: "Relaciones institucionales",
-                    Val: "rel_institucionales"
-                },
-                {
-                    Text: "Relaciones internacionales",
-                    Val: "rel_internacionales"
-                },
-                {
-                    Text: "Prácticas profesionales, pasantías estudiantiles y académicas",
-                    Val: "practicas_pasantia"
-                },
-                {
-                    Text: "Servicios",
-                    Val: "servicios"
-                }
-            )
-        });
+        =ClearCollect(dd_tipo,
+            {
+                valor: "Formación (pregrado, postgrado, formación permanente)",
+                id: "formacion"
+            },
+            {
+                valor: "Extensión Académica",
+                id: "extension_academica"
+            },
+            {
+                valor: "Extensión Cultural",
+                id: "extension_cultural"
+            },
+            {
+                valor: "Bidireccional",
+                id: "bidireccional"
+            },
+            {
+                valor: "Otra",
+                id: "otra"
+            }
+        );
+        
+        ClearCollect(dd_sectores,
+            {
+                valor: "Público - Político",
+                id: "publico_politico"
+            },
+            {
+                valor: "Social Comunitario",
+                id: "social_comunitario"
+            },
+            {
+                valor: "Cultural",
+                id: "cultural"
+            },
+            {
+                valor: "Productivo",
+                id: "productivo"
+            },
+            {
+                valor: "Comunidad Universitaria",
+                id: "comunidad_uni"
+            }
+        );
+        
+        ClearCollect(dd_ambito,
+            {
+                valor: "Extensión",
+                id: "extension"
+            },
+            {
+                valor: "Comunicaciones",
+                id: "comunicaciones"
+            },
+            {
+                valor: "Emprendimiento",
+                id: "emprendimiento"
+            },
+            {
+                valor: "Transferencia tecnológica",
+                id: "transferencia_tecnologica"
+            },
+            {
+                valor: "Asistencia técnica",
+                id: "asistencia_tecnica"
+            },
+            {
+                valor: "Interacción con red alumni",
+                id: "red_alumni"
+            },
+            {
+                valor: "Relaciones institucionales",
+                id: "rel_institucionales"
+            },
+            {
+                valor: "Relaciones internacionales",
+                id: "rel_internacionales"
+            },
+            {
+                valor: "Prácticas profesionales, pasantías estudiantiles y académicas",
+                id: "practicas_pasantia"
+            },
+            {
+                valor: "Servicios",
+                id: "servicios"
+            }
+        );
+        
         UpdateContext({sin_convenio_tipo:false});
         UpdateContext({sin_ambito_politica:false});
         UpdateContext({sin_sector_politica:false});
@@ -108,17 +109,18 @@ Información_convenio As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
                 =//CATEGORIAS VINCULACION CON EL MEDIO
-                If(convenio_tipo.Selected.Text="Seleccionar...", UpdateContext({sin_convenio_tipo:true}), UpdateContext({sin_convenio_tipo:false}));
-                If(sector_politica.Selected.Text="Seleccionar...", UpdateContext({sin_sector_politica:true}), UpdateContext({sin_sector_politica:false}));
-                If(ambito_politica.Selected.Text="Seleccionar...", UpdateContext({sin_ambito_politica:true}), UpdateContext({sin_ambito_politica:false}));
+                If(convenio_tipo.Selected.valor="Seleccionar...", UpdateContext({sin_convenio_tipo:true}), UpdateContext({sin_convenio_tipo:false}));
+                If(sector_politica.Selected.valor="Seleccionar...", UpdateContext({sin_sector_politica:true}), UpdateContext({sin_sector_politica:false}));
+                If(ambito_politica.Selected.valor="Seleccionar...", UpdateContext({sin_ambito_politica:true}), UpdateContext({sin_ambito_politica:false}));
                 
                 If(!sin_convenio_tipo && !sin_sector_politica && !sin_ambito_politica,
                     Set(datos_vinculacion_cargados,{
-                    tipo: convenio_tipo.Selected.Text,
-                    sector: sector_politica.Selected.Text,
-                    ambito: ambito_politica.Selected.Text
+                    tipo: convenio_tipo.Selected.valor,
+                    sector: sector_politica.Selected.valor,
+                    ambito: ambito_politica.Selected.valor
                     });
-                    Navigate(Area_contribución,ScreenTransition.Fade));
+                    Navigate(Area_contribución,ScreenTransition.Fade)
+                );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -488,7 +490,7 @@ Información_convenio As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: =Filter(SortByColumns(dd_tipo,"Text"), buscador_c_t_input.Text in Text)
+                        Items: =Filter(SortByColumns(dd_tipo,"valor"), buscador_c_t_input.Text in valor)
                         OnChange: =Reset(buscador_c_t_input)
                         PaddingBottom: =12
                         PaddingLeft: =12

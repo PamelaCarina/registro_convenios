@@ -942,7 +942,7 @@
         },
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Text\"}",
+          "NameMap": "{\"Value\":\"id\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -4270,7 +4270,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Text\"}",
+          "NameMap": "{\"Value\":\"valor\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -7581,7 +7581,7 @@
         },
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Text\"}",
+          "NameMap": "{\"Value\":\"id\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
