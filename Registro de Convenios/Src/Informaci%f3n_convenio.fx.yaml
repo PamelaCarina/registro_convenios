@@ -4,10 +4,6 @@ Información_convenio As screen:
         =UpdateContext({
             dd_tipo: Table(
                 {
-                    Text: "Seleccionar...",
-                    Val: "sin_seleccion"
-                },
-                {
                     Text: "Formación (pregrado, postgrado, formación permanente)",
                     Val: "formacion"
                 },
@@ -485,6 +481,7 @@ Información_convenio As screen:
                         ZIndex: =2
 
                     convenio_tipo As dropdown:
+                        AllowEmptySelection: =true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -500,9 +497,10 @@ Información_convenio As screen:
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
                         Items: |-
-                            =dd_tipo
+                            =//dd_tipo
                             //SortByColumns(dd_tipo;"Text")
-                        OnChange: =
+                            Filter(SortByColumns(dd_tipo,"Text"), buscador_c_t_input.Text in Text)
+                        OnChange: =Reset(buscador_c_t_input)
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -527,6 +525,40 @@ Información_convenio As screen:
                         X: =convenio_tipo.X+convenio_tipo.Width-Self.Width+1
                         Y: =fondo_celeste_9.Y
                         ZIndex: =4
+
+                    buscador_c_t_input As text:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =0
+                        Color: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(17, 61, 107, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HintText: |-
+                            =//"Buscar..."
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;"";"Buscar...")
+                            If(IsBlank(tipo_tipologia.SelectedText),"Buscar...","")
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnChange: =
+                        OnSelect: |-
+                            =Reset(convenio_tipo);
+                            Reset(buscador_c_t_input)
+                        PaddingBottom: =1
+                        PaddingLeft: =24
+                        PaddingRight: =10
+                        PaddingTop: =0
+                        Size: =14
+                        Width: =530
+                        ZIndex: =5
 
                 convenio_de_tipo As label:
                     Color: =RGBA(111, 139, 167, 1)

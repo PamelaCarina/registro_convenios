@@ -5744,6 +5744,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],
@@ -6717,6 +6747,36 @@
                 "member": "Height",
                 "module": "Datos_contraparte_internacional",
                 "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.HintText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.HintText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HintText",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input"
               }
             }
           ],
