@@ -1053,8 +1053,10 @@ Unidad_solicitante As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: =organismos_actividad
-                        OnChange: =
+                        Items: |-
+                            =//organismos_actividad
+                            Filter(organismos_actividad, buscador_n_u_s_input.Text in Reparticion)
+                        OnChange: =Reset(buscador_n_u_s_input)
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -1078,6 +1080,37 @@ Unidad_solicitante As screen:
                         X: =nombre_unidad_solicitante.X+nombre_unidad_solicitante.Width-Self.Width+1
                         Y: =fondo_celeste_8.Y
                         ZIndex: =4
+
+                    buscador_n_u_s_input As text:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =0
+                        Color: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(17, 61, 107, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HintText: =If(IsBlank(nombre_unidad_solicitante.SelectedText),"Buscar...","")
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnChange: =
+                        OnSelect: |-
+                            =Reset(nombre_unidad_solicitante);
+                            Reset(buscador_n_u_s_input)
+                        PaddingBottom: =1
+                        PaddingLeft: =24
+                        PaddingRight: =10
+                        PaddingTop: =0
+                        Size: =14
+                        Width: =1140
+                        ZIndex: =5
 
                 nombre_unidad_label_2 As label:
                     Color: =RGBA(111, 139, 167, 1)
