@@ -26,10 +26,6 @@ Información_convenio As screen:
             ),
             dd_sectores: Table(
                 {
-                    Text: "Seleccionar...",
-                    Val: "sin_seleccion"
-                },
-                {
                     Text: "Público - Político",
                     Val: "publico_politico"
                 },
@@ -51,10 +47,6 @@ Información_convenio As screen:
                 }
             ),
             dd_ambito: Table(
-                {
-                    Text: "Seleccionar...",
-                    Val: "sin_seleccion"
-                },
                 {
                     Text: "Extensión",
                     Val: "extension"
