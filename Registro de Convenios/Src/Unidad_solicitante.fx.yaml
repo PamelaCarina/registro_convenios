@@ -26,7 +26,13 @@ Unidad_solicitante As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =//SIN NOMBRE UNIDAD SOLICITANTE
-                If(nombre_unidad_solicitante.Selected.Reparticion="Seleccionar...", UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}));
+                If(CountRows(organismos_actividad)>1,
+                    If(IsBlank(nombre_unidad_solicitante),UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}))
+                ,
+                    If(IsBlank(nombre_unidad_input),UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}))
+                );
+                //If(IsBlank(nombre_unidad_solicitante.SelectedText);UpdateContext({sin_unidad:true}); UpdateContext({sin_unidad:false}));;
+                //If(nombre_unidad_solicitante.Selected.Reparticion="Seleccionar..."; UpdateContext({sin_unidad:true}); UpdateContext({sin_unidad:false}));;
                 
                 //SIN PROMOTOR
                 If(IsBlank(nombre_promotor_input_2.Text), UpdateContext({sin_promotor:true}), UpdateContext({sin_promotor:false}));
@@ -962,19 +968,19 @@ Unidad_solicitante As screen:
                 Y: =24
                 ZIndex: =10
 
-                nombre_unidad_input_2 As text:
+                nombre_unidad_input As text:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =
+                    Default: =If(CountRows(organismos_actividad)=1,First(organismos_actividad).Reparticion,"")
                     DisabledColor: =RGBA(111, 139, 167, 1)
-                    DisplayMode: =
+                    DisplayMode: =DisplayMode.Disabled
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
                     HintText: =""
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
-                    MaxLength: =60
+                    MaxLength: =150
                     PaddingBottom: =12
                     PaddingLeft: =24
                     PaddingRight: =24
@@ -985,13 +991,14 @@ Unidad_solicitante As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Visible: =false
+                    Visible: =If(CountRows(organismos_actividad)>1,false,true)
                     Width: =1198
                     Y: =20
                     ZIndex: =1
 
                 Contenedor_seleccionable_4 As groupContainer.manualLayoutContainer:
                     Height: =40
+                    Visible: =If(CountRows(organismos_actividad)>1,true,false)
                     Width: =1198
                     Y: =20
                     ZIndex: =2
