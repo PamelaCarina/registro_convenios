@@ -1031,6 +1031,7 @@ Unidad_solicitante As screen:
                         ZIndex: =2
 
                     nombre_unidad_solicitante As dropdown:
+                        AllowEmptySelection: =true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -1083,7 +1084,7 @@ Unidad_solicitante As screen:
                     Text: ="NOMBRE UNIDAD SOLICITANTE"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
-                    ZIndex: =3
+                    ZIndex: =4
 
             buscar_1 As image:
                 Height: =20

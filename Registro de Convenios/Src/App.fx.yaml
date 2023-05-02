@@ -6,9 +6,9 @@ App As appinfo:
         Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run("melissa@udec.cl"));
         
         //UNIDAD SOLICITANTE
-        ClearCollect(organismos_actividad,{'Codigo Reparticion':"aaaa",Reparticion:"Seleccionar..."});
+        //ClearCollect(organismos_actividad;{'Codigo Reparticion':"aaaa";Reparticion:"Seleccionar..."});;
         Set(arraypersonaltest,persona_solicitante.'array organismo actividad');
-        Collect(organismos_actividad, arraypersonaltest);
+        ClearCollect(organismos_actividad, arraypersonaltest);
         //Collect(organismos_actividad;{'Codigo Reparticion': First(persona_solicitante.'array personal').'Codigo Reparticion';Reparticion:First(persona_solicitante.'array personal').Reparticion});;
         
         //¿Esto qué hace?
@@ -46,4 +46,11 @@ App As appinfo:
         //MENSAJES DE CAMPOS FALTANTES
         Set(msj_campo_faltante,"Debe completar el campo faltante.");
         Set(msj_campos_faltantes,"Debe completar los campos faltantes.");
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
 
