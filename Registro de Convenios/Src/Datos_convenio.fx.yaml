@@ -1128,17 +1128,15 @@ Datos_convenio As screen:
                 =If(CountRows(att_registro_10_attach_oficial.Attachments) > 0,  
                     Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
                     Set(test_attachment,First(att_registro_10_attach_oficial.Attachments).Value);
-                    If(attachment_extension="exe",
-                        Set(existe_adjunto, false);
-                        UpdateContext({archivo_invalido:true})
-                        ,
+                    If(attachment_extension="docx",
                         Set(existe_adjunto, true);
                         UpdateContext({archivo_invalido:false});
-                
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
-                
                         UpdateContext({show_popup_oficial: false});
+                        ,
+                        Set(existe_adjunto, false);
+                        UpdateContext({archivo_invalido:true})
                     ), 
                     Set(existe_adjunto, false);
                     UpdateContext({archivo_invalido:false});
