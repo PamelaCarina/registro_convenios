@@ -269,6 +269,7 @@ Información_convenio As screen:
                         ZIndex: =2
 
                     ambito_politica As dropdown:
+                        AllowEmptySelection: =true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -283,8 +284,10 @@ Información_convenio As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: =dd_ambito
-                        OnChange: =
+                        Items: |-
+                            =//dd_ambito
+                            Filter(SortByColumns(dd_ambito,"valor"), buscador_a_p_input.Text in valor)
+                        OnChange: =Reset(buscador_a_p_input)
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -308,6 +311,37 @@ Información_convenio As screen:
                         X: =ambito_politica.X+ambito_politica.Width-Self.Width+1
                         Y: =fondo_celeste_10.Y
                         ZIndex: =4
+
+                    buscador_a_p_input As text:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =0
+                        Color: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(17, 61, 107, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HintText: =If(IsBlank(ambito_politica.SelectedText),"Buscar...","")
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnChange: =
+                        OnSelect: |-
+                            =Reset(ambito_politica);
+                            Reset(buscador_a_p_input)
+                        PaddingBottom: =1
+                        PaddingLeft: =24
+                        PaddingRight: =10
+                        PaddingTop: =0
+                        Size: =14
+                        Width: =1140
+                        ZIndex: =5
 
                 ambito_de_politica As label:
                     Color: =RGBA(111, 139, 167, 1)
@@ -372,6 +406,7 @@ Información_convenio As screen:
                         ZIndex: =2
 
                     sector_politica As dropdown:
+                        AllowEmptySelection: =true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -386,8 +421,10 @@ Información_convenio As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: =dd_sectores
-                        OnChange: =
+                        Items: |-
+                            =//dd_sectores
+                            Filter(SortByColumns(dd_sectores,"valor"), buscador_s_p_input.Text in valor)
+                        OnChange: =Reset(buscador_s_p_input)
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -411,6 +448,37 @@ Información_convenio As screen:
                         X: =sector_politica.X+sector_politica.Width-Self.Width+1
                         Y: =fondo_celeste_11.Y
                         ZIndex: =4
+
+                    buscador_s_p_input As text:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =0
+                        Color: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(17, 61, 107, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HintText: =If(IsBlank(sector_politica.SelectedText),"Buscar...","")
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnChange: =
+                        OnSelect: |-
+                            =Reset(sector_politica);
+                            Reset(buscador_s_p_input)
+                        PaddingBottom: =1
+                        PaddingLeft: =24
+                        PaddingRight: =10
+                        PaddingTop: =0
+                        Size: =14
+                        Width: =530
+                        ZIndex: =5
 
                 sector_de_politica As label:
                     Color: =RGBA(111, 139, 167, 1)
