@@ -109,9 +109,9 @@ Información_convenio As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
                 =//CATEGORIAS VINCULACION CON EL MEDIO
-                If(convenio_tipo.Selected.valor="Seleccionar...", UpdateContext({sin_convenio_tipo:true}), UpdateContext({sin_convenio_tipo:false}));
-                If(sector_politica.Selected.valor="Seleccionar...", UpdateContext({sin_sector_politica:true}), UpdateContext({sin_sector_politica:false}));
-                If(ambito_politica.Selected.valor="Seleccionar...", UpdateContext({sin_ambito_politica:true}), UpdateContext({sin_ambito_politica:false}));
+                If(IsBlank(convenio_tipo), UpdateContext({sin_convenio_tipo:true}), UpdateContext({sin_convenio_tipo:false}));
+                If(IsBlank(sector_politica), UpdateContext({sin_sector_politica:true}), UpdateContext({sin_sector_politica:false}));
+                If(IsBlank(ambito_politica), UpdateContext({sin_ambito_politica:true}), UpdateContext({sin_ambito_politica:false}));
                 
                 If(!sin_convenio_tipo && !sin_sector_politica && !sin_ambito_politica,
                     Set(datos_vinculacion_cargados,{
