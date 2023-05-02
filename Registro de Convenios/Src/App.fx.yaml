@@ -8,7 +8,7 @@ App As appinfo:
         //UNIDAD SOLICITANTE
         //ClearCollect(organismos_actividad;{'Codigo Reparticion':"aaaa";Reparticion:"Seleccionar..."});;
         Set(arraypersonaltest,persona_solicitante.'array organismo actividad');
-        ClearCollect(organismos_actividad, arraypersonaltest);
+        ClearCollect(organismos_actividad, SortByColumns(arraypersonaltest,"Reparticion"));
         //Collect(organismos_actividad;{'Codigo Reparticion': First(persona_solicitante.'array personal').'Codigo Reparticion';Reparticion:First(persona_solicitante.'array personal').Reparticion});;
         
         //¿Esto qué hace?
