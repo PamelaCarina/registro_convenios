@@ -538,10 +538,7 @@ Información_convenio As screen:
                         DisabledColor: =RGBA(17, 61, 107, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         Fill: =RGBA(0, 0, 0, 0)
-                        HintText: |-
-                            =//"Buscar..."
-                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;"";"Buscar...")
-                            If(IsBlank(tipo_tipologia.SelectedText),"Buscar...","")
+                        HintText: =If(IsBlank(convenio_tipo.SelectedText),"Buscar...","")
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
                         HoverColor: |-
                             =//RGBA(17; 61; 107; 1)
