@@ -24,7 +24,7 @@ Datos_convenio As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |+
                 =//ESPECIFICACIONES
-                If(tipo_alcance.Selected.valor ="Seleccionar...", UpdateContext({sin_alcance_territorial:true}), UpdateContext({sin_alcance_territorial:false}));
+                If(IsBlank(tipo_alcance), UpdateContext({sin_alcance_territorial:true}), UpdateContext({sin_alcance_territorial:false}));
                 If(tipo_tipologia.Selected.valor ="Seleccionar...", UpdateContext({sin_tipologia:true}), UpdateContext({sin_tipologia:false}));
                 If(tipo_solicitud.Selected.valor ="Seleccionar...", UpdateContext({sin_solicitud:true}), UpdateContext({sin_solicitud:false}));
                 If(tipo_modalidades.Selected.valor ="Seleccionar...", UpdateContext({sin_modalidad:true}), UpdateContext({sin_modalidad:false}));
@@ -925,7 +925,7 @@ Datos_convenio As screen:
                             PaddingRight: =10
                             PaddingTop: =0
                             Size: =14
-                            Width: =520
+                            Width: =530
                             ZIndex: =5
 
                     alcance_territorial As label:
