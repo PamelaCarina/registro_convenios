@@ -21,17 +21,17 @@ App As appinfo:
         Set(a_t,First(datos).'alcance territorial');
         ClearCollect(lista_alcance,a_t);
         
-        ClearCollect(lista_tipologia,{id:"-",valor:"Seleccionar..."});
+        //ClearCollect(lista_tipologia;{id:"-";valor:"Seleccionar..."});;
         Set(t,First(datos).tipologia);
-        Collect(lista_tipologia,t);
+        ClearCollect(lista_tipologia,t);
         
-        ClearCollect(lista_tipo_solicitud,{id:"-",valor:"Seleccionar..."});
+        //ClearCollect(lista_tipo_solicitud;{id:"-";valor:"Seleccionar..."});;
         Set(t_s,First(datos).'tipo solicitud');
-        Collect(lista_tipo_solicitud,t_s);
+        ClearCollect(lista_tipo_solicitud,t_s);
         
-        ClearCollect(lista_modalidad,{id:"-",valor:"Seleccionar..."});
+        //ClearCollect(lista_modalidad;{id:"-";valor:"Seleccionar..."});;
         Set(m,First(datos).modalidad);
-        Collect(lista_modalidad,m);
+        ClearCollect(lista_modalidad,m);
         
         //NACIONALES
         Clear(contrapartes_nacionales);
