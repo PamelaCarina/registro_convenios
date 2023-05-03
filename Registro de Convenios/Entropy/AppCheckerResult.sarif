@@ -1184,576 +1184,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_2.cb_ods_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_2.cb_ods_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_2.cb_ods_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_3.cb_ods_3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_3.cb_ods_3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_3.cb_ods_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_4.cb_ods_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_4.cb_ods_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_4.cb_ods_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_5.cb_ods_5.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_5.cb_ods_5.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_5.cb_ods_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_6.cb_ods_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_6.cb_ods_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_6.cb_ods_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_7.cb_ods_7.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_7.cb_ods_7.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_7.cb_ods_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_8.cb_ods_8.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_8.cb_ods_8.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_8.cb_ods_8"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_9.cb_ods_9.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_9.cb_ods_9.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_9.cb_ods_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_10.cb_ods_10.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_10.cb_ods_10.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_10.cb_ods_10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_11.cb_ods_11.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_11.cb_ods_11.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_11.cb_ods_11"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_12.cb_ods_12.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_12.cb_ods_12.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_12.cb_ods_12"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_13.cb_ods_13.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_13.cb_ods_13.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_13.cb_ods_13"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_14.cb_ods_14.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_14.cb_ods_14.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_14.cb_ods_14"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_15.cb_ods_15.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_15.cb_ods_15.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_15.cb_ods_15"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_16.cb_ods_16.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_16.cb_ods_16.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_16.cb_ods_16"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_17.cb_ods_17.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_17.cb_ods_17.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_17.cb_ods_17"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_ninguno.cb_ods_ninguno.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_ninguno.cb_ods_ninguno.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_ninguno.cb_ods_ninguno"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.Botones_atras_siguiente_7.Siguiente_7.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.Botones_atras_siguiente_7.Siguiente_7.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo.Botones_atras_siguiente_7.Siguiente_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.inp_contraparte_in_popup_search.AccessibleLabel"
                 }
               ],
@@ -2384,49 +1814,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.pais_in.pais_in_input.AccessibleLabel"
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.pais_in.pais_in_input.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.pais_in.pais_in_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.pais_in.pais_in_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.pais_in.pais_in_input.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.pais_in.pais_in_input.FocusedBorderThickness",
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.pais_in.pais_in_input.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.pais_in.pais_in_input"
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.pais_in.pais_in_input"
               }
             }
           ],
@@ -2438,6 +1838,36 @@
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.pais_in.pais_in_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.pais_in.pais_in_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.pais_in.pais_in_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -3188,66 +2618,6 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Promotor_unidad_solicitante_na.pais_na.pais_na_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Promotor_unidad_solicitante_na.pais_na.pais_na_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Promotor_unidad_solicitante_na.pais_na.pais_na_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Promotor_unidad_solicitante_na.pais_na.pais_na_input.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Promotor_unidad_solicitante_na.pais_na.pais_na_input.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Promotor_unidad_solicitante_na.pais_na.pais_na_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5954,6 +5324,576 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_2.cb_ods_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_2.cb_ods_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_2.cb_ods_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_3.cb_ods_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_3.cb_ods_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_3.cb_ods_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_4.cb_ods_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_4.cb_ods_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_4.cb_ods_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_5.cb_ods_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_5.cb_ods_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_5.cb_ods_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_6.cb_ods_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_6.cb_ods_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_6.cb_ods_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_7.cb_ods_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_7.cb_ods_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_7.cb_ods_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_8.cb_ods_8.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_8.cb_ods_8.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_8.cb_ods_8"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_9.cb_ods_9.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_9.cb_ods_9.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_9.cb_ods_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_10.cb_ods_10.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_10.cb_ods_10.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_10.cb_ods_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_11.cb_ods_11.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_11.cb_ods_11.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_11.cb_ods_11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_12.cb_ods_12.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_12.cb_ods_12.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_12.cb_ods_12"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_13.cb_ods_13.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_13.cb_ods_13.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_13.cb_ods_13"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_14.cb_ods_14.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_14.cb_ods_14.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_14.cb_ods_14"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_15.cb_ods_15.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_15.cb_ods_15.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_15.cb_ods_15"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_16.cb_ods_16.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_16.cb_ods_16.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_16.cb_ods_16"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_17.cb_ods_17.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_17.cb_ods_17.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_17.cb_ods_17"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_ninguno.cb_ods_ninguno.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_ninguno.cb_ods_ninguno.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_ninguno.cb_ods_ninguno"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.Botones_atras_siguiente_7.Siguiente_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.Botones_atras_siguiente_7.Siguiente_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo.Botones_atras_siguiente_7.Siguiente_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],
@@ -6134,66 +6074,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.id_solicitud_convenio"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.id_solicitud_convenio",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "id_solicitud_convenio",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.ods"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.ods",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "ods",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.areas_internas"
                 }
               ],
@@ -6265,6 +6145,66 @@
               },
               "properties": {
                 "member": "reset_externo",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.id_solicitud_convenio"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.id_solicitud_convenio",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "id_solicitud_convenio",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.ods"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.ods",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ods",
                 "module": "App",
                 "type": "App"
               }
@@ -6488,66 +6428,6 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.popup_done"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.popup_done",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "popup_done",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Contribución_desarrollo.popup_enviar"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Contribución_desarrollo.popup_enviar",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "popup_enviar",
-                "module": "Contribución_desarrollo",
-                "type": "Contribución_desarrollo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
         },
         {
           "locations": [
@@ -6938,6 +6818,96 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.Items",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.popup_done"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.popup_done",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "popup_done",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Contribución_desarrollo.popup_enviar"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Contribución_desarrollo.popup_enviar",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "popup_enviar",
+                "module": "Contribución_desarrollo",
+                "type": "Contribución_desarrollo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
         }
       ],
       "tool": {

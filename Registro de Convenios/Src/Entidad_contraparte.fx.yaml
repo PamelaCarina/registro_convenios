@@ -394,7 +394,7 @@ Entidad_contraparte As screen:
             "gal_tabs As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
                 Height: =45
                 Items: |-
-                    =Table({id:1,nombre: "Nacional"},{id:2,nombre:"Internacional"})
+                    =If(tipo_alcance.Selected.valor="Convenio nacional",Table({id:1,nombre: "Nacional"}),Table({id:1,nombre: "Nacional"},{id:2,nombre:"Internacional"}))
                 TemplateSize: =153
                 Width: =1198
                 X: =40

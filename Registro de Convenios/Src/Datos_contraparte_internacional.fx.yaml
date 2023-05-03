@@ -191,7 +191,7 @@ Datos_contraparte_internacional As screen:
                 Width: =1230
                 X: =42
                 Y: =192
-                ZIndex: =6
+                ZIndex: =2
 
                 correo_electronico_in As groupContainer.manualLayoutContainer:
                     Height: =60
@@ -269,57 +269,10 @@ Datos_contraparte_internacional As screen:
                         Width: =230
                         ZIndex: =3
 
-                pais_in As groupContainer.manualLayoutContainer:
-                    Height: =60
-                    Width: =230
-                    X: =708
-                    ZIndex: =2
-
-                    pais_in_input As text:
-                        BorderColor: =RGBA(255, 255, 255, 1)
-                        BorderThickness: =0
-                        Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nueva_contraparte,contraparte_in.pais_responsable_institucional,contraparte.pais_responsable_institucional)
-                        DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(241, 244, 255, 1)
-                        FocusedBorderThickness: =0
-                        HintText: =""
-                        HoverBorderColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =60
-                        PaddingBottom: =12
-                        PaddingLeft: =24
-                        PaddingRight: =24
-                        PaddingTop: =12
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Size: =14
-                        TabIndex: =
-                        Width: =230
-                        Y: =20
-                        ZIndex: =1
-
-                    pais_in_label As label:
-                        Color: =RGBA(111, 139, 167, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        PaddingBottom: =4
-                        PaddingLeft: =12
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =10
-                        Text: ="PAÍS"
-                        VerticalAlign: =VerticalAlign.Top
-                        Width: =230
-                        ZIndex: =2
-
                 Cargo_responsable_institucional_in As groupContainer.manualLayoutContainer:
                     Height: =65
-                    Width: =235
-                    X: =448
+                    Width: =455
+                    X: =483
                     ZIndex: =3
 
                     sin_cargo_in As text:
@@ -367,7 +320,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =229
+                        Width: =454
                         X: =1
                         Y: =20
                         ZIndex: =2
@@ -388,7 +341,7 @@ Datos_contraparte_internacional As screen:
 
                 Nombre_responsable_institucional_in As groupContainer.manualLayoutContainer:
                     Height: =65
-                    Width: =420
+                    Width: =455
                     X: =2
                     ZIndex: =4
 
@@ -436,7 +389,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =416
+                        Width: =454
                         X: =1
                         Y: =21
                         ZIndex: =2
@@ -460,7 +413,7 @@ Datos_contraparte_internacional As screen:
                 Width: =1200
                 X: =42
                 Y: =108
-                ZIndex: =7
+                ZIndex: =3
 
                 sin_nombre_representante_legal_in As text:
                     BorderColor: =RGBA(238, 110, 126, 1)
@@ -526,12 +479,60 @@ Datos_contraparte_internacional As screen:
                     Width: =300
                     ZIndex: =3
 
+            pais_in As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =230
+                X: =1010
+                Y: =24
+                ZIndex: =4
+
+                pais_in_input As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,contraparte_in.pais_responsable_institucional,contraparte.pais_responsable_institucional)
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    HintText: =""
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =60
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Width: =230
+                    Y: =20
+                    ZIndex: =1
+
+                pais_in_label As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="PAÍS"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =230
+                    ZIndex: =2
+
             Nombre_unidad_contraparte_in As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =1198
+                Width: =942
                 X: =42
                 Y: =24
-                ZIndex: =8
+                ZIndex: =5
 
                 nombre_unidad_contraparte_in_input As text:
                     BorderColor: =RGBA(255, 255, 255, 1)
@@ -556,7 +557,7 @@ Datos_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =1198
+                    Width: =942
                     Y: =20
                     ZIndex: =1
 
@@ -690,6 +691,7 @@ Datos_contraparte_internacional As screen:
         buscar_5 As image:
             Height: =20
             Image: =ico_search
+            Visible: =false
             Width: =20
             X: =970
             Y: =366
@@ -743,7 +745,7 @@ Datos_contraparte_internacional As screen:
             RadiusTopRight: =12
             Size: =14
             TabIndex: =1
-            Text: ="BUSCAR"
+            Text: ="ACEPTAR"
             X: =845
             Y: =488
             ZIndex: =8
@@ -819,7 +821,7 @@ Datos_contraparte_internacional As screen:
                     HoverFill: =RGBA(186, 202, 226, 1)
                     Image: ='background-input'
                     ImagePosition: =ImagePosition.Fill
-                    Width: =599
+                    Width: =600
                     ZIndex: =1
 
                 Label1 As label:
