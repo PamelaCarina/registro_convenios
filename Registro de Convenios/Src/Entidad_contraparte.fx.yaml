@@ -470,6 +470,7 @@ Entidad_contraparte As screen:
                         Set(contraparte_in, {});
                         Set(popup_contraparte_in,true);
                         Set(nueva_contraparte,true);
+                        Set(n_c_in_seleccionada,"");
                         );
                 PaddingBottom: =0
                 PaddingLeft: =0
