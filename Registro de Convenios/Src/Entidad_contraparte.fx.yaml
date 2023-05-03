@@ -29,7 +29,7 @@ Entidad_contraparte As screen:
                             contrapartes: contrapartes_internacionales
                         }
                     });
-                    Navigate(Información_convenio,ScreenTransition.Fade)
+                    Navigate(Datos_convenio,ScreenTransition.Fade)
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
