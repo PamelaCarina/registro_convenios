@@ -1,15 +1,15 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PATraernombrescontrapartesnacionales" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="DTI - PA Traer nombres contrapartes nacionales" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PATraernombrescontrapartesinternacionales" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="DTI - PA Traer nombres contrapartes internacionales" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <object name="ManualTriggerInput" />
-      <string name="ResponseActionOutput_nombres_contrapartes_nacionales_def_items_def_nombre_def" />
-      <object name="ResponseActionOutput_nombres_contrapartes_nacionales_def_items_def">
+      <string name="ResponseActionOutput_nombres_contrapartes_internacionales_def_items_def_nombre_def" />
+      <object name="ResponseActionOutput_nombres_contrapartes_internacionales_def_items_def">
         <property name="nombre" type="string" />
       </object>
-      <array typeRef="ResponseActionOutput_nombres_contrapartes_nacionales_def_items_def" name="ResponseActionOutput_nombres_contrapartes_nacionales_def" />
+      <array typeRef="ResponseActionOutput_nombres_contrapartes_internacionales_def_items_def" name="ResponseActionOutput_nombres_contrapartes_internacionales_def" />
       <object name="ResponseActionOutput">
-        <property name="nombres_contrapartes_nacionales" typeRef="ResponseActionOutput_nombres_contrapartes_nacionales_def" />
+        <property name="nombres_contrapartes_internacionales" typeRef="ResponseActionOutput_nombres_contrapartes_internacionales_def" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
