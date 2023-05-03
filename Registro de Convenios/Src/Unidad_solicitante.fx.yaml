@@ -940,7 +940,7 @@ Unidad_solicitante As screen:
                 PaddingRight: =0
                 PaddingTop: =24
                 Size: =16
-                Text: ="Promotor unidad solicitante"
+                Text: ="Unidad(es) Promotora(s)"
                 Width: =337.3
                 X: =473
                 Y: =84

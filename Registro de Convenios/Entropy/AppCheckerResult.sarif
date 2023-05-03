@@ -1184,36 +1184,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Area_contribución.Botones_atras_siguiente_6.Siguiente_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Area_contribución.Botones_atras_siguiente_6.Siguiente_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Area_contribución",
-                "type": "Area_contribución.Botones_atras_siguiente_6.Siguiente_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.inp_contraparte_na_popup_search.AccessibleLabel"
                 }
               ],
@@ -6494,6 +6464,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Area_contribución.Botones_atras_siguiente_6.Siguiente_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Area_contribución.Botones_atras_siguiente_6.Siguiente_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Area_contribución",
+                "type": "Area_contribución.Botones_atras_siguiente_6.Siguiente_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],
@@ -6674,66 +6674,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.areas_internas"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.areas_internas",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "areas_internas",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.areas_externas"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.areas_externas",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "areas_externas",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.reset_externo"
                 }
               ],
@@ -6805,6 +6745,66 @@
               },
               "properties": {
                 "member": "ods",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.areas_internas"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.areas_internas",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "areas_internas",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.areas_externas"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.areas_externas",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "areas_externas",
                 "module": "App",
                 "type": "App"
               }
@@ -7028,66 +7028,6 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Area_contribución.faltan_datos_notif"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Area_contribución.faltan_datos_notif",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "faltan_datos_notif",
-                "module": "Area_contribución",
-                "type": "Area_contribución"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Area_contribución.num_campos_faltantes"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Area_contribución.num_campos_faltantes",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "num_campos_faltantes",
-                "module": "Area_contribución",
-                "type": "Area_contribución"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7508,6 +7448,66 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Area_contribución.faltan_datos_notif"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Area_contribución.faltan_datos_notif",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "faltan_datos_notif",
+                "module": "Area_contribución",
+                "type": "Area_contribución"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Area_contribución.num_campos_faltantes"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Area_contribución.num_campos_faltantes",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "num_campos_faltantes",
+                "module": "Area_contribución",
+                "type": "Area_contribución"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
         }
       ],
       "tool": {
@@ -7587,51 +7587,51 @@
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Variable no utilizada"
+                  "text": "Unused variable"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Quite la variable no utilizada."
+                  "Remove the unused variable."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Esta variable está declarada, pero ningún control hace referencia a ella, por lo que no es necesaria."
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
               }
             },
             {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Archivos multimedia sin usar"
+                  "text": "Unused media files"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Quite el archivo multimedia que no se use en el panel Medios."
+                  "Remove the unused media file in the Media pane."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "No hay ninguna fórmula de control que haga referencia a este archivo multimedia, por lo que no es necesario. Si se quita, mejorará el rendimiento."
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Retraso de carga ineficiente"
+                  "text": "Inefficient delay loading"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Use variables, colecciones y contexto de navegación para compartir el estado entre pantallas en su lugar."
+                  "Use variables, collections, and navigation context to share state across screens instead."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Los controles que hacen referencia a controles en otras pantallas pueden ralentizar la carga y la navegación de la aplicación. Al hacer esto, puede que se fuerce a la aplicación a cargar las otras pantallas de inmediato, en lugar de esperar hasta que el usuario navegue a esa pantalla."
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
               }
             }
           ],
