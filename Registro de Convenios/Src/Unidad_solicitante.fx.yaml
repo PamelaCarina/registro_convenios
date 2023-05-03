@@ -1092,8 +1092,9 @@ Unidad_solicitante As screen:
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
                         DisabledColor: =RGBA(17, 61, 107, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        HintText: =If(IsBlank(nombre_unidad_solicitante.SelectedText),"Buscar...","")
+                        HintText: =If(IsBlank(nombre_unidad_solicitante.SelectedText),"Seleccionar...","")
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
                         HoverColor: |-
                             =//RGBA(17; 61; 107; 1)
@@ -1109,7 +1110,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =10
                         PaddingTop: =0
                         Size: =14
-                        Width: =1140
+                        Width: =1150
                         ZIndex: =5
 
                 nombre_unidad_label_2 As label:

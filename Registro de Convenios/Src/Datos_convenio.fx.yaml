@@ -617,8 +617,9 @@ Datos_convenio As screen:
                             DisabledBorderColor: =RGBA(0, 0, 0, 0)
                             DisabledColor: =RGBA(17, 61, 107, 1)
                             DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(0, 0, 0, 0)
-                            HintText: =If(IsBlank(tipo_modalidades.SelectedText),"Buscar...","")
+                            HintText: =If(IsBlank(tipo_modalidades.SelectedText),"Seleccionar...","")
                             HoverBorderColor: =RGBA(0, 0, 0, 0)
                             HoverColor: |-
                                 =//RGBA(17; 61; 107; 1)
@@ -738,8 +739,9 @@ Datos_convenio As screen:
                             DisabledBorderColor: =RGBA(0, 0, 0, 0)
                             DisabledColor: =RGBA(17, 61, 107, 1)
                             DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(0, 0, 0, 0)
-                            HintText: =If(IsBlank(tipo_solicitud.SelectedText),"Buscar...","")
+                            HintText: =If(IsBlank(tipo_solicitud.SelectedText),"Seleccionar...","")
                             HoverBorderColor: =RGBA(0, 0, 0, 0)
                             HoverColor: |-
                                 =//RGBA(17; 61; 107; 1)
@@ -874,8 +876,9 @@ Datos_convenio As screen:
                             DisabledBorderColor: =RGBA(0, 0, 0, 0)
                             DisabledColor: =RGBA(17, 61, 107, 1)
                             DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(0, 0, 0, 0)
-                            HintText: =If(IsBlank(tipo_tipologia.SelectedText),"Buscar...","")
+                            HintText: =If(IsBlank(tipo_tipologia.SelectedText),"Seleccionar...","")
                             HoverBorderColor: =RGBA(0, 0, 0, 0)
                             HoverColor: |-
                                 =//RGBA(17; 61; 107; 1)
@@ -1010,8 +1013,9 @@ Datos_convenio As screen:
                             DisabledBorderColor: =RGBA(0, 0, 0, 0)
                             DisabledColor: =RGBA(17, 61, 107, 1)
                             DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(0, 0, 0, 0)
-                            HintText: =If(IsBlank(tipo_alcance.SelectedText),"Buscar...","")
+                            HintText: =If(IsBlank(tipo_alcance.SelectedText),"Seleccionar...","")
                             HoverBorderColor: =RGBA(0, 0, 0, 0)
                             HoverColor: |-
                                 =//RGBA(17; 61; 107; 1)

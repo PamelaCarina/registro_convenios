@@ -46,6 +46,96 @@ App As appinfo:
         //MENSAJES DE CAMPOS FALTANTES
         Set(msj_campo_faltante,"Debe completar el campo faltante.");
         Set(msj_campos_faltantes,"Debe completar los campos faltantes.");
+        
+        //opciones seleccionables política del convenio
+        ClearCollect(dd_tipo,
+            {
+                valor: "Formación (pregrado, postgrado, formación permanente)",
+                id: "formacion"
+            },
+            {
+                valor: "Extensión Académica",
+                id: "extension_academica"
+            },
+            {
+                valor: "Extensión Cultural",
+                id: "extension_cultural"
+            },
+            {
+                valor: "Bidireccional",
+                id: "bidireccional"
+            },
+            {
+                valor: "Otra",
+                id: "otra"
+            }
+        );
+        
+        ClearCollect(dd_sectores,
+            {
+                valor: "Público - Político",
+                id: "publico_politico"
+            },
+            {
+                valor: "Social Comunitario",
+                id: "social_comunitario"
+            },
+            {
+                valor: "Cultural",
+                id: "cultural"
+            },
+            {
+                valor: "Productivo",
+                id: "productivo"
+            },
+            {
+                valor: "Comunidad Universitaria",
+                id: "comunidad_uni"
+            }
+        );
+        
+        ClearCollect(dd_ambito,
+            {
+                valor: "Extensión",
+                id: "extension"
+            },
+            {
+                valor: "Comunicaciones",
+                id: "comunicaciones"
+            },
+            {
+                valor: "Emprendimiento",
+                id: "emprendimiento"
+            },
+            {
+                valor: "Transferencia tecnológica",
+                id: "transferencia_tecnologica"
+            },
+            {
+                valor: "Asistencia técnica",
+                id: "asistencia_tecnica"
+            },
+            {
+                valor: "Interacción con red alumni",
+                id: "red_alumni"
+            },
+            {
+                valor: "Relaciones institucionales",
+                id: "rel_institucionales"
+            },
+            {
+                valor: "Relaciones internacionales",
+                id: "rel_internacionales"
+            },
+            {
+                valor: "Prácticas profesionales, pasantías estudiantiles y académicas",
+                id: "practicas_pasantia"
+            },
+            {
+                valor: "Servicios",
+                id: "servicios"
+            }
+        );
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false
