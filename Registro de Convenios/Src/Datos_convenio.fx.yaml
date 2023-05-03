@@ -114,7 +114,7 @@ Datos_convenio As screen:
                         alcance: tipo_alcance.Selected.valor,
                         tipologia: tipo_tipologia.Selected.valor,
                         tipo: tipo_solicitud.Selected.valor,
-                        modalidad: tipo_modalidades.Selected.valor,
+                        modalidad: tipo_modalidades.Selected,
                         proposito: descripcion_proposito_1.Text,
                         documentacion: documentos_cargados
                     });
