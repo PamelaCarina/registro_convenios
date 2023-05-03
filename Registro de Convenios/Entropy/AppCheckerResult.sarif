@@ -6434,6 +6434,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Firma_digiral_in.sin_firma_in.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Firma_digiral_in.sin_firma_in.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Firma_digiral_in.sin_firma_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Firma_digiral_in.sin_firma_in.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Firma_digiral_in.sin_firma_in.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Firma_digiral_in.sin_firma_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],

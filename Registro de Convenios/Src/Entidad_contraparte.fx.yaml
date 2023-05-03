@@ -465,12 +465,14 @@ Entidad_contraparte As screen:
                         Set(contraparte_na, {});
                         Set(popup_contraparte_na,true);
                         Set(nueva_contraparte,true);
+                        Reset(firma_digiral_na_button);
                         ,
                         Navigate(Datos_contraparte_internacional, ScreenTransition.Fade);
                         Set(contraparte_in, {});
                         Set(popup_contraparte_in,true);
                         Set(nueva_contraparte,true);
                         Set(n_c_in_seleccionada,"");
+                        Reset(firma_digiral_in_button);
                         );
                 PaddingBottom: =0
                 PaddingLeft: =0

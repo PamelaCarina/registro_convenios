@@ -117,7 +117,7 @@ Datos_contraparte_nacional As screen:
                 
                 If(sin_correo_na.Visible,UpdateContext({correo_na_invalido:true}),UpdateContext({correo_na_invalido:false}) );
                 
-                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !correo_na_invalido,
+                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !correo_na_invalido && !sin_firma_na,
                     If(IsBlank(
                             LookUp(
                                 contrapartes_nacionales, 
@@ -138,8 +138,8 @@ Datos_contraparte_nacional As screen:
                                 comuna: comuna_na_input.Text,
                                 tipo_contribuyente: tipo_contribuyente_na_input.Text,
                                 rubro: rubro_na_input.Text,
-                                actividad: actividad_na_input.Text
-                
+                                actividad: actividad_na_input.Text,
+                                firma_digital: firma_digiral_in_button.Selected
                         }),
                         Patch(contrapartes_nacionales,
                             LookUp(
@@ -151,7 +151,8 @@ Datos_contraparte_nacional As screen:
                                 nombre_representante_legal: Upper(nombre_representante_legal_na_input.Text),
                                 nombre_responsable_institucional: Upper(nombre_responsable_institucional_na_input.Text),
                                 cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text),
-                                correo_responsable_institucional: Upper(correo_electronico_na_input.Text)  
+                                correo_responsable_institucional: Upper(correo_electronico_na_input.Text)  ,
+                                firma_digital: firma_digiral_in_button.Selected
                             }
                         )
                     );
@@ -477,6 +478,7 @@ Datos_contraparte_nacional As screen:
                 firma_digiral_na_button As radio:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
                     Height: =40
                     HoverColor: =RGBA(17, 61, 107, 1)
                     Items: =["Sí","No"]
