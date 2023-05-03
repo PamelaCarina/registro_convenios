@@ -274,8 +274,9 @@ Datos_convenio As screen:
 
                     "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                         Height: =82
-                        Items: |
-                            =att_registro_10_attach_oficial.Attachments
+                        Items: |-
+                            =//att_registro_10_attach_oficial.Attachments
+                            Contenido_oficial
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
                         TemplateSize: =Min(160, Self.Height - 60)
@@ -1081,172 +1082,17 @@ Datos_convenio As screen:
         Y: =684
         ZIndex: =3
 
-    Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
-        Height: =Datos_convenio.Height
-        Visible: =show_popup_oficial
-        Width: =Datos_convenio.Width
-        ZIndex: =4
-
-        fig_registro_10_popup_bg As rectangle:
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(0, 0, 0, 0.20)
-            Height: =768
-            Width: =1366
-            ZIndex: =1
-
-        img_registro_10_popup_bg As image:
-            Height: =352
-            Image: ='background-section'
-            ImagePosition: =ImagePosition.Fill
-            RadiusBottomLeft: =24
-            RadiusBottomRight: =24
-            RadiusTopLeft: =24
-            RadiusTopRight: =24
-            Width: =709
-            X: =328
-            Y: =208
-            ZIndex: =2
-
-        lbl_registro_10_popup_titulo As label:
-            Color: =RGBA(17, 61, 107, 1)
-            FontWeight: =FontWeight.Bold
-            PaddingLeft: =0
-            Size: =18
-            Text: ="Adjuntar documento oficial"
-            Width: =400
-            X: =360
-            Y: =238
-            ZIndex: =3
-
-        btn_registro_10_popup_guardar As button:
-            BorderThickness: =1
-            Fill: =RGBA(247, 158, 64, 1)
-            FontWeight: =FontWeight.Bold
-            HoverBorderColor: =RGBA(247, 158, 64, 1)
-            HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |-
-                =If(CountRows(att_registro_10_attach_oficial.Attachments) > 0,  
-                    Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
-                    Set(test_attachment,First(att_registro_10_attach_oficial.Attachments).Value);
-                    If(attachment_extension="docx",
-                        Set(existe_adjunto, true);
-                        UpdateContext({archivo_invalido:false});
-                        //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
-                        Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
-                        UpdateContext({show_popup_oficial: false});
-                        ,
-                        Set(existe_adjunto, false);
-                        UpdateContext({archivo_invalido:true})
-                    ), 
-                    Set(existe_adjunto, false);
-                    UpdateContext({archivo_invalido:false});
-                    UpdateContext({show_popup_oficial: false})
-                )
-            PressedBorderColor: =RGBA(247, 158, 64, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =RGBA(249, 133, 11, 1)
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Size: =14
-            TabIndex: =If(show_popup_oficial,1,-1)
-            Text: ="ACEPTAR"
-            X: =845
-            Y: =490
-            ZIndex: =4
-
-        btn_registro_10_popup_cancelar As button:
-            BorderColor: =RGBA(247, 158, 64, 1)
-            Color: =RGBA(247, 158, 64, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            HoverBorderColor: =RGBA(247, 158, 64, 1)
-            HoverColor: =RGBA(247, 158, 64, 1)
-            HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: |-
-                =UpdateContext({show_popup_oficial: false})
-            PressedBorderColor: =RGBA(247, 158, 64, 1)
-            PressedColor: =RGBA(247, 158, 64, 1)
-            PressedFill: =RGBA(247, 158, 64, 0.3)
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Size: =14
-            TabIndex: =If(show_popup_oficial,0,-1)
-            Text: ="CANCELAR"
-            X: =655
-            Y: =490
-            ZIndex: =5
-
-        img_registro_10_popup As image:
-            Height: =94
-            Image: ='background-input'
-            ImagePosition: =ImagePosition.Fill
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Width: =645
-            X: =360
-            Y: =326
-            ZIndex: =6
-
-        att_registro_10_attach_oficial As attachments:
-            AddAttachmentText: ="Adjuntar archivo"
-            BorderColor: =
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(111, 139, 167, 1)
-            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
-            DropTargetBorderStyle: =BorderStyle.None
-            DropTargetTextColor: =RGBA(111, 139, 167, 1)
-            Fill: =RGBA(255, 255, 255, 0)
-            Height: =94
-            HoverColor: =RGBA(111, 139, 167, 1)
-            IsInDataCard: =true
-            Items: =
-            MaxAttachments: =1
-            MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
-            NoAttachmentsText: ="No hay ningún archivo adjunto."
-            OnRemoveFile: |-
-                =UpdateContext({archivo_invalido:false})
-            PaddingBottom: =5
-            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-            PaddingRight: =5
-            PaddingTop: =5
-            PressedFill: =RGBA(111, 139, 167, 1)
-            Size: =10
-            TabIndex: =If(show_popup_oficial,1,-1)
-            Tooltip: =
-            Width: =645
-            X: =360
-            Y: =326
-            ZIndex: =7
-
-        lbl_registro_10_faltandatos_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(238, 110, 126, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =72
-            Text: ="Tipo de archivo no permitido"
-            Visible: =archivo_invalido
-            Width: =img_registro_10_popup_bg.Width
-            X: =img_registro_10_popup_bg.X
-            Y: =btn_registro_10_popup_cancelar.Y-Self.Height
-            ZIndex: =8
-
     BannerUdeC_1 As HeaderUdeC:
         Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
-        ZIndex: =5
+        ZIndex: =4
 
     Adjuntar_popup_extra As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_extra
         Width: =Datos_convenio.Width
-        ZIndex: =6
+        ZIndex: =5
 
         fig_registro_10_popup_bg_1 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1398,5 +1244,160 @@ Datos_convenio As screen:
             Width: =img_registro_10_popup_bg_1.Width
             X: =img_registro_10_popup_bg_1.X
             Y: =btn_registro_10_popup_cancelar_1.Y-Self.Height
+            ZIndex: =8
+
+    Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
+        Height: =Datos_convenio.Height
+        Visible: =show_popup_oficial
+        Width: =Datos_convenio.Width
+        ZIndex: =6
+
+        fig_registro_10_popup_bg As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        img_registro_10_popup_bg As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_registro_10_popup_titulo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            PaddingLeft: =0
+            Size: =18
+            Text: ="Adjuntar documento oficial"
+            Width: =400
+            X: =360
+            Y: =238
+            ZIndex: =3
+
+        btn_registro_10_popup_guardar As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =If(CountRows(att_registro_10_attach_oficial.Attachments) > 0,  
+                    Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
+                    Set(test_attachment,First(att_registro_10_attach_oficial.Attachments).Value);
+                    If(attachment_extension="docx",
+                        Set(existe_adjunto, true);
+                        UpdateContext({archivo_invalido:false});
+                        //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
+                        Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
+                        UpdateContext({show_popup_oficial: false});
+                        ,
+                        Set(existe_adjunto, false);
+                        UpdateContext({archivo_invalido:true})
+                    ), 
+                    Set(existe_adjunto, false);
+                    UpdateContext({archivo_invalido:false});
+                    UpdateContext({show_popup_oficial: false})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(show_popup_oficial,1,-1)
+            Text: ="ACEPTAR"
+            X: =845
+            Y: =490
+            ZIndex: =4
+
+        btn_registro_10_popup_cancelar As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({show_popup_oficial: false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(show_popup_oficial,0,-1)
+            Text: ="CANCELAR"
+            X: =655
+            Y: =490
+            ZIndex: =5
+
+        img_registro_10_popup As image:
+            Height: =94
+            Image: ='background-input'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Width: =645
+            X: =360
+            Y: =326
+            ZIndex: =6
+
+        att_registro_10_attach_oficial As attachments:
+            AddAttachmentText: ="Adjuntar archivo"
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(111, 139, 167, 1)
+            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            DropTargetTextColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(255, 255, 255, 0)
+            Height: =94
+            HoverColor: =RGBA(111, 139, 167, 1)
+            IsInDataCard: =true
+            Items: =
+            MaxAttachments: =1
+            MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
+            NoAttachmentsText: ="No hay ningún archivo adjunto."
+            OnRemoveFile: |-
+                =UpdateContext({archivo_invalido:false})
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedFill: =RGBA(111, 139, 167, 1)
+            Size: =10
+            TabIndex: =If(show_popup_oficial,1,-1)
+            Tooltip: =
+            Width: =645
+            X: =360
+            Y: =326
+            ZIndex: =7
+
+        lbl_registro_10_faltandatos_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =72
+            Text: ="Tipo de archivo no permitido"
+            Visible: =archivo_invalido
+            Width: =img_registro_10_popup_bg.Width
+            X: =img_registro_10_popup_bg.X
+            Y: =btn_registro_10_popup_cancelar.Y-Self.Height
             ZIndex: =8
 
