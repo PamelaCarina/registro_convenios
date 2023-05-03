@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "Nombres_contrapartes_nacionales",
+    "Name": "Nombres_contrapartes_internacionales",
     "Type": "CollectionDataSourceInfo"
   }
 ]

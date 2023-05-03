@@ -137,8 +137,8 @@ App As appinfo:
             }
         );
         
-        //nombres contrapartes nacionales
-        ClearCollect(Nombres_contrapartes_nacionales,'DTI-PATraernombrescontrapartesnacionales'.Run().nombres_contrapartes_nacionales)
+        //nombres contrapartes internacionales
+        ClearCollect(Nombres_contrapartes_internacionales,'DTI-PATraernombrescontrapartesnacionales'.Run().nombres_contrapartes_nacionales)
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false

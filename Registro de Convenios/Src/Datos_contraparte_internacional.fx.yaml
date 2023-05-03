@@ -9,7 +9,8 @@ Datos_contraparte_internacional As screen:
         UpdateContext({sin_cargo_in:false});
         UpdateContext({correo_in_invalido:false});
         UpdateContext({hide_border_correo_in:true});
-        Reset(inp_contraparte_in_popup_search)
+        //Reset(inp_contraparte_in_popup_search);;
+        Set(c_n_seleccionada,"")
 
     Botones_atras_siguiente_4 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -661,7 +662,9 @@ Datos_contraparte_internacional As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
             Color: =RGBA(17, 61, 107, 1)
-            Default: =""
+            Default: |-
+                =//""
+                //If(desplegar_buscador_t;"";c_n_seleccionada)
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
@@ -783,6 +786,55 @@ Datos_contraparte_internacional As screen:
             X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
             Y: =418
             ZIndex: =12
+
+        Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
+            Visible: =//desplegar_buscador_t
+            Width: =560
+            X: =378
+            Y: =399
+            ZIndex: =13
+
+            opciones_nombre_c_in As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =200
+                Items: =//Filter(lista_tipologia; TextInput1.Text in valor)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |
+                    =false
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =560
+                WrapCount: =0
+                ZIndex: =1
+
+                fondo_celeste_4 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =51
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =560
+                    ZIndex: =1
+
+                Label1 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    DisabledFill: =RGBA(241, 244, 255, 1)
+                    Height: =51
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    HoverFill: =RGBA(207, 210, 232, 1)
+                    OnSelect: |-
+                        =Select(Parent);
+                        //If(desplegar_buscador_t;UpdateContext({desplegar_buscador_t:false});UpdateContext({desplegar_buscador_t:true}));;
+                        //Set(t_seleccionada;ThisItem.valor);;
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =10
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =//ThisItem.valor
+                    Width: =560
+                    ZIndex: =3
 
     cont_loading_2 As group:
         Height: =5
