@@ -592,7 +592,7 @@ Datos_contraparte_nacional As screen:
                         HintText: =""
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =60
+                        MaxLength: =150
                         Mode: =TextMode.MultiLine
                         PaddingBottom: =12
                         PaddingLeft: =24
@@ -641,7 +641,7 @@ Datos_contraparte_nacional As screen:
                         HintText: =""
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =60
+                        MaxLength: =150
                         Mode: =TextMode.MultiLine
                         PaddingBottom: =12
                         PaddingLeft: =24
