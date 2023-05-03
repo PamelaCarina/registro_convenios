@@ -794,9 +794,9 @@ Datos_contraparte_internacional As screen:
 
         Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_c_in
-            Width: =560
-            X: =378
-            Y: =399
+            Width: =599
+            X: =371
+            Y: =397
             ZIndex: =13
 
             opciones_nombre_c_in As gallery.galleryVertical:
@@ -809,7 +809,7 @@ Datos_contraparte_internacional As screen:
                     =false
                 TemplatePadding: =0
                 TemplateSize: =50
-                Width: =560
+                Width: =599
                 WrapCount: =0
                 ZIndex: =1
 
@@ -819,7 +819,7 @@ Datos_contraparte_internacional As screen:
                     HoverFill: =RGBA(186, 202, 226, 1)
                     Image: ='background-input'
                     ImagePosition: =ImagePosition.Fill
-                    Width: =560
+                    Width: =599
                     ZIndex: =1
 
                 Label1 As label:
@@ -838,7 +838,7 @@ Datos_contraparte_internacional As screen:
                     PaddingTop: =0
                     Size: =14
                     Text: =ThisItem.nombre
-                    Width: =560
+                    Width: =599
                     ZIndex: =3
 
     cont_loading_2 As group:
