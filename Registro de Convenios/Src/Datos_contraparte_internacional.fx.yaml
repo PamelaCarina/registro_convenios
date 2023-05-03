@@ -10,7 +10,7 @@ Datos_contraparte_internacional As screen:
         UpdateContext({correo_in_invalido:false});
         UpdateContext({hide_border_correo_in:true});
         //Reset(inp_contraparte_in_popup_search);;
-        Set(c_n_seleccionada,"")
+        //Set(c_n_seleccionada;"")
 
     Botones_atras_siguiente_4 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -664,13 +664,18 @@ Datos_contraparte_internacional As screen:
             Color: =RGBA(17, 61, 107, 1)
             Default: |-
                 =//""
-                //If(desplegar_buscador_t;"";c_n_seleccionada)
+                If(desplegar_buscador_c_in,"",n_c_in_seleccionada)
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
             HintText: ="Ingresar nombre institución"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
+            OnSelect: |-
+                =Reset(inp_contraparte_in_popup_search);
+                Reset(opciones_nombre_c_in);
+                Set(n_c_in_seleccionada,"");
+                If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}))
             RadiusBottomLeft: =12
             RadiusBottomRight: =12
             RadiusTopLeft: =12
@@ -788,7 +793,7 @@ Datos_contraparte_internacional As screen:
             ZIndex: =12
 
         Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
-            Visible: =//desplegar_buscador_t
+            Visible: =desplegar_buscador_c_in
             Width: =560
             X: =378
             Y: =399
@@ -797,7 +802,7 @@ Datos_contraparte_internacional As screen:
             opciones_nombre_c_in As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =//Filter(lista_tipologia; TextInput1.Text in valor)
+                Items: =Filter(Nombres_contrapartes_internacionales, inp_contraparte_in_popup_search.Text in nombre)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -825,14 +830,14 @@ Datos_contraparte_internacional As screen:
                     HoverFill: =RGBA(207, 210, 232, 1)
                     OnSelect: |-
                         =Select(Parent);
-                        //If(desplegar_buscador_t;UpdateContext({desplegar_buscador_t:false});UpdateContext({desplegar_buscador_t:true}));;
-                        //Set(t_seleccionada;ThisItem.valor);;
+                        If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}));
+                        Set(n_c_in_seleccionada,ThisItem.nombre);
                     PaddingBottom: =0
                     PaddingLeft: =12
                     PaddingRight: =10
                     PaddingTop: =0
                     Size: =14
-                    Text: =//ThisItem.valor
+                    Text: =ThisItem.nombre
                     Width: =560
                     ZIndex: =3
 
