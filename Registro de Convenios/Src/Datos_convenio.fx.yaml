@@ -119,7 +119,7 @@ Datos_convenio As screen:
                         documentacion: documentos_cargados
                     });
                 
-                    Navigate(Entidad_contraparte,ScreenTransition.Fade));
+                    Navigate(Información_convenio,ScreenTransition.Fade));
                 
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
