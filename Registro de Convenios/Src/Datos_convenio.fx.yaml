@@ -8,6 +8,8 @@ Datos_convenio As screen:
         UpdateContext({sin_proposito_central:false});
         UpdateContext({sin_documentacion_oficial:false});
         UpdateContext({sin_documentacion_extra:false});
+        UpdateContext({sacar_archivo_oficial:false});
+        UpdateContext({mostrar_lista_archivos_oficiales:false});
 
     Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -143,7 +145,7 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: =Navigate(Unidad_solicitante,ScreenTransition.Fade)
+            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -232,8 +234,7 @@ Datos_convenio As screen:
 
                     img_subir_1 As image:
                         Height: =74
-                        Image: |
-                            =If(existe_adjunto,attach,upload)
+                        Image: =If(existe_adjunto && mostrar_lista_archivos_oficiales,attach,upload)
                         Width: =68
                         X: =12
                         Y: =40
@@ -274,12 +275,11 @@ Datos_convenio As screen:
 
                     "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                         Height: =82
-                        Items: |-
-                            =//att_registro_10_attach_oficial.Attachments
-                            Contenido_oficial
+                        Items: =att_registro_10_attach_oficial.Attachments
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
                         TemplateSize: =Min(160, Self.Height - 60)
+                        Visible: =mostrar_lista_archivos_oficiales
                         Width: =173
                         X: =92
                         Y: =36
@@ -1307,6 +1307,7 @@ Datos_convenio As screen:
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
                         UpdateContext({show_popup_oficial: false});
+                        UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
                         Set(existe_adjunto, false);
                         UpdateContext({archivo_invalido:true})
@@ -1338,7 +1339,9 @@ Datos_convenio As screen:
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
             OnSelect: |-
-                =UpdateContext({show_popup_oficial: false})
+                =UpdateContext({sacar_archivo_oficial:true});
+                UpdateContext({show_popup_oficial: false});
+                UpdateContext({sacar_archivo_oficial:false});
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -1389,6 +1392,7 @@ Datos_convenio As screen:
             PaddingRight: =5
             PaddingTop: =5
             PressedFill: =RGBA(111, 139, 167, 1)
+            Reset: =sacar_archivo_oficial
             Size: =10
             TabIndex: =If(show_popup_oficial,1,-1)
             Tooltip: =

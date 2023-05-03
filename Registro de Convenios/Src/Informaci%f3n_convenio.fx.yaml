@@ -54,7 +54,7 @@ Información_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            OnSelect: =Navigate(Datos_convenio,ScreenTransition.Fade)
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
