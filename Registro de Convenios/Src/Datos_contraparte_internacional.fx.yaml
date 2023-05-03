@@ -194,8 +194,8 @@ Datos_contraparte_internacional As screen:
 
             Firma_digiral_in As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =170
-                X: =1072
+                Width: =300
+                X: =942
                 Y: =108
                 ZIndex: =2
 
@@ -209,6 +209,7 @@ Datos_contraparte_internacional As screen:
                     RadiusBottomRight: =12
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
+                    Visible: =false
                     Width: =169
                     Y: =20
                     ZIndex: =1
@@ -244,7 +245,7 @@ Datos_contraparte_internacional As screen:
                     RadiusTopRight: =13
                     TabIndex: =-1
                     Visible: =sin_firma_in
-                    Width: =170
+                    Width: =300
                     Y: =fondo_celeste_6.Y
                     ZIndex: =3
 
@@ -275,8 +276,8 @@ Datos_contraparte_internacional As screen:
 
                 correo_electronico_in As groupContainer.manualLayoutContainer:
                     Height: =60
-                    Width: =232
-                    X: =968
+                    Width: =300
+                    X: =900
                     ZIndex: =1
 
                     sin_correo_in As text:
@@ -330,7 +331,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =226
+                        Width: =300
                         X: =2
                         Y: =19
                         ZIndex: =2
@@ -351,8 +352,8 @@ Datos_contraparte_internacional As screen:
 
                 Cargo_responsable_institucional_in As groupContainer.manualLayoutContainer:
                     Height: =65
-                    Width: =455
-                    X: =483
+                    Width: =422
+                    X: =451
                     ZIndex: =3
 
                     sin_cargo_in As text:
@@ -400,7 +401,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =454
+                        Width: =422
                         X: =1
                         Y: =20
                         ZIndex: =2
@@ -421,7 +422,7 @@ Datos_contraparte_internacional As screen:
 
                 Nombre_responsable_institucional_in As groupContainer.manualLayoutContainer:
                     Height: =65
-                    Width: =455
+                    Width: =422
                     X: =2
                     ZIndex: =4
 
@@ -469,7 +470,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =454
+                        Width: =422
                         X: =1
                         Y: =21
                         ZIndex: =2
@@ -490,7 +491,7 @@ Datos_contraparte_internacional As screen:
 
             Nombre_representante_legal_in As groupContainer.manualLayoutContainer:
                 Height: =65
-                Width: =1002
+                Width: =871
                 X: =42
                 Y: =108
                 ZIndex: =4
@@ -540,7 +541,7 @@ Datos_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =1002
+                    Width: =871
                     X: =1
                     Y: =21
                     ZIndex: =2
@@ -561,8 +562,8 @@ Datos_contraparte_internacional As screen:
 
             pais_in As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =270
-                X: =974
+                Width: =300
+                X: =942
                 Y: =24
                 ZIndex: =5
 
@@ -589,7 +590,7 @@ Datos_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =270
+                    Width: =300
                     Y: =20
                     ZIndex: =1
 
@@ -609,7 +610,7 @@ Datos_contraparte_internacional As screen:
 
             Nombre_unidad_contraparte_in As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =903
+                Width: =871
                 X: =42
                 Y: =24
                 ZIndex: =6
@@ -637,7 +638,7 @@ Datos_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =902
+                    Width: =871
                     Y: =20
                     ZIndex: =1
 

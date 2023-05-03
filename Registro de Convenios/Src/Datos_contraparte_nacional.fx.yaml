@@ -205,8 +205,8 @@ Datos_contraparte_nacional As screen:
 
                 correo_electronico_na As groupContainer.manualLayoutContainer:
                     Height: =60
-                    Width: =230
-                    X: =968
+                    Width: =300
+                    X: =898
                     ZIndex: =1
 
                     sin_correo_na As text:
@@ -260,7 +260,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =226
+                        Width: =300
                         X: =1
                         Y: =19
                         ZIndex: =2
@@ -281,8 +281,8 @@ Datos_contraparte_nacional As screen:
 
                 Cargo_responsable_institucional_na As groupContainer.manualLayoutContainer:
                     Height: =68
-                    Width: =455
-                    X: =483
+                    Width: =422
+                    X: =449
                     ZIndex: =3
 
                     sin_cargo As text:
@@ -331,7 +331,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =454
+                        Width: =422
                         X: =1
                         Y: =20
                         ZIndex: =2
@@ -352,7 +352,7 @@ Datos_contraparte_nacional As screen:
 
                 Nombre_responsable_institucional_na As groupContainer.manualLayoutContainer:
                     Height: =67
-                    Width: =455
+                    Width: =422
                     ZIndex: =4
 
                     sin_nombre_responsable_institucional As text:
@@ -400,7 +400,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =454
+                        Width: =422
                         X: =1
                         Y: =20
                         ZIndex: =2
@@ -421,8 +421,8 @@ Datos_contraparte_nacional As screen:
 
             Firma_digiral_na As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =170
-                X: =1072
+                Width: =300
+                X: =942
                 Y: =306
                 ZIndex: =3
 
@@ -436,7 +436,8 @@ Datos_contraparte_nacional As screen:
                     RadiusBottomRight: =12
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
-                    Width: =170
+                    Visible: =false
+                    Width: =300
                     Y: =20
                     ZIndex: =1
 
@@ -489,13 +490,13 @@ Datos_contraparte_nacional As screen:
                     RadioBorderColor: =RGBA(17, 61, 107, 1)
                     RadioSelectionFill: =RGBA(17, 61, 107, 1)
                     RadioSize: =30
-                    Width: =169
+                    Width: =300
                     Y: =20
                     ZIndex: =4
 
             Nombre_representante_legal_na As groupContainer.manualLayoutContainer:
                 Height: =70
-                Width: =1002
+                Width: =871
                 X: =42
                 Y: =306
                 ZIndex: =4
@@ -545,7 +546,7 @@ Datos_contraparte_nacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =1002
+                    Width: =871
                     X: =1
                     Y: =22
                     ZIndex: =2
