@@ -2334,7 +2334,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "buscador_a_p_input",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2779,7 +2779,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "buscador_c_t_input",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6711,7 +6711,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fondo_celeste_9",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9311,7 +9311,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_ambito_politica",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9698,7 +9698,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_convenio_tipo",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10085,7 +10085,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_sector_politica",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10703,7 +10703,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "tapar_convenio_tipo_1",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
