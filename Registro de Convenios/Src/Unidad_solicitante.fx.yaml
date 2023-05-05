@@ -210,7 +210,7 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |
                             =sin_telefono_responsable
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -279,7 +279,7 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |
                             =sin_correo_responsable
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -348,7 +348,7 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |
                             =sin_cargo_responsable
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -416,7 +416,7 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |
                             =sin_responsable
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -501,7 +501,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: =sin_telefono_promotor
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -569,7 +569,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: =sin_correo_promotor
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -637,7 +637,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: =sin_cargo_promotor
-                        Width: =nombre_promotor_input_2.Width+2
+                        Width: =334
                         X: =nombre_promotor_input_2.X
                         Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
@@ -646,28 +646,6 @@ Unidad_solicitante As screen:
                     Height: =60
                     Width: =337.3
                     ZIndex: =5
-
-                    sin_nombre_promotor As text:
-                        BorderColor: =RGBA(238, 110, 126, 1)
-                        Default: =""
-                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
-                        HoverBorderColor: =RGBA(238, 110, 126, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        TabIndex: =-1
-                        Visible: |
-                            =sin_promotor
-                        Width: =nombre_promotor_input_2.Width+2
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
-                        ZIndex: =1
 
                     nombre_promotor_input_2 As text:
                         BorderColor: =RGBA(255, 255, 255, 1)
@@ -693,10 +671,10 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =332
+                        Width: =334
                         X: =2
                         Y: =20
-                        ZIndex: =2
+                        ZIndex: =1
 
                     nombre_promotor_label_2 As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -710,6 +688,29 @@ Unidad_solicitante As screen:
                         Text: ="NOMBRE"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
+                        ZIndex: =2
+
+                    sin_nombre_promotor As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        BorderThickness: =2.3
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_promotor_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_promotor
+                        Width: =nombre_promotor_input_2.Width
+                        X: =nombre_promotor_input_2.X
+                        Y: =nombre_promotor_input_2.Y-1
                         ZIndex: =3
 
             separador As rectangle:

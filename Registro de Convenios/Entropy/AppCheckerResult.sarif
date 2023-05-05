@@ -1184,456 +1184,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.btn_detalle_contraparte_nacional_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.btn_detalle_contraparte_nacional_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.btn_detalle_contraparte_nacional_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.btn_detalle_contraparte_nacional.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.btn_detalle_contraparte_nacional.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.btn_detalle_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Botones_atras_siguiente_2.Siguiente_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Botones_atras_siguiente_2.Siguiente_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Botones_atras_siguiente_2.Siguiente_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.AccessibleLabel"
                 }
               ],
@@ -6494,6 +6044,456 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.btn_detalle_contraparte_nacional_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.btn_detalle_contraparte_nacional_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.btn_detalle_contraparte_nacional_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_internacional.gal_contraparte_internacional.img_arrow_contraparte_nacional_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.btn_detalle_contraparte_nacional.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.btn_detalle_contraparte_nacional.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.btn_detalle_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_contraparte_nacional.gal_contraparte_nacional.img_arrow_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Botones_atras_siguiente_2.Siguiente_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Botones_atras_siguiente_2.Siguiente_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Botones_atras_siguiente_2.Siguiente_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],
@@ -6674,36 +6674,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.reset_externo"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.reset_externo",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "reset_externo",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.id_solicitud_convenio"
                 }
               ],
@@ -6805,6 +6775,36 @@
               },
               "properties": {
                 "member": "areas_externas",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.reset_externo"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.reset_externo",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reset_externo",
                 "module": "App",
                 "type": "App"
               }
@@ -7017,36 +7017,6 @@
                 "member": "Height",
                 "module": "Datos_convenio",
                 "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_m_c.Contenedor_seleccionable.sin_modalidad"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.Items",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
               }
             }
           ],
@@ -7508,6 +7478,36 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs.Items",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Entidad_contraparte",
+                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.gal_tabs"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 6
         }
       ],
       "tool": {
@@ -7587,51 +7587,51 @@
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused variable"
+                  "text": "Variable no utilizada"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused variable."
+                  "Quite la variable no utilizada."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+                "whyFix": "Esta variable está declarada, pero ningún control hace referencia a ella, por lo que no es necesaria."
               }
             },
             {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused media files"
+                  "text": "Archivos multimedia sin usar"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused media file in the Media pane."
+                  "Quite el archivo multimedia que no se use en el panel Medios."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+                "whyFix": "No hay ninguna fórmula de control que haga referencia a este archivo multimedia, por lo que no es necesario. Si se quita, mejorará el rendimiento."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Inefficient delay loading"
+                  "text": "Retraso de carga ineficiente"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Use variables, collections, and navigation context to share state across screens instead."
+                  "Use variables, colecciones y contexto de navegación para compartir el estado entre pantallas en su lugar."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
+                "whyFix": "Los controles que hacen referencia a controles en otras pantallas pueden ralentizar la carga y la navegación de la aplicación. Al hacer esto, puede que se fuerce a la aplicación a cargar las otras pantallas de inmediato, en lugar de esperar hasta que el usuario navegue a esa pantalla."
               }
             }
           ],
