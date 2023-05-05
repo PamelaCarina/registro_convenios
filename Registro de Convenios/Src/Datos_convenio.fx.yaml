@@ -116,7 +116,7 @@ Datos_convenio As screen:
                         alcance: tipo_alcance.Selected.valor,
                         tipologia: tipo_tipologia.Selected.valor,
                         tipo: tipo_solicitud.Selected.valor,
-                        modalidad: tipo_modalidades.Selected,
+                        modalidad: tipo_modalidades.Selected.valor,
                         proposito: descripcion_proposito_1.Text,
                         documentacion: documentos_cargados
                     });
@@ -559,11 +559,12 @@ Datos_convenio As screen:
                             HoverFill: =RGBA(207, 210, 232, 1)
                             Items: |-
                                 =//lista_modalidad
-                                //Filter(lista_modalidad, buscador_t_m_input.Text in valor)
+                                Filter(lista_modalidad, buscador_t_m_input.Text in valor)
+                                /*
                                 Distinct(
-                                    lista_modalidad,
+                                    lista_modalidad;
                                     valor
-                                )
+                                )*/
                             OnChange: =Reset(buscador_t_m_input)
                             PaddingBottom: =12
                             PaddingLeft: =12

@@ -22364,7 +22364,7 @@
         },
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Value\"}",
+          "NameMap": "{\"Value\":\"id\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
