@@ -446,7 +446,7 @@ Datos_convenio As screen:
                     RadiusTopRight: =12
                     TabIndex: =-1
                     Visible: =sin_proposito_central
-                    Width: =576
+                    Width: =574
                     X: =descripcion_proposito_1.X
                     Y: |
                         =descripcion_proposito_1.Y-1
@@ -477,7 +477,7 @@ Datos_convenio As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =572
+                    Width: =573
                     X: =5
                     Y: =62
                     ZIndex: =2
@@ -541,27 +541,6 @@ Datos_convenio As screen:
                             Width: =584
                             ZIndex: =1
 
-                        sin_modalidad As text:
-                            BorderColor: =RGBA(238, 110, 126, 1)
-                            Default: =""
-                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                            DisabledFill: =RGBA(0, 0, 0, 0)
-                            DisplayMode: =DisplayMode.Disabled
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =fondo_celeste_8.Height
-                            HoverBorderColor: =RGBA(238, 110, 126, 1)
-                            HoverFill: =RGBA(0, 0, 0, 0)
-                            RadiusBottomLeft: =12
-                            RadiusBottomRight: =12
-                            RadiusTopLeft: =12
-                            RadiusTopRight: =12
-                            TabIndex: =-1
-                            Visible: |
-                                =sin_modalidad
-                            Width: =584
-                            Y: =1
-                            ZIndex: =2
-
                         tipo_modalidades As dropdown:
                             AllowEmptySelection: =true
                             BorderStyle: =BorderStyle.None
@@ -598,7 +577,7 @@ Datos_convenio As screen:
                             Width: =fondo_celeste.Width-24
                             X: =fondo_celeste.X+12
                             Y: =fondo_celeste.Y+2
-                            ZIndex: =3
+                            ZIndex: =2
 
                         tapar_tipo_modalidades As rectangle:
                             BorderStyle: =BorderStyle.None
@@ -608,7 +587,7 @@ Datos_convenio As screen:
                             Width: =40
                             X: =tipo_modalidades.X+tipo_modalidades.Width-Self.Width+1
                             Y: =fondo_celeste.Y
-                            ZIndex: =4
+                            ZIndex: =3
 
                         buscador_t_m_input As text:
                             BorderColor: =RGBA(0, 0, 0, 0)
@@ -640,6 +619,27 @@ Datos_convenio As screen:
                             PaddingTop: =0
                             Size: =14
                             Width: =530
+                            ZIndex: =4
+
+                        sin_modalidad As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: |
+                                =sin_modalidad
+                            Width: =584
+                            Y: =1
                             ZIndex: =5
 
                 Contenedor_t_s As groupContainer.manualLayoutContainer:
