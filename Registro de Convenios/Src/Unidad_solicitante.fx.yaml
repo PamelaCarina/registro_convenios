@@ -1145,7 +1145,7 @@ Unidad_solicitante As screen:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 Fill: =RGBA(0, 0, 0, 0)
-                FontWeight: =FontWeight.Bold
+                FontWeight: =FontWeight.Normal
                 Height: =30
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverFill: =RGBA(207, 210, 232, 0.4)
@@ -1210,6 +1210,44 @@ Unidad_solicitante As screen:
                 X: =1210
                 Y: =109
                 ZIndex: =14
+
+            buscar_6 As image:
+                Height: =20
+                Image: =ico_search
+                Width: =20
+                X: =354
+                Y: =108
+                ZIndex: =15
+
+            btn_buscar_autoridad As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(207, 210, 232, 0.4)
+                OnSelect: |-
+                    =//Set(responsable;{});;
+                    UpdateContext({popup_autoridad: true});
+                    Reset(inp_autoridad_popup_search);
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(207, 210, 232, 0.4)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =20
+                TabIndex: =
+                Text: =""
+                Width: =30
+                X: =349
+                Y: =103
+                ZIndex: =16
 
         datos_unidad_solicitante_3 As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -1586,6 +1624,229 @@ Unidad_solicitante As screen:
             Y: =418
             ZIndex: =12
 
+    autoridad_popup As groupContainer.manualLayoutContainer:
+        Height: =Unidad_solicitante.Height
+        Visible: |-
+            =//popup_contraparte_in
+            popup_autoridad
+        Width: =Unidad_solicitante.Width
+        ZIndex: =8
+
+        fig_registro_5_popup_bg_5 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        fondo_blanco_13 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_autoridad_popup_titulo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Búsqueda de contraparte internacional"
+            Width: =650
+            X: =360
+            Y: =234
+            ZIndex: =3
+
+        inp_autoridad_popup_search As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(17, 61, 107, 1)
+            Default: |-
+                =//""
+                If(desplegar_buscador_c_in,"",n_c_in_seleccionada)
+            DisabledColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(241, 244, 255, 1)
+            Height: =46
+            HintText: ="Ingresar nombre institución"
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(241, 244, 255, 1)
+            OnSelect: |-
+                =Reset(inp_autoridad_popup_search);
+                Reset(opciones_nombre_c_in_1);
+                Set(n_c_in_seleccionada,"");
+                If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}))
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Width: =645
+            X: =360
+            Y: =353
+            ZIndex: =5
+
+        buscar_7 As image:
+            Height: =20
+            Image: =ico_search
+            Visible: =false
+            Width: =20
+            X: =970
+            Y: =366
+            ZIndex: =6
+
+        lbl_autoridad_popup_rut As label:
+            Color: =RGBA(111, 139, 167, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NOMBRE INSTITUCIÓN"
+            Width: =250
+            X: =360
+            Y: =314
+            ZIndex: =7
+
+        btn_autoridad_popup_buscar As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |
+                =UpdateContext({popup_faltanombre:false, popup_institucionnoencontrada:false});
+                
+                If(IsBlank(inp_autoridad_popup_search.Text)=false,
+                    Set(cargando, true);
+                    Set(datos_contraparte, 'DTI-PATraerinstitucióninternacional'.Run(inp_autoridad_popup_search.Text));
+                    Set(contraparte_in,{
+                        nombre_entidad_contraparte: First(datos_contraparte).razon_social,
+                        rut_entidad_contraparte: First(datos_contraparte).rut,
+                        dv_entidad_contraparte: First(datos_contraparte).dv,
+                        nombre_representante_legal: "",
+                        nombre_responsable_institucional:"",
+                        cargo_responsable_institucional:"",
+                        pais_responsable_institucional:Upper(First(datos_contraparte).pais),
+                        correo_responsable_institucional:""
+                    });
+                    Set(cargando, false);
+                    If(IsBlank(contraparte_in.nombre_entidad_contraparte),
+                        UpdateContext({popup_institucionnoencontrada:true}),
+                        Set(popup_contraparte_in,false))
+                    ,
+                    UpdateContext({popup_faltanombre:true})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="ACEPTAR"
+            X: =845
+            Y: =488
+            ZIndex: =8
+
+        btn_autoridad_popup_cancelar As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_autoridad:false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            Text: ="CANCELAR"
+            X: =653
+            Y: =488
+            ZIndex: =9
+
+        lbl_autoridad_popup_noencontrado As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Institución no encontrada. Por favor intente nuevamente"
+            Visible: =popup_institucionnoencontrada
+            Width: =481
+            X: =(fondo_blanco_13.X+fondo_blanco_13.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =10
+
+        lbl_autoridad_popup_faltandatos As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Ingresar nombre institución"
+            Visible: =popup_faltanombre
+            Width: =540
+            X: =(fondo_blanco_13.X+fondo_blanco_13.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =12
+
+        Contenedor_a As groupContainer.manualLayoutContainer:
+            Visible: =desplegar_buscador_c_in
+            Width: =599
+            X: =371
+            Y: =397
+            ZIndex: =13
+
+            opciones_nombre_c_in_1 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =200
+                Items: =Filter(Nombres_contrapartes_internacionales, inp_autoridad_popup_search.Text in nombre)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |
+                    =false
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =599
+                WrapCount: =0
+                ZIndex: =1
+
+                fondo_celeste_7 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =51
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =600
+                    ZIndex: =1
+
+                Label1_1 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    DisabledFill: =RGBA(241, 244, 255, 1)
+                    Height: =51
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    HoverFill: =RGBA(207, 210, 232, 1)
+                    OnSelect: |-
+                        =Select(Parent);
+                        If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}));
+                        Set(n_c_in_seleccionada,ThisItem.nombre);
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =10
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.nombre
+                    Width: =599
+                    ZIndex: =3
+
     cont_loading As group:
         Height: =5
         Width: =5
@@ -1606,5 +1867,5 @@ Unidad_solicitante As screen:
             Visible: =cargando
             X: =632
             Y: =323
-            ZIndex: =8
+            ZIndex: =9
 
