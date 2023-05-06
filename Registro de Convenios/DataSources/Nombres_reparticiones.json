@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Nombres_reparticiones",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

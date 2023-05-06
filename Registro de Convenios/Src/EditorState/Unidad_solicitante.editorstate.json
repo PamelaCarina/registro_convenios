@@ -13432,7 +13432,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "datos_del_promotor_1",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13791,7 +13791,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "datos_del_responsable_1",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27318,7 +27318,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Promotor_unidad_2",
-      "ParentIndex": 13,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27475,7 +27475,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Responsable_institucional_2",
-      "ParentIndex": 15,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

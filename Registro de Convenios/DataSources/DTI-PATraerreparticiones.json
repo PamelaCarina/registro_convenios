@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "d9925389-9320-4861-969f-24be4635806e",
+    "Name": "DTI-PATraerreparticiones",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "7d5314e1-86eb-ed11-a7c6-6045bd006f89"
+  }
+]
