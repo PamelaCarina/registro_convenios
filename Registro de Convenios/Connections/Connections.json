@@ -91,6 +91,36 @@
     "dependents": [],
     "id": "4d43a597-7638-4ec8-ad0a-b7242ccfe778"
   },
+  "7cc51a73-b1e8-4a08-bf8b-cd755efe368f": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "7d5314e1-86eb-ed11-a7c6-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "a1d31097-ad64-7399-0ac6-1dbb6b6dd6ca"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "7d5314e1-86eb-ed11-a7c6-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "a1d31097-ad64-7399-0ac6-1dbb6b6dd6ca"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PATraerreparticiones"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7cc51a73-b1e8-4a08-bf8b-cd755efe368f"
+  },
   "8789f143-b674-49d3-99ce-85bcaafed327": {
     "connectionRef": {
       "apiTier": "Standard",
@@ -121,36 +151,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "8789f143-b674-49d3-99ce-85bcaafed327"
-  },
-  "8af34102-6e49-43e0-a5ce-e4fb1d414da4": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "7d5314e1-86eb-ed11-a7c6-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "a1d31097-ad64-7399-0ac6-1dbb6b6dd6ca"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "7d5314e1-86eb-ed11-a7c6-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "a1d31097-ad64-7399-0ac6-1dbb6b6dd6ca"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PATraerreparticiones"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "8af34102-6e49-43e0-a5ce-e4fb1d414da4"
   },
   "97ce6c13-ada6-45c3-b045-e9802f207fbe": {
     "connectionRef": {
