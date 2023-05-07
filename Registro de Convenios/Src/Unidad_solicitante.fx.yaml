@@ -63,14 +63,14 @@ Unidad_solicitante As screen:
                             correo: correo_autoridad_input_2.Text,
                             telefono: telefono_autoridad_input_2.Text
                         },
-                        /*
+                        //*
                         promotor: {
-                            nombre: nombre_promotor_input_2.Text;
-                            cargo: cargo_promotor_input_2.Text;
-                            correo:correo_promotor_input_2.Text;
-                            telefono:telefono_promotor_input_2.Text
-                        };
-                        */
+                            nombre: "",
+                            cargo: "",
+                            correo: "",
+                            telefono: ""
+                        },
+                        //*/
                         responsable: {
                             nombre: nombre_responsable_input_2.Text,
                             cargo: cargo_responsable_input_2.Text,
@@ -1231,18 +1231,23 @@ Unidad_solicitante As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |-
-                =If(IsBlank(
+            OnSelect: |+
+                =If(IsBlank(inp_promotor_popup_search.Text),
+                    UpdateContext({popup_promotor: false});
+                    ,
+                    If(IsBlank(
                         LookUp(
                             unidades_promotoras, 
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
-                    Collect(unidades_promotoras,{
-                        nombre_unidad_promotora: inp_promotor_popup_search.Text
-                    })
+                        Collect(unidades_promotoras,{
+                            nombre_unidad_promotora: inp_promotor_popup_search.Text
+                        })
+                    );
+                    UpdateContext({popup_promotor: false});
                 );
-                UpdateContext({popup_promotor: false});
+                
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -1326,7 +1331,7 @@ Unidad_solicitante As screen:
 
                 fondo_celeste_12 As image:
                     BorderColor: =RGBA(255, 255, 255, 1)
-                    Height: =50
+                    Height: =52
                     HoverFill: =RGBA(186, 202, 226, 1)
                     Image: ='background-input'
                     ImagePosition: =ImagePosition.Fill

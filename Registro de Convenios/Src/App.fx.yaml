@@ -141,7 +141,7 @@ App As appinfo:
         ClearCollect(Nombres_contrapartes_internacionales,'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);
         
         //nombres reparticiones
-        ClearCollect(Nombres_reparticiones, 'DTI-PATraerreparticiones'.Run())
+        ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion))
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false
