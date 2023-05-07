@@ -25,7 +25,10 @@ Unidad_solicitante As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =//SIN NOMBRE UNIDAD SOLICITANTE
+                =//ESPECIFICACIONES
+                If(IsBlank(tipo_alcance), UpdateContext({sin_alcance:true}), UpdateContext({sin_alcance:false}));
+                
+                //SIN NOMBRE UNIDAD SOLICITANTE
                 If(CountRows(organismos_actividad)>1,
                     If(IsBlank(nombre_unidad_solicitante),UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}))
                 ,
@@ -51,7 +54,7 @@ Unidad_solicitante As screen:
                 If(CountRows(organismos_actividad)=1,UpdateContext({uni:First(organismos_actividad).Reparticion}), UpdateContext({
                 uni: nombre_unidad_solicitante.Selected.Reparticion}));
                 
-                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable, 
+                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial, 
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_unidad_solicitante_cargados,{
@@ -1118,6 +1121,143 @@ Unidad_solicitante As screen:
                 X: =1211
                 Y: =109
                 ZIndex: =17
+
+            Contenedor_a_t As groupContainer.manualLayoutContainer:
+                Height: =64
+                Width: =300
+                X: =941
+                Y: =24
+                ZIndex: =18
+
+                Contenedor_seleccionable_1 As groupContainer.manualLayoutContainer:
+                    Height: =44
+                    Width: =300
+                    Y: =20
+                    ZIndex: =1
+
+                    fondo_celeste_2 As image:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Height: =40
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =300
+                        ZIndex: =1
+
+                    sin_alcance_territorial As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =fondo_celeste_8.Height
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_alcance
+                        Width: =300
+                        Y: =fondo_celeste_8.Y+1
+                        ZIndex: =2
+
+                    tipo_alcance As dropdown:
+                        AllowEmptySelection: =true
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        ChevronBackground: =RGBA(241, 244, 255, 1)
+                        ChevronFill: =RGBA(111, 139, 167, 1)
+                        ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                        ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                        Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HoverBorderColor: =RGBA(241,244,255,1)
+                        HoverColor: =RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(207, 210, 232, 1)
+                        Items: |-
+                            =//lista_alcance
+                            Filter(lista_alcance, buscador_a_t_input.Text in valor)
+                        OnChange: =Reset(buscador_a_t_input)
+                        PaddingBottom: =12
+                        PaddingLeft: =12
+                        PaddingTop: =12
+                        PressedColor: =RGBA(17, 61, 107, 1)
+                        PressedFill: =RGBA(241, 244, 255, 1)
+                        SelectionColor: =RGBA(111, 139, 167, 1)
+                        SelectionFill: =RGBA(241, 244, 255, 1)
+                        Size: =14
+                        TabIndex: =
+                        Width: =fondo_celeste_2.Width-24
+                        X: =fondo_celeste_2.X+12
+                        Y: =fondo_celeste_2.Y+2
+                        ZIndex: =3
+
+                    tapar_tipo_alcance As rectangle:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(244, 244, 244, 1)
+                        Height: =40
+                        Visible: =false
+                        Width: =40
+                        X: =tipo_alcance.X+tipo_alcance.Width-Self.Width+1
+                        Y: =fondo_celeste_2.Y
+                        ZIndex: =4
+
+                    buscador_a_t_input As text:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =0
+                        Color: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(17, 61, 107, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HintText: =If(IsBlank(tipo_alcance.SelectedText),"Seleccionar...","")
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: |-
+                            =//RGBA(17; 61; 107; 1)
+                            //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                            RGBA(17, 61, 107, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnChange: =
+                        OnSelect: |-
+                            =Reset(tipo_alcance);
+                            Reset(buscador_a_t_input)
+                        PaddingBottom: =1
+                        PaddingLeft: =24
+                        PaddingRight: =10
+                        PaddingTop: =0
+                        Size: =14
+                        Width: =250
+                        ZIndex: =5
+
+                alcance_territorial As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="ALCANCE TERRITORIAL"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =300
+                    ZIndex: =2
 
         datos_unidad_solicitante_3 As label:
             Color: =RGBA(17, 61, 107, 1)
