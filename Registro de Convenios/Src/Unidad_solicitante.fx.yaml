@@ -45,6 +45,9 @@ Unidad_solicitante As screen:
                 */
                 //If(IsBlank(telefono_promotor_input_2.Text), UpdateContext({sin_telefono_promotor:true}), UpdateContext({sin_telefono_promotor:false}));
                 
+                //SIN AUTORIDAD
+                If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_autoridad:true}), UpdateContext({sin_autoridad:false}));
+                
                 //SIN RESPONSABLE
                 If(IsBlank(nombre_responsable_input_2.Text), UpdateContext({sin_responsable:true}), UpdateContext({sin_responsable:false}));
                 If(IsBlank(cargo_responsable_input_2.Text), UpdateContext({sin_cargo_responsable:true}), UpdateContext({sin_cargo_responsable:false}));
@@ -54,7 +57,7 @@ Unidad_solicitante As screen:
                 If(CountRows(organismos_actividad)=1,UpdateContext({uni:First(organismos_actividad).Reparticion}), UpdateContext({
                 uni: nombre_unidad_solicitante.Selected.Reparticion}));
                 
-                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial, 
+                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad, 
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_unidad_solicitante_cargados,{
@@ -584,7 +587,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         BorderThickness: =0
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =autoridad_solicitante.telefono
+                        Default: =autoridad.telefono
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(241, 244, 255, 1)
@@ -632,7 +635,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         BorderThickness: =0
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =autoridad_solicitante.correo_udec
+                        Default: =autoridad.correo
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(241, 244, 255, 1)
@@ -669,6 +672,28 @@ Unidad_solicitante As screen:
                         Width: =337.3
                         ZIndex: =2
 
+                    sin_correo_autoridad As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_responsable_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_autoridad
+                        Width: =334
+                        X: =nombre_responsable_input_2.X
+                        Y: =18
+                        ZIndex: =3
+
                 Cargo_autoridad_2 As groupContainer.manualLayoutContainer:
                     Height: =60
                     Width: =337.3
@@ -679,7 +704,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         BorderThickness: =0
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =autoridad_solicitante.cargo
+                        Default: =autoridad.cargo
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(241, 244, 255, 1)
@@ -716,6 +741,28 @@ Unidad_solicitante As screen:
                         Width: =337.3
                         ZIndex: =2
 
+                    sin_cargo_autoridad As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_responsable_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_autoridad
+                        Width: =334
+                        X: =nombre_responsable_input_2.X
+                        Y: =18
+                        ZIndex: =3
+
                 Nombre_autoridad_2 As groupContainer.manualLayoutContainer:
                     Height: =60
                     Width: =337.3
@@ -725,7 +772,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(0, 0, 0, 0)
                         BorderThickness: =0
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =autoridad_solicitante.nombre_completo
+                        Default: =autoridad.nombre
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(241, 244, 255, 1)
@@ -761,6 +808,28 @@ Unidad_solicitante As screen:
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
+
+                    sin_nombre_autoridad As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_responsable_input_2.Height+2
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_autoridad
+                        Width: =334
+                        X: =nombre_responsable_input_2.X
+                        Y: =18
+                        ZIndex: =3
 
             datos_del_responsable_1 As label:
                 Color: =RGBA(17, 61, 107, 1)
@@ -1072,6 +1141,7 @@ Unidad_solicitante As screen:
                 OnSelect: |-
                     =//Set(responsable;{});;
                     UpdateContext({popup_autoridad: true});
+                    Set(a_seleccionada,"");
                     Reset(inp_autoridad_popup_search);
                 PaddingBottom: =0
                 PaddingLeft: =0
@@ -1762,25 +1832,24 @@ Unidad_solicitante As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |+
-                =If(IsBlank(inp_autoridad_popup_search.Text),
+                =If(!IsBlank(inp_autoridad_popup_search.Text),
                     If(!IsBlank(
                         LookUp(
                             Nombres_autoridades, 
-                            Lower(nombre_completo) = Lower(inp_promotor_popup_search.Text)
+                            Lower(nombre_completo) = Lower(inp_autoridad_popup_search.Text)
                         )
                     ),
-                        UpdateContext({
-                            autoridad_seleccionada : Search(Nombres_autoridades,inp_promotor_popup_search.Text,"nombre_completo")
-                        });
                         Set(autoridad,{
-                            id_persona: autoridad_seleccionada,
-                            nombre: datos_responsable.nombre_completo,
-                            cargo: datos_responsable.cargo,
-                            correo: datos_responsable.correo_udec,
-                            telefono: datos_responsable.telefono
+                            id_persona: autoridad_seleccionada.id_persona,
+                            nombre: autoridad_seleccionada.nombre,
+                            cargo: autoridad_seleccionada.cargo,
+                            correo: autoridad_seleccionada.correo,
+                            telefono: autoridad_seleccionada.telefono
                         });
                     );
                     
+                    UpdateContext({popup_autoridad: false});
+                    ,
                     UpdateContext({popup_autoridad: false});
                 );
                 
@@ -1831,7 +1900,7 @@ Unidad_solicitante As screen:
             opciones_nombre_a As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(Nombres_autoridades, inp_promotor_popup_search.Text in nombre_completo)
+                Items: =Filter(Nombres_autoridades, inp_autoridad_popup_search.Text in nombre_completo)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -1861,6 +1930,14 @@ Unidad_solicitante As screen:
                         =Select(Parent);
                         If(desplegar_buscador_a,UpdateContext({desplegar_buscador_a:false}),UpdateContext({desplegar_buscador_a:true}));
                         Set(a_seleccionada,ThisItem.nombre_completo);
+                        
+                        Set(autoridad_seleccionada,{
+                            id_persona: ThisItem.id_persona,
+                            nombre: ThisItem.nombre_completo,
+                            cargo: ThisItem.cargo,
+                            correo: ThisItem.correo_udec,
+                            telefono: ThisItem.telefono
+                        })
                     PaddingBottom: =0
                     PaddingLeft: =12
                     PaddingRight: =10
