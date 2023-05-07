@@ -809,7 +809,7 @@ Unidad_solicitante As screen:
 
             Nombre_unidad_solicitante_2 As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =1198
+                Width: =862
                 X: =42
                 Y: =24
                 ZIndex: =10
@@ -838,14 +838,14 @@ Unidad_solicitante As screen:
                     Size: =14
                     TabIndex: =
                     Visible: =If(CountRows(organismos_actividad)>1,false,true)
-                    Width: =1198
+                    Width: =862
                     Y: =20
                     ZIndex: =1
 
                 Contenedor_seleccionable_4 As groupContainer.manualLayoutContainer:
                     Height: =40
                     Visible: =If(CountRows(organismos_actividad)>1,true,false)
-                    Width: =1198
+                    Width: =862
                     Y: =20
                     ZIndex: =2
 
@@ -859,7 +859,7 @@ Unidad_solicitante As screen:
                         RadiusBottomRight: =12
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
-                        Width: =1198
+                        Width: =862
                         ZIndex: =1
 
                     sin_nombre_unidad As text:
@@ -956,7 +956,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =10
                         PaddingTop: =0
                         Size: =14
-                        Width: =1150
+                        Width: =810
                         ZIndex: =5
 
                 nombre_unidad_label_2 As label:
