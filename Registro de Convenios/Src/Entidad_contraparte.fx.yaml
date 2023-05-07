@@ -20,13 +20,13 @@ Entidad_contraparte As screen:
                 =//AL MENOS UNA CONTRAPARTE CARGADA
                 If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
                     Set(entidades_contraparte_na_cargadas,{
-                        nacionales: {
+                        nacionales:{
                             cantidad: CountRows(contrapartes_nacionales),
                             contrapartes: contrapartes_nacionales
                         }
                     });
                     Set(entidades_contraparte_in_cargadas,{
-                        internacionales: {
+                        internacionales:{
                             cantidad: CountRows(contrapartes_internacionales),
                             contrapartes: contrapartes_internacionales
                         }
@@ -135,7 +135,7 @@ Entidad_contraparte As screen:
                         PaddingLeft: =0
                         PaddingRight: =0
                         Size: =16
-                        Text: =ThisItem.pais_responsable_institucional
+                        Text: =ThisItem.pais
                         VerticalAlign: =VerticalAlign.Top
                         Width: =lbl_contraparte_nacional_nombre_1.Width
                         X: =20

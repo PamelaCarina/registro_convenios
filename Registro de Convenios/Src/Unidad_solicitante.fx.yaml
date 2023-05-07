@@ -35,9 +35,11 @@ Unidad_solicitante As screen:
                 //If(nombre_unidad_solicitante.Selected.Reparticion="Seleccionar..."; UpdateContext({sin_unidad:true}); UpdateContext({sin_unidad:false}));;
                 
                 //SIN PROMOTOR
-                If(IsBlank(nombre_promotor_input_2.Text), UpdateContext({sin_promotor:true}), UpdateContext({sin_promotor:false}));
-                If(IsBlank(cargo_promotor_input_2.Text), UpdateContext({sin_cargo_promotor:true}), UpdateContext({sin_cargo_promotor:false}));
-                If(IsBlank(correo_promotor_input_2.Text), UpdateContext({sin_correo_promotor:true}), UpdateContext({sin_correo_promotor:false}));
+                /*
+                If(IsBlank(nombre_promotor_input_2.Text); UpdateContext({sin_promotor:true}); UpdateContext({sin_promotor:false}));;
+                If(IsBlank(cargo_promotor_input_2.Text); UpdateContext({sin_cargo_promotor:true}); UpdateContext({sin_cargo_promotor:false}));;
+                If(IsBlank(correo_promotor_input_2.Text); UpdateContext({sin_correo_promotor:true}); UpdateContext({sin_correo_promotor:false}));;
+                */
                 //If(IsBlank(telefono_promotor_input_2.Text), UpdateContext({sin_telefono_promotor:true}), UpdateContext({sin_telefono_promotor:false}));
                 
                 //SIN RESPONSABLE
@@ -61,12 +63,14 @@ Unidad_solicitante As screen:
                             correo: correo_autoridad_input_2.Text,
                             telefono: telefono_autoridad_input_2.Text
                         },
+                        /*
                         promotor: {
-                            nombre: nombre_promotor_input_2.Text,
-                            cargo: cargo_promotor_input_2.Text,
-                            correo:correo_promotor_input_2.Text,
+                            nombre: nombre_promotor_input_2.Text;
+                            cargo: cargo_promotor_input_2.Text;
+                            correo:correo_promotor_input_2.Text;
                             telefono:telefono_promotor_input_2.Text
-                        },
+                        };
+                        */
                         responsable: {
                             nombre: nombre_responsable_input_2.Text,
                             cargo: cargo_responsable_input_2.Text,
@@ -160,7 +164,7 @@ Unidad_solicitante As screen:
                         DisabledBorderColor: =RGBA(238, 110, 126, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
+                        Height: =nombre_responsable_input_2.Height+2
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -172,8 +176,8 @@ Unidad_solicitante As screen:
                             =//If(sin_telefono_responsable || (responsable.telefono=" ")
                             //,true,false)
                         Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
+                        X: =nombre_responsable_input_2.X
+                        Y: =nombre_responsable_input_2.Y-1
                         ZIndex: =1
 
                     telefono_responsable_input_2 As text:
@@ -272,7 +276,7 @@ Unidad_solicitante As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
+                        Height: =nombre_responsable_input_2.Height+2
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -283,8 +287,8 @@ Unidad_solicitante As screen:
                         Visible: |
                             =sin_correo_responsable
                         Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
+                        X: =nombre_responsable_input_2.X
+                        Y: =nombre_responsable_input_2.Y-1
                         ZIndex: =3
 
                 Cargo_responsable_2 As groupContainer.manualLayoutContainer:
@@ -341,7 +345,7 @@ Unidad_solicitante As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
+                        Height: =nombre_responsable_input_2.Height+2
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -352,8 +356,8 @@ Unidad_solicitante As screen:
                         Visible: |
                             =sin_cargo_responsable
                         Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
+                        X: =nombre_responsable_input_2.X
+                        Y: =nombre_responsable_input_2.Y-1
                         ZIndex: =3
 
                 Nombre_responsable_2 As groupContainer.manualLayoutContainer:
@@ -409,7 +413,7 @@ Unidad_solicitante As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
+                        Height: =nombre_responsable_input_2.Height+2
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -420,8 +424,8 @@ Unidad_solicitante As screen:
                         Visible: |
                             =sin_responsable
                         Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
+                        X: =nombre_responsable_input_2.X
+                        Y: =nombre_responsable_input_2.Y-1
                         ZIndex: =3
 
             separador_1 As rectangle:
@@ -440,282 +444,35 @@ Unidad_solicitante As screen:
                 Y: =152
                 ZIndex: =4
 
-                Telefono_promotor_2 As groupContainer.manualLayoutContainer:
-                    Height: =60
+                Contenedor_sin_unidad As groupContainer.manualLayoutContainer:
+                    Height: =312
                     Width: =337.3
-                    Y: =252
-                    ZIndex: =1
-
-                    sin_telefono_promotor As text:
-                        BorderColor: =RGBA(238, 110, 126, 1)
-                        Default: =""
-                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
-                        HoverBorderColor: =RGBA(238, 110, 126, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        TabIndex: =-1
-                        Visible: |-
-                            =//If(sin_telefono_promotor || (promotor.telefono=" ")
-                            //,true,false)
-                        Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
-                        ZIndex: =1
-
-                    telefono_promotor_input_2 As text:
-                        BorderColor: =RGBA(255, 255, 255, 1)
-                        BorderThickness: =0
-                        Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(promotor.telefono="0", "", promotor.telefono)
-                        DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(241, 244, 255, 1)
-                        FocusedBorderThickness: =0
-                        Format: =TextFormat.Number
-                        HintText: =""
-                        HoverBorderColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =12
-                        PaddingBottom: =12
-                        PaddingLeft: =24
-                        PaddingRight: =24
-                        PaddingTop: =12
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Size: =14
-                        TabIndex: =
-                        Width: =337.3
-                        Y: =20
-                        ZIndex: =2
-
-                    telefono_promotor_label_2 As label:
-                        Color: =RGBA(111, 139, 167, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        PaddingBottom: =4
-                        PaddingLeft: =12
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =10
-                        Text: ="TELÉFONO CONTACTO"
-                        VerticalAlign: =VerticalAlign.Top
-                        Width: =337.3
-                        ZIndex: =3
-
-                Correo_promotor_2 As groupContainer.manualLayoutContainer:
-                    Height: =60
-                    Width: =337.3
-                    Y: =168
-                    ZIndex: =3
-
-                    correo_promotor_input_2 As text:
-                        BorderColor: =RGBA(255, 255, 255, 1)
-                        BorderThickness: =0
-                        Color: =RGBA(17, 61, 107, 1)
-                        Default: =promotor.correo
-                        DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(241, 244, 255, 1)
-                        FocusedBorderThickness: =0
-                        HintText: =""
-                        HoverBorderColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =60
-                        PaddingBottom: =12
-                        PaddingLeft: =24
-                        PaddingRight: =24
-                        PaddingTop: =12
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Size: =14
-                        TabIndex: =
-                        Width: =337.3
-                        Y: =20
-                        ZIndex: =1
-
-                    correo_promotor_label_2 As label:
-                        Color: =RGBA(111, 139, 167, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        PaddingBottom: =4
-                        PaddingLeft: =12
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =10
-                        Text: ="CORREO ELECTRÓNICO"
-                        VerticalAlign: =VerticalAlign.Top
-                        Width: =337.3
-                        ZIndex: =2
-
-                    sin_correo_promotor As text:
-                        BorderColor: =RGBA(238, 110, 126, 1)
-                        Default: =""
-                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
-                        HoverBorderColor: =RGBA(238, 110, 126, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        TabIndex: =-1
-                        Visible: =sin_correo_promotor
-                        Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
-                        ZIndex: =3
-
-                Cargo_promotor_2 As groupContainer.manualLayoutContainer:
-                    Height: =60
-                    Width: =337.3
-                    Y: =84
                     ZIndex: =4
 
-                    cargo_promotor_input_2 As text:
-                        BorderColor: =RGBA(255, 255, 255, 1)
-                        BorderThickness: =0
-                        Color: =RGBA(17, 61, 107, 1)
-                        Default: =promotor.cargo
-                        DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(241, 244, 255, 1)
-                        FocusedBorderThickness: =0
-                        HintText: =""
-                        HoverBorderColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =60
-                        PaddingBottom: =12
-                        PaddingLeft: =24
-                        PaddingRight: =24
-                        PaddingTop: =12
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Size: =14
-                        TabIndex: =
-                        Width: =337.3
-                        Y: =20
+                    Image1_2 As image:
+                        Height: =200
+                        Image: =vacio
+                        Width: =200
+                        X: =68
                         ZIndex: =1
 
-                    cargo_promotor_label_2 As label:
-                        Color: =RGBA(111, 139, 167, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        PaddingBottom: =4
-                        PaddingLeft: =12
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =10
-                        Text: ="CARGO"
-                        VerticalAlign: =VerticalAlign.Top
+                    no_contraparte_in_lb_1 As label:
+                        Color: =RGBA(159, 156, 183, 1)
+                        Height: =55
+                        Size: =16
+                        Text: ="No encontramos ninguna unidad promotora asociada"
                         Width: =337.3
+                        Y: =239
                         ZIndex: =2
 
-                    sin_cargo_promotor_1 As text:
-                        BorderColor: =RGBA(238, 110, 126, 1)
-                        Default: =""
-                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
-                        HoverBorderColor: =RGBA(238, 110, 126, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        TabIndex: =-1
-                        Visible: =sin_cargo_promotor
-                        Width: =334
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
-                        ZIndex: =3
-
-                Nombre_promotor_2 As groupContainer.manualLayoutContainer:
-                    Height: =60
-                    Width: =337.3
-                    ZIndex: =5
-
-                    nombre_promotor_input_2 As text:
-                        BorderColor: =RGBA(255, 255, 255, 1)
-                        BorderThickness: =0
-                        Color: =RGBA(17, 61, 107, 1)
-                        Default: =promotor.nombre
-                        DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(241, 244, 255, 1)
-                        FocusedBorderThickness: =0
-                        Height: =38
-                        HintText: =""
-                        HoverBorderColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =RGBA(241, 244, 255, 1)
-                        MaxLength: =60
-                        PaddingBottom: =12
-                        PaddingLeft: =24
-                        PaddingRight: =24
-                        PaddingTop: =12
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Size: =14
-                        TabIndex: =
-                        Width: =334
-                        X: =2
-                        Y: =20
-                        ZIndex: =1
-
-                    nombre_promotor_label_2 As label:
-                        Color: =RGBA(111, 139, 167, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        PaddingBottom: =4
-                        PaddingLeft: =12
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =10
-                        Text: ="NOMBRE"
-                        VerticalAlign: =VerticalAlign.Top
+                    sin_contraparte_in_lb_1 As label:
+                        Color: =RGBA(17, 61, 107, 0.6)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =51
+                        Size: =23
+                        Text: ="Sin unidad promotora"
                         Width: =337.3
-                        ZIndex: =2
-
-                    sin_nombre_promotor As text:
-                        BorderColor: =RGBA(238, 110, 126, 1)
-                        BorderThickness: =2.3
-                        Default: =""
-                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_promotor_input_2.Height+2
-                        HoverBorderColor: =RGBA(238, 110, 126, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        TabIndex: =-1
-                        Visible: |
-                            =sin_promotor
-                        Width: =nombre_promotor_input_2.Width
-                        X: =nombre_promotor_input_2.X
-                        Y: =nombre_promotor_input_2.Y-1
+                        Y: =188
                         ZIndex: =3
 
             separador As rectangle:
@@ -1310,7 +1067,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
             Size: =18
-            Text: ="Búsqueda de promotor unidad solicitante"
+            Text: ="Búsqueda de unidad promotora"
             Width: =650
             X: =360
             Y: =234
@@ -1350,7 +1107,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="CORREO ELECTRÓNICO UDEC"
+            Text: ="NOMBRE UNIDAD"
             Width: =250
             X: =360
             Y: =314

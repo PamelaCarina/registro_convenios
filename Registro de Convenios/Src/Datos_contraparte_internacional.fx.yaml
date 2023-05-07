@@ -131,7 +131,7 @@ Datos_contraparte_internacional As screen:
                             nombre_representante_legal: Upper( nombre_representante_legal_in_input.Text),
                             nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input.Text),
                             cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
-                            pais_responsable_institucional: pais_in_input.Text,
+                            pais: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
                             firma_digital: firma_digiral_in_button.Selected,
                             id: contraparte_in.id,
@@ -147,7 +147,7 @@ Datos_contraparte_internacional As screen:
                             nombre_representante_legal: Upper(nombre_representante_legal_in_input.Text),
                             nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input.Text),
                             cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
-                            pais_responsable_institucional: pais_in_input.Text,
+                            pais: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
                             firma_digital: firma_digiral_in_button.Selected
                         }
@@ -570,7 +570,7 @@ Datos_contraparte_internacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_contraparte,contraparte_in.pais_responsable_institucional,contraparte.pais_responsable_institucional)
+                    Default: =If(nueva_contraparte,contraparte_in.pais,contraparte.pais)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     DisplayMode: =DisplayMode.Disabled
                     Fill: =RGBA(241, 244, 255, 1)
@@ -806,7 +806,7 @@ Datos_contraparte_internacional As screen:
                         nombre_representante_legal: "",
                         nombre_responsable_institucional:"",
                         cargo_responsable_institucional:"",
-                        pais_responsable_institucional:Upper(First(datos_contraparte).pais),
+                        pais:Upper(First(datos_contraparte).pais),
                         correo_responsable_institucional:"",
                         id: First(datos_contraparte).id
                     });
@@ -942,7 +942,7 @@ Datos_contraparte_internacional As screen:
         img_loading_2 As image:
             Image: =loading
             Visible: =cargando
-            X: =692
-            Y: =383
+            X: =633
+            Y: =334
             ZIndex: =8
 
