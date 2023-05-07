@@ -450,7 +450,8 @@ Unidad_solicitante As screen:
                     Items: =unidades_promotoras
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
-                    TemplateSize: =40
+                    TemplateSize: =70
+                    Visible: =If(CountRows(unidades_promotoras)=0,false,true)
                     Width: =337.3
                     ZIndex: =1
 
@@ -465,15 +466,62 @@ Unidad_solicitante As screen:
                     lbl_contraparte_nacional_nombre_2 As label:
                         Color: =RGBA(17, 61, 107, 1)
                         FontWeight: =FontWeight.Bold
+                        Height: =70
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =14
                         Text: =ThisItem.nombre_unidad_promotora
-                        VerticalAlign: =VerticalAlign.Bottom
-                        Width: =327.3
+                        Width: =280
                         ZIndex: =2
+
+                    Icon1 As icon.Trash:
+                        Color: =RGBA(111, 139, 167, 1)
+                        Height: =20
+                        Icon: =Icon.Trash
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =302
+                        Y: =25
+                        ZIndex: =3
+
+                    btn_buscar_promotor_1 As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FontWeight: =FontWeight.Normal
+                        Height: =30
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(207, 210, 232, 0.4)
+                        OnSelect: |-
+                            =Remove(
+                                unidades_promotoras,
+                                First(
+                                    Filter(
+                                        unidades_promotoras,
+                                        Lower(nombre_unidad_promotora) = Lower(ThisItem.nombre_unidad_promotora)
+                                    )
+                                )
+                            );
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(207, 210, 232, 0.4)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Size: =20
+                        TabIndex: =
+                        Text: =""
+                        Width: =30
+                        X: =297
+                        Y: =20
+                        ZIndex: =4
 
                 Contenedor_sin_unidad As groupContainer.manualLayoutContainer:
                     Height: =312
@@ -1051,7 +1099,8 @@ Unidad_solicitante As screen:
                 OnSelect: |-
                     =UpdateContext({popup_promotor: true});
                     Reset(inp_promotor_popup_search);
-                    UpdateContext({popup_faltacorreo:false})
+                    UpdateContext({popup_faltacorreo:false});
+                    Set(p_seleccionado,"");
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0
