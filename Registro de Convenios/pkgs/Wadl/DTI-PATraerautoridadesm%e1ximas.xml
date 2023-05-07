@@ -3,6 +3,26 @@
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <object name="ManualTriggerInput" />
+      <string name="ResponseActionOutput_items_def_id_persona_def" />
+      <string name="ResponseActionOutput_items_def_paterno_def" />
+      <string name="ResponseActionOutput_items_def_materno_def" />
+      <string name="ResponseActionOutput_items_def_nombres_def" />
+      <string name="ResponseActionOutput_items_def_nombre_completo_def" />
+      <string name="ResponseActionOutput_items_def_correo_udec_def" />
+      <string name="ResponseActionOutput_items_def_cargo_def" />
+      <string name="ResponseActionOutput_items_def_telefono_def" />
+      <object name="ResponseActionOutput_items_def">
+        <property name="id_persona" type="string" />
+        <property name="paterno" type="string" />
+        <property name="materno" type="string" />
+        <property name="nombres" type="string" />
+        <property name="nombre_completo" type="string" />
+        <property name="correo_udec" type="string" />
+        <property name="cargo" type="string" />
+        <property name="telefono" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_items_def" name="ResponseActionOutput" />
+      <object name="Run_responses_default_def" />
     </jsonTypes>
   </grammars>
   <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/logicflows">
@@ -16,6 +36,9 @@
           </param>
           <representation mediaType="application/json" />
         </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
       </method>
     </resource>
   </resources>

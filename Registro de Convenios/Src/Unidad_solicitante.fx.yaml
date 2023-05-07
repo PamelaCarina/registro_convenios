@@ -1701,7 +1701,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
             Size: =18
-            Text: ="Búsqueda de contraparte internacional"
+            Text: ="Búsqueda de autoridad solicitante"
             Width: =650
             X: =360
             Y: =234
@@ -1717,7 +1717,7 @@ Unidad_solicitante As screen:
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
-            HintText: ="Ingresar nombre institución"
+            HintText: ="Ingresar nombre autoridad"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
             OnSelect: |-
@@ -1749,7 +1749,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="NOMBRE INSTITUCIÓN"
+            Text: ="NOMBRE AUTORIDAD"
             Width: =250
             X: =360
             Y: =314
@@ -1842,6 +1842,55 @@ Unidad_solicitante As screen:
             X: =(fondo_blanco_13.X+fondo_blanco_13.Width/2)-Self.Width/2
             Y: =418
             ZIndex: =12
+
+        Contenedor_a As groupContainer.manualLayoutContainer:
+            Visible: =desplegar_buscador_p
+            Width: =599
+            X: =371
+            Y: =397
+            ZIndex: =13
+
+            opciones_nombre_a As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =200
+                Items: =Filter(Nombres_reparticiones, inp_promotor_popup_search.Text in reparticion)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |
+                    =false
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =599
+                WrapCount: =0
+                ZIndex: =1
+
+                fondo_celeste_13 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =52
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =599
+                    ZIndex: =1
+
+                Label1_3 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    DisabledFill: =RGBA(241, 244, 255, 1)
+                    Height: =50
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    HoverFill: =RGBA(207, 210, 232, 1)
+                    OnSelect: |-
+                        =Select(Parent);
+                        If(desplegar_buscador_p,UpdateContext({desplegar_buscador_p:false}),UpdateContext({desplegar_buscador_p:true}));
+                        Set(p_seleccionado,ThisItem.reparticion);
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =10
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.reparticion
+                    Width: =599
+                    ZIndex: =3
 
     cont_loading As group:
         Height: =5
