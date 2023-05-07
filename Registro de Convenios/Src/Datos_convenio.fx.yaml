@@ -505,7 +505,7 @@ Datos_convenio As screen:
                 Contenedor_m_c As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
-                    Y: =314
+                    Y: =230
                     ZIndex: =1
 
                     modalidades As label:
@@ -646,7 +646,7 @@ Datos_convenio As screen:
                 Contenedor_t_s As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
-                    Y: =230
+                    Y: =146
                     ZIndex: =2
 
                     Contenedor_seleccionable_tipo_solicitud As groupContainer.manualLayoutContainer:
@@ -782,7 +782,7 @@ Datos_convenio As screen:
                 Contenedor_t_c As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
-                    Y: =146
+                    Y: =62
                     ZIndex: =3
 
                     Contenedor_seleccionable_tipología As groupContainer.manualLayoutContainer:
