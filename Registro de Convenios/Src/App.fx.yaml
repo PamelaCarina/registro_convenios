@@ -40,7 +40,7 @@ App As appinfo:
         ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion));
         
         //autoridades máximas
-        ClearCollect(Nombres_autoridades, 'DTI-PATraerautoridadesmáximas'.Run());
+        ClearCollect(Nombres_autoridades, Sort('DTI-PATraerautoridadesmáximas'.Run(), nombre_completo));
         
         
         Set(cargando, false);
