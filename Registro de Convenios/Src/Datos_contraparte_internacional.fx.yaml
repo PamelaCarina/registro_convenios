@@ -117,7 +117,6 @@ Datos_contraparte_internacional As screen:
                 //firma digital
                 If(IsBlank(firma_digiral_in_button),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
                 
-                
                 If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !correo_in_invalido && !sin_firma_in,
                 If(IsBlank(
                         LookUp(
