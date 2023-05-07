@@ -1721,7 +1721,7 @@ Unidad_solicitante As screen:
         img_loading As image:
             Image: =loading
             Visible: =cargando
-            X: =632
-            Y: =323
+            X: =633
+            Y: =338
             ZIndex: =9
 
