@@ -14104,6 +14104,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.entidades_contraparte_in_cargadas"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.entidades_contraparte_in_cargadas",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "entidades_contraparte_in_cargadas",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.fondo_deshabilitado"
                 }
               ],

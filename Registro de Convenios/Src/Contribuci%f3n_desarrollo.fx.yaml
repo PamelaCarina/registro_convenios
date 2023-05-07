@@ -1336,7 +1336,7 @@ Contribución_desarrollo As screen:
                 //ClearCollect(a;JSON(datos_solicitud_convenio));;
                 Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(JSON(datos_unidad_solicitante_cargados),
                                                         JSON(datos_convenio_cargados),
-                                                        JSON(entidades_contraparte_cargadas),
+                                                        JSON(entidades_contraparte_na_cargadas),
                                                         JSON(datos_vinculacion_cargados),
                                                         JSON(datos_contribucion_cargados),
                                                         JSON(ods_cargados)).id);

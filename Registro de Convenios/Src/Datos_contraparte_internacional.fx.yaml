@@ -134,7 +134,8 @@ Datos_contraparte_internacional As screen:
                             pais_responsable_institucional: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
                             firma_digital: firma_digiral_in_button.Selected,
-                            id: contraparte_in.id
+                            id: contraparte_in.id,
+                            tipo: "INTERNACIONAL"
                     }),
                     Patch(contrapartes_internacionales,
                         LookUp(

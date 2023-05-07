@@ -19,11 +19,13 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =//AL MENOS UNA CONTRAPARTE CARGADA
                 If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
-                    Set(entidades_contraparte_cargadas,{
+                    Set(entidades_contraparte_na_cargadas,{
                         nacionales: {
                             cantidad: CountRows(contrapartes_nacionales),
                             contrapartes: contrapartes_nacionales
-                        },
+                        }
+                    });
+                    Set(entidades_contraparte_in_cargadas,{
                         internacionales: {
                             cantidad: CountRows(contrapartes_internacionales),
                             contrapartes: contrapartes_internacionales
