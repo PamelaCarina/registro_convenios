@@ -1,7 +1,8 @@
 App As appinfo:
     BackEnabled: =false
     OnStart: |-
-        =//USUARIO LOGEADO
+        =Set(cargando, true);
+        //USUARIO LOGEADO
         //Set(persona_solicitante; 'VRIM-PATraedatosdeusuario'.Run(User().Email));;
         Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run("melissa@udec.cl"));
         
@@ -141,7 +142,8 @@ App As appinfo:
         ClearCollect(Nombres_contrapartes_internacionales,'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);
         
         //nombres reparticiones
-        ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion))
+        ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion));
+        Set(cargando, false);
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false
