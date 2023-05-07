@@ -545,17 +545,17 @@ Unidad_solicitante As screen:
                     no_contraparte_in_lb_1 As label:
                         Color: =RGBA(159, 156, 183, 1)
                         Height: =55
-                        Size: =16
+                        Size: =15.5
                         Text: ="No encontramos ninguna unidad promotora asociada"
                         Width: =337.3
-                        Y: =239
+                        Y: =241
                         ZIndex: =2
 
                     sin_contraparte_in_lb_1 As label:
                         Color: =RGBA(17, 61, 107, 0.6)
                         FontWeight: =FontWeight.Semibold
-                        Height: =51
-                        Size: =23
+                        Height: =53
+                        Size: =22.5
                         Text: ="Sin unidad promotora"
                         Width: =337.3
                         Y: =188
@@ -1452,7 +1452,9 @@ Unidad_solicitante As screen:
                         )
                     ),
                         Collect(unidades_promotoras,{
-                            nombre_unidad_promotora: inp_promotor_popup_search.Text
+                            nombre_unidad_promotora: promotor_seleccionado.reparticion,
+                            codigo_reparticion: promotor_seleccionado.codigo_reparticion,
+                            campus: promotor_seleccionado.campus            
                         })
                     );
                     UpdateContext({popup_promotor: false});
@@ -1520,7 +1522,7 @@ Unidad_solicitante As screen:
 
         Contenedor_p As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_p
-            Width: =599
+            Width: =620
             X: =371
             Y: =397
             ZIndex: =13
@@ -1535,7 +1537,7 @@ Unidad_solicitante As screen:
                     =false
                 TemplatePadding: =0
                 TemplateSize: =50
-                Width: =599
+                Width: =620
                 WrapCount: =0
                 ZIndex: =1
 
@@ -1545,7 +1547,7 @@ Unidad_solicitante As screen:
                     HoverFill: =RGBA(186, 202, 226, 1)
                     Image: ='background-input'
                     ImagePosition: =ImagePosition.Fill
-                    Width: =599
+                    Width: =620
                     ZIndex: =1
 
                 Label1_2 As label:
@@ -1554,10 +1556,16 @@ Unidad_solicitante As screen:
                     Height: =50
                     HoverColor: =RGBA(17, 61, 107, 1)
                     HoverFill: =RGBA(207, 210, 232, 1)
-                    OnSelect: |-
+                    OnSelect: |
                         =Select(Parent);
                         If(desplegar_buscador_p,UpdateContext({desplegar_buscador_p:false}),UpdateContext({desplegar_buscador_p:true}));
                         Set(p_seleccionado,ThisItem.reparticion);
+                        
+                        Set(promotor_seleccionado,{
+                            reparticion: ThisItem.reparticion,
+                            codigo_reparticion: ThisItem.codigo_reparticion,
+                            campus : ThisItem.campus
+                        })
                     PaddingBottom: =0
                     PaddingLeft: =12
                     PaddingRight: =10
@@ -1892,7 +1900,7 @@ Unidad_solicitante As screen:
 
         Contenedor_a As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_a
-            Width: =599
+            Width: =620
             X: =371
             Y: =397
             ZIndex: =13
@@ -1907,7 +1915,7 @@ Unidad_solicitante As screen:
                     =false
                 TemplatePadding: =0
                 TemplateSize: =50
-                Width: =599
+                Width: =620
                 WrapCount: =0
                 ZIndex: =1
 
@@ -1917,7 +1925,7 @@ Unidad_solicitante As screen:
                     HoverFill: =RGBA(186, 202, 226, 1)
                     Image: ='background-input'
                     ImagePosition: =ImagePosition.Fill
-                    Width: =599
+                    Width: =620
                     ZIndex: =1
 
                 Label1_3 As label:
