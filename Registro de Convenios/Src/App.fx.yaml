@@ -39,6 +39,10 @@ App As appinfo:
         //nombres reparticiones
         ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion));
         
+        //autoridades máximas
+        ClearCollect(Nombres_autoridades, 'DTI-PATraerautoridadesmáximas'.Run());
+        
+        
         Set(cargando, false);
         
         //NACIONALES

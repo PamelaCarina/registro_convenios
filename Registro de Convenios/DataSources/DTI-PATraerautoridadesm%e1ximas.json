@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "2055d94b-cfb4-41d0-b03f-51bb28271bc4",
+    "Name": "DTI-PATraerautoridadesmáximas",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "7f220850-98ec-ed11-8849-6045bd006f89"
+  }
+]
