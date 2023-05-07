@@ -134,7 +134,8 @@ Datos_contraparte_internacional As screen:
                             cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
                             pais_responsable_institucional: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
-                            firma_digital: firma_digiral_in_button.Selected
+                            firma_digital: firma_digiral_in_button.Selected,
+                            id: contraparte_in.id
                     }),
                     Patch(contrapartes_internacionales,
                         LookUp(
@@ -806,7 +807,8 @@ Datos_contraparte_internacional As screen:
                         nombre_responsable_institucional:"",
                         cargo_responsable_institucional:"",
                         pais_responsable_institucional:Upper(First(datos_contraparte).pais),
-                        correo_responsable_institucional:""
+                        correo_responsable_institucional:"",
+                        id: First(datos_contraparte).id
                     });
                     Set(cargando, false);
                     If(IsBlank(contraparte_in.nombre_entidad_contraparte),

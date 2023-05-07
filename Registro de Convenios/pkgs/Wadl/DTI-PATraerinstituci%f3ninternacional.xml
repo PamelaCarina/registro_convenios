@@ -6,6 +6,7 @@
       <object name="ManualTriggerInput">
         <property name="Ejecutarunflujosecundario_nombre_institucion" type="string" />
       </object>
+      <string name="ResponseActionOutput_items_def_id_def" />
       <string name="ResponseActionOutput_items_def_id_persona_def" />
       <string name="ResponseActionOutput_items_def_identificador_def" />
       <string name="ResponseActionOutput_items_def_razon_social_def" />
@@ -13,6 +14,7 @@
       <string name="ResponseActionOutput_items_def_clasificacion_vrid_def" />
       <string name="ResponseActionOutput_items_def_pais_def" />
       <object name="ResponseActionOutput_items_def">
+        <property name="id" type="string" />
         <property name="id_persona" type="string" />
         <property name="identificador" type="string" />
         <property name="razon_social" type="string" />
