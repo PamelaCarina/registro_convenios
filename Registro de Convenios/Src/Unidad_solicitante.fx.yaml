@@ -444,8 +444,40 @@ Unidad_solicitante As screen:
                 Y: =152
                 ZIndex: =4
 
+                Unidades_promotoras As gallery.galleryVertical:
+                    DelayItemLoading: =true
+                    Height: =312
+                    Items: =unidades_promotoras
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateSize: =40
+                    Width: =337.3
+                    ZIndex: =1
+
+                    fig_contraparte_arrow_2 As rectangle:
+                        Fill: =RGBA(112, 139, 166, 1)
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =327
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =1
+
+                    lbl_contraparte_nacional_nombre_2 As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        FontWeight: =FontWeight.Bold
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.nombre_unidad_promotora
+                        VerticalAlign: =VerticalAlign.Bottom
+                        Width: =327.3
+                        ZIndex: =2
+
                 Contenedor_sin_unidad As groupContainer.manualLayoutContainer:
                     Height: =312
+                    Visible: =If(CountRows(unidades_promotoras)>0,false,true)
                     Width: =337.3
                     ZIndex: =4
 
@@ -893,6 +925,7 @@ Unidad_solicitante As screen:
             buscar_1 As image:
                 Height: =20
                 Image: =ico_search
+                Visible: =false
                 Width: =20
                 X: =1215
                 Y: =113
@@ -924,6 +957,7 @@ Unidad_solicitante As screen:
                 Size: =20
                 TabIndex: =
                 Text: =""
+                Visible: =false
                 Width: =30
                 X: =1210
                 Y: =108
@@ -1006,6 +1040,36 @@ Unidad_solicitante As screen:
                 Y: =103
                 ZIndex: =16
 
+            btn_registro_4_e_agregar_1 As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Fill: =RGBA(139, 195, 74, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                HoverBorderColor: =RGBA(139, 195, 74, 1)
+                HoverFill: =RGBA(139, 195, 74, 0.4)
+                OnSelect: |-
+                    =UpdateContext({popup_promotor: true});
+                    Reset(inp_promotor_popup_search);
+                    UpdateContext({popup_faltacorreo:false})
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(95, 160, 20, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =20
+                TabIndex: =
+                Text: ="+"
+                Width: =30
+                X: =1211
+                Y: =109
+                ZIndex: =17
+
         datos_unidad_solicitante_3 As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
@@ -1077,13 +1141,20 @@ Unidad_solicitante As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
             Color: =RGBA(17, 61, 107, 1)
-            Default: =""
+            Default: |-
+                =//""
+                If(desplegar_buscador_p,"",p_seleccionado)
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
-            HintText: ="Ingresar correo electrónico"
+            HintText: ="Ingresar nombre unidad"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
+            OnSelect: |-
+                =Reset(inp_promotor_popup_search);
+                Reset(opciones_nombre_p);
+                Set(p_seleccionado,"");
+                If(desplegar_buscador_p,UpdateContext({desplegar_buscador_p:false}),UpdateContext({desplegar_buscador_p:true}))
             RadiusBottomLeft: =12
             RadiusBottomRight: =12
             RadiusTopLeft: =12
@@ -1094,14 +1165,6 @@ Unidad_solicitante As screen:
             X: =360
             Y: =353
             ZIndex: =5
-
-        buscar As image:
-            Height: =20
-            Image: =ico_search
-            Width: =20
-            X: =970
-            Y: =366
-            ZIndex: =6
 
         lbl_promotor_popup_correo As label:
             Color: =RGBA(111, 139, 167, 1)
@@ -1119,36 +1182,18 @@ Unidad_solicitante As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |
-                =UpdateContext({popup_usuarionoencontrado:false, popup_faltacorreo:false,popup_correonoudec:false});
-                
-                If(IsMatch(inp_promotor_popup_search.Text,Match.Email)=true&&IsEmpty(inp_promotor_popup_search.Text)=false,
-                    Set(dominio_correo,Lower(Last(ForAll(Split(inp_promotor_popup_search.Text,"@"), {Result: ThisRecord.Value})).Result));
-                    If(dominio_correo="udec.cl",
-                        UpdateContext({popup_correonoudec:false}),
-                        UpdateContext({popup_correonoudec:true});
-                        UpdateContext({popup_faltacorreo:true})     
-                    );
-                    If(popup_correonoudec=false,
-                        Set(cargando, true);
-                        Set(datos_promotor, 'VRIM-PATraedatosdeusuario'.Run(inp_promotor_popup_search));
-                        Set(promotor,{
-                            id_persona: Value(datos_promotor.id_persona),
-                            nombre: datos_promotor.nombre_completo,
-                            cargo: datos_promotor.cargo,
-                            correo: datos_promotor.correo_udec,
-                            telefono: datos_promotor.telefono
-                        });
-                        Set(cargando, false);
-                        If(IsBlank(promotor.id_persona),
-                            UpdateContext({popup_usuarionoencontrado:true}),
-                            UpdateContext({popup_promotor:false})
-                        ),
-                        UpdateContext({popup_faltacorreo:true})
-                    )
-                ,
-                UpdateContext({popup_faltacorreo:true})
-                )
+            OnSelect: |-
+                =If(IsBlank(
+                        LookUp(
+                            unidades_promotoras, 
+                            Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
+                        )
+                    ),
+                    Collect(unidades_promotoras,{
+                        nombre_unidad_promotora: inp_promotor_popup_search.Text
+                    })
+                );
+                UpdateContext({popup_promotor: false});
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -1158,7 +1203,7 @@ Unidad_solicitante As screen:
             RadiusTopRight: =12
             Size: =14
             TabIndex: =If(popup_promotor,1,-1)
-            Text: ="BUSCAR"
+            Text: ="ACEPTAR"
             X: =845
             Y: =488
             ZIndex: =8
@@ -1208,6 +1253,55 @@ Unidad_solicitante As screen:
             X: =(fondo_blanco.X+fondo_blanco.Width/2)-Self.Width/2
             Y: =418
             ZIndex: =12
+
+        Contenedor_p As groupContainer.manualLayoutContainer:
+            Visible: =desplegar_buscador_p
+            Width: =599
+            X: =371
+            Y: =397
+            ZIndex: =13
+
+            opciones_nombre_p As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =200
+                Items: =Filter(Nombres_reparticiones, inp_promotor_popup_search.Text in reparticion)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |
+                    =false
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =599
+                WrapCount: =0
+                ZIndex: =1
+
+                fondo_celeste_12 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =50
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =599
+                    ZIndex: =1
+
+                Label1_2 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    DisabledFill: =RGBA(241, 244, 255, 1)
+                    Height: =50
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    HoverFill: =RGBA(207, 210, 232, 1)
+                    OnSelect: |-
+                        =Select(Parent);
+                        If(desplegar_buscador_p,UpdateContext({desplegar_buscador_p:false}),UpdateContext({desplegar_buscador_p:true}));
+                        Set(p_seleccionado,ThisItem.reparticion);
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =10
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.reparticion
+                    Width: =599
+                    ZIndex: =3
 
     responsable_popup As groupContainer.manualLayoutContainer:
         Height: =Unidad_solicitante.Height
@@ -1434,7 +1528,7 @@ Unidad_solicitante As screen:
             HoverFill: =RGBA(241, 244, 255, 1)
             OnSelect: |-
                 =Reset(inp_autoridad_popup_search);
-                Reset(opciones_nombre_c_in_1);
+                //Reset(opciones_nombre_p);;
                 Set(n_c_in_seleccionada,"");
                 If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}))
             RadiusBottomLeft: =12
@@ -1554,55 +1648,6 @@ Unidad_solicitante As screen:
             X: =(fondo_blanco_13.X+fondo_blanco_13.Width/2)-Self.Width/2
             Y: =418
             ZIndex: =12
-
-        Contenedor_a As groupContainer.manualLayoutContainer:
-            Visible: =desplegar_buscador_c_in
-            Width: =599
-            X: =371
-            Y: =397
-            ZIndex: =13
-
-            opciones_nombre_c_in_1 As gallery.galleryVertical:
-                DelayItemLoading: =true
-                Height: =200
-                Items: =Filter(Nombres_contrapartes_internacionales, inp_autoridad_popup_search.Text in nombre)
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                OnSelect: |
-                    =false
-                TemplatePadding: =0
-                TemplateSize: =50
-                Width: =599
-                WrapCount: =0
-                ZIndex: =1
-
-                fondo_celeste_7 As image:
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    Height: =51
-                    HoverFill: =RGBA(186, 202, 226, 1)
-                    Image: ='background-input'
-                    ImagePosition: =ImagePosition.Fill
-                    Width: =600
-                    ZIndex: =1
-
-                Label1_1 As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    DisabledFill: =RGBA(241, 244, 255, 1)
-                    Height: =51
-                    HoverColor: =RGBA(17, 61, 107, 1)
-                    HoverFill: =RGBA(207, 210, 232, 1)
-                    OnSelect: |-
-                        =Select(Parent);
-                        If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}));
-                        Set(n_c_in_seleccionada,ThisItem.nombre);
-                    PaddingBottom: =0
-                    PaddingLeft: =12
-                    PaddingRight: =10
-                    PaddingTop: =0
-                    Size: =14
-                    Text: =ThisItem.nombre
-                    Width: =599
-                    ZIndex: =3
 
     cont_loading As group:
         Height: =5
