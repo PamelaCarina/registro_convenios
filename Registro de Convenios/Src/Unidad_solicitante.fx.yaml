@@ -69,14 +69,14 @@ Unidad_solicitante As screen:
                             correo: correo_autoridad_input_2.Text,
                             telefono: telefono_autoridad_input_2.Text
                         },
-                        //*
+                        /*
                         promotor: {
-                            nombre: "",
-                            cargo: "",
-                            correo: "",
+                            nombre: "";
+                            cargo: "";
+                            correo: "";
                             telefono: ""
-                        },
-                        //*/
+                        };
+                        */
                         responsable: {
                             nombre: nombre_responsable_input_2.Text,
                             cargo: cargo_responsable_input_2.Text,
@@ -1579,7 +1579,7 @@ Unidad_solicitante As screen:
         Height: =Unidad_solicitante.Height
         Visible: =popup_responsable
         Width: =Unidad_solicitante.Width
-        ZIndex: =7
+        ZIndex: =6
 
         fig_registro_5_popup_bg_1 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1757,7 +1757,7 @@ Unidad_solicitante As screen:
             =//popup_contraparte_in
             popup_autoridad
         Width: =Unidad_solicitante.Width
-        ZIndex: =8
+        ZIndex: =7
 
         fig_registro_5_popup_bg_5 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1972,7 +1972,7 @@ Unidad_solicitante As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =6
+            ZIndex: =8
 
         img_loading As image:
             Image: =loading
