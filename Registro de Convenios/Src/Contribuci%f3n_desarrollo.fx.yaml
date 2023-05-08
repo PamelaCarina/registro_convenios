@@ -1333,6 +1333,10 @@ Contribución_desarrollo As screen:
                     ods_seleccionados: datos_ods_cargados
                 });
                 
+                Set(unidades_promotoras_cargadas,{
+                    unidades_promotoras: unidades_promotoras
+                });
+                
                 //ClearCollect(a;JSON(datos_solicitud_convenio));;
                 Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(
                                                         JSON(datos_unidad_solicitante_cargados),
@@ -1342,7 +1346,7 @@ Contribución_desarrollo As screen:
                                                         JSON(datos_contribucion_cargados),
                                                         JSON(ods_cargados),
                                                         JSON(entidades_contraparte_in_cargadas),
-                                                        JSON(unidades_promotoras)
+                                                        JSON(unidades_promotoras_cargadas)
                 ).id);
                 //JSON(datos_solicitud_convenio)
                 
