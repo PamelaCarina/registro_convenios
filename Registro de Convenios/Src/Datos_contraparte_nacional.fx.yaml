@@ -6,7 +6,8 @@ Datos_contraparte_nacional As screen:
         UpdateContext({sin_nombre_responsable_institucional_na:false});
         UpdateContext({sin_cargo_na:false});
         UpdateContext({sin_firma_na:false});
-        UpdateContext({correo_na_invalido_na:false});
+        UpdateContext({correo_na_invalido:false});
+        UpdateContext({correo_na_vacio:false});
         UpdateContext({popup_institucionnoencontrada:false});
         UpdateContext({hide_border_correo_na:true});
         Reset(inp_contraparte_na_popup_search)
@@ -111,13 +112,12 @@ Datos_contraparte_nacional As screen:
                 If(IsBlank(nombre_responsable_institucional_na_input.Text), UpdateContext({sin_nombre_responsable_institucional_na:true}), UpdateContext({sin_nombre_responsable_institucional_na:false}));
                 If(IsBlank(cargo_responsable_institucional_na_input.Text), UpdateContext({sin_cargo_na:true}), UpdateContext({sin_cargo_na:false}));
                 If(IsBlank(correo_electronico_na_input.Text),UpdateContext({correo_na_vacio:true}),UpdateContext({correo_na_vacio:false}));
+                If(sin_correo_na.Visible,UpdateContext({correo_na_invalido:true}),UpdateContext({correo_na_invalido:false}) );
                 
                 //firma digital
                 If(IsBlank(firma_digiral_na_button),UpdateContext({sin_firma_na:true}),UpdateContext({sin_firma_na:false}));
                 
-                If(sin_correo_na.Visible,UpdateContext({correo_na_invalido:true}),UpdateContext({correo_na_invalido:false}) );
-                
-                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !correo_na_invalido && !sin_firma_na,
+                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !correo_na_invalido && !sin_firma_na && !correo_na_vacio,
                     If(IsBlank(
                             LookUp(
                                 contrapartes_nacionales, 
@@ -230,10 +230,10 @@ Datos_contraparte_nacional As screen:
                         Visible: |-
                             =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-                            || correo_na_vacio) && !hide_border_correo_na
+                            || correo_na_invalido) && !hide_border_correo_na || correo_na_vacio
                             ,true,false)
-                        Width: =correo_electronico_na_input.Width - 2
-                        X: =correo_electronico_na_input.X + 1
+                        Width: =correo_electronico_na_input.Width
+                        X: =2
                         Y: =correo_electronico_na_input.Y
                         ZIndex: =1
 
@@ -262,8 +262,8 @@ Datos_contraparte_nacional As screen:
                         RadiusTopRight: =12
                         Size: =14
                         TabIndex: =
-                        Width: =300
-                        X: =1
+                        Width: =290
+                        X: =2
                         Y: =19
                         ZIndex: =2
 
@@ -424,53 +424,6 @@ Datos_contraparte_nacional As screen:
                 Y: =306
                 ZIndex: =3
 
-                fondo_celeste_5 As image:
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    Height: =40
-                    HoverFill: =RGBA(186, 202, 226, 1)
-                    Image: ='background-input'
-                    ImagePosition: =ImagePosition.Fill
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
-                    Visible: =false
-                    Width: =300
-                    Y: =20
-                    ZIndex: =1
-
-                firma_digiral_na_label As label:
-                    Color: =RGBA(111, 139, 167, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =20
-                    PaddingBottom: =4
-                    PaddingLeft: =12
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Size: =10
-                    Text: ="FIRMA DIGITAL"
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =170
-                    ZIndex: =2
-
-                firma_digiral_na_button As radio:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
-                    Height: =40
-                    HoverColor: =RGBA(17, 61, 107, 1)
-                    Items: =["Sí","No"]
-                    Layout: =Layout.Horizontal
-                    PaddingBottom: =0
-                    PaddingTop: =5
-                    RadioBackgroundFill: =RGBA(0, 0, 0, 0)
-                    RadioBorderColor: =RGBA(17, 61, 107, 1)
-                    RadioSelectionFill: =RGBA(17, 61, 107, 1)
-                    RadioSize: =30
-                    Width: =300
-                    Y: =20
-                    ZIndex: =3
-
                 sin_firma_na As text:
                     BorderColor: =RGBA(238, 110, 126, 1)
                     BorderThickness: =2.8
@@ -491,6 +444,53 @@ Datos_contraparte_nacional As screen:
                     Visible: =sin_firma_na
                     Width: =170
                     Y: =fondo_celeste_5.Y - 1
+                    ZIndex: =1
+
+                fondo_celeste_5 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =40
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Visible: =false
+                    Width: =300
+                    Y: =20
+                    ZIndex: =2
+
+                firma_digiral_na_label As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="FIRMA DIGITAL"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    ZIndex: =3
+
+                firma_digiral_na_button As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
+                    Height: =40
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    Items: =["Sí","No"]
+                    Layout: =Layout.Horizontal
+                    PaddingBottom: =0
+                    PaddingTop: =5
+                    RadioBackgroundFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(17, 61, 107, 1)
+                    RadioSelectionFill: =RGBA(17, 61, 107, 1)
+                    RadioSize: =30
+                    Width: =300
+                    Y: =20
                     ZIndex: =4
 
             Nombre_representante_legal_na As groupContainer.manualLayoutContainer:
@@ -971,12 +971,11 @@ Datos_contraparte_nacional As screen:
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
             =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
-            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-            || correo_na_vacio) && !hide_border_correo_na
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && !hide_border_correo_na
             ,true,false)
         Width: =676
-        X: =608
-        Y: =424
+        X: =600
+        Y: =626
         ZIndex: =3
 
     lbl_faltan_datos_2 As label:
