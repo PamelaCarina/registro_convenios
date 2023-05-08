@@ -69,14 +69,14 @@ Unidad_solicitante As screen:
                             correo: correo_autoridad_input_2.Text,
                             telefono: telefono_autoridad_input_2.Text
                         },
-                        //*
+                        /*
                         promotor: {
-                            nombre: "",
-                            cargo: "",
-                            correo: "",
+                            nombre: "";
+                            cargo: "";
+                            correo: "";
                             telefono: ""
-                        },
-                        //*/
+                        };
+                        */
                         responsable: {
                             nombre: nombre_responsable_input_2.Text,
                             cargo: cargo_responsable_input_2.Text,
