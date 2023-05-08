@@ -1162,14 +1162,14 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =If(CountRows(att_oficial_temp.Attachments) > 0,  
-                    Set(attachment_extension,Last(ForAll(Split(First(att_oficial_temp.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
-                    Set(test_attachment,First(att_oficial_temp.Attachments).Value);
+                =If(CountRows(att_registro_10_attach_oficial.Attachments) > 0,  
+                    Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
+                    Set(test_attachment,First(att_registro_10_attach_oficial.Attachments).Value);
                     If(attachment_extension="docx",
                         Set(existe_adjunto, true);
                         UpdateContext({archivo_invalido:false});
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
-                        Set(Contenido_oficial,att_oficial_temp.Attachments);
+                        Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
                         UpdateContext({show_popup_oficial: false});
                         UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
@@ -1203,9 +1203,9 @@ Datos_convenio As screen:
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
             OnSelect: |-
-                =UpdateContext({sacar_archivo_oficial:true});
+                =//UpdateContext({sacar_archivo_oficial:true});;
                 UpdateContext({show_popup_oficial: false});
-                UpdateContext({sacar_archivo_oficial:false});
+                //UpdateContext({sacar_archivo_oficial:false});;
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -1262,7 +1262,7 @@ Datos_convenio As screen:
             Tooltip: =
             Width: =645
             X: =360
-            Y: =114
+            Y: =324
             ZIndex: =7
 
         lbl_registro_10_faltandatos_1 As label:
@@ -1276,36 +1276,4 @@ Datos_convenio As screen:
             X: =img_registro_10_popup_bg.X
             Y: =btn_registro_10_popup_cancelar.Y-Self.Height
             ZIndex: =8
-
-        att_oficial_temp As attachments:
-            AddAttachmentText: ="Adjuntar archivo"
-            BorderColor: =
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(111, 139, 167, 1)
-            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
-            DropTargetBorderStyle: =BorderStyle.None
-            DropTargetTextColor: =RGBA(111, 139, 167, 1)
-            Fill: =RGBA(255, 255, 255, 0)
-            Height: =94
-            HoverColor: =RGBA(111, 139, 167, 1)
-            IsInDataCard: =true
-            Items: =
-            MaxAttachments: =1
-            MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
-            NoAttachmentsText: ="No hay ningún archivo adjunto."
-            OnRemoveFile: |-
-                =UpdateContext({archivo_invalido:false})
-            PaddingBottom: =5
-            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-            PaddingRight: =5
-            PaddingTop: =5
-            PressedFill: =RGBA(111, 139, 167, 1)
-            Reset: =sacar_archivo_oficial
-            Size: =10
-            TabIndex: =If(show_popup_oficial,1,-1)
-            Tooltip: =
-            Width: =645
-            X: =360
-            Y: =324
-            ZIndex: =9
 
