@@ -3615,7 +3615,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "correo_electronico_in_input",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15980,7 +15980,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_correo_in",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

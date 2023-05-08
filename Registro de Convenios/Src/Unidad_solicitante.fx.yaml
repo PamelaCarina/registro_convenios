@@ -1665,23 +1665,27 @@ Unidad_solicitante As screen:
                     If(dominio_correo="udec.cl",
                         UpdateContext({popup_correonoudec:false}),
                         UpdateContext({popup_correonoudec:true});
-                        UpdateContext({popup_faltacorreo:true})     
+                        //UpdateContext({popup_faltacorreo:true})     
                     );
                     If(popup_correonoudec=false,
                         Set(cargando, true);
                         Set(datos_responsable, 'VRIM-PATraedatosdeusuario'.Run(inp_responsable_popup_search));
-                        Set(responsable,{
+                        If(datos_responsable.status = "encontrado",
+                            Set(responsable,{
                             id_persona: Value(datos_responsable.id_persona),
                             nombre: datos_responsable.nombre_completo,
                             cargo: datos_responsable.cargo,
                             correo: datos_responsable.correo_udec,
                             telefono: datos_responsable.telefono
-                        });
-                        Set(cargando, false);
-                        If(IsBlank(responsable.id_persona),
-                            UpdateContext({popup_usuarionoencontrado:true}),
-                            UpdateContext({popup_responsable:false})
-                        ),
+                            });
+                            UpdateContext({popup_responsable:false}),
+                            UpdateContext({popup_usuarionoencontrado:true})
+                        );
+                        Set(cargando, false),
+                        //If(IsBlank(responsable.id_persona),
+                        //    UpdateContext({popup_usuarionoencontrado:true}),
+                        //    UpdateContext({popup_responsable:false})
+                        //),
                         UpdateContext({popup_faltacorreo:true})
                     )
                 ,

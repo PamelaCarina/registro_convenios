@@ -6,6 +6,7 @@
       <object name="ManualTriggerInput">
         <property name="InitializevariableEmail_Value" type="string" />
       </object>
+      <string name="ResponseActionOutput_status_def" />
       <string name="ResponseActionOutput_id_persona_def" />
       <string name="ResponseActionOutput_rut_def" />
       <string name="ResponseActionOutput_dv_rut_def" />
@@ -76,30 +77,16 @@
       <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Codigo_ux20_Reparticion_def" />
       <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Reparticion_def" />
       <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Cargo_def" />
+      <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Sindicato_def" />
       <string name="ResponseActionOutput_array_ux20_personal_def_items_def_Jornada_def" />
       <object name="ResponseActionOutput_array_ux20_personal_def_items_def">
         <property name="Codigo Reparticion" type="string" />
         <property name="Reparticion" type="string" />
         <property name="Cargo" type="string" />
+        <property name="Sindicato" type="string" />
         <property name="Jornada" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_array_ux20_personal_def_items_def" name="ResponseActionOutput_array_ux20_personal_def" />
-      <string name="ResponseActionOutput_array_ux20_designaciones_def_items_def_Designacion_def" />
-      <object name="ResponseActionOutput_array_ux20_designaciones_def_items_def">
-        <property name="Designacion" type="string" />
-      </object>
-      <array typeRef="ResponseActionOutput_array_ux20_designaciones_def_items_def" name="ResponseActionOutput_array_ux20_designaciones_def" />
-      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Titulo_ux20_o_ux20_Grado_def" />
-      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Codigo_def" />
-      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Documento_def" />
-      <string name="ResponseActionOutput_array_ux20_tigrado_def_items_def_Id_def" />
-      <object name="ResponseActionOutput_array_ux20_tigrado_def_items_def">
-        <property name="Titulo o Grado" type="string" />
-        <property name="Codigo" type="string" />
-        <property name="Documento" type="string" />
-        <property name="Id" type="string" />
-      </object>
-      <array typeRef="ResponseActionOutput_array_ux20_tigrado_def_items_def" name="ResponseActionOutput_array_ux20_tigrado_def" />
       <string name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def_Codigo_ux20_Reparticion_def" />
       <string name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def_Reparticion_def" />
       <object name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def">
@@ -108,6 +95,7 @@
       </object>
       <array typeRef="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def_items_def" name="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def" />
       <object name="ResponseActionOutput">
+        <property name="status" type="string" />
         <property name="id_persona" type="string" />
         <property name="rut" type="string" />
         <property name="dv_rut" type="string" />
@@ -176,8 +164,6 @@
         <property name="codigo_dependencia" type="string" />
         <property name="dependencia" type="string" />
         <property name="array personal" typeRef="ResponseActionOutput_array_ux20_personal_def" />
-        <property name="array designaciones" typeRef="ResponseActionOutput_array_ux20_designaciones_def" />
-        <property name="array tigrado" typeRef="ResponseActionOutput_array_ux20_tigrado_def" />
         <property name="array organismo actividad" typeRef="ResponseActionOutput_array_ux20_organismo_ux20_actividad_def" />
       </object>
       <object name="Run_responses_default_def" />
