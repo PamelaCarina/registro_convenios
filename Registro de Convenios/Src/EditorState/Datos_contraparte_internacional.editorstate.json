@@ -8944,7 +8944,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fondo_blanco_8",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22250,7 +22250,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "solicitar_nueva_contraparte_in_popup",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

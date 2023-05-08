@@ -54,7 +54,7 @@ Datos_convenio As screen:
                     Collect(documentos_cargados,{
                         tipo: "oficial",
                         nombre: Concatenate("documento_oficial.",extension_oficial),
-                        contenido: JSON(First(Contenido_oficial).Value,JSONFormat.IncludeBinaryData)
+                        contenido: First(Contenido_oficial).Value
                     });
                 
                     //AL MENOS 1 ARCHIVO EXTRA
