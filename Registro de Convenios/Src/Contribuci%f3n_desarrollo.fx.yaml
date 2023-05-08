@@ -1319,16 +1319,6 @@ Contribución_desarrollo As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 
-                /*
-                Set(datos_solicitud_convenio;{
-                    unidad_solicitante: datos_unidad_solicitante_cargados;
-                    detalle_convenio: datos_convenio_cargados;
-                    entidad_contraparte: entidades_contraparte_cargadas;
-                    vinculacion: datos_vinculacion_cargados;
-                    area_contribucion: datos_contribucion_cargados;
-                    ods: datos_ods_cargados
-                });;
-                */
                 Set(ods_cargados,{
                     ods_seleccionados: datos_ods_cargados
                 });
@@ -1347,10 +1337,8 @@ Contribución_desarrollo As screen:
                     
                 });
                 
-                //att_registro_10_attach_oficial.Attachments
-                //Index(Contenido_extra;1).Value
                 
-                //ClearCollect(a;JSON(datos_solicitud_convenio));;
+                
                 Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(
                                                         JSON(datos_unidad_solicitante_cargados),
                                                         JSON(datos_convenio_cargados),
@@ -1362,19 +1350,7 @@ Contribución_desarrollo As screen:
                                                         JSON(unidades_promotoras_cargadas),
                                                         doc
                 ).id);
-                //JSON(datos_solicitud_convenio)
                 
-                
-                /*
-                
-                Set(
-                    status_saved;
-                    'VRIM-PAGuardarsolicituddeactividad'.Run(
-                        JSON(datos_nueva_solicitud);
-                        adjunto
-                    )
-                );;
-                */
                 
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
