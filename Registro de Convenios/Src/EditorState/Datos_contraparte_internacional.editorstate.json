@@ -2393,7 +2393,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_solicitar_nueva_contraparte_1",
-      "ParentIndex": 0,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10282,7 +10282,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "inp_nombre_contraparte_in_popup",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10681,7 +10681,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "inp_pais_in_popup_search_2",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13516,7 +13516,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_nombre_solicitar_nueva_contraparte_1",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13819,7 +13819,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_pais_solicitar_nueva_contraparte",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
