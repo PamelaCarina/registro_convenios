@@ -14272,6 +14272,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.id_solicitud_convenio"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.id_solicitud_convenio",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "id_solicitud_convenio",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.ods"
                 }
               ],
@@ -14332,36 +14362,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.extension_extra5"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.extension_extra5",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "extension_extra5",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.extension_extra4"
                 }
               ],
@@ -14392,17 +14392,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.reset_externo"
+                  "fullyQualifiedName": "App.extension_extra5"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.reset_externo",
+                  "fullyQualifiedName": "App.extension_extra5",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "reset_externo",
+                "member": "extension_extra5",
                 "module": "App",
                 "type": "App"
               }
@@ -14422,17 +14422,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.id_solicitud_convenio"
+                  "fullyQualifiedName": "App.reset_externo"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.id_solicitud_convenio",
+                  "fullyQualifiedName": "App.reset_externo",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "id_solicitud_convenio",
+                "member": "reset_externo",
                 "module": "App",
                 "type": "App"
               }
