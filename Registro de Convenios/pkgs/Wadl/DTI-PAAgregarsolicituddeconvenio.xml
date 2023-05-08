@@ -16,6 +16,12 @@
         <property name="name" type="string" />
         <property name="contentBytes" typeRef="ManualTriggerInput_file_def_contentBytes_def" />
       </object>
+      <string name="ManualTriggerInput_file_1_def_name_def" />
+      <base64Binary name="ManualTriggerInput_file_1_def_contentBytes_def" />
+      <object name="ManualTriggerInput_file_1_def">
+        <property name="name" type="string" />
+        <property name="contentBytes" typeRef="ManualTriggerInput_file_1_def_contentBytes_def" />
+      </object>
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -26,6 +32,7 @@
         <property name="text_6" type="string" />
         <property name="text_7" type="string" />
         <property name="file" typeRef="ManualTriggerInput_file_def" />
+        <property name="file_1" typeRef="ManualTriggerInput_file_1_def" />
       </object>
       <integer name="ResponseActionOutput_id_def" />
       <object name="ResponseActionOutput">
@@ -70,6 +77,9 @@
             </param>
             <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def">
               <doc title="Documento oficial" />
+            </param>
+            <param style="plain" name="file_1" path="/file_1" type="service:ManualTriggerInput_file_1_def">
+              <doc title="Documento extra1" />
             </param>
           </representation>
         </request>
