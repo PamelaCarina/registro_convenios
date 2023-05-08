@@ -1337,6 +1337,19 @@ Contribución_desarrollo As screen:
                     unidades_promotoras: unidades_promotoras
                 });
                 
+                Set(doc,{
+                
+                            file:{
+                                name: Index(att_registro_10_attach_oficial.Attachments,1).Name,
+                                contentBytes: Index(att_registro_10_attach_oficial.Attachments,1).Value
+                
+                            }
+                    
+                });
+                
+                //att_registro_10_attach_oficial.Attachments
+                //Index(Contenido_extra;1).Value
+                
                 //ClearCollect(a;JSON(datos_solicitud_convenio));;
                 Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(
                                                         JSON(datos_unidad_solicitante_cargados),
@@ -1346,7 +1359,8 @@ Contribución_desarrollo As screen:
                                                         JSON(datos_contribucion_cargados),
                                                         JSON(ods_cargados),
                                                         JSON(entidades_contraparte_in_cargadas),
-                                                        JSON(unidades_promotoras_cargadas)
+                                                        JSON(unidades_promotoras_cargadas),
+                                                        doc
                 ).id);
                 //JSON(datos_solicitud_convenio)
                 

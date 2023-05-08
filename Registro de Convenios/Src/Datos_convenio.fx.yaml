@@ -118,10 +118,10 @@ Datos_convenio As screen:
                         tipologia: tipo_tipologia.Selected.valor,
                         tipo: tipo_solicitud.Selected.valor,
                         modalidad: tipo_modalidades.Selected.Value,
-                        proposito: descripcion_proposito_1.Text,
-                        documentos: {
-                            doc: documentos_cargados
-                        }
+                        proposito: descripcion_proposito_1.Text//;
+                        //documentos: {
+                        //    doc: documentos_cargados
+                        //}
                     });
                 
                     Navigate(Información_convenio,ScreenTransition.Fade));

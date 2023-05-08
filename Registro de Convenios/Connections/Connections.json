@@ -60,6 +60,36 @@
     "dependents": [],
     "id": "1861bd45-32f2-4db9-8c16-4ce8cc5f78be"
   },
+  "23af38c2-b60d-4ff4-b912-75cbb611152c": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "6abc7217-fae1-ed11-a7c7-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "8f6c6c45-78cb-7df5-9693-5b15dc0ad34b"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "6abc7217-fae1-ed11-a7c7-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "8f6c6c45-78cb-7df5-9693-5b15dc0ad34b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAAgregarsolicituddeconvenio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "23af38c2-b60d-4ff4-b912-75cbb611152c"
+  },
   "4d43a597-7638-4ec8-ad0a-b7242ccfe778": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -89,36 +119,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "4d43a597-7638-4ec8-ad0a-b7242ccfe778"
-  },
-  "75c24706-f484-4ace-a031-14645b3ddcd8": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "6abc7217-fae1-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "8f6c6c45-78cb-7df5-9693-5b15dc0ad34b"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "6abc7217-fae1-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "8f6c6c45-78cb-7df5-9693-5b15dc0ad34b"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAAgregarsolicituddeconvenio"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "75c24706-f484-4ace-a031-14645b3ddcd8"
   },
   "7cc51a73-b1e8-4a08-bf8b-cd755efe368f": {
     "connectionRef": {
