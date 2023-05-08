@@ -44,74 +44,75 @@ Datos_convenio As screen:
                 //CONDICION DE APROBACION
                 If(!sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && !sin_documentacion_extra,
                 
+                /*
                     //CREA COLECCIÓN QUE ALMACENA LOS DOCUMENTOS CARGADOS
-                    ClearCollect(documentos_cargados,{});
-                    Clear(documentos_cargados);
+                    ClearCollect(documentos_cargados;{});;
+                    Clear(documentos_cargados);;
                 
                     //ARCHIVO OFICIAL
-                    Set(nombre_documento,ForAll(Split(First(Contenido_oficial).Name,"."), {Result: ThisRecord.Value}));
-                    Set(extension_oficial,Last(nombre_documento).Result);
-                    Collect(documentos_cargados,{
-                        tipo: "oficial",
-                        nombre: Concatenate("documento_oficial.",extension_oficial),
+                    Set(nombre_documento;ForAll(Split(First(Contenido_oficial).Name;"."); {Result: ThisRecord.Value}));;
+                    Set(extension_oficial;Last(nombre_documento).Result);;
+                    Collect(documentos_cargados;{
+                        tipo: "oficial";
+                        nombre: Concatenate("documento_oficial.";extension_oficial);
                         contenido: First(Contenido_oficial).Value
-                    });
+                    });;
                 
                     //AL MENOS 1 ARCHIVO EXTRA
-                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 1 ,
-                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,1).Name,"."), {Result: ThisRecord.Value}));
-                        Set(extension_extra1,Last(nombre_documento).Result);
-                        Collect(documentos_cargados,{
-                            tipo: "extra1",
-                            nombre: Concatenate("documento_extra1.",extension_extra1),
-                            contenido: Index(Contenido_extra,1).Value
-                        });
-                    );
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 1 ;
+                        Set(nombre_documento;ForAll(Split(Index(Contenido_extra;1).Name;"."); {Result: ThisRecord.Value}));;
+                        Set(extension_extra1;Last(nombre_documento).Result);;
+                        Collect(documentos_cargados;{
+                            tipo: "extra1";
+                            nombre: Concatenate("documento_extra1.";extension_extra1);
+                            contenido: Index(Contenido_extra;1).Value
+                        });;
+                    );;
                 
                     //AL MENOS 2 ARCHIVOS EXTRA
-                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 2 ,
-                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,2).Name,"."), {Result: ThisRecord.Value}));
-                        Set(extension_extra2,Last(nombre_documento).Result);
-                        Collect(documentos_cargados,{
-                            tipo: "extra2",
-                            nombre: Concatenate("documento_extra2.",extension_extra2),
-                            contenido: Index(Contenido_extra,2).Value
-                        });
-                    );
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 2 ;
+                        Set(nombre_documento;ForAll(Split(Index(Contenido_extra;2).Name;"."); {Result: ThisRecord.Value}));;
+                        Set(extension_extra2;Last(nombre_documento).Result);;
+                        Collect(documentos_cargados;{
+                            tipo: "extra2";
+                            nombre: Concatenate("documento_extra2.";extension_extra2);
+                            contenido: Index(Contenido_extra;2).Value
+                        });;
+                    );;
                 
                     //AL MENOS 3 ARCHIVOS EXTRA
-                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 3 ,
-                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,3).Name,"."), {Result: ThisRecord.Value}));
-                        Set(extension_extra3,Last(nombre_documento).Result);
-                        Collect(documentos_cargados,{
-                            tipo: "extra3",
-                            nombre: Concatenate("documento_extra3.",extension_extra3),
-                            contenido: Index(Contenido_extra,3).Value
-                        });
-                    );
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 3 ;
+                        Set(nombre_documento;ForAll(Split(Index(Contenido_extra;3).Name;"."); {Result: ThisRecord.Value}));;
+                        Set(extension_extra3;Last(nombre_documento).Result);;
+                        Collect(documentos_cargados;{
+                            tipo: "extra3";
+                            nombre: Concatenate("documento_extra3.";extension_extra3);
+                            contenido: Index(Contenido_extra;3).Value
+                        });;
+                    );;
                 
                     //AL MENOS 4 ARCHIVOS EXTRA
-                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 4 ,
-                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,4).Name,"."), {Result: ThisRecord.Value}));
-                        Set(extension_extra4,Last(nombre_documento).Result);
-                        Collect(documentos_cargados,{
-                            tipo: "extra4",
-                            nombre: Concatenate("documento_extra4.",extension_extra3),
-                            contenido: Index(Contenido_extra,4).Value
-                        });
-                    );
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 4 ;
+                        Set(nombre_documento;ForAll(Split(Index(Contenido_extra;4).Name;"."); {Result: ThisRecord.Value}));;
+                        Set(extension_extra4;Last(nombre_documento).Result);;
+                        Collect(documentos_cargados;{
+                            tipo: "extra4";
+                            nombre: Concatenate("documento_extra4.";extension_extra3);
+                            contenido: Index(Contenido_extra;4).Value
+                        });;
+                    );;
                 
                     //AL MENOS 5 ARCHIVOS EXTRA
-                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 5 ,
-                        Set(nombre_documento,ForAll(Split(Index(Contenido_extra,5).Name,"."), {Result: ThisRecord.Value}));
-                        Set(extension_extra5,Last(nombre_documento).Result);
-                        Collect(documentos_cargados,{
-                            tipo: "extra5",
-                            nombre: Concatenate("documento_extra5.",extension_extra3),
-                            contenido: Index(Contenido_extra,5).Value
-                        });
-                    );
-                
+                    If(CountRows(att_registro_10_attach_extra.Attachments) >= 5 ;
+                        Set(nombre_documento;ForAll(Split(Index(Contenido_extra;5).Name;"."); {Result: ThisRecord.Value}));;
+                        Set(extension_extra5;Last(nombre_documento).Result);;
+                        Collect(documentos_cargados;{
+                            tipo: "extra5";
+                            nombre: Concatenate("documento_extra5.";extension_extra3);
+                            contenido: Index(Contenido_extra;5).Value
+                        });;
+                    );;
+                */
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_convenio_cargados,{
                         alcance: tipo_alcance.Selected.valor,

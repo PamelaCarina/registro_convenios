@@ -1329,14 +1329,31 @@ Contribución_desarrollo As screen:
                 
                 Set(doc,{
                 
-                            file:{
+                            file:{//OFICIAL
                                 name: Index(att_registro_10_attach_oficial.Attachments,1).Name,
                                 contentBytes: Index(att_registro_10_attach_oficial.Attachments,1).Value
-                
+                            },
+                            file_1:{//EXTRA1
+                                name: If(CountRows(att_registro_10_attach_extra.Attachments)>=1,Index(att_registro_10_attach_extra.Attachments,1).Name, "nada") ,
+                                contentBytes: If(CountRows(att_registro_10_attach_extra.Attachments)>=1,Index(att_registro_10_attach_extra.Attachments,1).Value, "")
+                            },
+                            file_2:{//EXTRA2
+                                name: If(CountRows(att_registro_10_attach_extra.Attachments)>=2,Index(att_registro_10_attach_extra.Attachments,2).Name, "nada") ,
+                                contentBytes: If(CountRows(att_registro_10_attach_extra.Attachments)>=2,Index(att_registro_10_attach_extra.Attachments,2).Value, "")
+                            },
+                            file_3:{//EXTRA3
+                                name: If(CountRows(att_registro_10_attach_extra.Attachments)>=3,Index(att_registro_10_attach_extra.Attachments,3).Name, "nada") ,
+                                contentBytes: If(CountRows(att_registro_10_attach_extra.Attachments)>=3,Index(att_registro_10_attach_extra.Attachments,3).Value, "")
+                            },
+                            file_4:{//EXTRA4
+                                name: If(CountRows(att_registro_10_attach_extra.Attachments)>=4,Index(att_registro_10_attach_extra.Attachments,4).Name, "nada") ,
+                                contentBytes: If(CountRows(att_registro_10_attach_extra.Attachments)>=4,Index(att_registro_10_attach_extra.Attachments,4).Value, "")
+                            },
+                            file_5:{//EXTRA4
+                                name: If(CountRows(att_registro_10_attach_extra.Attachments)>=5,Index(att_registro_10_attach_extra.Attachments,5).Name, "nada") ,
+                                contentBytes: If(CountRows(att_registro_10_attach_extra.Attachments)>=5,Index(att_registro_10_attach_extra.Attachments,5).Value, "")
                             }
-                    
                 });
-                
                 
                 
                 Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(
