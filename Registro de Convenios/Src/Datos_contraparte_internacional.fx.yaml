@@ -765,9 +765,9 @@ Datos_contraparte_internacional As screen:
             Size: =14
             TabIndex: =1
             Width: =645
-            X: =360
-            Y: =353
-            ZIndex: =5
+            X: =370
+            Y: =340
+            ZIndex: =4
 
         buscar_5 As image:
             Height: =20
@@ -776,7 +776,7 @@ Datos_contraparte_internacional As screen:
             Width: =20
             X: =970
             Y: =366
-            ZIndex: =6
+            ZIndex: =5
 
         lbl_contraparte_in_popup_rut As label:
             Color: =RGBA(111, 139, 167, 1)
@@ -785,8 +785,8 @@ Datos_contraparte_internacional As screen:
             Text: ="NOMBRE INSTITUCIÓN"
             Width: =250
             X: =360
-            Y: =314
-            ZIndex: =7
+            Y: =300
+            ZIndex: =6
 
         btn_contraparte_in_popup_buscar As button:
             BorderThickness: =1
@@ -830,7 +830,7 @@ Datos_contraparte_internacional As screen:
             Text: ="ACEPTAR"
             X: =845
             Y: =488
-            ZIndex: =8
+            ZIndex: =7
 
         btn_contraparte_in_popup_cancelar As button:
             BorderColor: =RGBA(247, 158, 64, 1)
@@ -852,7 +852,7 @@ Datos_contraparte_internacional As screen:
             Text: ="CANCELAR"
             X: =653
             Y: =488
-            ZIndex: =9
+            ZIndex: =8
 
         lbl_contraparte_in_popup_noencontrado As label:
             Align: =Align.Center
@@ -863,7 +863,7 @@ Datos_contraparte_internacional As screen:
             Width: =481
             X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
             Y: =418
-            ZIndex: =10
+            ZIndex: =9
 
         lbl_contraparte_in_popup_faltandatos As label:
             Align: =Align.Center
@@ -874,13 +874,13 @@ Datos_contraparte_internacional As screen:
             Width: =540
             X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
             Y: =418
-            ZIndex: =12
+            ZIndex: =10
 
         Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_c_in
             Width: =620
-            X: =371
-            Y: =397
+            X: =370
+            Y: =369
             ZIndex: =13
 
             opciones_nombre_c_in As gallery.galleryVertical:
@@ -924,6 +924,208 @@ Datos_contraparte_internacional As screen:
                     Text: =ThisItem.nombre
                     Width: =599
                     ZIndex: =3
+
+        solicitar_nueva_contraparte_in_popup As groupContainer.manualLayoutContainer:
+            Height: =Unidad_solicitante.Height
+            Width: =Unidad_solicitante.Width
+            ZIndex: =15
+
+            fig_registro_5_popup_bg_6 As rectangle:
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(0, 0, 0, 0.20)
+                Height: =768
+                Width: =1366
+                ZIndex: =1
+
+            fondo_blanco_14 As image:
+                Height: =412
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =760
+                X: =308
+                Y: =172
+                ZIndex: =2
+
+            btn_contraparte_in_popup_buscar_1 As button:
+                BorderThickness: =1
+                Fill: =RGBA(247, 158, 64, 1)
+                FontWeight: =FontWeight.Bold
+                HoverBorderColor: =RGBA(247, 158, 64, 1)
+                HoverFill: =RGBA(247, 158, 64, 0.4)
+                OnSelect: |
+                    =UpdateContext({popup_faltanombre:false, popup_institucionnoencontrada:false});
+                    
+                    If(IsBlank(inp_nombre_contraparte_in_popup.Text)=false,
+                        Set(cargando, true);
+                        Set(datos_contraparte, 'DTI-PATraerinstitucióninternacional'.Run(inp_nombre_contraparte_in_popup.Text));
+                        Set(contraparte_in,{
+                            nombre_entidad_contraparte: First(datos_contraparte).razon_social,
+                            rut_entidad_contraparte: First(datos_contraparte).rut,
+                            dv_entidad_contraparte: First(datos_contraparte).dv,
+                            nombre_representante_legal: "",
+                            nombre_responsable_institucional:"",
+                            cargo_responsable_institucional:"",
+                            pais:Upper(First(datos_contraparte).pais),
+                            correo_responsable_institucional:"",
+                            id: First(datos_contraparte).id
+                        });
+                        Set(cargando, false);
+                        If(IsBlank(contraparte_in.nombre_entidad_contraparte),
+                            UpdateContext({popup_institucionnoencontrada:true}),
+                            Set(popup_contraparte_in,false))
+                        ,
+                        UpdateContext({popup_faltanombre:true})
+                    )
+                PressedBorderColor: =RGBA(247, 158, 64, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(249, 133, 11, 1)
+                RadiusBottomLeft: =12
+                RadiusBottomRight: =12
+                RadiusTopLeft: =12
+                RadiusTopRight: =12
+                Size: =14
+                TabIndex: =1
+                Text: ="ACEPTAR"
+                X: =845
+                Y: =488
+                ZIndex: =3
+
+            btn_contraparte_in_popup_cancelar_1 As button:
+                BorderColor: =RGBA(247, 158, 64, 1)
+                Color: =RGBA(247, 158, 64, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                HoverBorderColor: =RGBA(247, 158, 64, 1)
+                HoverColor: =RGBA(247, 158, 64, 1)
+                HoverFill: =RGBA(247, 158, 64, 0.1)
+                OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+                PressedBorderColor: =RGBA(247, 158, 64, 1)
+                PressedColor: =RGBA(247, 158, 64, 1)
+                PressedFill: =RGBA(247, 158, 64, 0.3)
+                RadiusBottomLeft: =12
+                RadiusBottomRight: =12
+                RadiusTopLeft: =12
+                RadiusTopRight: =12
+                Size: =14
+                Text: ="CANCELAR"
+                X: =653
+                Y: =488
+                ZIndex: =4
+
+            Contenedor_input_s_n_c_i As groupContainer.manualLayoutContainer:
+                Height: =123
+                Width: =706
+                X: =336
+                Y: =262
+                ZIndex: =5
+
+                inp_pais_in_popup_search_2 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    Fill: =RGBA(241, 244, 255, 1)
+                    Height: =46
+                    HintText: =""
+                    HoverBorderColor: =RGBA(166, 166, 166, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    OnSelect: =
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =1
+                    Width: =250
+                    X: =416
+                    Y: =43
+                    ZIndex: =1
+
+                inp_nombre_contraparte_in_popup As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    Fill: =RGBA(241, 244, 255, 1)
+                    Height: =46
+                    HintText: =""
+                    HoverBorderColor: =RGBA(166, 166, 166, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    OnSelect: =
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =1
+                    Width: =399
+                    Y: =43
+                    ZIndex: =2
+
+                lbl_pais_solicitar_nueva_contraparte As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =10
+                    Text: ="NOMBRE CONTRAPARTE INTERNACIONAL"
+                    Width: =300
+                    ZIndex: =3
+
+                lbl_nombre_solicitar_nueva_contraparte_1 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =10
+                    Text: ="PAÍS"
+                    Width: =100
+                    X: =416
+                    Y: =3
+                    ZIndex: =4
+
+                btn_solicitar_nueva_contraparte_1 As button:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Fill: =RGBA(139, 195, 74, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    HoverBorderColor: =RGBA(139, 195, 74, 1)
+                    HoverFill: =RGBA(139, 195, 74, 0.4)
+                    OnSelect: |-
+                        =UpdateContext({popup_promotor: true});
+                        Reset(inp_promotor_popup_search);
+                        UpdateContext({popup_faltacorreo:false});
+                        Set(p_seleccionado,"");
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(95, 160, 20, 1)
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Size: =20
+                    TabIndex: =
+                    Text: ="+"
+                    Width: =30
+                    X: =676
+                    Y: =51
+                    ZIndex: =5
+
+            lbl_contraparte_in_popup_titulo_1 As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Size: =18
+                Text: ="Solicitar nueva contraparte internacional"
+                Width: =650
+                X: =336
+                Y: =204
+                ZIndex: =7
 
     cont_loading_2 As group:
         Height: =5
