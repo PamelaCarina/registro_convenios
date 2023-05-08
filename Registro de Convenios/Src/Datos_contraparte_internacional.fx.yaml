@@ -938,7 +938,7 @@ Datos_contraparte_internacional As screen:
                 ZIndex: =1
 
             fondo_blanco_14 As image:
-                Height: =412
+                Height: =457
                 Image: ='background-section'
                 ImagePosition: =ImagePosition.Fill
                 RadiusBottomLeft: =24
@@ -990,8 +990,8 @@ Datos_contraparte_internacional As screen:
                 Size: =14
                 TabIndex: =1
                 Text: ="ACEPTAR"
-                X: =845
-                Y: =488
+                X: =882
+                Y: =553
                 ZIndex: =3
 
             btn_contraparte_in_popup_cancelar_1 As button:
@@ -1012,8 +1012,8 @@ Datos_contraparte_internacional As screen:
                 RadiusTopRight: =12
                 Size: =14
                 Text: ="CANCELAR"
-                X: =653
-                Y: =488
+                X: =685
+                Y: =553
                 ZIndex: =4
 
             Contenedor_input_s_n_c_i As groupContainer.manualLayoutContainer:
