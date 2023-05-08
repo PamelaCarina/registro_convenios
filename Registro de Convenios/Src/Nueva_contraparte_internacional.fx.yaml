@@ -1,0 +1,723 @@
+Nueva_contraparte_internacional As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: |-
+        =UpdateContext({tab_seleccionada:2});
+        UpdateContext({popup_faltanombre:false});
+        UpdateContext({popup_institucionnoencontrada:false});
+        UpdateContext({sin_nombre_representante_legal_in:false});
+        UpdateContext({sin_nombre_responsable_institucional_in:false});
+        UpdateContext({sin_cargo_in:false});
+        UpdateContext({sin_firma_in:false});
+        UpdateContext({correo_in_invalido:false});
+        UpdateContext({correo_in_vacio:false});
+        UpdateContext({hide_border_correo_in:true});
+        //Reset(inp_contraparte_in_popup_search);;
+        //Set(c_n_seleccionada;"")
+
+    Botones_atras_siguiente_8 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_8 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: =
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            Visible: =false
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+        Eliminar_2 As button:
+            BorderColor: =RGBA(238, 110, 126, 1)
+            Color: =RGBA(238, 110, 126, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(238, 110, 126, 1)
+            HoverColor: =RGBA(238, 110, 126, 1)
+            HoverFill: =RGBA(238, 110, 126, 0.1)
+            OnSelect: |
+                =Remove(
+                    contrapartes_internacionales,
+                    First(
+                        Filter(
+                            contrapartes_internacionales,
+                            Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input_1.Text)
+                        )
+                    )
+                );
+                Back(ScreenTransition.CoverRight);
+            PressedBorderColor: =RGBA(238, 110, 126, 1)
+            PressedColor: =RGBA(238, 110, 126, 1)
+            PressedFill: =RGBA(238, 110, 126, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =-1
+            Text: ="ELIMINAR"
+            X: =936
+            Y: =2
+            ZIndex: =2
+
+        Atrás_8 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =
+            Text: ="ATRÁS"
+            X: =2
+            Y: =2
+            ZIndex: =3
+
+        Guardar_2 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =//REPRESENTANTE LEGAL
+                If(IsBlank(nombre_representante_legal_in_input_1.Text), UpdateContext({sin_nombre_representante_legal_in:true}), UpdateContext({sin_nombre_representante_legal_in:false}));
+                
+                //RESPONSABLE INSTITUCIONAL
+                If(IsBlank(nombre_responsable_institucional_in_input_1.Text), UpdateContext({sin_nombre_responsable_institucional_in:true}), UpdateContext({sin_nombre_responsable_institucional_in:false}));
+                If(IsBlank(cargo_responsable_institucional_in_input_1.Text), UpdateContext({sin_cargo_in:true}), UpdateContext({sin_cargo_in:false}));
+                If(IsBlank(correo_electronico_in_input_1.Text),UpdateContext({correo_in_vacio:true}),UpdateContext({correo_in_vacio:false}));
+                If(sin_correo_in_1.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
+                
+                //firma digital
+                If(IsBlank(firma_digiral_in_button_1),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
+                
+                If(!sin_nombre_representante_legal_in_1 && !sin_nombre_responsable_institucional_in_1 && !sin_cargo_in_1 && !correo_in_invalido && !sin_firma_in_1 && !correo_in_vacio,
+                If(IsBlank(
+                        LookUp(
+                            contrapartes_internacionales, 
+                            Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input_1.Text)
+                        )
+                    ),
+                    Collect(contrapartes_internacionales,{
+                            nombre_entidad_contraparte: nombre_unidad_contraparte_in_input_1.Text,
+                            rut_entidad_contraparte: contraparte_in.rut_entidad_contraparte,
+                            dv_entidad_contraparte: contraparte_in.dv_entidad_contraparte,
+                            nombre_representante_legal: Upper( nombre_representante_legal_in_input_1.Text),
+                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input_1.Text),
+                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input_1.Text),
+                            pais: pais_in_input_1.Text,
+                            correo_responsable_institucional: Upper(correo_electronico_in_input_1.Text),
+                            firma_digital: firma_digiral_in_button_1.Selected,
+                            id: contraparte_in.id,
+                            tipo: "INTERNACIONAL"
+                    }),
+                    Patch(contrapartes_internacionales,
+                        LookUp(
+                            contrapartes_internacionales, 
+                            Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input_1.Text)
+                        ),
+                        {
+                            nombre_entidad_contraparte: nombre_unidad_contraparte_in_input_1.Text,
+                            nombre_representante_legal: Upper(nombre_representante_legal_in_input_1.Text),
+                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input_1.Text),
+                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input_1.Text),
+                            pais: pais_in_input_1.Text,
+                            correo_responsable_institucional: Upper(correo_electronico_in_input_1.Text),
+                            firma_digital: firma_digiral_in_button_1.Selected
+                        }
+                    )
+                );
+                Navigate(Entidad_contraparte, ScreenTransition.Fade);
+                );
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =-1
+            Text: ="GUARDAR"
+            X: =1124
+            Y: =2
+            ZIndex: =4
+
+    Datos_nueva_entidad_contraparte As groupContainer.manualLayoutContainer:
+        Height: =584
+        Width: =1366
+        Y: =96
+        ZIndex: =2
+
+        Contenedor_d_e_c_in_1 As groupContainer.manualLayoutContainer:
+            Height: =488
+            Width: =1282
+            X: =42
+            Y: =96
+            ZIndex: =1
+
+            fondo_blanco_15 As image:
+                Height: =488
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                ZIndex: =1
+
+            Firma_digiral_in_1 As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =301
+                X: =942
+                Y: =108
+                ZIndex: =2
+
+                fondo_celeste_14 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =40
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Visible: =false
+                    Width: =169
+                    Y: =20
+                    ZIndex: =1
+
+                firma_digiral_in_label_1 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="FIRMA DIGITAL"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    ZIndex: =2
+
+                firma_digiral_in_button_1 As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
+                    Height: =40
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    Items: =["Sí","No"]
+                    Layout: =Layout.Horizontal
+                    PaddingBottom: =0
+                    PaddingTop: =5
+                    RadioBackgroundFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(17, 61, 107, 1)
+                    RadioSelectionFill: =RGBA(17, 61, 107, 1)
+                    RadioSize: =30
+                    Width: =170
+                    Y: =20
+                    ZIndex: =3
+
+                sin_firma_in_1 As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    BorderThickness: =3
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =fondo_celeste_14.Height
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =13
+                    RadiusBottomRight: =13
+                    RadiusTopLeft: =13
+                    RadiusTopRight: =13
+                    TabIndex: =-1
+                    Visible: =sin_firma_in_1
+                    Width: =300
+                    Y: =fondo_celeste_14.Y - 1
+                    ZIndex: =4
+
+            Promotor_unidad_solicitante_in_1 As groupContainer.manualLayoutContainer:
+                Height: =68
+                Width: =1200
+                X: =42
+                Y: =192
+                ZIndex: =3
+
+                correo_electronico_in_1 As groupContainer.manualLayoutContainer:
+                    Height: =60
+                    Width: =300
+                    X: =900
+                    ZIndex: =1
+
+                    sin_correo_in_1 As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        BorderThickness: =4
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =correo_electronico_in_input_1.Height
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =13
+                        RadiusBottomRight: =13
+                        RadiusTopLeft: =13
+                        RadiusTopRight: =13
+                        TabIndex: =-1
+                        Visible: |-
+                            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
+                            || correo_in_invalido) && !hide_border_correo_in || correo_in_vacio
+                            ,true,false)
+                        Width: =290
+                        X: =2
+                        Y: =correo_electronico_in_input_1.Y 
+                        ZIndex: =1
+
+                    correo_electronico_in_input_1 As text:
+                        BorderColor: =RGBA(255, 0, 0, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =If(nueva_contraparte,contraparte_in.correo_responsable_institucional,contraparte.correo_responsable_institucional)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =39
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({hide_border_correo_in:false})
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =290
+                        X: =2
+                        Y: =19
+                        ZIndex: =2
+
+                    correo_electronico_in_label_1 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CORREO ELECTRÓNICO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =230
+                        ZIndex: =3
+
+                Cargo_responsable_institucional_in_1 As groupContainer.manualLayoutContainer:
+                    Height: =65
+                    Width: =422
+                    X: =451
+                    ZIndex: =3
+
+                    cargo_responsable_institucional_in_input_1 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =If(nueva_contraparte,contraparte_in.cargo_responsable_institucional,contraparte.cargo_responsable_institucional)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =12
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =422
+                        Y: =20
+                        ZIndex: =1
+
+                    cargo_responsable_institucional_in_label_1 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="CARGO"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =230
+                        ZIndex: =2
+
+                    sin_cargo_in_1 As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =cargo_responsable_institucional_na_input.Height
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =13
+                        RadiusBottomRight: =13
+                        RadiusTopLeft: =13
+                        RadiusTopRight: =13
+                        TabIndex: =-1
+                        Visible: =sin_cargo_in_1
+                        Width: =cargo_responsable_institucional_na_input.Width - 2
+                        X: =1
+                        Y: =cargo_responsable_institucional_na_input.Y
+                        ZIndex: =3
+
+                Nombre_responsable_institucional_in_1 As groupContainer.manualLayoutContainer:
+                    Height: =65
+                    Width: =422
+                    X: =2
+                    ZIndex: =4
+
+                    nombre_responsable_institucional_in_input_1 As text:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(17, 61, 107, 1)
+                        Default: =If(nueva_contraparte,contraparte_in.nombre_responsable_institucional,contraparte.nombre_responsable_institucional)
+                        DisabledColor: =RGBA(111, 139, 167, 1)
+                        Fill: =RGBA(241, 244, 255, 1)
+                        FocusedBorderThickness: =0
+                        Height: =38
+                        HintText: =""
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(241, 244, 255, 1)
+                        MaxLength: =60
+                        PaddingBottom: =12
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Size: =14
+                        TabIndex: =
+                        Width: =422
+                        Y: =21
+                        ZIndex: =1
+
+                    nombre_responsable_institucional_in_label_1 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =418
+                        ZIndex: =2
+
+                    sin_nombre_responsable_institucional_in_1 As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =nombre_responsable_institucional_in_input_1.Height
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: =sin_nombre_responsable_institucional_in_1
+                        Width: =nombre_responsable_institucional_in_input_1.Width - 2
+                        X: =1
+                        Y: =nombre_responsable_institucional_in_input_1.Y
+                        ZIndex: =3
+
+            Nombre_representante_legal_in_1 As groupContainer.manualLayoutContainer:
+                Height: =65
+                Width: =871
+                X: =42
+                Y: =108
+                ZIndex: =4
+
+                nombre_representante_legal_in_input_1 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,contraparte_in.nombre_representante_legal,contraparte.nombre_representante_legal)
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    Height: =36
+                    HintText: =""
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =60
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Width: =871
+                    Y: =21
+                    ZIndex: =1
+
+                nombre_representante_legal_in_label_1 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="NOMBRE REPRESENTANTE LEGAL"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =300
+                    ZIndex: =2
+
+                sin_nombre_representante_legal_in_1 As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =nombre_representante_legal_in_input_1.Height
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    TabIndex: =-1
+                    Visible: =sin_nombre_representante_legal_in_1
+                    Width: =nombre_representante_legal_in_input_1.Width - 2
+                    X: =1
+                    Y: =nombre_representante_legal_in_input_1.Y
+                    ZIndex: =3
+
+            pais_in_1 As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =300
+                X: =942
+                Y: =24
+                ZIndex: =5
+
+                pais_in_input_1 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,contraparte_in.pais,contraparte.pais)
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    HintText: =""
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =60
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Width: =300
+                    Y: =20
+                    ZIndex: =1
+
+                pais_in_label_1 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="PAÍS"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =230
+                    ZIndex: =2
+
+            Nombre_unidad_contraparte_in_1 As groupContainer.manualLayoutContainer:
+                Height: =60
+                Width: =871
+                X: =42
+                Y: =24
+                ZIndex: =6
+
+                nombre_unidad_contraparte_in_input_1 As text:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,contraparte_in.nombre_entidad_contraparte,contraparte.nombre_entidad_contraparte)
+                    DisabledColor: =RGBA(111, 139, 167, 1)
+                    Fill: =RGBA(241, 244, 255, 1)
+                    FocusedBorderThickness: =0
+                    HintText: =""
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(241, 244, 255, 1)
+                    MaxLength: =150
+                    PaddingBottom: =12
+                    PaddingLeft: =24
+                    PaddingRight: =24
+                    PaddingTop: =12
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Size: =14
+                    TabIndex: =
+                    Width: =871
+                    Y: =20
+                    ZIndex: =1
+
+                nombre_unidad_contraparte_in_label_1 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="NOMBRE ENTIDAD CONTRAPARTE"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =300
+                    ZIndex: =2
+
+        datos_entidad_contraparte_in_1 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Ingresar nueva entidad contraparte internacional"
+            Width: =1366
+            ZIndex: =3
+
+    lbl_falta_correo_2 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =9
+        Text: ="Ingrese una dirección de correo válida."
+        Visible: |-
+            =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input_1.Text)),
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
+            || correo_in_vacio) && !hide_border_correo_in
+            ,true,false)
+        Width: =676
+        X: =608
+        Y: =424
+        ZIndex: =3
+
+    lbl_faltan_datos_7 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(sin_nombre_representante_legal_in_1 || sin_nombre_responsable_institucional_in_1 || sin_cargo_in_1 || correo_in_invalido, true)
+        Width: =676
+        X: =278
+        Y: =680
+        ZIndex: =4
+
+    BannerUdeC_8 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =5
+
+    cont_loading_4 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =8
+
+        fig_registro_5_bg_4 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =7
+
+        img_loading_4 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =633
+            Y: =334
+            ZIndex: =8
+
