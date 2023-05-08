@@ -1341,7 +1341,8 @@ Contribución_desarrollo As screen:
                                                         JSON(datos_vinculacion_cargados),
                                                         JSON(datos_contribucion_cargados),
                                                         JSON(ods_cargados),
-                                                        JSON(entidades_contraparte_in_cargadas)
+                                                        JSON(entidades_contraparte_in_cargadas),
+                                                        JSON(unidades_promotoras)
                 ).id);
                 //JSON(datos_solicitud_convenio)
                 

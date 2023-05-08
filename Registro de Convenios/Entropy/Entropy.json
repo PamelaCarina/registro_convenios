@@ -641,12 +641,13 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "05/08/2023 16:40:41",
+  "HeaderLastSavedDateTimeUTC": "05/08/2023 16:42:46",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "02917942-c1e0-4f4a-a81e-14cdfcf4bcd1": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/993e652b7390bd63fd075c5e46bc045e-a174438b0269b008\"",
     "1861bd45-32f2-4db9-8c16-4ce8cc5f78be": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/996b7d298f96098144b8a7cfa3d7c136-a174438b0269b008\"",
     "4d43a597-7638-4ec8-ad0a-b7242ccfe778": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/7e741359133b9645e5d6933be20df86e-a174438b0269b008\"",
+    "63b28254-911e-4fd4-a21d-04ba11de82c9": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/8F6C6C4578CB7DF596935B15DC0AD34B-A174438B0269B008\"",
     "7cc51a73-b1e8-4a08-bf8b-cd755efe368f": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/a1d31097ad6473990ac61dbb6b6dd6ca-a174438b0269b008\"",
     "8789f143-b674-49d3-99ce-85bcaafed327": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/5b4f687e3ccb5846d6949e769283dc36-a174438b0269b008\"",
     "8cf80456-9af9-4743-84c3-76b3379f2378": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/a5c0b66de0b983bcecc8c4c97ae9b86c-a174438b0269b008\"",
@@ -654,7 +655,6 @@
     "97ce6c13-ada6-45c3-b045-e9802f207fbe": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/cad1d9397b72360f5f897ec4a8a79c50-a174438b0269b008\"",
     "b2390245-ea50-4ac2-943d-8edf576a5147": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/1765ce16774d43bf908c5ff9427a0791\"",
     "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/e646ba122429497ab8931a1dfc24266b\"",
-    "d36ddfa3-e557-485f-9625-6446fa17945e": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/8F6C6C4578CB7DF596935B15DC0AD34B-A174438B0269B008\"",
     "e09530a6-c64a-4b7a-9fd2-e64981fc0dba": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/9cf61b6ed16ce60590816a787ee95a53-a174438b0269b008\""
   },
   "LocalDatabaseReferencesAsEmpty": false,
