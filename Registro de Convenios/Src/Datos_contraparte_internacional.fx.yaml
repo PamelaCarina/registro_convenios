@@ -11,6 +11,7 @@ Datos_contraparte_internacional As screen:
         UpdateContext({correo_in_invalido:false});
         UpdateContext({correo_in_vacio:false});
         UpdateContext({hide_border_correo_in:true});
+        UpdateContext({popup_nueva_contraparte_in:false});
         //Reset(inp_contraparte_in_popup_search);;
         //Set(c_n_seleccionada;"")
 
@@ -927,6 +928,7 @@ Datos_contraparte_internacional As screen:
 
         solicitar_nueva_contraparte_in_popup As groupContainer.manualLayoutContainer:
             Height: =Unidad_solicitante.Height
+            Visible: =popup_nueva_contraparte_in
             Width: =Unidad_solicitante.Width
             ZIndex: =15
 

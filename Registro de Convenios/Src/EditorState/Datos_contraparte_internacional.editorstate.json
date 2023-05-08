@@ -900,7 +900,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_buscar_promotor_2",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10145,7 +10145,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon1_1",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22214,7 +22214,14 @@
         "LayoutOverflowY",
         "LayoutWrap",
         "ZIndex",
-        "Visible",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "RadiusTopLeft",
         "RadiusTopRight",
         "RadiusBottomLeft",
