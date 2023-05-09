@@ -1225,6 +1225,30 @@ Datos_contraparte_internacional As screen:
                 Y: =204
                 ZIndex: =7
 
+        btn_contraparte_in_popup_buscar_2 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |
+                =Navigate(Nueva_solicitud_contraparte_internacional)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =12
+            TabIndex: =1
+            Text: ="SOLICITAR NUEVA CONTRAPARTE"
+            Width: =180
+            X: =370
+            Y: =483
+            ZIndex: =16
+
     cont_loading_2 As group:
         Height: =5
         Width: =5
