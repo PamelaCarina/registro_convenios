@@ -319,7 +319,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.dv)
+                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.dv,contraparte.dv)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -388,7 +388,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.rut)
+                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.rut,contraparte.rut)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -457,7 +457,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.nombre)
+                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.nombre,contraparte.nombre)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -575,7 +575,9 @@ Datos_solicitud_contraparte_nacional As screen:
                         UpdateContext({archivo_invalido:false});
                         
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
-                        Set(Contenido_doc_sna,att_attach_doc_sna.Attachments);
+                        Set(Contenido_doc_sna,{
+                            doc: att_attach_doc_sna.Attachments
+                        });
                         UpdateContext({show_popup_documentacion: false});
                         UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
@@ -644,6 +646,7 @@ Datos_solicitud_contraparte_nacional As screen:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
+            Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.doc,contraparte.doc)
             DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             DropTargetTextColor: =RGBA(111, 139, 167, 1)

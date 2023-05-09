@@ -190,7 +190,7 @@ Entidad_contraparte As screen:
                             =Select(Parent);
                             Set(contraparte, ThisItem);
                             Set(popup_contraparte_in,false);
-                            Set(nueva_contraparte,false);
+                            Set(nueva_solicitud_contraparte_nacional,false);
                             Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade)
                         PaddingBottom: =0
                         PaddingLeft: =0
