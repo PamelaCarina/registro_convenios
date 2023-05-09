@@ -118,14 +118,17 @@ Datos_solicitud_contraparte_internacional As screen:
                                 Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_in_input.Text)
                             )
                         ),
-                        Collect(solicitudes_añadir_contraparte,{
-                            nombre:Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
-                            rut: "",
-                            dv: "",
-                            pais: Upper(pais_solicitud_in_input.Text),
-                            tipo: "INTERNACIONAL",
-                            doc: Contenido_doc_sin
-                        }),
+                        If(CountRows(solicitudes_añadir_contraparte)<=5,
+                            Collect(solicitudes_añadir_contraparte,{
+                                nombre:Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                                rut: "",
+                                dv: "",
+                                pais: Upper(pais_solicitud_in_input.Text),
+                                tipo: "INTERNACIONAL",
+                                doc: Contenido_doc_sin
+                            }),
+                            UpdateContext({máximo_solicitudes:true}))
+                        ,
                         Patch(solicitudes_añadir_contraparte,
                             LookUp(
                                 solicitudes_añadir_contraparte, 
@@ -141,7 +144,7 @@ Datos_solicitud_contraparte_internacional As screen:
                             }
                         )
                     );
-                    Navigate(Entidad_contraparte,ScreenTransition.Fade)
+                    If(!máximo_solicitudes,Navigate(Entidad_contraparte,ScreenTransition.Fade))
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -617,6 +620,18 @@ Datos_solicitud_contraparte_internacional As screen:
             Y: =btn_registro_10_popup_cancelar_3.Y-Self.Height
             ZIndex: =8
 
+    lbl_faltan_datos_10 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Ha alcanzado el máximo de solicitudes"
+        Visible: =If(máximo_solicitudes, true)
+        Width: =676
+        X: =278
+        Y: =684
+        ZIndex: =7
+
     cont_loading_6 As group:
         Height: =5
         Width: =5
@@ -637,5 +652,5 @@ Datos_solicitud_contraparte_internacional As screen:
             Visible: =cargando
             X: =633
             Y: =334
-            ZIndex: =7
+            ZIndex: =8
 
