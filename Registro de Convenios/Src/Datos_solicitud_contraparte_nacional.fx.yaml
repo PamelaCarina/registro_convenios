@@ -111,25 +111,24 @@ Datos_solicitud_contraparte_nacional As screen:
                     If(IsBlank(
                             LookUp(
                                 solicitudes_añadir_contraparte, 
-                                Lower(nombre_entidad_contraparte) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
                             )
                         ),
                         Collect(solicitudes_añadir_contraparte,{
-                            nombre_entidad_contraparte:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
+                            nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
                             rut: rut_solicitud_na_input.Text,
                             dv: Upper(dv_solicitud_na_input.Text),
                             pais: "CHILE",
                             tipo: "NACIONAL",
                             doc: Contenido_doc_sna
-                
                         }),
                         Patch(solicitudes_añadir_contraparte,
                             LookUp(
                                 solicitudes_añadir_contraparte, 
-                                Lower(nombre_entidad_contraparte) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
                             ),
                             {
-                                nombre_entidad_contraparte:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
+                                nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
                                 rut: rut_solicitud_na_input.Text,
                                 dv: Upper(dv_solicitud_na_input.Text),
                                 pais: "CHILE",
@@ -138,6 +137,7 @@ Datos_solicitud_contraparte_nacional As screen:
                             }
                         )
                     );
+                    Navigate(Entidad_contraparte,ScreenTransition.Fade)
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -319,7 +319,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.pais)
+                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.dv)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -388,7 +388,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.pais)
+                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.rut)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -457,7 +457,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.nombre_entidad_contraparte)
+                    Default: =If(nueva_solicitud_contraparte_nacional,"",contraparte.nombre)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -570,7 +570,7 @@ Datos_solicitud_contraparte_nacional As screen:
             OnSelect: |-
                 =If(CountRows(att_attach_doc_sna.Attachments) > 0,  
                     Set(attachment_extension,Last(ForAll(Split(First(att_attach_doc_sna.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
-                    If(attachment_extension="docx",
+                    If(attachment_extension<>"exe",
                         Set(existe_adjunto, true);
                         UpdateContext({archivo_invalido:false});
                         

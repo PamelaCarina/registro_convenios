@@ -94,13 +94,124 @@ Entidad_contraparte As screen:
                 Width: =1282
                 ZIndex: =1
 
+            cont_solicitudes As groupContainer.manualLayoutContainer:
+                Height: =313
+                Visible: =tab_seleccionada=3
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =2
+
+                "gal_solicitudes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    FocusedBorderThickness: =0
+                    Height: =283
+                    Items: =solicitudes_añadir_contraparte
+                    Layout: =Layout.Vertical
+                    TabIndex: =1
+                    TemplatePadding: =0
+                    TemplateSize: =140
+                    Width: =1198
+                    ZIndex: =1
+
+                    img_contraparte_2 As image:
+                        Height: =80
+                        Image: ='logo-udec'
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =Select(Parent)
+                        RadiusBottomLeft: =200
+                        RadiusBottomRight: =200
+                        RadiusTopLeft: =200
+                        RadiusTopRight: =200
+                        Width: =0
+                        X: =16
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =1
+
+                    lbl_solicitada_detalle As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =70
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        Size: =16
+                        Text: =ThisItem.pais
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =lbl_solicitada_nombre.Width
+                        X: =20
+                        Y: =70
+                        ZIndex: =2
+
+                    lbl_solicitada_nombre As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =70
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.nombre
+                        VerticalAlign: =VerticalAlign.Bottom
+                        Width: =Parent.TemplateWidth - img_contraparte_2.Width - 104
+                        X: =20
+                        Y: =4
+                        ZIndex: =3
+
+                    fig_solicitada_arrow As rectangle:
+                        Fill: =RGBA(112, 139, 166, 1)
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =1198
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =4
+
+                    img_arrow_solicitada As image:
+                        Height: =25
+                        Image: =ico_arrow
+                        OnSelect: |-
+                            =Select(Parent);
+                            Set(reset_externo, false);
+                            //Navigate(Registro_Actividad_6)
+                        Width: =14
+                        X: =1150
+                        Y: =60
+                        ZIndex: =5
+
+                    btn_detalle_solicitada As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =140
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        OnSelect: |-
+                            =Select(Parent);
+                            Set(contraparte, ThisItem);
+                            Set(popup_contraparte_in,false);
+                            Set(nueva_contraparte,false);
+                            Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        TabIndex: =2
+                        Text: =""
+                        Width: =14
+                        X: =1150
+                        ZIndex: =6
+
             cont_contraparte_internacional As groupContainer.manualLayoutContainer:
                 Height: =313
                 Visible: =tab_seleccionada=2
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =2
+                ZIndex: =3
 
                 "gal_contraparte_internacional As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     FocusedBorderThickness: =0
@@ -212,7 +323,7 @@ Entidad_contraparte As screen:
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =3
+                ZIndex: =4
 
                 "gal_contraparte_nacional As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     FocusedBorderThickness: =0
@@ -319,13 +430,13 @@ Entidad_contraparte As screen:
                         X: =1150
                         ZIndex: =6
 
-            cont_solicitudes As groupContainer.manualLayoutContainer:
+            cont_vacio_solicitudes As groupContainer.manualLayoutContainer:
                 Height: =313
                 Visible: =CountRows(solicitudes_añadir_contraparte)=0 && tab_seleccionada=3
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =4
+                ZIndex: =5
 
                 Image1_3 As image:
                     Height: =200
@@ -362,7 +473,7 @@ Entidad_contraparte As screen:
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =5
+                ZIndex: =6
 
                 Image1 As image:
                     Height: =200
@@ -399,7 +510,7 @@ Entidad_contraparte As screen:
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =6
+                ZIndex: =7
 
                 Image1_1 As image:
                     Height: =200
@@ -442,7 +553,7 @@ Entidad_contraparte As screen:
                 X: =40
                 Y: |
                     =37
-                ZIndex: =7
+                ZIndex: =8
 
                 Button1 As button:
                     BorderThickness: =0
@@ -490,7 +601,7 @@ Entidad_contraparte As screen:
                 Width: =gal_tabs.Width-5
                 X: =gal_tabs.X+5
                 Y: =gal_tabs.Y+gal_tabs.Height
-                ZIndex: =8
+                ZIndex: =9
 
             btn_registro_4_e_agregar As button:
                 BorderStyle: =BorderStyle.None
@@ -532,7 +643,7 @@ Entidad_contraparte As screen:
                 Width: =42
                 X: =1195
                 Y: =412
-                ZIndex: =9
+                ZIndex: =10
 
         entidades_contraparte As label:
             Color: =RGBA(17, 61, 107, 1)
