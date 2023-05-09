@@ -28,10 +28,6 @@ App As appinfo:
         Set(m,First(datos).modalidad);
         ClearCollect(lista_modalidad,m);
         
-        //OBTENER AUTORIDAD SOLICITANTE
-        Set(autoridad,'VRIM-PA-Traeaprobadordetrabajador'.Run(persona_solicitante.id_persona));
-        Set(autoridad_solicitante,'VRIM-PATraedatosdeusuario'.Run(autoridad.correo_aprobador));
-        
         //MENSAJES DE CAMPOS FALTANTES
         Set(msj_campo_faltante,"Debe completar el campo faltante.");
         Set(msj_campos_faltantes,"Debe completar los campos faltantes.");
@@ -41,7 +37,6 @@ App As appinfo:
         
         //autoridades máximas
         ClearCollect(Nombres_autoridades, Sort('DTI-PATraerautoridadesmáximas'.Run(), nombre_completo));
-        
         
         Set(cargando, false);
         
