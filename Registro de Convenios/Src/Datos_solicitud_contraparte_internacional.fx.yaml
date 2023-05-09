@@ -4,6 +4,7 @@ Datos_solicitud_contraparte_internacional As screen:
         =UpdateContext({sin_nombre_entidad:false});
         UpdateContext({sin_pais_entidad:false});
         UpdateContext({sin_documento:false});
+        UpdateContext({máximo_solicitudes:false});
         If(nueva_solicitud_contraparte,
             UpdateContext({mostrar_lista_archivos:false});
             Set(existe_adjunto, false);
@@ -105,7 +106,9 @@ Datos_solicitud_contraparte_internacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =If(IsBlank(nombre_solicitud_unidad_contraparte_in_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
+                =UpdateContext({máximo_solicitudes:false});
+                
+                If(IsBlank(nombre_solicitud_unidad_contraparte_in_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
                 If(IsBlank(pais_solicitud_in_input.Text),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 

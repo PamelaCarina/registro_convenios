@@ -110,7 +110,9 @@ Datos_solicitud_contraparte_nacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =If(IsBlank(nombre_solicitud_unidad_contraparte_na_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
+                =UpdateContext({máximo_solicitudes:false});
+                
+                If(IsBlank(nombre_solicitud_unidad_contraparte_na_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
                 If(IsBlank(rut_solicitud_na_input.Text),UpdateContext({sin_rut_entidad:true}),UpdateContext({sin_rut_entidad:false}));
                 
