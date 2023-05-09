@@ -152,7 +152,7 @@
         "Name": "lbl_titulo",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 628,
+        "PublishOrderIndex": 653,
         "Rules": [
           {
             "Category": "Data",
@@ -518,7 +518,7 @@
         "Name": "lbl_bienvenido",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 629,
+        "PublishOrderIndex": 654,
         "Rules": [
           {
             "Category": "Data",
@@ -852,7 +852,7 @@
         "Name": "fig_background_perfil",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 630,
+        "PublishOrderIndex": 655,
         "Rules": [
           {
             "Category": "Design",
@@ -1065,7 +1065,7 @@
         "Name": "img_perfil",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 631,
+        "PublishOrderIndex": 656,
         "Rules": [
           {
             "Category": "Data",
@@ -1340,7 +1340,7 @@
         "Name": "img_logo_udec",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 632,
+        "PublishOrderIndex": 657,
         "Rules": [
           {
             "Category": "Data",
@@ -1674,7 +1674,7 @@
         "Name": "lbl_nombre_usuario",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 633,
+        "PublishOrderIndex": 658,
         "Rules": [
           {
             "Category": "Data",
@@ -2082,7 +2082,7 @@
         "Name": "lbl_subtitulo",
         "Parent": "HeaderUdeC",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 634,
+        "PublishOrderIndex": 659,
         "Rules": [
           {
             "Category": "Data",

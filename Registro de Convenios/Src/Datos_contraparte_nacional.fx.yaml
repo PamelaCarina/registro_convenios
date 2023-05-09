@@ -958,7 +958,7 @@ Datos_contraparte_nacional As screen:
             PaddingRight: =0
             PaddingTop: =42
             Size: =20
-            Text: ="Datos de la entidad contraparte nacional"
+            Text: ="Datos entidad contraparte nacional"
             Width: =1366
             ZIndex: =2
 
@@ -1167,6 +1167,17 @@ Datos_contraparte_nacional As screen:
             X: =(fondo_blanco_4.X+fondo_blanco_4.Width/2)-Self.Width/2
             Y: =418
             ZIndex: =12
+
+        btn_registro_10_politica_1 As button:
+            OnSelect: |
+                =Set(nueva_solicitud_contraparte_nacional,true);
+                Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade);
+            Size: =14
+            Text: ="SOLICITAR CONTRAPARTE"
+            Width: =260
+            X: =360
+            Y: =488
+            ZIndex: =13
 
     cont_loading_1 As group:
         Height: =5

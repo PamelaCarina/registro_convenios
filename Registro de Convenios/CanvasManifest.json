@@ -131,6 +131,7 @@
     "Entidad_contraparte",
     "Datos_contraparte_nacional",
     "Datos_contraparte_internacional",
+    "Datos_solicitud_contraparte_nacional",
     "Nueva_solicitud_contraparte_internacional",
     "Datos_convenio",
     "Información_convenio",
