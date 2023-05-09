@@ -15490,19 +15490,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_registro_10_attach_oficial_1.AccessibleLabel"
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_attach_doc_sna.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_registro_10_attach_oficial_1.AccessibleLabel",
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_attach_doc_sna.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_solicitud_contraparte_nacional",
+                "type": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_attach_doc_sna"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.btn_registro_10_popup_guardar_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.btn_registro_10_popup_guardar_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_solicitud_contraparte_nacional",
+                "type": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.btn_registro_10_popup_guardar_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_attach_doc_sna.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_attach_doc_sna.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Datos_solicitud_contraparte_nacional",
-                "type": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_registro_10_attach_oficial_1"
+                "type": "Datos_solicitud_contraparte_nacional.Adjuntar_popup_documentacion_sna.att_attach_doc_sna"
               }
             }
           ],
@@ -16060,6 +16120,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.Contenido_doc_sna"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Contenido_doc_sna",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Contenido_doc_sna",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.fondo_deshabilitado"
                 }
               ],
@@ -16433,36 +16523,6 @@
                 "member": "tab_seleccionada",
                 "module": "Nueva_solicitud_contraparte_internacional",
                 "type": "Nueva_solicitud_contraparte_internacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.mostrar_lista_archivos_oficiales"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_nacional.mostrar_lista_archivos_oficiales",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "mostrar_lista_archivos_oficiales",
-                "module": "Datos_solicitud_contraparte_nacional",
-                "type": "Datos_solicitud_contraparte_nacional"
               }
             }
           ],

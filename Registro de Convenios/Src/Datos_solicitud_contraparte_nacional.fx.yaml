@@ -4,6 +4,7 @@ Datos_solicitud_contraparte_nacional As screen:
         =UpdateContext({sin_nombre_entidad:false});
         UpdateContext({sin_rut_entidad:false});
         UpdateContext({sin_dv_entidad:false});
+        UpdateContext({sin_documento:false});
 
     Botones_atras_siguiente_9 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -97,12 +98,14 @@ Datos_solicitud_contraparte_nacional As screen:
             FontWeight: =FontWeight.Normal
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |
+            OnSelect: |-
                 =If(IsBlank(nombre_solicitud_unidad_contraparte_na_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
                 If(IsBlank(rut_solicitud_na_input.Text),UpdateContext({sin_rut_entidad:true}),UpdateContext({sin_rut_entidad:false}));
                 
                 If(IsBlank(dv_solicitud_na_input.Text),UpdateContext({sin_dv_entidad:true}),UpdateContext({sin_dv_entidad:false}));
+                
+                If(CountRows(att_attach_doc_sna.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}))
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -163,7 +166,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
                     TabIndex: =-1
-                    Visible: =//sin_documentacion_oficial
+                    Visible: =sin_documento
                     Width: =fondo_registro_3.Width+1
                     X: =fondo_registro_3.X
                     Y: =fondo_registro_3.Y
@@ -184,10 +187,10 @@ Datos_solicitud_contraparte_nacional As screen:
 
                 img_subir_3 As image:
                     Height: =74
-                    Image: =//If(existe_adjunto && mostrar_lista_archivos_oficiales;attach;upload)
+                    Image: =If(existe_adjunto && mostrar_lista_archivos_oficiales,attach,upload)
                     Width: =68
-                    X: =12
-                    Y: =40
+                    X: =13
+                    Y: =36
                     ZIndex: =3
 
                 btn_adjuntar_3 As button:
@@ -196,7 +199,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     Height: =74
                     HoverFill: =RGBA(255,255,255,0)
                     OnSelect: |-
-                        =UpdateContext({show_popup_oficial: true})
+                        =UpdateContext({show_popup_documentacion: true})
                     PressedFill: =RGBA(255,255,255,0)
                     RadiusBottomLeft: =50
                     RadiusBottomRight: =50
@@ -205,8 +208,8 @@ Datos_solicitud_contraparte_nacional As screen:
                     TabIndex: =1
                     Text: =""
                     Width: =68
-                    X: =12
-                    Y: =40
+                    X: =13
+                    Y: =36
                     ZIndex: =4
 
                 adjuntar_documentacion_sna_label As label:
@@ -225,14 +228,14 @@ Datos_solicitud_contraparte_nacional As screen:
 
                 "Gallery1_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     Height: =82
-                    Items: =att_registro_10_attach_oficial.Attachments
+                    Items: =att_attach_doc_sna.Attachments
                     Layout: =Layout.Vertical
                     TemplatePadding: =0
                     TemplateSize: =Min(160, Self.Height - 60)
-                    Visible: =//mostrar_lista_archivos_oficiales
+                    Visible: =mostrar_lista_archivos_oficiales
                     Width: =173
-                    X: =92
-                    Y: =36
+                    X: =93
+                    Y: =32
                     ZIndex: =6
 
                     Title1_3 As label:
@@ -489,7 +492,7 @@ Datos_solicitud_contraparte_nacional As screen:
 
     Adjuntar_popup_documentacion_sna As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
-        Visible: =show_popup_oficial
+        Visible: =show_popup_documentacion
         Width: =Datos_convenio.Width
         ZIndex: =5
 
@@ -531,23 +534,24 @@ Datos_solicitud_contraparte_nacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =If(CountRows(att_registro_10_attach_oficial_1.Attachments) > 0,  
-                    Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial_1.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
-                    Set(test_attachment,First(att_registro_10_attach_oficial_1.Attachments).Value);
+                =If(CountRows(att_attach_doc_sna.Attachments) > 0,  
+                    Set(attachment_extension,Last(ForAll(Split(First(att_attach_doc_sna.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
                     If(attachment_extension="docx",
                         Set(existe_adjunto, true);
                         UpdateContext({archivo_invalido:false});
+                        
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
-                        Set(Contenido_oficial,att_registro_10_attach_oficial_1.Attachments);
-                        UpdateContext({show_popup_oficial: false});
+                        Set(Contenido_doc_sna,att_attach_doc_sna.Attachments);
+                        UpdateContext({show_popup_documentacion: false});
                         UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
                         Set(existe_adjunto, false);
                         UpdateContext({archivo_invalido:true})
-                    ),
+                    )
+                ,
                     Set(existe_adjunto, false);
                     UpdateContext({archivo_invalido:false});
-                    UpdateContext({show_popup_oficial: false})
+                    UpdateContext({show_popup_documentacion: false})
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -557,7 +561,7 @@ Datos_solicitud_contraparte_nacional As screen:
             RadiusTopLeft: =12
             RadiusTopRight: =12
             Size: =14
-            TabIndex: =If(show_popup_oficial,1,-1)
+            TabIndex: =1
             Text: ="ACEPTAR"
             X: =845
             Y: =490
@@ -573,7 +577,7 @@ Datos_solicitud_contraparte_nacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.1)
             OnSelect: |-
                 =//UpdateContext({sacar_archivo_oficial:true});;
-                UpdateContext({show_popup_oficial: false});
+                UpdateContext({show_popup_documentacion: false});
                 //UpdateContext({sacar_archivo_oficial:false});;
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
@@ -583,7 +587,6 @@ Datos_solicitud_contraparte_nacional As screen:
             RadiusTopLeft: =12
             RadiusTopRight: =12
             Size: =14
-            TabIndex: =If(show_popup_oficial,0,-1)
             Text: ="CANCELAR"
             X: =655
             Y: =490
@@ -602,7 +605,7 @@ Datos_solicitud_contraparte_nacional As screen:
             Y: =326
             ZIndex: =6
 
-        att_registro_10_attach_oficial_1 As attachments:
+        att_attach_doc_sna As attachments:
             AddAttachmentText: ="Adjuntar archivo"
             BorderColor: =
             BorderStyle: =BorderStyle.None
@@ -626,7 +629,7 @@ Datos_solicitud_contraparte_nacional As screen:
             PaddingTop: =5
             PressedFill: =RGBA(111, 139, 167, 1)
             Size: =10
-            TabIndex: =If(show_popup_oficial,1,-1)
+            TabIndex: =1
             Tooltip: =
             Width: =645
             X: =360
