@@ -736,10 +736,22 @@ Datos_solicitud_contraparte_nacional As screen:
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
         Height: =72
-        Text: ="Ha alcanzado el máximo de solicitudes"
+        Text: ="Ha alcanzado el máximo de solicitudes."
         Visible: =If(máximo_solicitudes, true)
         Width: =676
         X: =278
         Y: =684
         ZIndex: =7
+
+    lbl_faltan_datos_11 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If(!sin_nombre_entidad && !sin_rut_entidad && !sin_dv_entidad && !sin_documento,false,true)
+        Width: =676
+        X: =278
+        Y: =684
+        ZIndex: =8
 
