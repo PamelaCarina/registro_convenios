@@ -1320,6 +1320,7 @@
         },
         {
           "Category": "Data",
+          "NameMap": "{\"Name\":\"Name\",\"Value\":\"Value\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },

@@ -327,7 +327,6 @@ Datos_solicitud_contraparte_internacional As screen:
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
-                    Format: =TextFormat.Number
                     HintText: =""
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
@@ -579,7 +578,7 @@ Datos_solicitud_contraparte_internacional As screen:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
-            Default: =If(!nueva_solicitud_contraparte,First(contraparte.doc))
+            Default: =//If(!nueva_solicitud_contraparte;First(contraparte.doc))
             DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             DropTargetTextColor: =RGBA(111, 139, 167, 1)
@@ -587,7 +586,7 @@ Datos_solicitud_contraparte_internacional As screen:
             Height: =94
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
-            Items: =
+            Items: =If(!nueva_solicitud_contraparte,First(contraparte.doc))
             MaxAttachments: =1
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."
