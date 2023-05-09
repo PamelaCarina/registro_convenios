@@ -38,8 +38,8 @@ Unidad_solicitante As screen:
                 //If(nombre_unidad_solicitante.Selected.Reparticion="Seleccionar..."; UpdateContext({sin_unidad:true}); UpdateContext({sin_unidad:false}));;
                 
                 //SIN PROMOTOR
+                If(CountRows(unidades_promotoras)=0, UpdateContext({sin_promotor:true}), UpdateContext({sin_promotor:false}));
                 /*
-                If(IsBlank(nombre_promotor_input_2.Text); UpdateContext({sin_promotor:true}); UpdateContext({sin_promotor:false}));;
                 If(IsBlank(cargo_promotor_input_2.Text); UpdateContext({sin_cargo_promotor:true}); UpdateContext({sin_cargo_promotor:false}));;
                 If(IsBlank(correo_promotor_input_2.Text); UpdateContext({sin_correo_promotor:true}); UpdateContext({sin_correo_promotor:false}));;
                 */
@@ -560,6 +560,27 @@ Unidad_solicitante As screen:
                         Width: =337.3
                         Y: =188
                         ZIndex: =3
+
+                    sin_unidad_promotora As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =312
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        TabIndex: =-1
+                        Visible: |
+                            =sin_promotor
+                        Width: =334
+                        X: =1
+                        ZIndex: =4
 
             separador As rectangle:
                 BorderColor: =RGBA(112, 139, 166, 1)
