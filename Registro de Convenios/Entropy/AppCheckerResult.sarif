@@ -8274,6 +8274,102 @@
               "message": {
                 "text": "Error al ejecutar la regla app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -16354,19 +16450,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.paises"
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.buscador_pais_input.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.paises",
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.buscador_pais_input.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "paises",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.buscador_pais_input"
               }
             }
           ],
@@ -16376,8 +16472,188 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.tapar_pais.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.tapar_pais.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.tapar_pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.tapar_pais.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.tapar_pais.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.tapar_pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.sin_pais.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.sin_pais.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.sin_pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.sin_pais.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.sin_pais.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.sin_pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
         },
         {
           "locations": [
