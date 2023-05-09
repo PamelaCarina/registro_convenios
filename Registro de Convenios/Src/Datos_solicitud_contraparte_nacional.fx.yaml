@@ -119,7 +119,8 @@ Datos_solicitud_contraparte_nacional As screen:
                             rut: rut_solicitud_na_input.Text,
                             dv: Upper(dv_solicitud_na_input.Text),
                             pais: "CHILE",
-                            tipo: "NACIONAL"
+                            tipo: "NACIONAL",
+                            doc: Contenido_doc_sna
                 
                         }),
                         Patch(solicitudes_añadir_contraparte,
@@ -132,7 +133,8 @@ Datos_solicitud_contraparte_nacional As screen:
                                 rut: rut_solicitud_na_input.Text,
                                 dv: Upper(dv_solicitud_na_input.Text),
                                 pais: "CHILE",
-                                tipo: "NACIONAL"
+                                tipo: "NACIONAL",
+                                doc: Contenido_doc_sna
                             }
                         )
                     );
