@@ -46,6 +46,7 @@ HeaderUdeC As CanvasComponent:
         Size: =14
         Text: =HeaderUdeC.Bienvenido
         VerticalAlign: =VerticalAlign.Bottom
+        Visible: =false
         X: =1107
         ZIndex: =4
 
@@ -53,15 +54,13 @@ HeaderUdeC As CanvasComponent:
         Align: =Align.Right
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
-        Height: =48
+        Height: =96
         PaddingBottom: =0
         PaddingTop: =0
         Size: =14
         Text: =User().FullName
-        VerticalAlign: =VerticalAlign.Top
         Width: =418
         X: =839
-        Y: =47
         ZIndex: =5
 
     lbl_titulo As label:

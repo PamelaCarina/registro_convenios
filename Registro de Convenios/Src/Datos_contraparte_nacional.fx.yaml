@@ -1180,6 +1180,9 @@ Datos_contraparte_nacional As screen:
                     doc: ""
                 });
                 Reset(att_attach_doc_sna);
+                Reset(nombre_solicitud_unidad_contraparte_na_input);
+                Reset(rut_solicitud_na_input);
+                Reset(dv_solicitud_na_input);
                 Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade);
             Size: =14
             Text: ="SOLICITAR CONTRAPARTE"

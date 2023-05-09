@@ -10,8 +10,11 @@ Datos_solicitud_contraparte_nacional As screen:
             Set(existe_adjunto, false);
         
         ,
-            UpdateContext({mostrar_lista_archivos_oficiales:true}));
+            UpdateContext({mostrar_lista_archivos_oficiales:true});
             Set(existe_adjunto, true);
+        );
+        UpdateContext({show_popup_documentacion:false});
+            
 
     Botones_atras_siguiente_9 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -651,7 +654,7 @@ Datos_solicitud_contraparte_nacional As screen:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
-            Default: =If(!nueva_solicitud_contraparte_nacional,First(contraparte.doc))
+            Default: =//If(!nueva_solicitud_contraparte_nacional;First(contraparte.doc))
             DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             DropTargetTextColor: =RGBA(111, 139, 167, 1)
@@ -659,7 +662,7 @@ Datos_solicitud_contraparte_nacional As screen:
             Height: =94
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
-            Items: =
+            Items: =If(nueva_solicitud_contraparte_nacional=false,First(contraparte.doc))
             MaxAttachments: =1
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."

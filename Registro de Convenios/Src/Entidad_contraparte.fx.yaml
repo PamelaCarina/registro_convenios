@@ -188,9 +188,9 @@ Entidad_contraparte As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         OnSelect: |-
                             =Select(Parent);
-                            Set(contraparte, ThisItem);
-                            Set(popup_contraparte_in,false);
+                            Reset(att_attach_doc_sna);
                             Set(nueva_solicitud_contraparte_nacional,false);
+                            Set(contraparte, ThisItem);
                             Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade)
                         PaddingBottom: =0
                         PaddingLeft: =0
