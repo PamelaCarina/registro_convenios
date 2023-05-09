@@ -575,7 +575,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Adjuntar_popup_documentacion_sin",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1703,7 +1703,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "BannerUdeC_10",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3653,7 +3653,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Datos_solicitud_entidad_contraparte_in",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6221,7 +6221,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_faltan_datos_10",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6531,7 +6531,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_faltan_datos_12",
-      "ParentIndex": 0,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6848,7 +6848,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_faltan_datos_9",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

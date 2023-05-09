@@ -7210,7 +7210,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_faltan_datos_11",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7520,7 +7520,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_faltan_datos_7",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
