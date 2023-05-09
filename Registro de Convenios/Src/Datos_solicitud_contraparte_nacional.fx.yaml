@@ -45,11 +45,11 @@ Datos_solicitud_contraparte_nacional As screen:
             HoverFill: =RGBA(238, 110, 126, 0.1)
             OnSelect: |-
                 =Remove(
-                    contrapartes_nacionales,
+                    solicitudes_añadir_contraparte,
                     First(
                         Filter(
-                            contrapartes_nacionales,
-                            Lower(nombre_entidad_contraparte) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            solicitudes_añadir_contraparte,
+                            Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
                         )
                     )
                 );
@@ -575,9 +575,7 @@ Datos_solicitud_contraparte_nacional As screen:
                         UpdateContext({archivo_invalido:false});
                         
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
-                        Set(Contenido_doc_sna,{
-                            doc: att_attach_doc_sna.Attachments
-                        });
+                        Set(Contenido_doc_sna,att_attach_doc_sna.Attachments);
                         UpdateContext({show_popup_documentacion: false});
                         UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
@@ -646,7 +644,7 @@ Datos_solicitud_contraparte_nacional As screen:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
-            Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.doc,contraparte.doc)
+            Default: =If(!nueva_solicitud_contraparte_nacional,First(contraparte.doc))
             DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             DropTargetTextColor: =RGBA(111, 139, 167, 1)
