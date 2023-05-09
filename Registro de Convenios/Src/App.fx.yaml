@@ -46,6 +46,9 @@ App As appinfo:
         //INTERNACIONALES
         Clear(contrapartes_internacionales);
         
+        //SOLICITUDES AÑADIR CONTRAPARTE
+        Clear(solicitudes_añadir_contraparte);
+        
         //nombres contrapartes internacionales
         ClearCollect(Nombres_contrapartes_internacionales,'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);
         

@@ -105,7 +105,30 @@ Datos_solicitud_contraparte_nacional As screen:
                 
                 If(IsBlank(dv_solicitud_na_input.Text),UpdateContext({sin_dv_entidad:true}),UpdateContext({sin_dv_entidad:false}));
                 
-                If(CountRows(att_attach_doc_sna.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}))
+                If(CountRows(att_attach_doc_sna.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
+                
+                If(!sin_nombre_entidad && !sin_rut_entidad && !sin_dv_entidad && !sin_documento,
+                    If(IsBlank(
+                            LookUp(
+                                solicitudes_añadir_contraparte, 
+                                Lower(nombre_entidad_contraparte) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            )
+                        ),
+                        Collect(solicitudes_añadir_contraparte,{
+                            nombre_entidad_contraparte:Upper(nombre_solicitud_unidad_contraparte_na_input.Text)
+                
+                        }),
+                        Patch(solicitudes_añadir_contraparte,
+                            LookUp(
+                                solicitudes_añadir_contraparte, 
+                                Lower(nombre_entidad_contraparte) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            ),
+                            {
+                                nombre_entidad_contraparte:Upper(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            }
+                        )
+                    );
+                );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
