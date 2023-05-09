@@ -120,9 +120,9 @@ Datos_solicitud_contraparte_nacional As screen:
                 
                 If(!sin_nombre_entidad && !sin_rut_entidad && !sin_dv_entidad && !sin_documento,
                     If(nueva_solicitud_contraparte,
-                        If(CountRows(solicitudes_añadir_contraparte)<=5,
+                        If(CountRows(solicitudes_añadir_contraparte)<5,
                             Collect(solicitudes_añadir_contraparte,{
-                                id:Text(Now()),
+                                id:Text( Now(), DateTimeFormat.LongTime24 ),
                                 nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
                                 rut: rut_solicitud_na_input.Text,
                                 dv: Upper(dv_solicitud_na_input.Text),
@@ -141,8 +141,6 @@ Datos_solicitud_contraparte_nacional As screen:
                                 nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
                                 rut: rut_solicitud_na_input.Text,
                                 dv: Upper(dv_solicitud_na_input.Text),
-                                pais: "CHILE",
-                                tipo: "NACIONAL",
                                 doc: Contenido_doc_sna
                             }
                         )

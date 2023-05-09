@@ -55,7 +55,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     First(
                         Filter(
                             solicitudes_añadir_contraparte,
-                            Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_in_input.Text)
+                            id = contraparte.id
                         )
                     )
                 );
@@ -112,40 +112,69 @@ Datos_solicitud_contraparte_internacional As screen:
                 If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
                 
                 If(!sin_nombre_entidad && !sin_pais_entidad && !sin_documento,
-                    If(IsBlank(
-                            LookUp(
-                                solicitudes_añadir_contraparte, 
-                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_in_input.Text)
-                            )
-                        ),
-                        If(CountRows(solicitudes_añadir_contraparte)<=5,
+                    If(nueva_solicitud_contraparte,
+                        If(CountRows(solicitudes_añadir_contraparte)<5,
                             Collect(solicitudes_añadir_contraparte,{
-                                nombre:Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                                id:Text( Now(), DateTimeFormat.LongTime24 ),
+                                nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
                                 rut: "",
                                 dv: "",
                                 pais: Upper(pais_solicitud_in_input.Text),
                                 tipo: "INTERNACIONAL",
                                 doc: Contenido_doc_sin
                             }),
-                            UpdateContext({máximo_solicitudes:true}))
-                        ,
+                            UpdateContext({máximo_solicitudes:true})
+                        ),
                         Patch(solicitudes_añadir_contraparte,
                             LookUp(
                                 solicitudes_añadir_contraparte, 
-                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_in_input.Text)
+                                id = contraparte.id
                             ),
                             {
                                 nombre:Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
-                                rut: "",
-                                dv: "",
                                 pais: Upper(pais_solicitud_in_input.Text),
-                                tipo: "INTERNACIONAL",
                                 doc: Contenido_doc_sin
                             }
                         )
                     );
                     If(!máximo_solicitudes,Navigate(Entidad_contraparte,ScreenTransition.Fade))
                 );
+                /*
+                If(!sin_nombre_entidad && !sin_pais_entidad && !sin_documento;
+                    If(IsBlank(
+                            LookUp(
+                                solicitudes_añadir_contraparte; 
+                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_in_input.Text)
+                            )
+                        );
+                        If(CountRows(solicitudes_añadir_contraparte)<=5;
+                            Collect(solicitudes_añadir_contraparte;{
+                                nombre:Upper(nombre_solicitud_unidad_contraparte_in_input.Text);
+                                rut: "";
+                                dv: "";
+                                pais: Upper(pais_solicitud_in_input.Text);
+                                tipo: "INTERNACIONAL";
+                                doc: Contenido_doc_sin
+                            });
+                            UpdateContext({máximo_solicitudes:true}))
+                        ;
+                        Patch(solicitudes_añadir_contraparte;
+                            LookUp(
+                                solicitudes_añadir_contraparte; 
+                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_in_input.Text)
+                            );
+                            {
+                                nombre:Upper(nombre_solicitud_unidad_contraparte_in_input.Text);
+                                rut: "";
+                                dv: "";
+                                pais: Upper(pais_solicitud_in_input.Text);
+                                tipo: "INTERNACIONAL";
+                                doc: Contenido_doc_sin
+                            }
+                        )
+                    );;
+                    If(!máximo_solicitudes;Navigate(Entidad_contraparte;ScreenTransition.Fade))
+                );;*/
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
