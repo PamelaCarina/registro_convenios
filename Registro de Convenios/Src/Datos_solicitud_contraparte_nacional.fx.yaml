@@ -60,7 +60,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     First(
                         Filter(
                             solicitudes_añadir_contraparte,
-                            Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            id = contraparte.id
                         )
                     )
                 );
@@ -119,14 +119,10 @@ Datos_solicitud_contraparte_nacional As screen:
                 If(CountRows(att_attach_doc_sna.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
                 
                 If(!sin_nombre_entidad && !sin_rut_entidad && !sin_dv_entidad && !sin_documento,
-                    If(IsBlank(
-                            LookUp(
-                                solicitudes_añadir_contraparte, 
-                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
-                            )
-                        ),
+                    If(nueva_solicitud_contraparte,
                         If(CountRows(solicitudes_añadir_contraparte)<=5,
                             Collect(solicitudes_añadir_contraparte,{
+                                id:Text(Now()),
                                 nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
                                 rut: rut_solicitud_na_input.Text,
                                 dv: Upper(dv_solicitud_na_input.Text),
@@ -135,12 +131,11 @@ Datos_solicitud_contraparte_nacional As screen:
                                 doc: Contenido_doc_sna
                             }),
                             UpdateContext({máximo_solicitudes:true})
-                        )
-                        ,
+                        ),
                         Patch(solicitudes_añadir_contraparte,
                             LookUp(
                                 solicitudes_añadir_contraparte, 
-                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                                id = contraparte.id
                             ),
                             {
                                 nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text),
@@ -154,6 +149,44 @@ Datos_solicitud_contraparte_nacional As screen:
                     );
                     If(!máximo_solicitudes,Navigate(Entidad_contraparte,ScreenTransition.Fade))
                 );
+                /*
+                If(!sin_nombre_entidad && !sin_rut_entidad && !sin_dv_entidad && !sin_documento;
+                    If(IsBlank(
+                            LookUp(
+                                solicitudes_añadir_contraparte; 
+                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            )
+                        );
+                        If(CountRows(solicitudes_añadir_contraparte)<=5;
+                            Collect(solicitudes_añadir_contraparte;{
+                                nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text);
+                                rut: rut_solicitud_na_input.Text;
+                                dv: Upper(dv_solicitud_na_input.Text);
+                                pais: "CHILE";
+                                tipo: "NACIONAL";
+                                doc: Contenido_doc_sna
+                            });
+                            UpdateContext({máximo_solicitudes:true})
+                        )
+                        ;
+                        Patch(solicitudes_añadir_contraparte;
+                            LookUp(
+                                solicitudes_añadir_contraparte; 
+                                Lower(nombre) = Lower(nombre_solicitud_unidad_contraparte_na_input.Text)
+                            );
+                            {
+                                nombre:Upper(nombre_solicitud_unidad_contraparte_na_input.Text);
+                                rut: rut_solicitud_na_input.Text;
+                                dv: Upper(dv_solicitud_na_input.Text);
+                                pais: "CHILE";
+                                tipo: "NACIONAL";
+                                doc: Contenido_doc_sna
+                            }
+                        )
+                    );;
+                    If(!máximo_solicitudes;Navigate(Entidad_contraparte;ScreenTransition.Fade))
+                );;
+                */
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
