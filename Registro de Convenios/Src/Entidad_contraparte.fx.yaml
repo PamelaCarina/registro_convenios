@@ -655,6 +655,9 @@ Entidad_contraparte As screen:
                 Size: =20
                 TabIndex: =
                 Text: ="+"
+                Visible: |-
+                    =//true
+                    If(tab_seleccionada=3,false,true)
                 Width: =42
                 X: =1195
                 Y: =412
