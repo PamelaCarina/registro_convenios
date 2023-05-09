@@ -319,13 +319,50 @@ Entidad_contraparte As screen:
                         X: =1150
                         ZIndex: =6
 
+            cont_solicitudes As groupContainer.manualLayoutContainer:
+                Height: =313
+                Visible: =CountRows(solicitudes_añadir_contraparte)=0 && tab_seleccionada=3
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =4
+
+                Image1_3 As image:
+                    Height: =200
+                    Image: =vacio
+                    Width: =200
+                    X: =40
+                    Y: =57
+                    ZIndex: =1
+
+                no_solicitud_contraparte_lb As label:
+                    Color: =RGBA(159, 156, 183, 1)
+                    Height: =60
+                    Size: =16
+                    Text: ="No encontramos ninguna solicitud de añadir contraparte asociada"
+                    Width: =370
+                    X: =284
+                    Y: =155
+                    ZIndex: =2
+
+                sin_solicirudes_contraparte_lb As label:
+                    Color: =RGBA(17, 61, 107, 0.6)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =43
+                    Size: =23
+                    Text: ="Sin solicitudes de añadir contraparte"
+                    Width: =600
+                    X: =284
+                    Y: =112
+                    ZIndex: =3
+
             cont_vacio_na As groupContainer.manualLayoutContainer:
                 Height: =313
                 Visible: =CountRows(contrapartes_nacionales)=0 && tab_seleccionada=1
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =4
+                ZIndex: =5
 
                 Image1 As image:
                     Height: =200
@@ -362,7 +399,7 @@ Entidad_contraparte As screen:
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =5
+                ZIndex: =6
 
                 Image1_1 As image:
                     Height: =200
@@ -396,13 +433,16 @@ Entidad_contraparte As screen:
             "gal_tabs As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
                 Height: =45
                 Items: |-
-                    =If(tipo_alcance.Selected.valor="Convenio nacional",Table({id:1,nombre: "Nacional"}),Table({id:1,nombre: "Nacional"},{id:2,nombre:"Internacional"}))
+                    =If(tipo_alcance.Selected.valor="Convenio nacional",
+                        Table({id:1,nombre: "Nacional"},{id:3,nombre: "Solicitadas"}),
+                        Table({id:1,nombre: "Nacional"},{id:2,nombre:"Internacional"},{id:3,nombre: "Solicitadas"})
+                    )
                 TemplateSize: =153
                 Width: =1198
                 X: =40
                 Y: |
                     =37
-                ZIndex: =6
+                ZIndex: =7
 
                 Button1 As button:
                     BorderThickness: =0
@@ -450,7 +490,7 @@ Entidad_contraparte As screen:
                 Width: =gal_tabs.Width-5
                 X: =gal_tabs.X+5
                 Y: =gal_tabs.Y+gal_tabs.Height
-                ZIndex: =7
+                ZIndex: =8
 
             btn_registro_4_e_agregar As button:
                 BorderStyle: =BorderStyle.None
@@ -492,7 +532,7 @@ Entidad_contraparte As screen:
                 Width: =42
                 X: =1195
                 Y: =412
-                ZIndex: =8
+                ZIndex: =9
 
         entidades_contraparte As label:
             Color: =RGBA(17, 61, 107, 1)
