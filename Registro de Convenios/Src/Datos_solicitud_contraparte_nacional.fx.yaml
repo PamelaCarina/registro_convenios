@@ -5,6 +5,13 @@ Datos_solicitud_contraparte_nacional As screen:
         UpdateContext({sin_rut_entidad:false});
         UpdateContext({sin_dv_entidad:false});
         UpdateContext({sin_documento:false});
+        If(nueva_solicitud_contraparte_nacional,
+            UpdateContext({mostrar_lista_archivos_oficiales:false});
+            Set(existe_adjunto, false);
+        
+        ,
+            UpdateContext({mostrar_lista_archivos_oficiales:true}));
+            Set(existe_adjunto, true);
 
     Botones_atras_siguiente_9 As groupContainer.manualLayoutContainer:
         Height: =44

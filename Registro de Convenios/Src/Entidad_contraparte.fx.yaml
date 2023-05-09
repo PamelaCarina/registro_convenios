@@ -619,14 +619,29 @@ Entidad_contraparte As screen:
                         Set(popup_contraparte_na,true);
                         Set(nueva_contraparte,true);
                         Reset(firma_digiral_na_button);
-                        ,
+                    );
+                    If(tab_seleccionada=2,
                         Navigate(Datos_contraparte_internacional, ScreenTransition.Fade);
                         Set(contraparte_in, {});
                         Set(popup_contraparte_in,true);
                         Set(nueva_contraparte,true);
                         Set(n_c_in_seleccionada,"");
                         Reset(firma_digiral_in_button);
-                        );
+                    );
+                    
+                    If(tab_seleccionada=3,
+                        Set(nueva_solicitud_contraparte_nacional,true);
+                        Set(contraparte_s,{
+                            nombre:"",
+                            rut: "",
+                            dv: "",
+                            pais: "",
+                            tipo: "",
+                            doc: ""
+                        });
+                        Reset(att_attach_doc_sna);
+                        Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade);
+                    );
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0
