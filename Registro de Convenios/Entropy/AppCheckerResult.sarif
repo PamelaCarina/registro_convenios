@@ -16354,17 +16354,47 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.nueva_unidad_solicitante"
+                  "fullyQualifiedName": "App.paises"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.nueva_unidad_solicitante",
+                  "fullyQualifiedName": "App.paises",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "nueva_unidad_solicitante",
+                "member": "paises",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.msj_campos_faltantes"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.msj_campos_faltantes",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "msj_campos_faltantes",
                 "module": "App",
                 "type": "App"
               }
@@ -16414,17 +16444,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.msj_campos_faltantes"
+                  "fullyQualifiedName": "App.nueva_unidad_solicitante"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.msj_campos_faltantes",
+                  "fullyQualifiedName": "App.nueva_unidad_solicitante",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "msj_campos_faltantes",
+                "member": "nueva_unidad_solicitante",
                 "module": "App",
                 "type": "App"
               }

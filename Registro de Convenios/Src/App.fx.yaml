@@ -52,6 +52,9 @@ App As appinfo:
         //nombres contrapartes internacionales
         ClearCollect(Nombres_contrapartes_internacionales,'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);
         
+        //paises
+        Set(paises,'DTI-PATraerpaíses'.Run());
+        
         //opciones seleccionables política del convenio
         ClearCollect(dd_tipo,
             {
