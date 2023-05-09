@@ -131,7 +131,8 @@ Datos_solicitud_contraparte_nacional As screen:
                             pais: "CHILE",
                             tipo: "NACIONAL",
                             doc: Contenido_doc_sna
-                        }),
+                        })
+                        ,
                         Patch(solicitudes_añadir_contraparte,
                             LookUp(
                                 solicitudes_añadir_contraparte, 
