@@ -82,14 +82,7 @@ Contribución_desarrollo As screen:
                         If(cb_ods_17.Value=true,Collect(datos_ods_cargados,{Value: "17. Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."}));
                     );
                     UpdateContext({popup_enviar:true});
-                    // Almacenamiento borrador oficial en sharepoint
-                    Almacenamientoarchivosensharepoint.Run(Last(att_registro_10_attach_oficial.Attachments).Name,
-                    {name:Last(att_registro_10_attach_oficial.Attachments).Name, contentBytes:Last(att_registro_10_attach_oficial.Attachments).Value});
-                
-                    // Almacenamiento documentación adicional en sharepoint
-                    ForAll(att_registro_10_attach_extra.Attachments, Almacenamientoarchivosensharepoint.Run(Name,{name:Name, contentBytes:Value})
-                    );
-                
+                 
                     // Salir de la aplicación
                     Exit();
                     

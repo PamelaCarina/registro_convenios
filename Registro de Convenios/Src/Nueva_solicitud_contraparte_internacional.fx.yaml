@@ -100,56 +100,57 @@ Nueva_solicitud_contraparte_internacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =//REPRESENTANTE LEGAL
-                If(IsBlank(nombre_representante_legal_in_input_1.Text), UpdateContext({sin_nombre_representante_legal_in:true}), UpdateContext({sin_nombre_representante_legal_in:false}));
+                =/*
+                //REPRESENTANTE LEGAL
+                If(IsBlank(nombre_representante_legal_in_input_1.Text); UpdateContext({sin_nombre_representante_legal_in:true}); UpdateContext({sin_nombre_representante_legal_in:false}));;
                 
                 //RESPONSABLE INSTITUCIONAL
-                If(IsBlank(nombre_responsable_institucional_in_input_1.Text), UpdateContext({sin_nombre_responsable_institucional_in:true}), UpdateContext({sin_nombre_responsable_institucional_in:false}));
-                If(IsBlank(cargo_responsable_institucional_in_input_1.Text), UpdateContext({sin_cargo_in:true}), UpdateContext({sin_cargo_in:false}));
-                If(IsBlank(correo_electronico_in_input_1.Text),UpdateContext({correo_in_vacio:true}),UpdateContext({correo_in_vacio:false}));
-                If(sin_correo_in_1.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
+                If(IsBlank(nombre_responsable_institucional_in_input_1.Text); UpdateContext({sin_nombre_responsable_institucional_in:true}); UpdateContext({sin_nombre_responsable_institucional_in:false}));;
+                If(IsBlank(cargo_responsable_institucional_in_input_1.Text); UpdateContext({sin_cargo_in:true}); UpdateContext({sin_cargo_in:false}));;
+                If(IsBlank(correo_electronico_in_input_1.Text);UpdateContext({correo_in_vacio:true});UpdateContext({correo_in_vacio:false}));;
+                If(sin_correo_in_1.Visible;UpdateContext({correo_in_invalido:true});UpdateContext({correo_in_invalido:false}) );;
                 
                 //firma digital
-                If(IsBlank(firma_digiral_in_button_1),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
+                If(IsBlank(firma_digiral_in_button_1);UpdateContext({sin_firma_in:true});UpdateContext({sin_firma_in:false}));;
                 
-                If(!sin_nombre_representante_legal_in_1 && !sin_nombre_responsable_institucional_in_1 && !sin_cargo_in_1 && !correo_in_invalido && !sin_firma_in_1 && !correo_in_vacio,
+                If(!sin_nombre_representante_legal_in_1 && !sin_nombre_responsable_institucional_in_1 && !sin_cargo_in_1 && !correo_in_invalido && !sin_firma_in_1 && !correo_in_vacio;
                 If(IsBlank(
                         LookUp(
-                            contrapartes_internacionales, 
+                            contrapartes_internacionales; 
                             Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input_1.Text)
                         )
-                    ),
-                    Collect(contrapartes_internacionales,{
-                            nombre_entidad_contraparte: nombre_unidad_contraparte_in_input_1.Text,
-                            rut_entidad_contraparte: contraparte_in.rut_entidad_contraparte,
-                            dv_entidad_contraparte: contraparte_in.dv_entidad_contraparte,
-                            nombre_representante_legal: Upper( nombre_representante_legal_in_input_1.Text),
-                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input_1.Text),
-                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input_1.Text),
-                            pais: pais_in_input_1.Text,
-                            correo_responsable_institucional: Upper(correo_electronico_in_input_1.Text),
-                            firma_digital: firma_digiral_in_button_1.Selected,
-                            id: contraparte_in.id,
+                    );
+                    Collect(contrapartes_internacionales;{
+                            nombre_entidad_contraparte: nombre_unidad_contraparte_in_input_1.Text;
+                            rut_entidad_contraparte: contraparte_in.rut_entidad_contraparte;
+                            dv_entidad_contraparte: contraparte_in.dv_entidad_contraparte;
+                            nombre_representante_legal: Upper( nombre_representante_legal_in_input_1.Text);
+                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input_1.Text);
+                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input_1.Text);
+                            pais: pais_in_input_1.Text;
+                            correo_responsable_institucional: Upper(correo_electronico_in_input_1.Text);
+                            firma_digital: firma_digiral_in_button_1.Selected;
+                            id: contraparte_in.id;
                             tipo: "INTERNACIONAL"
-                    }),
-                    Patch(contrapartes_internacionales,
+                    });
+                    Patch(contrapartes_internacionales;
                         LookUp(
-                            contrapartes_internacionales, 
+                            contrapartes_internacionales; 
                             Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input_1.Text)
-                        ),
+                        );
                         {
-                            nombre_entidad_contraparte: nombre_unidad_contraparte_in_input_1.Text,
-                            nombre_representante_legal: Upper(nombre_representante_legal_in_input_1.Text),
-                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input_1.Text),
-                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input_1.Text),
-                            pais: pais_in_input_1.Text,
-                            correo_responsable_institucional: Upper(correo_electronico_in_input_1.Text),
+                            nombre_entidad_contraparte: nombre_unidad_contraparte_in_input_1.Text;
+                            nombre_representante_legal: Upper(nombre_representante_legal_in_input_1.Text);
+                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input_1.Text);
+                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input_1.Text);
+                            pais: pais_in_input_1.Text;
+                            correo_responsable_institucional: Upper(correo_electronico_in_input_1.Text);
                             firma_digital: firma_digiral_in_button_1.Selected
                         }
                     )
-                );
-                Navigate(Entidad_contraparte, ScreenTransition.Fade);
-                );
+                );;
+                Navigate(Entidad_contraparte; ScreenTransition.Fade);;
+                );;*/
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
