@@ -4,7 +4,7 @@ Datos_solicitud_contraparte_internacional As screen:
         =UpdateContext({sin_nombre_entidad:false});
         UpdateContext({sin_pais_entidad:false});
         UpdateContext({sin_documento:false});
-        If(nueva_solicitud_contraparte_nacional,
+        If(nueva_solicitud_contraparte,
             UpdateContext({mostrar_lista_archivos:false});
             Set(existe_adjunto, false);
         
@@ -323,7 +323,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.rut,contraparte.rut)
+                    Default: =If(nueva_solicitud_contraparte,contraparte_s.rut,contraparte.rut)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -392,7 +392,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.nombre,contraparte.nombre)
+                    Default: =If(nueva_solicitud_contraparte,contraparte_s.nombre,contraparte.nombre)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -579,7 +579,7 @@ Datos_solicitud_contraparte_internacional As screen:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
-            Default: =If(!nueva_solicitud_contraparte_nacional,First(contraparte.doc))
+            Default: =If(!nueva_solicitud_contraparte,First(contraparte.doc))
             DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             DropTargetTextColor: =RGBA(111, 139, 167, 1)

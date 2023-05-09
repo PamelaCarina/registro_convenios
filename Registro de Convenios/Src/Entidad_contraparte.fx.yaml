@@ -630,7 +630,7 @@ Entidad_contraparte As screen:
                     );
                     
                     If(tab_seleccionada=3,
-                        Set(nueva_solicitud_contraparte_nacional,true);
+                        Set(nueva_solicitud_contraparte,true);
                         Set(contraparte_s,{
                             nombre:"",
                             rut: "",

@@ -5,12 +5,12 @@ Datos_solicitud_contraparte_nacional As screen:
         UpdateContext({sin_rut_entidad:false});
         UpdateContext({sin_dv_entidad:false});
         UpdateContext({sin_documento:false});
-        If(nueva_solicitud_contraparte_nacional,
-            UpdateContext({mostrar_lista_archivos_oficiales:false});
+        If(nueva_solicitud_contraparte,
+            UpdateContext({mostrar_lista_archivos:false});
             Set(existe_adjunto, false);
         
         ,
-            UpdateContext({mostrar_lista_archivos_oficiales:true});
+            UpdateContext({mostrar_lista_archivos:true});
             Set(existe_adjunto, true);
         );
         UpdateContext({show_popup_documentacion:false});
@@ -230,7 +230,7 @@ Datos_solicitud_contraparte_nacional As screen:
 
                 img_subir_3 As image:
                     Height: =74
-                    Image: =If(existe_adjunto && mostrar_lista_archivos_oficiales,attach,upload)
+                    Image: =If(existe_adjunto && mostrar_lista_archivos,attach,upload)
                     Width: =68
                     X: =13
                     Y: =36
@@ -275,7 +275,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     Layout: =Layout.Vertical
                     TemplatePadding: =0
                     TemplateSize: =Min(160, Self.Height - 60)
-                    Visible: =mostrar_lista_archivos_oficiales
+                    Visible: =mostrar_lista_archivos
                     Width: =173
                     X: =93
                     Y: =32
@@ -329,7 +329,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.dv,contraparte.dv)
+                    Default: =If(nueva_solicitud_contraparte,contraparte_s.dv,contraparte.dv)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -398,7 +398,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.rut,contraparte.rut)
+                    Default: =If(nueva_solicitud_contraparte,contraparte_s.rut,contraparte.rut)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -467,7 +467,7 @@ Datos_solicitud_contraparte_nacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_solicitud_contraparte_nacional,contraparte_s.nombre,contraparte.nombre)
+                    Default: =If(nueva_solicitud_contraparte,contraparte_s.nombre,contraparte.nombre)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
@@ -587,7 +587,7 @@ Datos_solicitud_contraparte_nacional As screen:
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         Set(Contenido_doc_sna,att_attach_doc_sna.Attachments);
                         UpdateContext({show_popup_documentacion: false});
-                        UpdateContext({mostrar_lista_archivos_oficiales:true});
+                        UpdateContext({mostrar_lista_archivos:true});
                         ,
                         Set(existe_adjunto, false);
                         UpdateContext({archivo_invalido:true})
@@ -662,7 +662,7 @@ Datos_solicitud_contraparte_nacional As screen:
             Height: =94
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
-            Items: =If(nueva_solicitud_contraparte_nacional=false,First(contraparte.doc))
+            Items: =If(nueva_solicitud_contraparte=false,First(contraparte.doc))
             MaxAttachments: =1
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."
