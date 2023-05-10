@@ -268,7 +268,8 @@ Datos_solicitud_contraparte_nacional As screen:
 
                 img_subir_3 As image:
                     Height: =74
-                    Image: =If(existe_adjunto && mostrar_lista_archivos,attach,upload)
+                    Image: |
+                        =If(existe_adjunto && mostrar_lista_archivos,attach,upload)
                     Width: =68
                     X: =13
                     Y: =36
