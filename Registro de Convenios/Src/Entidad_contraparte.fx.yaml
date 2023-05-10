@@ -80,7 +80,7 @@ Entidad_contraparte As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =//AL MENOS UNA CONTRAPARTE CARGADA
-                If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
+                //If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0;
                     Set(entidades_contraparte_na_cargadas,{
                         nacionales:{
                             cantidad: CountRows(contrapartes_nacionales),
@@ -92,8 +92,9 @@ Entidad_contraparte As screen:
                             cantidad: CountRows(contrapartes_internacionales),
                             contrapartes: contrapartes_internacionales
                         }
-                    })
-                );
+                    });
+                //);;
+                
                 Set(popup_confirmacion,true);
                 
                 ForAll(solicitudes_añadir_contraparte,
@@ -841,7 +842,7 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 'DTI-PAAgregarsolicituddecontraparteenSharepoint'.Run(
-                                                                        JSON(datos_convenio_cargados),
+                                                                        JSON(datos_unidad_solicitante_cargados),
                                                                         tipo_alcance.Selected.valor,
                                                                         JSON(entidades_contraparte_na_cargadas),
                                                                         JSON(entidades_contraparte_in_cargadas),
