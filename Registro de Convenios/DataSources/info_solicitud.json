@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "info_solicitud",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

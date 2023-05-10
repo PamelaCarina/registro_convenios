@@ -97,15 +97,24 @@ Entidad_contraparte As screen:
                 
                 Set(popup_confirmacion,true);
                 
-                Collect(doc_solicitud,{});
-                ForAll(First(solicitudes_añadir_contraparte).doc,
+                Clear(doc_solicitud);
+                Clear(info_solicitud);
+                
+                ForAll(solicitudes_añadir_contraparte,
                     Collect(doc_solicitud,{
-                        doc:{
-                            nombre: ThisRecord.Name,
-                            dato: ThisRecord.Value
+                        doc: doc
+                    });
+                    Collect(info_solicitud,{
+                        info:{
+                            nombre:nombre,
+                            rut: rut,
+                            dv: dv,
+                            pais: pais,
+                            tipo: tipo
                         }
                     })
                 );
+                
                 /*
                 ForAll(solicitudes_añadir_contraparte;
                     Collect(doc_solicituda;{
@@ -859,7 +868,7 @@ Entidad_contraparte As screen:
                                                                         tipo_alcance.Selected.valor;
                                                                         JSON(entidades_contraparte_na_cargadas);
                                                                         JSON(entidades_contraparte_in_cargadas);
-                                                                        JSON(datos_solicitud);
+                                                                        JSON(info_solicitud);
                                                                         doc
                 );;
                 */
