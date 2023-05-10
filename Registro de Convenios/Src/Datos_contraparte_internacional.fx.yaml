@@ -877,12 +877,34 @@ Datos_contraparte_internacional As screen:
             Y: =418
             ZIndex: =10
 
+        btn_registro_10_politica_2 As button:
+            OnSelect: |
+                =Set(nueva_solicitud_contraparte,true);
+                Set(contraparte_s,{
+                    nombre:"",
+                    rut: "",
+                    dv: "",
+                    pais: "",
+                    tipo: "",
+                    doc: ""
+                });
+                Reset(att_attach_doc_sin);
+                Reset(nombre_solicitud_unidad_contraparte_in_input);
+                Reset(pais_solicitud_in_input);
+                Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
+            Size: =14
+            Text: ="SOLICITAR CONTRAPARTE"
+            Width: =260
+            X: =360
+            Y: =488
+            ZIndex: =11
+
         Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_c_in
             Width: =620
             X: =370
             Y: =369
-            ZIndex: =13
+            ZIndex: =12
 
             opciones_nombre_c_in As gallery.galleryVertical:
                 DelayItemLoading: =true
@@ -925,28 +947,6 @@ Datos_contraparte_internacional As screen:
                     Text: =ThisItem.nombre
                     Width: =599
                     ZIndex: =3
-
-        btn_registro_10_politica_2 As button:
-            OnSelect: |
-                =Set(nueva_solicitud_contraparte,true);
-                Set(contraparte_s,{
-                    nombre:"",
-                    rut: "",
-                    dv: "",
-                    pais: "",
-                    tipo: "",
-                    doc: ""
-                });
-                Reset(att_attach_doc_sin);
-                Reset(nombre_solicitud_unidad_contraparte_in_input);
-                Reset(pais_solicitud_in_input);
-                Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
-            Size: =14
-            Text: ="SOLICITAR CONTRAPARTE"
-            Width: =260
-            X: =360
-            Y: =488
-            ZIndex: =14
 
     cont_loading_2 As group:
         Height: =5
