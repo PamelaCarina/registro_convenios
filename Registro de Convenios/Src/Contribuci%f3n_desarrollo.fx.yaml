@@ -1414,7 +1414,7 @@ Contribución_desarrollo As screen:
         Width: =856
         X: =278
         Y: =684
-        ZIndex: =12
+        ZIndex: =11
 
     cont_loading_3 As group:
         Height: =5
@@ -1436,5 +1436,5 @@ Contribución_desarrollo As screen:
             Visible: =cargando
             X: =632
             Y: =323
-            ZIndex: =11
+            ZIndex: =12
 

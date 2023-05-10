@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "d33db4d2-bfb2-4e06-968b-54525e52e58c",
+    "Name": "DTI-PAAgregarsolicituddecontraparteenSharepoint",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "4e45d2b6-caee-ed11-8849-6045bd006f89"
+  }
+]
