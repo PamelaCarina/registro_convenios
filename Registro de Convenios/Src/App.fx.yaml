@@ -53,12 +53,17 @@ App As appinfo:
         ClearCollect(Nombres_contrapartes_internacionales,'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);
         
         //paises
-        Set(paises,'DTI-PATraerpaíses'.Run().paises);
-        /*
-        Collect(lista_paises;{
-                pais: Upper(First(paises).Nombre_x0020_Pa_x00ed_s)
-        });;
-        */
+        Set(paises,Sort('DTI-PATraerpaíses'.Run().paises,Nombre_x0020_Pa_x00ed_s));
+        Clear(lista_paises);
+        
+        ForAll(paises,
+            Collect(lista_paises,{
+                pais: Upper(ThisRecord.Nombre_x0020_Pa_x00ed_s)
+            })
+        );
+        
+        Remove(lista_paises, LookUp( lista_paises, pais="NO DEFINIDO" ));
+        
         //opciones seleccionables política del convenio
         ClearCollect(dd_tipo,
             {
