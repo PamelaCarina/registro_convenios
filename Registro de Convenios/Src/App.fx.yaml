@@ -54,12 +54,11 @@ App As appinfo:
         
         //paises
         Set(paises,'DTI-PATraerpaíses'.Run().paises);
-        ForAll(paises,
-            Collect(lista_paises,{
-                pais: Upper(paises.Nombre_x0020_Pa_x00ed_s)
-            })
-        );
-        
+        /*
+        Collect(lista_paises;{
+                pais: Upper(First(paises).Nombre_x0020_Pa_x00ed_s)
+        });;
+        */
         //opciones seleccionables política del convenio
         ClearCollect(dd_tipo,
             {

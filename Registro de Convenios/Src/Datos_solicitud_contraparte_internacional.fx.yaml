@@ -527,7 +527,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         HoverFill: =RGBA(207, 210, 232, 1)
                         Items: |-
                             =//lista_alcance
-                            paises
+                            lista_alcance
                         OnChange: =Reset(buscador_pais_input)
                         PaddingBottom: =12
                         PaddingLeft: =12
@@ -585,7 +585,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         Width: =250
                         ZIndex: =5
 
-                alcance_territorial_1 As label:
+                pais_lb As label:
                     Color: =RGBA(111, 139, 167, 1)
                     FontWeight: =FontWeight.Bold
                     Height: =20
@@ -594,7 +594,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="ALCANCE TERRITORIAL"
+                    Text: ="PAÍS"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
                     ZIndex: =2

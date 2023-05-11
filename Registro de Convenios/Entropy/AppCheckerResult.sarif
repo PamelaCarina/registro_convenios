@@ -16822,6 +16822,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.paises"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.paises",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "paises",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.msj_campos_faltantes"
                 }
               ],
