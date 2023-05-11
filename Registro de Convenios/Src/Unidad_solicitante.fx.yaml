@@ -57,7 +57,7 @@ Unidad_solicitante As screen:
                 If(CountRows(organismos_actividad)=1,UpdateContext({uni:First(organismos_actividad).Reparticion}), UpdateContext({
                 uni: nombre_unidad_solicitante.Selected.Reparticion}));
                 
-                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad, 
+                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad && !sin_alcance, 
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_unidad_solicitante_cargados,{
