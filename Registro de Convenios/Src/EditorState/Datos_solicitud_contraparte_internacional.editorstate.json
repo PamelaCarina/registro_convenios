@@ -9962,7 +9962,14 @@
           "NameMapSourceSchema": "?"
         },
         "TabIndex",
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"1\"",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -10005,7 +10012,7 @@
         },
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"id\"}",
+          "NameMap": "{\"Value\":\"pais\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },

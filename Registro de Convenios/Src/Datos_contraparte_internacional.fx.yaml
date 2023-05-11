@@ -891,6 +891,7 @@ Datos_contraparte_internacional As screen:
                 Reset(att_attach_doc_sin);
                 Reset(nombre_solicitud_unidad_contraparte_in_input);
                 Reset(pais_solicitud_in_input);
+                Reset(pais);
                 Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
             Size: =14
             Text: ="SOLICITAR CONTRAPARTE"
