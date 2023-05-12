@@ -301,7 +301,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =13
                         TabIndex: =-1
                         Visible: |-
-                            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+                            =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
                             || correo_in_invalido) && !hide_border_correo_in || correo_in_vacio
                             ,true,false)
