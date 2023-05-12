@@ -84,7 +84,7 @@ Contribución_desarrollo As screen:
                     UpdateContext({popup_enviar:true});
                  
                     // Salir de la aplicación
-                    Exit();
+                    //Exit();;
                     
                     , 
                     UpdateContext({faltan_datos_text:"Ingresar: "&Concat(Filter(datosContribucion_desarrollo,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true});
