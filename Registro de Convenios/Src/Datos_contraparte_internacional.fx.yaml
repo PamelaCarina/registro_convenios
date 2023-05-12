@@ -231,24 +231,6 @@ Datos_contraparte_internacional As screen:
                     Width: =170
                     ZIndex: =2
 
-                firma_digiral_in_button As radio:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
-                    Height: =40
-                    HoverColor: =RGBA(17, 61, 107, 1)
-                    Items: =["Sí","No"]
-                    Layout: =Layout.Horizontal
-                    PaddingBottom: =0
-                    PaddingTop: =5
-                    RadioBackgroundFill: =RGBA(0, 0, 0, 0)
-                    RadioBorderColor: =RGBA(17, 61, 107, 1)
-                    RadioSelectionFill: =RGBA(17, 61, 107, 1)
-                    RadioSize: =30
-                    Width: =170
-                    Y: =20
-                    ZIndex: =3
-
                 sin_firma_in As text:
                     BorderColor: =RGBA(238, 110, 126, 1)
                     BorderThickness: =3
@@ -269,6 +251,24 @@ Datos_contraparte_internacional As screen:
                     Visible: =sin_firma_in
                     Width: =300
                     Y: =fondo_celeste_6.Y - 1
+                    ZIndex: =3
+
+                firma_digiral_in_button As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(17, 61, 107, 1)
+                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
+                    Height: =40
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    Items: =["Sí","No"]
+                    Layout: =Layout.Horizontal
+                    PaddingBottom: =0
+                    PaddingTop: =5
+                    RadioBackgroundFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(17, 61, 107, 1)
+                    RadioSelectionFill: =RGBA(17, 61, 107, 1)
+                    RadioSize: =30
+                    Width: =170
+                    Y: =20
                     ZIndex: =4
 
             Promotor_unidad_solicitante_in As groupContainer.manualLayoutContainer:
