@@ -766,8 +766,8 @@ Datos_contraparte_internacional As screen:
             Size: =14
             TabIndex: =1
             Width: =645
-            X: =370
-            Y: =340
+            X: =360
+            Y: =353
             ZIndex: =4
 
         buscar_5 As image:
@@ -786,7 +786,7 @@ Datos_contraparte_internacional As screen:
             Text: ="NOMBRE INSTITUCIÓN"
             Width: =250
             X: =360
-            Y: =300
+            Y: =314
             ZIndex: =6
 
         btn_contraparte_in_popup_buscar As button:
@@ -904,7 +904,7 @@ Datos_contraparte_internacional As screen:
             Visible: =desplegar_buscador_c_in
             Width: =620
             X: =370
-            Y: =369
+            Y: =397
             ZIndex: =12
 
             opciones_nombre_c_in As gallery.galleryVertical:
