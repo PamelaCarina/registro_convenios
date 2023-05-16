@@ -272,7 +272,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="DOCUMENTO OFICIAL"
+                        Text: ="BORRADOR CONVENIO"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =274
                         ZIndex: =5
@@ -1153,7 +1153,7 @@ Datos_convenio As screen:
             FontWeight: =FontWeight.Bold
             PaddingLeft: =0
             Size: =18
-            Text: ="Adjuntar documento oficial"
+            Text: ="Adjuntar borrador convenio"
             Width: =400
             X: =360
             Y: =238
