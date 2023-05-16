@@ -3,7 +3,7 @@ Datos_solicitud_contraparte_internacional As screen:
     OnVisible: |-
         =UpdateContext({sin_nombre_entidad:false});
         UpdateContext({sin_pais_entidad:false});
-        UpdateContext({sin_documento:false});
+        //UpdateContext({sin_documento:false});
         UpdateContext({máximo_solicitudes:false});
         If(nueva_solicitud_contraparte,
             UpdateContext({mostrar_lista_archivos:false});
@@ -112,9 +112,9 @@ Datos_solicitud_contraparte_internacional As screen:
                 
                 If(IsBlank(pais.Selected),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 
-                If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
+                //If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
                 
-                If(!sin_nombre_entidad && !sin_pais_entidad && !sin_documento,
+                If(!sin_nombre_entidad && !sin_pais_entidad,
                     If(nueva_solicitud_contraparte,
                         If(CountRows(solicitudes_añadir_contraparte)<5,
                             Collect(solicitudes_añadir_contraparte,{
@@ -240,7 +240,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
                     TabIndex: =-1
-                    Visible: =sin_documento
+                    Visible: =false
                     Width: =fondo_registro_4.Width+1
                     X: =fondo_registro_4.X
                     Y: =fondo_registro_4.Y
@@ -811,7 +811,7 @@ Datos_solicitud_contraparte_internacional As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =If(!sin_nombre_entidad && !sin_pais_entidad && !sin_documento,false,true)
+        Visible: =If(!sin_nombre_entidad && !sin_pais_entidad,false,true)
         Width: =676
         X: =278
         Y: =684
