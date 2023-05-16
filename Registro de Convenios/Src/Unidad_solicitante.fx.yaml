@@ -86,6 +86,9 @@ Unidad_solicitante As screen:
                         
                     });
                 
+                    //'DTI-PAGuardardatosunidadsolicitante'.Run(
+                
+                    //);;
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade));
             PressedBorderColor: =RGBA(247, 158, 64, 1)
