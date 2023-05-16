@@ -49,12 +49,12 @@ Area_contribución As screen:
                         {falta:false}
                     )
                 );
-                Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
+                /*Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                     If(CountRows(Filter(contrib_interna_checkboxes,cb.Value=true))=0, 
                         {falta:true, campos_faltantes:true},
                         {falta:false}
                     )
-                );
+                );*/
                 
                 If(CountRows(Filter(datosArea_contribucion,falta = true))=0,
                     UpdateContext({faltan_datos_notif:false});
