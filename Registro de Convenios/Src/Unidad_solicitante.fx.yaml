@@ -34,16 +34,9 @@ Unidad_solicitante As screen:
                 ,
                     If(IsBlank(nombre_unidad_input),UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}))
                 );
-                //If(IsBlank(nombre_unidad_solicitante.SelectedText);UpdateContext({sin_unidad:true}); UpdateContext({sin_unidad:false}));;
-                //If(nombre_unidad_solicitante.Selected.Reparticion="Seleccionar..."; UpdateContext({sin_unidad:true}); UpdateContext({sin_unidad:false}));;
                 
                 //SIN PROMOTOR
                 If(CountRows(unidades_promotoras)=0, UpdateContext({sin_promotor:true}), UpdateContext({sin_promotor:false}));
-                /*
-                If(IsBlank(cargo_promotor_input_2.Text); UpdateContext({sin_cargo_promotor:true}); UpdateContext({sin_cargo_promotor:false}));;
-                If(IsBlank(correo_promotor_input_2.Text); UpdateContext({sin_correo_promotor:true}); UpdateContext({sin_correo_promotor:false}));;
-                */
-                //If(IsBlank(telefono_promotor_input_2.Text), UpdateContext({sin_telefono_promotor:true}), UpdateContext({sin_telefono_promotor:false}));
                 
                 //SIN AUTORIDAD
                 If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_autoridad:true}), UpdateContext({sin_autoridad:false}));
@@ -52,12 +45,26 @@ Unidad_solicitante As screen:
                 If(IsBlank(nombre_responsable_input_2.Text), UpdateContext({sin_responsable:true}), UpdateContext({sin_responsable:false}));
                 If(IsBlank(cargo_responsable_input_2.Text), UpdateContext({sin_cargo_responsable:true}), UpdateContext({sin_cargo_responsable:false}));
                 If(IsBlank(correo_responsable_input_2.Text), UpdateContext({sin_correo_responsable:true}), UpdateContext({sin_correo_responsable:false}));
-                //If(IsBlank(telefono_responsable_input_2.Text), UpdateContext({sin_telefono_responsable:true}), UpdateContext({sin_telefono_responsable:false}));
                 
                 If(CountRows(organismos_actividad)=1,UpdateContext({uni:First(organismos_actividad).Reparticion}), UpdateContext({
                 uni: nombre_unidad_solicitante.Selected.Reparticion}));
                 
                 If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad && !sin_alcance, 
+                
+                    'DTI-PAGuardardatosunidadsolicitante'.Run(
+                                                            uni,
+                                                            persona_solicitante.correo_udec,
+                                                            nombre_autoridad_solicitante_input_2.Text,
+                                                            cargo_autoridad_input_2.Text,
+                                                            correo_autoridad_input_2.Text,
+                                                            telefono_autoridad_input_2.Text,
+                                                            nombre_responsable_input_2.Text,
+                                                            cargo_responsable_input_2.Text,
+                                                            correo_responsable_input_2.Text,
+                                                            telefono_responsable_input_2.Text,
+                                                            JSON(unidades_promotoras),
+                                                            "nuevo"
+                    );
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_unidad_solicitante_cargados,{
