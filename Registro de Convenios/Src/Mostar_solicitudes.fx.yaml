@@ -15,7 +15,7 @@ Mostar_solicitudes As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: =
+            OnSelect: =Navigate(Unidad_solicitante);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -25,7 +25,7 @@ Mostar_solicitudes As screen:
             RadiusTopRight: =12
             Size: =14
             TabIndex: =1
-            Text: ="SIGUIENTE"
+            Text: ="NUEVA"
             X: =1124
             Y: =2
             ZIndex: =1
@@ -227,14 +227,16 @@ Mostar_solicitudes As screen:
                     Height: =80
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(nueva_solicitud, false);
+                        =/*Set(nueva_solicitud, false);
                         Set(cargando,true);
                         Set(solicitud_seleccionada, First('VRIM-PATraedetalledesolicituddeactividad'.Run(ThisItem.id)));
                         Set(gal_solicitud_seleccionada,ThisItem);
                         ClearCollect(detalle_colaboradorinterno, solicitud_seleccionada.col_internos);
                         ClearCollect(detalle_colaboradorexterno, solicitud_seleccionada.col_externos);
                         Set(cargando,false);
-                        Navigate(Registro_Actividad);
+                        Navigate(Registro_Actividad);*/
+                        
+                        Navigate(Unidad_solicitante);
                     PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
@@ -385,4 +387,26 @@ Mostar_solicitudes As screen:
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
+
+    grp_registro_main_loading As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =7
+
+        fig_registro_5_bg_5 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =5
+
+        img_registro_5_loading_1 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =692
+            Y: =383
+            ZIndex: =6
 
