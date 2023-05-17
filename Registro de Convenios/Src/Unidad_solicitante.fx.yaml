@@ -51,6 +51,8 @@ Unidad_solicitante As screen:
                 
                 If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad && !sin_alcance, 
                 
+                    Set(cargando, true);
+                
                     Set(id_solicitud,
                     'DTI-PAGuardardatosunidadsolicitante'.Run(
                                                             uni,
@@ -67,6 +69,8 @@ Unidad_solicitante As screen:
                                                             JSON(id_solicitud),
                                                             1
                     ).id);
+                
+                    Set(cargando, false);
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_unidad_solicitante_cargados,{
