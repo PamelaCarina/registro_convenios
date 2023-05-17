@@ -30,9 +30,11 @@
         <property name="text_11" type="string" />
         <property name="text_12" type="string" />
       </object>
-      <integer name="ResponseActionOutput_id_def" />
+      <integer name="ResponseActionOutput_id_convenio_def" />
+      <integer name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
-        <property name="id" type="integer" />
+        <property name="id_convenio" type="integer" />
+        <property name="id_estado" type="integer" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>

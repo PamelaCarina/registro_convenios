@@ -68,7 +68,7 @@ Unidad_solicitante As screen:
                                                             JSON(unidades_promotoras),
                                                             JSON(id_solicitud),
                                                             1
-                    ).id);
+                    ).id_convenio);
                 
                     Set(cargando, false);
                 
