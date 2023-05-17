@@ -53,7 +53,7 @@ Unidad_solicitante As screen:
                 
                     Set(cargando, true);
                 
-                    Set(id_solicitud,
+                    //Set(id_solicitud;
                     'DTI-PAGuardardatosunidadsolicitante'.Run(
                                                             uni,
                                                             persona_solicitante.correo_udec,
@@ -68,7 +68,7 @@ Unidad_solicitante As screen:
                                                             JSON(unidades_promotoras),
                                                             JSON(id_solicitud),
                                                             1
-                    ).id_convenio);
+                    );//.id_convenio);;
                 
                     Set(cargando, false);
                 
