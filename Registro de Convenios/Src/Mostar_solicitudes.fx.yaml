@@ -16,7 +16,8 @@ Mostar_solicitudes As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =Set(id_solicitud,"nuevo");
+                =Set(id_convenio,"nuevo");
+                Set(id_estado,"1");
                 Navigate(Unidad_solicitante);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
