@@ -14,6 +14,7 @@
       <string name="ManualTriggerInput_text_9_def" />
       <string name="ManualTriggerInput_text_10_def" />
       <string name="ManualTriggerInput_text_11_def" />
+      <string name="ManualTriggerInput_text_12_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -27,7 +28,13 @@
         <property name="text_9" type="string" />
         <property name="text_10" type="string" />
         <property name="text_11" type="string" />
+        <property name="text_12" type="string" />
       </object>
+      <integer name="ResponseActionOutput_id_def" />
+      <object name="ResponseActionOutput">
+        <property name="id" type="integer" />
+      </object>
+      <object name="Run_responses_default_def" />
     </jsonTypes>
   </grammars>
   <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/logicflows">
@@ -76,8 +83,14 @@
             <param style="plain" name="text_11" path="/text_11" type="xs:string" required="true">
               <doc title="id" />
             </param>
+            <param style="plain" name="text_12" path="/text_12" type="xs:string" required="true">
+              <doc title="estado" />
+            </param>
           </representation>
         </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
       </method>
     </resource>
   </resources>

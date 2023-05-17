@@ -15,7 +15,9 @@ Mostar_solicitudes As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: =Navigate(Unidad_solicitante);
+            OnSelect: |-
+                =Set(id_solicitud,"nuevo");
+                Navigate(Unidad_solicitante);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -209,7 +211,7 @@ Mostar_solicitudes As screen:
                 img_estado As image:
                     BorderStyle: =BorderStyle.None
                     Height: =80
-                    Image: =Switch(ThisItem.estado, "Registrada", registrada, "En Aceptación", enaceptacion, "En Admisibilidad", enadmisbilidad, "Lista", lista, "No Aceptada", noaceptada, "Inadmisible", inadmisible, "No Aceptada", noaceptada)
+                    Image: =//Switch(ThisItem.estado; "Registrada"; registrada; "En Aceptación"; enaceptacion; "En Admisibilidad"; enadmisbilidad; "Lista"; lista; "No Aceptada"; noaceptada; "Inadmisible"; inadmisible; "No Aceptada"; noaceptada)
                     OnSelect: |-
                         =Select(Parent);
                         Set(nueva_solicitud, false);
@@ -406,7 +408,7 @@ Mostar_solicitudes As screen:
         img_registro_5_loading_1 As image:
             Image: =loading
             Visible: =cargando
-            X: =692
-            Y: =383
+            X: =631
+            Y: =384
             ZIndex: =6
 
