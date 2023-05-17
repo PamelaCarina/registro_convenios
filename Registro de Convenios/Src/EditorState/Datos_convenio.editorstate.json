@@ -2861,6 +2861,14 @@
           "InvariantPropertyName": "Reset",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "false",
+          "InvariantPropertyName": "OnUndoRemoveFile",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -3189,6 +3197,11 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnRemoveFile",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnUndoRemoveFile",
           "RuleProviderType": "Unknown"
         }
       ],

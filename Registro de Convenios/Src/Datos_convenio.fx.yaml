@@ -1206,10 +1206,11 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: |-
+            OnSelect: |+
                 =//UpdateContext({sacar_archivo_oficial:true});;
                 UpdateContext({show_popup_oficial: false});
                 //UpdateContext({sacar_archivo_oficial:false});;
+                
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -1255,14 +1256,13 @@ Datos_convenio As screen:
             NoAttachmentsText: ="No hay ningún archivo adjunto."
             OnRemoveFile: |-
                 =UpdateContext({archivo_invalido:false})
+            OnUndoRemoveFile: =true
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
             PaddingTop: =5
             PressedFill: =RGBA(111, 139, 167, 1)
-            Reset: |-
-                =//sacar_archivo_oficial
-                false
+            Reset: =//sacar_archivo_oficial
             Size: =10
             TabIndex: =If(show_popup_oficial,1,-1)
             Tooltip: =
