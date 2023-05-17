@@ -1,0 +1,388 @@
+Mostar_solicitudes As screen:
+    Fill: =RGBA(235, 238, 251, 1)
+    OnVisible: =
+
+    Botones_atras_siguiente_8 As groupContainer.manualLayoutContainer:
+        Height: =44
+        Width: =1286
+        X: =40
+        Y: =696
+        ZIndex: =1
+
+        Siguiente_8 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: =
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="SIGUIENTE"
+            X: =1124
+            Y: =2
+            ZIndex: =1
+
+    mostrar_solicitudes As groupContainer.manualLayoutContainer:
+        Height: =488
+        Width: =1282
+        X: =40
+        Y: =190
+        ZIndex: =2
+
+        Container2 As groupContainer.manualLayoutContainer:
+            Height: =336
+            Width: =1282
+            Y: =152
+            ZIndex: =1
+
+            img_bgk_listado_main As image:
+                Height: =320
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1282
+                Y: =16
+                ZIndex: =1
+
+            lbl_fecha_main As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                Text: ="Fecha"
+                Width: =120
+                X: =42
+                Y: =44
+                ZIndex: =2
+
+            lbl_actividad_main As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                PaddingLeft: =12
+                PaddingRight: =12
+                Text: ="Actividad"
+                Width: =335
+                X: =162
+                Y: =44
+                ZIndex: =3
+
+            lbl_rol_main As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                Text: ="Rol"
+                X: =834
+                Y: =44
+                ZIndex: =4
+
+            lbl_ambito_main As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                PaddingLeft: =12
+                PaddingRight: =12
+                Text: ="Ámbito"
+                Width: =418
+                X: =497
+                Y: =44
+                ZIndex: =5
+
+            lbl_estado_main As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                Text: ="Estado"
+                Width: =125
+                X: =1007
+                Y: =44
+                ZIndex: =6
+
+            "gal_listado_solicitudes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                FocusedBorderColor: |-
+                    =ColorValue("#6F8BA7")
+                FocusedBorderThickness: =0
+                Height: =226
+                Items: |-
+                    =Sort(Search(
+                        If(
+                            dd_filter.Selected.Result = "Seleccionar rol...",
+                            lista_actividades.lista_actividades,
+                            Filter(
+                                lista_actividades.lista_actividades,
+                                rol = dd_filter.Selected.Result
+                            )
+                        ),
+                        inp_search.Text,
+                        "nombre"    
+                    ), fecha, SortOrder.Descending)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =80
+                Width: =1198
+                X: =42
+                Y: =82
+                ZIndex: =7
+
+                lbl_gal_fecha As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Normal
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: |-
+                        =Text(
+                            DateValue(ThisItem.fecha),
+                            DateTimeFormat.ShortDate
+                        )
+                    Width: =120
+                    ZIndex: =2
+
+                lbl_gal_actividad As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =12
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =If(Len(ThisItem.nombre)<=40,ThisItem.nombre,Left(ThisItem.nombre,37)&"...")
+                    Width: =335
+                    X: =120
+                    ZIndex: =3
+
+                fig_separador_main As rectangle:
+                    Fill: =RGBA(112, 139, 166, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth - 50   
+                    X: =12
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =5
+
+                lbl_gal_ambito As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Normal
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =12
+                    PaddingRight: =12
+                    Size: =13
+                    Text: =ThisItem.ambito
+                    Width: =317
+                    X: =455
+                    ZIndex: =6
+
+                lbl_gal_rol As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Normal
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: =ThisItem.rol
+                    Width: =153
+                    X: =lbl_gal_ambito.X+lbl_gal_ambito.Width+20
+                    ZIndex: =7
+
+                img_arrow As image:
+                    Height: =80
+                    Image: =ico_arrow
+                    OnSelect: |-
+                        =Select(Parent);
+                        Set(nueva_solicitud, false);
+                    Width: =14
+                    X: =1130
+                    ZIndex: =9
+
+                img_estado As image:
+                    BorderStyle: =BorderStyle.None
+                    Height: =80
+                    Image: =Switch(ThisItem.estado, "Registrada", registrada, "En Aceptación", enaceptacion, "En Admisibilidad", enadmisbilidad, "Lista", lista, "No Aceptada", noaceptada, "Inadmisible", inadmisible, "No Aceptada", noaceptada)
+                    OnSelect: |-
+                        =Select(Parent);
+                        Set(nueva_solicitud, false);
+                    Width: =120
+                    X: =lbl_gal_rol.X+lbl_gal_rol.Width+20
+                    ZIndex: =10
+
+                btn_detalle As button:
+                    BorderStyle: =BorderStyle.None
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: |-
+                        =ColorValue("#6F8BA7")
+                    FocusedBorderThickness: =2
+                    Height: =80
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(nueva_solicitud, false);
+                        Set(cargando,true);
+                        Set(solicitud_seleccionada, First('VRIM-PATraedetalledesolicituddeactividad'.Run(ThisItem.id)));
+                        Set(gal_solicitud_seleccionada,ThisItem);
+                        ClearCollect(detalle_colaboradorinterno, solicitud_seleccionada.col_internos);
+                        ClearCollect(detalle_colaboradorexterno, solicitud_seleccionada.col_externos);
+                        Set(cargando,false);
+                        Navigate(Registro_Actividad);
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    PressedColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    TabIndex: =3
+                    Text: =""
+                    Width: =14
+                    X: =1130
+                    ZIndex: =11
+
+        buscar_solicitudes As groupContainer.manualLayoutContainer:
+            Height: =127
+            Width: =1281
+            ZIndex: =2
+
+            img_bgk_filter As image:
+                Height: =126
+                Image: ='background-section'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =24
+                RadiusBottomRight: =24
+                RadiusTopLeft: =24
+                RadiusTopRight: =24
+                Width: =1281
+                ZIndex: =1
+
+            inp_search As text:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(17, 61, 107, 1)
+                Default: =""
+                DisabledColor: =RGBA(111, 139, 167, 1)
+                Fill: =RGBA(241, 244, 255, 1)
+                FocusedBorderColor: |-
+                    =ColorValue("#6F8BA7")
+                FocusedBorderThickness: =2
+                HintText: ="Buscar"
+                HoverBorderColor: =RGBA(255, 255, 255, 0)
+                HoverFill: =RGBA(241, 244, 255, 1)
+                MaxLength: =50
+                PaddingBottom: =12
+                PaddingLeft: =24
+                PaddingTop: =12
+                RadiusBottomLeft: =12
+                RadiusBottomRight: =12
+                RadiusTopLeft: =12
+                RadiusTopRight: =12
+                Size: =14
+                TabIndex: =1
+                Width: =686
+                X: =35
+                Y: =43
+                ZIndex: =2
+
+            img_search As image:
+                Height: =20
+                Image: =ico_search
+                Width: =20
+                X: =688
+                Y: =53
+                ZIndex: =3
+
+            img_bg_filter As image:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                Height: =40
+                HoverFill: =RGBA(186, 202, 226, 1)
+                Image: ='background-input'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =12
+                RadiusBottomRight: =12
+                RadiusTopLeft: =12
+                RadiusTopRight: =12
+                Width: =250
+                X: =742
+                Y: =43
+                ZIndex: =4
+
+            dd_filter As dropdown:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ChevronBackground: =RGBA(241, 244, 255, 1)
+                ChevronFill: =RGBA(111, 139, 167, 1)
+                ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                Color: =RGBA(17, 61, 107, 1)
+                Fill: =RGBA(241, 244, 255, 1)
+                FocusedBorderColor: |-
+                    =ColorValue("#6F8BA7")
+                FocusedBorderThickness: =2
+                HoverBorderColor: =RGBA(241,244,255,1)
+                HoverColor: =RGBA(17, 61, 107, 1)
+                HoverFill: =RGBA(207, 210, 232, 1)
+                Items: =colRol
+                PaddingBottom: =12
+                PaddingLeft: =12
+                PaddingTop: =12
+                PressedColor: =RGBA(17, 61, 107, 1)
+                PressedFill: =RGBA(241, 244, 255, 1)
+                SelectionColor: =RGBA(111, 139, 167, 1)
+                SelectionFill: =RGBA(241, 244, 255, 1)
+                Size: =14
+                TabIndex: =2
+                Width: =226
+                X: =754
+                Y: =43
+                ZIndex: =5
+
+            btn_refrescar As button:
+                BorderThickness: =0
+                Color: =RGBA(17, 61, 107, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Bold
+                OnSelect: |-
+                    =Set(cargando, true);
+                    Set(lista_actividades, 'VRIM-PATraelistadoactividades'.Run(User().Email));
+                    Set(nueva_solicitud, false);
+                    Collect(colRol, ForAll(Distinct(lista_actividades.lista_actividades, rol), {Result: ThisRecord.Value}));
+                    Set(cargando, false);
+                RadiusBottomLeft: =12
+                RadiusBottomRight: =12
+                RadiusTopLeft: =12
+                RadiusTopRight: =12
+                Size: =14
+                Text: ="Refrescar información"
+                Width: =223
+                X: =1022
+                Y: =43
+                ZIndex: =6
+
+    lbl_mostrar_solicitudes As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =96
+        PaddingBottom: =34
+        PaddingLeft: =42
+        PaddingRight: =0
+        PaddingTop: =42
+        Size: =20
+        Text: ="Listado de solicitudes de tramitacion de convenios"
+        Width: =1366
+        Y: =100
+        ZIndex: =3
+
+    BannerUdeC_11 As HeaderUdeC:
+        Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
+        Subtitulo: ="VINCULACIÓN CON EL MEDIO"
+        Titulo: ="Solicitud de Tramitación de Convenios"
+        ZIndex: =4
+
