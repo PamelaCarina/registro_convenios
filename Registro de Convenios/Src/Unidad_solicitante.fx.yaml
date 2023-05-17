@@ -63,7 +63,8 @@ Unidad_solicitante As screen:
                                                             correo_responsable_input_2.Text,
                                                             telefono_responsable_input_2.Text,
                                                             JSON(unidades_promotoras),
-                                                            "nuevo"
+                                                            //"nuevo"
+                                                            "128"
                     );
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
