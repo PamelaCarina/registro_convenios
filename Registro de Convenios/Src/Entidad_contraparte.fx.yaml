@@ -81,8 +81,24 @@ Entidad_contraparte As screen:
                         )
                 );
                 
+                
+                
                 If(!sin_contraparte,
-                    Navigate(Datos_convenio,ScreenTransition.Fade)
+                
+                    Set(cargando, true);
+                
+                    If(id_estado="1",Set(id_estado,"2"));//pasa a contraparte registrada
+                    'DTI-PAGuardarcontrapartesregistradas'.Run(
+                                                                JSON(entidades_contraparte_na_cargadas),
+                                                                JSON(entidades_contraparte_in_cargadas),
+                                                                id_convenio,
+                                                                id_estado
+                                                                
+                    );
+                
+                    Set(cargando, false);
+                
+                    Navigate(Datos_convenio,ScreenTransition.Fade);
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
