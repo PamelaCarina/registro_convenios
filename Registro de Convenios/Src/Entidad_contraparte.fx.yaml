@@ -18,26 +18,7 @@ Entidad_contraparte As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =//AL MENOS UNA CONTRAPARTE CARGADA
-                /*
-                If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0;
-                    Set(entidades_contraparte_na_cargadas;{
-                        nacionales:{
-                            cantidad: CountRows(contrapartes_nacionales);
-                            contrapartes: contrapartes_nacionales
-                        }
-                    });;
-                    Set(entidades_contraparte_in_cargadas;{
-                        internacionales:{
-                            cantidad: CountRows(contrapartes_internacionales);
-                            contrapartes: contrapartes_internacionales
-                        }
-                    });;
-                    Navigate(Datos_convenio;ScreenTransition.Fade)
-                );;
-                */
-                
-                If(Value(tipo_alcance.Selected.id)=2,
+                =If(Value(tipo_alcance.Selected.id)=2,
                     //si es nacional
                         If(CountRows(contrapartes_nacionales)>0,
                             //si es nacional y existen contrapartes nacionales
@@ -145,23 +126,49 @@ Entidad_contraparte As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
-                =//AL MENOS UNA CONTRAPARTE CARGADA
-                //If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0;
-                    Set(entidades_contraparte_na_cargadas,{
-                        nacionales:{
-                            cantidad: CountRows(contrapartes_nacionales),
-                            contrapartes: contrapartes_nacionales
-                        }
-                    });
-                    Set(entidades_contraparte_in_cargadas,{
-                        internacionales:{
-                            cantidad: CountRows(contrapartes_internacionales),
-                            contrapartes: contrapartes_internacionales
-                        }
-                    });
-                //);;
-                
-                Set(popup_confirmacion,true);
+                =If(Value(tipo_alcance.Selected.id)=2,
+                    //si es nacional
+                        If(CountRows(contrapartes_nacionales)>0,
+                            //si es nacional y existen contrapartes nacionales
+                            Set(entidades_contraparte_na_cargadas,{
+                                nacionales:{
+                                    cantidad: CountRows(contrapartes_nacionales),
+                                    contrapartes: contrapartes_nacionales
+                                }
+                            });
+                            Set(entidades_contraparte_in_cargadas,{
+                                internacionales:{
+                                    cantidad: 0,
+                                    contrapartes: contrapartes_internacionales
+                                }
+                            });
+                            UpdateContext({sin_contraparte:false});
+                        //;
+                            //si es nacional y no existen contrapartes nacionales
+                        //    UpdateContext({sin_contraparte:true});;
+                        )
+                    ,
+                    //si no es nacional, es internacional
+                        If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
+                            //si es internacional y existe alguna contraparte
+                            Set(entidades_contraparte_na_cargadas,{
+                                nacionales:{
+                                    cantidad: CountRows(contrapartes_nacionales),
+                                    contrapartes: contrapartes_nacionales
+                                }
+                            });
+                            Set(entidades_contraparte_in_cargadas,{
+                                internacionales:{
+                                    cantidad: CountRows(contrapartes_internacionales),
+                                    contrapartes: contrapartes_internacionales
+                                }
+                            });
+                            UpdateContext({sin_contraparte:false});
+                        //;
+                            //si es internacional y no existen contrapartes
+                            //UpdateContext({sin_contraparte:true});;
+                        )
+                );
                 
                 Clear(doc_solicitud);
                 Clear(info_solicitud);
@@ -170,31 +177,53 @@ Entidad_contraparte As screen:
                     Collect(doc_solicitud,{
                         doc: doc
                     });
-                    If(tipo="NACIONAL",
-                        Collect(info_solicitud,{
-                            info:{
-                                nombre:nombre,
-                                rut: rut,
-                                dv: dv,
-                                pais: pais,
-                                tipo: tipo
-                            }
-                        })
-                    );
-                    If(tipo="INTERNACIONAL",
-                        Collect(info_solicitud,{
-                            info:{
-                                nombre:nombre,
-                                rut: "",
-                                dv: "",
-                                pais: pais,
-                                tipo: tipo
-                            }
-                        })
-                    );
-                    
+                   
+                    Collect(info_solicitud,{
+                        info:{
+                            nombre:nombre,
+                            rut: rut,
+                            dv: dv,
+                            pais: pais,
+                            tipo: tipo
+                        }
+                    });    
                 );
                 
+                
+                
+                Set(popup_confirmacion,true);
+                
+                
+                /*
+                ForAll(solicitudes_añadir_contraparte;
+                    Collect(doc_solicitud;{
+                        doc: doc
+                    });;
+                    If(tipo="NACIONAL";
+                        Collect(info_solicitud;{
+                            info:{
+                                nombre:nombre;
+                                rut: rut;
+                                dv: dv;
+                                pais: pais;
+                                tipo: tipo
+                            }
+                        })
+                    );;
+                    If(tipo="INTERNACIONAL";
+                        Collect(info_solicitud;{
+                            info:{
+                                nombre:nombre;
+                                rut: "";
+                                dv: "";
+                                pais: pais;
+                                tipo: tipo
+                            }
+                        })
+                    );;
+                    
+                );;
+                */
                 
                 Set(doc,{
                             file:{//doc1
@@ -946,15 +975,16 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 
+                /*
                 'DTI-PAAgregarsolicituddecontraparteenSharepoint'.Run(
-                                                                        JSON(datos_unidad_solicitante_cargados),
-                                                                        tipo_alcance.Selected.valor,
-                                                                        JSON(entidades_contraparte_na_cargadas),
-                                                                        JSON(entidades_contraparte_in_cargadas),
-                                                                        JSON(info_solicitud),
+                                                                        JSON(datos_unidad_solicitante_cargados);
+                                                                        tipo_alcance.Selected.valor;
+                                                                        JSON(entidades_contraparte_na_cargadas);
+                                                                        JSON(entidades_contraparte_in_cargadas);
+                                                                        JSON(info_solicitud);
                                                                         doc
-                );
-                
+                );;
+                */
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
                 Set(cargando,false);
