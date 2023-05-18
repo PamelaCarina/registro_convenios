@@ -2,6 +2,7 @@ Entidad_contraparte As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |-
         =UpdateContext({tab_seleccionada:1});
+        UpdateContext({sin_contraparte:false})
 
     Botones_atras_siguiente_2 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -16,7 +17,7 @@ Entidad_contraparte As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |
+            OnSelect: |-
                 =//AL MENOS UNA CONTRAPARTE CARGADA
                 /*
                 If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0;
@@ -35,35 +36,52 @@ Entidad_contraparte As screen:
                     Navigate(Datos_convenio;ScreenTransition.Fade)
                 );;
                 */
-                If(tipo_alcance.Selected.valor="Convenio nacional" && CountRows(contrapartes_nacionales)>0,
-                    Set(entidades_contraparte_na_cargadas,{
-                        nacionales:{
-                            cantidad: CountRows(contrapartes_nacionales),
-                            contrapartes: contrapartes_nacionales
-                        }
-                    });
-                    Set(entidades_contraparte_in_cargadas,{
-                        internacionales:{
-                            cantidad: 0,
-                            contrapartes: contrapartes_internacionales
-                        }
-                    });
-                    Navigate(Datos_convenio,ScreenTransition.Fade)
+                
+                If(Value(tipo_alcance.Selected.id)=2,
+                    //si es nacional
+                        If(CountRows(contrapartes_nacionales)>0,
+                            //si es nacional y existen contrapartes nacionales
+                            Set(entidades_contraparte_na_cargadas,{
+                                nacionales:{
+                                    cantidad: CountRows(contrapartes_nacionales),
+                                    contrapartes: contrapartes_nacionales
+                                }
+                            });
+                            Set(entidades_contraparte_in_cargadas,{
+                                internacionales:{
+                                    cantidad: 0,
+                                    contrapartes: contrapartes_internacionales
+                                }
+                            });
+                            UpdateContext({sin_contraparte:false});
+                        ,
+                            //si es nacional y no existen contrapartes nacionales
+                            UpdateContext({sin_contraparte:true});
+                        )
+                    ,
+                    //si no es nacional, es internacional
+                        If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
+                            //si es internacional y existe alguna contraparte
+                            Set(entidades_contraparte_na_cargadas,{
+                                nacionales:{
+                                    cantidad: CountRows(contrapartes_nacionales),
+                                    contrapartes: contrapartes_nacionales
+                                }
+                            });
+                            Set(entidades_contraparte_in_cargadas,{
+                                internacionales:{
+                                    cantidad: CountRows(contrapartes_internacionales),
+                                    contrapartes: contrapartes_internacionales
+                                }
+                            });
+                            UpdateContext({sin_contraparte:false});
+                        ,
+                            //si es internacional y no existen contrapartes
+                            UpdateContext({sin_contraparte:true});
+                        )
                 );
                 
-                If(tipo_alcance.Selected.valor="Convenio internacional" && (CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0),
-                    Set(entidades_contraparte_na_cargadas,{
-                        nacionales:{
-                            cantidad: CountRows(contrapartes_nacionales),
-                            contrapartes: contrapartes_nacionales
-                        }
-                    });
-                    Set(entidades_contraparte_in_cargadas,{
-                        internacionales:{
-                            cantidad: CountRows(contrapartes_internacionales),
-                            contrapartes: contrapartes_internacionales
-                        }
-                    });
+                If(!sin_contraparte,
                     Navigate(Datos_convenio,ScreenTransition.Fade)
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
@@ -203,7 +221,7 @@ Entidad_contraparte As screen:
         Height: =584
         Width: =1366
         Y: =96
-        ZIndex: =3
+        ZIndex: =2
 
         Contenedor_e_c As groupContainer.manualLayoutContainer:
             Height: =488
@@ -815,11 +833,23 @@ Entidad_contraparte As screen:
             Width: =1366
             ZIndex: =3
 
+    lbl_faltan_datos_13 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe ingresar al menos una contraparte."
+        Visible: =sin_contraparte
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =3
+
     BannerUdeC_2 As HeaderUdeC:
         Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
-        ZIndex: =4
+        ZIndex: =7
 
     grp_registro_5_popup_2 As group:
         Height: =5
@@ -834,7 +864,7 @@ Entidad_contraparte As screen:
             Height: =768
             Visible: =popup_confirmacion
             Width: =1366
-            ZIndex: =5
+            ZIndex: =4
 
         img_registro_5_popup_bg_2 As image:
             Height: =352
@@ -848,7 +878,7 @@ Entidad_contraparte As screen:
             Width: =709
             X: =327
             Y: =208
-            ZIndex: =6
+            ZIndex: =5
 
         lbl_registro_popup_5_titulo_2 As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -859,7 +889,7 @@ Entidad_contraparte As screen:
             Width: =560
             X: =359
             Y: =234
-            ZIndex: =7
+            ZIndex: =6
 
         lbl_registro_popup_5_correo_2 As label:
             Align: =Align.Center
