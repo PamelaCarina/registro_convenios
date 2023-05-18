@@ -16,7 +16,7 @@ Entidad_contraparte As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |+
+            OnSelect: |
                 =//AL MENOS UNA CONTRAPARTE CARGADA
                 If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
                     Set(entidades_contraparte_na_cargadas,{
@@ -33,7 +33,6 @@ Entidad_contraparte As screen:
                     });
                     Navigate(Datos_convenio,ScreenTransition.Fade)
                 );
-                
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)

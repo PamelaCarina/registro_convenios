@@ -15,6 +15,7 @@
       <string name="ManualTriggerInput_text_10_def" />
       <string name="ManualTriggerInput_text_11_def" />
       <string name="ManualTriggerInput_text_12_def" />
+      <string name="ManualTriggerInput_text_13_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -29,6 +30,7 @@
         <property name="text_10" type="string" />
         <property name="text_11" type="string" />
         <property name="text_12" type="string" />
+        <property name="text_13" type="string" />
       </object>
       <string name="ResponseActionOutput_id_respuesta_def_items_def_id_convenio_def" />
       <string name="ResponseActionOutput_id_respuesta_def_items_def_id_estado_def" />
@@ -91,6 +93,9 @@
             </param>
             <param style="plain" name="text_12" path="/text_12" type="xs:string" required="true">
               <doc title="estado" />
+            </param>
+            <param style="plain" name="text_13" path="/text_13" type="xs:string" required="true">
+              <doc title="Alcance territorial" />
             </param>
           </representation>
         </request>

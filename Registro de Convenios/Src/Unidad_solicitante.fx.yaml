@@ -67,7 +67,8 @@ Unidad_solicitante As screen:
                                                             telefono_responsable_input_2.Text,
                                                             JSON(unidades_promotoras),
                                                             id_convenio,
-                                                            id_estado 
+                                                            id_estado,
+                                                            tipo_alcance.Selected.valor
                     ).id_respuesta);
                 
                     Set(id_convenio,First(id_respuesta).id_convenio);
