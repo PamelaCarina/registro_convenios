@@ -417,7 +417,7 @@ Entidad_contraparte As screen:
                         Size: =16
                         Text: =ThisItem.pais
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =lbl_contraparte_nacional_nombre_1.Width
+                        Width: =590
                         X: =20
                         Y: =70
                         ZIndex: =2
@@ -433,7 +433,7 @@ Entidad_contraparte As screen:
                         PaddingTop: =0
                         Text: =ThisItem.nombre_entidad_contraparte
                         VerticalAlign: =VerticalAlign.Bottom
-                        Width: =Parent.TemplateWidth - img_contraparte_1.Width - 104
+                        Width: =777
                         X: =20
                         Y: =4
                         ZIndex: =3
@@ -486,6 +486,15 @@ Entidad_contraparte As screen:
                         X: =1150
                         ZIndex: =6
 
+                    lbl_contraparte_nacional_firma_1 As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Size: =16
+                        Text: =If(ThisItem.firma_digital.Value="Sí", "Con firma digital", "Sin firma digital")
+                        Width: =188
+                        X: =960
+                        Y: =52
+                        ZIndex: =7
+
             cont_contraparte_nacional As groupContainer.manualLayoutContainer:
                 Height: =313
                 Visible: =tab_seleccionada=1
@@ -530,7 +539,7 @@ Entidad_contraparte As screen:
                         Size: =16
                         Text: =Concatenate(ThisItem.rut_entidad_contraparte,"-",ThisItem.dv_entidad_contraparte)
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =lbl_contraparte_nacional_nombre.Width
+                        Width: =916
                         X: =20
                         Y: =70
                         ZIndex: =2
@@ -598,6 +607,15 @@ Entidad_contraparte As screen:
                         Width: =14
                         X: =1150
                         ZIndex: =6
+
+                    lbl_contraparte_nacional_firma As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Size: =16
+                        Text: =If(ThisItem.firma_digital.Value="Sí", "Con firma digital", "Sin firma digital")
+                        Width: =188
+                        X: =960
+                        Y: =52
+                        ZIndex: =7
 
             cont_vacio_solicitudes As groupContainer.manualLayoutContainer:
                 Height: =313
