@@ -154,7 +154,7 @@ Datos_contraparte_nacional As screen:
                                 nombre_responsable_institucional: Upper(nombre_responsable_institucional_na_input.Text),
                                 cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text),
                                 correo_responsable_institucional: Upper(correo_electronico_na_input.Text)  ,
-                                firma_digital: firma_digiral_in_button.Selected
+                                firma_digital: firma_digiral_na_button.Selected
                             }
                         )
                     );
