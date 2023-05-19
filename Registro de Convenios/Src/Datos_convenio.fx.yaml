@@ -43,6 +43,7 @@ Datos_convenio As screen:
                 
                 //CONDICION DE APROBACION
                 If(!sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && !sin_documentacion_extra,
+                
                 Set(num_doc_convenio,CountRows(att_registro_10_attach_extra.Attachments));
                 
                 Set(doc,{
