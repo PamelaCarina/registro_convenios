@@ -184,7 +184,7 @@ Entidad_contraparte As screen:
                 
                 Set(popup_confirmacion,true);
                 
-                Set(doc,{
+                Set(doc_contraparte,{
                             file:{//doc1
                                 name: First(Index(doc_solicitud,1).doc).Name,
                                 contentBytes: First(Index(doc_solicitud,1).doc).Value
@@ -948,7 +948,7 @@ Entidad_contraparte As screen:
                                                                 JSON(info_solicitud),
                                                                 id_convenio,
                                                                 id_estado,
-                                                                doc
+                                                                doc_contraparte
                 );
                 
                 Set(cargando,false);
