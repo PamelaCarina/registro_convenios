@@ -229,14 +229,18 @@ Entidad_contraparte As screen:
                             file:{//doc1
                                 name: First(Index(doc_solicitud,1).doc).Name,
                                 contentBytes: First(Index(doc_solicitud,1).doc).Value
+                                //name: If(IsBlank(First(Index(doc_solicitud;1).doc).Name);
+                                //                    "nada";First(Index(doc_solicitud;1).doc).Name);
+                                //contentBytes: If(IsBlank(First(Index(doc_solicitud;1).doc).Value);
+                                //                    "a";First(Index(doc_solicitud;1).doc).Value)
                             },
                             file_1:{//doc2
                                 name: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,2).doc).Name, "nada") ,
-                                contentBytes: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,1).doc).Value, "")
+                                contentBytes: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,1).doc).Value, "nada")
                             },
                             file_2:{//doc3
                                 name: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Name, "nada") ,
-                                contentBytes: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Value, "")
+                                contentBytes: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Value, "nada")
                             },
                             file_3:{//doc4
                                 name: If(CountRows(doc_solicitud)>=4,First(Index(doc_solicitud,4).doc).Name, "nada") ,
