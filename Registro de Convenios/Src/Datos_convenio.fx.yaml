@@ -1178,11 +1178,13 @@ Datos_convenio As screen:
                         UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
                         Set(existe_adjunto, false);
-                        UpdateContext({archivo_invalido:true})
+                        UpdateContext({archivo_invalido:true});
+                        UpdateContext({mostrar_lista_archivos_oficiales:false})
                     ),
                     Set(existe_adjunto, false);
                     UpdateContext({archivo_invalido:false});
-                    UpdateContext({show_popup_oficial: false})
+                    UpdateContext({show_popup_oficial: false});
+                    UpdateContext({mostrar_lista_archivos_oficiales:false})
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
