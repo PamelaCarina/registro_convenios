@@ -694,6 +694,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     )
                 ,
                     Set(existe_adjunto, false);
+                    Set(Contenido_doc_sin,Blank());
                     UpdateContext({archivo_invalido:false});
                     UpdateContext({show_popup_documentacion: false})
                 );

@@ -975,6 +975,13 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 
+                'DTI-PAGuardarcontrapartesnoregistradas'.Run(
+                                                                JSON(info_solicitud),
+                                                                id_convenio,
+                                                                id_estado,
+                                                                doc
+                );
+                
                 /*
                 'DTI-PAAgregarsolicituddecontraparteenSharepoint'.Run(
                                                                         JSON(datos_unidad_solicitante_cargados);
