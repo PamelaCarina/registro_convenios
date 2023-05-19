@@ -236,19 +236,19 @@ Entidad_contraparte As screen:
                             },
                             file_1:{//doc2
                                 name: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,2).doc).Name, "nada") ,
-                                contentBytes: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,1).doc).Value, "nada")
+                                contentBytes: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,1).doc).Value, "")
                             },
                             file_2:{//doc3
                                 name: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Name, "nada") ,
-                                contentBytes: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Value, "nada")
+                                contentBytes: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Value, "")
                             },
                             file_3:{//doc4
                                 name: If(CountRows(doc_solicitud)>=4,First(Index(doc_solicitud,4).doc).Name, "nada") ,
-                                contentBytes: If(CountRows(doc_solicitud)>=4,First(Index(doc_solicitud,4).doc).Value, "nada")
+                                contentBytes: If(CountRows(doc_solicitud)>=4,First(Index(doc_solicitud,4).doc).Value, "")
                             },
                             file_4:{//doc5
                                 name: If(CountRows(doc_solicitud)>=5,First(Index(doc_solicitud,5).doc).Name, "nada") ,
-                                contentBytes: If(CountRows(doc_solicitud)>=5,First(Index(doc_solicitud,5).doc).Value, "nada")
+                                contentBytes: If(CountRows(doc_solicitud)>=5,First(Index(doc_solicitud,5).doc).Value, "")
                             }
                 });
             PressedBorderColor: =RGBA(247, 158, 64, 1)
