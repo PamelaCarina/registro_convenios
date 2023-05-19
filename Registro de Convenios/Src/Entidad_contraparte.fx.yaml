@@ -126,48 +126,42 @@ Entidad_contraparte As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
-                =If(Value(tipo_alcance.Selected.id)=2,
+                =UpdateContext({sin_contraparte:false});
+                
+                If(Value(tipo_alcance.Selected.id)=2,
                     //si es nacional
-                        If(CountRows(contrapartes_nacionales)>0,
-                            //si es nacional y existen contrapartes nacionales
-                            Set(entidades_contraparte_na_cargadas,{
-                                nacionales:{
-                                    cantidad: CountRows(contrapartes_nacionales),
-                                    contrapartes: contrapartes_nacionales
-                                }
-                            });
-                            Set(entidades_contraparte_in_cargadas,{
-                                internacionales:{
-                                    cantidad: 0,
-                                    contrapartes: contrapartes_internacionales
-                                }
-                            });
-                            UpdateContext({sin_contraparte:false});
-                        //;
-                            //si es nacional y no existen contrapartes nacionales
-                        //    UpdateContext({sin_contraparte:true});;
-                        )
+                    If(CountRows(contrapartes_nacionales)>0,
+                        //si es nacional y existen contrapartes nacionales
+                        Set(entidades_contraparte_na_cargadas,{
+                            nacionales:{
+                                cantidad: CountRows(contrapartes_nacionales),
+                                contrapartes: contrapartes_nacionales
+                            }
+                        });
+                        Set(entidades_contraparte_in_cargadas,{
+                            internacionales:{
+                                cantidad: 0,
+                                contrapartes: contrapartes_internacionales
+                            }
+                        })
+                    )
                     ,
                     //si no es nacional, es internacional
-                        If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
-                            //si es internacional y existe alguna contraparte
-                            Set(entidades_contraparte_na_cargadas,{
-                                nacionales:{
-                                    cantidad: CountRows(contrapartes_nacionales),
-                                    contrapartes: contrapartes_nacionales
-                                }
-                            });
-                            Set(entidades_contraparte_in_cargadas,{
-                                internacionales:{
-                                    cantidad: CountRows(contrapartes_internacionales),
-                                    contrapartes: contrapartes_internacionales
-                                }
-                            });
-                            UpdateContext({sin_contraparte:false});
-                        //;
-                            //si es internacional y no existen contrapartes
-                            //UpdateContext({sin_contraparte:true});;
-                        )
+                    If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
+                        //si es internacional y existe alguna contraparte
+                        Set(entidades_contraparte_na_cargadas,{
+                            nacionales:{
+                                cantidad: CountRows(contrapartes_nacionales),
+                                contrapartes: contrapartes_nacionales
+                            }
+                        });
+                        Set(entidades_contraparte_in_cargadas,{
+                            internacionales:{
+                                cantidad: CountRows(contrapartes_internacionales),
+                                contrapartes: contrapartes_internacionales
+                            }
+                        })
+                    )
                 );
                 
                 Clear(doc_solicitud);
@@ -189,72 +183,26 @@ Entidad_contraparte As screen:
                     });    
                 );
                 
-                
-                
                 Set(popup_confirmacion,true);
-                
-                
-                /*
-                ForAll(solicitudes_añadir_contraparte;
-                    Collect(doc_solicitud;{
-                        doc: doc
-                    });;
-                    If(tipo="NACIONAL";
-                        Collect(info_solicitud;{
-                            info:{
-                                nombre:nombre;
-                                rut: rut;
-                                dv: dv;
-                                pais: pais;
-                                tipo: tipo
-                            }
-                        })
-                    );;
-                    If(tipo="INTERNACIONAL";
-                        Collect(info_solicitud;{
-                            info:{
-                                nombre:nombre;
-                                rut: "";
-                                dv: "";
-                                pais: pais;
-                                tipo: tipo
-                            }
-                        })
-                    );;
-                    
-                );;
-                */
                 
                 Set(doc,{
                             file:{//doc1
                                 name: First(Index(doc_solicitud,1).doc).Name,
                                 contentBytes: First(Index(doc_solicitud,1).doc).Value
-                                //name: If(IsBlank(First(Index(doc_solicitud;1).doc).Name);
-                                //                    "nada";First(Index(doc_solicitud;1).doc).Name);
-                                //contentBytes: If(IsBlank(First(Index(doc_solicitud;1).doc).Value);
-                                //                    "a";First(Index(doc_solicitud;1).doc).Value)
                             },
                             file_1:{//doc2
-                                //name: If(CountRows(doc_solicitud)>=2;First(Index(doc_solicitud;2).doc).Name; "nada") ;
-                                //contentBytes: If(CountRows(doc_solicitud)>=2;First(Index(doc_solicitud;1).doc).Value; "")
                                 name: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,2).doc).Name) ,
                                 contentBytes: If(CountRows(doc_solicitud)>=2,First(Index(doc_solicitud,1).doc).Value)
                             },
                             file_2:{//doc3
-                                //name: If(CountRows(doc_solicitud)>=3;First(Index(doc_solicitud;3).doc).Name; "nada") ;
-                                //contentBytes: If(CountRows(doc_solicitud)>=3;First(Index(doc_solicitud;3).doc).Value; "")
                                 name: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Name) ,
                                 contentBytes: If(CountRows(doc_solicitud)>=3,First(Index(doc_solicitud,3).doc).Value)
                             },
                             file_3:{//doc4
-                                //name: If(CountRows(doc_solicitud)>=4;First(Index(doc_solicitud;4).doc).Name; "nada") ;
-                                //contentBytes: If(CountRows(doc_solicitud)>=4;First(Index(doc_solicitud;4).doc).Value; "")
                                 name: If(CountRows(doc_solicitud)>=4,First(Index(doc_solicitud,4).doc).Name) ,
                                 contentBytes: If(CountRows(doc_solicitud)>=4,First(Index(doc_solicitud,4).doc).Value)
                             },
                             file_4:{//doc5
-                                //name: If(CountRows(doc_solicitud)>=5;First(Index(doc_solicitud;5).doc).Name; "nada") ;
-                                //contentBytes: If(CountRows(doc_solicitud)>=5;First(Index(doc_solicitud;5).doc).Value; "")
                                 name: If(CountRows(doc_solicitud)>=5,First(Index(doc_solicitud,5).doc).Name) ,
                                 contentBytes: If(CountRows(doc_solicitud)>=5,First(Index(doc_solicitud,5).doc).Value)
                             }
@@ -987,6 +935,16 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 
+                //If(id_estado="1";Set(id_estado;"2"));;//pasa a contraparte registrada
+                
+                'DTI-PAGuardarcontrapartesregistradas'.Run(
+                                                            JSON(entidades_contraparte_na_cargadas),
+                                                            JSON(entidades_contraparte_in_cargadas),
+                                                            id_convenio,
+                                                            id_estado
+                                                            
+                );
+                
                 'DTI-PAGuardarcontrapartesnoregistradas'.Run(
                                                                 JSON(info_solicitud),
                                                                 id_convenio,
@@ -994,19 +952,9 @@ Entidad_contraparte As screen:
                                                                 doc
                 );
                 
-                /*
-                'DTI-PAAgregarsolicituddecontraparteenSharepoint'.Run(
-                                                                        JSON(datos_unidad_solicitante_cargados);
-                                                                        tipo_alcance.Selected.valor;
-                                                                        JSON(entidades_contraparte_na_cargadas);
-                                                                        JSON(entidades_contraparte_in_cargadas);
-                                                                        JSON(info_solicitud);
-                                                                        doc
-                );;
-                */
+                Set(cargando,false);
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
-                Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
