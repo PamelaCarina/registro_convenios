@@ -46,7 +46,7 @@ Datos_convenio As screen:
                 
                 Set(num_doc_convenio,CountRows(att_registro_10_attach_extra.Attachments));
                 
-                Set(doc,{
+                Set(doc_convenio,{
                         file:{//OFICIAL
                             name: Index(att_registro_10_attach_oficial.Attachments,1).Name,
                             contentBytes: Index(att_registro_10_attach_oficial.Attachments,1).Value
@@ -72,6 +72,8 @@ Datos_convenio As screen:
                             contentBytes: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Value)
                         }
                 });
+                
+                
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_convenio_cargados,{

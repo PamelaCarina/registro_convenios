@@ -1329,7 +1329,7 @@ Contribución_desarrollo As screen:
                                                         JSON(ods_cargados),
                                                         JSON(entidades_contraparte_in_cargadas),
                                                         JSON(unidades_promotoras_cargadas),
-                                                        doc
+                                                        doc_convenio
                 ).id);
                 
                 
