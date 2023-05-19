@@ -44,35 +44,48 @@ Datos_convenio As screen:
                 //CONDICION DE APROBACION
                 If(!sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && !sin_documentacion_extra,
                 
-                Set(num_doc_convenio,CountRows(att_registro_10_attach_extra.Attachments));
+                    Set(num_doc_convenio,CountRows(att_registro_10_attach_extra.Attachments));
                 
-                Set(doc_convenio,{
-                        file:{//OFICIAL
-                            name: Index(att_registro_10_attach_oficial.Attachments,1).Name,
-                            contentBytes: Index(att_registro_10_attach_oficial.Attachments,1).Value
-                        },
-                        file_1:{//EXTRA1
-                            name: If(num_doc_convenio>=1,Index(att_registro_10_attach_extra.Attachments,1).Name),
-                            contentBytes: If(num_doc_convenio>=1,Index(att_registro_10_attach_extra.Attachments,1).Value)
-                        },
-                        file_2:{//EXTRA2
-                            name: If(num_doc_convenio>=2,Index(att_registro_10_attach_extra.Attachments,2).Name),
-                            contentBytes: If(num_doc_convenio>=2,Index(att_registro_10_attach_extra.Attachments,2).Value)
-                        },
-                        file_3:{//EXTRA3
-                            name: If(num_doc_convenio>=3,Index(att_registro_10_attach_extra.Attachments,3).Name),
-                            contentBytes: If(num_doc_convenio>=3,Index(att_registro_10_attach_extra.Attachments,3).Value)
-                        },
-                        file_4:{//EXTRA4
-                            name: If(num_doc_convenio>=4,Index(att_registro_10_attach_extra.Attachments,4).Name),
-                            contentBytes: If(num_doc_convenio>=4,Index(att_registro_10_attach_extra.Attachments,4).Value)
-                        },
-                        file_5:{//EXTRA4
-                            name: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Name),
-                            contentBytes: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Value)
-                        }
-                });
+                    Set(doc_convenio,{
+                            file:{//OFICIAL
+                                name: Index(att_registro_10_attach_oficial.Attachments,1).Name,
+                                contentBytes: Index(att_registro_10_attach_oficial.Attachments,1).Value
+                            },
+                            file_1:{//EXTRA1
+                                name: If(num_doc_convenio>=1,Index(att_registro_10_attach_extra.Attachments,1).Name),
+                                contentBytes: If(num_doc_convenio>=1,Index(att_registro_10_attach_extra.Attachments,1).Value)
+                            },
+                            file_2:{//EXTRA2
+                                name: If(num_doc_convenio>=2,Index(att_registro_10_attach_extra.Attachments,2).Name),
+                                contentBytes: If(num_doc_convenio>=2,Index(att_registro_10_attach_extra.Attachments,2).Value)
+                            },
+                            file_3:{//EXTRA3
+                                name: If(num_doc_convenio>=3,Index(att_registro_10_attach_extra.Attachments,3).Name),
+                                contentBytes: If(num_doc_convenio>=3,Index(att_registro_10_attach_extra.Attachments,3).Value)
+                            },
+                            file_4:{//EXTRA4
+                                name: If(num_doc_convenio>=4,Index(att_registro_10_attach_extra.Attachments,4).Name),
+                                contentBytes: If(num_doc_convenio>=4,Index(att_registro_10_attach_extra.Attachments,4).Value)
+                            },
+                            file_5:{//EXTRA4
+                                name: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Name),
+                                contentBytes: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Value)
+                            }
+                    });
                 
+                    If(id_estado="2",Set(id_estado,"9"));//pasa a especificacion convenio registrada
+                    
+                    Set(cargando, true);
+                    Set(id_estado,'DTI-PAGuardarespecificaciónconvenio'.Run(
+                                                                            tipo_tipologia.Selected.valor,
+                                                                            tipo_solicitud.Selected.valor,
+                                                                            tipo_modalidades.Selected.Value,
+                                                                            descripcion_proposito_1.Text,
+                                                                            id_convenio,
+                                                                            id_estado,
+                                                                            doc_convenio
+                    ).id_estado);
+                    Set(cargando, false);
                 
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
@@ -1242,5 +1255,27 @@ Datos_convenio As screen:
             Width: =img_registro_10_popup_bg.Width
             X: =img_registro_10_popup_bg.X
             Y: =btn_registro_10_popup_cancelar.Y-Self.Height
+            ZIndex: =8
+
+    cont_loading_5 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =9
+
+        fig_registro_5_bg_6 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =7
+
+        img_loading_5 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =632
+            Y: =323
             ZIndex: =8
 
