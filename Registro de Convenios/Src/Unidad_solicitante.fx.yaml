@@ -86,14 +86,6 @@ Unidad_solicitante As screen:
                             correo: correo_autoridad_input_2.Text,
                             telefono: telefono_autoridad_input_2.Text
                         },
-                        /*
-                        promotor: {
-                            nombre: "";
-                            cargo: "";
-                            correo: "";
-                            telefono: ""
-                        };
-                        */
                         responsable: {
                             nombre: nombre_responsable_input_2.Text,
                             cargo: cargo_responsable_input_2.Text,
@@ -102,10 +94,6 @@ Unidad_solicitante As screen:
                         }
                         
                     });
-                
-                    //'DTI-PAGuardardatosunidadsolicitante'.Run(
-                
-                    //);;
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade));
             PressedBorderColor: =RGBA(247, 158, 64, 1)
