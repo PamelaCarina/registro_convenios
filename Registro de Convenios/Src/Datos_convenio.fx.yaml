@@ -74,19 +74,19 @@ Datos_convenio As screen:
                     });
                 
                     If(id_estado="2",Set(id_estado,"9"));//pasa a especificacion convenio registrada
-                    
-                    Set(cargando, true);
-                    Set(id_estado,'DTI-PAGuardarespecificaciónconvenio'.Run(
-                                                                            tipo_tipologia.Selected.valor,
-                                                                            tipo_solicitud.Selected.valor,
-                                                                            tipo_modalidades.Selected.Value,
-                                                                            descripcion_proposito_1.Text,
-                                                                            id_convenio,
-                                                                            id_estado,
+                    /*
+                    Set(cargando; true);;
+                    Set(id_estado;'DTI-PAGuardarespecificaciónconvenio'.Run(
+                                                                            tipo_tipologia.Selected.valor;
+                                                                            tipo_solicitud.Selected.valor;
+                                                                            tipo_modalidades.Selected.Value;
+                                                                            descripcion_proposito_1.Text;
+                                                                            id_convenio;
+                                                                            id_estado;
                                                                             doc_convenio
-                    ).id_estado);
-                    Set(cargando, false);
-                
+                    ).id_estado);;
+                    Set(cargando; false);;
+                    */
                 
                     //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
                     Set(datos_convenio_cargados,{
