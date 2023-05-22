@@ -942,15 +942,14 @@ Entidad_contraparte As screen:
                                                             JSON(entidades_contraparte_na_cargadas),
                                                             JSON(entidades_contraparte_in_cargadas),
                                                             id_convenio,
-                                                            id_estado
-                                                            
+                                                            id_estado                                            
                 );
                 
                 'DTI-PAGuardarcontrapartesnoregistradas'.Run(
-                                                                JSON(info_solicitud),
-                                                                id_convenio,
-                                                                id_estado,
-                                                                doc_contraparte
+                                                            JSON(info_solicitud),
+                                                            id_convenio,
+                                                            id_estado,
+                                                            doc_contraparte
                 );
                 
                 Set(cargando,false);
