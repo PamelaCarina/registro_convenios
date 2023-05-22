@@ -936,7 +936,7 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 
-                //If(id_estado="1";Set(id_estado;"2"));;//pasa a contraparte registrada
+                If(id_estado="1",Set(id_estado,"4"));//pasa a Contraparte internacional solicitada
                 
                 'DTI-PAGuardarcontrapartesregistradas'.Run(
                                                             JSON(entidades_contraparte_na_cargadas),
