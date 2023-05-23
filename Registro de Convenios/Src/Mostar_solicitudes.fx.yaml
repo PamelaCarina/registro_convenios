@@ -58,56 +58,35 @@ Mostar_solicitudes As screen:
                 Y: =16
                 ZIndex: =1
 
-            lbl_fecha_main As label:
+            lbl_fecha As label:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
                 Text: ="Fecha"
                 Width: =120
-                X: =42
+                X: =64
                 Y: =44
                 ZIndex: =2
 
-            lbl_actividad_main As label:
+            lbl_solicitud As label:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
                 PaddingLeft: =12
                 PaddingRight: =12
-                Text: ="Actividad"
+                Text: ="Solicitud"
                 Width: =335
-                X: =162
+                X: =380
                 Y: =44
                 ZIndex: =3
 
-            lbl_rol_main As label:
-                Color: =RGBA(17, 61, 107, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =38
-                Text: ="Rol"
-                X: =834
-                Y: =44
-                ZIndex: =4
-
-            lbl_ambito_main As label:
-                Color: =RGBA(17, 61, 107, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =38
-                PaddingLeft: =12
-                PaddingRight: =12
-                Text: ="Ámbito"
-                Width: =418
-                X: =497
-                Y: =44
-                ZIndex: =5
-
-            lbl_estado_main As label:
+            lbl_estado As label:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
                 Text: ="Estado"
                 Width: =125
-                X: =1007
+                X: =812
                 Y: =44
                 ZIndex: =6
 
@@ -138,66 +117,13 @@ Mostar_solicitudes As screen:
                 Y: =82
                 ZIndex: =7
 
-                lbl_gal_fecha As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    FontWeight: =FontWeight.Normal
-                    Height: =80
-                    OnSelect: =Select(Parent)
-                    Size: =13
-                    Text: |-
-                        =Text(
-                            DateValue(ThisItem.fecha),
-                            DateTimeFormat.ShortDate
-                        )
-                    Width: =120
-                    ZIndex: =2
-
-                lbl_gal_actividad As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    Height: =80
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =12
-                    PaddingRight: =12
-                    PaddingTop: =0
-                    Size: =13
-                    Text: =If(Len(ThisItem.nombre)<=40,ThisItem.nombre,Left(ThisItem.nombre,37)&"...")
-                    Width: =335
-                    X: =120
-                    ZIndex: =3
-
                 fig_separador_main As rectangle:
                     Fill: =RGBA(112, 139, 166, 1)
                     Height: =1
                     OnSelect: =Select(Parent)
-                    Width: =Parent.TemplateWidth - 50   
-                    X: =12
+                    Width: =1160
                     Y: =Parent.TemplateHeight - 1
-                    ZIndex: =5
-
-                lbl_gal_ambito As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    FontWeight: =FontWeight.Normal
-                    Height: =80
-                    OnSelect: =Select(Parent)
-                    PaddingLeft: =12
-                    PaddingRight: =12
-                    Size: =13
-                    Text: =ThisItem.ambito
-                    Width: =317
-                    X: =455
-                    ZIndex: =6
-
-                lbl_gal_rol As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    FontWeight: =FontWeight.Normal
-                    Height: =80
-                    OnSelect: =Select(Parent)
-                    Size: =13
-                    Text: =ThisItem.rol
-                    Width: =153
-                    X: =lbl_gal_ambito.X+lbl_gal_ambito.Width+20
-                    ZIndex: =7
+                    ZIndex: =1
 
                 img_arrow As image:
                     Height: =80
@@ -207,18 +133,7 @@ Mostar_solicitudes As screen:
                         Set(nueva_solicitud, false);
                     Width: =14
                     X: =1130
-                    ZIndex: =9
-
-                img_estado As image:
-                    BorderStyle: =BorderStyle.None
-                    Height: =80
-                    Image: =//Switch(ThisItem.estado; "Registrada"; registrada; "En Aceptación"; enaceptacion; "En Admisibilidad"; enadmisbilidad; "Lista"; lista; "No Aceptada"; noaceptada; "Inadmisible"; inadmisible; "No Aceptada"; noaceptada)
-                    OnSelect: |-
-                        =Select(Parent);
-                        Set(nueva_solicitud, false);
-                    Width: =120
-                    X: =lbl_gal_rol.X+lbl_gal_rol.Width+20
-                    ZIndex: =10
+                    ZIndex: =2
 
                 btn_detalle As button:
                     BorderStyle: =BorderStyle.None
@@ -250,7 +165,49 @@ Mostar_solicitudes As screen:
                     Text: =""
                     Width: =14
                     X: =1130
-                    ZIndex: =11
+                    ZIndex: =3
+
+                lbl_gal_estado As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =12
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =If(Len(ThisItem.nombre)<=40,ThisItem.nombre,Left(ThisItem.nombre,37)&"...")
+                    Width: =335
+                    X: =770
+                    ZIndex: =4
+
+                lbl_gal_solicitud As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =12
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =If(Len(ThisItem.nombre)<=40,ThisItem.nombre,Left(ThisItem.nombre,37)&"...")
+                    Width: =335
+                    X: =336
+                    ZIndex: =5
+
+                lbl_gal_fecha As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Normal
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: |-
+                        =Text(
+                            DateValue(ThisItem.fecha),
+                            DateTimeFormat.ShortDate
+                        )
+                    Width: =282
+                    ZIndex: =6
 
         buscar_solicitudes As groupContainer.manualLayoutContainer:
             Height: =127
