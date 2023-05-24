@@ -54,7 +54,6 @@ Contribución_desarrollo As screen:
                 If(CountRows(Filter(datosContribucion_desarrollo,falta = true))=0,
                     UpdateContext({faltan_datos_notif:false});
                     Set(ods, Filter(ods_checkboxes, cb.Value=true&&ods<>"ninguno").ods);
-                    Set(popup_confirmacion, true);
                 
                     //GUARDAR SELECCIONES ODS
                     ClearCollect(datos_ods_cargados,{});
@@ -80,8 +79,20 @@ Contribución_desarrollo As screen:
                         If(cb_ods_16.Value=true,Collect(datos_ods_cargados,"16. Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles."));
                         If(cb_ods_17.Value=true,Collect(datos_ods_cargados,"17. Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."));
                     );
-                    UpdateContext({popup_enviar:true});
                  
+                    Set(cargando,true);
+                    If(id_estado="11",Set(id_estado,"12"));//pasa a ODS registrada
+                
+                    Set(id_estado,'DTI-PAGuardarODS'.Run(
+                                                        JSON(datos_ods_cargados),
+                                                        id_convenio,
+                                                        id_estado
+                    ).id_estado);
+                    Set(cargando,false);
+                
+                    Set(popup_confirmacion, true);
+                    UpdateContext({popup_enviar:true});
+                
                     // Salir de la aplicación
                     //Exit();;
                     
