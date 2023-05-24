@@ -30,10 +30,10 @@
           </param>
           <representation mediaType="application/json">
             <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="Contribución interna" />
+              <doc title="Contribucion interna" />
             </param>
             <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
-              <doc title="Contribución externa" />
+              <doc title="Contribucion externa" />
             </param>
             <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
               <doc title="id" />
