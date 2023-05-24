@@ -26,8 +26,9 @@ Información_convenio As screen:
                 
                 If(!sin_convenio_tipo && !sin_sector_politica && !sin_ambito_politica,
                 
-                    If(id_estado="9",Set(id_estado,"10"));//pasa a Categoría VRIM registrada
+                    Set(cargando, true);
                 
+                    If(id_estado="9",Set(id_estado,"10"));//pasa a Categoría VRIM registrada
                     Set(id_estado,'DTI-PAGuardarcategoríaVRIM'.Run(
                                                         convenio_tipo.Selected.valor,
                                                         sector_politica.Selected.valor,
@@ -35,6 +36,8 @@ Información_convenio As screen:
                                                         id_convenio,
                                                         id_estado
                     ).id_estado);
+                
+                    Set(cargando, false);
                 
                     Navigate(Area_contribución,ScreenTransition.Fade)
                 );
@@ -597,4 +600,26 @@ Información_convenio As screen:
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
+
+    cont_loading_6 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =7
+
+        fig_registro_5_bg_7 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =5
+
+        img_loading_6 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =632
+            Y: =323
+            ZIndex: =6
 
