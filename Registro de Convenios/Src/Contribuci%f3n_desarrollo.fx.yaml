@@ -59,7 +59,7 @@ Contribución_desarrollo As screen:
                     ClearCollect(datos_ods_cargados,{});
                     Clear(datos_ods_cargados);
                     If(cb_ods_ninguno.Value=true,
-                        Collect(datos_ods_cargados,"ninguna")
+                        Collect(datos_ods_cargados,"")
                     ,
                         If(cb_ods_1.Value=true,Collect(datos_ods_cargados,"1. Erradicar la pobreza en todas sus formas en todo el mundo."));
                         If(cb_ods_2.Value=true,Collect(datos_ods_cargados,"2. Poner fin al hambre, conseguir la seguridad alimentaria y una mejor nutrición, y promover la agricultura sostenible."));
@@ -1382,6 +1382,7 @@ Contribución_desarrollo As screen:
                 ).id);;
                 */
                 
+                    If(id_estado="12",Set(id_estado,"13"));//pasa a registrada
                     Set(id_estado,'DTI-PAEnviarsolicitudconvenio'.Run(
                                                                         persona_solicitante.id_persona,
                                                                         descripcion_proposito_1.Text,
@@ -1391,6 +1392,7 @@ Contribución_desarrollo As screen:
                 
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
+                Navigate(Mostar_solicitudes,ScreenTransition.Fade);
                 Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
