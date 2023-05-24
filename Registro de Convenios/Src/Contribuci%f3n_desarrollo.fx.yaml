@@ -1310,38 +1310,66 @@ Contribución_desarrollo As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =Set(cargando,true);
+                /*
+                //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
+                    Set(datos_unidad_solicitante_cargados;{
+                        correo_solicitante: persona_solicitante.correo_udec;
+                        unidad: uni;
+                        autoridad: {
+                            nombre: nombre_autoridad_solicitante_input_2.Text;
+                            cargo: cargo_autoridad_input_2.Text;
+                            correo: correo_autoridad_input_2.Text;
+                            telefono: telefono_autoridad_input_2.Text
+                        };
+                        responsable: {
+                            nombre: nombre_responsable_input_2.Text;
+                            cargo: cargo_responsable_input_2.Text;
+                            correo: correo_responsable_input_2.Text;
+                            telefono: telefono_responsable_input_2.Text
+                        }
+                        
+                    });;
                 
-                Set(ods_cargados,{
+                Set(ods_cargados;{
                     ods_seleccionados: datos_ods_cargados
-                });
+                });;
                 
-                    Set(datos_contribucion_cargados,{
-                        interna: datos_contribucion_interna,
+                    Set(datos_contribucion_cargados;{
+                        interna: datos_contribucion_interna;
                         externa: datos_contribucion_externa 
-                    });
+                    });;
                 
-                Set(unidades_promotoras_cargadas,{
+                Set(unidades_promotoras_cargadas;{
                     unidades_promotoras: unidades_promotoras
-                });
+                });;
                 
-                    Set(datos_vinculacion_cargados,{
-                    tipo: convenio_tipo.Selected.valor,
-                    sector: sector_politica.Selected.valor,
+                    Set(datos_vinculacion_cargados;{
+                    tipo: convenio_tipo.Selected.valor;
+                    sector: sector_politica.Selected.valor;
                     ambito: ambito_politica.Selected.valor
-                    });
+                    });;
                 
-                Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(
-                                                        JSON(datos_unidad_solicitante_cargados),
-                                                        JSON(datos_convenio_cargados),
-                                                        JSON(entidades_contraparte_na_cargadas),
-                                                        JSON(datos_vinculacion_cargados),
-                                                        JSON(datos_contribucion_cargados),
-                                                        JSON(ods_cargados),
-                                                        JSON(entidades_contraparte_in_cargadas),
-                                                        JSON(unidades_promotoras_cargadas),
+                        //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
+                    Set(datos_convenio_cargados;{
+                        alcance: tipo_alcance.Selected.valor;
+                        tipologia: tipo_tipologia.Selected.valor;
+                        tipo: tipo_solicitud.Selected.valor;
+                        modalidad: tipo_modalidades.Selected.Value;
+                        proposito: descripcion_proposito_1.Text
+                    });;
+                
+                Set(id_solicitud_convenio;'DTI-PAAgregarsolicituddeconvenio'.Run(
+                                                        JSON(datos_unidad_solicitante_cargados);
+                                                        JSON(datos_convenio_cargados);
+                                                        JSON(entidades_contraparte_na_cargadas);
+                                                        JSON(datos_vinculacion_cargados);
+                                                        JSON(datos_contribucion_cargados);
+                                                        JSON(ods_cargados);
+                                                        JSON(entidades_contraparte_in_cargadas);
+                                                        JSON(unidades_promotoras_cargadas);
                                                         doc_convenio
-                ).id);
-                
+                ).id);;
+                */
                 
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});

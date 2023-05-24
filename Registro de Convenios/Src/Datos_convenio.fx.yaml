@@ -86,16 +86,6 @@ Datos_convenio As screen:
                                                                             doc_convenio
                     ).id_estado);
                     Set(cargando, false);
-                    
-                
-                    //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
-                    Set(datos_convenio_cargados,{
-                        alcance: tipo_alcance.Selected.valor,
-                        tipologia: tipo_tipologia.Selected.valor,
-                        tipo: tipo_solicitud.Selected.valor,
-                        modalidad: tipo_modalidades.Selected.Value,
-                        proposito: descripcion_proposito_1.Text
-                    });
                 
                     Navigate(Información_convenio,ScreenTransition.Fade));
                 

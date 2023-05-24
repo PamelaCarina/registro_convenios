@@ -76,25 +76,6 @@ Unidad_solicitante As screen:
                 
                     Set(cargando, false);
                 
-                    //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
-                    Set(datos_unidad_solicitante_cargados,{
-                        correo_solicitante: persona_solicitante.correo_udec,
-                        unidad: uni,
-                        autoridad: {
-                            nombre: nombre_autoridad_solicitante_input_2.Text,
-                            cargo: cargo_autoridad_input_2.Text,
-                            correo: correo_autoridad_input_2.Text,
-                            telefono: telefono_autoridad_input_2.Text
-                        },
-                        responsable: {
-                            nombre: nombre_responsable_input_2.Text,
-                            cargo: cargo_responsable_input_2.Text,
-                            correo: correo_responsable_input_2.Text,
-                            telefono: telefono_responsable_input_2.Text
-                        }
-                        
-                    });
-                
                     Navigate(Entidad_contraparte,ScreenTransition.Fade));
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
