@@ -100,11 +100,6 @@ Area_contribución As screen:
                     If(cb_interculturalidad.Value=true,Collect(datos_contribucion_externa,
                     lbl_registro_9_interculturalidad.Text));
                 
-                    Set(datos_contribucion_cargados,{
-                        interna: datos_contribucion_interna,
-                        externa: datos_contribucion_externa 
-                    });
-                
                     Set(cargando, true);
                 
                     If(id_estado="10",Set(id_estado,"11"));//pasa a Política VRIM registrada
