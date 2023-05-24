@@ -1485,7 +1485,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Area_de_contribución",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2035,7 +2035,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "BannerUdeC_6",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10210,7 +10210,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fig_registro_5_bg_8",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10627,7 +10627,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_loading_7",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
