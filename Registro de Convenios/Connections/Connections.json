@@ -512,36 +512,6 @@
     "dependents": [],
     "id": "cd2c43b4-1b21-4364-afee-6a5f690f3de8"
   },
-  "d2e6361d-7bc3-47ac-8580-2c946f5c7e9c": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "6abc7217-fae1-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "8f6c6c45-78cb-7df5-9693-5b15dc0ad34b"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "6abc7217-fae1-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "8f6c6c45-78cb-7df5-9693-5b15dc0ad34b"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAAgregarsolicituddeconvenio"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "d2e6361d-7bc3-47ac-8580-2c946f5c7e9c"
-  },
   "e09530a6-c64a-4b7a-9fd2-e64981fc0dba": {
     "connectionRef": {
       "displayName": "Logic flows",
