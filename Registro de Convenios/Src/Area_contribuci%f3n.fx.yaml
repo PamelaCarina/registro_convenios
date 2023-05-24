@@ -111,7 +111,7 @@ Area_contribución As screen:
                     Set(id_estado,'DTI-PAGuardarpolíticaVRIM'.Run(
                                                     JSON(datos_contribucion_interna),
                                                     JSON(datos_contribucion_externa),
-                                                    id_convenio,
+                                                    id_convenio, 
                                                     id_estado
                     ).id_estado);
                 
