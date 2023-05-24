@@ -1320,6 +1320,12 @@ Contribución_desarrollo As screen:
                     unidades_promotoras: unidades_promotoras
                 });
                 
+                    Set(datos_vinculacion_cargados,{
+                    tipo: convenio_tipo.Selected.valor,
+                    sector: sector_politica.Selected.valor,
+                    ambito: ambito_politica.Selected.valor
+                    });
+                
                 Set(id_solicitud_convenio,'DTI-PAAgregarsolicituddeconvenio'.Run(
                                                         JSON(datos_unidad_solicitante_cargados),
                                                         JSON(datos_convenio_cargados),

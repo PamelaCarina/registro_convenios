@@ -361,6 +361,36 @@
     "dependents": [],
     "id": "8fda6672-21eb-4ab8-9040-c18f177a802b"
   },
+  "bc84ec4c-80dc-4b4d-ad89-bd5488ccb8a9": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "7f8dc524-c8f9-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "bdf6c5aa-16c9-0d48-ab07-0aeae0e8dd3d"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "7f8dc524-c8f9-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "bdf6c5aa-16c9-0d48-ab07-0aeae0e8dd3d"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAGuardarcategoríaVRIM"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "bc84ec4c-80dc-4b4d-ad89-bd5488ccb8a9"
+  },
   "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": {
     "connectionRef": {
       "apiTier": "Standard",
