@@ -105,6 +105,18 @@ Area_contribución As screen:
                         externa: datos_contribucion_externa 
                     });
                 
+                    Set(cargando, true);
+                
+                    If(id_estado="10",Set(id_estado,"11"));//pasa a Política VRIM registrada
+                    Set(id_estado,'DTI-PAGuardarpolíticaVRIM'.Run(
+                                                    JSON(datos_contribucion_interna),
+                                                    JSON(datos_contribucion_externa),
+                                                    id_convenio,
+                                                    id_estado
+                    ).id_estado);
+                
+                    Set(cargando, false);
+                
                     Navigate(Contribución_desarrollo, ScreenTransition.Fade);
                     , 
                     UpdateContext({num_campos_faltantes:CountRows(Filter(datosArea_contribucion,falta=true)),faltan_datos_text:"Ingresar: "&Concat(Filter(datosArea_contribucion,falta=true),text&", ")}) & UpdateContext({faltan_datos_text:Left(faltan_datos_text,Len(faltan_datos_text)-2)&".",faltan_datos_notif:true});
@@ -790,4 +802,26 @@ Area_contribución As screen:
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
+
+    cont_loading_7 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =7
+
+        fig_registro_5_bg_8 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =5
+
+        img_loading_7 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =632
+            Y: =323
+            ZIndex: =6
 

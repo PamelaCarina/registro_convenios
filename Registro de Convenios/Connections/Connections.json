@@ -150,6 +150,36 @@
     "dependents": [],
     "id": "1ca997eb-842f-43b6-9402-de3e838febf8"
   },
+  "4b3cad61-ef6c-49c8-b879-875abb21055e": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "4de051df-d0f9-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "a3a12b1d-3bed-d6c6-544c-dedf26bb1fff"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "4de051df-d0f9-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "a3a12b1d-3bed-d6c6-544c-dedf26bb1fff"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAGuardarpolíticaVRIM"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "4b3cad61-ef6c-49c8-b879-875abb21055e"
+  },
   "4d43a597-7638-4ec8-ad0a-b7242ccfe778": {
     "connectionRef": {
       "displayName": "Logic flows",

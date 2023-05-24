@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "793bee51-79bc-4632-ad7d-dded9d902dab",
+    "Name": "DTI-PAGuardarpolíticaVRIM",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "4de051df-d0f9-ed11-8849-6045bd006f89"
+  }
+]
