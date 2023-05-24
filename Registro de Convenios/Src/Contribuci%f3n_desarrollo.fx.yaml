@@ -1382,6 +1382,13 @@ Contribución_desarrollo As screen:
                 ).id);;
                 */
                 
+                    Set(id_estado,'DTI-PAEnviarsolicitudconvenio'.Run(
+                                                                        persona_solicitante.id_persona,
+                                                                        descripcion_proposito_1.Text,
+                                                                        id_convenio,
+                                                                        id_estado
+                    ).id_estado);
+                
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
                 Set(cargando,false);

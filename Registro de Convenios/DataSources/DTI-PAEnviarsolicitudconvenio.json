@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "7e64df84-bc15-4271-a3da-d29beb3bc0d3",
+    "Name": "DTI-PAEnviarsolicitudconvenio",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "0542c01a-45fa-ed11-8849-6045bd006f89"
+  }
+]
