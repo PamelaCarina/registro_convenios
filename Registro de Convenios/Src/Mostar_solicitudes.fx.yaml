@@ -349,13 +349,14 @@ Mostar_solicitudes As screen:
         ZIndex: =4
 
     "'Solicitud anterior' As button":
-        Height: =55
+        Height: =70
         OnSelect: |-
             =Set(id_convenio,"159");
             Set(id_estado,"1");
             Navigate(Unidad_solicitante);
-        Text: ="Solicitud anterior para pruebas"
-        Width: =202
+        Text: |-
+            ="Solicitud anterior para pruebas (id: 159)"
+        Width: =234
         X: =1060
         Y: =516
         ZIndex: =7
