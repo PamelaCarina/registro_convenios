@@ -38,6 +38,12 @@
       </object>
       <string name="ManualTriggerInput_text_5_def" />
       <string name="ManualTriggerInput_text_6_def" />
+      <string name="ManualTriggerInput_file_5_def_name_def" />
+      <base64Binary name="ManualTriggerInput_file_5_def_contentBytes_def" />
+      <object name="ManualTriggerInput_file_5_def">
+        <property name="name" type="string" />
+        <property name="contentBytes" typeRef="ManualTriggerInput_file_5_def_contentBytes_def" />
+      </object>
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -50,6 +56,7 @@
         <property name="file_4" typeRef="ManualTriggerInput_file_4_def" />
         <property name="text_5" type="string" />
         <property name="text_6" type="string" />
+        <property name="file_5" typeRef="ManualTriggerInput_file_5_def" />
       </object>
       <string name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
@@ -100,6 +107,9 @@
             </param>
             <param style="plain" name="text_6" path="/text_6" type="xs:string" required="true">
               <doc title="estado" />
+            </param>
+            <param style="plain" name="file_5" path="/file_5" type="service:ManualTriggerInput_file_5_def">
+              <doc title="file_5" />
             </param>
           </representation>
         </request>
