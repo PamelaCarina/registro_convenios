@@ -67,7 +67,7 @@ Datos_convenio As screen:
                                 name: If(num_doc_convenio>=4,Index(att_registro_10_attach_extra.Attachments,4).Name),
                                 contentBytes: If(num_doc_convenio>=4,Index(att_registro_10_attach_extra.Attachments,4).Value)
                             },
-                            file_5:{//EXTRA4
+                            file_5:{//EXTRA5
                                 name: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Name),
                                 contentBytes: If(num_doc_convenio>=5,Index(att_registro_10_attach_extra.Attachments,5).Value)
                             }
