@@ -40,8 +40,66 @@
         <property name="telefono_responsable" type="string" />
         <property name="unidades_promotoras" typeRef="ResponseActionOutput_unidad_solicitante_registrada_def_unidades_promotoras_def" />
       </object>
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_nombre_entidad_contraparte_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_rut_entidad_contraparte_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_dv_entidad_contraparte_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_nombre_representante_legal_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_nombre_responsable_institucional_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_cargo_responsable_institucional_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_pais_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_correo_responsable_institucional_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_publica_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_tipo_empresa_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_comuna_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_tipo_contribuyente_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_rubro_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_actividad_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_id_def" />
+      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_firma_digital_def" />
+      <object name="ResponseActionOutput_contrapartes_nacionales_def_items_def">
+        <property name="nombre_entidad_contraparte" type="string" />
+        <property name="rut_entidad_contraparte" type="string" />
+        <property name="dv_entidad_contraparte" type="string" />
+        <property name="nombre_representante_legal" type="string" />
+        <property name="nombre_responsable_institucional" type="string" />
+        <property name="cargo_responsable_institucional" type="string" />
+        <property name="pais" type="string" />
+        <property name="correo_responsable_institucional" type="string" />
+        <property name="publica" type="string" />
+        <property name="tipo_empresa" type="string" />
+        <property name="comuna" type="string" />
+        <property name="tipo_contribuyente" type="string" />
+        <property name="rubro" type="string" />
+        <property name="actividad" type="string" />
+        <property name="id" type="string" />
+        <property name="firma_digital" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_contrapartes_nacionales_def_items_def" name="ResponseActionOutput_contrapartes_nacionales_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_nombre_entidad_contraparte_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_rut_entidad_contraparte_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_dv_entidad_contraparte_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_nombre_representante_legal_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_nombre_responsable_institucional_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_cargo_responsable_institucional_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_pais_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_correo_responsable_institucional_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_id_def" />
+      <object name="ResponseActionOutput_contrapartes_internacionales_def_items_def">
+        <property name="nombre_entidad_contraparte" type="string" />
+        <property name="rut_entidad_contraparte" type="string" />
+        <property name="dv_entidad_contraparte" type="string" />
+        <property name="nombre_representante_legal" type="string" />
+        <property name="nombre_responsable_institucional" type="string" />
+        <property name="cargo_responsable_institucional" type="string" />
+        <property name="pais" type="string" />
+        <property name="correo_responsable_institucional" type="string" />
+        <property name="id" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_contrapartes_internacionales_def_items_def" name="ResponseActionOutput_contrapartes_internacionales_def" />
       <object name="ResponseActionOutput">
         <property name="unidad_solicitante_registrada" typeRef="ResponseActionOutput_unidad_solicitante_registrada_def" />
+        <property name="contrapartes_nacionales" typeRef="ResponseActionOutput_contrapartes_nacionales_def" />
+        <property name="contrapartes_internacionales" typeRef="ResponseActionOutput_contrapartes_internacionales_def" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>

@@ -79,16 +79,25 @@ Unidad_solicitante As screen:
                                                                 id_convenio,
                                                                 "2"//necesito contraparte registrada
                         ));
+                
+                        ForAll(entidad_contraparte_recuperada.contrapartes_nacionales,
+                            Collect(contrapartes_nacionales,{
+                                nombre_entidad_contraparte: nombre_entidad_contraparte,
+                                rut_entidad_contraparte: rut_entidad_contraparte,
+                                dv_entidad_contraparte: dv_entidad_contraparte,
+                                nombre_representante_legal: nombre_representante_legal,
+                                nombre_responsable_institucional: nombre_responsable_institucional
+                            })
+                        );
+                
                         Set(primera_vez_entidad_contraparte,false);
                 
                 
                 /*
                         Collect(contrapartes_nacionales;{
-                                nombre_entidad_contraparte: nombre_unidad_contraparte_na_input.Text;
-                                rut_entidad_contraparte: contraparte_na.rut_entidad_contraparte;
-                                dv_entidad_contraparte: contraparte_na.dv_entidad_contraparte;
-                                nombre_representante_legal: Upper(nombre_representante_legal_na_input.Text);
-                                nombre_responsable_institucional: Upper(nombre_responsable_institucional_na_input.Text);
+                                
+                                
+                                
                                 cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text);
                                 pais: "CHILE";
                                 correo_responsable_institucional: Upper(correo_electronico_na_input.Text);
