@@ -1765,7 +1765,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fig_registro_5_bg_5",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3365,7 +3365,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_registro_5_loading_1",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5813,7 +5813,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_mostrar_solicitudes",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6453,7 +6453,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "mostrar_solicitudes",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7009,7 +7009,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Solicitud anterior",
-      "ParentIndex": 1,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

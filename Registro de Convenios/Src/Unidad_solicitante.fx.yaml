@@ -963,7 +963,7 @@ Unidad_solicitante As screen:
                         ZIndex: =2
 
                     nombre_unidad_solicitante As dropdown:
-                        AllowEmptySelection: =true
+                        AllowEmptySelection: =If(nuevo,true,false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -971,6 +971,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
+                        Default: =If(nuevo,"1",LookUp(Filter(organismos_actividad, buscador_n_u_s_input.Text in Reparticion),Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante,'Codigo Reparticion'))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
@@ -1250,7 +1251,7 @@ Unidad_solicitante As screen:
                         ZIndex: =2
 
                     tipo_alcance As dropdown:
-                        AllowEmptySelection: =true
+                        AllowEmptySelection: =If(nuevo,true,false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -1258,6 +1259,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
+                        Default: =If(nuevo,"1",LookUp(Filter(lista_alcance, buscador_a_t_input.Text in valor),valor=unidad_solicitante_recuperada.alcance_territorial,id))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
@@ -1682,7 +1684,7 @@ Unidad_solicitante As screen:
                         Set(datos_responsable, 'VRIM-PATraedatosdeusuario'.Run(inp_responsable_popup_search));
                         If(datos_responsable.status = "encontrado",
                             Set(responsable,{
-                            id_persona: Value(datos_responsable.id_persona),
+                            id_persona: Text(Value(datos_responsable.id_persona)),
                             nombre: datos_responsable.nombre_completo,
                             cargo: datos_responsable.cargo,
                             correo: datos_responsable.correo_udec,
