@@ -80,6 +80,9 @@ Unidad_solicitante As screen:
                                                                 "2"//necesito contraparte registrada
                         ));
                 
+                        Clear(contrapartes_nacionales);
+                        Clear(contrapartes_internacionales);
+                
                         ForAll(entidad_contraparte_recuperada.contrapartes_nacionales,
                             Collect(contrapartes_nacionales,{
                                 nombre_entidad_contraparte: nombre_entidad_contraparte,
@@ -112,7 +115,7 @@ Unidad_solicitante As screen:
                                 cargo_responsable_institucional: cargo_responsable_institucional,
                                 pais: pais,
                                 correo_responsable_institucional: correo_responsable_institucional,
-                                firma: "",
+                                firma: firma_digital,
                                 id: id,
                                 tipo: "INTERNACIONAL"
                             })

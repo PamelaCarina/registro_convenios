@@ -84,6 +84,7 @@
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_pais_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_correo_responsable_institucional_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_id_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_firma_digital_def" />
       <object name="ResponseActionOutput_contrapartes_internacionales_def_items_def">
         <property name="nombre_entidad_contraparte" type="string" />
         <property name="rut_entidad_contraparte" type="string" />
@@ -94,6 +95,7 @@
         <property name="pais" type="string" />
         <property name="correo_responsable_institucional" type="string" />
         <property name="id" type="string" />
+        <property name="firma_digital" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_contrapartes_internacionales_def_items_def" name="ResponseActionOutput_contrapartes_internacionales_def" />
       <object name="ResponseActionOutput">
