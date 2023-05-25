@@ -101,7 +101,7 @@ Unidad_solicitante As screen:
                                 actividad: actividad,
                                 id: id,
                                 tipo: "NACIONAL",
-                                firma: firma_digital
+                                firma_digital: {Value: firma_digital}
                             })
                         );
                 
@@ -115,9 +115,9 @@ Unidad_solicitante As screen:
                                 cargo_responsable_institucional: cargo_responsable_institucional,
                                 pais: pais,
                                 correo_responsable_institucional: correo_responsable_institucional,
-                                firma: firma_digital,
                                 id: id,
-                                tipo: "INTERNACIONAL"
+                                tipo: "INTERNACIONAL",
+                                firma_digital: {Value: firma_digital}
                             })
                         );
                 
