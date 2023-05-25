@@ -88,29 +88,37 @@ Unidad_solicitante As screen:
                                 nombre_representante_legal: nombre_representante_legal,
                                 nombre_responsable_institucional: nombre_responsable_institucional,
                                 cargo_responsable_institucional: cargo_responsable_institucional,
-                                pais: pais
+                                pais: pais,
+                                correo_responsable_institucional: correo_responsable_institucional,
+                                publica: publica,
+                                tipo_empresa: tipo_empresa,
+                                comuna: comuna,
+                                tipo_contribuyente: tipo_contribuyente,
+                                rubro: rubro,
+                                actividad: actividad,
+                                id: id,
+                                tipo: "NACIONAL",
+                                firma: firma_digital
+                            })
+                        );
+                
+                        ForAll(entidad_contraparte_recuperada.contrapartes_internacionales,
+                            Collect(contrapartes_internacionales,{
+                                nombre_entidad_contraparte: nombre_entidad_contraparte,
+                                rut_entidad_contraparte: rut_entidad_contraparte,
+                                dv_entidad_contraparte: dv_entidad_contraparte,
+                                nombre_representante_legal: nombre_representante_legal,
+                                nombre_responsable_institucional: nombre_responsable_institucional,
+                                cargo_responsable_institucional: cargo_responsable_institucional,
+                                pais: pais,
+                                correo_responsable_institucional: correo_responsable_institucional,
+                                firma: "",
+                                id: id,
+                                tipo: "INTERNACIONAL"
                             })
                         );
                 
                         Set(primera_vez_entidad_contraparte,false);
-                
-                
-                /*
-                        Collect(contrapartes_nacionales;{
-                                
-                                
-                                correo_responsable_institucional: Upper(correo_electronico_na_input.Text);
-                                publica: publica_na_input.Text;
-                                tipo_empresa: tipo_empresa_na_input.Text;
-                                comuna: comuna_na_input.Text;
-                                tipo_contribuyente: tipo_contribuyente_na_input.Text;
-                                rubro: rubro_na_input.Text;
-                                actividad: actividad_na_input.Text;
-                                firma_digital: firma_digiral_na_button.Selected;
-                                id: contraparte_na.id;
-                                tipo: "NACIONAL"
-                        });
-                */
                     );
                 
                     
