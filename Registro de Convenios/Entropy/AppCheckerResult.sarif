@@ -17986,6 +17986,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.entidad_contraparte_recuperada"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.entidad_contraparte_recuperada",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "entidad_contraparte_recuperada",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.fondo_deshabilitado"
                 }
               ],

@@ -365,6 +365,8 @@ Mostar_solicitudes As screen:
             Set(id_estado,"1");
             Set(nuevo,false);
             
+            Set(primera_vez_entidad_contraparte,true);
+            
             Set(unidad_solicitante_recuperada,
             'DTI-PATraerestadosolicitudporpantalla'.Run(
                                                         id_convenio,
