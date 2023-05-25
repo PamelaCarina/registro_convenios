@@ -86,7 +86,9 @@ Unidad_solicitante As screen:
                                 rut_entidad_contraparte: rut_entidad_contraparte,
                                 dv_entidad_contraparte: dv_entidad_contraparte,
                                 nombre_representante_legal: nombre_representante_legal,
-                                nombre_responsable_institucional: nombre_responsable_institucional
+                                nombre_responsable_institucional: nombre_responsable_institucional,
+                                cargo_responsable_institucional: cargo_responsable_institucional,
+                                pais: pais
                             })
                         );
                 
@@ -97,9 +99,6 @@ Unidad_solicitante As screen:
                         Collect(contrapartes_nacionales;{
                                 
                                 
-                                
-                                cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text);
-                                pais: "CHILE";
                                 correo_responsable_institucional: Upper(correo_electronico_na_input.Text);
                                 publica: publica_na_input.Text;
                                 tipo_empresa: tipo_empresa_na_input.Text;
