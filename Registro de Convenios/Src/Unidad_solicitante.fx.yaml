@@ -80,9 +80,6 @@ Unidad_solicitante As screen:
                                                                 "2"//necesito contraparte registrada
                         ));
                 
-                        Clear(contrapartes_nacionales);
-                        Clear(contrapartes_internacionales);
-                
                         ForAll(entidad_contraparte_recuperada.contrapartes_nacionales,
                             Collect(contrapartes_nacionales,{
                                 nombre_entidad_contraparte: nombre_entidad_contraparte,
