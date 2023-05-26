@@ -118,6 +118,21 @@ Unidad_solicitante As screen:
                             })
                         );
                 
+                        ForAll(entidad_contraparte_recuperada.solicitudes_contraparte_internacional,
+                            Collect(solicitudes_añadir_contraparte,{
+                                id: id,
+                                nombre: nombre,
+                                rut: rut,
+                                dv: dv,
+                                pais: pais,
+                                tipo: "INTERNACIONAL",
+                                doc: Table(
+                                    {Name: doc.name},
+                                    {Value: doc.contentBytes}
+                                )
+                            })
+                        );
+                
                         Set(primera_vez_entidad_contraparte,false);
                     );
                 

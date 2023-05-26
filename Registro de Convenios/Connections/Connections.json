@@ -271,6 +271,36 @@
     "dependents": [],
     "id": "672bd3ed-db1e-489f-89d8-10c95a4ad26d"
   },
+  "6f521a67-85a6-4cc3-9429-efdfb895a615": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/logicflows-specialbuild/1.0.1633.3284/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "eabc2be8-acfa-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "306a3ab7-c37e-0de4-27d5-9f494a7c62c8"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "eabc2be8-acfa-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "306a3ab7-c37e-0de4-27d5-9f494a7c62c8"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PATraerestadosolicitudporpantalla"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6f521a67-85a6-4cc3-9429-efdfb895a615"
+  },
   "7cc51a73-b1e8-4a08-bf8b-cd755efe368f": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -512,36 +542,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "cd2c43b4-1b21-4364-afee-6a5f690f3de8"
-  },
-  "cfc6a346-c7b7-490b-bbdc-9c83bbd6bae7": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/logicflows-specialbuild/1.0.1633.3284/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "eabc2be8-acfa-ed11-8849-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "306a3ab7-c37e-0de4-27d5-9f494a7c62c8"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "eabc2be8-acfa-ed11-8849-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "306a3ab7-c37e-0de4-27d5-9f494a7c62c8"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PATraerestadosolicitudporpantalla"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "cfc6a346-c7b7-490b-bbdc-9c83bbd6bae7"
   },
   "e09530a6-c64a-4b7a-9fd2-e64981fc0dba": {
     "connectionRef": {
