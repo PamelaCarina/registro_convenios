@@ -128,7 +128,8 @@ Unidad_solicitante As screen:
                                 tipo: "INTERNACIONAL",
                                 doc: Table(
                                     {Name: doc.name},
-                                    {Value: doc.contentBytes}                    
+                                    //{Value: doc.contentBytes}  
+                                    {Value: doc.contentBytes}
                                 )
                             })
                         );
