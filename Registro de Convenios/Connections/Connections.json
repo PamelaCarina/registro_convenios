@@ -271,7 +271,7 @@
     "dependents": [],
     "id": "672bd3ed-db1e-489f-89d8-10c95a4ad26d"
   },
-  "6f521a67-85a6-4cc3-9429-efdfb895a615": {
+  "6a716156-b86b-408e-83ab-8e58744d59f9": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/logicflows-specialbuild/1.0.1633.3284/logicflows/icon.png",
@@ -299,7 +299,7 @@
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "6f521a67-85a6-4cc3-9429-efdfb895a615"
+    "id": "6a716156-b86b-408e-83ab-8e58744d59f9"
   },
   "7cc51a73-b1e8-4a08-bf8b-cd755efe368f": {
     "connectionRef": {
@@ -481,6 +481,28 @@
     "dependencies": {},
     "dependents": [],
     "id": "8fda6672-21eb-4ab8-9040-c18f177a802b"
+  },
+  "9707b6dc-e057-4c89-99f9-3e8a8db39b94": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1627/1.0.1627.3238/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://udeconce.sharepoint.com/sites/VinculacinconelMedio971": {
+        "dataSources": {
+          "Convenio - Solicitudes contraparte internacional": {
+            "tableName": "fcba9d67-85d4-4a52-850e-d9ce67d26fd3"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Convenio - Solicitudes contraparte internacional"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9707b6dc-e057-4c89-99f9-3e8a8db39b94"
   },
   "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": {
     "connectionRef": {
