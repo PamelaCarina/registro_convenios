@@ -17848,36 +17848,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Pruebas adjunto",
-                "type": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1.AccessibleLabel"
                 }
               ],
@@ -17902,6 +17872,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Pruebas adjunto",
+                "type": "'Pruebas adjunto'.Gallery1.att_attach_doc_sin_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 3
         },
         {
           "locations": [

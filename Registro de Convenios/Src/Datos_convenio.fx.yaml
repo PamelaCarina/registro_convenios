@@ -1042,7 +1042,7 @@ Datos_convenio As screen:
             ZIndex: =6
 
         att_registro_10_attach_extra As attachments:
-            AddAttachmentText: ="Adjuntar archivo"
+            AddAttachmentText: ="Adjuntar archivo (tamaño máximo 10 MB)"
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
@@ -1203,7 +1203,7 @@ Datos_convenio As screen:
             ZIndex: =6
 
         att_registro_10_attach_oficial As attachments:
-            AddAttachmentText: ="Adjuntar archivo"
+            AddAttachmentText: ="Adjuntar archivo (tamaño máximo 10 MB)"
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(111, 139, 167, 1)
