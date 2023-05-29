@@ -1,0 +1,115 @@
+"'Pruebas adjunto' As screen":
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =677
+        Items: ='Convenio - Solicitudes contraparte internacional'
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =1130
+        X: =110
+        Y: =58
+        ZIndex: =1
+
+        Image2 As image:
+            Height: =128
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Título
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image2.Width - 104
+            X: =Image2.X + Image2.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ID
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height + 4
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        att_attach_doc_sin_1 As attachments:
+            AddAttachmentText: ="Adjuntar archivo"
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(111, 139, 167, 1)
+            Default: =//If(!nueva_solicitud_contraparte;First(contraparte.doc))
+            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            DropTargetTextColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(255, 255, 255, 0)
+            Height: =94
+            HoverColor: =RGBA(111, 139, 167, 1)
+            IsInDataCard: =true
+            Items: =ThisItem.'Datos adjuntos'
+            MaxAttachments: =1
+            MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
+            NoAttachmentsText: ="No hay ningún archivo adjunto."
+            OnRemoveFile: |-
+                =UpdateContext({archivo_invalido:false})
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedFill: =RGBA(111, 139, 167, 1)
+            Size: =10
+            TabIndex: =1
+            Tooltip: =
+            Width: =640
+            X: =375
+            Y: =15
+            ZIndex: =6
+
+        Button2 As button:
+            OnSelect: |-
+                =Select(Parent);
+                Set(prueba_adjunto,att_attach_doc_sin_1.Attachments)
+            Text: ="Botón"
+            X: =524
+            Y: =104
+            ZIndex: =7
+
