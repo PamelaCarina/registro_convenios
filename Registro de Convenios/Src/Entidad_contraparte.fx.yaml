@@ -144,6 +144,20 @@ Entidad_contraparte As screen:
                                 contrapartes: contrapartes_internacionales
                             }
                         })
+                        ,
+                        //si es nacional y no existen contrapartes nacionales
+                        Set(entidades_contraparte_na_cargadas,{
+                            nacionales:{
+                                cantidad: 0,
+                                contrapartes: contrapartes_nacionales
+                            }
+                        });
+                        Set(entidades_contraparte_in_cargadas,{
+                            internacionales:{
+                                cantidad: 0,
+                                contrapartes: contrapartes_internacionales
+                            }
+                        })
                     )
                     ,
                     //si no es nacional, es internacional
@@ -158,6 +172,20 @@ Entidad_contraparte As screen:
                         Set(entidades_contraparte_in_cargadas,{
                             internacionales:{
                                 cantidad: CountRows(contrapartes_internacionales),
+                                contrapartes: contrapartes_internacionales
+                            }
+                        })
+                        ,
+                        //si es internacional y no existen contrapartes
+                        Set(entidades_contraparte_na_cargadas,{
+                            nacionales:{
+                                cantidad: 0,
+                                contrapartes: contrapartes_nacionales
+                            }
+                        });
+                        Set(entidades_contraparte_in_cargadas,{
+                            internacionales:{
+                                cantidad: 0,
                                 contrapartes: contrapartes_internacionales
                             }
                         })
