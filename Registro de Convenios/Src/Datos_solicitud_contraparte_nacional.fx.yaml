@@ -619,7 +619,10 @@ Datos_solicitud_contraparte_nacional As screen:
             OnSelect: |-
                 =If(CountRows(att_attach_doc_sna.Attachments) > 0,  
                     Set(attachment_extension,Last(ForAll(Split(First(att_attach_doc_sna.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
-                    If(attachment_extension<>"exe",
+                    If(attachment_extension="jpg" || attachment_extension="jpeg" || attachment_extension="pdf" ||
+                        attachment_extension="word" || attachment_extension="doc" || attachment_extension="docx" ||
+                        attachment_extension="xls" || attachment_extension="xlsx",
+                        
                         Set(existe_adjunto, true);
                         UpdateContext({archivo_invalido:false});
                         
@@ -731,6 +734,17 @@ Datos_solicitud_contraparte_nacional As screen:
             X: =img_registro_10_popup_bg_2.X
             Y: =btn_registro_10_popup_cancelar_2.Y-Self.Height
             ZIndex: =8
+
+        Label2 As label:
+            Color: =RGBA(111, 139, 167, 1)
+            Italic: =true
+            Size: =10
+            Text: |-
+                ="Formatos permitidos: JPG, JPEG, PDF, WORD, DOC, DOCX, XLS, XLSX"
+            Width: =455
+            X: =360
+            Y: =420
+            ZIndex: =9
 
     lbl_faltan_datos_7 As label:
         Align: =Align.Right
