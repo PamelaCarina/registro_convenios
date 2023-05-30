@@ -735,7 +735,7 @@ Datos_solicitud_contraparte_nacional As screen:
             Y: =btn_registro_10_popup_cancelar_2.Y-Self.Height
             ZIndex: =8
 
-        Label2 As label:
+        formatos_permitidos_lb As label:
             Color: =RGBA(111, 139, 167, 1)
             Height: =20
             Italic: =true
