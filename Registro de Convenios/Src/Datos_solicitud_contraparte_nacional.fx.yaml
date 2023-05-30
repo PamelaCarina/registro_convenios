@@ -620,7 +620,7 @@ Datos_solicitud_contraparte_nacional As screen:
                 =If(CountRows(att_attach_doc_sna.Attachments) > 0,  
                     Set(attachment_extension,Last(ForAll(Split(First(att_attach_doc_sna.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
                     If(attachment_extension="jpg" || attachment_extension="jpeg" || attachment_extension="pdf" ||
-                        attachment_extension="word" || attachment_extension="doc" || attachment_extension="docx" ||
+                        attachment_extension="doc" || attachment_extension="docx" ||
                         attachment_extension="xls" || attachment_extension="xlsx",
                         
                         Set(existe_adjunto, true);
@@ -741,7 +741,7 @@ Datos_solicitud_contraparte_nacional As screen:
             Italic: =true
             Size: =10
             Text: |-
-                ="Formatos permitidos: jpg, jpeg, pdf, word, doc, docx, xls, xlsx"
+                ="Formatos permitidos: jpg, jpeg, pdf, doc, docx, xls, xlsx"
             Width: =455
             X: =360
             Y: =420

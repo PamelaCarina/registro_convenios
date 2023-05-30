@@ -974,17 +974,19 @@ Datos_convenio As screen:
                 =If(CountRows(att_registro_10_attach_extra.Attachments) > 0,  
                     Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_extra.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
                     Set(test_attachment,First(att_registro_10_attach_extra.Attachments).Value);
-                    If(attachment_extension="exe",
-                        Set(existe_adjunto_extra, false);
-                        UpdateContext({archivo_invalido_extra:true})
-                        ,
+                    If(attachment_extension="jpg" || attachment_extension="jpeg" || attachment_extension="pdf" ||
+                        attachment_extension="doc" || attachment_extension="docx" ||
+                        attachment_extension="xls" || attachment_extension="xlsx",
+                
                         Set(existe_adjunto_extra, true);
                         UpdateContext({archivo_invalido_extra:false});
                 
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         Set(Contenido_extra,att_registro_10_attach_extra.Attachments);
-                
                         UpdateContext({show_popup_extra: false});
+                        ,
+                        Set(existe_adjunto_extra, false);
+                        UpdateContext({archivo_invalido_extra:true})
                     ), 
                     Set(existe_adjunto_extra, false);
                     UpdateContext({archivo_invalido_extra:false});
@@ -1084,6 +1086,18 @@ Datos_convenio As screen:
             Y: =btn_registro_10_popup_cancelar_1.Y-Self.Height
             ZIndex: =8
 
+        formatos_permitidos_lb_3 As label:
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =20
+            Italic: =true
+            Size: =10
+            Text: |-
+                ="Formatos permitidos: jpg, jpeg, pdf, doc, docx, xls, xlsx"
+            Width: =455
+            X: =360
+            Y: =420
+            ZIndex: =9
+
     Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_oficial
@@ -1131,7 +1145,7 @@ Datos_convenio As screen:
                 =If(CountRows(att_registro_10_attach_oficial.Attachments) > 0,  
                     Set(attachment_extension,Last(ForAll(Split(First(att_registro_10_attach_oficial.Attachments).Name,"."), {Result: ThisRecord.Value})).Result);
                     Set(test_attachment,First(att_registro_10_attach_oficial.Attachments).Value);
-                    If(attachment_extension="docx",
+                    If(attachment_extension="doc" || attachment_extension="docx",
                         Set(existe_adjunto, true);
                         UpdateContext({archivo_invalido:false});
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
@@ -1246,6 +1260,18 @@ Datos_convenio As screen:
             X: =img_registro_10_popup_bg.X
             Y: =btn_registro_10_popup_cancelar.Y-Self.Height
             ZIndex: =8
+
+        formatos_permitidos_lb_2 As label:
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =20
+            Italic: =true
+            Size: =10
+            Text: |-
+                ="Formatos permitidos: doc, docx"
+            Width: =455
+            X: =360
+            Y: =420
+            ZIndex: =9
 
     cont_loading_5 As group:
         Height: =5
