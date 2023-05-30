@@ -604,7 +604,7 @@ Datos_solicitud_contraparte_nacional As screen:
             FontWeight: =FontWeight.Bold
             PaddingLeft: =0
             Size: =18
-            Text: ="Adjuntar documento oficial"
+            Text: ="Adjuntar documentación"
             Width: =400
             X: =360
             Y: =238
