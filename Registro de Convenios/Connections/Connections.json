@@ -482,28 +482,6 @@
     "dependents": [],
     "id": "8fda6672-21eb-4ab8-9040-c18f177a802b"
   },
-  "9707b6dc-e057-4c89-99f9-3e8a8db39b94": {
-    "connectionRef": {
-      "displayName": "SharePoint",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1627/1.0.1627.3238/sharepointonline/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
-    },
-    "datasets": {
-      "https://udeconce.sharepoint.com/sites/VinculacinconelMedio971": {
-        "dataSources": {
-          "Convenio - Solicitudes contraparte internacional": {
-            "tableName": "fcba9d67-85d4-4a52-850e-d9ce67d26fd3"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Convenio - Solicitudes contraparte internacional"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "9707b6dc-e057-4c89-99f9-3e8a8db39b94"
-  },
   "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": {
     "connectionRef": {
       "apiTier": "Standard",
