@@ -502,6 +502,27 @@ Datos_contraparte_nacional As screen:
                 Y: =306
                 ZIndex: =4
 
+                sin_nombre_representante_legal As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =fondo_celeste_8.Height
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    TabIndex: =-1
+                    Visible: =sin_nombre_representante_legal_na
+                    Width: =870
+                    Y: =nombre_representante_legal_na_input.Y
+                    ZIndex: =1
+
                 nombre_representante_legal_na_input As text:
                     BorderColor: =RGBA(255, 0, 0, 1)
                     BorderThickness: =0
@@ -526,7 +547,7 @@ Datos_contraparte_nacional As screen:
                     TabIndex: =
                     Width: =870
                     Y: =22
-                    ZIndex: =1
+                    ZIndex: =2
 
                 nombre_representante_legal_na_label As label:
                     Color: =RGBA(111, 139, 167, 1)
@@ -540,27 +561,6 @@ Datos_contraparte_nacional As screen:
                     Text: ="NOMBRE REPRESENTANTE LEGAL"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
-                    ZIndex: =2
-
-                sin_nombre_representante_legal As text:
-                    BorderColor: =RGBA(238, 110, 126, 1)
-                    Default: =""
-                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    DisplayMode: =DisplayMode.Disabled
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =fondo_celeste_8.Height
-                    HoverBorderColor: =RGBA(238, 110, 126, 1)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    PaddingLeft: =5
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
-                    TabIndex: =-1
-                    Visible: =sin_nombre_representante_legal_na
-                    Width: =870
-                    Y: =nombre_representante_legal_na_input.Y
                     ZIndex: =3
 
             Extra_na As groupContainer.manualLayoutContainer:
