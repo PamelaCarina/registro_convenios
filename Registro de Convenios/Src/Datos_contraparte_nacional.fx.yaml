@@ -520,6 +520,7 @@ Datos_contraparte_nacional As screen:
                     TabIndex: =-1
                     Visible: =sin_nombre_representante_legal_na
                     Width: =870
+                    X: =nombre_representante_legal_na_input.X-1
                     Y: =nombre_representante_legal_na_input.Y
                     ZIndex: =1
 
@@ -546,6 +547,7 @@ Datos_contraparte_nacional As screen:
                     Size: =14
                     TabIndex: =
                     Width: =870
+                    X: =0+2
                     Y: =22
                     ZIndex: =2
 
