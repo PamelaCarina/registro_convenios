@@ -2332,7 +2332,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "att_registro_10_attach_extra",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2881,7 +2881,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "att_registro_10_attach_oficial",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10041,7 +10041,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fig_registro_10_popup_bg",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10172,7 +10172,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fig_registro_10_popup_bg_1",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12096,7 +12096,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "formatos_permitidos_lb_2",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12379,7 +12379,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "formatos_permitidos_lb_3",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12683,7 +12683,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "formatos_permitidos_lb_6",
-      "ParentIndex": 0,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12987,7 +12987,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "formatos_permitidos_lb_7",
-      "ParentIndex": 0,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13994,7 +13994,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_registro_10_popup",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14244,7 +14244,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_registro_10_popup_1",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14480,7 +14480,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_registro_10_popup_bg",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14716,7 +14716,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_registro_10_popup_bg_1",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15753,7 +15753,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_registro_10_faltandatos_1",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16070,7 +16070,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_registro_10_faltandatos_2",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16373,7 +16373,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_registro_10_popup_titulo",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16676,7 +16676,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_registro_10_popup_titulo_1",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

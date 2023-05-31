@@ -211,6 +211,36 @@
     "dependents": [],
     "id": "1ca997eb-842f-43b6-9402-de3e838febf8"
   },
+  "1cf70ead-fe60-42ec-9675-71aac3ac191e": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "e6995a33-1eff-ed11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "1ca2c2a9-71cc-d357-f9c1-e1e91776128f"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "e6995a33-1eff-ed11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "1ca2c2a9-71cc-d357-f9c1-e1e91776128f"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PATraerlistadodesolicitud"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1cf70ead-fe60-42ec-9675-71aac3ac191e"
+  },
   "2aad599a-8518-4f1f-85f2-d5c731a37ecd": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -512,36 +542,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "bd7cd86a-a6c9-4c76-9a35-563e3da2372b"
-  },
-  "bff9ceb7-537b-467d-b9b3-1c07b3c7a365": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "e6995a33-1eff-ed11-8f6e-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "1ca2c2a9-71cc-d357-f9c1-e1e91776128f"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "e6995a33-1eff-ed11-8f6e-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "1ca2c2a9-71cc-d357-f9c1-e1e91776128f"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PATraerlistadodesolicitud"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "bff9ceb7-537b-467d-b9b3-1c07b3c7a365"
   },
   "cd2c43b4-1b21-4364-afee-6a5f690f3de8": {
     "connectionRef": {
