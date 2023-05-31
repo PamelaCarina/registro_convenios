@@ -717,7 +717,6 @@ Datos_solicitud_contraparte_nacional As screen:
             PressedFill: =RGBA(111, 139, 167, 1)
             Size: =10
             TabIndex: =1
-            Tooltip: =
             Width: =645
             X: =360
             Y: =324
@@ -746,6 +745,19 @@ Datos_solicitud_contraparte_nacional As screen:
             X: =360
             Y: =420
             ZIndex: =9
+
+        formatos_permitidos_lb_4 As label:
+            Align: =Align.Right
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =20
+            Italic: =true
+            Size: =10
+            Text: |-
+                ="Número máximo de archivos adjuntos: 1"
+            Width: =261
+            X: =743
+            Y: =420
+            ZIndex: =10
 
     lbl_faltan_datos_7 As label:
         Align: =Align.Right

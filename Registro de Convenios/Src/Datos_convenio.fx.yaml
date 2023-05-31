@@ -1098,6 +1098,19 @@ Datos_convenio As screen:
             Y: =420
             ZIndex: =9
 
+        formatos_permitidos_lb_7 As label:
+            Align: =Align.Right
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =20
+            Italic: =true
+            Size: =10
+            Text: |-
+                ="Número máximo de archivos adjuntos: 5"
+            Width: =261
+            X: =743
+            Y: =420
+            ZIndex: =10
+
     Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_oficial
@@ -1272,6 +1285,19 @@ Datos_convenio As screen:
             X: =360
             Y: =420
             ZIndex: =9
+
+        formatos_permitidos_lb_6 As label:
+            Align: =Align.Right
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =20
+            Italic: =true
+            Size: =10
+            Text: |-
+                ="Número máximo de archivos adjuntos: 1"
+            Width: =261
+            X: =743
+            Y: =420
+            ZIndex: =10
 
     cont_loading_5 As group:
         Height: =5
