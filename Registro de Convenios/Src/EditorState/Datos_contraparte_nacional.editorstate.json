@@ -12639,7 +12639,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "nombre_representante_legal_na_input",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20160,7 +20160,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_nombre_representante_legal",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
