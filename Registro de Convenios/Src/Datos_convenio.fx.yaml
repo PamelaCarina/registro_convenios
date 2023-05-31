@@ -33,7 +33,7 @@ Datos_convenio As screen:
                 
                 //SIN PROPOSITO CENTRAL
                 //Trim(descripcion_proposito_1.Text);
-                If(IsBlank(descripcion_proposito_1.Text), UpdateContext({sin_proposito_central:true}), UpdateContext({sin_proposito_central:false}));
+                If(CountRows(Split(Trim(descripcion_proposito_1.Text),""))=0, UpdateContext({sin_proposito_central:true}), UpdateContext({sin_proposito_central:false}));
                 
                 //SIN DOCUMENTO OFICIAL
                 If(IsBlank(Gallery1_1), UpdateContext({sin_documentacion_oficial:true}), UpdateContext({sin_documentacion_oficial:false}));

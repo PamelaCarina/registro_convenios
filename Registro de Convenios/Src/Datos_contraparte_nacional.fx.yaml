@@ -106,10 +106,12 @@ Datos_contraparte_nacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =//REPRESENTANTE LEGAL
-                If(IsBlank(nombre_representante_legal_na_input.Text), UpdateContext({sin_nombre_representante_legal_na:true}), UpdateContext({sin_nombre_representante_legal_na:false}));
+                If(CountRows(Split(Trim(nombre_representante_legal_na_input.Text),""))=0, UpdateContext({sin_nombre_representante_legal_na:true}), UpdateContext({sin_nombre_representante_legal_na:false}));
+                //CountRows(Split(Trim(nombre_representante_legal_na_input.Text);""))=0
                 
                 //RESPONSABLE INSTITUCIONAL
                 If(IsBlank(nombre_responsable_institucional_na_input.Text), UpdateContext({sin_nombre_responsable_institucional_na:true}), UpdateContext({sin_nombre_responsable_institucional_na:false}));
+                
                 If(IsBlank(cargo_responsable_institucional_na_input.Text), UpdateContext({sin_cargo_na:true}), UpdateContext({sin_cargo_na:false}));
                 If(IsBlank(correo_electronico_na_input.Text),UpdateContext({correo_na_vacio:true}),UpdateContext({correo_na_vacio:false}));
                 If(sin_correo_na.Visible,UpdateContext({correo_na_invalido:true}),UpdateContext({correo_na_invalido:false}) );
@@ -227,7 +229,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopLeft: =13
                         RadiusTopRight: =13
                         TabIndex: =-1
-                        Visible: |-
+                        Visible: |
                             =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
                             || correo_na_invalido) && !hide_border_correo_na || correo_na_vacio
