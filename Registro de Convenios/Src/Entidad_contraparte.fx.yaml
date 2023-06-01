@@ -37,6 +37,18 @@ Entidad_contraparte As screen:
                             UpdateContext({sin_contraparte:false});
                         ,
                             //si es nacional y no existen contrapartes nacionales
+                            Set(entidades_contraparte_na_cargadas,{
+                            nacionales:{
+                                cantidad: 0,
+                                contrapartes: contrapartes_nacionales
+                            }
+                            });
+                            Set(entidades_contraparte_in_cargadas,{
+                                internacionales:{
+                                    cantidad: 0,
+                                    contrapartes: contrapartes_internacionales
+                                }
+                            });
                             UpdateContext({sin_contraparte:true});
                         )
                     ,
@@ -58,6 +70,18 @@ Entidad_contraparte As screen:
                             UpdateContext({sin_contraparte:false});
                         ,
                             //si es internacional y no existen contrapartes
+                            Set(entidades_contraparte_na_cargadas,{
+                            nacionales:{
+                                cantidad: 0,
+                                contrapartes: contrapartes_nacionales
+                            }
+                            });
+                            Set(entidades_contraparte_in_cargadas,{
+                                internacionales:{
+                                    cantidad: 0,
+                                    contrapartes: contrapartes_internacionales
+                                }
+                            });
                             UpdateContext({sin_contraparte:true});
                         )
                 );
