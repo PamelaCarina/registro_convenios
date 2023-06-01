@@ -62,6 +62,8 @@ Entidad_contraparte As screen:
                         )
                 );
                 
+                //si hay solicitudes de añadir contraparte
+                If(CountRows(solicitudes_añadir_contraparte)>0,true);
                 
                 
                 If(!sin_contraparte,
@@ -91,7 +93,9 @@ Entidad_contraparte As screen:
             Size: =14
             TabIndex: =1
             Text: ="SIGUIENTE"
-            Visible: =If(CountRows(solicitudes_añadir_contraparte)=0,true)
+            Visible: |-
+                =//If(CountRows(solicitudes_añadir_contraparte)=0;true) 
+                true
             X: =1124
             Y: =2
             ZIndex: =1
@@ -247,7 +251,7 @@ Entidad_contraparte As screen:
             Size: =14
             TabIndex: =1
             Text: ="ENVIAR"
-            Visible: =If(CountRows(solicitudes_añadir_contraparte)>0,true)
+            Visible: =//If(CountRows(solicitudes_añadir_contraparte)>0;true)
             X: =1126
             Y: =2
             ZIndex: =3
