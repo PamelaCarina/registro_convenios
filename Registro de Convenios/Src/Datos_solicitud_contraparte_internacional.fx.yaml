@@ -131,6 +131,15 @@ Datos_solicitud_contraparte_internacional As screen:
                                                             doc_contraparte
                     ).id_estado);
                 /*
+                    Collect(solicitudes_añadir_contraparte;{
+                            id_contraparte: contraparte.id_contraparte;
+                            nombre: nombre;
+                            pais: pais;
+                            estado: estado;
+                            file: file
+                    })
+                */
+                /*
                     If(nueva_solicitud_contraparte;
                         If(CountRows(solicitudes_añadir_contraparte)<5;
                             Collect(solicitudes_añadir_contraparte;{

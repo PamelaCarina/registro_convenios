@@ -882,11 +882,8 @@ Datos_contraparte_internacional As screen:
                 =Set(nueva_solicitud_contraparte,true);
                 Set(contraparte_s,{
                     nombre:"",
-                    rut: "",
-                    dv: "",
                     pais: "",
-                    tipo: "",
-                    doc: ""
+                    file: ""
                 });
                 Reset(att_attach_doc_sin);
                 Reset(nombre_solicitud_unidad_contraparte_in_input);
