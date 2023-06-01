@@ -767,7 +767,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "06/01/2023 17:50:56",
+  "HeaderLastSavedDateTimeUTC": "06/01/2023 17:51:45",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "02917942-c1e0-4f4a-a81e-14cdfcf4bcd1": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/993e652b7390bd63fd075c5e46bc045e-802fe2f186fd61bc\"",
@@ -776,7 +776,6 @@
     "1a6bdefd-0aa2-4a00-8ee2-7b21f1bbece3": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/aa75222233a98310af16759970bd9a50-802fe2f186fd61bc\"",
     "1b773324-d960-4be5-b664-7ba2b9e5f6ec": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/88917d64a85230d42764ebfa394520fc-802fe2f186fd61bc\"",
     "1ca997eb-842f-43b6-9402-de3e838febf8": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/3c0ddb4e493b4dc7905bc1055b1e1510\"",
-    "1cf70ead-fe60-42ec-9675-71aac3ac191e": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/1ca2c2a971ccd357f9c1e1e91776128f-802fe2f186fd61bc\"",
     "2aad599a-8518-4f1f-85f2-d5c731a37ecd": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/2c7f73da39d7d0fcbf0b8a59cd5c7452-802fe2f186fd61bc\"",
     "355b24e7-d667-4561-93da-65747e7d7ce4": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/6078c9a26bb92042da5252ba381f0ff2-802fe2f186fd61bc\"",
     "4d43a597-7638-4ec8-ad0a-b7242ccfe778": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/7e741359133b9645e5d6933be20df86e-802fe2f186fd61bc\"",
@@ -789,7 +788,8 @@
     "8fda6672-21eb-4ab8-9040-c18f177a802b": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/158579e55918e59805b1dbf7f8de7e69-802fe2f186fd61bc\"",
     "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/fb0358696006f2a3aab127b20d2d19d5-802fe2f186fd61bc\"",
     "cd2c43b4-1b21-4364-afee-6a5f690f3de8": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/a3a12b1d3bedd6c6544cdedf26bb1fff-802fe2f186fd61bc\"",
-    "e09530a6-c64a-4b7a-9fd2-e64981fc0dba": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/9cf61b6ed16ce60590816a787ee95a53-802fe2f186fd61bc\""
+    "e09530a6-c64a-4b7a-9fd2-e64981fc0dba": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/9cf61b6ed16ce60590816a787ee95a53-802fe2f186fd61bc\"",
+    "e177c4c5-85c5-4aa0-bbac-24bb273f96f3": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/2371FD7DDD5492E4145C660ADED97667-802FE2F186FD61BC\""
   },
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {
@@ -868,6 +868,7 @@
     "contrapartes_nacionales": 25,
     "contrib_externa_checkboxes": 26,
     "contrib_interna_checkboxes": 27,
+    "Convenios-PATraerlistadodesolicitud": 20,
     "CustomGallerySample": 21,
     "datos": 45,
     "datos_contribucion_externa": 31,
@@ -893,7 +894,6 @@
     "DTI-PATraerautoridadesmáximas": 1,
     "DTI-PATraerestadosolicitudporpantalla": 19,
     "DTI-PATraerinstitucióninternacional": 2,
-    "DTI-PATraerlistadodesolicitud": 20,
     "DTI-PATraernombrescontrapartesinternacionales": 3,
     "DTI-PATraerpaíses": 9,
     "DTI-PATraerreparticiones": 4,
