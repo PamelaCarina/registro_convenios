@@ -117,23 +117,22 @@ Unidad_solicitante As screen:
                                 firma_digital: {Value: firma_digital}
                             })
                         );
-                /*
-                        ForAll(entidad_contraparte_recuperada.solicitudes_contraparte_internacional;
-                            Collect(solicitudes_añadir_contraparte;{
-                                id: id;
-                                nombre: nombre;
-                                rut: rut;
-                                dv: dv;
-                                pais: pais;
-                                tipo: "INTERNACIONAL";
+                
+                        Set(contrapartes_no_registradas_recuperadas,'DTI-PATraercontrapartesnoregistradas'.Run(id_convenio));
+                
+                        ForAll(contrapartes_no_registradas_recuperadas.solicitudes_contraparte_internacional,
+                            Collect(solicitudes_añadir_contraparte,{
+                                id: id,
+                                nombre: nombre,
+                                pais: pais,
+                                estado: estado,
                                 doc: Table(
-                                    {Name: doc.name};
-                                    //{Value: doc.contentBytes}  
-                                    {Value: doc.contentBytes}
+                                    {Name: file.Name}, 
+                                    {Value: file.Value}
                                 )
                             })
-                        );;
-                */
+                        );
+                
                         Set(primera_vez_entidad_contraparte,false);
                     );
                 

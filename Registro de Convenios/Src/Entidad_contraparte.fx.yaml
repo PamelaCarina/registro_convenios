@@ -219,29 +219,30 @@ Entidad_contraparte As screen:
                         })
                     )
                 );
+                /*
+                Clear(doc_solicitud);;
+                Clear(info_solicitud);;
                 
-                Clear(doc_solicitud);
-                Clear(info_solicitud);
-                
-                ForAll(solicitudes_añadir_contraparte,
-                    Collect(doc_solicitud,{
+                ForAll(solicitudes_añadir_contraparte;
+                    Collect(doc_solicitud;{
                         doc: doc
-                    });
+                    });;
                    
-                    Collect(info_solicitud,{
+                    Collect(info_solicitud;{
                         info:{
-                            nombre:nombre,
-                            rut: rut,
-                            dv: dv,
-                            pais: pais,
+                            nombre:nombre;
+                            rut: rut;
+                            dv: dv;
+                            pais: pais;
                             tipo: tipo
                         }
-                    });    
-                );
+                    });;    
+                );;
                 
-                Set(popup_confirmacion,true);
+                Set(popup_confirmacion;true);;
                 
-                Set(num_doc_contraparte,CountRows(doc_solicitud));
+                Set(num_doc_contraparte;CountRows(doc_solicitud));;
+                */
                 /*
                 Set(doc_contraparte;{
                         file:{//doc1
@@ -401,13 +402,13 @@ Entidad_contraparte As screen:
                             
                             Set(nueva_solicitud_contraparte,false);
                             Set(contraparte, ThisItem);
-                            If(ThisItem.tipo="NACIONAL",
-                                Reset(att_attach_doc_sna);
-                                Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade)
-                                ,
+                            //If(ThisItem.tipo="NACIONAL";
+                            //    Reset(att_attach_doc_sna);;
+                            //    Navigate(Datos_solicitud_contraparte_nacional;ScreenTransition.Fade)
+                            //    ;
                                 Reset(att_attach_doc_sin);
                                 Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade)
-                            );
+                            //);;
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
@@ -420,6 +421,23 @@ Entidad_contraparte As screen:
                         Width: =14
                         X: =1150
                         ZIndex: =6
+
+                    lbl_estado_solic_cin As label:
+                        Align: =Align.Right
+                        Color: =RGBA(17, 61, 107, 1)
+                        Size: =16
+                        Text: =ThisItem.estado
+                        Width: =188
+                        X: =950
+                        Y: =52
+                        ZIndex: =7
+
+                    Label2 As label:
+                        OnSelect: =Select(Parent)
+                        Text: ="aiuda"
+                        X: =364
+                        Y: =60
+                        ZIndex: =8
 
             cont_contraparte_internacional As groupContainer.manualLayoutContainer:
                 Height: =313
@@ -534,11 +552,12 @@ Entidad_contraparte As screen:
                         ZIndex: =6
 
                     lbl_contraparte_nacional_firma_1 As label:
+                        Align: =Align.Right
                         Color: =RGBA(17, 61, 107, 1)
                         Size: =16
                         Text: =If(ThisItem.firma_digital.Value="Sí", "Con firma digital", "Sin firma digital")
                         Width: =188
-                        X: =960
+                        X: =950
                         Y: =52
                         ZIndex: =7
 
@@ -656,11 +675,12 @@ Entidad_contraparte As screen:
                         ZIndex: =6
 
                     lbl_contraparte_nacional_firma As label:
+                        Align: =Align.Right
                         Color: =RGBA(17, 61, 107, 1)
                         Size: =16
                         Text: =If(ThisItem.firma_digital.Value="Sí", "Con firma digital", "Sin firma digital")
                         Width: =188
-                        X: =960
+                        X: =950
                         Y: =52
                         ZIndex: =7
 
@@ -877,8 +897,8 @@ Entidad_contraparte As screen:
                             tipo: "",
                             doc: ""
                         });
-                        Reset(att_attach_doc_sna);
-                        Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade);
+                    //    Reset(att_attach_doc_sna);;
+                    //    Navigate(Datos_solicitud_contraparte_nacional;ScreenTransition.Fade);;
                     );
                 PaddingBottom: =0
                 PaddingLeft: =0
