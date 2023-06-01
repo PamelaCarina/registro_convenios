@@ -122,7 +122,7 @@ Unidad_solicitante As screen:
                 
                         ForAll(contrapartes_no_registradas_recuperadas.solicitudes_contraparte_internacional,
                             Collect(solicitudes_añadir_contraparte,{
-                                id: id,
+                                id_contraparte: id,
                                 nombre: nombre,
                                 pais: pais,
                                 estado: estado,

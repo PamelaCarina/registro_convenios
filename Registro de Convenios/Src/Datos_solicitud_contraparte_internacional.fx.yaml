@@ -56,7 +56,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     First(
                         Filter(
                             solicitudes_añadir_contraparte,
-                            id = contraparte.id
+                            id_contraparte = contraparte.id
                         )
                     )
                 );
