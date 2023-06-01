@@ -18004,17 +18004,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Contenido_doc_sin"
+                  "fullyQualifiedName": "App.num_doc_contraparte"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Contenido_doc_sin",
+                  "fullyQualifiedName": "App.num_doc_contraparte",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Contenido_doc_sin",
+                "member": "num_doc_contraparte",
                 "module": "App",
                 "type": "App"
               }

@@ -114,6 +114,13 @@ Datos_solicitud_contraparte_internacional As screen:
                 
                 //If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
                 
+                Set(doc_contraparte,{
+                        file:{//doc1
+                            name: First(Contenido_doc_sin).Name,
+                            contentBytes: First(Contenido_doc_sin).Value
+                        }
+                });
+                
                 If(!sin_nombre_entidad && !sin_pais_entidad,
                     Set(id_estado,'DTI-PAGuardarcontrapartesnoregistradas'.Run(
                                                             Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
