@@ -9,41 +9,15 @@
         <property name="name" type="string" />
         <property name="contentBytes" typeRef="ManualTriggerInput_file_def_contentBytes_def" />
       </object>
-      <string name="ManualTriggerInput_file_1_def_name_def" />
-      <base64Binary name="ManualTriggerInput_file_1_def_contentBytes_def" />
-      <object name="ManualTriggerInput_file_1_def">
-        <property name="name" type="string" />
-        <property name="contentBytes" typeRef="ManualTriggerInput_file_1_def_contentBytes_def" />
-      </object>
-      <string name="ManualTriggerInput_file_2_def_name_def" />
-      <base64Binary name="ManualTriggerInput_file_2_def_contentBytes_def" />
-      <object name="ManualTriggerInput_file_2_def">
-        <property name="name" type="string" />
-        <property name="contentBytes" typeRef="ManualTriggerInput_file_2_def_contentBytes_def" />
-      </object>
-      <string name="ManualTriggerInput_file_3_def_name_def" />
-      <base64Binary name="ManualTriggerInput_file_3_def_contentBytes_def" />
-      <object name="ManualTriggerInput_file_3_def">
-        <property name="name" type="string" />
-        <property name="contentBytes" typeRef="ManualTriggerInput_file_3_def_contentBytes_def" />
-      </object>
-      <string name="ManualTriggerInput_file_4_def_name_def" />
-      <base64Binary name="ManualTriggerInput_file_4_def_contentBytes_def" />
-      <object name="ManualTriggerInput_file_4_def">
-        <property name="name" type="string" />
-        <property name="contentBytes" typeRef="ManualTriggerInput_file_4_def_contentBytes_def" />
-      </object>
       <string name="ManualTriggerInput_text_1_def" />
       <string name="ManualTriggerInput_text_2_def" />
+      <string name="ManualTriggerInput_text_3_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="file" typeRef="ManualTriggerInput_file_def" />
-        <property name="file_1" typeRef="ManualTriggerInput_file_1_def" />
-        <property name="file_2" typeRef="ManualTriggerInput_file_2_def" />
-        <property name="file_3" typeRef="ManualTriggerInput_file_3_def" />
-        <property name="file_4" typeRef="ManualTriggerInput_file_4_def" />
         <property name="text_1" type="string" />
         <property name="text_2" type="string" />
+        <property name="text_3" type="string" />
       </object>
       <string name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
@@ -63,28 +37,19 @@
           </param>
           <representation mediaType="application/json">
             <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="JSON solicitud contraparte" />
+              <doc title="nombre_entidad_contraparte" />
             </param>
             <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def">
               <doc title="file" />
-            </param>
-            <param style="plain" name="file_1" path="/file_1" type="service:ManualTriggerInput_file_1_def">
-              <doc title="file_1" />
-            </param>
-            <param style="plain" name="file_2" path="/file_2" type="service:ManualTriggerInput_file_2_def">
-              <doc title="file_2" />
-            </param>
-            <param style="plain" name="file_3" path="/file_3" type="service:ManualTriggerInput_file_3_def">
-              <doc title="file_3" />
-            </param>
-            <param style="plain" name="file_4" path="/file_4" type="service:ManualTriggerInput_file_4_def">
-              <doc title="file_4" />
             </param>
             <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
               <doc title="id" />
             </param>
             <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
               <doc title="estado" />
+            </param>
+            <param style="plain" name="text_3" path="/text_3" type="xs:string" required="true">
+              <doc title="pais" />
             </param>
           </representation>
         </request>

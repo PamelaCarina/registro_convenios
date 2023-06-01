@@ -60,36 +60,6 @@
     "dependents": [],
     "id": "114de54c-8e18-4f5d-8816-9ad6d49c207a"
   },
-  "1804a435-b773-462d-ae0a-973eb51db5c9": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAGuardarcontrapartesnoregistradas"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "1804a435-b773-462d-ae0a-973eb51db5c9"
-  },
   "1861bd45-32f2-4db9-8c16-4ce8cc5f78be": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -270,6 +240,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "2aad599a-8518-4f1f-85f2-d5c731a37ecd"
+  },
+  "355b24e7-d667-4561-93da-65747e7d7ce4": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAGuardarcontrapartesnoregistradas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "355b24e7-d667-4561-93da-65747e7d7ce4"
   },
   "4d43a597-7638-4ec8-ad0a-b7242ccfe778": {
     "connectionRef": {
