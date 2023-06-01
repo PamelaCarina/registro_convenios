@@ -72,6 +72,7 @@ Datos_solicitud_contraparte_internacional As screen:
             Size: =14
             TabIndex: =-1
             Text: ="ELIMINAR"
+            Visible: =false
             X: =936
             Y: =2
             ZIndex: =2
