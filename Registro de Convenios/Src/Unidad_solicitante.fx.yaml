@@ -126,10 +126,7 @@ Unidad_solicitante As screen:
                                 nombre: nombre,
                                 pais: pais,
                                 estado: estado,
-                                doc: Table(
-                                    {Name: file.Name}, 
-                                    {Value: file.Value}
-                                )
+                                file: file
                             })
                         );
                 

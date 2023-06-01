@@ -676,7 +676,7 @@ Datos_solicitud_contraparte_internacional As screen:
             Height: =94
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
-            Items: =If(!nueva_solicitud_contraparte,First(contraparte.doc))
+            Items: =If(!nueva_solicitud_contraparte,contraparte.file)
             MaxAttachments: =1
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."

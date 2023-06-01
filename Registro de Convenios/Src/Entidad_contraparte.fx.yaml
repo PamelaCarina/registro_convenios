@@ -432,12 +432,25 @@ Entidad_contraparte As screen:
                         Y: =52
                         ZIndex: =7
 
-                    Label2 As label:
+                    lbl_solicitada_file As label:
+                        Color: =RGBA(17, 61, 107, 1)
                         OnSelect: =Select(Parent)
-                        Text: ="aiuda"
-                        X: =364
-                        Y: =60
+                        Size: =16
+                        Text: =ThisItem.file.Name
+                        Width: =220
+                        Wrap: =false
+                        X: =791
+                        Y: =52
                         ZIndex: =8
+
+                    Icon2 As icon.Document:
+                        Height: =26
+                        Icon: =Icon.Document
+                        OnSelect: =Select(Parent)
+                        Width: =34
+                        X: =757
+                        Y: =61
+                        ZIndex: =9
 
             cont_contraparte_internacional As groupContainer.manualLayoutContainer:
                 Height: =313
