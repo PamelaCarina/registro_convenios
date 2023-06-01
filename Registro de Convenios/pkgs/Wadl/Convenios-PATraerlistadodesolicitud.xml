@@ -6,11 +6,13 @@
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
       </object>
-      <integer name="ResponseActionOutput_solicitudes_convenio_def_items_def_id_solicitud_def" />
+      <string name="ResponseActionOutput_solicitudes_convenio_def_items_def_id_solicitud_def" />
       <string name="ResponseActionOutput_solicitudes_convenio_def_items_def_estado_def" />
+      <string name="ResponseActionOutput_solicitudes_convenio_def_items_def_fecha_def" />
       <object name="ResponseActionOutput_solicitudes_convenio_def_items_def">
-        <property name="id_solicitud" type="integer" />
+        <property name="id_solicitud" type="string" />
         <property name="estado" type="string" />
+        <property name="fecha" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_solicitudes_convenio_def_items_def" name="ResponseActionOutput_solicitudes_convenio_def" />
       <object name="ResponseActionOutput">

@@ -30,6 +30,8 @@ App As appinfo:
         
         
         //listado solicitudes
+        ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec).solicitudes_convenio, fecha));
+        
         
         //nombres reparticiones
         ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion));
