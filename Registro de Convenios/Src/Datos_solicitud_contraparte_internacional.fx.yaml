@@ -122,15 +122,13 @@ Datos_solicitud_contraparte_internacional As screen:
                 });
                 
                 If(!sin_nombre_entidad && !sin_pais_entidad,
-                    Set(solicitud_contraparte_in,'DTI-PAGuardarcontrapartesnoregistradas'.Run(
+                    Set(id_estado,'DTI-PAGuardarcontrapartesnoregistradas'.Run(
                                                             Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
                                                             id_convenio,
                                                             id_estado,
                                                             pais.Selected.pais,
                                                             doc_contraparte
-                    ));
-                    Set(id_estado,solicitud_contraparte_in.id_estado);
-                    Set(id_contraparte,solicitud_contraparte_in.id_contraparte);
+                    ).id_estado);
                 /*
                     If(nueva_solicitud_contraparte;
                         If(CountRows(solicitudes_añadir_contraparte)<5;
