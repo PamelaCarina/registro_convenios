@@ -1190,6 +1190,7 @@ Datos_contraparte_nacional As screen:
                 Navigate(Datos_solicitud_contraparte_nacional,ScreenTransition.Fade);
             Size: =14
             Text: ="SOLICITAR CONTRAPARTE"
+            Visible: =false
             Width: =260
             X: =360
             Y: =488

@@ -364,7 +364,7 @@ Mostar_solicitudes As screen:
     "'Solicitud anterior' As button":
         Height: =70
         OnSelect: |-
-            =Set(id_convenio,"159");
+            =Set(id_convenio,"172");
             Set(id_estado,"1");
             Set(nuevo,false);
             
@@ -404,8 +404,7 @@ Mostar_solicitudes As screen:
             
             Navigate(Unidad_solicitante);
         Text: |-
-            ="Solicitud anterior para pruebas (id: 159)"
-        Visible: =false
+            ="Solicitud anterior para pruebas (id: 172)"
         Width: =234
         X: =1060
         Y: =516
@@ -436,7 +435,7 @@ Mostar_solicitudes As screen:
     "'Solicitud anterior_1' As button":
         Height: =70
         OnSelect: |-
-            =Set(id_convenio,"162");
+            =Set(id_convenio,"171");
             Set(id_estado,"1");
             Set(nuevo,false);
             
@@ -481,8 +480,7 @@ Mostar_solicitudes As screen:
             
             Navigate(Unidad_solicitante);
         Text: |-
-            ="Solicitud anterior para pruebas (id: 162)"
-        Visible: =false
+            ="Solicitud anterior para pruebas (id: 171)"
         Width: =234
         X: =660
         Y: =586
