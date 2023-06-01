@@ -98,31 +98,10 @@
         <property name="firma_digital" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_contrapartes_internacionales_def_items_def" name="ResponseActionOutput_contrapartes_internacionales_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_id_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_nombre_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_rut_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_dv_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_pais_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_doc_def_name_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_doc_def_contentBytes_def" />
-      <object name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_doc_def">
-        <property name="name" type="string" />
-        <property name="contentBytes" type="string" />
-      </object>
-      <object name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def">
-        <property name="id" type="string" />
-        <property name="nombre" type="string" />
-        <property name="rut" type="string" />
-        <property name="dv" type="string" />
-        <property name="pais" type="string" />
-        <property name="doc" typeRef="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_doc_def" />
-      </object>
-      <array typeRef="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def" name="ResponseActionOutput_solicitudes_contraparte_internacional_def" />
       <object name="ResponseActionOutput">
         <property name="unidad_solicitante_registrada" typeRef="ResponseActionOutput_unidad_solicitante_registrada_def" />
         <property name="contrapartes_nacionales" typeRef="ResponseActionOutput_contrapartes_nacionales_def" />
         <property name="contrapartes_internacionales" typeRef="ResponseActionOutput_contrapartes_internacionales_def" />
-        <property name="solicitudes_contraparte_internacional" typeRef="ResponseActionOutput_solicitudes_contraparte_internacional_def" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
