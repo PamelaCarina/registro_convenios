@@ -30,8 +30,6 @@ App As appinfo:
         
         
         //listado solicitudes
-        Clear(listado_solicitudes);
-        ClearCollect(listado_solicitudes,'DTI-PATraerlistadodesolicitud'.Run().listado_solicitudes);
         
         //nombres reparticiones
         ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion));
