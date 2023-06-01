@@ -759,6 +759,19 @@ Datos_solicitud_contraparte_nacional As screen:
             Y: =420
             ZIndex: =10
 
+        Button2 As button:
+            OnSelect: =absoluteUri()
+            Text: ="Botón"
+            X: =873
+            Y: =282
+            ZIndex: =11
+
+        Image2 As image:
+            Image: =Last(att_attach_doc_sna.Attachments).Value
+            X: =1081
+            Y: =369
+            ZIndex: =12
+
     lbl_faltan_datos_7 As label:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
