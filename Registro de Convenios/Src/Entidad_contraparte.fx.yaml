@@ -384,6 +384,7 @@ Entidad_contraparte As screen:
                             =Select(Parent);
                             Set(reset_externo, false);
                             //Navigate(Registro_Actividad_6)
+                        Visible: =false
                         Width: =14
                         X: =1150
                         Y: =60
@@ -418,6 +419,7 @@ Entidad_contraparte As screen:
                         PressedFill: =RGBA(0, 0, 0, 0)
                         TabIndex: =2
                         Text: =""
+                        Visible: =false
                         Width: =14
                         X: =1150
                         ZIndex: =6
@@ -428,22 +430,24 @@ Entidad_contraparte As screen:
                         Size: =16
                         Text: =ThisItem.estado
                         Width: =188
-                        X: =950
+                        X: =930
                         Y: =52
                         ZIndex: =7
 
                     lbl_solicitada_file As label:
                         Color: =RGBA(17, 61, 107, 1)
-                        OnSelect: =Select(Parent)
+                        OnSelect: =
+                        PaddingLeft: =40
                         Size: =16
                         Text: =ThisItem.file.Name
                         Width: =220
                         Wrap: =false
-                        X: =791
+                        X: =757
                         Y: =52
                         ZIndex: =8
 
                     Icon2 As icon.Document:
+                        Color: =RGBA(17, 61, 107, 1)
                         Height: =26
                         Icon: =Icon.Document
                         OnSelect: =Select(Parent)
@@ -451,6 +455,42 @@ Entidad_contraparte As screen:
                         X: =757
                         Y: =61
                         ZIndex: =9
+
+                    Icon1_1 As icon.Trash:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =34
+                        Icon: =Icon.Cancel
+                        OnSelect: =Select(Parent)
+                        Width: =47
+                        X: =1133
+                        Y: =55
+                        ZIndex: =10
+
+                    btn_buscar_promotor_2 As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FontWeight: =FontWeight.Normal
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(207, 210, 232, 0.4)
+                        OnSelect: =Launch(ThisItem.file.Value)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(207, 210, 232, 0.4)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Size: =20
+                        TabIndex: =
+                        Text: =""
+                        Width: =248
+                        X: =743
+                        Y: =54
+                        ZIndex: =11
 
             cont_contraparte_internacional As groupContainer.manualLayoutContainer:
                 Height: =313
@@ -570,7 +610,7 @@ Entidad_contraparte As screen:
                         Size: =16
                         Text: =If(ThisItem.firma_digital.Value="Sí", "Con firma digital", "Sin firma digital")
                         Width: =188
-                        X: =950
+                        X: =930
                         Y: =52
                         ZIndex: =7
 
@@ -693,7 +733,7 @@ Entidad_contraparte As screen:
                         Size: =16
                         Text: =If(ThisItem.firma_digital.Value="Sí", "Con firma digital", "Sin firma digital")
                         Width: =188
-                        X: =950
+                        X: =930
                         Y: =52
                         ZIndex: =7
 
