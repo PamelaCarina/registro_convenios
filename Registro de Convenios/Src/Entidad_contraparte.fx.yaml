@@ -13,6 +13,7 @@ Entidad_contraparte As screen:
 
         Siguiente_2 As button:
             BorderThickness: =1
+            DisplayMode: =If(CountRows(Filter(solicitudes_añadir_contraparte, "En espera" in estado))=0,DisplayMode.Edit,DisplayMode.Disabled)
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
@@ -85,10 +86,6 @@ Entidad_contraparte As screen:
                             UpdateContext({sin_contraparte:true});
                         )
                 );
-                
-                //si hay solicitudes de añadir contraparte
-                If(CountRows(solicitudes_añadir_contraparte)>0,true);
-                
                 
                 If(!sin_contraparte,
                 
