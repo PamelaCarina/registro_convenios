@@ -108,6 +108,16 @@ Entidad_contraparte As screen:
                                                                 "9"//necesito especificacion registrada
                         ).especificacion_registrada);
                 
+                        ForAll(especificacion_convenio_recuperada.borrador_convenio,
+                            Collect(borrador_convenio_recuperado,{
+                                file:{
+                                    Name: Name,
+                                    Value: Value
+                                }
+                            })
+                        );
+                        //Set(borrador_convenio_recuperado;especificacion_convenio_recuperada.borrador_convenio);;
+                        Set(documentacion_extra_recuperada,especificacion_convenio_recuperada.documentos_extra);
                         
                 /*
                         ForAll(especificacion_convenio_recuperada;
