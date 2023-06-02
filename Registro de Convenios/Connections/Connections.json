@@ -361,6 +361,36 @@
     "dependents": [],
     "id": "672bd3ed-db1e-489f-89d8-10c95a4ad26d"
   },
+  "764856f0-1177-43e4-b5b2-dd197b15c268": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "e2bd3084-a9e5-ec11-bb3c-000d3a33419e"
+        },
+        "workflowName": {
+          "value": "fb035869-6006-f2a3-aab1-27b20d2d19d5"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "e2bd3084-a9e5-ec11-bb3c-000d3a33419e"
+        },
+        "workflowName": {
+          "value": "fb035869-6006-f2a3-aab1-27b20d2d19d5"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "VRIM-PATraelistadoactividades"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "764856f0-1177-43e4-b5b2-dd197b15c268"
+  },
   "7cc51a73-b1e8-4a08-bf8b-cd755efe368f": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -420,37 +450,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "80d310d3-d6b4-43ec-91c3-a219a949da5a"
-  },
-  "8789f143-b674-49d3-99ce-85bcaafed327": {
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "8ad98892-9adf-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "5b4f687e-3ccb-5846-d694-9e769283dc36"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "8ad98892-9adf-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "5b4f687e-3ccb-5846-d694-9e769283dc36"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "VRIM-PA-Traeaprobadordetrabajador"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "8789f143-b674-49d3-99ce-85bcaafed327"
   },
   "8cf80456-9af9-4743-84c3-76b3379f2378": {
     "connectionRef": {
@@ -541,37 +540,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "9a8e866b-d82f-4de0-8c1a-f4ffd3b52b18"
-  },
-  "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": {
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "e2bd3084-a9e5-ec11-bb3c-000d3a33419e"
-        },
-        "workflowName": {
-          "value": "fb035869-6006-f2a3-aab1-27b20d2d19d5"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "e2bd3084-a9e5-ec11-bb3c-000d3a33419e"
-        },
-        "workflowName": {
-          "value": "fb035869-6006-f2a3-aab1-27b20d2d19d5"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "VRIM-PATraelistadoactividades"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "bd7cd86a-a6c9-4c76-9a35-563e3da2372b"
   },
   "befe5fbc-00e6-47de-9779-10b6a8dcccb8": {
     "connectionRef": {

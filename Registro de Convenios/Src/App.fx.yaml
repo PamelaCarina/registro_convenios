@@ -10,24 +10,11 @@ App As appinfo:
         Set(arraypersonaltest,persona_solicitante.'array organismo actividad');
         ClearCollect(organismos_actividad, SortByColumns(arraypersonaltest,"Reparticion"));
         
-        //¿Esto qué hace?
-        Set(nueva_unidad_solicitante, false);
-        
         //LISTAS DESPLEGABLES
         ClearCollect(datos,Listaespecificacionesconvenio.Run());
         
         Set(a_t,First(datos).'alcance territorial');
         ClearCollect(lista_alcance,a_t);
-        
-        Set(t,First(datos).tipologia);
-        ClearCollect(lista_tipologia,t);
-        
-        Set(t_s,First(datos).'tipo solicitud');
-        ClearCollect(lista_tipo_solicitud,t_s);
-        
-        Set(m,First(datos).modalidad);
-        ClearCollect(lista_modalidad,m);
-        
         
         //listado solicitudes
         ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec).solicitudes_convenio, fecha));
@@ -40,6 +27,15 @@ App As appinfo:
         ClearCollect(Nombres_autoridades, Sort('DTI-PATraerautoridadesmáximas'.Run(), nombre_completo));
         
         Set(cargando, false);
+        
+        Set(t,First(datos).tipologia);
+        ClearCollect(lista_tipologia,t);
+        
+        Set(t_s,First(datos).'tipo solicitud');
+        ClearCollect(lista_tipo_solicitud,t_s);
+        
+        Set(m,First(datos).modalidad);
+        ClearCollect(lista_modalidad,m);
         
         //NACIONALES
         Clear(contrapartes_nacionales);
