@@ -103,15 +103,13 @@ Datos_solicitud_contraparte_internacional As screen:
                 
                     Set(id_estado,contrapartes_no_registradas_in.id_estado);
                     
-                    /*
-                        Collect(solicitudes_añadir_contraparte;{
-                            id_contraparte: id;
-                            nombre: nombre;
-                            pais: pais;
-                            estado: estado;
-                            file: file
-                        })
-                        */
+                    Collect(solicitudes_añadir_contraparte,{
+                        id_contraparte: contrapartes_no_registradas_in.id_contraparte,
+                        nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                        pais: pais.Selected.pais,
+                        estado: "En espera",
+                        file: contrapartes_no_registradas_in.file
+                    });
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade);
                 
