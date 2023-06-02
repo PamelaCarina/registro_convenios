@@ -90,6 +90,7 @@ Datos_solicitud_contraparte_internacional As screen:
                 If(!sin_nombre_entidad && !sin_pais_entidad,
                 
                     If(id_estado="1",Set(id_estado,"4"));//pasa a contraparte internacional solicitada
+                    If(id_estado="2",Set(id_estado,"4"));//pasa a contraparte internacional solicitada
                     If(id_estado="9",Set(id_estado,"4"));//pasa a contraparte internacional solicitada
                 
                     Set(id_estado,'DTI-PAGuardarcontrapartesnoregistradas'.Run(
