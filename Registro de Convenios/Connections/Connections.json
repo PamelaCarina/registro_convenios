@@ -151,6 +151,36 @@
     "dependents": [],
     "id": "1ca997eb-842f-43b6-9402-de3e838febf8"
   },
+  "275dda88-8f58-4082-a3f7-7afc6491d993": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAGuardarcontrapartesnoregistradas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "275dda88-8f58-4082-a3f7-7afc6491d993"
+  },
   "2aad599a-8518-4f1f-85f2-d5c731a37ecd": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -210,36 +240,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "2b4d29cf-e023-4ffe-981f-0d1b5a64b034"
-  },
-  "2d2f1fca-5863-49a2-a85d-425a06958d60": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "6078c9a2-6bb9-2042-da52-52ba381f0ff2"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAGuardarcontrapartesnoregistradas"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "2d2f1fca-5863-49a2-a85d-425a06958d60"
   },
   "3465d341-63ea-4404-8725-b30184dd3101": {
     "connectionRef": {
@@ -391,36 +391,6 @@
     "dependents": [],
     "id": "7cc51a73-b1e8-4a08-bf8b-cd755efe368f"
   },
-  "7cd36da3-0ca5-4468-84d4-4b6a830bacc5": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "2a2555c5-d3f4-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "074a8f1e-f360-07dd-3097-d1e40e8fbfcc"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "2a2555c5-d3f4-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "074a8f1e-f360-07dd-3097-d1e40e8fbfcc"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAGuardarcontrapartesregistradas"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "7cd36da3-0ca5-4468-84d4-4b6a830bacc5"
-  },
   "80d310d3-d6b4-43ec-91c3-a219a949da5a": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -541,6 +511,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "8fda6672-21eb-4ab8-9040-c18f177a802b"
+  },
+  "9a8e866b-d82f-4de0-8c1a-f4ffd3b52b18": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "2a2555c5-d3f4-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "074a8f1e-f360-07dd-3097-d1e40e8fbfcc"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "2a2555c5-d3f4-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "074a8f1e-f360-07dd-3097-d1e40e8fbfcc"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAGuardarcontrapartesregistradas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9a8e866b-d82f-4de0-8c1a-f4ffd3b52b18"
   },
   "bd7cd86a-a6c9-4c76-9a35-563e3da2372b": {
     "connectionRef": {

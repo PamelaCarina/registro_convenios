@@ -93,25 +93,25 @@ Datos_solicitud_contraparte_internacional As screen:
                     If(id_estado="2",Set(id_estado,"4"));//pasa a contraparte internacional solicitada
                     If(id_estado="9",Set(id_estado,"4"));//pasa a contraparte internacional solicitada
                 
-                    Set(id_estado,'DTI-PAGuardarcontrapartesnoregistradas'.Run(
+                    Set(contrapartes_no_registradas_in,'DTI-PAGuardarcontrapartesnoregistradas'.Run(
                                                             Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
                                                             id_convenio,
                                                             id_estado,
                                                             pais.Selected.pais,
                                                             doc_contraparte
-                    ).id_estado);
+                    ));
+                
+                    Set(id_estado,contrapartes_no_registradas_in.id_estado);
                     
-                    Set(contrapartes_no_registradas_recuperadas,'DTI-PATraercontrapartesnoregistradas'.Run(id_convenio));
-                    Clear(solicitudes_añadir_contraparte);
-                    ForAll(contrapartes_no_registradas_recuperadas.solicitudes_contraparte_internacional,
-                        Collect(solicitudes_añadir_contraparte,{
-                            id_contraparte: id,
-                            nombre: nombre,
-                            pais: pais,
-                            estado: estado,
+                    /*
+                        Collect(solicitudes_añadir_contraparte;{
+                            id_contraparte: id;
+                            nombre: nombre;
+                            pais: pais;
+                            estado: estado;
                             file: file
                         })
-                    );
+                        */
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade);
                 
