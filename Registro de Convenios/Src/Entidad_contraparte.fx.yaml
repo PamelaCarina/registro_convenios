@@ -102,7 +102,7 @@ Entidad_contraparte As screen:
                                                                 id_estado                                                
                     ).id_estado);
                 
-                    If(Int(id_estado)>=9 && primera_vez_entidad_contraparte,
+                    If(Int(id_estado)>=9 && primera_vez_especificacion_convenio,
                         Set(especificacion_convenio_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
                                                                 id_convenio,
                                                                 "9"//necesito especificacion registrada

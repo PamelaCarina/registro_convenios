@@ -509,7 +509,7 @@ Datos_convenio As screen:
                             ZIndex: =1
 
                         tipo_modalidades As dropdown:
-                            AllowEmptySelection: =true
+                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada),true,false)
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -517,6 +517,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
+                            Default: =If(IsBlank(especificacion_convenio_recuperada),"1",LookUp(lista_modalidad,valor=especificacion_convenio_recuperada.modalidad,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
@@ -657,7 +658,7 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_solicitud As dropdown:
-                            AllowEmptySelection: =true
+                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada),true,false)
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -665,6 +666,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
+                            Default: =If(IsBlank(especificacion_convenio_recuperada),"1",LookUp(lista_tipo_solicitud,valor=especificacion_convenio_recuperada.tipo_solicitud,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
@@ -672,9 +674,7 @@ Datos_convenio As screen:
                             HoverBorderColor: =RGBA(241,244,255,1)
                             HoverColor: =RGBA(17, 61, 107, 1)
                             HoverFill: =RGBA(207, 210, 232, 1)
-                            Items: |-
-                                =//lista_tipo_solicitud
-                                Filter(lista_tipo_solicitud, buscador_t_s_input.Text in valor)
+                            Items: =lista_tipo_solicitud
                             OnChange: =Reset(buscador_t_s_input)
                             PaddingBottom: =12
                             PaddingLeft: =12
@@ -794,7 +794,7 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_tipologia As dropdown:
-                            AllowEmptySelection: =true
+                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada),true,false)
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -802,6 +802,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
+                            Default: =If(IsBlank(especificacion_convenio_recuperada),"1",LookUp(lista_tipologia,valor=especificacion_convenio_recuperada.tipologia,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
@@ -809,9 +810,7 @@ Datos_convenio As screen:
                             HoverBorderColor: =RGBA(241,244,255,1)
                             HoverColor: =RGBA(17, 61, 107, 1)
                             HoverFill: =RGBA(207, 210, 232, 1)
-                            Items: |-
-                                =//lista_tipologia
-                                Filter(lista_tipologia, buscador_t_input.Text in valor)
+                            Items: =lista_tipologia
                             OnChange: =Reset(buscador_t_input)
                             PaddingBottom: =12
                             PaddingLeft: =12
@@ -908,6 +907,13 @@ Datos_convenio As screen:
             Text: ="Datos del convenio solicitado"
             Width: =1366
             ZIndex: =3
+
+        Button3 As button:
+            OnSelect: =Reset(tipo_tipologia)
+            Text: ="Botón"
+            X: =1039
+            Y: =60
+            ZIndex: =5
 
     lbl_faltan_datos_1 As label:
         Align: =Align.Right

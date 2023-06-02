@@ -1321,7 +1321,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nuevo,"1",LookUp(Filter(lista_alcance, buscador_a_t_input.Text in valor),valor=unidad_solicitante_recuperada.alcance_territorial,id))
+                        Default: =If(nuevo,"1",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
@@ -1329,9 +1329,7 @@ Unidad_solicitante As screen:
                         HoverBorderColor: =RGBA(241,244,255,1)
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
-                        Items: |-
-                            =//lista_alcance
-                            Filter(lista_alcance, buscador_a_t_input.Text in valor)
+                        Items: =lista_alcance
                         OnChange: =Reset(buscador_a_t_input)
                         PaddingBottom: =12
                         PaddingLeft: =12

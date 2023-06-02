@@ -408,6 +408,7 @@ Mostar_solicitudes As screen:
                 })
             );
             
+            
             Navigate(Unidad_solicitante);
         Text: |-
             ="Solicitud anterior para pruebas (id: 172)"
@@ -446,7 +447,7 @@ Mostar_solicitudes As screen:
             Set(nuevo,false);
             
             Set(primera_vez_entidad_contraparte,true);
-            Set(primera_vez_especificacion_convenio,false);
+            Set(primera_vez_especificacion_convenio,true);
             
             Set(unidad_solicitante_recuperada,
             'DTI-PATraerestadosolicitudporpantalla'.Run(
