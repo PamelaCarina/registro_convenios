@@ -437,6 +437,7 @@ Entidad_contraparte As screen:
                         PaddingLeft: =40
                         Size: =16
                         Text: =ThisItem.file.Name
+                        Visible: =If(IsBlank(ThisItem.file.Name),false,true)
                         Width: =220
                         Wrap: =false
                         X: =757
@@ -448,6 +449,7 @@ Entidad_contraparte As screen:
                         Height: =26
                         Icon: =Icon.Document
                         OnSelect: =Select(Parent)
+                        Visible: =If(IsBlank(ThisItem.file.Name),false,true)
                         Width: =34
                         X: =757
                         Y: =61
@@ -486,6 +488,7 @@ Entidad_contraparte As screen:
                         Size: =20
                         TabIndex: =
                         Text: =""
+                        Visible: =If(IsBlank(ThisItem.file.Name),false,true)
                         Width: =248
                         X: =743
                         Y: =54
