@@ -102,6 +102,30 @@ Entidad_contraparte As screen:
                                                                 id_estado                                                
                     ).id_estado);
                 
+                    If(Int(id_estado)>=9 && primera_vez_entidad_contraparte,
+                        Set(especificacion_convenio_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
+                                                                id_convenio,
+                                                                "9"//necesito especificacion registrada
+                        ).especificacion_registrada);
+                
+                        
+                /*
+                        ForAll(especificacion_convenio_recuperada;
+                        
+                            Collect(solicitudes_añadir_contraparte;{
+                                id_contraparte: id;
+                                nombre: nombre;
+                                pais: pais;
+                                estado: estado;
+                                file: file
+                            })
+                            */
+                        //);;
+                
+                        Set(primera_vez_especificacion_convenio,false);
+                    );
+                
+                
                     Set(cargando, false);
                 
                     If(!contrapartes_por_revisar,Navigate(Datos_convenio,ScreenTransition.Fade));
