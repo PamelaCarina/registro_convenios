@@ -341,6 +341,12 @@ Mostar_solicitudes As screen:
                 Y: =43
                 ZIndex: =6
 
+        Button2 As button:
+            Text: ="Botón"
+            X: =323
+            Y: =409
+            ZIndex: =3
+
     lbl_mostrar_solicitudes As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Bold
