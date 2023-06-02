@@ -23,6 +23,8 @@ Mostar_solicitudes As screen:
                 
                 Set(autoridad,{});
                 Set(responsable,{});
+                Set(especificacion_convenio_recuperada,{});
+                
                 Clear(unidades_promotoras);
                 
                 Clear(contrapartes_nacionales);
