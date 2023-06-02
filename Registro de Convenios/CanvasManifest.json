@@ -96,7 +96,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 3,
+    "BindingErrorCount": 0,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -113,12 +113,12 @@
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
     "ManualOfflineProfileId": "",
-    "Name": "Registro de Convenios",
+    "Name": "Registro de Convenios - copia 3",
     "OriginatingVersion": "1.330",
     "ParserErrorCount": 0
   },
   "PublishInfo": {
-    "AppName": "Registro de Convenios",
+    "AppName": "Registro de Convenios - copia 3",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",

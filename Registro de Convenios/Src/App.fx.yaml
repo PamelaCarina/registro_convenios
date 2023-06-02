@@ -17,7 +17,7 @@ App As appinfo:
         ClearCollect(lista_alcance,a_t);
         
         //listado solicitudes
-        ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec).listado_solicitudes, fecha));
+        //ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec).listado_solicitudes,fecha));
         
         
         //nombres reparticiones
