@@ -218,7 +218,7 @@ Mostar_solicitudes As screen:
                     Size: =13
                     Text: |-
                         =Text(
-                            DateValue(ThisItem.fecha),
+                            DateValue(listado_solicitudes),
                             DateTimeFormat.ShortDate
                         )
                     Width: =282
