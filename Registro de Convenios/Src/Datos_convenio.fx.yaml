@@ -1316,21 +1316,52 @@ Datos_convenio As screen:
                 Items: =especificacion_convenio_recuperada.borrador_convenio
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
-                TemplateSize: =
+                TemplateSize: =20
                 Width: =635
                 Y: =94
                 ZIndex: =1
 
                 Label5 As label:
                     Color: =RGBA(111, 139, 167, 1)
-                    Height: =15
-                    OnSelect: =Select(Parent)
+                    Height: =20
+                    OnSelect: =Launch(ThisItem.Value)
                     Size: =10
                     Text: =ThisItem.Name
-                    Width: =595
+                    Width: =526
                     Wrap: =false
                     X: =30
                     ZIndex: =1
+
+                Icon3 As icon.Document:
+                    Color: =RGBA(111, 139, 167, 1)
+                    Height: =20
+                    Icon: =Icon.Document
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: =10
+                    ZIndex: =2
+
+                Label6 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    Height: =20
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =0
+                    Size: =7
+                    Text: ="Guardado"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =60
+                    X: =538
+                    ZIndex: =3
+
+                Icon4 As icon.Cancel:
+                    Color: =RGBA(111, 139, 167, 1)
+                    Height: =18
+                    Icon: =Icon.Cancel
+                    OnSelect: =Select(Parent)
+                    Width: =18
+                    X: =598
+                    ZIndex: =4
 
     cont_loading_5 As group:
         Height: =5
