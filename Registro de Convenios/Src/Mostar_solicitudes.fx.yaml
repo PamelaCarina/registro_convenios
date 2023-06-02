@@ -358,7 +358,7 @@ Mostar_solicitudes As screen:
         PaddingRight: =0
         PaddingTop: =42
         Size: =20
-        Text: ="Listado de solicitudes de tramitacion de convenios"
+        Text: ="Listado de solicitudes de tramitación de convenios"
         Width: =1366
         Y: =100
         ZIndex: =3
