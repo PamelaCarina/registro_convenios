@@ -344,7 +344,7 @@ Mostar_solicitudes As screen:
                 ZIndex: =6
 
         Button2 As button:
-            OnSelect: =ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
+            OnSelect: =
             Text: ="Botón"
             X: =323
             Y: =409
