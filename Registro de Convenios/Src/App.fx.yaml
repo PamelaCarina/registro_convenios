@@ -22,10 +22,13 @@ App As appinfo:
         //AUTORIDADES MÁXIMAS
         Set(autoridades_maximas,Sort('DTI-PATraerautoridadesmáximas'.Run(), field_3));
         
-        //NOMBRES CONTRAPARTES INTERNACIONALES
-        Set(Contrapartes_inter,'DTI-PATraernombrescontrapartesinternacionales'.Run());
-        
         Set(cargando, false);
+        
+        //NOMBRES CONTRAPARTES INTERNACIONALES
+        Set(Contrapartes_inter,Sort('DTI-PATraernombrescontrapartesinternacionales'.Run(), RAZON_SOCIAL));
+        
+        //PAISES
+        Set(paises,Sort('DTI-PATraerpaíses'.Run().paises,Nombre_x0020_Pa_x00ed_s));
         
         //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
         
@@ -102,7 +105,6 @@ App As appinfo:
         //LIMPIAR SOLICITUDES AÑADIR CONTRAPARTE
         Clear(solicitudes_añadir_contraparte);
         
-        
         //NOMBRES CONTRAPARTES INTERNACIONALES
         Clear(Nombres_contrapartes_internacionales);
         ForAll(Contrapartes_inter,
@@ -110,18 +112,14 @@ App As appinfo:
                 nombre: RAZON_SOCIAL
             })
         );
-        ClearCollect(Nombres_contrapartes_internacionales, Sort(Nombres_contrapartes_internacionales,nombre));
         
-        //paises
-        Set(paises,Sort('DTI-PATraerpaíses'.Run().paises,Nombre_x0020_Pa_x00ed_s));
+        //PAISES
         Clear(lista_paises);
-        
         ForAll(paises,
             Collect(lista_paises,{
                 pais: Upper(ThisRecord.Nombre_x0020_Pa_x00ed_s)
             })
         );
-        
         Remove(lista_paises, LookUp( lista_paises, pais="NO DEFINIDO" ));
         
         //opciones seleccionables política del convenio
