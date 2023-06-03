@@ -29,37 +29,6 @@
     "dependents": [],
     "id": "01c21fa9-393b-4467-946b-87657042bfad"
   },
-  "02917942-c1e0-4f4a-a81e-14cdfcf4bcd1": {
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "c3688980-dcde-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "993e652b-7390-bd63-fd07-5c5e46bc045e"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "c3688980-dcde-ed11-a7c7-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "993e652b-7390-bd63-fd07-5c5e46bc045e"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "Listaespecificacionesconvenio"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "02917942-c1e0-4f4a-a81e-14cdfcf4bcd1"
-  },
   "1861bd45-32f2-4db9-8c16-4ce8cc5f78be": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -540,6 +509,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "9a8e866b-d82f-4de0-8c1a-f4ffd3b52b18"
+  },
+  "a740bd04-73b6-4178-91a5-6bdc283682af": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "c3688980-dcde-ed11-a7c7-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "993e652b-7390-bd63-fd07-5c5e46bc045e"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "c3688980-dcde-ed11-a7c7-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "993e652b-7390-bd63-fd07-5c5e46bc045e"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAListaespecificacionesconvenio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a740bd04-73b6-4178-91a5-6bdc283682af"
   },
   "cd2c43b4-1b21-4364-afee-6a5f690f3de8": {
     "connectionRef": {

@@ -1,0 +1,332 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PAListaespecificacionesconvenio" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="DTI - PA Lista especificaciones convenio" />
+  <grammars>
+    <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <object name="ManualTriggerInput" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_ItemInternalId_def" />
+      <integer name="ResponseActionOutput_alcance_territorial_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Title_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Modified_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Created_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def_Claims_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def_DisplayName_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def_Email_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def_Picture_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def_Department_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def_JobTitle_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_alcance_territorial_def_items_def_Author_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Author_ux23_Claims_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def_Claims_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def_DisplayName_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def_Email_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def_Picture_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def_Department_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def_JobTitle_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def_Editor_ux23_Claims_def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_Identifier_ux7D__def" />
+      <boolean name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_IsFolder_ux7D__def" />
+      <object name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_Thumbnail_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_Link_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_Name_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_FilenameWithExtension_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_Path_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_FullPath_ux7D__def" />
+      <boolean name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_HasAttachments_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_VersionNumber_ux7D__def" />
+      <string name="ResponseActionOutput_alcance_territorial_def_items_def__ux40_odata_etag_def" />
+      <object name="ResponseActionOutput_alcance_territorial_def_items_def">
+        <property name="ItemInternalId" type="string" />
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Modified" type="string" />
+        <property name="Created" type="string" />
+        <property name="Author" typeRef="ResponseActionOutput_alcance_territorial_def_items_def_Author_def" />
+        <property name="Author#Claims" type="string" />
+        <property name="Editor" typeRef="ResponseActionOutput_alcance_territorial_def_items_def_Editor_def" />
+        <property name="Editor#Claims" type="string" />
+        <property name="{Identifier}" type="string" />
+        <property name="{IsFolder}" type="boolean" />
+        <property name="{Thumbnail}" typeRef="ResponseActionOutput_alcance_territorial_def_items_def__ux7B_Thumbnail_ux7D__def" />
+        <property name="{Link}" type="string" />
+        <property name="{Name}" type="string" />
+        <property name="{FilenameWithExtension}" type="string" />
+        <property name="{Path}" type="string" />
+        <property name="{FullPath}" type="string" />
+        <property name="{HasAttachments}" type="boolean" />
+        <property name="{VersionNumber}" type="string" />
+        <property name="@odata.etag" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_alcance_territorial_def_items_def" name="ResponseActionOutput_alcance_territorial_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_ItemInternalId_def" />
+      <integer name="ResponseActionOutput_tipologia_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Title_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Modified_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Created_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def_Claims_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def_DisplayName_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def_Email_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def_Picture_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def_Department_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def_JobTitle_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_tipologia_def_items_def_Author_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_tipologia_def_items_def_Author_ux23_Claims_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def_Claims_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def_DisplayName_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def_Email_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def_Picture_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def_Department_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def_JobTitle_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_tipologia_def_items_def_Editor_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_tipologia_def_items_def_Editor_ux23_Claims_def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_Identifier_ux7D__def" />
+      <boolean name="ResponseActionOutput_tipologia_def_items_def__ux7B_IsFolder_ux7D__def" />
+      <object name="ResponseActionOutput_tipologia_def_items_def__ux7B_Thumbnail_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_Link_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_Name_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_FilenameWithExtension_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_Path_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_FullPath_ux7D__def" />
+      <boolean name="ResponseActionOutput_tipologia_def_items_def__ux7B_HasAttachments_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux7B_VersionNumber_ux7D__def" />
+      <string name="ResponseActionOutput_tipologia_def_items_def__ux40_odata_etag_def" />
+      <object name="ResponseActionOutput_tipologia_def_items_def">
+        <property name="ItemInternalId" type="string" />
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Modified" type="string" />
+        <property name="Created" type="string" />
+        <property name="Author" typeRef="ResponseActionOutput_tipologia_def_items_def_Author_def" />
+        <property name="Author#Claims" type="string" />
+        <property name="Editor" typeRef="ResponseActionOutput_tipologia_def_items_def_Editor_def" />
+        <property name="Editor#Claims" type="string" />
+        <property name="{Identifier}" type="string" />
+        <property name="{IsFolder}" type="boolean" />
+        <property name="{Thumbnail}" typeRef="ResponseActionOutput_tipologia_def_items_def__ux7B_Thumbnail_ux7D__def" />
+        <property name="{Link}" type="string" />
+        <property name="{Name}" type="string" />
+        <property name="{FilenameWithExtension}" type="string" />
+        <property name="{Path}" type="string" />
+        <property name="{FullPath}" type="string" />
+        <property name="{HasAttachments}" type="boolean" />
+        <property name="{VersionNumber}" type="string" />
+        <property name="@odata.etag" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_tipologia_def_items_def" name="ResponseActionOutput_tipologia_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_ItemInternalId_def" />
+      <integer name="ResponseActionOutput_tipo_solicitud_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Title_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Modified_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Created_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def_Claims_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def_DisplayName_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def_Email_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def_Picture_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def_Department_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def_JobTitle_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Author_ux23_Claims_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def_Claims_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def_DisplayName_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def_Email_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def_Picture_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def_Department_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def_JobTitle_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_ux23_Claims_def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_Identifier_ux7D__def" />
+      <boolean name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_IsFolder_ux7D__def" />
+      <object name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_Thumbnail_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_Link_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_Name_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_FilenameWithExtension_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_Path_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_FullPath_ux7D__def" />
+      <boolean name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_HasAttachments_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_VersionNumber_ux7D__def" />
+      <string name="ResponseActionOutput_tipo_solicitud_def_items_def__ux40_odata_etag_def" />
+      <object name="ResponseActionOutput_tipo_solicitud_def_items_def">
+        <property name="ItemInternalId" type="string" />
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Modified" type="string" />
+        <property name="Created" type="string" />
+        <property name="Author" typeRef="ResponseActionOutput_tipo_solicitud_def_items_def_Author_def" />
+        <property name="Author#Claims" type="string" />
+        <property name="Editor" typeRef="ResponseActionOutput_tipo_solicitud_def_items_def_Editor_def" />
+        <property name="Editor#Claims" type="string" />
+        <property name="{Identifier}" type="string" />
+        <property name="{IsFolder}" type="boolean" />
+        <property name="{Thumbnail}" typeRef="ResponseActionOutput_tipo_solicitud_def_items_def__ux7B_Thumbnail_ux7D__def" />
+        <property name="{Link}" type="string" />
+        <property name="{Name}" type="string" />
+        <property name="{FilenameWithExtension}" type="string" />
+        <property name="{Path}" type="string" />
+        <property name="{FullPath}" type="string" />
+        <property name="{HasAttachments}" type="boolean" />
+        <property name="{VersionNumber}" type="string" />
+        <property name="@odata.etag" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_tipo_solicitud_def_items_def" name="ResponseActionOutput_tipo_solicitud_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_ItemInternalId_def" />
+      <integer name="ResponseActionOutput_modalidad_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Title_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Modified_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Created_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def_Claims_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def_DisplayName_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def_Email_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def_Picture_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def_Department_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def_JobTitle_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_modalidad_def_items_def_Author_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_modalidad_def_items_def_Author_ux23_Claims_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def_Claims_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def_DisplayName_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def_Email_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def_Picture_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def_Department_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def_JobTitle_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_modalidad_def_items_def_Editor_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_modalidad_def_items_def_Editor_ux23_Claims_def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_Identifier_ux7D__def" />
+      <boolean name="ResponseActionOutput_modalidad_def_items_def__ux7B_IsFolder_ux7D__def" />
+      <object name="ResponseActionOutput_modalidad_def_items_def__ux7B_Thumbnail_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_Link_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_Name_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_FilenameWithExtension_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_Path_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_FullPath_ux7D__def" />
+      <boolean name="ResponseActionOutput_modalidad_def_items_def__ux7B_HasAttachments_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux7B_VersionNumber_ux7D__def" />
+      <string name="ResponseActionOutput_modalidad_def_items_def__ux40_odata_etag_def" />
+      <object name="ResponseActionOutput_modalidad_def_items_def">
+        <property name="ItemInternalId" type="string" />
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Modified" type="string" />
+        <property name="Created" type="string" />
+        <property name="Author" typeRef="ResponseActionOutput_modalidad_def_items_def_Author_def" />
+        <property name="Author#Claims" type="string" />
+        <property name="Editor" typeRef="ResponseActionOutput_modalidad_def_items_def_Editor_def" />
+        <property name="Editor#Claims" type="string" />
+        <property name="{Identifier}" type="string" />
+        <property name="{IsFolder}" type="boolean" />
+        <property name="{Thumbnail}" typeRef="ResponseActionOutput_modalidad_def_items_def__ux7B_Thumbnail_ux7D__def" />
+        <property name="{Link}" type="string" />
+        <property name="{Name}" type="string" />
+        <property name="{FilenameWithExtension}" type="string" />
+        <property name="{Path}" type="string" />
+        <property name="{FullPath}" type="string" />
+        <property name="{HasAttachments}" type="boolean" />
+        <property name="{VersionNumber}" type="string" />
+        <property name="@odata.etag" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_modalidad_def_items_def" name="ResponseActionOutput_modalidad_def" />
+      <object name="ResponseActionOutput">
+        <property name="alcance_territorial" typeRef="ResponseActionOutput_alcance_territorial_def" />
+        <property name="tipologia" typeRef="ResponseActionOutput_tipologia_def" />
+        <property name="tipo_solicitud" typeRef="ResponseActionOutput_tipo_solicitud_def" />
+        <property name="modalidad" typeRef="ResponseActionOutput_modalidad_def" />
+      </object>
+      <object name="Run_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

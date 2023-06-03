@@ -2,7 +2,7 @@
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
     "FlowNameId": "673ce238-eef1-45a0-8c1c-59a70df441d1",
-    "Name": "Listaespecificacionesconvenio",
+    "Name": "DTI-PAListaespecificacionesconvenio",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": "c3688980-dcde-ed11-a7c7-6045bd006f89"

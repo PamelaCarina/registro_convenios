@@ -358,16 +358,18 @@ Mostar_solicitudes As screen:
                 );;
                 ClearCollect(Nombres_reparticiones;Sort(Nombres_reparticiones;reparticion));;
                 */
-                //ClearCollect(Nombres_contrapartes_internacionales;'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);;
                 
-                Set(Contrapartes_inter,'DTI-PATraernombrescontrapartesinternacionales'.Run());
-                Clear(Nombres_contrapartes_internacionales);
-                ForAll(Contrapartes_inter,
-                    Collect(Nombres_contrapartes_internacionales,{
-                        nombre: RAZON_SOCIAL
+                //Set(a_t;First(datos).'alcance territorial');;
+                //ClearCollect(lista_alcance;a_t);;
+                
+                ClearCollect(datos,'DTI-PAListaespecificacionesconvenio'.Run());
+                Clear(lista_alcance);
+                ForAll(datos.alcance_territorial,
+                    Collect(lista_alcance,{
+                        id: ItemInternalId,
+                        valor: Title
                     })
                 );
-                ClearCollect(Nombres_contrapartes_internacionales, Sort(Nombres_contrapartes_internacionales,nombre));
             Text: ="Botón"
             X: =323
             Y: =409
