@@ -358,26 +358,16 @@ Mostar_solicitudes As screen:
                 );;
                 ClearCollect(Nombres_reparticiones;Sort(Nombres_reparticiones;reparticion));;
                 */
-                //ClearCollect(Nombres_autoridades; Sort('DTI-PATraerautoridadesmáximas'.Run(); nombre_completo));;
-                Set(autoridades_maximas,'DTI-PATraerautoridadesmáximas'.Run());
-                Clear(Nombres_autoridades);
-                ForAll(autoridades_maximas,
-                    Collect(Nombres_autoridades,{
-                        nombre: Concatenate(field_3," ",field_4,", ",field_5),
-                        cargo: CARGO,
-                        correo: CORREO_UDEC,
-                        telefono: TELEFONO
+                //ClearCollect(Nombres_contrapartes_internacionales;'DTI-PATraernombrescontrapartesinternacionales'.Run().nombres_contrapartes_internacionales);;
+                
+                Set(Contrapartes_inter,'DTI-PATraernombrescontrapartesinternacionales'.Run());
+                Clear(Nombres_contrapartes_internacionales);
+                ForAll(Contrapartes_inter,
+                    Collect(Nombres_contrapartes_internacionales,{
+                        nombre: RAZON_SOCIAL
                     })
                 );
-                ClearCollect(Nombres_autoridades, Sort(Nombres_autoridades,nombre));
-                
-                /*
-                id_persona: autoridad_seleccionada.id_persona;
-                            nombre: autoridad_seleccionada.nombre;
-                            cargo: autoridad_seleccionada.cargo;
-                            correo: autoridad_seleccionada.correo;
-                            telefono: autoridad_seleccionada.telefono
-                */
+                ClearCollect(Nombres_contrapartes_internacionales, Sort(Nombres_contrapartes_internacionales,nombre));
             Text: ="Botón"
             X: =323
             Y: =409

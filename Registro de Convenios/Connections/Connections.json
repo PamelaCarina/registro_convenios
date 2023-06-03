@@ -331,36 +331,6 @@
     "dependents": [],
     "id": "3465d341-63ea-4404-8725-b30184dd3101"
   },
-  "4d43a597-7638-4ec8-ad0a-b7242ccfe778": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "7ac2c8c2-63e9-ed11-a7c6-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "7e741359-133b-9645-e5d6-933be20df86e"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "7ac2c8c2-63e9-ed11-a7c6-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "7e741359-133b-9645-e5d6-933be20df86e"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PATraernombrescontrapartesinternacionales"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "4d43a597-7638-4ec8-ad0a-b7242ccfe778"
-  },
   "672bd3ed-db1e-489f-89d8-10c95a4ad26d": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -600,6 +570,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "cd2c43b4-1b21-4364-afee-6a5f690f3de8"
+  },
+  "d8909894-2c2d-4270-9af8-fe47d05e2a5d": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "7ac2c8c2-63e9-ed11-a7c6-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "7e741359-133b-9645-e5d6-933be20df86e"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "7ac2c8c2-63e9-ed11-a7c6-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "7e741359-133b-9645-e5d6-933be20df86e"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PATraernombrescontrapartesinternacionales"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d8909894-2c2d-4270-9af8-fe47d05e2a5d"
   },
   "e09530a6-c64a-4b7a-9fd2-e64981fc0dba": {
     "connectionRef": {
