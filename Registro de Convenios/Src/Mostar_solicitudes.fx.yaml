@@ -142,14 +142,47 @@ Mostar_solicitudes As screen:
                     Height: =80
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =/*Set(nueva_solicitud, false);
-                        Set(cargando,true);
-                        Set(solicitud_seleccionada, First('VRIM-PATraedetalledesolicituddeactividad'.Run(ThisItem.id)));
-                        Set(gal_solicitud_seleccionada,ThisItem);
-                        ClearCollect(detalle_colaboradorinterno, solicitud_seleccionada.col_internos);
-                        ClearCollect(detalle_colaboradorexterno, solicitud_seleccionada.col_externos);
-                        Set(cargando,false);
-                        Navigate(Registro_Actividad);*/
+                        =Set(id_convenio,ThisItem.id_convenio);
+                        Set(id_estado,"1");
+                        Set(nuevo,false);
+                        
+                        Set(primera_vez_entidad_contraparte,true);
+                        Set(primera_vez_especificacion_convenio,true);
+                        
+                        Set(unidad_solicitante_recuperada,
+                        'DTI-PATraerestadosolicitudporpantalla'.Run(
+                                                                    id_convenio,
+                                                                    id_estado
+                        ).unidad_solicitante_registrada);
+                        
+                        Set(autoridad,{
+                            nombre: unidad_solicitante_recuperada.nombre_autoridad,
+                            cargo: unidad_solicitante_recuperada.cargo_autoridad,
+                            correo: unidad_solicitante_recuperada.correo_autoridad,
+                            telefono: unidad_solicitante_recuperada.telefono_autoridad
+                        });
+                        
+                        Set(responsable,{
+                            id_persona: "",
+                            nombre: unidad_solicitante_recuperada.nombre_responsable,
+                            cargo: unidad_solicitante_recuperada.cargo_responsable,
+                            correo: unidad_solicitante_recuperada.correo_responsable,
+                            telefono: unidad_solicitante_recuperada.telefono_responsable
+                        });
+                        
+                        Clear(unidades_promotoras);
+                        
+                        ForAll(unidad_solicitante_recuperada.unidades_promotoras,
+                            Collect(unidades_promotoras,{
+                                nombre_unidad_promotora: reparticion,
+                                codigo_reparticion: codigo_reparticion
+                            })
+                        );
+                        
+                        
+                        Clear(contrapartes_nacionales);
+                        Clear(contrapartes_internacionales);
+                        //Clear(solicitudes_añadir_contraparte);;
                         
                         Navigate(Unidad_solicitante);
                     PaddingBottom: =0
