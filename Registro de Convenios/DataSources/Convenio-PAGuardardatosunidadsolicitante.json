@@ -2,7 +2,7 @@
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
     "FlowNameId": "f41f972d-741d-4614-95fe-d8548af38ac3",
-    "Name": "DTI-PAGuardardatosunidadsolicitante",
+    "Name": "Convenio-PAGuardardatosunidadsolicitante",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": "586f47b0-21f4-ed11-8848-6045bd006f89"

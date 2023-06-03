@@ -49,12 +49,6 @@ Area_contribución As screen:
                         {falta:false}
                     )
                 );
-                /*Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
-                    If(CountRows(Filter(contrib_interna_checkboxes,cb.Value=true))=0, 
-                        {falta:true, campos_faltantes:true},
-                        {falta:false}
-                    )
-                );*/
                 
                 If(CountRows(Filter(datosArea_contribucion,falta = true))=0,
                     UpdateContext({faltan_datos_notif:false});
@@ -102,14 +96,15 @@ Area_contribución As screen:
                 
                     Set(cargando, true);
                 
-                    If(id_estado="10",Set(id_estado,"11"));//pasa a Política VRIM registrada
-                    Set(id_estado,'DTI-PAGuardarpolíticaVRIM'.Run(
-                                                    JSON(datos_contribucion_interna),
-                                                    JSON(datos_contribucion_externa),
-                                                    id_convenio, 
+                    If(id_estado=10,Set(id_estado,11));//pasa a Política VRIM registrada
+                    /*
+                    Set(id_estado;'DTI-PAGuardarpolíticaVRIM'.Run(
+                                                    JSON(datos_contribucion_interna);
+                                                    JSON(datos_contribucion_externa);
+                                                    id_convenio; 
                                                     id_estado
-                    ).id_estado);
-                
+                    ).id_estado);;
+                    */
                     Set(cargando, false);
                 
                     Navigate(Contribución_desarrollo, ScreenTransition.Fade);

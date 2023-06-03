@@ -53,8 +53,8 @@ Unidad_solicitante As screen:
                 
                     Set(cargando, true);
                 
-                    Set(id_respuesta,
-                    'DTI-PAGuardardatosunidadsolicitante'.Run(
+                    Set(id_estado,
+                    'Convenio-PAGuardardatosunidadsolicitante'.Run(
                                                             uni,
                                                             persona_solicitante.correo_udec,
                                                             nombre_autoridad_solicitante_input_2.Text,
@@ -65,19 +65,15 @@ Unidad_solicitante As screen:
                                                             cargo_responsable_input_2.Text,
                                                             correo_responsable_input_2.Text,
                                                             telefono_responsable_input_2.Text,
-                                                            JSON(unidades_promotoras),
+                                                            tipo_alcance.Selected.valor,
                                                             id_convenio,
-                                                            id_estado,
-                                                            tipo_alcance.Selected.valor
-                    ).id_respuesta);
+                                                            id_estado
+                    ).id_estado);
                 
-                    Set(id_convenio,First(id_respuesta).id_convenio);
-                    Set(id_estado,First(id_respuesta).id_estado);
-                
-                    If(Int(id_estado)>=2 && primera_vez_entidad_contraparte,
+                    If(id_estado >=2 && primera_vez_entidad_contraparte,
                         Set(entidad_contraparte_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
                                                                 id_convenio,
-                                                                "2"//necesito contraparte registrada
+                                                                2//necesito contraparte registrada
                         ));
                 
                         ForAll(entidad_contraparte_recuperada.contrapartes_nacionales,
@@ -1523,9 +1519,20 @@ Unidad_solicitante As screen:
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
+                        Set(nueva_unidad_promotora,'Convenio-PAGuardarunidadpromotora'.Run(
+                                                                promotor_seleccionado.reparticion,
+                                                                promotor_seleccionado.codigo,
+                                                                id_convenio,
+                                                                id_estado
+                        ));
+                
+                        Set(id_unidad_promotora,nueva_unidad_promotora.id_unidad_promotora);
+                        Set(id_estado,nueva_unidad_promotora.id_estado);
+                
                         Collect(unidades_promotoras,{
                             nombre_unidad_promotora: promotor_seleccionado.reparticion,
-                            codigo_reparticion: promotor_seleccionado.codigo         
+                            codigo_reparticion: promotor_seleccionado.codigo,
+                            id_unidad_promotora: id_unidad_promotora        
                         })
                     );
                     UpdateContext({popup_promotor: false});

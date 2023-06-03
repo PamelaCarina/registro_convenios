@@ -81,13 +81,14 @@ Contribución_desarrollo As screen:
                     );
                  
                     Set(cargando,true);
-                    If(id_estado="11",Set(id_estado,"12"));//pasa a ODS registrada
-                
-                    Set(id_estado,'DTI-PAGuardarODS'.Run(
-                                                        JSON(datos_ods_cargados),
-                                                        id_convenio,
+                    If(id_estado=11,Set(id_estado,12));//pasa a ODS registrada
+                    /*
+                    Set(id_estado;'DTI-PAGuardarODS'.Run(
+                                                        JSON(datos_ods_cargados);
+                                                        id_convenio;
                                                         id_estado
-                    ).id_estado);
+                    ).id_estado);;
+                    */
                     Set(cargando,false);
                 
                     Set(popup_confirmacion, true);
@@ -1321,75 +1322,17 @@ Contribución_desarrollo As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =Set(cargando,true);
-                /*
-                //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
-                    Set(datos_unidad_solicitante_cargados;{
-                        correo_solicitante: persona_solicitante.correo_udec;
-                        unidad: uni;
-                        autoridad: {
-                            nombre: nombre_autoridad_solicitante_input_2.Text;
-                            cargo: cargo_autoridad_input_2.Text;
-                            correo: correo_autoridad_input_2.Text;
-                            telefono: telefono_autoridad_input_2.Text
-                        };
-                        responsable: {
-                            nombre: nombre_responsable_input_2.Text;
-                            cargo: cargo_responsable_input_2.Text;
-                            correo: correo_responsable_input_2.Text;
-                            telefono: telefono_responsable_input_2.Text
-                        }
-                        
-                    });;
                 
-                Set(ods_cargados;{
-                    ods_seleccionados: datos_ods_cargados
-                });;
                 
-                    Set(datos_contribucion_cargados;{
-                        interna: datos_contribucion_interna;
-                        externa: datos_contribucion_externa 
-                    });;
-                
-                Set(unidades_promotoras_cargadas;{
-                    unidades_promotoras: unidades_promotoras
-                });;
-                
-                    Set(datos_vinculacion_cargados;{
-                    tipo: convenio_tipo.Selected.valor;
-                    sector: sector_politica.Selected.valor;
-                    ambito: ambito_politica.Selected.valor
-                    });;
-                
-                        //ALMACENA DATOS DE LA UNIDAD SOLICITANTE
-                    Set(datos_convenio_cargados;{
-                        alcance: tipo_alcance.Selected.valor;
-                        tipologia: tipo_tipologia.Selected.valor;
-                        tipo: tipo_solicitud.Selected.valor;
-                        modalidad: tipo_modalidades.Selected.Value;
-                        proposito: descripcion_proposito_1.Text
-                    });;
-                
-                Set(id_solicitud_convenio;'DTI-PAAgregarsolicituddeconvenio'.Run(
-                                                        JSON(datos_unidad_solicitante_cargados);
-                                                        JSON(datos_convenio_cargados);
-                                                        JSON(entidades_contraparte_na_cargadas);
-                                                        JSON(datos_vinculacion_cargados);
-                                                        JSON(datos_contribucion_cargados);
-                                                        JSON(ods_cargados);
-                                                        JSON(entidades_contraparte_in_cargadas);
-                                                        JSON(unidades_promotoras_cargadas);
-                                                        doc_convenio
-                ).id);;
-                */
-                
-                    If(id_estado="12",Set(id_estado,"13"));//pasa a registrada
-                    Set(id_estado,'DTI-PAEnviarsolicitudconvenio'.Run(
-                                                                        persona_solicitante.id_persona,
-                                                                        descripcion_proposito_1.Text,
-                                                                        id_convenio,
+                    If(id_estado=12,Set(id_estado,13));//pasa a registrada
+                    /*
+                    Set(id_estado;'DTI-PAEnviarsolicitudconvenio'.Run(
+                                                                        persona_solicitante.id_persona;
+                                                                        descripcion_proposito_1.Text;
+                                                                        id_convenio;
                                                                         id_estado
-                    ).id_estado);
-                
+                    ).id_estado);;
+                    */
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
                 Navigate(Mostar_solicitudes,ScreenTransition.Fade);

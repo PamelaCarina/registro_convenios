@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "092b0a5f-f207-41c6-a1af-6b4e8f64af70",
+    "Name": "Convenio-PAGuardarunidadpromotora",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "73576a43-4f02-ee11-8f6e-6045bd006f89"
+  }
+]

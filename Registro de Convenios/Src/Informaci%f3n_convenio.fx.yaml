@@ -28,15 +28,16 @@ Información_convenio As screen:
                 
                     Set(cargando, true);
                 
-                    If(id_estado="9",Set(id_estado,"10"));//pasa a Categoría VRIM registrada
-                    Set(id_estado,'DTI-PAGuardarcategoríaVRIM'.Run(
-                                                        convenio_tipo.Selected.valor,
-                                                        sector_politica.Selected.valor,
-                                                        ambito_politica.Selected.valor,
-                                                        id_convenio,
+                    If(id_estado=9,Set(id_estado,10));//pasa a Categoría VRIM registrada
+                    /*
+                    Set(id_estado;'DTI-PAGuardarcategoríaVRIM'.Run(
+                                                        convenio_tipo.Selected.valor;
+                                                        sector_politica.Selected.valor;
+                                                        ambito_politica.Selected.valor;
+                                                        id_convenio;
                                                         id_estado
-                    ).id_estado);
-                
+                    ).id_estado);;
+                    */
                     Set(cargando, false);
                 
                     Navigate(Area_contribución,ScreenTransition.Fade)

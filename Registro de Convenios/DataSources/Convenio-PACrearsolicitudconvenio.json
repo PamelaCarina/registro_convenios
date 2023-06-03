@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "886228df-a310-4082-8348-fc0cd2a2c857",
+    "Name": "Convenio-PACrearsolicitudconvenio",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "13d4a135-5402-ee11-8f6e-6045bd006f89"
+  }
+]

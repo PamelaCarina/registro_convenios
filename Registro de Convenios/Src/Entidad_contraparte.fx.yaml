@@ -1117,22 +1117,17 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =Set(cargando,true);
                 
-                If(id_estado="1" || id_estado="2",Set(id_estado,"4"));//pasa a Contraparte internacional solicitada
+                If(id_estado=1 || id_estado=2,Set(id_estado,4));//pasa a Contraparte internacional solicitada
                 
-                Set(id_estado,'DTI-PAGuardarcontrapartesregistradas'.Run(
-                                                            JSON(entidades_contraparte_na_cargadas),
-                                                            JSON(entidades_contraparte_in_cargadas),
-                                                            id_convenio,
-                                                            id_estado                                            
-                ).id_estado);
                 /*
-                Set(id_estado;'DTI-PAGuardarcontrapartesnoregistradas'.Run(
-                                                            JSON(info_solicitud);
+                Set(id_estado;'DTI-PAGuardarcontrapartesregistradas'.Run(
+                                                            JSON(entidades_contraparte_na_cargadas);
+                                                            JSON(entidades_contraparte_in_cargadas);
                                                             id_convenio;
-                                                            id_estado;
-                                                            doc_contraparte
+                                                            id_estado                                            
                 ).id_estado);;
                 */
+                
                 Set(cargando,false);
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
