@@ -93,7 +93,7 @@ Entidad_contraparte As screen:
                 
                     Set(cargando, true);
                 
-                    If(id_estado="1",Set(id_estado,"2"));//pasa a contraparte registrada
+                    If(id_estado=1,Set(id_estado,2));//pasa a contraparte registrada
                     
                     /*
                     Set(id_estado;'DTI-PAGuardarcontrapartesregistradas'.Run(

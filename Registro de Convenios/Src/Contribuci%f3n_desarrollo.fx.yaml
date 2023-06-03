@@ -81,7 +81,7 @@ Contribución_desarrollo As screen:
                     );
                  
                     Set(cargando,true);
-                    If(id_estado=11,Set(id_estado,12));//pasa a ODS registrada
+                    //If(id_estado=11;Set(id_estado;12));;//pasa a ODS registrada
                     /*
                     Set(id_estado;'DTI-PAGuardarODS'.Run(
                                                         JSON(datos_ods_cargados);
@@ -1324,7 +1324,7 @@ Contribución_desarrollo As screen:
                 =Set(cargando,true);
                 
                 
-                    If(id_estado=12,Set(id_estado,13));//pasa a registrada
+                    //If(id_estado=12;Set(id_estado;13));;//pasa a registrada
                     /*
                     Set(id_estado;'DTI-PAEnviarsolicitudconvenio'.Run(
                                                                         persona_solicitante.id_persona;

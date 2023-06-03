@@ -73,8 +73,8 @@ Datos_convenio As screen:
                             }
                     });
                 
-                    If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
-                    If(id_estado=4,Set(id_estado,9));//pasa a especificacion convenio registrada
+                    //If(id_estado=2;Set(id_estado;9));;//pasa a especificacion convenio registrada
+                    //If(id_estado=4;Set(id_estado;9));;//pasa a especificacion convenio registrada
                     
                     Set(cargando, true);
                     /*

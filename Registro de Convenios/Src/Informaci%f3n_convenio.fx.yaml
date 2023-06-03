@@ -28,7 +28,7 @@ Información_convenio As screen:
                 
                     Set(cargando, true);
                 
-                    If(id_estado=9,Set(id_estado,10));//pasa a Categoría VRIM registrada
+                    //If(id_estado=9;Set(id_estado;10));;//pasa a Categoría VRIM registrada
                     /*
                     Set(id_estado;'DTI-PAGuardarcategoríaVRIM'.Run(
                                                         convenio_tipo.Selected.valor;

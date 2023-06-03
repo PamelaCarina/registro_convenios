@@ -53,7 +53,8 @@ Unidad_solicitante As screen:
                 
                     Set(cargando, true);
                 
-                    Set(id_estado,
+                   // Set(id_estado;
+                
                     'Convenio-PAGuardardatosunidadsolicitante'.Run(
                                                             uni,
                                                             persona_solicitante.correo_udec,
@@ -68,8 +69,8 @@ Unidad_solicitante As screen:
                                                             tipo_alcance.Selected.valor,
                                                             id_convenio,
                                                             id_estado
-                    ).id_estado);
-                
+                    )//.id_estado);;
+                ;
                     If(id_estado >=2 && primera_vez_entidad_contraparte,
                         Set(entidad_contraparte_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
                                                                 id_convenio,
@@ -1519,6 +1520,9 @@ Unidad_solicitante As screen:
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
+                
+                        
+                
                         Set(nueva_unidad_promotora,'Convenio-PAGuardarunidadpromotora'.Run(
                                                                 promotor_seleccionado.reparticion,
                                                                 promotor_seleccionado.codigo,

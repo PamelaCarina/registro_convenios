@@ -96,7 +96,7 @@ Area_contribución As screen:
                 
                     Set(cargando, true);
                 
-                    If(id_estado=10,Set(id_estado,11));//pasa a Política VRIM registrada
+                    //If(id_estado=10;Set(id_estado;11));;//pasa a Política VRIM registrada
                     /*
                     Set(id_estado;'DTI-PAGuardarpolíticaVRIM'.Run(
                                                     JSON(datos_contribucion_interna);

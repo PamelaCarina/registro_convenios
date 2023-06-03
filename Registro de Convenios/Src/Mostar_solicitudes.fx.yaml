@@ -399,13 +399,14 @@ Mostar_solicitudes As screen:
     "'Solicitud anterior_1' As button":
         Height: =70
         OnSelect: |-
-            =/*
+            =Set(primera_vez_entidad_contraparte,true);
+            Set(primera_vez_especificacion_convenio,true);
+            /*
             Set(id_convenio;171);;
             Set(id_estado;1);;
             Set(nuevo;false);;
             
-            Set(primera_vez_entidad_contraparte;true);;
-            Set(primera_vez_especificacion_convenio;true);;
+            
             
             Set(unidad_solicitante_recuperada;
             
