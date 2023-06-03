@@ -1525,8 +1525,7 @@ Unidad_solicitante As screen:
                     ),
                         Collect(unidades_promotoras,{
                             nombre_unidad_promotora: promotor_seleccionado.reparticion,
-                            codigo_reparticion: promotor_seleccionado.codigo_reparticion,
-                            campus: promotor_seleccionado.campus            
+                            codigo_reparticion: promotor_seleccionado.codigo         
                         })
                     );
                     UpdateContext({popup_promotor: false});
@@ -1635,8 +1634,7 @@ Unidad_solicitante As screen:
                         
                         Set(promotor_seleccionado,{
                             reparticion: ThisItem.reparticion,
-                            codigo_reparticion: ThisItem.codigo_reparticion,
-                            campus : ThisItem.campus
+                            codigo: ThisItem.codigo
                         })
                     PaddingBottom: =0
                     PaddingLeft: =12

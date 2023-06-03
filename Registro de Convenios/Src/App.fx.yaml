@@ -21,7 +21,14 @@ App As appinfo:
         
         
         //nombres reparticiones
-        ClearCollect(Nombres_reparticiones, Sort('DTI-PATraerreparticiones'.Run(),reparticion));
+        Set(reparticiones, 'DTI-PATraerreparticiones'.Run());
+        Clear(Nombres_reparticiones);
+        ForAll(reparticiones,
+            Collect(Nombres_reparticiones,{
+                reparticion: Nombre1,
+                codigo: Title
+            });
+        );
         
         //autoridades máximas
         ClearCollect(Nombres_autoridades, Sort('DTI-PATraerautoridadesmáximas'.Run(), nombre_completo));

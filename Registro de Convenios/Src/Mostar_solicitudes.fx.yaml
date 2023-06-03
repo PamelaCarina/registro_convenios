@@ -217,10 +217,12 @@ Mostar_solicitudes As screen:
                     OnSelect: =Select(Parent)
                     Size: =13
                     Text: |-
-                        =Text(
-                            DateValue(listado_solicitudes),
+                        =/*
+                        Text(
+                            DateValue(listado_solicitudes);
                             DateTimeFormat.ShortDate
                         )
+                        */
                     Width: =282
                     ZIndex: =6
 
@@ -344,7 +346,15 @@ Mostar_solicitudes As screen:
                 ZIndex: =6
 
         Button2 As button:
-            OnSelect: =
+            OnSelect: |-
+                =Set(reparticiones, 'DTI-PATraerreparticiones'.Run());
+                Clear(Nombres_reparticiones);
+                ForAll(reparticiones,
+                    Collect(Nombres_reparticiones,{
+                        reparticion: Nombre1,
+                        codigo: Title
+                    });
+                )
             Text: ="Botón"
             X: =323
             Y: =409
