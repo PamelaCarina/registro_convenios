@@ -143,7 +143,7 @@ Mostar_solicitudes As screen:
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
                         =Set(id_convenio,ThisItem.id_convenio);
-                        Set(id_estado,"1");
+                        Set(id_estado,ThisItem.id_estado);
                         Set(nuevo,false);
                         
                         Set(primera_vez_entidad_contraparte,true);
@@ -297,8 +297,8 @@ Mostar_solicitudes As screen:
             Fill: =RGBA(54, 176, 75, 1)
             OnSelect: =
             Text: ="Botón"
-            X: =323
-            Y: =409
+            X: =276
+            Y: =448
             ZIndex: =3
 
     lbl_mostrar_solicitudes As label:
@@ -366,8 +366,8 @@ Mostar_solicitudes As screen:
         Text: |-
             ="Solicitud anterior para pruebas (id: 172)"
         Width: =234
-        X: =1060
-        Y: =516
+        X: =894
+        Y: =656
         ZIndex: =7
 
     grp_registro_main_loading As group:
@@ -441,7 +441,7 @@ Mostar_solicitudes As screen:
         Text: |-
             ="Solicitud anterior para pruebas (id: 171)"
         Width: =234
-        X: =660
-        Y: =586
+        X: =582
+        Y: =656
         ZIndex: =8
 
