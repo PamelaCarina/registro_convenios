@@ -110,19 +110,7 @@ Mostar_solicitudes As screen:
                     =ColorValue("#6F8BA7")
                 FocusedBorderThickness: =0
                 Height: =226
-                Items: |-
-                    =Sort(Search(
-                        If(
-                            dd_filter.Selected.Result = "Seleccionar rol...",
-                            lista_actividades.lista_actividades,
-                            Filter(
-                                lista_actividades.lista_actividades,
-                                rol = dd_filter.Selected.Result
-                            )
-                        ),
-                        inp_search.Text,
-                        "nombre"    
-                    ), fecha, SortOrder.Descending)
+                Items: =listado_solicitudes
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
@@ -219,7 +207,7 @@ Mostar_solicitudes As screen:
                     Text: |-
                         =/*
                         Text(
-                            DateValue(listado_solicitudes);
+                            DateValue(ThisItem.fecha);
                             DateTimeFormat.ShortDate
                         )
                         */

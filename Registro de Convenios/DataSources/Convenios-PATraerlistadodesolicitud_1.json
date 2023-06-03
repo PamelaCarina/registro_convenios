@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "f1e121a3-a052-4c24-be56-269d7932654f",
+    "Name": "Convenios-PATraerlistadodesolicitud_1",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "49ba8848-a300-ee11-8f6e-6045bd006f89"
+  }
+]
