@@ -1918,11 +1918,10 @@ Unidad_solicitante As screen:
                     If(!IsBlank(
                         LookUp(
                             Nombres_autoridades, 
-                            Lower(nombre_completo) = Lower(inp_autoridad_popup_search.Text)
+                            Lower(nombre) = Lower(inp_autoridad_popup_search.Text)
                         )
                     ),
                         Set(autoridad,{
-                            id_persona: autoridad_seleccionada.id_persona,
                             nombre: autoridad_seleccionada.nombre,
                             cargo: autoridad_seleccionada.cargo,
                             correo: autoridad_seleccionada.correo,
@@ -1982,7 +1981,7 @@ Unidad_solicitante As screen:
             opciones_nombre_a As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(Nombres_autoridades, inp_autoridad_popup_search.Text in nombre_completo)
+                Items: =Filter(Nombres_autoridades, inp_autoridad_popup_search.Text in nombre)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -2011,13 +2010,12 @@ Unidad_solicitante As screen:
                     OnSelect: |-
                         =Select(Parent);
                         If(desplegar_buscador_a,UpdateContext({desplegar_buscador_a:false}),UpdateContext({desplegar_buscador_a:true}));
-                        Set(a_seleccionada,ThisItem.nombre_completo);
+                        Set(a_seleccionada,ThisItem.nombre);
                         
                         Set(autoridad_seleccionada,{
-                            id_persona: ThisItem.id_persona,
-                            nombre: ThisItem.nombre_completo,
+                            nombre: ThisItem.nombre,
                             cargo: ThisItem.cargo,
-                            correo: ThisItem.correo_udec,
+                            correo: ThisItem.correo,
                             telefono: ThisItem.telefono
                         })
                     PaddingBottom: =0
@@ -2025,7 +2023,7 @@ Unidad_solicitante As screen:
                     PaddingRight: =10
                     PaddingTop: =0
                     Size: =14
-                    Text: =ThisItem.nombre_completo
+                    Text: =ThisItem.nombre
                     Width: =599
                     ZIndex: =3
 

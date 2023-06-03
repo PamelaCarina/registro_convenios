@@ -32,7 +32,17 @@ App As appinfo:
         ClearCollect(Nombres_reparticiones,Sort(Nombres_reparticiones,reparticion));
         
         //autoridades máximas
-        ClearCollect(Nombres_autoridades, Sort('DTI-PATraerautoridadesmáximas'.Run(), nombre_completo));
+        Set(autoridades_maximas,'DTI-PATraerautoridadesmáximas'.Run());
+        Clear(Nombres_autoridades);
+        ForAll(autoridades_maximas,
+            Collect(Nombres_autoridades,{
+                nombre: Concatenate(field_3," ",field_4,", ",field_5),
+                cargo: CARGO,
+                correo: CORREO_UDEC,
+                telefono: TELEFONO
+            })
+        );
+        ClearCollect(Nombres_autoridades, Sort(Nombres_autoridades,nombre));
         
         Set(cargando, false);
         

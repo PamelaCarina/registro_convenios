@@ -347,15 +347,36 @@ Mostar_solicitudes As screen:
 
         Button2 As button:
             OnSelect: |-
-                =Set(reparticiones, 'DTI-PATraerreparticiones'.Run());
-                Clear(Nombres_reparticiones);
-                ForAll(reparticiones,
-                    Collect(Nombres_reparticiones,{
-                        reparticion: Nombre1,
+                =/*Set(reparticiones; 'DTI-PATraerreparticiones'.Run());;
+                Clear(Nombres_reparticiones);;
+                ForAll(reparticiones;
+                    Collect(Nombres_reparticiones;{
+                        reparticion: Nombre1;
                         codigo: Title
                     })
+                );;
+                ClearCollect(Nombres_reparticiones;Sort(Nombres_reparticiones;reparticion));;
+                */
+                //ClearCollect(Nombres_autoridades; Sort('DTI-PATraerautoridadesmáximas'.Run(); nombre_completo));;
+                Set(autoridades_maximas,'DTI-PATraerautoridadesmáximas'.Run());
+                Clear(Nombres_autoridades);
+                ForAll(autoridades_maximas,
+                    Collect(Nombres_autoridades,{
+                        nombre: Concatenate(field_3," ",field_4,", ",field_5),
+                        cargo: CARGO,
+                        correo: CORREO_UDEC,
+                        telefono: TELEFONO
+                    })
                 );
-                ClearCollect(Nombres_reparticiones,Sort(Nombres_reparticiones,reparticion));
+                ClearCollect(Nombres_autoridades, Sort(Nombres_autoridades,nombre));
+                
+                /*
+                id_persona: autoridad_seleccionada.id_persona;
+                            nombre: autoridad_seleccionada.nombre;
+                            cargo: autoridad_seleccionada.cargo;
+                            correo: autoridad_seleccionada.correo;
+                            telefono: autoridad_seleccionada.telefono
+                */
             Text: ="Botón"
             X: =323
             Y: =409
@@ -397,7 +418,6 @@ Mostar_solicitudes As screen:
             ).unidad_solicitante_registrada);
             
             Set(autoridad,{
-                id_persona: "",
                 nombre: unidad_solicitante_recuperada.nombre_autoridad,
                 cargo: unidad_solicitante_recuperada.cargo_autoridad,
                 correo: unidad_solicitante_recuperada.correo_autoridad,
@@ -470,7 +490,6 @@ Mostar_solicitudes As screen:
             ).unidad_solicitante_registrada);
             
             Set(autoridad,{
-                id_persona: "",
                 nombre: unidad_solicitante_recuperada.nombre_autoridad,
                 cargo: unidad_solicitante_recuperada.cargo_autoridad,
                 correo: unidad_solicitante_recuperada.correo_autoridad,

@@ -3,23 +3,93 @@
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <object name="ManualTriggerInput" />
-      <string name="ResponseActionOutput_items_def_id_persona_def" />
-      <string name="ResponseActionOutput_items_def_paterno_def" />
-      <string name="ResponseActionOutput_items_def_materno_def" />
-      <string name="ResponseActionOutput_items_def_nombres_def" />
-      <string name="ResponseActionOutput_items_def_nombre_completo_def" />
-      <string name="ResponseActionOutput_items_def_correo_udec_def" />
-      <string name="ResponseActionOutput_items_def_cargo_def" />
-      <string name="ResponseActionOutput_items_def_telefono_def" />
+      <string name="ResponseActionOutput_items_def_ItemInternalId_def" />
+      <integer name="ResponseActionOutput_items_def_ID_def" />
+      <string name="ResponseActionOutput_items_def_Title_def" />
+      <string name="ResponseActionOutput_items_def_CORREO_UDEC_def" />
+      <string name="ResponseActionOutput_items_def_field_3_def" />
+      <string name="ResponseActionOutput_items_def_field_4_def" />
+      <string name="ResponseActionOutput_items_def_field_5_def" />
+      <string name="ResponseActionOutput_items_def_TELEFONO_def" />
+      <string name="ResponseActionOutput_items_def_CARGO_def" />
+      <integer name="ResponseActionOutput_items_def_field_1_def" />
+      <string name="ResponseActionOutput_items_def_field_2_def" />
+      <string name="ResponseActionOutput_items_def_Modified_def" />
+      <string name="ResponseActionOutput_items_def_Created_def" />
+      <string name="ResponseActionOutput_items_def_Author_def_Claims_def" />
+      <string name="ResponseActionOutput_items_def_Author_def_DisplayName_def" />
+      <string name="ResponseActionOutput_items_def_Author_def_Email_def" />
+      <string name="ResponseActionOutput_items_def_Author_def_Picture_def" />
+      <string name="ResponseActionOutput_items_def_Author_def_Department_def" />
+      <string name="ResponseActionOutput_items_def_Author_def_JobTitle_def" />
+      <string name="ResponseActionOutput_items_def_Author_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_items_def_Author_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_items_def_Author_ux23_Claims_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def_Claims_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def_DisplayName_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def_Email_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def_Picture_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def_Department_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def_JobTitle_def" />
+      <string name="ResponseActionOutput_items_def_Editor_def__ux40_odata_type_def" />
+      <object name="ResponseActionOutput_items_def_Editor_def">
+        <property name="Claims" type="string" />
+        <property name="DisplayName" type="string" />
+        <property name="Email" type="string" />
+        <property name="Picture" type="string" />
+        <property name="Department" type="string" />
+        <property name="JobTitle" type="string" />
+        <property name="@odata.type" type="string" />
+      </object>
+      <string name="ResponseActionOutput_items_def_Editor_ux23_Claims_def" />
+      <string name="ResponseActionOutput_items_def__ux7B_Identifier_ux7D__def" />
+      <boolean name="ResponseActionOutput_items_def__ux7B_IsFolder_ux7D__def" />
+      <object name="ResponseActionOutput_items_def__ux7B_Thumbnail_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux7B_Link_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux7B_Name_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux7B_FilenameWithExtension_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux7B_Path_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux7B_FullPath_ux7D__def" />
+      <boolean name="ResponseActionOutput_items_def__ux7B_HasAttachments_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux7B_VersionNumber_ux7D__def" />
+      <string name="ResponseActionOutput_items_def__ux40_odata_etag_def" />
       <object name="ResponseActionOutput_items_def">
-        <property name="id_persona" type="string" />
-        <property name="paterno" type="string" />
-        <property name="materno" type="string" />
-        <property name="nombres" type="string" />
-        <property name="nombre_completo" type="string" />
-        <property name="correo_udec" type="string" />
-        <property name="cargo" type="string" />
-        <property name="telefono" type="string" />
+        <property name="ItemInternalId" type="string" />
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="CORREO_UDEC" type="string" />
+        <property name="field_3" type="string" />
+        <property name="field_4" type="string" />
+        <property name="field_5" type="string" />
+        <property name="TELEFONO" type="string" />
+        <property name="CARGO" type="string" />
+        <property name="field_1" type="integer" />
+        <property name="field_2" type="string" />
+        <property name="Modified" type="string" />
+        <property name="Created" type="string" />
+        <property name="Author" typeRef="ResponseActionOutput_items_def_Author_def" />
+        <property name="Author#Claims" type="string" />
+        <property name="Editor" typeRef="ResponseActionOutput_items_def_Editor_def" />
+        <property name="Editor#Claims" type="string" />
+        <property name="{Identifier}" type="string" />
+        <property name="{IsFolder}" type="boolean" />
+        <property name="{Thumbnail}" typeRef="ResponseActionOutput_items_def__ux7B_Thumbnail_ux7D__def" />
+        <property name="{Link}" type="string" />
+        <property name="{Name}" type="string" />
+        <property name="{FilenameWithExtension}" type="string" />
+        <property name="{Path}" type="string" />
+        <property name="{FullPath}" type="string" />
+        <property name="{HasAttachments}" type="boolean" />
+        <property name="{VersionNumber}" type="string" />
+        <property name="@odata.etag" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_items_def" name="ResponseActionOutput" />
       <object name="Run_responses_default_def" />

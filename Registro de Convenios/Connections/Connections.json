@@ -481,36 +481,6 @@
     "dependents": [],
     "id": "8874bf4f-dfbf-4888-a688-6080a7b14e39"
   },
-  "8cf80456-9af9-4743-84c3-76b3379f2378": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "7f220850-98ec-ed11-8849-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "a5c0b66d-e0b9-83bc-ecc8-c4c97ae9b86c"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "7f220850-98ec-ed11-8849-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "a5c0b66d-e0b9-83bc-ecc8-c4c97ae9b86c"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PATraerautoridadesmáximas"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "8cf80456-9af9-4743-84c3-76b3379f2378"
-  },
   "8fda6672-21eb-4ab8-9040-c18f177a802b": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -540,6 +510,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "8fda6672-21eb-4ab8-9040-c18f177a802b"
+  },
+  "97aee764-e3f2-4ac0-a1c0-cb53c8856e0f": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "7f220850-98ec-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "a5c0b66d-e0b9-83bc-ecc8-c4c97ae9b86c"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "7f220850-98ec-ed11-8849-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "a5c0b66d-e0b9-83bc-ecc8-c4c97ae9b86c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PATraerautoridadesmáximas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "97aee764-e3f2-4ac0-a1c0-cb53c8856e0f"
   },
   "9a8e866b-d82f-4de0-8c1a-f4ffd3b52b18": {
     "connectionRef": {
