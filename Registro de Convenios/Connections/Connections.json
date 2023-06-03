@@ -270,6 +270,36 @@
     "dependents": [],
     "id": "36a09a4e-a45f-4852-95a1-a2738976b6d1"
   },
+  "4fbf7cc1-f604-44c2-bb0d-9d389b2b8867": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "49ba8848-a300-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2371fd7d-dd54-92e4-145c-660aded97667"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "49ba8848-a300-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2371fd7d-dd54-92e4-145c-660aded97667"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenios-PATraerlistadodesolicitud"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "4fbf7cc1-f604-44c2-bb0d-9d389b2b8867"
+  },
   "672bd3ed-db1e-489f-89d8-10c95a4ad26d": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -599,36 +629,5 @@
     "dependencies": {},
     "dependents": [],
     "id": "e09530a6-c64a-4b7a-9fd2-e64981fc0dba"
-  },
-  "f2a95a72-6008-4966-96d6-985f35898d88": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "49ba8848-a300-ee11-8f6e-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "2371fd7d-dd54-92e4-145c-660aded97667"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "49ba8848-a300-ee11-8f6e-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "2371fd7d-dd54-92e4-145c-660aded97667"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "Convenios-PATraerlistadodesolicitud",
-      "Convenios-PATraerlistadodesolicitud_1"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "f2a95a72-6008-4966-96d6-985f35898d88"
   }
 }
