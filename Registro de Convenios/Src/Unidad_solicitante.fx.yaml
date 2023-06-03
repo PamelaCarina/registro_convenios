@@ -53,6 +53,10 @@ Unidad_solicitante As screen:
                 
                     Set(cargando, true);
                 
+                    If(IsBlank(id_convenio),
+                            Set(id_convenio,'Convenio-PACrearsolicitudconvenio'.Run().id_convenio)
+                    );
+                
                    // Set(id_estado;
                 
                     'Convenio-PAGuardardatosunidadsolicitante'.Run(
@@ -1521,7 +1525,9 @@ Unidad_solicitante As screen:
                         )
                     ),
                 
-                        
+                        If(IsBlank(id_convenio),
+                            Set(id_convenio,'Convenio-PACrearsolicitudconvenio'.Run().id_convenio)
+                        );
                 
                         Set(nueva_unidad_promotora,'Convenio-PAGuardarunidadpromotora'.Run(
                                                                 promotor_seleccionado.reparticion,
