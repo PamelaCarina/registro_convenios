@@ -346,32 +346,8 @@ Mostar_solicitudes As screen:
                 ZIndex: =6
 
         Button2 As button:
-            Fill: =RGBA(255, 191, 0, 1)
-            OnSelect: |+
-                =/*Set(reparticiones; 'DTI-PATraerreparticiones'.Run());;
-                Clear(Nombres_reparticiones);;
-                ForAll(reparticiones;
-                    Collect(Nombres_reparticiones;{
-                        reparticion: Nombre1;
-                        codigo: Title
-                    })
-                );;
-                ClearCollect(Nombres_reparticiones;Sort(Nombres_reparticiones;reparticion));;
-                */
-                
-                //Set(m;First(datos).modalidad);;
-                //ClearCollect(lista_modalidad;m);;
-                
-                Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
-                Clear(lista_modalidad);
-                ForAll(datos.modalidad,
-                    Collect(lista_modalidad,{
-                        id: ItemInternalId,
-                        valor: Title
-                    })
-                );
-                ClearCollect(lista_modalidad,Sort(lista_modalidad,valor));
-                
+            Fill: =RGBA(152, 208, 70, 1)
+            OnSelect: =
             Text: ="Botón"
             X: =323
             Y: =409
@@ -504,15 +480,14 @@ Mostar_solicitudes As screen:
             ForAll(unidad_solicitante_recuperada.unidades_promotoras,
                 Collect(unidades_promotoras,{
                     nombre_unidad_promotora: reparticion,
-                    codigo_reparticion: codigo_reparticion,
-                    campus:""
+                    codigo_reparticion: codigo_reparticion
                 })
             );
             
             
             Clear(contrapartes_nacionales);
             Clear(contrapartes_internacionales);
-            Clear(solicitudes_añadir_contraparte);
+            //Clear(solicitudes_añadir_contraparte);;
             
             Navigate(Unidad_solicitante);
         Text: |-

@@ -13,32 +13,17 @@ App As appinfo:
         Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
         
         //LISTADO SOLICITUDES
-        ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
+        ClearCollect(listado_solicitudes, 
+                Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
         
+        //NOMBRES REPARTICIONES
+        Set(reparticiones, Sort('DTI-PATraerreparticiones'.Run(), Nombre1));
         
-        //nombres reparticiones
-        Set(reparticiones, 'DTI-PATraerreparticiones'.Run());
-        Clear(Nombres_reparticiones);
-        ForAll(reparticiones,
-            Collect(Nombres_reparticiones,{
-                reparticion: Nombre1,
-                codigo: Title
-            })
-        );
-        ClearCollect(Nombres_reparticiones,Sort(Nombres_reparticiones,reparticion));
+        //AUTORIDADES MÁXIMAS
+        Set(autoridades_maximas,Sort('DTI-PATraerautoridadesmáximas'.Run(), field_3));
         
-        //autoridades máximas
-        Set(autoridades_maximas,'DTI-PATraerautoridadesmáximas'.Run());
-        Clear(Nombres_autoridades);
-        ForAll(autoridades_maximas,
-            Collect(Nombres_autoridades,{
-                nombre: Concatenate(field_3," ",field_4,", ",field_5),
-                cargo: CARGO,
-                correo: CORREO_UDEC,
-                telefono: TELEFONO
-            })
-        );
-        ClearCollect(Nombres_autoridades, Sort(Nombres_autoridades,nombre));
+        //NOMBRES CONTRAPARTES INTERNACIONALES
+        Set(Contrapartes_inter,'DTI-PATraernombrescontrapartesinternacionales'.Run());
         
         Set(cargando, false);
         
@@ -88,17 +73,37 @@ App As appinfo:
         );
         ClearCollect(lista_modalidad,Sort(lista_modalidad,valor));
         
-        //NACIONALES
+        //NOMBRES REPARTICIONES
+        Clear(Nombres_reparticiones);
+        ForAll(reparticiones,
+            Collect(Nombres_reparticiones,{
+                reparticion: Nombre1,
+                codigo: Title
+            })
+        );
+        
+        //AUTORIDADES MÁXIMAS
+        Clear(Nombres_autoridades);
+        ForAll(autoridades_maximas,
+            Collect(Nombres_autoridades,{
+                nombre: Concatenate(field_3," ",field_4,", ",field_5),
+                cargo: CARGO,
+                correo: CORREO_UDEC,
+                telefono: TELEFONO
+            })
+        );
+        
+        //LIMPIAR NACIONALES
         Clear(contrapartes_nacionales);
         
-        //INTERNACIONALES
+        //LIMPIAR INTERNACIONALES
         Clear(contrapartes_internacionales);
         
-        //SOLICITUDES AÑADIR CONTRAPARTE
+        //LIMPIAR SOLICITUDES AÑADIR CONTRAPARTE
         Clear(solicitudes_añadir_contraparte);
         
-        //nombres contrapartes internacionales
-        Set(Contrapartes_inter,'DTI-PATraernombrescontrapartesinternacionales'.Run());
+        
+        //NOMBRES CONTRAPARTES INTERNACIONALES
         Clear(Nombres_contrapartes_internacionales);
         ForAll(Contrapartes_inter,
             Collect(Nombres_contrapartes_internacionales,{
