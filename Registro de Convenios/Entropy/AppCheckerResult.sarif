@@ -17067,6 +17067,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.id_convenioo"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.id_convenioo",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "id_convenioo",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.fondo_deshabilitado"
                 }
               ],
