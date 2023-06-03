@@ -353,8 +353,9 @@ Mostar_solicitudes As screen:
                     Collect(Nombres_reparticiones,{
                         reparticion: Nombre1,
                         codigo: Title
-                    });
-                )
+                    })
+                );
+                ClearCollect(Nombres_reparticiones,Sort(Nombres_reparticiones,reparticion));
             Text: ="Botón"
             X: =323
             Y: =409
