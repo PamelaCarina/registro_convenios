@@ -296,7 +296,7 @@ Mostar_solicitudes As screen:
                 ZIndex: =6
 
         Button2 As button:
-            Fill: =RGBA(184, 0, 0, 1)
+            Fill: =RGBA(255, 191, 0, 1)
             OnSelect: =
             Text: ="Botón"
             X: =276

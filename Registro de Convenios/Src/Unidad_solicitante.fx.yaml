@@ -1029,7 +1029,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nuevo,"1",LookUp(Filter(organismos_actividad, buscador_n_u_s_input.Text in Reparticion),Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante,'Codigo Reparticion'))
+                        Default: =//If(nuevo;"1";LookUp(Filter(organismos_actividad; buscador_n_u_s_input.Text in Reparticion);Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante;'Codigo Reparticion'))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
@@ -1317,7 +1317,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nuevo,"1",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor))
+                        Default: =//If(nuevo;"1";LookUp(lista_alcance;valor=unidad_solicitante_recuperada.alcance_territorial;valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0

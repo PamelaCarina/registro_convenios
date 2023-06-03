@@ -95,14 +95,15 @@ Entidad_contraparte As screen:
                 
                     If(id_estado="1",Set(id_estado,"2"));//pasa a contraparte registrada
                     
-                    Set(id_estado,'DTI-PAGuardarcontrapartesregistradas'.Run(
-                                                                JSON(entidades_contraparte_na_cargadas),
-                                                                JSON(entidades_contraparte_in_cargadas),
-                                                                id_convenio,
+                    /*
+                    Set(id_estado;'DTI-PAGuardarcontrapartesregistradas'.Run(
+                                                                JSON(entidades_contraparte_na_cargadas);
+                                                                JSON(entidades_contraparte_in_cargadas);
+                                                                id_convenio;
                                                                 id_estado                                                
-                    ).id_estado);
-                
-                    If(Int(id_estado)>=9 && primera_vez_especificacion_convenio,
+                    ).id_estado);;
+                    */
+                    If(id_estado>=9 && primera_vez_especificacion_convenio,
                         Set(especificacion_convenio_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
                                                                 id_convenio,
                                                                 "9"//necesito especificacion registrada
