@@ -95,16 +95,6 @@ Mostar_solicitudes As screen:
                 Y: =44
                 ZIndex: =3
 
-            lbl_estado As label:
-                Color: =RGBA(17, 61, 107, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =38
-                Text: ="Estado"
-                Width: =125
-                X: =812
-                Y: =44
-                ZIndex: =6
-
             "gal_listado_solicitudes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                 FocusedBorderColor: |-
                     =ColorValue("#6F8BA7")
@@ -184,33 +174,15 @@ Mostar_solicitudes As screen:
                     X: =770
                     ZIndex: =4
 
-                lbl_gal_solicitud As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    Height: =80
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =12
-                    PaddingRight: =12
-                    PaddingTop: =0
-                    Size: =13
-                    Text: =If(Len(ThisItem.nombre)<=40,ThisItem.nombre,Left(ThisItem.nombre,37)&"...")
-                    Width: =335
-                    X: =336
-                    ZIndex: =5
-
                 lbl_gal_fecha As label:
                     Color: =RGBA(17, 61, 107, 1)
                     FontWeight: =FontWeight.Normal
                     Height: =80
                     OnSelect: =Select(Parent)
                     Size: =13
-                    Text: |-
-                        =/*
-                        Text(
-                            DateValue(ThisItem.fecha);
-                            DateTimeFormat.ShortDate
-                        )
-                        */
+                    Text: |+
+                        =DateValue(ThisItem.fecha)
+                        
                     Width: =282
                     ZIndex: =6
 
