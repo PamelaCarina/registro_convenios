@@ -2,26 +2,17 @@ App As appinfo:
     BackEnabled: =false
     OnStart: |
         =Set(cargando, true);
+        
+        //////////////////////////////////LLAMADOS A FLUJOS//////////////////////////////////////
+        
         //USUARIO LOGEADO
         //Set(persona_solicitante; 'VRIM-PATraedatosdeusuario'.Run(User().Email));;
         Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run("melissa@udec.cl"));
         
-        //UNIDAD SOLICITANTE
-        Set(arraypersonaltest,persona_solicitante.'array organismo actividad');
-        ClearCollect(organismos_actividad, SortByColumns(arraypersonaltest,"Reparticion"));
-        
         //LISTAS DESPLEGABLES
         Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
-        Clear(lista_alcance);
-        ForAll(datos.alcance_territorial,
-            Collect(lista_alcance,{
-                id: ItemInternalId,
-                valor: Title
-            })
-        );
-        ClearCollect(lista_alcance,Sort(lista_alcance,valor));
         
-        //listado solicitudes
+        //LISTADO SOLICITUDES
         ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
         
         
@@ -51,7 +42,23 @@ App As appinfo:
         
         Set(cargando, false);
         
+        //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
         
+        //UNIDAD SOLICITANTE
+        ClearCollect(organismos_actividad, 
+                SortByColumns(persona_solicitante.'array organismo actividad',"Reparticion"));
+        
+        //ALCANCE TERRITORIAL
+        Clear(lista_alcance);
+        ForAll(datos.alcance_territorial,
+            Collect(lista_alcance,{
+                id: ItemInternalId,
+                valor: Title
+            })
+        );
+        ClearCollect(lista_alcance,Sort(lista_alcance,valor));
+        
+        //TIPOLOGÍA
         Clear(lista_tipologia);
         ForAll(datos.tipologia,
             Collect(lista_tipologia,{
@@ -61,7 +68,7 @@ App As appinfo:
         );
         ClearCollect(lista_tipologia,Sort(lista_tipologia,valor));
         
-        
+        //TIPO SOLICITUD
         Clear(lista_tipo_solicitud);
         ForAll(datos.tipo_solicitud,
             Collect(lista_tipo_solicitud,{
@@ -71,6 +78,7 @@ App As appinfo:
         );
         ClearCollect(lista_tipo_solicitud,Sort(lista_tipo_solicitud,valor));
         
+        //MODALIDAD
         Clear(lista_modalidad);
         ForAll(datos.modalidad,
             Collect(lista_modalidad,{
