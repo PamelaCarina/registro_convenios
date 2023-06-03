@@ -7,12 +7,10 @@
         <property name="text" type="string" />
       </object>
       <string name="ResponseActionOutput_items_def_id_convenio_def" />
-      <string name="ResponseActionOutput_items_def_id_estado_def" />
       <string name="ResponseActionOutput_items_def_estado_def" />
       <string name="ResponseActionOutput_items_def_fecha_def" />
       <object name="ResponseActionOutput_items_def">
         <property name="id_convenio" type="string" />
-        <property name="id_estado" type="string" />
         <property name="estado" type="string" />
         <property name="fecha" type="string" />
       </object>

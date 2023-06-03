@@ -2,7 +2,7 @@
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
     "FlowNameId": "2fdfc541-edb2-49d4-acaf-165c20235290",
-    "Name": "DTI-PAGuardarcontrapartesnoregistradas",
+    "Name": "DTI-PAGuardarcontrapartenoregistrada",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": "9cbb7bee-c4f5-ed11-8848-6045bd006f89"
