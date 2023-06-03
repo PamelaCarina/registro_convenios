@@ -347,7 +347,7 @@ Mostar_solicitudes As screen:
 
         Button2 As button:
             Fill: =RGBA(255, 191, 0, 1)
-            OnSelect: |-
+            OnSelect: |+
                 =/*Set(reparticiones; 'DTI-PATraerreparticiones'.Run());;
                 Clear(Nombres_reparticiones);;
                 ForAll(reparticiones;
@@ -359,17 +359,19 @@ Mostar_solicitudes As screen:
                 ClearCollect(Nombres_reparticiones;Sort(Nombres_reparticiones;reparticion));;
                 */
                 
-                //Set(a_t;First(datos).'alcance territorial');;
-                //ClearCollect(lista_alcance;a_t);;
+                //Set(m;First(datos).modalidad);;
+                //ClearCollect(lista_modalidad;m);;
                 
-                ClearCollect(datos,'DTI-PAListaespecificacionesconvenio'.Run());
-                Clear(lista_alcance);
-                ForAll(datos.alcance_territorial,
-                    Collect(lista_alcance,{
+                Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
+                Clear(lista_modalidad);
+                ForAll(datos.modalidad,
+                    Collect(lista_modalidad,{
                         id: ItemInternalId,
                         valor: Title
                     })
                 );
+                ClearCollect(lista_modalidad,Sort(lista_modalidad,valor));
+                
             Text: ="Botón"
             X: =323
             Y: =409

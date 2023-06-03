@@ -11,10 +11,15 @@ App As appinfo:
         ClearCollect(organismos_actividad, SortByColumns(arraypersonaltest,"Reparticion"));
         
         //LISTAS DESPLEGABLES
-        //ClearCollect(datos;'DTI-PAListaespecificacionesconvenio'.Run());;
-        
-        //Set(a_t;First(datos).'alcance territorial');;
-        //ClearCollect(lista_alcance;a_t);;
+        Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
+        Clear(lista_alcance);
+        ForAll(datos.alcance_territorial,
+            Collect(lista_alcance,{
+                id: ItemInternalId,
+                valor: Title
+            })
+        );
+        ClearCollect(lista_alcance,Sort(lista_alcance,valor));
         
         //listado solicitudes
         ClearCollect(listado_solicitudes, Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
@@ -46,16 +51,35 @@ App As appinfo:
         
         Set(cargando, false);
         
-        /*
-        Set(t;First(datos).tipologia);;
-        ClearCollect(lista_tipologia;t);;
         
-        Set(t_s;First(datos).'tipo solicitud');;
-        ClearCollect(lista_tipo_solicitud;t_s);;
+        Clear(lista_tipologia);
+        ForAll(datos.tipologia,
+            Collect(lista_tipologia,{
+                id: ItemInternalId,
+                valor: Title
+            })
+        );
+        ClearCollect(lista_tipologia,Sort(lista_tipologia,valor));
         
-        Set(m;First(datos).modalidad);;
-        ClearCollect(lista_modalidad;m);;
-        */
+        
+        Clear(lista_tipo_solicitud);
+        ForAll(datos.tipo_solicitud,
+            Collect(lista_tipo_solicitud,{
+                id: ItemInternalId,
+                valor: Title
+            })
+        );
+        ClearCollect(lista_tipo_solicitud,Sort(lista_tipo_solicitud,valor));
+        
+        Clear(lista_modalidad);
+        ForAll(datos.modalidad,
+            Collect(lista_modalidad,{
+                id: ItemInternalId,
+                valor: Title
+            })
+        );
+        ClearCollect(lista_modalidad,Sort(lista_modalidad,valor));
+        
         //NACIONALES
         Clear(contrapartes_nacionales);
         
