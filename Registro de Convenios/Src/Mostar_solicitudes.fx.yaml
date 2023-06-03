@@ -147,7 +147,6 @@ Mostar_solicitudes As screen:
                         Set(nuevo,false);
                         
                         Set(primera_vez_entidad_contraparte,true);
-                        Set(primera_vez_especificacion_convenio,true);
                         
                         Set(unidad_solicitante_recuperada,
                         'DTI-PATraerestadosolicitudporpantalla'.Run(
@@ -175,14 +174,11 @@ Mostar_solicitudes As screen:
                         ForAll(unidad_solicitante_recuperada.unidades_promotoras,
                             Collect(unidades_promotoras,{
                                 nombre_unidad_promotora: reparticion,
-                                codigo_reparticion: codigo_reparticion
+                                codigo_reparticion: codigo_reparticion,
+                                campus:""
                             })
                         );
                         
-                        
-                        Clear(contrapartes_nacionales);
-                        Clear(contrapartes_internacionales);
-                        //Clear(solicitudes_añadir_contraparte);;
                         
                         Navigate(Unidad_solicitante);
                     PaddingBottom: =0
