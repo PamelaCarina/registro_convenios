@@ -250,9 +250,8 @@ Mostar_solicitudes As screen:
                 FontWeight: =FontWeight.Bold
                 OnSelect: |-
                     =Set(cargando, true);
-                    Set(lista_actividades, 'VRIM-PATraelistadoactividades'.Run(User().Email));
-                    Set(nueva_solicitud, false);
-                    Collect(colRol, ForAll(Distinct(lista_actividades.lista_actividades, rol), {Result: ThisRecord.Value}));
+                    ClearCollect(listado_solicitudes, 
+                            Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
                     Set(cargando, false);
                 RadiusBottomLeft: =12
                 RadiusBottomRight: =12
