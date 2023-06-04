@@ -1,33 +1,33 @@
 {
-  "151662ca-7ab5-4851-a8d9-ce8094f02c35": {
+  "16ac7fa5-e9e9-4306-a177-e16f19cd7c24": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "workflowEntityId": {
-          "value": "73576a43-4f02-ee11-8f6e-6045bd006f89"
+          "value": "b1cb3cab-5102-ee11-8f6e-6045bd006f89"
         },
         "workflowName": {
-          "value": "87278f7c-d375-1846-ef17-491afadf2dbc"
+          "value": "8e409211-c714-f757-1e60-342fd74255f0"
         }
       },
       "parameterHintsV2": {
         "workflowEntityId": {
-          "value": "73576a43-4f02-ee11-8f6e-6045bd006f89"
+          "value": "b1cb3cab-5102-ee11-8f6e-6045bd006f89"
         },
         "workflowName": {
-          "value": "87278f7c-d375-1846-ef17-491afadf2dbc"
+          "value": "8e409211-c714-f757-1e60-342fd74255f0"
         }
       }
     },
     "datasets": {},
     "dataSources": [
-      "Convenio-PAGuardarunidadpromotora"
+      "Convenio-PAEliminarunidadpromotora"
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "151662ca-7ab5-4851-a8d9-ce8094f02c35"
+    "id": "16ac7fa5-e9e9-4306-a177-e16f19cd7c24"
   },
   "1861bd45-32f2-4db9-8c16-4ce8cc5f78be": {
     "connectionRef": {
@@ -629,6 +629,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "cd2c43b4-1b21-4364-afee-6a5f690f3de8"
+  },
+  "d1b43087-dec1-40eb-b626-ef8c97072654": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "73576a43-4f02-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "87278f7c-d375-1846-ef17-491afadf2dbc"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "73576a43-4f02-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "87278f7c-d375-1846-ef17-491afadf2dbc"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAGuardarunidadpromotora"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d1b43087-dec1-40eb-b626-ef8c97072654"
   },
   "d8909894-2c2d-4270-9af8-fe47d05e2a5d": {
     "connectionRef": {

@@ -553,7 +553,8 @@ Unidad_solicitante As screen:
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
                         HoverFill: =RGBA(207, 210, 232, 0.4)
                         OnSelect: |-
-                            =Remove(
+                            ='Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);
+                            Remove(
                                 unidades_promotoras,
                                 First(
                                     Filter(
@@ -1529,10 +1530,10 @@ Unidad_solicitante As screen:
                         );
                 
                         Set(nueva_unidad_promotora,'Convenio-PAGuardarunidadpromotora'.Run(
-                                                                promotor_seleccionado.reparticion,
-                                                                promotor_seleccionado.codigo,
-                                                                id_convenio,
-                                                                id_estado
+                            promotor_seleccionado.reparticion,
+                            promotor_seleccionado.codigo,
+                            id_convenio,
+                            id_estado
                         ));
                 
                         Set(id_unidad_promotora,nueva_unidad_promotora.id_unidad_promotora);
