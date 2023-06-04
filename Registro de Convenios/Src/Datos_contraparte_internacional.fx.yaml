@@ -126,19 +126,44 @@ Datos_contraparte_internacional As screen:
                             Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input.Text)
                         )
                     ),
+                    Set(cargando, true);
+                    If(id_estado=1,Set(id_estado,2));//pasa a contraparte registrada
+                    Set(nueva_contraparte_internacional,
+                    'Convenio-PAGuardarcontraparteinternacionalregistrada'.Run(
+                                                        nombre_unidad_contraparte_in_input.Text,
+                                                        Upper( nombre_representante_legal_in_input.Text),
+                                                        Upper(nombre_responsable_institucional_in_input.Text),
+                                                        Upper(cargo_responsable_institucional_in_input.Text),
+                                                        pais_in_input.Text,
+                                                        Upper(correo_electronico_in_input.Text),
+                                                        firma_digiral_in_button.Selected.Value,
+                                                        id_convenio,
+                                                        id_estado
+                    ));
+                    Set(id_estado,nueva_contraparte_internacional.id_estado);
                     Collect(contrapartes_internacionales,{
                             nombre_entidad_contraparte: nombre_unidad_contraparte_in_input.Text,
-                            rut_entidad_contraparte: contraparte_in.rut_entidad_contraparte,
-                            dv_entidad_contraparte: contraparte_in.dv_entidad_contraparte,
                             nombre_representante_legal: Upper( nombre_representante_legal_in_input.Text),
                             nombre_responsable_institucional: Upper(nombre_responsable_institucional_in_input.Text),
                             cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
                             pais: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
                             firma_digital: firma_digiral_in_button.Selected.Value,
-                            //id: contraparte_in.id;
-                            tipo: "INTERNACIONAL"
-                    }),
+                            id: nueva_contraparte_internacional.id_contraparte
+                    });
+                    Set(cargando, false)
+                    ,
+                    Set(cargando, true);
+                    'Convenio-PAEditarcontraparteregistrada'.Run(
+                        nombre_unidad_contraparte_in_input.Text,
+                        Upper(nombre_representante_legal_in_input.Text),
+                        Upper(nombre_responsable_institucional_in_input.Text),
+                        Upper(cargo_responsable_institucional_in_input.Text),
+                        Upper(correo_electronico_in_input.Text),
+                        firma_digiral_in_button.Selected.Value,
+                        "INTERNACIONAL",
+                        contraparte.id
+                    );
                     Patch(contrapartes_internacionales,
                         LookUp(
                             contrapartes_internacionales, 
@@ -153,7 +178,8 @@ Datos_contraparte_internacional As screen:
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
                             firma_digital: firma_digiral_in_button.Selected.Value
                         }
-                    )
+                    );
+                    Set(cargando, false)
                 );
                 Navigate(Entidad_contraparte, ScreenTransition.Fade);
                 );

@@ -126,6 +126,7 @@ Datos_contraparte_nacional As screen:
                                 Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_na_input.Text)
                             )
                         ),
+                        Set(cargando, true);
                         If(id_estado=1,Set(id_estado,2));//pasa a contraparte registrada
                         Set(nueva_contraparte_nacional,
                         'Convenio-PAGuardarcontrapartenacionalregistrada'.Run(
@@ -163,7 +164,10 @@ Datos_contraparte_nacional As screen:
                                 actividad: actividad_na_input.Text,
                                 firma_digital: firma_digiral_na_button.Selected.Value,
                                 id: nueva_contraparte_nacional.id_contraparte
-                        }),
+                        });
+                        Set(cargando, false)
+                        ,
+                        Set(cargando, true);
                         'Convenio-PAEditarcontraparteregistrada'.Run(
                                  nombre_unidad_contraparte_na_input.Text,
                                  Upper(nombre_representante_legal_na_input.Text),
@@ -187,7 +191,8 @@ Datos_contraparte_nacional As screen:
                                 correo_responsable_institucional: Upper(correo_electronico_na_input.Text),
                                 firma_digital: firma_digiral_na_button.Selected.Value
                             }
-                        )
+                        );
+                        Set(cargando, false);
                     );
                     Navigate(Entidad_contraparte, ScreenTransition.Fade);
                 );
