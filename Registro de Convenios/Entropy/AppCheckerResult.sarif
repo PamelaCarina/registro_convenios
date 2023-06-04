@@ -17067,36 +17067,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.nueva_contraparte_nacional"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.nueva_contraparte_nacional",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "nueva_contraparte_nacional",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.fondo_deshabilitado"
                 }
               ],

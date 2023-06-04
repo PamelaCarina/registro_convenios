@@ -300,6 +300,36 @@
     "dependents": [],
     "id": "36a09a4e-a45f-4852-95a1-a2738976b6d1"
   },
+  "5f2e54ee-f64f-414a-8a4a-15809220178a": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "b80c92b2-8002-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2a35dbde-bcdd-9eba-3213-cdcf3c6a24e5"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "b80c92b2-8002-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2a35dbde-bcdd-9eba-3213-cdcf3c6a24e5"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAEditarcontraparteregistrada"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "5f2e54ee-f64f-414a-8a4a-15809220178a"
+  },
   "672bd3ed-db1e-489f-89d8-10c95a4ad26d": {
     "connectionRef": {
       "displayName": "Logic flows",

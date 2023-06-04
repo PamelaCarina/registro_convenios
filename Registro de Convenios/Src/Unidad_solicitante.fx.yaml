@@ -96,7 +96,7 @@ Unidad_solicitante As screen:
                                 tipo_contribuyente: tipo_contribuyente,
                                 rubro: rubro,
                                 actividad: actividad,
-                                id: id,
+                                //id: id;
                                 tipo: "NACIONAL",
                                 firma_digital: firma_digital
                             })
@@ -112,7 +112,7 @@ Unidad_solicitante As screen:
                                 cargo_responsable_institucional: cargo_responsable_institucional,
                                 pais: pais,
                                 correo_responsable_institucional: correo_responsable_institucional,
-                                id: id,
+                                //id: id;
                                 tipo: "INTERNACIONAL",
                                 firma_digital: firma_digital
                             })

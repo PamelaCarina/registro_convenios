@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "e7bbb082-deeb-47d4-80b7-af6d0b371929",
+    "Name": "Convenio-PAEditarcontraparteregistrada",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "b80c92b2-8002-ee11-8f6e-6045bd006f89"
+  }
+]
