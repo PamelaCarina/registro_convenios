@@ -1,5 +1,5 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PAGuardarcontrapartenoregistrada" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="DTI - PA Guardar contraparte no registrada" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Convenio-PAGuardarcontrapartenoregistrada" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Convenio - PA Guardar contraparte no registrada" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_text_def" />
@@ -9,18 +9,18 @@
         <property name="name" type="string" />
         <property name="contentBytes" typeRef="ManualTriggerInput_file_def_contentBytes_def" />
       </object>
-      <string name="ManualTriggerInput_text_1_def" />
-      <string name="ManualTriggerInput_text_2_def" />
       <string name="ManualTriggerInput_text_3_def" />
+      <number name="ManualTriggerInput_number_def" />
+      <number name="ManualTriggerInput_number_1_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="file" typeRef="ManualTriggerInput_file_def" />
-        <property name="text_1" type="string" />
-        <property name="text_2" type="string" />
         <property name="text_3" type="string" />
+        <property name="number" type="number" />
+        <property name="number_1" type="number" />
       </object>
-      <string name="ResponseActionOutput_id_estado_def" />
-      <string name="ResponseActionOutput_id_contraparte_def" />
+      <integer name="ResponseActionOutput_id_estado_def" />
+      <integer name="ResponseActionOutput_id_contraparte_def" />
       <string name="ResponseActionOutput_file_def_Name_def" />
       <string name="ResponseActionOutput_file_def_Value_def" />
       <object name="ResponseActionOutput_file_def">
@@ -28,8 +28,8 @@
         <property name="Value" type="string" />
       </object>
       <object name="ResponseActionOutput">
-        <property name="id_estado" type="string" />
-        <property name="id_contraparte" type="string" />
+        <property name="id_estado" type="integer" />
+        <property name="id_contraparte" type="integer" />
         <property name="file" typeRef="ResponseActionOutput_file_def" />
       </object>
       <object name="Run_responses_default_def" />
@@ -51,14 +51,14 @@
             <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def">
               <doc title="file" />
             </param>
-            <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
-              <doc title="id" />
-            </param>
-            <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
-              <doc title="estado" />
-            </param>
             <param style="plain" name="text_3" path="/text_3" type="xs:string" required="true">
               <doc title="pais" />
+            </param>
+            <param style="plain" name="number" path="/number" type="xs:double" required="true">
+              <doc title="id_convenio" />
+            </param>
+            <param style="plain" name="number_1" path="/number_1" type="xs:double" required="true">
+              <doc title="id_estado" />
             </param>
           </representation>
         </request>

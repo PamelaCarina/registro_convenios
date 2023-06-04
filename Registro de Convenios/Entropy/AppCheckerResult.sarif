@@ -14038,66 +14038,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.img_arrow_solicitada.AccessibleLabel"
                 }
               ],
@@ -16838,36 +16778,6 @@
               },
               "properties": {
                 "member": "nueva_solicitud",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.Contenido_doc_sin"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Contenido_doc_sin",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Contenido_doc_sin",
                 "module": "App",
                 "type": "App"
               }

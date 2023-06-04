@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "2a0271aa-ae9e-4b13-99ab-d73fc9df2ba0",
+    "Name": "Convenio-PAEliminarcontraparteregistrada",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "08de407d-8c02-ee11-8f6e-6045bd006f89"
+  }
+]

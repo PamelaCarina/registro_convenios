@@ -50,7 +50,11 @@ Datos_contraparte_nacional As screen:
             HoverColor: =RGBA(238, 110, 126, 1)
             HoverFill: =RGBA(238, 110, 126, 0.1)
             OnSelect: |-
-                =Remove(
+                ='Convenio-PAEliminarcontraparteregistrada'.Run(
+                    "NACIONAL",
+                    contraparte.id
+                );
+                Remove(
                     contrapartes_nacionales,
                     First(
                         Filter(

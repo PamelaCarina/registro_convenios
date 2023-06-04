@@ -71,52 +71,48 @@ Datos_solicitud_contraparte_internacional As screen:
             FontWeight: =FontWeight.Normal
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |-
-                =/*
-                UpdateContext({máximo_solicitudes:false});;
+            OnSelect: |
+                =
+                UpdateContext({máximo_solicitudes:false});
                 
-                If(IsBlank(nombre_solicitud_unidad_contraparte_in_input.Text);UpdateContext({sin_nombre_entidad:true});UpdateContext({sin_nombre_entidad:false}));;
+                If(IsBlank(nombre_solicitud_unidad_contraparte_in_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
-                If(IsBlank(pais.Selected);UpdateContext({sin_pais_entidad:true});UpdateContext({sin_pais_entidad:false}));;
+                If(IsBlank(pais.Selected),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 
                 //If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
                 
-                Set(doc_contraparte;{
+                Set(doc_contraparte,{
                         file:{//doc1
-                            name: First(Contenido_doc_sin).Name;
+                            name: First(Contenido_doc_sin).Name,
                             contentBytes: First(Contenido_doc_sin).Value
                         }
-                });;
+                });
                 
-                If(!sin_nombre_entidad && !sin_pais_entidad;
+                If(!sin_nombre_entidad && !sin_pais_entidad,
                 
-                    If(id_estado=1;Set(id_estado;4));;//pasa a contraparte internacional solicitada
-                    If(id_estado=2;Set(id_estado;4));;//pasa a contraparte internacional solicitada
-                
-                
-                    Set(contrapartes_no_registradas_in;'DTI-PAGuardarcontrapartenoregistrada'.Run(
-                                                            Upper(nombre_solicitud_unidad_contraparte_in_input.Text);
-                                                            id_convenio;
-                                                            id_estado;
-                                                            pais.Selected.pais;
+                    If(id_estado=1,Set(id_estado,4));//pasa a contraparte internacional solicitada
+                    If(id_estado=2,Set(id_estado,4));//pasa a contraparte internacional solicitada
+                    Set(nueva_contrapartes_no_registradas_in,'Convenio-PAGuardarcontrapartenoregistrada'.Run(
+                                                            Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                                                            id_convenio,
+                                                            id_estado,
+                                                            pais.Selected.pais,
                                                             doc_contraparte
-                    ));;
+                    ));
                 
-                
-                    Set(id_estado;contrapartes_no_registradas_in.id_estado);;
+                    Set(id_estado,nueva_contrapartes_no_registradas_in.id_estado);
                     
-                    Collect(solicitudes_añadir_contraparte;{
-                        id_contraparte: contrapartes_no_registradas_in.id_contraparte;
-                        nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text);
-                        pais: pais.Selected.pais;
-                        estado: "En espera";
-                        file: contrapartes_no_registradas_in.file
-                    });;
+                    Collect(solicitudes_añadir_contraparte,{
+                        id_contraparte: nueva_contrapartes_no_registradas_in.id_contraparte,
+                        nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                        pais: pais.Selected.pais,
+                        estado: "En espera",
+                        file: nueva_contrapartes_no_registradas_in.file
+                    });
                 
-                    Navigate(Entidad_contraparte;ScreenTransition.Fade);;
+                    Navigate(Entidad_contraparte,ScreenTransition.Fade);
                 
-                );;
-                */
+                );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
