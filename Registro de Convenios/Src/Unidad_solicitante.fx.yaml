@@ -567,6 +567,7 @@ Unidad_solicitante As screen:
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        PressedBorderColor: =
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(207, 210, 232, 0.4)
                         RadiusBottomLeft: =50
@@ -1524,6 +1525,7 @@ Unidad_solicitante As screen:
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
+                        Set(cargando, true);
                 
                         If(IsBlank(id_convenio),
                             Set(id_convenio,'Convenio-PACrearsolicitudconvenio'.Run().id_convenio)
@@ -1545,6 +1547,8 @@ Unidad_solicitante As screen:
                             id_unidad_promotora: id_unidad_promotora        
                         })
                     );
+                    
+                    Set(cargando, false);
                     UpdateContext({popup_promotor: false});
                 );
                 
