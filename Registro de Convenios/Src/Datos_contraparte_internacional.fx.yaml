@@ -135,7 +135,7 @@ Datos_contraparte_internacional As screen:
                             cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
                             pais: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
-                            firma_digital: firma_digiral_in_button.Selected,
+                            firma_digital: firma_digiral_in_button.Selected.Value,
                             id: contraparte_in.id,
                             tipo: "INTERNACIONAL"
                     }),
@@ -151,7 +151,7 @@ Datos_contraparte_internacional As screen:
                             cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
                             pais: pais_in_input.Text,
                             correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
-                            firma_digital: firma_digiral_in_button.Selected
+                            firma_digital: firma_digiral_in_button.Selected.Value
                         }
                     )
                 );
@@ -256,7 +256,7 @@ Datos_contraparte_internacional As screen:
                 firma_digiral_in_button As radio:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
+                    Default: =If(nueva_contraparte,"",contraparte.firma_digital)
                     Height: =40
                     HoverColor: =RGBA(17, 61, 107, 1)
                     Items: =["Sí","No"]

@@ -162,7 +162,7 @@ Datos_contraparte_nacional As screen:
                                 tipo_contribuyente: tipo_contribuyente_na_input.Text,
                                 rubro: rubro_na_input.Text,
                                 actividad: actividad_na_input.Text,
-                                firma_digital: firma_digiral_na_button.Selected,
+                                firma_digital: firma_digiral_na_button.Selected.Value,
                                 id: contraparte_na.id,
                                 tipo: "NACIONAL"
                         }),
@@ -177,7 +177,7 @@ Datos_contraparte_nacional As screen:
                                 nombre_responsable_institucional: Upper(nombre_responsable_institucional_na_input.Text),
                                 cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text),
                                 correo_responsable_institucional: Upper(correo_electronico_na_input.Text)  ,
-                                firma_digital: firma_digiral_na_button.Selected
+                                firma_digital: firma_digiral_na_button.Selected.Value
                             }
                         )
                     );
@@ -501,7 +501,7 @@ Datos_contraparte_nacional As screen:
                 firma_digiral_na_button As radio:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_contraparte,"",contraparte.firma_digital.Value)
+                    Default: =If(nueva_contraparte,"",contraparte.firma_digital)
                     Height: =40
                     HoverColor: =RGBA(17, 61, 107, 1)
                     Items: =["Sí","No"]
