@@ -297,7 +297,7 @@ Mostar_solicitudes As screen:
 
         Button2 As button:
             Fill: =RGBA(109, 49, 162, 1)
-            OnSelect: ='Convenio-PAGuardarunidadpromotora'.Run("a","a",186,1)
+            OnSelect: =
             Text: ="Botón"
             X: =276
             Y: =448
