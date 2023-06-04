@@ -89,14 +89,14 @@ Datos_solicitud_contraparte_internacional As screen:
                 });
                 
                 If(!sin_nombre_entidad && !sin_pais_entidad,
-                
+                    Set(cargando, true);
                     If(id_estado=1,Set(id_estado,4));//pasa a contraparte internacional solicitada
                     If(id_estado=2,Set(id_estado,4));//pasa a contraparte internacional solicitada
                     Set(nueva_contrapartes_no_registradas_in,'Convenio-PAGuardarcontrapartenoregistrada'.Run(
                                                             Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                                                            pais.Selected.pais,
                                                             id_convenio,
                                                             id_estado,
-                                                            pais.Selected.pais,
                                                             doc_contraparte
                     ));
                 
@@ -109,6 +109,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         estado: "En espera",
                         file: nueva_contrapartes_no_registradas_in.file
                     });
+                    Set(cargando, false);
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade);
                 

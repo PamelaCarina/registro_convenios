@@ -22,66 +22,18 @@ Entidad_contraparte As screen:
                     //si es nacional
                         If(CountRows(contrapartes_nacionales)>0,
                             //si es nacional y existen contrapartes nacionales
-                            Set(entidades_contraparte_na_cargadas,{
-                                nacionales:{
-                                    cantidad: CountRows(contrapartes_nacionales),
-                                    contrapartes: contrapartes_nacionales
-                                }
-                            });
-                            Set(entidades_contraparte_in_cargadas,{
-                                internacionales:{
-                                    cantidad: 0,
-                                    contrapartes: contrapartes_internacionales
-                                }
-                            });
                             UpdateContext({sin_contraparte:false});
                         ,
                             //si es nacional y no existen contrapartes nacionales
-                            Set(entidades_contraparte_na_cargadas,{
-                            nacionales:{
-                                cantidad: 0,
-                                contrapartes: contrapartes_nacionales
-                            }
-                            });
-                            Set(entidades_contraparte_in_cargadas,{
-                                internacionales:{
-                                    cantidad: 0,
-                                    contrapartes: contrapartes_internacionales
-                                }
-                            });
                             UpdateContext({sin_contraparte:true});
                         )
                     ,
                     //si no es nacional, es internacional
                         If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
                             //si es internacional y existe alguna contraparte
-                            Set(entidades_contraparte_na_cargadas,{
-                                nacionales:{
-                                    cantidad: CountRows(contrapartes_nacionales),
-                                    contrapartes: contrapartes_nacionales
-                                }
-                            });
-                            Set(entidades_contraparte_in_cargadas,{
-                                internacionales:{
-                                    cantidad: CountRows(contrapartes_internacionales),
-                                    contrapartes: contrapartes_internacionales
-                                }
-                            });
                             UpdateContext({sin_contraparte:false});
                         ,
                             //si es internacional y no existen contrapartes
-                            Set(entidades_contraparte_na_cargadas,{
-                            nacionales:{
-                                cantidad: 0,
-                                contrapartes: contrapartes_nacionales
-                            }
-                            });
-                            Set(entidades_contraparte_in_cargadas,{
-                                internacionales:{
-                                    cantidad: 0,
-                                    contrapartes: contrapartes_internacionales
-                                }
-                            });
                             UpdateContext({sin_contraparte:true});
                         )
                 );
@@ -93,7 +45,7 @@ Entidad_contraparte As screen:
                 
                     Set(cargando, true);
                 
-                    If(id_estado=1,Set(id_estado,2));//pasa a contraparte registrada
+                    //If(id_estado=1;Set(id_estado;2));;//pasa a contraparte registrada
                     
                     /*
                     Set(id_estado;'DTI-PAGuardarcontrapartesregistradas'.Run(

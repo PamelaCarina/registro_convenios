@@ -2,9 +2,9 @@
   <doc title="Convenio - PA Eliminar contraparte no registrada" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <string name="ManualTriggerInput_text_def" />
+      <number name="ManualTriggerInput_number_def" />
       <object name="ManualTriggerInput">
-        <property name="text" type="string" />
+        <property name="number" type="number" />
       </object>
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_nombre_unidad_solicitante_def" />
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_correo_solicitante_def" />
@@ -135,7 +135,7 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="text" path="/text" type="xs:string" required="true">
+            <param style="plain" name="number" path="/number" type="xs:double" required="true">
               <doc title="id_contraparte" />
             </param>
           </representation>
