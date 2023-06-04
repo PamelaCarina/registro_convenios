@@ -498,7 +498,7 @@ Entidad_contraparte As screen:
                         Height: =34
                         Icon: =Icon.Cancel
                         OnSelect: |-
-                            ='DTI-PABorrarcontrapartenoregistrada'.Run(ThisItem.id_contraparte);
+                            ='Convenio-PAEliminarcontrapartenoregistrada'.Run(ThisItem.id_contraparte);
                             Remove(solicitudes_añadir_contraparte,ThisItem)
                         Width: =47
                         X: =1133
