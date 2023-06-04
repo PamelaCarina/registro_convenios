@@ -126,6 +126,27 @@ Datos_contraparte_nacional As screen:
                                 Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_na_input.Text)
                             )
                         ),
+                
+                        Set(nueva_contraparte_nacional,
+                        'Convenio-PAGuardarcontrapartenacionalregistrada'.Run(
+                                                            nombre_unidad_contraparte_na_input.Text,
+                                                            contraparte_na.rut_entidad_contraparte,
+                                                            contraparte_na.dv_entidad_contraparte,
+                                                            Upper(nombre_representante_legal_na_input.Text),
+                                                            Upper(nombre_responsable_institucional_na_input.Text),
+                                                            Upper(cargo_responsable_institucional_na_input.Text),
+                                                            Upper(correo_electronico_na_input.Text),
+                                                            publica_na_input.Text,
+                                                            tipo_empresa_na_input.Text,
+                                                            comuna_na_input.Text,
+                                                            tipo_contribuyente_na_input.Text,
+                                                            rubro_na_input.Text,
+                                                            actividad_na_input.Text,
+                                                            firma_digiral_na_button.Selected.Value,
+                                                            id_convenio,
+                                                            id_estado
+                        ));
+                
                         Collect(contrapartes_nacionales,{
                                 nombre_entidad_contraparte: nombre_unidad_contraparte_na_input.Text,
                                 rut_entidad_contraparte: contraparte_na.rut_entidad_contraparte,
