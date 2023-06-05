@@ -178,7 +178,9 @@ Contribución_desarrollo As screen:
                     CheckboxSize: =30
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
-                    Default: =If(CountRows(Search(ods_recuperada,"","Value"))>0,true,false)
+                    Default: |-
+                        =//If(CountRows(Search(ods_recuperada;"";"Value"))>0;true;false)
+                        false
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -1342,17 +1344,21 @@ Contribución_desarrollo As screen:
                 =Set(cargando,true);
                 
                 
-                    //If(id_estado=12;Set(id_estado;13));;//pasa a registrada
-                    /*
-                    Set(id_estado;'DTI-PAEnviarsolicitudconvenio'.Run(
-                                                                        persona_solicitante.id_persona;
-                                                                        descripcion_proposito_1.Text;
-                                                                        id_convenio;
+                    If(id_estado=12,Set(id_estado,13));//pasa a registrada
+                    
+                    Set(id_estado,'Convenio-PAEnviarsolicitudconvenio'.Run(
+                                                                        persona_solicitante.id_persona,
+                                                                        descripcion_proposito_1.Text,
+                                                                        id_convenio,
                                                                         id_estado
-                    ).id_estado);;
-                    */
+                    ).id_estado);
+                    
                 Set(popup_confirmacion,false);
                 UpdateContext({popup_done:true});
+                
+                ClearCollect(listado_solicitudes, 
+                        Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
+                
                 Navigate(Mostar_solicitudes,ScreenTransition.Fade);
                 Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)

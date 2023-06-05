@@ -831,3 +831,25 @@ Datos_solicitud_contraparte_internacional As screen:
         Y: =684
         ZIndex: =8
 
+    cont_loading_8 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =11
+
+        fig_registro_5_bg_9 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =cargando
+            Width: =1366
+            ZIndex: =9
+
+        img_loading_8 As image:
+            Image: =loading
+            Visible: =cargando
+            X: =633
+            Y: =334
+            ZIndex: =10
+

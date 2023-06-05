@@ -29,6 +29,7 @@ Mostar_solicitudes As screen:
                 
                 Clear(contrapartes_nacionales);
                 Clear(contrapartes_internacionales);
+                Clear(solicitudes_añadir_contraparte);
                 Clear(lista_doc_contr_subidos);
                 
                 Clear(lista_doc_off_subidos);
@@ -160,6 +161,7 @@ Mostar_solicitudes As screen:
                     OnSelect: |-
                         =Select(Parent);
                         Set(nueva_solicitud, false);
+                    Visible: =If(ThisItem.estado<>"Registrada",true,false)
                     Width: =14
                     X: =1130
                     ZIndex: =2
@@ -322,7 +324,7 @@ Mostar_solicitudes As screen:
                         
                         Set(ods_recuperada,solicitud_convenio_recuperada.ods_registrada);
                         
-                        Navigate(Unidad_solicitante,ScreenTransition.Fade);
+                        If(ThisItem.estado<>"Registrada",Navigate(Unidad_solicitante,ScreenTransition.Fade));
                         
                         
                         
@@ -334,6 +336,7 @@ Mostar_solicitudes As screen:
                     PressedFill: =RGBA(0, 0, 0, 0)
                     TabIndex: =3
                     Text: =""
+                    Visible: =If(ThisItem.estado<>"Registrada",true,false)
                     Width: =14
                     X: =1130
                     ZIndex: =3
