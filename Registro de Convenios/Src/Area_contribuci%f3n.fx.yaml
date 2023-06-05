@@ -767,7 +767,7 @@ Area_contribución As screen:
                             =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                             	{falta:false}
-                            ))
+                            ));
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8

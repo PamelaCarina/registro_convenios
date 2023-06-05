@@ -10,7 +10,8 @@ Datos_contraparte_nacional As screen:
         UpdateContext({correo_na_vacio:false});
         UpdateContext({popup_institucionnoencontrada:false});
         UpdateContext({hide_border_correo_na:true});
-        Reset(inp_contraparte_na_popup_search)
+        Reset(inp_contraparte_na_popup_search);
+        UpdateContext({cambio_detectado:false});
 
     Botones_atras_siguiente_3 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -130,47 +131,50 @@ Datos_contraparte_nacional As screen:
                                 Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_na_input.Text)
                             )
                         ),
+                        If(cambio_detectado,
                         Set(cargando, true);
                         If(id_estado=1,Set(id_estado,2));//pasa a contraparte registrada
                         Set(nueva_contraparte_nacional,
                         'Convenio-PAGuardarcontrapartenacionalregistrada'.Run(
-                                                            nombre_unidad_contraparte_na_input.Text,
-                                                            contraparte_na.rut_entidad_contraparte,
-                                                            contraparte_na.dv_entidad_contraparte,
-                                                            Upper(nombre_representante_legal_na_input.Text),
-                                                            Upper(nombre_responsable_institucional_na_input.Text),
-                                                            Upper(cargo_responsable_institucional_na_input.Text),
-                                                            Upper(correo_electronico_na_input.Text),
-                                                            publica_na_input.Text,
-                                                            tipo_empresa_na_input.Text,
-                                                            comuna_na_input.Text,
-                                                            tipo_contribuyente_na_input.Text,
-                                                            rubro_na_input.Text,
-                                                            actividad_na_input.Text,
-                                                            firma_digiral_na_button.Selected.Value,
-                                                            id_convenio,
-                                                            id_estado
+                                                    nombre_unidad_contraparte_na_input.Text,
+                                                    contraparte_na.rut_entidad_contraparte,
+                                                    contraparte_na.dv_entidad_contraparte,
+                                                    Upper(nombre_representante_legal_na_input.Text),
+                                                    Upper(nombre_responsable_institucional_na_input.Text),
+                                                    Upper(cargo_responsable_institucional_na_input.Text),
+                                                    Upper(correo_electronico_na_input.Text),
+                                                    publica_na_input.Text,
+                                                    tipo_empresa_na_input.Text,
+                                                    comuna_na_input.Text,
+                                                    tipo_contribuyente_na_input.Text,
+                                                    rubro_na_input.Text,
+                                                    actividad_na_input.Text,
+                                                    firma_digiral_na_button.Selected.Value,
+                                                    id_convenio,
+                                                    id_estado
                         ));
                         Set(id_estado,nueva_contraparte_nacional.id_estado);
                         Collect(contrapartes_nacionales,{
-                                nombre_entidad_contraparte: nombre_unidad_contraparte_na_input.Text,
-                                rut_entidad_contraparte: contraparte_na.rut_entidad_contraparte,
-                                dv_entidad_contraparte: contraparte_na.dv_entidad_contraparte,
-                                nombre_representante_legal: Upper(nombre_representante_legal_na_input.Text),
-                                nombre_responsable_institucional: Upper(nombre_responsable_institucional_na_input.Text),
-                                cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text),
-                                correo_responsable_institucional: Upper(correo_electronico_na_input.Text),
-                                publica: publica_na_input.Text,
-                                tipo_empresa: tipo_empresa_na_input.Text,
-                                comuna: comuna_na_input.Text,
-                                tipo_contribuyente: tipo_contribuyente_na_input.Text,
-                                rubro: rubro_na_input.Text,
-                                actividad: actividad_na_input.Text,
-                                firma_digital: firma_digiral_na_button.Selected.Value,
-                                id: nueva_contraparte_nacional.id_contraparte
+                            nombre_entidad_contraparte: nombre_unidad_contraparte_na_input.Text,
+                            rut_entidad_contraparte: contraparte_na.rut_entidad_contraparte,
+                            dv_entidad_contraparte: contraparte_na.dv_entidad_contraparte,
+                            nombre_representante_legal: Upper(nombre_representante_legal_na_input.Text),
+                            nombre_responsable_institucional: Upper(nombre_responsable_institucional_na_input.Text),
+                            cargo_responsable_institucional: Upper(cargo_responsable_institucional_na_input.Text),
+                            correo_responsable_institucional: Upper(correo_electronico_na_input.Text),
+                            publica: publica_na_input.Text,
+                            tipo_empresa: tipo_empresa_na_input.Text,
+                            comuna: comuna_na_input.Text,
+                            tipo_contribuyente: tipo_contribuyente_na_input.Text,
+                            rubro: rubro_na_input.Text,
+                            actividad: actividad_na_input.Text,
+                            firma_digital: firma_digiral_na_button.Selected.Value,
+                            id: nueva_contraparte_nacional.id_contraparte
                         });
                         Set(cargando, false)
+                        );
                         ,
+                        If(cambio_detectado,
                         Set(cargando, true);
                         'Convenio-PAEditarcontraparteregistrada'.Run(
                                  nombre_unidad_contraparte_na_input.Text,
@@ -197,6 +201,7 @@ Datos_contraparte_nacional As screen:
                             }
                         );
                         Set(cargando, false);
+                        )
                     );
                     Navigate(Entidad_contraparte, ScreenTransition.Fade);
                 );
@@ -292,7 +297,8 @@ Datos_contraparte_nacional As screen:
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
                         OnChange: |-
-                            =UpdateContext({hide_border_correo_na:false})
+                            =UpdateContext({hide_border_correo_na:false});
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -342,6 +348,8 @@ Datos_contraparte_nacional As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -412,6 +420,8 @@ Datos_contraparte_nacional As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -527,6 +537,8 @@ Datos_contraparte_nacional As screen:
                     HoverColor: =RGBA(17, 61, 107, 1)
                     Items: =["Sí","No"]
                     Layout: =Layout.Horizontal
+                    OnChange: |-
+                        =UpdateContext({cambio_detectado:true})
                     PaddingBottom: =0
                     PaddingTop: =5
                     RadioBackgroundFill: =RGBA(0, 0, 0, 0)
@@ -579,6 +591,8 @@ Datos_contraparte_nacional As screen:
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
                     MaxLength: =60
+                    OnChange: |-
+                        =UpdateContext({cambio_detectado:true})
                     PaddingBottom: =12
                     PaddingLeft: =24
                     PaddingRight: =24

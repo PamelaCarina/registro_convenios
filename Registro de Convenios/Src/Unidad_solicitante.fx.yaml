@@ -10,6 +10,7 @@ Unidad_solicitante As screen:
         UpdateContext({sin_cargo_responsable:false});
         UpdateContext({sin_correo_responsable:false});
         UpdateContext({sin_telefono_responsable:false});
+        UpdateContext({cambio_detectado:false});
 
     Botones_atras_siguiente As groupContainer.manualLayoutContainer:
         Height: =44
@@ -51,31 +52,35 @@ Unidad_solicitante As screen:
                 
                 If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad && !sin_alcance, 
                 
-                    Set(cargando, true);
+                    If(cambio_detectado,
                 
-                    If(IsBlank(id_convenio),
-                            Set(id_convenio,'Convenio-PACrearsolicitudconvenio'.Run().id_convenio)
+                        Set(cargando, true);
+                
+                        If(IsBlank(id_convenio),
+                                Set(id_convenio,'Convenio-PACrearsolicitudconvenio'.Run().id_convenio)
+                        );
+                
+                        
+                
+                        Set(id_estado,
+                        'Convenio-PAGuardardatosunidadsolicitante'.Run(
+                                                                uni,
+                                                                persona_solicitante.correo_udec,
+                                                                nombre_autoridad_solicitante_input_2.Text,
+                                                                cargo_autoridad_input_2.Text,
+                                                                correo_autoridad_input_2.Text,
+                                                                telefono_autoridad_input_2.Text,
+                                                                nombre_responsable_input_2.Text,
+                                                                cargo_responsable_input_2.Text,
+                                                                correo_responsable_input_2.Text,
+                                                                telefono_responsable_input_2.Text,
+                                                                tipo_alcance.Selected.valor,
+                                                                id_convenio,
+                                                                id_estado
+                        ).id_estado);
+                
+                        Set(cargando, false);
                     );
-                
-                    Set(id_estado,
-                    'Convenio-PAGuardardatosunidadsolicitante'.Run(
-                                                            uni,
-                                                            persona_solicitante.correo_udec,
-                                                            nombre_autoridad_solicitante_input_2.Text,
-                                                            cargo_autoridad_input_2.Text,
-                                                            correo_autoridad_input_2.Text,
-                                                            telefono_autoridad_input_2.Text,
-                                                            nombre_responsable_input_2.Text,
-                                                            cargo_responsable_input_2.Text,
-                                                            correo_responsable_input_2.Text,
-                                                            telefono_responsable_input_2.Text,
-                                                            tipo_alcance.Selected.valor,
-                                                            id_convenio,
-                                                            id_estado
-                    ).id_estado);
-                
-                    Set(cargando, false);
-                
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade));
             PressedBorderColor: =RGBA(247, 158, 64, 1)
@@ -373,6 +378,8 @@ Unidad_solicitante As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -795,6 +802,8 @@ Unidad_solicitante As screen:
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -987,7 +996,9 @@ Unidad_solicitante As screen:
                         Items: |-
                             =//organismos_actividad
                             Filter(organismos_actividad, buscador_n_u_s_input.Text in Reparticion)
-                        OnChange: =Reset(buscador_n_u_s_input)
+                        OnChange: |-
+                            =Reset(buscador_n_u_s_input);
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -1279,7 +1290,9 @@ Unidad_solicitante As screen:
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
                         Items: =lista_alcance
-                        OnChange: =Reset(buscador_a_t_input)
+                        OnChange: |-
+                            =Reset(buscador_a_t_input);
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12

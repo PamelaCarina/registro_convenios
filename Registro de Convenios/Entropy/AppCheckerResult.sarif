@@ -16906,6 +16906,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.cambio_detectado"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.cambio_detectado",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "cambio_detectado",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.popup_nueva_contraparte_in"
                 }
               ],

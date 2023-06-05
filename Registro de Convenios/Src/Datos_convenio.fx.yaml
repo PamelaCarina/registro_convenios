@@ -12,6 +12,7 @@ Datos_convenio As screen:
         UpdateContext({mostrar_lista_archivos_oficiales:false});
         Set(num_max_doc_official,1-CountRows(lista_doc_off_subidos));
         Set(num_max_doc_extra,15 - CountRows(lista_doc_ext_subidos));
+        UpdateContext({cambio_detectado:false})
 
     Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -51,6 +52,7 @@ Datos_convenio As screen:
                     If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
                     If(id_estado=4,Set(id_estado,9));//pasa a especificacion convenio registrada
                     
+                    If(cambio_detectado,
                     Set(cargando, true);
                     
                     Set(id_estado,'Convenio-PAGuardarespecificaciónconvenio'.Run(
@@ -63,6 +65,7 @@ Datos_convenio As screen:
                     ).id_estado);
                     
                     Set(cargando, false);
+                    );
                 
                     Navigate(Información_convenio,ScreenTransition.Fade));
                 
@@ -581,6 +584,8 @@ Datos_convenio As screen:
                     HoverFill: =RGBA(241, 244, 255, 1)
                     MaxLength: =1000
                     Mode: =TextMode.MultiLine
+                    OnChange: |-
+                        =UpdateContext({cambio_detectado:true})
                     PaddingBottom: =12
                     PaddingLeft: =24
                     PaddingRight: =24
@@ -681,7 +686,9 @@ Datos_convenio As screen:
                                     lista_modalidad,
                                     valor
                                 )
-                            OnChange: =Reset(buscador_t_m_input)
+                            OnChange: |-
+                                =Reset(buscador_t_m_input);
+                                UpdateContext({cambio_detectado:true})
                             PaddingBottom: =12
                             PaddingLeft: =12
                             PaddingTop: =12
@@ -824,7 +831,9 @@ Datos_convenio As screen:
                             HoverColor: =RGBA(17, 61, 107, 1)
                             HoverFill: =RGBA(207, 210, 232, 1)
                             Items: =lista_tipo_solicitud
-                            OnChange: =Reset(buscador_t_s_input)
+                            OnChange: |-
+                                =Reset(buscador_t_s_input);
+                                UpdateContext({cambio_detectado:true})
                             PaddingBottom: =12
                             PaddingLeft: =12
                             PaddingTop: =12
@@ -961,7 +970,9 @@ Datos_convenio As screen:
                             HoverColor: =RGBA(17, 61, 107, 1)
                             HoverFill: =RGBA(207, 210, 232, 1)
                             Items: =lista_tipologia
-                            OnChange: =Reset(buscador_t_input)
+                            OnChange: |-
+                                =Reset(buscador_t_input);
+                                UpdateContext({cambio_detectado:true})
                             PaddingBottom: =12
                             PaddingLeft: =12
                             PaddingTop: =12

@@ -4,6 +4,7 @@ Información_convenio As screen:
         =UpdateContext({sin_convenio_tipo:false});
         UpdateContext({sin_ambito_politica:false});
         UpdateContext({sin_sector_politica:false});
+        UpdateContext({cambio_detectado:false})
 
     Botones_atras_siguiente_5 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -26,6 +27,7 @@ Información_convenio As screen:
                 
                 If(!sin_convenio_tipo && !sin_sector_politica && !sin_ambito_politica,
                 
+                    If(cambio_detectado,
                     Set(cargando, true);
                 
                     If(id_estado=9,Set(id_estado,10));//pasa a Categoría VRIM registrada
@@ -39,6 +41,7 @@ Información_convenio As screen:
                     ).id_estado);
                     
                     Set(cargando, false);
+                    );
                 
                     Navigate(Area_contribución,ScreenTransition.Fade)
                 );
@@ -188,7 +191,9 @@ Información_convenio As screen:
                         Items: |-
                             =//dd_ambito
                             Filter(SortByColumns(dd_ambito,"valor"), buscador_a_p_input.Text in valor)
-                        OnChange: =Reset(buscador_a_p_input)
+                        OnChange: |-
+                            =Reset(buscador_a_p_input);
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -343,7 +348,9 @@ Información_convenio As screen:
                         Items: |-
                             =//dd_sectores
                             Filter(SortByColumns(dd_sectores,"valor"), buscador_s_p_input.Text in valor)
-                        OnChange: =Reset(buscador_s_p_input)
+                        OnChange: |-
+                            =Reset(buscador_s_p_input);
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -469,7 +476,9 @@ Información_convenio As screen:
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
                         Items: =Filter(SortByColumns(dd_tipo,"valor"), buscador_c_t_input.Text in valor)
-                        OnChange: =Reset(buscador_c_t_input)
+                        OnChange: |-
+                            =Reset(buscador_c_t_input);
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12

@@ -13,7 +13,8 @@ Datos_contraparte_internacional As screen:
         UpdateContext({hide_border_correo_in:true});
         UpdateContext({popup_nueva_contraparte_in:false});
         //Reset(inp_contraparte_in_popup_search);;
-        //Set(c_n_seleccionada;"")
+        //Set(c_n_seleccionada;"");;
+        UpdateContext({cambio_detectado:false});
 
     Botones_atras_siguiente_4 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -292,6 +293,8 @@ Datos_contraparte_internacional As screen:
                     HoverColor: =RGBA(17, 61, 107, 1)
                     Items: =["Sí","No"]
                     Layout: =Layout.Horizontal
+                    OnChange: |-
+                        =UpdateContext({cambio_detectado:true})
                     PaddingBottom: =0
                     PaddingTop: =5
                     RadioBackgroundFill: =RGBA(0, 0, 0, 0)
@@ -356,7 +359,8 @@ Datos_contraparte_internacional As screen:
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
                         OnChange: |-
-                            =UpdateContext({hide_border_correo_in:false})
+                            =UpdateContext({hide_border_correo_in:false});
+                            UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -406,6 +410,8 @@ Datos_contraparte_internacional As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -476,6 +482,8 @@ Datos_contraparte_internacional As screen:
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =RGBA(241, 244, 255, 1)
                         MaxLength: =60
+                        OnChange: |-
+                            =UpdateContext({cambio_detectado:true})
                         PaddingBottom: =12
                         PaddingLeft: =24
                         PaddingRight: =24
@@ -546,6 +554,8 @@ Datos_contraparte_internacional As screen:
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
                     MaxLength: =60
+                    OnChange: |-
+                        =UpdateContext({cambio_detectado:true})
                     PaddingBottom: =12
                     PaddingLeft: =24
                     PaddingRight: =24
