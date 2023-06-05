@@ -20,7 +20,6 @@ Unidad_solicitante As screen:
         ZIndex: =1
 
         Siguiente As button:
-            BorderThickness: =1
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)

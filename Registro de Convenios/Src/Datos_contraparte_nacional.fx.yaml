@@ -46,6 +46,7 @@ Datos_contraparte_nacional As screen:
         Eliminar As button:
             BorderColor: =RGBA(238, 110, 126, 1)
             Color: =RGBA(238, 110, 126, 1)
+            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(238, 110, 126, 1)
@@ -105,7 +106,7 @@ Datos_contraparte_nacional As screen:
             ZIndex: =3
 
         Guardar As button:
-            BorderThickness: =1
+            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Normal
             HoverBorderColor: =RGBA(247, 158, 64, 1)

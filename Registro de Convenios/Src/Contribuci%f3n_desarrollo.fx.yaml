@@ -39,7 +39,6 @@ Contribución_desarrollo As screen:
         ZIndex: =1
 
         Siguiente_7 As button:
-            BorderThickness: =1
             DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Bold
