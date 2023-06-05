@@ -827,7 +827,7 @@ Area_contribución As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =campos_faltantes
+        Visible: =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true && campos_faltantes, true, false)
         Width: =856
         X: =278
         Y: =684
