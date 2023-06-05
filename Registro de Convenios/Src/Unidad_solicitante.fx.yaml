@@ -1230,9 +1230,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: |-
-                            =//'background-input'
-                            If(id_estado=13,fondo_deshabilitado,'background-input')
+                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
