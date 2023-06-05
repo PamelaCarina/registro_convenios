@@ -106,6 +106,16 @@ Mostar_solicitudes As screen:
                 Y: =16
                 ZIndex: =1
 
+            lbl_alcance As label:
+                Color: =RGBA(17, 61, 107, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                Text: ="Alcance Territorial"
+                Width: =200
+                X: =790
+                Y: =44
+                ZIndex: =2
+
             lbl_fecha As label:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
@@ -114,7 +124,7 @@ Mostar_solicitudes As screen:
                 Width: =120
                 X: =107
                 Y: =44
-                ZIndex: =2
+                ZIndex: =3
 
             lbl_estado As label:
                 Color: =RGBA(17, 61, 107, 1)
@@ -122,9 +132,9 @@ Mostar_solicitudes As screen:
                 Height: =38
                 Text: ="Estado Solicitud"
                 Width: =155
-                X: =557
+                X: =431
                 Y: =44
-                ZIndex: =6
+                ZIndex: =4
 
             "gal_listado_solicitudes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                 FocusedBorderColor: |-
@@ -145,7 +155,7 @@ Mostar_solicitudes As screen:
                 Width: =1198
                 X: =42
                 Y: =82
-                ZIndex: =7
+                ZIndex: =5
 
                 fig_separador_main As rectangle:
                     Fill: =RGBA(112, 139, 166, 1)
@@ -359,9 +369,9 @@ Mostar_solicitudes As screen:
                     Size: =13
                     Text: |-
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
-                        ThisItem.alcance_territorial
-                    Width: =335
-                    X: =510
+                        If(IsBlank(ThisItem.ticket), "Solicitud incompleta", "Registrada")
+                    Width: =236
+                    X: =393
                     ZIndex: =4
 
                 lbl_gal_fecha As label:
@@ -376,6 +386,22 @@ Mostar_solicitudes As screen:
                     Width: =282
                     X: =63
                     ZIndex: =6
+
+                lbl_gal_alcance As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    Height: =80
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =12
+                    PaddingTop: =0
+                    Size: =13
+                    Text: |-
+                        =
+                        ThisItem.alcance_territorial
+                    Width: =236
+                    X: =752
+                    ZIndex: =7
 
         buscar_solicitudes As groupContainer.manualLayoutContainer:
             Height: =127
@@ -437,7 +463,7 @@ Mostar_solicitudes As screen:
                 OnSelect: |-
                     =Set(cargando, true);
                     ClearCollect(listado_solicitudes, 
-                            Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha));
+                            Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha, SortOrder.Descending));
                     Set(cargando, false);
                 RadiusBottomLeft: =12
                 RadiusBottomRight: =12
