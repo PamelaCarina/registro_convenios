@@ -55,7 +55,7 @@ Datos_solicitud_contraparte_internacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.1)
             OnSelect: |
                 =If(!IsBlank(id_contraparte),
-                    'Convenio-PAEliminarcontrapartenoregistrada'.Run(id_contraparte)
+                    'Convenio-PAEliminarcontrapartenoregistrada_1'.Run(id_contraparte)
                 );
                 Navigate(Entidad_contraparte,ScreenTransition.Fade);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
