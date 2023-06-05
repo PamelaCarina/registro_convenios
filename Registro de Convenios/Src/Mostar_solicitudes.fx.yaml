@@ -15,7 +15,7 @@ Mostar_solicitudes As screen:
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
-            OnSelect: |
+            OnSelect: |+
                 =Set(id_convenio,Blank());
                 Set(id_estado,1);
                 Set(nuevo,true);
@@ -29,8 +29,11 @@ Mostar_solicitudes As screen:
                 
                 Clear(contrapartes_nacionales);
                 Clear(contrapartes_internacionales);
+                Clear(lista_doc_contr_subidos);
+                
                 Clear(lista_doc_off_subidos);
                 Clear(lista_doc_ext_subidos);
+                
                 
                 Navigate(Unidad_solicitante);
                 
@@ -40,6 +43,10 @@ Mostar_solicitudes As screen:
                 Reset(pais);
                 Reset(tipo_solicitud);
                 Reset(tipo_modalidades);
+                Reset(convenio_tipo);
+                Reset(sector_politica);
+                Reset(ambito_politica);
+                
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
