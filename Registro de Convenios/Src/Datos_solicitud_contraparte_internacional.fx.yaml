@@ -286,7 +286,12 @@ Datos_solicitud_contraparte_internacional As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Height: =20
                         Icon: =Icon.Cancel
-                        OnSelect: =Remove(lista_doc_contr_subidos,ThisItem)
+                        OnSelect: |-
+                            ='Convenio-PAEliminaradjuntocontrapartenoregistrada'.Run(
+                                id_contraparte,
+                                ThisItem.id_adjunto
+                            );
+                            Remove(lista_doc_contr_subidos,ThisItem)
                         Width: =34
                         X: =550
                         Y: =3
