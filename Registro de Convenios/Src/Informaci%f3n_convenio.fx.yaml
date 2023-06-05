@@ -178,6 +178,7 @@ Información_convenio As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(IsBlank(categoria_vrim_recuperada.ambito_politica),true,false)
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
@@ -332,6 +333,7 @@ Información_convenio As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(IsBlank(categoria_vrim_recuperada.sector_politica),true,false)
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
@@ -459,6 +461,7 @@ Información_convenio As screen:
                         Default: |
                             =If(IsBlank(categoria_vrim_recuperada.convenio_de_tipo),"1",LookUp(dd_tipo,valor=categoria_vrim_recuperada.convenio_de_tipo,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
