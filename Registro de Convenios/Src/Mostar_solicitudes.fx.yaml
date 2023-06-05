@@ -371,7 +371,7 @@ Mostar_solicitudes As screen:
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
                         If(IsBlank(ThisItem.ticket), "Solicitud incompleta", "Registrada")
                     Width: =236
-                    X: =393
+                    X: =384
                     ZIndex: =4
 
                 lbl_gal_fecha As label:
@@ -400,7 +400,7 @@ Mostar_solicitudes As screen:
                         =
                         ThisItem.alcance_territorial
                     Width: =236
-                    X: =752
+                    X: =744
                     ZIndex: =7
 
         buscar_solicitudes As groupContainer.manualLayoutContainer:
