@@ -2804,7 +2804,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -3197,7 +3204,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -3590,7 +3604,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -3983,7 +4004,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -4376,7 +4404,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -4769,7 +4804,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -5162,7 +5204,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -5955,7 +6004,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -6348,7 +6404,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -6741,7 +6804,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -7134,7 +7204,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
@@ -7527,7 +7604,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TabIndex",
         {
           "AFDDataSourceName": "",
