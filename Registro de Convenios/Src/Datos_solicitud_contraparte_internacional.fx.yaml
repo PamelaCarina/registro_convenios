@@ -137,7 +137,7 @@ Datos_solicitud_contraparte_internacional As screen:
             RadiusTopRight: =12
             Size: =14
             TabIndex: =-1
-            Text: ="GUARDAR"
+            Text: ="ENVIAR"
             X: =1124
             Y: =2
             ZIndex: =4
