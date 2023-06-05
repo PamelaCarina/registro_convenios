@@ -7035,14 +7035,7 @@
           "NameMapSourceSchema": "?"
         },
         "ZIndex",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "true",
-          "InvariantPropertyName": "Visible",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        }
+        "Visible"
       ],
       "GalleryTemplateChildName": "galleryTemplate1_9",
       "HasDynamicProperties": false,
@@ -13821,7 +13814,14 @@
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
-        "Overflow",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Overflow",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -13861,7 +13861,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Align",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Align",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,

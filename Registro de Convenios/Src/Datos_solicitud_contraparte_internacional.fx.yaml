@@ -241,26 +241,9 @@ Datos_solicitud_contraparte_internacional As screen:
                     Layout: =Layout.Vertical
                     TemplatePadding: =0
                     TemplateSize: =30
-                    Visible: =mostrar_lista_archivos
                     Width: =584
                     Y: =51
                     ZIndex: =6
-
-                    Title1_4 As label:
-                        Color: =RGBA(17, 61, 107, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =25
-                        OnSelect: =Select(Parent)
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =14
-                        Text: =Upper(ThisItem.file.Name)
-                        Width: =515
-                        Wrap: =false
-                        X: =34
-                        ZIndex: =2
 
                     fondo_registro_4 As image:
                         Height: =25
@@ -271,7 +254,23 @@ Datos_solicitud_contraparte_internacional As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         Width: =584
-                        ZIndex: =3
+                        ZIndex: =1
+
+                    Title1_4 As label:
+                        Color: =RGBA(17, 61, 107, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =25
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =Upper(ThisItem.file.Name)
+                        Width: =515
+                        Wrap: =false
+                        X: =34
+                        ZIndex: =2
 
                     Icon2_1 As icon.Document:
                         Color: =RGBA(17, 61, 107, 1)
@@ -280,7 +279,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         OnSelect: =Select(Parent)
                         Width: =34
                         Y: =3
-                        ZIndex: =4
+                        ZIndex: =3
 
                     Icon2_2 As icon.Document:
                         Color: =RGBA(17, 61, 107, 1)
@@ -295,7 +294,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         Width: =34
                         X: =550
                         Y: =3
-                        ZIndex: =5
+                        ZIndex: =4
 
                     btn_abrir_adjunto_1 As button:
                         BorderStyle: =BorderStyle.None
@@ -321,7 +320,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         Text: =""
                         Visible: =If(IsBlank(ThisItem.file.Name),false,true)
                         Width: =549
-                        ZIndex: =6
+                        ZIndex: =5
 
                 btn_adjuntar_doc As button:
                     BorderStyle: =BorderStyle.None
