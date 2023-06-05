@@ -89,9 +89,9 @@ App As appinfo:
         Clear(Nombres_autoridades);
         ForAll(autoridades_maximas,
             Collect(Nombres_autoridades,{
-                nombre: Concatenate(field_3," ",field_4,", ",field_5),
-                cargo: CARGO,
-                correo: CORREO_UDEC,
+                nombre:Upper(Concatenate(field_3," ",field_4,", ",field_5)),
+                cargo: Upper(CARGO),
+                correo: Upper(CORREO_UDEC),
                 telefono: TELEFONO
             })
         );

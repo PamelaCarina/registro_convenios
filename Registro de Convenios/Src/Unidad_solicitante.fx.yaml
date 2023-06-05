@@ -551,7 +551,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =sin_promotor
+                            =If(CountRows(unidades_promotoras)=0 && sin_unidad,false,true)
                         Width: =330
                         X: =3
                         Y: =2
