@@ -129,7 +129,7 @@ Datos_contraparte_internacional As screen:
                 //firma digital
                 If(IsBlank(firma_digiral_in_button),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
                 
-                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !correo_in_invalido && !sin_firma_in && !correo_in_vacio,
+                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in && !correo_in_vacio,
                 If(IsBlank(
                         LookUp(
                             contrapartes_internacionales, 
@@ -259,7 +259,7 @@ Datos_contraparte_internacional As screen:
                     RadiusTopLeft: =13
                     RadiusTopRight: =13
                     TabIndex: =-1
-                    Visible: =sin_firma_in
+                    Visible: =If(IsBlank(firma_digiral_in_button) && sin_firma_in,true,false)
                     Width: =300
                     Y: =fondo_celeste_6.Y - 1
                     ZIndex: =1
@@ -420,7 +420,7 @@ Datos_contraparte_internacional As screen:
                         RadiusTopLeft: =13
                         RadiusTopRight: =13
                         TabIndex: =-1
-                        Visible: =sin_cargo_in
+                        Visible: =If(Len(cargo_responsable_institucional_in_input.Text)=0 && sin_cargo_in,true,false)
                         Width: =424
                         X: =4
                         Y: =cargo_responsable_institucional_na_input.Y
