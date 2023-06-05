@@ -1269,8 +1269,7 @@ Unidad_solicitante As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: |
-                            =sin_alcance
+                        Visible: =If(Len(buscador_a_t_input.Text)=0 && sin_alcance,true,false)
                         Width: =298
                         X: =1
                         Y: =fondo_celeste_8.Y+1
