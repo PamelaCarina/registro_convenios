@@ -745,7 +745,7 @@ Area_contribución As screen:
                         CheckboxSize: =30
                         CheckmarkFill: =RGBA(152, 208, 70, 1)
                         Color: =RGBA(139, 195, 74, 1)
-                        Default: =
+                        Default: =!IsBlank(Search(area_contribucion_recuperada.contribucion_interna,"Formación de pregrado","Value"))
                         DisabledColor: =RGBA(0, 0, 0, 0)
                         Height: =30
                         OnCheck: |-

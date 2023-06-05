@@ -176,7 +176,7 @@ Información_convenio As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(IsBlank(categoria_vrim_recuperada),true,false)
+                        Default: =If(IsBlank(categoria_vrim_recuperada.ambito_politica),true,false)
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
@@ -330,7 +330,7 @@ Información_convenio As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(IsBlank(categoria_vrim_recuperada),true,false)
+                        Default: =If(IsBlank(categoria_vrim_recuperada.sector_politica),true,false)
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
@@ -448,7 +448,7 @@ Información_convenio As screen:
                         ZIndex: =1
 
                     convenio_tipo As dropdown:
-                        AllowEmptySelection: =If(IsBlank(categoria_vrim_recuperada),true,false)
+                        AllowEmptySelection: =If(IsBlank(categoria_vrim_recuperada.convenio_de_tipo),true,false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)

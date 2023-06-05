@@ -411,7 +411,7 @@ Datos_convenio As screen:
                         ZIndex: =5
 
                     "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-                        Height: =115
+                        Height: =120
                         Items: =lista_doc_ext_subidos
                         Layout: =Layout.Vertical
                         TemplatePadding: =0

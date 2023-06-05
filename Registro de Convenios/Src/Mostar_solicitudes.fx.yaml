@@ -220,6 +220,8 @@ Mostar_solicitudes As screen:
                         Reset(cb_ods_9);Reset(cb_ods_10);Reset(cb_ods_11);Reset(cb_ods_12);Reset(cb_ods_13);Reset(cb_ods_14);
                         Reset(cb_ods_15);Reset(cb_ods_16);Reset(cb_ods_17);Reset(cb_ods_ninguno);
                         
+                        Set(cargando,true);
+                        
                         Set(solicitud_convenio_recuperada,
                             'Convenio-PATraerestadosolicitudporpantalla'.Run(
                                                                         id_convenio
@@ -242,6 +244,8 @@ Mostar_solicitudes As screen:
                             correo: unidad_solicitante_recuperada.correo_responsable,
                             telefono: unidad_solicitante_recuperada.telefono_responsable
                         });
+                        
+                        Set(cargando,false);
                         
                         Clear(unidades_promotoras);
                         
@@ -297,6 +301,9 @@ Mostar_solicitudes As screen:
                         
                         Set(especificacion_convenio_recuperada,solicitud_convenio_recuperada.especificacion_registrada);
                         
+                        ClearCollect(lista_doc_off_subidos,especificacion_convenio_recuperada.borrador_convenio);
+                        ClearCollect(lista_doc_ext_subidos,especificacion_convenio_recuperada.documentos_extra);
+                        
                         ForAll(especificacion_convenio_recuperada.borrador_convenio,
                             Collect(borrador_convenio_recuperado,{
                                 file:file
@@ -310,6 +317,10 @@ Mostar_solicitudes As screen:
                         );
                         
                         Set(categoria_vrim_recuperada,solicitud_convenio_recuperada.categoria_vrim_registrada);
+                        
+                        Set(area_contribucion_recuperada,solicitud_convenio_recuperada.area_contribucion_registrada);
+                        
+                        Set(ods_recuperada,solicitud_convenio_recuperada.ods_registrada);
                         
                         Navigate(Unidad_solicitante,ScreenTransition.Fade);
                         
