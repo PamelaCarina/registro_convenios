@@ -239,6 +239,17 @@ Datos_convenio As screen:
                         Y: =51
                         ZIndex: =6
 
+                        fondo_registro_1 As image:
+                            Height: =25
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =575
+                            ZIndex: =1
+
                         Title1_1 As label:
                             Color: =RGBA(17, 61, 107, 1)
                             FontWeight: =FontWeight.Bold
@@ -250,20 +261,10 @@ Datos_convenio As screen:
                             PaddingTop: =0
                             Size: =14
                             Text: =Upper(ThisItem.Name)
-                            Width: =575
+                            Width: =507
                             Wrap: =false
+                            X: =34
                             ZIndex: =2
-
-                        fondo_registro_1 As image:
-                            Height: =25
-                            Image: ='background-input'
-                            ImagePosition: =ImagePosition.Fill
-                            RadiusBottomLeft: =12
-                            RadiusBottomRight: =12
-                            RadiusTopLeft: =12
-                            RadiusTopRight: =12
-                            Width: =575
-                            ZIndex: =3
 
                         Icon2_3 As icon.Document:
                             Color: =RGBA(17, 61, 107, 1)
@@ -272,7 +273,7 @@ Datos_convenio As screen:
                             OnSelect: =Select(Parent)
                             Width: =34
                             Y: =3
-                            ZIndex: =4
+                            ZIndex: =3
 
                         Icon2_4 As icon.Document:
                             Color: =RGBA(17, 61, 107, 1)
@@ -282,7 +283,7 @@ Datos_convenio As screen:
                             Width: =34
                             X: =541
                             Y: =3
-                            ZIndex: =5
+                            ZIndex: =4
 
                     formatos_permitidos_lb_8 As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -362,19 +363,6 @@ Datos_convenio As screen:
                         Y: =fondo_registro_2.Y
                         ZIndex: =1
 
-                    fondo_registro_2 As image:
-                        Height: =111
-                        Image: ='background-input'
-                        ImagePosition: =ImagePosition.Fill
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Width: =272
-                        X: =2
-                        Y: =18
-                        ZIndex: =2
-
                     img_subir_2 As image:
                         Height: =22
                         Image: |
@@ -418,16 +406,26 @@ Datos_convenio As screen:
                         ZIndex: =5
 
                     "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-                        Height: =82
+                        Height: =115
                         Items: =att_registro_10_attach_extra.Attachments
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
-                        TemplateSize: =25
-                        Width: =173
+                        TemplateSize: =30
+                        Width: =575
                         WrapCount: =0
-                        X: =92
-                        Y: =36
+                        Y: =25
                         ZIndex: =6
+
+                        fondo_registro_2 As image:
+                            Height: =25
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =575
+                            ZIndex: =1
 
                         Title1_2 As label:
                             Color: =RGBA(17, 61, 107, 1)
@@ -441,9 +439,29 @@ Datos_convenio As screen:
                             Size: =14
                             Text: =Upper(ThisItem.Name)
                             VerticalAlign: =VerticalAlign.Top
-                            Width: =173
+                            Width: =507
                             Wrap: =false
+                            X: =34
                             ZIndex: =2
+
+                        Icon2_5 As icon.Document:
+                            Color: =RGBA(17, 61, 107, 1)
+                            Height: =20
+                            Icon: =Icon.Document
+                            OnSelect: =Select(Parent)
+                            Width: =34
+                            Y: =3
+                            ZIndex: =3
+
+                        Icon2_6 As icon.Document:
+                            Color: =RGBA(17, 61, 107, 1)
+                            Height: =20
+                            Icon: =Icon.Cancel
+                            OnSelect: =
+                            Width: =34
+                            X: =541
+                            Y: =3
+                            ZIndex: =4
 
                     btn_adjuntar_doc_2 As button:
                         BorderStyle: =BorderStyle.None
