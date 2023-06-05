@@ -1066,6 +1066,9 @@ Datos_convenio As screen:
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         //Set(Contenido_extra;att_registro_10_attach_extra.Attachments);;
                 
+                        If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
+                        If(id_estado=4,Set(id_estado,9));//pasa a especificacion convenio registrada
+                        
                         Clear(documento_extra_subido);
                         ForAll(att_registro_10_attach_extra.Attachments,
                             Collect(documento_extra_subido,
@@ -1256,7 +1259,10 @@ Datos_convenio As screen:
                         UpdateContext({archivo_invalido:false});
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         //Set(Contenido_oficial;att_registro_10_attach_oficial.Attachments);;
-                        
+                            
+                        If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
+                        If(id_estado=4,Set(id_estado,9));//pasa a especificacion convenio registrada
+                
                         Clear(documento_oficial_subido);
                         ForAll(att_registro_10_attach_oficial.Attachments,
                             Collect(documento_oficial_subido,
