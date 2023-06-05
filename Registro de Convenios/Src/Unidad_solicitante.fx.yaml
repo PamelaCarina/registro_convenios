@@ -1,15 +1,18 @@
 Unidad_solicitante As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |
-        =UpdateContext({sin_unidad:false});
-        UpdateContext({sin_promotor:false});
-        UpdateContext({sin_cargo_promotor:false});
-        UpdateContext({sin_correo_promotor:false});
-        UpdateContext({sin_telefono_promotor:false});
-        UpdateContext({sin_responsable:false});
+        =UpdateContext({sin_alcance:false});
+        
+        UpdateContext({sin_nombre_autoridad_solicitante:false});
+        UpdateContext({sin_cargo_autoridad_solicitante:false});
+        UpdateContext({sin_correo_autoridad_solicitante:false});
+        
+        UpdateContext({sin_nombre_responsable:false});
         UpdateContext({sin_cargo_responsable:false});
         UpdateContext({sin_correo_responsable:false});
-        UpdateContext({sin_telefono_responsable:false});
+        
+        UpdateContext({sin_unidad_promotora:false});
+        
         UpdateContext({cambio_detectado:false});
 
     Botones_atras_siguiente As groupContainer.manualLayoutContainer:
@@ -36,20 +39,22 @@ Unidad_solicitante As screen:
                 );
                 
                 //SIN PROMOTOR
-                If(CountRows(unidades_promotoras)=0, UpdateContext({sin_promotor:true}), UpdateContext({sin_promotor:false}));
+                If(CountRows(unidades_promotoras)=0, UpdateContext({sin_unidad_promotora:true}), UpdateContext({sin_promotor:false}));
                 
                 //SIN AUTORIDAD
-                If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_autoridad:true}), UpdateContext({sin_autoridad:false}));
+                If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_nombre_autoridad_solicitante:true}), UpdateContext({sin_nombre_autoridad_solicitante:false}));
+                If(IsBlank(cargo_autoridad_input_2.Text), UpdateContext({sin_cargo_autoridad_solicitante:true}), UpdateContext({sin_cargo_autoridad_solicitante:false}));
+                If(IsBlank(correo_autoridad_input_2.Text), UpdateContext({sin_correo_autoridad_solicitante:true}), UpdateContext({sin_correo_autoridad_solicitante:false}));
                 
                 //SIN RESPONSABLE
-                If(IsBlank(nombre_responsable_input_2.Text), UpdateContext({sin_responsable:true}), UpdateContext({sin_responsable:false}));
+                If(IsBlank(nombre_responsable_input_2.Text), UpdateContext({sin_nombre_responsable:true}), UpdateContext({sin_nombre_responsable:false}));
                 If(IsBlank(cargo_responsable_input_2.Text), UpdateContext({sin_cargo_responsable:true}), UpdateContext({sin_cargo_responsable:false}));
                 If(IsBlank(correo_responsable_input_2.Text), UpdateContext({sin_correo_responsable:true}), UpdateContext({sin_correo_responsable:false}));
                 
                 If(CountRows(organismos_actividad)=1,UpdateContext({uni:First(organismos_actividad).Reparticion}), UpdateContext({
                 uni: nombre_unidad_solicitante.Selected.Reparticion}));
                 
-                If(!sin_promotor && !sin_unidad && !sin_cargo_promotor && !sin_correo_promotor && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_alcance_territorial && !sin_autoridad && !sin_alcance, 
+                If(!sin_alcance && !sin_nombre_autoridad_solicitante && !sin_cargo_autoridad_solicitante && !sin_correo_autoridad_solicitante && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_unidad_promotora, 
                 
                     If(cambio_detectado,
                 
@@ -283,7 +288,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =sin_correo_responsable
+                            =If(IsBlank(correo_responsable_input_2.Text) && sin_correo_responsable,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =nombre_responsable_input_2.Y-1
@@ -352,7 +357,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =sin_cargo_responsable
+                            =If(IsBlank(cargo_responsable_input_2.Text) && sin_cargo_responsable,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =nombre_responsable_input_2.Y-1
@@ -422,7 +427,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =sin_responsable
+                            =If(IsBlank(nombre_responsable_input_2.Text) && sin_nombre_responsable,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =nombre_responsable_input_2.Y-1
@@ -551,7 +556,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =If(CountRows(unidades_promotoras)=0 && sin_unidad,false,true)
+                            =If(CountRows(unidades_promotoras)=0 && sin_unidad_promotora,true,false)
                         Width: =330
                         X: =3
                         Y: =2
@@ -712,7 +717,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =If(Len(correo_autoridad_input_2.Text)=0 && sin_autoridad,true,false)
+                            =If(Len(correo_autoridad_input_2.Text)=0 && sin_correo_autoridad_solicitante,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
@@ -781,7 +786,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =If(Len(cargo_autoridad_input_2.Text)=0 && sin_autoridad,true,false)
+                            =If(Len(cargo_autoridad_input_2.Text)=0 && sin_cargo_autoridad_solicitante,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
@@ -852,7 +857,7 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |-
                             =//sin_autoridad
-                            If(Len(nombre_autoridad_solicitante_input_2.Text)=0 && sin_autoridad,true,false)
+                            If(Len(nombre_autoridad_solicitante_input_2.Text)=0 && sin_nombre_autoridad_solicitante,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
@@ -1269,7 +1274,7 @@ Unidad_solicitante As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =If(Len(buscador_a_t_input.Text)=0 && sin_alcance,true,false)
+                        Visible: =If(IsBlank(tipo_alcance) && sin_alcance,true,false)
                         Width: =298
                         X: =1
                         Y: =fondo_celeste_8.Y+1
@@ -1386,7 +1391,7 @@ Unidad_solicitante As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =If(sin_unidad || sin_promotor || sin_cargo_promotor, true)
+        Visible: =If((IsBlank(tipo_alcance) || Len(nombre_autoridad_solicitante_input_2.Text)=0 || IsBlank(nombre_responsable_input_2.Text) || CountRows(unidades_promotoras)=0) && (sin_alcance || sin_nombre_autoridad_solicitante|| sin_nombre_responsable || sin_unidad_promotora), true, false)
         Width: =856
         X: =278
         Y: =684

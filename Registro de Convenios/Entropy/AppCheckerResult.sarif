@@ -16426,66 +16426,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Unidad_solicitante",
-                "type": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Unidad_solicitante",
-                "type": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Contenedor_sin_unidad.sin_unidad_promotora.AccessibleLabel"
                 }
               ],
@@ -16529,6 +16469,66 @@
                 "member": "TabIndex",
                 "module": "Unidad_solicitante",
                 "type": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Contenedor_sin_unidad.sin_unidad_promotora"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Unidad_solicitante",
+                "type": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Unidad_solicitante",
+                "type": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras"
               }
             }
           ],
@@ -17026,47 +17026,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Unidad_solicitante.sin_telefono_promotor"
+                  "fullyQualifiedName": "Unidad_solicitante.sin_promotor"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.sin_telefono_promotor",
+                  "fullyQualifiedName": "Unidad_solicitante.sin_promotor",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "sin_telefono_promotor",
-                "module": "Unidad_solicitante",
-                "type": "Unidad_solicitante"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Unidad_solicitante.sin_telefono_responsable"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.sin_telefono_responsable",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "sin_telefono_responsable",
+                "member": "sin_promotor",
                 "module": "Unidad_solicitante",
                 "type": "Unidad_solicitante"
               }
