@@ -55,38 +55,7 @@ Entidad_contraparte As screen:
                                                                 id_estado                                                
                     ).id_estado);;
                     */
-                    If(id_estado>=9 && primera_vez_especificacion_convenio,
-                        Set(especificacion_convenio_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
-                                                                id_convenio,
-                                                                "9"//necesito especificacion registrada
-                        ).especificacion_registrada);
                 
-                        ForAll(especificacion_convenio_recuperada.borrador_convenio,
-                            Collect(borrador_convenio_recuperado,{
-                                file:{
-                                    Name: Name,
-                                    Value: Value
-                                }
-                            })
-                        );
-                        //Set(borrador_convenio_recuperado;especificacion_convenio_recuperada.borrador_convenio);;
-                        Set(documentacion_extra_recuperada,especificacion_convenio_recuperada.documentos_extra);
-                        
-                /*
-                        ForAll(especificacion_convenio_recuperada;
-                        
-                            Collect(solicitudes_añadir_contraparte;{
-                                id_contraparte: id;
-                                nombre: nombre;
-                                pais: pais;
-                                estado: estado;
-                                file: file
-                            })
-                            */
-                        //);;
-                
-                        Set(primera_vez_especificacion_convenio,false);
-                    );
                 
                 
                     Set(cargando, false);

@@ -74,67 +74,6 @@ Unidad_solicitante As screen:
                                                             id_estado
                     ).id_estado);
                 
-                    If(id_estado >=2 && primera_vez_entidad_contraparte,
-                        Set(entidad_contraparte_recuperada,'DTI-PATraerestadosolicitudporpantalla'.Run(
-                                                                id_convenio,
-                                                                2//necesito contraparte registrada
-                        ));
-                
-                        ForAll(entidad_contraparte_recuperada.contrapartes_nacionales,
-                            Collect(contrapartes_nacionales,{
-                                nombre_entidad_contraparte: nombre_entidad_contraparte,
-                                rut_entidad_contraparte: rut_entidad_contraparte,
-                                dv_entidad_contraparte: dv_entidad_contraparte,
-                                nombre_representante_legal: nombre_representante_legal,
-                                nombre_responsable_institucional: nombre_responsable_institucional,
-                                cargo_responsable_institucional: cargo_responsable_institucional,
-                                pais: pais,
-                                correo_responsable_institucional: correo_responsable_institucional,
-                                publica: publica,
-                                tipo_empresa: tipo_empresa,
-                                comuna: comuna,
-                                tipo_contribuyente: tipo_contribuyente,
-                                rubro: rubro,
-                                actividad: actividad,
-                                //id: id;
-                                tipo: "NACIONAL",
-                                firma_digital: firma_digital
-                            })
-                        );
-                
-                        ForAll(entidad_contraparte_recuperada.contrapartes_internacionales,
-                            Collect(contrapartes_internacionales,{
-                                nombre_entidad_contraparte: nombre_entidad_contraparte,
-                                rut_entidad_contraparte: rut_entidad_contraparte,
-                                dv_entidad_contraparte: dv_entidad_contraparte,
-                                nombre_representante_legal: nombre_representante_legal,
-                                nombre_responsable_institucional: nombre_responsable_institucional,
-                                cargo_responsable_institucional: cargo_responsable_institucional,
-                                pais: pais,
-                                correo_responsable_institucional: correo_responsable_institucional,
-                                //id: id;
-                                tipo: "INTERNACIONAL",
-                                firma_digital: firma_digital
-                            })
-                        );
-                
-                        Set(contrapartes_no_registradas_recuperadas,'DTI-PATraercontrapartesnoregistradas'.Run(id_convenio));
-                
-                        ForAll(contrapartes_no_registradas_recuperadas.solicitudes_contraparte_internacional,
-                            Collect(solicitudes_añadir_contraparte,{
-                                //id_contraparte: id;
-                                nombre: nombre,
-                                pais: pais,
-                                estado: estado,
-                                file: file
-                            })
-                        );
-                
-                        Set(primera_vez_entidad_contraparte,false);
-                    );
-                
-                    
-                
                     Set(cargando, false);
                 
                 

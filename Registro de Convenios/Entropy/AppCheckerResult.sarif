@@ -8646,6 +8646,18 @@
               "message": {
                 "text": "Error al ejecutar la regla app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -16726,17 +16738,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.reset_externo"
+                  "fullyQualifiedName": "App.primera_vez_entidad_contraparte"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.reset_externo",
+                  "fullyQualifiedName": "App.primera_vez_entidad_contraparte",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "reset_externo",
+                "member": "primera_vez_entidad_contraparte",
                 "module": "App",
                 "type": "App"
               }
@@ -16756,17 +16768,47 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.documentacion_extra_recuperada"
+                  "fullyQualifiedName": "App.primera_vez_especificacion_convenio"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.documentacion_extra_recuperada",
+                  "fullyQualifiedName": "App.primera_vez_especificacion_convenio",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "documentacion_extra_recuperada",
+                "member": "primera_vez_especificacion_convenio",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.reset_externo"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.reset_externo",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reset_externo",
                 "module": "App",
                 "type": "App"
               }

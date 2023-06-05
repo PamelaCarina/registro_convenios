@@ -13,7 +13,7 @@ Datos_solicitud_contraparte_internacional As screen:
             UpdateContext({mostrar_lista_archivos:true})
         );
         Set(existe_adjunto, true);
-        Set(num_max_doc_contr,1-CountRows(att_attach_doc_sin.Attachments));
+        Set(num_max_doc_contr,1-CountRows(lista_doc_contr_subidos));
 
     Botones_atras_siguiente_10 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -655,7 +655,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         //Set(Contenido_doc_sin;att_attach_doc_sin.Attachments);;
-                
+                        Set(cargando, true);
                         If(IsBlank(id_contraparte),
                             Set(id_contraparte,
                             'Convenio-PACrearsolicitudcontrapartenoregistrada'.Run(id_convenio).id_contraparte)
@@ -680,6 +680,8 @@ Datos_solicitud_contraparte_internacional As screen:
                             file: documento_contraparte_subido.file,
                             id_adjunto: documento_contraparte_subido.id_adjunto
                         });
+                
+                        Set(cargando, false);
                 
                         Reset(att_attach_doc_sin);
                         Set(num_max_doc_contr,1 - CountRows(lista_doc_contr_subidos));

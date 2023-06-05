@@ -1,12 +1,10 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PATraerestadosolicitudporpantalla" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="DTI - PA Traer estado solicitud por pantalla" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Convenio-PATraerestadosolicitudporpantalla" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Convenio - PA Traer estado solicitud por pantalla" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <string name="ManualTriggerInput_text_def" />
-      <string name="ManualTriggerInput_text_1_def" />
+      <number name="ManualTriggerInput_number_def" />
       <object name="ManualTriggerInput">
-        <property name="text" type="string" />
-        <property name="text_1" type="string" />
+        <property name="number" type="number" />
       </object>
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_nombre_unidad_solicitante_def" />
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_correo_solicitante_def" />
@@ -46,7 +44,6 @@
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_nombre_representante_legal_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_nombre_responsable_institucional_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_cargo_responsable_institucional_def" />
-      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_pais_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_correo_responsable_institucional_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_publica_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_tipo_empresa_def" />
@@ -54,7 +51,7 @@
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_tipo_contribuyente_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_rubro_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_actividad_def" />
-      <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_id_def" />
+      <integer name="ResponseActionOutput_contrapartes_nacionales_def_items_def_id_def" />
       <string name="ResponseActionOutput_contrapartes_nacionales_def_items_def_firma_digital_def" />
       <object name="ResponseActionOutput_contrapartes_nacionales_def_items_def">
         <property name="nombre_entidad_contraparte" type="string" />
@@ -63,7 +60,6 @@
         <property name="nombre_representante_legal" type="string" />
         <property name="nombre_responsable_institucional" type="string" />
         <property name="cargo_responsable_institucional" type="string" />
-        <property name="pais" type="string" />
         <property name="correo_responsable_institucional" type="string" />
         <property name="publica" type="string" />
         <property name="tipo_empresa" type="string" />
@@ -71,38 +67,33 @@
         <property name="tipo_contribuyente" type="string" />
         <property name="rubro" type="string" />
         <property name="actividad" type="string" />
-        <property name="id" type="string" />
+        <property name="id" type="integer" />
         <property name="firma_digital" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_contrapartes_nacionales_def_items_def" name="ResponseActionOutput_contrapartes_nacionales_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_nombre_entidad_contraparte_def" />
-      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_rut_entidad_contraparte_def" />
-      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_dv_entidad_contraparte_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_nombre_representante_legal_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_nombre_responsable_institucional_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_cargo_responsable_institucional_def" />
-      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_pais_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_correo_responsable_institucional_def" />
-      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_id_def" />
+      <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_pais_def" />
+      <integer name="ResponseActionOutput_contrapartes_internacionales_def_items_def_id_def" />
       <string name="ResponseActionOutput_contrapartes_internacionales_def_items_def_firma_digital_def" />
       <object name="ResponseActionOutput_contrapartes_internacionales_def_items_def">
         <property name="nombre_entidad_contraparte" type="string" />
-        <property name="rut_entidad_contraparte" type="string" />
-        <property name="dv_entidad_contraparte" type="string" />
         <property name="nombre_representante_legal" type="string" />
         <property name="nombre_responsable_institucional" type="string" />
         <property name="cargo_responsable_institucional" type="string" />
-        <property name="pais" type="string" />
         <property name="correo_responsable_institucional" type="string" />
-        <property name="id" type="string" />
+        <property name="pais" type="string" />
+        <property name="id" type="integer" />
         <property name="firma_digital" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_contrapartes_internacionales_def_items_def" name="ResponseActionOutput_contrapartes_internacionales_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_id_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_nombre_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_rut_def" />
-      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_dv_def" />
+      <integer name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_id_def" />
+      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_nombre_entidad_contraparte_def" />
       <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_pais_def" />
+      <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_estado_def" />
       <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_file_def_Name_def" />
       <string name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_file_def_Value_def" />
       <object name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_file_def">
@@ -110,11 +101,10 @@
         <property name="Value" type="string" />
       </object>
       <object name="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def">
-        <property name="id" type="string" />
-        <property name="nombre" type="string" />
-        <property name="rut" type="string" />
-        <property name="dv" type="string" />
+        <property name="id" type="integer" />
+        <property name="nombre_entidad_contraparte" type="string" />
         <property name="pais" type="string" />
+        <property name="estado" type="string" />
         <property name="file" typeRef="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def_file_def" />
       </object>
       <array typeRef="ResponseActionOutput_solicitudes_contraparte_internacional_def_items_def" name="ResponseActionOutput_solicitudes_contraparte_internacional_def" />
@@ -122,18 +112,14 @@
       <string name="ResponseActionOutput_especificacion_registrada_def_tipo_solicitud_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_modalidad_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_proposito_central_def" />
-      <string name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_Name_def" />
-      <string name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_Value_def" />
-      <object name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def">
+      <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def_Name_def" />
+      <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def_Value_def" />
+      <object name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def">
         <property name="Name" type="string" />
         <property name="Value" type="string" />
       </object>
-      <array typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def" name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def" />
-      <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_Name_def" />
-      <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_Value_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def">
-        <property name="Name" type="string" />
-        <property name="Value" type="string" />
+        <property name="file" typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def" />
       </object>
       <array typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def" name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def">
@@ -141,15 +127,35 @@
         <property name="tipo_solicitud" type="string" />
         <property name="modalidad" type="string" />
         <property name="proposito_central" type="string" />
-        <property name="borrador_convenio" typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def" />
         <property name="documentos_extra" typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def" />
       </object>
+      <string name="ResponseActionOutput_categoria_vrim_registrada_def_convenio_de_tipo_def" />
+      <string name="ResponseActionOutput_categoria_vrim_registrada_def_sector_politica_def" />
+      <string name="ResponseActionOutput_categoria_vrim_registrada_def_ambito_politica_def" />
+      <object name="ResponseActionOutput_categoria_vrim_registrada_def">
+        <property name="convenio_de_tipo" type="string" />
+        <property name="sector_politica" type="string" />
+        <property name="ambito_politica" type="string" />
+      </object>
+      <string name="ResponseActionOutput_area_contribucion_registrada_def_contribucion_interna_def_items_def" />
+      <array type="string" name="ResponseActionOutput_area_contribucion_registrada_def_contribucion_interna_def" />
+      <string name="ResponseActionOutput_area_contribucion_registrada_def_contribucion_externa_def_items_def" />
+      <array type="string" name="ResponseActionOutput_area_contribucion_registrada_def_contribucion_externa_def" />
+      <object name="ResponseActionOutput_area_contribucion_registrada_def">
+        <property name="contribucion_interna" typeRef="ResponseActionOutput_area_contribucion_registrada_def_contribucion_interna_def" />
+        <property name="contribucion_externa" typeRef="ResponseActionOutput_area_contribucion_registrada_def_contribucion_externa_def" />
+      </object>
+      <string name="ResponseActionOutput_ods_registrada_def_items_def" />
+      <array type="string" name="ResponseActionOutput_ods_registrada_def" />
       <object name="ResponseActionOutput">
         <property name="unidad_solicitante_registrada" typeRef="ResponseActionOutput_unidad_solicitante_registrada_def" />
         <property name="contrapartes_nacionales" typeRef="ResponseActionOutput_contrapartes_nacionales_def" />
         <property name="contrapartes_internacionales" typeRef="ResponseActionOutput_contrapartes_internacionales_def" />
         <property name="solicitudes_contraparte_internacional" typeRef="ResponseActionOutput_solicitudes_contraparte_internacional_def" />
         <property name="especificacion_registrada" typeRef="ResponseActionOutput_especificacion_registrada_def" />
+        <property name="categoria_vrim_registrada" typeRef="ResponseActionOutput_categoria_vrim_registrada_def" />
+        <property name="area_contribucion_registrada" typeRef="ResponseActionOutput_area_contribucion_registrada_def" />
+        <property name="ods_registrada" typeRef="ResponseActionOutput_ods_registrada_def" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
@@ -164,11 +170,8 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="id convenio" />
-            </param>
-            <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
-              <doc title="id estado solicitado" />
+            <param style="plain" name="number" path="/number" type="xs:double" required="true">
+              <doc title="id_convenio" />
             </param>
           </representation>
         </request>
