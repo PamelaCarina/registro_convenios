@@ -1262,6 +1262,7 @@ Datos_convenio As screen:
                                 'Convenio-PAGuardardocumentoconvenio'.Run(
                                     id_convenio,
                                     "Borrador convenio",
+                                    id_estado,
                                     {
                                         file:{
                                             name:ThisRecord.Name,

@@ -10,10 +10,12 @@
         <property name="name" type="string" />
         <property name="contentBytes" typeRef="ManualTriggerInput_file_def_contentBytes_def" />
       </object>
+      <number name="ManualTriggerInput_number_1_def" />
       <object name="ManualTriggerInput">
         <property name="number" type="number" />
         <property name="text" type="string" />
         <property name="file" typeRef="ManualTriggerInput_file_def" />
+        <property name="number_1" type="number" />
       </object>
       <string name="ResponseActionOutput_file_def_Name_def" />
       <string name="ResponseActionOutput_file_def_Value_def" />
@@ -45,6 +47,9 @@
             </param>
             <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def">
               <doc title="file" />
+            </param>
+            <param style="plain" name="number_1" path="/number_1" type="xs:double" required="true">
+              <doc title="id_estado" />
             </param>
           </representation>
         </request>

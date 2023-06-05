@@ -291,8 +291,8 @@ Datos_solicitud_contraparte_internacional As screen:
                                 id_contraparte,
                                 ThisItem.id_adjunto
                             );
+                            Remove(lista_doc_contr_subidos,ThisItem);
                             Set(num_max_doc_contr,1 - CountRows(lista_doc_contr_subidos));
-                            Remove(lista_doc_contr_subidos,ThisItem)
                         Width: =34
                         X: =550
                         Y: =3
