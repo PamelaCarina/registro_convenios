@@ -13,6 +13,7 @@ Datos_solicitud_contraparte_internacional As screen:
             UpdateContext({mostrar_lista_archivos:true})
         );
         Set(existe_adjunto, true);
+        Set(num_max_doc_contr,1);
 
     Botones_atras_siguiente_10 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -290,6 +291,7 @@ Datos_solicitud_contraparte_internacional As screen:
                                 id_contraparte,
                                 ThisItem.id_adjunto
                             );
+                            Set(num_max_doc_contr,1 - CountRows(lista_doc_contr_subidos));
                             Remove(lista_doc_contr_subidos,ThisItem)
                         Width: =34
                         X: =550
@@ -680,6 +682,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         });
                 
                         Reset(att_attach_doc_sin);
+                        Set(num_max_doc_contr,1 - CountRows(lista_doc_contr_subidos));
                 
                         UpdateContext({show_popup_documentacion: false});
                         UpdateContext({mostrar_lista_archivos:true});
@@ -719,6 +722,7 @@ Datos_solicitud_contraparte_internacional As screen:
                 =//UpdateContext({sacar_archivo_oficial:true});;
                 UpdateContext({show_popup_documentacion: false});
                 //UpdateContext({sacar_archivo_oficial:false});;
+                Reset(att_attach_doc_sin);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -759,7 +763,7 @@ Datos_solicitud_contraparte_internacional As screen:
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
             Items: =//If(!nueva_solicitud_contraparte;contraparte.file)
-            MaxAttachments: =1
+            MaxAttachments: =num_max_doc_contr
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."
             OnRemoveFile: |-

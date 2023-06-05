@@ -157,7 +157,6 @@ Datos_convenio As screen:
                 Height: =220
                 Width: =575
                 X: =666
-                Y: =256
                 ZIndex: =2
 
                 Adjuntar_documento_oficial As groupContainer.manualLayoutContainer:
@@ -394,9 +393,10 @@ Datos_convenio As screen:
                             ZIndex: =2
 
             Propósito As groupContainer.manualLayoutContainer:
-                Height: =260
-                Width: =584
-                X: =666
+                Height: =164
+                Width: =1199
+                X: =42
+                Y: =294
                 ZIndex: =3
 
                 sin_proposito_central As text:
@@ -430,7 +430,7 @@ Datos_convenio As screen:
                     DisplayMode: =
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
-                    Height: =194
+                    Height: =102
                     HintText: ="Describa el propósito central de su convenio..."
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
@@ -446,7 +446,7 @@ Datos_convenio As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =573
+                    Width: =1194
                     X: =5
                     Y: =62
                     ZIndex: =2
@@ -466,7 +466,7 @@ Datos_convenio As screen:
                     ZIndex: =3
 
             Especificaciones_convenio As groupContainer.manualLayoutContainer:
-                Height: =375
+                Height: =294
                 Width: =590
                 X: =42
                 ZIndex: =4
