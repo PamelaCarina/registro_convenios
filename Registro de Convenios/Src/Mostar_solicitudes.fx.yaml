@@ -47,6 +47,20 @@ Mostar_solicitudes As screen:
                 Reset(convenio_tipo);
                 Reset(sector_politica);
                 Reset(ambito_politica);
+                Reset(cb_formacion_pregrado);
+                Reset(cb_formacion_postgrado);
+                Reset(cb_formacion_investigacion);
+                Reset(cb_formacion_permanente);
+                Reset(cb_desarrollo_ambiental);
+                Reset(cb_desarrollo_productivo);
+                Reset(cb_desarrollo_social);
+                Reset(cb_educacion);
+                Reset(cb_inclusion);
+                Reset(cb_salud);
+                Reset(cb_sector_publico);
+                Reset(cb_patrimonio);
+                Reset(cb_desarrollo_cultural);
+                Reset(cb_interculturalidad);
                 
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -173,7 +187,29 @@ Mostar_solicitudes As screen:
                         Clear(lista_doc_off_subidos);
                         Clear(lista_doc_ext_subidos);
                         
-                        Clear(contrib_interna_checkboxes);
+                        Reset(tipo_alcance);
+                        Reset(nombre_unidad_solicitante);
+                        Reset(tipo_tipologia);
+                        Reset(pais);
+                        Reset(tipo_solicitud);
+                        Reset(tipo_modalidades);
+                        Reset(convenio_tipo);
+                        Reset(sector_politica);
+                        Reset(ambito_politica);
+                        Reset(cb_formacion_pregrado);
+                        Reset(cb_formacion_postgrado);
+                        Reset(cb_formacion_investigacion);
+                        Reset(cb_formacion_permanente);
+                        Reset(cb_desarrollo_ambiental);
+                        Reset(cb_desarrollo_productivo);
+                        Reset(cb_desarrollo_social);
+                        Reset(cb_educacion);
+                        Reset(cb_inclusion);
+                        Reset(cb_salud);
+                        Reset(cb_sector_publico);
+                        Reset(cb_patrimonio);
+                        Reset(cb_desarrollo_cultural);
+                        Reset(cb_interculturalidad);
                         
                         Set(solicitud_convenio_recuperada,
                             'Convenio-PATraerestadosolicitudporpantalla'.Run(
@@ -266,15 +302,6 @@ Mostar_solicitudes As screen:
                         
                         Navigate(Unidad_solicitante,ScreenTransition.Fade);
                         
-                        Reset(tipo_alcance);
-                        Reset(nombre_unidad_solicitante);
-                        Reset(tipo_tipologia);
-                        Reset(pais);
-                        Reset(tipo_solicitud);
-                        Reset(tipo_modalidades);
-                        Reset(convenio_tipo);
-                        Reset(sector_politica);
-                        Reset(ambito_politica);
                         
                         
                     PaddingBottom: =0
