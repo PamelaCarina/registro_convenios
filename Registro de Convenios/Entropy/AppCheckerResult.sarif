@@ -17001,66 +17001,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Contenido_oficial"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Contenido_oficial",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Contenido_oficial",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.doc_convenio"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.doc_convenio",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "doc_convenio",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.nueva_solicitud"
                 }
               ],
@@ -17252,36 +17192,6 @@
               },
               "properties": {
                 "member": "areas_externas",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.Contenido_extra"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Contenido_extra",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Contenido_extra",
                 "module": "App",
                 "type": "App"
               }

@@ -149,37 +149,6 @@
     "dependents": [],
     "id": "1861bd45-32f2-4db9-8c16-4ce8cc5f78be"
   },
-  "1b773324-d960-4be5-b664-7ba2b9e5f6ec": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/logicflows-specialbuild/1.0.1633.3284/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAGuardarespecificaciónconvenio",
-      "DTI-PAGuardarespecificaciónconvenio_1"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "1b773324-d960-4be5-b664-7ba2b9e5f6ec"
-  },
   "1ca997eb-842f-43b6-9402-de3e838febf8": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -239,6 +208,36 @@
     "dependencies": {},
     "dependents": [],
     "id": "1f310166-c040-49fe-9c5f-dd2125c2d42d"
+  },
+  "24075566-f887-4fd0-aeef-d3ae196f69da": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAGuardarespecificaciónconvenio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "24075566-f887-4fd0-aeef-d3ae196f69da"
   },
   "2aad599a-8518-4f1f-85f2-d5c731a37ecd": {
     "connectionRef": {
