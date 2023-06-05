@@ -154,15 +154,14 @@ Datos_convenio As screen:
                 ZIndex: =1
 
             Documentacion As groupContainer.manualLayoutContainer:
-                Height: =220
+                Height: =294
                 Width: =575
                 X: =666
                 ZIndex: =2
 
                 Adjuntar_documento_oficial As groupContainer.manualLayoutContainer:
                     Height: =140
-                    Width: =280
-                    X: =4
+                    Width: =575
                     Y: =62
                     ZIndex: =1
 
@@ -268,6 +267,18 @@ Datos_convenio As screen:
                             Wrap: =false
                             ZIndex: =2
 
+                    formatos_permitidos_lb_8 As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        Height: =20
+                        Italic: =true
+                        PaddingLeft: =12
+                        Size: =10
+                        Text: |-
+                            ="Número máximo de archivos: 1"
+                        Width: =261
+                        Y: =20
+                        ZIndex: =7
+
                 documentacion As label:
                     Color: =RGBA(17, 61, 107, 1)
                     FontWeight: =FontWeight.Bold
@@ -284,8 +295,8 @@ Datos_convenio As screen:
                 Adjuntar_documento_extra As groupContainer.manualLayoutContainer:
                     Height: =140
                     Width: =280
-                    X: =299
-                    Y: =62
+                    X: =295
+                    Y: =154
                     ZIndex: =3
 
                     sin_documento_extra As text:
