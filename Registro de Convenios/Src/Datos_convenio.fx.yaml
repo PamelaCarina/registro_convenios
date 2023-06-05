@@ -1122,6 +1122,7 @@ Datos_convenio As screen:
                         If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
                         If(id_estado=4,Set(id_estado,9));//pasa a especificacion convenio registrada
                         
+                        Set(cargando, true);
                         Clear(documento_extra_subido);
                         ForAll(att_registro_10_attach_extra.Attachments,
                             Collect(documento_extra_subido,
@@ -1141,7 +1142,7 @@ Datos_convenio As screen:
                                 file: Last(documento_extra_subido).file
                             });
                         );
-                
+                        Set(cargando, false);
                         Reset(att_registro_10_attach_extra);
                         Set(num_max_doc_extra,15 - CountRows(lista_doc_ext_subidos));
                 
@@ -1316,6 +1317,7 @@ Datos_convenio As screen:
                         If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
                         If(id_estado=4,Set(id_estado,9));//pasa a especificacion convenio registrada
                 
+                        Set(cargando, true);
                         Clear(documento_oficial_subido);
                         ForAll(att_registro_10_attach_oficial.Attachments,
                             Collect(documento_oficial_subido,
@@ -1335,6 +1337,7 @@ Datos_convenio As screen:
                                 file: Last(documento_oficial_subido).file
                             });
                         );
+                        Set(cargando, false);
                         Reset(att_registro_10_attach_oficial);
                         Set(num_max_doc_official,1 - CountRows(lista_doc_off_subidos));
                 
