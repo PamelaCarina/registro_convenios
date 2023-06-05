@@ -10,7 +10,8 @@ Datos_convenio As screen:
         UpdateContext({sin_documentacion_extra:false});
         UpdateContext({sacar_archivo_oficial:false});
         UpdateContext({mostrar_lista_archivos_oficiales:false});
-        Set(num_max_doc_official,1-CountRows(att_registro_10_attach_oficial.Attachments))
+        Set(num_max_doc_official,1-CountRows(lista_doc_off_subidos));
+        Set(num_max_doc_extra,15 - CountRows(lista_doc_ext_subidos));
 
     Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -282,7 +283,7 @@ Datos_convenio As screen:
                             Icon: =Icon.Cancel
                             OnSelect: |
                                 =Remove(lista_doc_off_subidos,ThisItem);
-                                Set(num_max_doc_official,1-CountRows(att_registro_10_attach_oficial.Attachments));
+                                Set(num_max_doc_official,1-CountRows(lista_doc_off_subidos));
                                 'Convenio-PAEliminardocumentoconvenio'.Run(
                                     ThisItem.file.Name
                                 ); 
@@ -413,7 +414,7 @@ Datos_convenio As screen:
 
                     "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                         Height: =115
-                        Items: =att_registro_10_attach_extra.Attachments
+                        Items: =lista_doc_ext_subidos
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
                         TemplateSize: =30
@@ -442,8 +443,8 @@ Datos_convenio As screen:
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
-                            Size: =14
-                            Text: =Upper(ThisItem.Name)
+                            Size: =10
+                            Text: =Upper(ThisItem.file.Name)
                             VerticalAlign: =VerticalAlign.Top
                             Width: =507
                             Wrap: =false
@@ -463,7 +464,12 @@ Datos_convenio As screen:
                             Color: =RGBA(17, 61, 107, 1)
                             Height: =20
                             Icon: =Icon.Cancel
-                            OnSelect: =
+                            OnSelect: |
+                                =Remove(lista_doc_ext_subidos,ThisItem);
+                                Set(num_max_doc_extra,1-CountRows(lista_doc_ext_subidos));
+                                'Convenio-PAEliminardocumentoconvenio'.Run(
+                                    ThisItem.file.Name
+                                ); 
                             Width: =34
                             X: =541
                             Y: =3
@@ -1088,6 +1094,30 @@ Datos_convenio As screen:
                 
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         Set(Contenido_extra,att_registro_10_attach_extra.Attachments);
+                
+                        Clear(documento_extra_subido);
+                        ForAll(att_registro_10_attach_extra.Attachments,
+                            Collect(documento_extra_subido,
+                                'Convenio-PAGuardardocumentoconvenio'.Run(
+                                    id_convenio,
+                                    "Documento adicional",
+                                    id_estado,
+                                    {
+                                        file:{
+                                            name:ThisRecord.Name,
+                                            contentBytes: ThisRecord.Value
+                                        }
+                                    }
+                                )
+                            );
+                            Collect(lista_doc_ext_subidos,{
+                                file: Last(documento_extra_subido).file
+                            });
+                        );
+                
+                        Reset(att_registro_10_attach_extra);
+                        Set(num_max_doc_extra,15 - CountRows(lista_doc_ext_subidos));
+                
                         UpdateContext({show_popup_extra: false});
                         ,
                         Set(existe_adjunto_extra, false);
@@ -1161,7 +1191,7 @@ Datos_convenio As screen:
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
             Items: =
-            MaxAttachments: =5
+            MaxAttachments: =num_max_doc_extra
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."
             OnRemoveFile: |-
