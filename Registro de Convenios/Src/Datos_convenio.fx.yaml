@@ -558,7 +558,7 @@ Datos_convenio As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(IsBlank(especificacion_convenio_recuperada),"",especificacion_convenio_recuperada.proposito_central)
+                    Default: =If(IsBlank(especificacion_convenio_recuperada.proposito_central),"",especificacion_convenio_recuperada.proposito_central)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     DisplayMode: =
                     Fill: =RGBA(241, 244, 255, 1)

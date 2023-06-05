@@ -309,6 +309,8 @@ Mostar_solicitudes As screen:
                             })
                         );
                         
+                        Set(categoria_vrim_recuperada,solicitud_convenio_recuperada.categoria_vrim_registrada);
+                        
                         Navigate(Unidad_solicitante,ScreenTransition.Fade);
                         
                         
