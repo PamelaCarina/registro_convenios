@@ -23,7 +23,7 @@ Datos_convenio As screen:
         Siguiente_1 As button:
             BorderThickness: =1
             Fill: =RGBA(247, 158, 64, 1)
-            FontWeight: =FontWeight.Bold
+            FontWeight: =FontWeight.Normal
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |+
@@ -44,7 +44,8 @@ Datos_convenio As screen:
                 If(IsBlank(Gallery1_2), UpdateContext({sin_documentacion_extra:true}), UpdateContext({sin_documentacion_extra:false}));
                 
                 //CONDICION DE APROBACION
-                If(!sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && !sin_documentacion_extra,
+                If(!sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && 
+                    !sin_documentacion_extra &&!sin_documentacion_oficial,
                 
                 
                     If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
