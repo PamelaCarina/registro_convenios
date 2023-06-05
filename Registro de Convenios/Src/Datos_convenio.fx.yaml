@@ -376,18 +376,18 @@ Datos_convenio As screen:
                         ZIndex: =2
 
                     img_subir_2 As image:
-                        Height: =74
+                        Height: =22
                         Image: |
                             =If(existe_adjunto_extra,attach,upload)
-                        Width: =68
-                        X: =12
-                        Y: =40
+                        Visible: =false
+                        Width: =30
+                        X: =312
                         ZIndex: =3
 
                     btn_adjuntar_2 As button:
                         BorderStyle: =BorderStyle.None
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =74
+                        Height: =22
                         HoverFill: =RGBA(255,255,255,0)
                         OnSelect: |-
                             =UpdateContext({show_popup_extra: true})
@@ -398,9 +398,9 @@ Datos_convenio As screen:
                         RadiusTopRight: =50
                         TabIndex: =1
                         Text: =""
-                        Width: =68
-                        X: =12
-                        Y: =40
+                        Visible: =false
+                        Width: =22
+                        X: =312
                         ZIndex: =4
 
                     adjuntar_documento_label_2 As label:
@@ -454,7 +454,7 @@ Datos_convenio As screen:
                         HoverBorderColor: =RGBA(139, 195, 74, 1)
                         HoverFill: =RGBA(139, 195, 74, 0.4)
                         OnSelect: |-
-                            =UpdateContext({show_popup_oficial: true})
+                            =UpdateContext({show_popup_extra: true})
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
