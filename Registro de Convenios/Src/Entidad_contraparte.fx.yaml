@@ -417,6 +417,8 @@ Entidad_contraparte As screen:
 
                     Icon1_1 As icon.Trash:
                         Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =34
                         Icon: =Icon.Cancel
                         OnSelect: |-

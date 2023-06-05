@@ -475,7 +475,7 @@ Unidad_solicitante As screen:
                     Icon1 As icon.Trash:
                         Color: =RGBA(111, 139, 167, 1)
                         Height: =20
-                        Icon: =Icon.Trash
+                        Icon: =Icon.Cancel
                         OnSelect: =Select(Parent)
                         Width: =20
                         X: =302

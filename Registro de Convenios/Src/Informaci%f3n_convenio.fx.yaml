@@ -168,7 +168,7 @@ Información_convenio As screen:
                         ZIndex: =1
 
                     ambito_politica As dropdown:
-                        AllowEmptySelection: =true
+                        AllowEmptySelection: =If(IsBlank(categoria_vrim_recuperada.ambito_politica),true,false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -323,7 +323,7 @@ Información_convenio As screen:
                         ZIndex: =1
 
                     sector_politica As dropdown:
-                        AllowEmptySelection: =true
+                        AllowEmptySelection: =If(IsBlank(categoria_vrim_recuperada.sector_politica),true,false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)

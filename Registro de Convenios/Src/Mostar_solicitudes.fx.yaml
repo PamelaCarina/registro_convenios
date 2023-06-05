@@ -190,6 +190,7 @@ Mostar_solicitudes As screen:
                         
                         Clear(contrapartes_nacionales);
                         Clear(contrapartes_internacionales);
+                        Clear(solicitudes_añadir_contraparte);
                         Clear(lista_doc_contr_subidos);
                         
                         Clear(lista_doc_off_subidos);
@@ -488,7 +489,7 @@ Mostar_solicitudes As screen:
             ZIndex: =6
 
     "'Solicitud anterior_1' As button":
-        Fill: =RGBA(246, 88, 16, 1)
+        Fill: =RGBA(253, 222, 207, 1)
         Height: =70
         OnSelect: |-
             =Set(primera_vez_entidad_contraparte,true);
