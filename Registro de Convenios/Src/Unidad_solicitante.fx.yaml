@@ -712,7 +712,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =sin_autoridad
+                            =If(Len(correo_autoridad_input_2.Text)=0 && sin_autoridad,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
@@ -781,7 +781,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =sin_autoridad
+                            =If(Len(cargo_autoridad_input_2.Text)=0 && sin_autoridad,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
@@ -850,8 +850,9 @@ Unidad_solicitante As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: |
-                            =sin_autoridad
+                        Visible: |-
+                            =//sin_autoridad
+                            If(Len(nombre_autoridad_solicitante_input_2.Text)=0 && sin_autoridad,true,false)
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
