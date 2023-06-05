@@ -911,6 +911,7 @@ Datos_contraparte_internacional As screen:
             OnSelect: |
                 =Set(nueva_solicitud_contraparte,true);
                 Set(id_contraparte,Blank());
+                Clear(lista_doc_contr_subidos);
                 Set(contraparte_s,{
                     nombre:"",
                     pais: "",

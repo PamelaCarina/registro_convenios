@@ -679,6 +679,8 @@ Datos_solicitud_contraparte_internacional As screen:
                             id_adjunto: documento_contraparte_subido.id_adjunto
                         });
                 
+                        Reset(att_attach_doc_sin);
+                
                         UpdateContext({show_popup_documentacion: false});
                         UpdateContext({mostrar_lista_archivos:true});
                         ,
