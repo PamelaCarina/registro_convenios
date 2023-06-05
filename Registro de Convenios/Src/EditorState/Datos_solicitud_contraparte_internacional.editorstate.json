@@ -4160,7 +4160,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "buscador_pais_input",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11997,7 +11997,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "pais",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13422,7 +13422,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "468",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "X",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -13443,14 +13443,7 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "40",
-          "InvariantPropertyName": "Height",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "Height",
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -13809,7 +13802,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "468",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "X",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -13817,7 +13810,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "687",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Y",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -13833,7 +13826,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "40",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Height",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -13912,7 +13905,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_pais",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14199,7 +14192,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "tapar_pais",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

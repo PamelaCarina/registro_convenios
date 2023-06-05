@@ -370,8 +370,8 @@ Datos_solicitud_contraparte_internacional As screen:
                     ZIndex: =8
 
             Nombre_solicitud_unidad_contraparte_in As groupContainer.manualLayoutContainer:
-                Height: =60
-                Width: =871
+                Height: =70
+                Width: =881
                 X: =42
                 Y: =24
                 ZIndex: =5
@@ -383,7 +383,6 @@ Datos_solicitud_contraparte_internacional As screen:
                     DisabledFill: =RGBA(0, 0, 0, 0)
                     DisplayMode: =DisplayMode.Disabled
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =nombre_solicitud_unidad_contraparte_in_input.Height
                     HoverBorderColor: =RGBA(238, 110, 126, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     RadiusBottomLeft: =12
@@ -392,9 +391,9 @@ Datos_solicitud_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     TabIndex: =-1
                     Visible: =sin_nombre_entidad
-                    Width: =nombre_solicitud_unidad_contraparte_in_input.Width
-                    X: =nombre_solicitud_unidad_contraparte_in_input.X
-                    Y: =nombre_solicitud_unidad_contraparte_in_input.Y
+                    Width: =871
+                    X: =2
+                    Y: =20
                     ZIndex: =1
 
                 nombre_solicitud_unidad_contraparte_in_input As text:
@@ -406,6 +405,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
+                    Height: =38
                     HintText: =""
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
@@ -420,8 +420,9 @@ Datos_solicitud_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =871
-                    Y: =20
+                    Width: =868
+                    X: =3
+                    Y: =21
                     ZIndex: =2
 
                 nombre_solicitud_unidad_contraparte_na_label_1 As label:
@@ -439,16 +440,16 @@ Datos_solicitud_contraparte_internacional As screen:
                     ZIndex: =3
 
             Contenedor_pais As groupContainer.manualLayoutContainer:
-                Height: =64
+                Height: =80
                 Width: =301
                 X: =941
                 Y: =24
                 ZIndex: =6
 
                 Contenedor_seleccionar_pais As groupContainer.manualLayoutContainer:
-                    Height: =44
-                    Width: =300
-                    Y: =20
+                    Height: =54
+                    Width: =310
+                    Y: =15
                     ZIndex: =1
 
                     fondo_celeste_7 As image:
@@ -471,7 +472,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =fondo_celeste_8.Height
+                        Height: =45
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -480,8 +481,9 @@ Datos_solicitud_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: =sin_pais_entidad
-                        Width: =300
-                        Y: =fondo_celeste_8.Y+1
+                        Width: =284
+                        X: =8
+                        Y: =2
                         ZIndex: =2
 
                     pais As dropdown:
@@ -519,7 +521,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         TabIndex: =
                         Width: =fondo_celeste_7.Width-24
                         X: =fondo_celeste_7.X+12
-                        Y: =fondo_celeste_7.Y+2
+                        Y: =fondo_celeste_7.Y+5
                         ZIndex: =3
 
                     tapar_pais As rectangle:
@@ -529,7 +531,8 @@ Datos_solicitud_contraparte_internacional As screen:
                         Visible: =false
                         Width: =40
                         X: =pais.X+pais.Width-Self.Width+1
-                        Y: =fondo_celeste_7.Y
+                        Y: |
+                            =5
                         ZIndex: =4
 
                     buscador_pais_input As text:
@@ -562,6 +565,8 @@ Datos_solicitud_contraparte_internacional As screen:
                         PaddingTop: =0
                         Size: =14
                         Width: =250
+                        X: =12
+                        Y: =5
                         ZIndex: =5
 
                 pais_lb As label:
