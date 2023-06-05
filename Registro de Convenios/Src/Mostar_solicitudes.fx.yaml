@@ -23,17 +23,23 @@ Mostar_solicitudes As screen:
                 
                 Set(autoridad,{});
                 Set(responsable,{});
-                Set(especificacion_convenio_recuperada,{});
+                Set(especificacion_convenio_recuperada,Blank());
                 
                 Clear(unidades_promotoras);
                 
                 Clear(contrapartes_nacionales);
                 Clear(contrapartes_internacionales);
+                Clear(lista_doc_off_subidos);
+                Clear(lista_doc_ext_subidos);
                 
                 Navigate(Unidad_solicitante);
                 
                 Reset(tipo_alcance);
                 Reset(nombre_unidad_solicitante);
+                Reset(tipo_tipologia);
+                Reset(pais);
+                Reset(tipo_solicitud);
+                Reset(tipo_modalidades);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
