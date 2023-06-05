@@ -186,23 +186,11 @@ Datos_convenio As screen:
                         Y: =fondo_registro_1.Y
                         ZIndex: =1
 
-                    fondo_registro_1 As image:
-                        Height: =111
-                        Image: ='background-input'
-                        ImagePosition: =ImagePosition.Fill
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        Width: =274
-                        X: =2
-                        Y: =18
-                        ZIndex: =2
-
                     img_subir_1 As image:
-                        Height: =74
+                        Height: =11
                         Image: =If(existe_adjunto && mostrar_lista_archivos_oficiales,attach,upload)
-                        Width: =68
+                        Visible: =false
+                        Width: =23
                         X: =12
                         Y: =40
                         ZIndex: =3
@@ -210,7 +198,7 @@ Datos_convenio As screen:
                     btn_adjuntar_1 As button:
                         BorderStyle: =BorderStyle.None
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =74
+                        Height: =11
                         HoverFill: =RGBA(255,255,255,0)
                         OnSelect: |-
                             =UpdateContext({show_popup_oficial: true})
@@ -221,7 +209,8 @@ Datos_convenio As screen:
                         RadiusTopRight: =50
                         TabIndex: =1
                         Text: =""
-                        Width: =68
+                        Visible: =false
+                        Width: =23
                         X: =12
                         Y: =40
                         ZIndex: =4
@@ -245,17 +234,15 @@ Datos_convenio As screen:
                         Items: =att_registro_10_attach_oficial.Attachments
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
-                        TemplateSize: =Min(160, Self.Height - 60)
-                        Visible: =mostrar_lista_archivos_oficiales
-                        Width: =173
-                        X: =92
-                        Y: =36
+                        TemplateSize: =30
+                        Width: =575
+                        Y: =51
                         ZIndex: =6
 
                         Title1_1 As label:
                             Color: =RGBA(17, 61, 107, 1)
                             FontWeight: =FontWeight.Bold
-                            Height: =82
+                            Height: =25
                             OnSelect: =Select(Parent)
                             PaddingBottom: =0
                             PaddingLeft: =0
@@ -263,9 +250,20 @@ Datos_convenio As screen:
                             PaddingTop: =0
                             Size: =14
                             Text: =Upper(ThisItem.Name)
-                            Width: =173
+                            Width: =575
                             Wrap: =false
                             ZIndex: =2
+
+                        fondo_registro_1 As image:
+                            Height: =25
+                            Image: ='background-input'
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =575
+                            ZIndex: =3
 
                     formatos_permitidos_lb_8 As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -278,6 +276,32 @@ Datos_convenio As screen:
                         Width: =261
                         Y: =20
                         ZIndex: =7
+
+                    btn_adjuntar_doc_1 As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Fill: =RGBA(139, 195, 74, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        HoverBorderColor: =RGBA(139, 195, 74, 1)
+                        HoverFill: =RGBA(139, 195, 74, 0.4)
+                        OnSelect: |-
+                            =UpdateContext({show_popup_oficial: true})
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(95, 160, 20, 1)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        TabIndex: =
+                        Text: ="+"
+                        Width: =20
+                        X: =175
+                        ZIndex: =8
 
                 documentacion As label:
                     Color: =RGBA(17, 61, 107, 1)
@@ -1111,19 +1135,6 @@ Datos_convenio As screen:
             Y: =420
             ZIndex: =9
 
-        formatos_permitidos_lb_7 As label:
-            Align: =Align.Right
-            Color: =RGBA(111, 139, 167, 1)
-            Height: =20
-            Italic: =true
-            Size: =10
-            Text: |-
-                ="Número máximo de archivos adjuntos: 5"
-            Width: =261
-            X: =743
-            Y: =420
-            ZIndex: =10
-
     Adjuntar_popup_oficial As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_oficial
@@ -1230,7 +1241,7 @@ Datos_convenio As screen:
             ZIndex: =5
 
         img_registro_10_popup As image:
-            Height: =130
+            Height: =94
             Image: ='background-input'
             ImagePosition: =ImagePosition.Fill
             RadiusBottomLeft: =12
@@ -1266,19 +1277,6 @@ Datos_convenio As screen:
             Y: =420
             ZIndex: =9
 
-        formatos_permitidos_lb_6 As label:
-            Align: =Align.Right
-            Color: =RGBA(111, 139, 167, 1)
-            Height: =20
-            Italic: =true
-            Size: =10
-            Text: |-
-                ="Número máximo de archivos adjuntos: 1"
-            Width: =261
-            X: =743
-            Y: =420
-            ZIndex: =10
-
         Label7 As label:
             Text: =1 - CountRows(especificacion_convenio_recuperada.borrador_convenio)
             X: =943
@@ -1313,7 +1311,7 @@ Datos_convenio As screen:
             Size: =10
             TabIndex: =If(show_popup_oficial,1,-1)
             Tooltip: =
-            Width: =635
+            Width: =645
             X: =360
             Y: =326
             ZIndex: =15
