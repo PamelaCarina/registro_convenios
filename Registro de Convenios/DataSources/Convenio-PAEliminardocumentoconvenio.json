@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "d1d4ed0d-7fc2-4175-8bdc-c82f95020f70",
+    "Name": "Convenio-PAEliminardocumentoconvenio",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "d69121ea-5a03-ee11-8f6e-6045bd006f89"
+  }
+]

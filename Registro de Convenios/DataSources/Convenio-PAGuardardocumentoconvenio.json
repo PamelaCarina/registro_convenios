@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "def76a26-afdc-4b91-8eef-74985af3e1cf",
+    "Name": "Convenio-PAGuardardocumentoconvenio",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "e6f6f685-5a03-ee11-8f6e-6045bd006f89"
+  }
+]

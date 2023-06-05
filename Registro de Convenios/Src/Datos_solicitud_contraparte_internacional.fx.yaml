@@ -13,7 +13,7 @@ Datos_solicitud_contraparte_internacional As screen:
             UpdateContext({mostrar_lista_archivos:true})
         );
         Set(existe_adjunto, true);
-        Set(num_max_doc_contr,1);
+        Set(num_max_doc_contr,1-CountRows(att_attach_doc_sin.Attachments));
 
     Botones_atras_siguiente_10 As groupContainer.manualLayoutContainer:
         Height: =44

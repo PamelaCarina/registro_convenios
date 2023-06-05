@@ -844,8 +844,11 @@ Entidad_contraparte As screen:
                 Height: =45
                 Items: |-
                     =If(tipo_alcance.Selected.valor="Convenio nacional",//solicitudes_añadir_contraparte
-                        Table({id:1,nombre: "Nacional"},{id:3,nombre: Concatenate("Solicitadas (",CountRows(solicitudes_añadir_contraparte),"/5)")}),
-                        Table({id:1,nombre: "Nacional"},{id:2,nombre:"Internacional"},{id:3,nombre: Concatenate("Solicitadas (",CountRows(solicitudes_añadir_contraparte),"/5)")})
+                        Table({id:1,nombre: "Nacional"})
+                    ,
+                        Table({id:1,nombre: "Nacional"},
+                            {id:2,nombre:"Internacional"},
+                            {id:3,nombre: Concatenate("Solicitadas (",CountRows(solicitudes_añadir_contraparte),"/5)")})
                     )
                     /*
                     Table({id:1;nombre: "Nacional"};{id:3;nombre: "Solicitadas"});

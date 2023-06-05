@@ -300,6 +300,36 @@
     "dependents": [],
     "id": "3465d341-63ea-4404-8725-b30184dd3101"
   },
+  "575b360b-7394-4ed9-819b-eeb04725b4f3": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "e6f6f685-5a03-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "68243fab-8874-b276-a38a-7818d7e7a76b"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "e6f6f685-5a03-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "68243fab-8874-b276-a38a-7818d7e7a76b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAGuardardocumentoconvenio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "575b360b-7394-4ed9-819b-eeb04725b4f3"
+  },
   "5f2e54ee-f64f-414a-8a4a-15809220178a": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -899,5 +929,35 @@
     "dependencies": {},
     "dependents": [],
     "id": "f7ae35c5-e4b8-4ab0-925f-2269bf58c335"
+  },
+  "fa8d0bed-0a5a-43d7-b69b-d27b389993dc": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "d69121ea-5a03-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "d0054d88-31ad-fef4-246a-d62f181c8a3f"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "d69121ea-5a03-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "d0054d88-31ad-fef4-246a-d62f181c8a3f"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAEliminardocumentoconvenio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fa8d0bed-0a5a-43d7-b69b-d27b389993dc"
   }
 }

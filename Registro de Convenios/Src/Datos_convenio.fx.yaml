@@ -10,6 +10,7 @@ Datos_convenio As screen:
         UpdateContext({sin_documentacion_extra:false});
         UpdateContext({sacar_archivo_oficial:false});
         UpdateContext({mostrar_lista_archivos_oficiales:false});
+        Set(num_max_doc_official,1-CountRows(att_registro_10_attach_oficial.Attachments))
 
     Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -231,7 +232,7 @@ Datos_convenio As screen:
 
                     "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                         Height: =30
-                        Items: =att_registro_10_attach_oficial.Attachments
+                        Items: =lista_doc_off_subidos
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
                         TemplateSize: =30
@@ -259,8 +260,8 @@ Datos_convenio As screen:
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
-                            Size: =14
-                            Text: =Upper(ThisItem.Name)
+                            Size: =10
+                            Text: =Upper(ThisItem.file.Name)
                             Width: =507
                             Wrap: =false
                             X: =34
@@ -279,7 +280,12 @@ Datos_convenio As screen:
                             Color: =RGBA(17, 61, 107, 1)
                             Height: =20
                             Icon: =Icon.Cancel
-                            OnSelect: =
+                            OnSelect: |
+                                =Remove(lista_doc_off_subidos,ThisItem);
+                                Set(num_max_doc_official,1-CountRows(att_registro_10_attach_oficial.Attachments));
+                                'Convenio-PAEliminardocumentoconvenio'.Run(
+                                    ThisItem.file.Name
+                                ); 
                             Width: =34
                             X: =541
                             Y: =3
@@ -1249,6 +1255,28 @@ Datos_convenio As screen:
                         UpdateContext({archivo_invalido:false});
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
                         Set(Contenido_oficial,att_registro_10_attach_oficial.Attachments);
+                        
+                        Clear(documento_oficial_subido);
+                        ForAll(att_registro_10_attach_oficial.Attachments,
+                            Collect(documento_oficial_subido,
+                                'Convenio-PAGuardardocumentoconvenio'.Run(
+                                    id_convenio,
+                                    "Borrador convenio",
+                                    {
+                                        file:{
+                                            name:ThisRecord.Name,
+                                            contentBytes: ThisRecord.Value
+                                        }
+                                    }
+                                )
+                            );
+                            Collect(lista_doc_off_subidos,{
+                                file: Last(documento_oficial_subido).file
+                            });
+                        );
+                        Reset(att_registro_10_attach_oficial);
+                        Set(num_max_doc_official,1 - CountRows(lista_doc_off_subidos));
+                
                         UpdateContext({show_popup_oficial: false});
                         UpdateContext({mostrar_lista_archivos_oficiales:true});
                         ,
@@ -1339,12 +1367,6 @@ Datos_convenio As screen:
             Y: =420
             ZIndex: =9
 
-        Label7 As label:
-            Text: =1 - CountRows(especificacion_convenio_recuperada.borrador_convenio)
-            X: =943
-            Y: =129
-            ZIndex: =14
-
         att_registro_10_attach_oficial As attachments:
             AddAttachmentText: ="Adjuntar archivo (tamaño máximo 10 MB)"
             BorderColor: =
@@ -1358,7 +1380,7 @@ Datos_convenio As screen:
             HoverColor: =RGBA(111, 139, 167, 1)
             IsInDataCard: =true
             Items: =
-            MaxAttachments: =1 - CountRows(especificacion_convenio_recuperada.borrador_convenio)
+            MaxAttachments: =num_max_doc_official
             MaxAttachmentsText: ="Se ha alcanzado la cantidad máxima de archivos."
             NoAttachmentsText: ="No hay ningún archivo adjunto."
             OnRemoveFile: |-
