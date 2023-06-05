@@ -82,7 +82,7 @@ Datos_solicitud_contraparte_internacional As screen:
                 =
                 UpdateContext({máximo_solicitudes:false});
                 
-                If(IsBlank(nombre_solicitud_unidad_contraparte_in_input.Text),UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
+                If(CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0,UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
                 If(IsBlank(pais.Selected),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 
@@ -390,7 +390,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
                     TabIndex: =-1
-                    Visible: =If(Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 && sin_nombre_entidad,true,false)
+                    Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0) && sin_nombre_entidad,true,false)
                     Width: =871
                     X: =2
                     Y: =20
@@ -840,7 +840,7 @@ Datos_solicitud_contraparte_internacional As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
+        Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
         Width: =676
         X: =470
         Y: =684
