@@ -1461,7 +1461,7 @@ Contribución_desarrollo As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =campos_faltantes
+        Visible: =If(faltan_datos_notif=true && campos_faltantes, true, false)
         Width: =856
         X: =278
         Y: =684
