@@ -447,6 +447,7 @@ Mostar_solicitudes As screen:
             ZIndex: =6
 
     "'Solicitud anterior_1' As button":
+        Fill: =RGBA(184, 0, 0, 1)
         Height: =70
         OnSelect: |-
             =Set(primera_vez_entidad_contraparte,true);
