@@ -10,8 +10,9 @@ Datos_solicitud_contraparte_internacional As screen:
             Set(existe_adjunto, false);
         
         ,
-            UpdateContext({mostrar_lista_archivos:true}));
-            Set(existe_adjunto, true);
+            UpdateContext({mostrar_lista_archivos:true})
+        );
+        Set(existe_adjunto, true);
 
     Botones_atras_siguiente_10 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -50,7 +51,11 @@ Datos_solicitud_contraparte_internacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            OnSelect: |
+                =If(!IsBlank(id_contraparte),
+                    'Convenio-PAEliminarcontrapartenoregistrada'.Run(id_contraparte)
+                );
+                Navigate(Entidad_contraparte,ScreenTransition.Fade);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -80,35 +85,42 @@ Datos_solicitud_contraparte_internacional As screen:
                 If(IsBlank(pais.Selected),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 
                 //If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
-                
-                Set(doc_contraparte,{
+                /*
+                Set(doc_contraparte;{
                         file:{//doc1
-                            name: First(Contenido_doc_sin).Name,
+                            name: First(Contenido_doc_sin).Name;
                             contentBytes: First(Contenido_doc_sin).Value
                         }
-                });
-                
+                });;
+                */
                 If(!sin_nombre_entidad && !sin_pais_entidad,
                     Set(cargando, true);
                     If(id_estado=1,Set(id_estado,4));//pasa a contraparte internacional solicitada
                     If(id_estado=2,Set(id_estado,4));//pasa a contraparte internacional solicitada
+                
+                    If(IsBlank(id_contraparte),
+                        Set(id_contraparte,
+                        'Convenio-PACrearsolicitudcontrapartenoregistrada'.Run(id_convenio).id_contraparte)
+                    );
+                
                     Set(nueva_contrapartes_no_registradas_in,'Convenio-PAGuardarcontrapartenoregistrada'.Run(
                                                             Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
                                                             pais.Selected.pais,
                                                             id_convenio,
                                                             id_estado,
-                                                            doc_contraparte
+                                                            id_contraparte
                     ));
                 
                     Set(id_estado,nueva_contrapartes_no_registradas_in.id_estado);
-                    
+                
                     Collect(solicitudes_añadir_contraparte,{
-                        id_contraparte: nueva_contrapartes_no_registradas_in.id_contraparte,
+                        id_contraparte: id_contraparte,
                         nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
                         pais: pais.Selected.pais,
                         estado: "En espera",
-                        file: nueva_contrapartes_no_registradas_in.file
+                        file: First(lista_doc_contr_subidos).file
                     });
+                    
                     Set(cargando, false);
                 
                     Navigate(Entidad_contraparte,ScreenTransition.Fade);
@@ -154,7 +166,7 @@ Datos_solicitud_contraparte_internacional As screen:
 
             Adjuntar_documentacion_sin As groupContainer.manualLayoutContainer:
                 Height: =140
-                Width: =280
+                Width: =584
                 X: =42
                 Y: =108
                 ZIndex: =2
@@ -180,31 +192,19 @@ Datos_solicitud_contraparte_internacional As screen:
                     Y: =fondo_registro_4.Y
                     ZIndex: =1
 
-                fondo_registro_4 As image:
-                    Height: =111
-                    Image: ='background-input'
-                    ImagePosition: =ImagePosition.Fill
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
-                    Width: =274
-                    X: =2
-                    Y: =18
-                    ZIndex: =2
-
                 img_subir_4 As image:
-                    Height: =74
+                    Height: =20
                     Image: =If(existe_adjunto && mostrar_lista_archivos,attach,upload)
-                    Width: =68
-                    X: =13
-                    Y: =36
+                    Visible: =false
+                    Width: =20
+                    X: =163
+                    Y: =103
                     ZIndex: =3
 
                 btn_adjuntar_4 As button:
                     BorderStyle: =BorderStyle.None
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =74
+                    Height: =20
                     HoverFill: =RGBA(255,255,255,0)
                     OnSelect: |-
                         =UpdateContext({show_popup_documentacion: true})
@@ -215,9 +215,10 @@ Datos_solicitud_contraparte_internacional As screen:
                     RadiusTopRight: =50
                     TabIndex: =1
                     Text: =""
-                    Width: =68
-                    X: =13
-                    Y: =36
+                    Visible: =false
+                    Width: =20
+                    X: =163
+                    Y: =103
                     ZIndex: =4
 
                 adjuntar_documentacion_sin_label As label:
@@ -231,35 +232,129 @@ Datos_solicitud_contraparte_internacional As screen:
                     Size: =10
                     Text: ="DOCUMENTACIÓN"
                     VerticalAlign: =VerticalAlign.Top
-                    Width: =274
+                    Width: =584
                     ZIndex: =5
 
                 "Gallery1_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-                    Height: =82
-                    Items: =att_attach_doc_sin.Attachments
+                    Height: =89
+                    Items: =lista_doc_contr_subidos
                     Layout: =Layout.Vertical
                     TemplatePadding: =0
-                    TemplateSize: =Min(160, Self.Height - 60)
+                    TemplateSize: =30
                     Visible: =mostrar_lista_archivos
-                    Width: =173
-                    X: =93
-                    Y: =32
+                    Width: =584
+                    Y: =51
                     ZIndex: =6
 
                     Title1_4 As label:
                         Color: =RGBA(17, 61, 107, 1)
                         FontWeight: =FontWeight.Bold
-                        Height: =82
+                        Height: =25
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =14
-                        Text: =Upper(ThisItem.Name)
-                        Width: =173
+                        Text: =Upper(ThisItem.file.Name)
+                        Width: =515
                         Wrap: =false
+                        X: =34
                         ZIndex: =2
+
+                    fondo_registro_4 As image:
+                        Height: =25
+                        Image: ='background-input'
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                        Width: =584
+                        ZIndex: =3
+
+                    Icon2_1 As icon.Document:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =20
+                        Icon: =Icon.Document
+                        OnSelect: =Select(Parent)
+                        Width: =34
+                        Y: =3
+                        ZIndex: =4
+
+                    Icon2_2 As icon.Document:
+                        Color: =RGBA(17, 61, 107, 1)
+                        Height: =20
+                        Icon: =Icon.Cancel
+                        OnSelect: =Select(Parent)
+                        Width: =34
+                        X: =550
+                        Y: =3
+                        ZIndex: =5
+
+                    btn_abrir_adjunto_1 As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FontWeight: =FontWeight.Normal
+                        Height: =25
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(207, 210, 232, 0.4)
+                        OnSelect: =Launch(ThisItem.file.Value)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(207, 210, 232, 0.4)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Size: =20
+                        TabIndex: =
+                        Text: =""
+                        Visible: =If(IsBlank(ThisItem.file.Name),false,true)
+                        Width: =549
+                        ZIndex: =6
+
+                btn_adjuntar_doc As button:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Fill: =RGBA(139, 195, 74, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    HoverBorderColor: =RGBA(139, 195, 74, 1)
+                    HoverFill: =RGBA(139, 195, 74, 0.4)
+                    OnSelect: |-
+                        =UpdateContext({show_popup_documentacion: true})
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(95, 160, 20, 1)
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    TabIndex: =
+                    Text: ="+"
+                    Width: =20
+                    X: =143
+                    ZIndex: =7
+
+                formatos_permitidos_lb_5 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    Height: =20
+                    Italic: =true
+                    PaddingLeft: =12
+                    Size: =10
+                    Text: |-
+                        ="Número máximo de archivos: 1"
+                    Width: =261
+                    Y: =20
+                    ZIndex: =8
 
             Nombre_solicitud_unidad_contraparte_in As groupContainer.manualLayoutContainer:
                 Height: =60
@@ -549,20 +644,46 @@ Datos_solicitud_contraparte_internacional As screen:
                         attachment_extension="doc" || attachment_extension="docx" ||
                         attachment_extension="xls" || attachment_extension="xlsx",
                         
-                        Set(existe_adjunto, true);
+                        //Set(existe_adjunto; true);;
                         UpdateContext({archivo_invalido:false});
                         
                         //GUARDA EL CONTENIDO DEL ARCHIVO CARGADO
-                        Set(Contenido_doc_sin,att_attach_doc_sin.Attachments);
+                        //Set(Contenido_doc_sin;att_attach_doc_sin.Attachments);;
+                
+                        If(IsBlank(id_contraparte),
+                            Set(id_contraparte,
+                            'Convenio-PACrearsolicitudcontrapartenoregistrada'.Run(id_convenio).id_contraparte)
+                        );
+                
+                        Set(doc_contraparte,{
+                            file:{//doc1
+                                name: First(att_attach_doc_sin.Attachments).Name,
+                                contentBytes: First(att_attach_doc_sin.Attachments).Value
+                            }
+                        });
+                
+                        Set(documento_contraparte_subido,
+                            'Convenio-PAGuardaradjuntocontrapartenoregistrada'.Run(
+                                id_contraparte,
+                                id_convenio,
+                                doc_contraparte
+                            )
+                        );
+                
+                        Collect(lista_doc_contr_subidos,{
+                            file: documento_contraparte_subido.file,
+                            id_adjunto: documento_contraparte_subido.id_adjunto
+                        });
+                
                         UpdateContext({show_popup_documentacion: false});
                         UpdateContext({mostrar_lista_archivos:true});
                         ,
-                        Set(existe_adjunto, false);
+                        //Set(existe_adjunto; false);;
                         UpdateContext({archivo_invalido:true})
                     )
                 ,
                     Set(existe_adjunto, false);
-                    Set(Contenido_doc_sin,Blank());
+                    //Set(Contenido_doc_sin;Blank());;
                     UpdateContext({archivo_invalido:false});
                     UpdateContext({show_popup_documentacion: false})
                 );
@@ -673,19 +794,6 @@ Datos_solicitud_contraparte_internacional As screen:
             X: =360
             Y: =418
             ZIndex: =9
-
-        formatos_permitidos_lb_5 As label:
-            Align: =Align.Right
-            Color: =RGBA(111, 139, 167, 1)
-            Height: =20
-            Italic: =true
-            Size: =10
-            Text: |-
-                ="Número máximo de archivos adjuntos: 1"
-            Width: =261
-            X: =743
-            Y: =420
-            ZIndex: =10
 
     lbl_faltan_datos_10 As label:
         Align: =Align.Right

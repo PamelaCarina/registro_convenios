@@ -457,7 +457,7 @@ Entidad_contraparte As screen:
                         Y: =55
                         ZIndex: =10
 
-                    btn_buscar_promotor_2 As button:
+                    btn_abrir_adjunto As button:
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =1
                         Fill: =RGBA(0, 0, 0, 0)
