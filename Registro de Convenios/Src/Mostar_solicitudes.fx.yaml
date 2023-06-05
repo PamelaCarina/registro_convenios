@@ -256,6 +256,7 @@ Mostar_solicitudes As screen:
                         
                         ForAll(unidad_solicitante_recuperada.unidades_promotoras,
                             Collect(unidades_promotoras,{
+                                id_unidad_promotora:id_unidad_promotora,
                                 nombre_unidad_promotora: reparticion,
                                 codigo_reparticion: codigo_reparticion
                             })
