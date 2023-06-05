@@ -446,13 +446,15 @@ Unidad_solicitante As screen:
 
                 Unidades_promotoras As gallery.galleryVertical:
                     DelayItemLoading: =true
-                    Height: =312
+                    Height: =298
                     Items: =unidades_promotoras
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplateSize: =70
                     Visible: =If(CountRows(unidades_promotoras)=0,false,true)
-                    Width: =337.3
+                    Width: =313
+                    X: =12
+                    Y: =7
                     ZIndex: =1
 
                     fig_contraparte_arrow_2 As rectangle:
@@ -530,34 +532,8 @@ Unidad_solicitante As screen:
                 Contenedor_sin_unidad As groupContainer.manualLayoutContainer:
                     Height: =312
                     Visible: =If(CountRows(unidades_promotoras)>0,false,true)
-                    Width: =337.3
+                    Width: =337
                     ZIndex: =4
-
-                    Image1_2 As image:
-                        Height: =200
-                        Image: =vacio
-                        Width: =200
-                        X: =68
-                        ZIndex: =1
-
-                    no_contraparte_in_lb_1 As label:
-                        Color: =RGBA(159, 156, 183, 1)
-                        Height: =55
-                        Size: =15.5
-                        Text: ="No encontramos ninguna unidad promotora asociada"
-                        Width: =337.3
-                        Y: =241
-                        ZIndex: =2
-
-                    sin_contraparte_in_lb_1 As label:
-                        Color: =RGBA(17, 61, 107, 0.6)
-                        FontWeight: =FontWeight.Semibold
-                        Height: =53
-                        Size: =22.5
-                        Text: ="Sin unidad promotora"
-                        Width: =337.3
-                        Y: =188
-                        ZIndex: =3
 
                     sin_unidad_promotora As text:
                         BorderColor: =RGBA(238, 110, 126, 1)
@@ -566,7 +542,7 @@ Unidad_solicitante As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =312
+                        Height: =308
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -576,8 +552,37 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |
                             =sin_promotor
-                        Width: =334
-                        X: =1
+                        Width: =330
+                        X: =3
+                        Y: =2
+                        ZIndex: =1
+
+                    Image1_2 As image:
+                        Height: =188
+                        Image: =vacio
+                        Width: =166
+                        X: =85
+                        Y: =17
+                        ZIndex: =2
+
+                    no_contraparte_in_lb_1 As label:
+                        Color: =RGBA(159, 156, 183, 1)
+                        Height: =55
+                        Size: =15.5
+                        Text: ="No encontramos ninguna unidad promotora asociada"
+                        Width: =337.3
+                        Y: =241
+                        ZIndex: =3
+
+                    sin_contraparte_in_lb_1 As label:
+                        Color: =RGBA(17, 61, 107, 0.6)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =51
+                        Size: =22
+                        Text: ="Sin unidad promotora"
+                        Width: =322
+                        X: =9
+                        Y: =190
                         ZIndex: =4
 
             separador As rectangle:
@@ -1265,7 +1270,8 @@ Unidad_solicitante As screen:
                         TabIndex: =-1
                         Visible: |
                             =sin_alcance
-                        Width: =300
+                        Width: =298
+                        X: =1
                         Y: =fondo_celeste_8.Y+1
                         ZIndex: =2
 
