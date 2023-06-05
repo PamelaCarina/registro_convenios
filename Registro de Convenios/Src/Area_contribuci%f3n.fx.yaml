@@ -793,28 +793,6 @@ Area_contribución As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
-    Button4 As button:
-        OnSelect: |-
-            =Reset(cb_formacion_pregrado);
-            Reset(cb_formacion_postgrado);
-            Reset(cb_formacion_investigacion);
-            Reset(cb_formacion_permanente);
-            
-            Reset(cb_desarrollo_ambiental);
-            Reset(cb_desarrollo_productivo);
-            Reset(cb_desarrollo_social);
-            Reset(cb_educacion);
-            Reset(cb_inclusion);
-            Reset(cb_salud);
-            Reset(cb_sector_publico);
-            Reset(cb_patrimonio);
-            Reset(cb_desarrollo_cultural);
-            Reset(cb_interculturalidad);
-        Text: ="Botón"
-        X: =745
-        Y: =640
-        ZIndex: =7
-
     cont_loading_7 As group:
         Height: =5
         Width: =5

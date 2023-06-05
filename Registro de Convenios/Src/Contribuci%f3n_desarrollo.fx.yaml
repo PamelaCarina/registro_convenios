@@ -1410,3 +1410,14 @@ Contribución_desarrollo As screen:
             Y: =323
             ZIndex: =12
 
+    Button4 As button:
+        OnSelect: |-
+            =Reset(cb_ods_1);Reset(cb_ods_2);Reset(cb_ods_3);Reset(cb_ods_4);Reset(cb_ods_5);Reset(cb_ods_6);
+            Reset(cb_ods_7);Reset(cb_ods_8);Reset(cb_ods_5);Reset(cb_ods_6);Reset(cb_ods_7);Reset(cb_ods_8);
+            Reset(cb_ods_9);Reset(cb_ods_10);Reset(cb_ods_11);Reset(cb_ods_12);Reset(cb_ods_13);Reset(cb_ods_14);
+            Reset(cb_ods_15);Reset(cb_ods_16);Reset(cb_ods_17);Reset(cb_ods_ninguno);
+        Text: ="Botón"
+        X: =745
+        Y: =640
+        ZIndex: =13
+
