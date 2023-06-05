@@ -2,15 +2,19 @@ Datos_contraparte_internacional As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |-
         =Set(tab_seleccionada, 2);
+        
         UpdateContext({popup_faltanombre:false});
         UpdateContext({popup_institucionnoencontrada:false});
+        
         UpdateContext({sin_nombre_representante_legal_in:false});
+        UpdateContext({sin_firma_in:false});
+        
         UpdateContext({sin_nombre_responsable_institucional_in:false});
         UpdateContext({sin_cargo_in:false});
-        UpdateContext({sin_firma_in:false});
         UpdateContext({correo_in_invalido:false});
         UpdateContext({correo_in_vacio:false});
         UpdateContext({hide_border_correo_in:true});
+        
         UpdateContext({popup_nueva_contraparte_in:false});
         //Reset(inp_contraparte_in_popup_search);;
         //Set(c_n_seleccionada;"");;
@@ -120,7 +124,7 @@ Datos_contraparte_internacional As screen:
                 If(IsBlank(nombre_responsable_institucional_in_input.Text), UpdateContext({sin_nombre_responsable_institucional_in:true}), UpdateContext({sin_nombre_responsable_institucional_in:false}));
                 If(IsBlank(cargo_responsable_institucional_in_input.Text), UpdateContext({sin_cargo_in:true}), UpdateContext({sin_cargo_in:false}));
                 If(IsBlank(correo_electronico_in_input.Text),UpdateContext({correo_in_vacio:true}),UpdateContext({correo_in_vacio:false}));
-                If(sin_correo_in.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
+                //If(sin_correo_in.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
                 
                 //firma digital
                 If(IsBlank(firma_digiral_in_button),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
@@ -238,35 +242,6 @@ Datos_contraparte_internacional As screen:
                 Y: =108
                 ZIndex: =2
 
-                fondo_celeste_6 As image:
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    Height: =40
-                    HoverFill: =RGBA(186, 202, 226, 1)
-                    Image: ='background-input'
-                    ImagePosition: =ImagePosition.Fill
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
-                    Visible: =false
-                    Width: =169
-                    Y: =20
-                    ZIndex: =1
-
-                firma_digiral_in_label As label:
-                    Color: =RGBA(111, 139, 167, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =20
-                    PaddingBottom: =4
-                    PaddingLeft: =12
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Size: =10
-                    Text: ="FIRMA DIGITAL"
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =170
-                    ZIndex: =2
-
                 sin_firma_in As text:
                     BorderColor: =RGBA(238, 110, 126, 1)
                     BorderThickness: =3
@@ -287,6 +262,35 @@ Datos_contraparte_internacional As screen:
                     Visible: =sin_firma_in
                     Width: =300
                     Y: =fondo_celeste_6.Y - 1
+                    ZIndex: =1
+
+                fondo_celeste_6 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =40
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    Visible: =false
+                    Width: =169
+                    Y: =20
+                    ZIndex: =2
+
+                firma_digiral_in_label As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="FIRMA DIGITAL"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
                     ZIndex: =3
 
                 firma_digiral_in_button As radio:
@@ -311,14 +315,14 @@ Datos_contraparte_internacional As screen:
                     ZIndex: =4
 
             Promotor_unidad_solicitante_in As groupContainer.manualLayoutContainer:
-                Height: =68
-                Width: =1200
-                X: =42
+                Height: =88
+                Width: =1230
+                X: =40
                 Y: =192
                 ZIndex: =3
 
                 correo_electronico_in As groupContainer.manualLayoutContainer:
-                    Height: =60
+                    Height: =88
                     Width: =300
                     X: =900
                     ZIndex: =1
@@ -396,10 +400,31 @@ Datos_contraparte_internacional As screen:
                         ZIndex: =3
 
                 Cargo_responsable_institucional_in As groupContainer.manualLayoutContainer:
-                    Height: =65
-                    Width: =422
-                    X: =451
+                    Height: =88
+                    Width: =439
+                    X: =443
                     ZIndex: =3
+
+                    sin_cargo_in As text:
+                        BorderColor: =RGBA(238, 110, 126, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =41
+                        HoverBorderColor: =RGBA(238, 110, 126, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =13
+                        RadiusBottomRight: =13
+                        RadiusTopLeft: =13
+                        RadiusTopRight: =13
+                        TabIndex: =-1
+                        Visible: =sin_cargo_in
+                        Width: =424
+                        X: =4
+                        Y: =cargo_responsable_institucional_na_input.Y
+                        ZIndex: =1
 
                     cargo_responsable_institucional_in_input As text:
                         BorderColor: =RGBA(255, 255, 255, 1)
@@ -428,9 +453,9 @@ Datos_contraparte_internacional As screen:
                         Size: =14
                         TabIndex: =
                         Width: =422
-                        X: =1
-                        Y: =20
-                        ZIndex: =1
+                        X: =5
+                        Y: =22
+                        ZIndex: =2
 
                     cargo_responsable_institucional_in_label As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -444,34 +469,35 @@ Datos_contraparte_internacional As screen:
                         Text: ="CARGO"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
-                        ZIndex: =2
+                        ZIndex: =3
 
-                    sin_cargo_in As text:
+                Nombre_responsable_institucional_in As groupContainer.manualLayoutContainer:
+                    Height: =88
+                    Width: =427
+                    X: =4
+                    ZIndex: =4
+
+                    sin_nombre_responsable_institucional_in As text:
                         BorderColor: =RGBA(238, 110, 126, 1)
                         Default: =""
                         DisabledBorderColor: =RGBA(238, 110, 126, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =cargo_responsable_institucional_na_input.Height
+                        Height: =41
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =13
-                        RadiusBottomRight: =13
-                        RadiusTopLeft: =13
-                        RadiusTopRight: =13
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =sin_cargo_in
-                        Width: =cargo_responsable_institucional_na_input.Width - 2
+                        Visible: |
+                            =If(Len(nombre_responsable_institucional_in_input.Text)=0 && sin_nombre_responsable_institucional_in,true,false)
+                        Width: =422
                         X: =1
-                        Y: =cargo_responsable_institucional_na_input.Y
-                        ZIndex: =3
-
-                Nombre_responsable_institucional_in As groupContainer.manualLayoutContainer:
-                    Height: =65
-                    Width: =422
-                    X: =2
-                    ZIndex: =4
+                        Y: =21
+                        ZIndex: =1
 
                     nombre_responsable_institucional_in_input As text:
                         BorderColor: =RGBA(255, 255, 255, 1)
@@ -500,8 +526,8 @@ Datos_contraparte_internacional As screen:
                         TabIndex: =
                         Width: =422
                         X: =1
-                        Y: =21
-                        ZIndex: =1
+                        Y: =22
+                        ZIndex: =2
 
                     nombre_responsable_institucional_in_label As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -515,35 +541,36 @@ Datos_contraparte_internacional As screen:
                         Text: ="NOMBRE RESPONSABLE INSTITUCIONAL"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =418
-                        ZIndex: =2
-
-                    sin_nombre_responsable_institucional_in As text:
-                        BorderColor: =RGBA(238, 110, 126, 1)
-                        Default: =""
-                        DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =DisplayMode.Disabled
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_responsable_institucional_in_input.Height
-                        HoverBorderColor: =RGBA(238, 110, 126, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        RadiusBottomLeft: =12
-                        RadiusBottomRight: =12
-                        RadiusTopLeft: =12
-                        RadiusTopRight: =12
-                        TabIndex: =-1
-                        Visible: =sin_nombre_responsable_institucional_in
-                        Width: =nombre_responsable_institucional_in_input.Width - 2
-                        X: =1
-                        Y: =nombre_responsable_institucional_in_input.Y
                         ZIndex: =3
 
             Nombre_representante_legal_in As groupContainer.manualLayoutContainer:
-                Height: =65
-                Width: =871
+                Height: =70
+                Width: =881
                 X: =42
                 Y: =108
                 ZIndex: =4
+
+                sin_nombre_representante_legal_in As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: |
+                        =nombre_representante_legal_in_input.Height+4
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    TabIndex: =-1
+                    Visible: =If(Len(nombre_representante_legal_in_input.Text)=0 && sin_nombre_representante_legal_in,true,false)
+                    Width: =868
+                    X: =2
+                    Y: =24
+                    ZIndex: =1
 
                 nombre_representante_legal_in_input As text:
                     BorderColor: =RGBA(255, 255, 255, 1)
@@ -554,7 +581,7 @@ Datos_contraparte_internacional As screen:
                     DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
-                    Height: =36
+                    Height: =35
                     HintText: =""
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
@@ -571,10 +598,10 @@ Datos_contraparte_internacional As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =871
-                    X: =1
-                    Y: =21
-                    ZIndex: =1
+                    Width: =865
+                    X: =3
+                    Y: =25
+                    ZIndex: =2
 
                 nombre_representante_legal_in_label As label:
                     Color: =RGBA(111, 139, 167, 1)
@@ -588,27 +615,6 @@ Datos_contraparte_internacional As screen:
                     Text: ="NOMBRE REPRESENTANTE LEGAL"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
-                    ZIndex: =2
-
-                sin_nombre_representante_legal_in As text:
-                    BorderColor: =RGBA(238, 110, 126, 1)
-                    Default: =""
-                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    DisplayMode: =DisplayMode.Disabled
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =nombre_representante_legal_in_input.Height
-                    HoverBorderColor: =RGBA(238, 110, 126, 1)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
-                    TabIndex: =-1
-                    Visible: =sin_nombre_representante_legal_in
-                    Width: =nombre_representante_legal_in_input.Width - 2
-                    X: =1
-                    Y: =nombre_representante_legal_in_input.Y
                     ZIndex: =3
 
             pais_in As groupContainer.manualLayoutContainer:
