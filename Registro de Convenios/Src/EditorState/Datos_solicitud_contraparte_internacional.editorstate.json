@@ -2150,7 +2150,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_abrir_adjunto_1",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6227,7 +6227,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "fondo_registro_4",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7202,7 +7202,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "galleryTemplate1_9",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7818,7 +7818,14 @@
         "PressedBorderColor",
         "HoverBorderColor",
         "FocusedBorderColor",
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Select(Parent)",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ZIndex",
         "BorderThickness",
         "FocusedBorderThickness",
