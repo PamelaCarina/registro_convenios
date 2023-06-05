@@ -160,7 +160,7 @@ Datos_convenio As screen:
                 ZIndex: =2
 
                 Adjuntar_documento_oficial As groupContainer.manualLayoutContainer:
-                    Height: =140
+                    Height: =78
                     Width: =575
                     Y: =62
                     ZIndex: =1
@@ -230,7 +230,7 @@ Datos_convenio As screen:
                         ZIndex: =5
 
                     "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-                        Height: =82
+                        Height: =30
                         Items: =att_registro_10_attach_oficial.Attachments
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
@@ -264,6 +264,25 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             Width: =575
                             ZIndex: =3
+
+                        Icon2_3 As icon.Document:
+                            Color: =RGBA(17, 61, 107, 1)
+                            Height: =20
+                            Icon: =Icon.Document
+                            OnSelect: =Select(Parent)
+                            Width: =34
+                            Y: =3
+                            ZIndex: =4
+
+                        Icon2_4 As icon.Document:
+                            Color: =RGBA(17, 61, 107, 1)
+                            Height: =20
+                            Icon: =Icon.Cancel
+                            OnSelect: =
+                            Width: =34
+                            X: =541
+                            Y: =3
+                            ZIndex: =5
 
                     formatos_permitidos_lb_8 As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -300,7 +319,7 @@ Datos_convenio As screen:
                         TabIndex: =
                         Text: ="+"
                         Width: =20
-                        X: =175
+                        X: =213
                         ZIndex: =8
 
                 documentacion As label:
@@ -318,8 +337,7 @@ Datos_convenio As screen:
 
                 Adjuntar_documento_extra As groupContainer.manualLayoutContainer:
                     Height: =140
-                    Width: =280
-                    X: =295
+                    Width: =575
                     Y: =154
                     ZIndex: =3
 
@@ -426,6 +444,32 @@ Datos_convenio As screen:
                             Width: =173
                             Wrap: =false
                             ZIndex: =2
+
+                    btn_adjuntar_doc_2 As button:
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Fill: =RGBA(139, 195, 74, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        HoverBorderColor: =RGBA(139, 195, 74, 1)
+                        HoverFill: =RGBA(139, 195, 74, 0.4)
+                        OnSelect: |-
+                            =UpdateContext({show_popup_oficial: true})
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(95, 160, 20, 1)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        TabIndex: =
+                        Text: ="+"
+                        Width: =20
+                        X: =213
+                        ZIndex: =7
 
             Propósito As groupContainer.manualLayoutContainer:
                 Height: =164
