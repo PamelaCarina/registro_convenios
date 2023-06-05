@@ -495,7 +495,7 @@ Datos_convenio As screen:
                     RadiusTopRight: =12
                     TabIndex: =-1
                     Visible: =If(sin_proposito_central, true, false)
-                    Width: =574
+                    Width: =1194
                     X: =descripcion_proposito_1.X
                     Y: |
                         =descripcion_proposito_1.Y-1
