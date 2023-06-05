@@ -357,7 +357,9 @@ Mostar_solicitudes As screen:
                     PaddingRight: =12
                     PaddingTop: =0
                     Size: =13
-                    Text: =If(ThisItem.estado="Registrada",ThisItem.estado,"Solicitud incompleta")
+                    Text: |-
+                        =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
+                        ThisItem.estado
                     Width: =335
                     X: =510
                     ZIndex: =4
