@@ -100,7 +100,7 @@ Unidad_solicitante As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: =
+            OnSelect: =Navigate(Mostar_solicitudes,ScreenTransition.Fade);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -111,7 +111,6 @@ Unidad_solicitante As screen:
             Size: =14
             TabIndex: =
             Text: ="ATRÁS"
-            Visible: =false
             X: =2
             Y: =2
             ZIndex: =2

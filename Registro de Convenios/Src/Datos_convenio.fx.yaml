@@ -644,7 +644,7 @@ Datos_convenio As screen:
                             ZIndex: =1
 
                         tipo_modalidades As dropdown:
-                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada),true,false)
+                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada.modalidad),true,false)
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -652,7 +652,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(IsBlank(especificacion_convenio_recuperada),"1",LookUp(lista_modalidad,valor=especificacion_convenio_recuperada.modalidad,valor))
+                            Default: =If(IsBlank(especificacion_convenio_recuperada.modalidad),"1",LookUp(lista_modalidad,valor=especificacion_convenio_recuperada.modalidad,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
@@ -793,7 +793,7 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_solicitud As dropdown:
-                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada),true,false)
+                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud),true,false)
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -801,7 +801,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(IsBlank(especificacion_convenio_recuperada),"1",LookUp(lista_tipo_solicitud,valor=especificacion_convenio_recuperada.tipo_solicitud,valor))
+                            Default: =If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud),"1",LookUp(lista_tipo_solicitud,valor=especificacion_convenio_recuperada.tipo_solicitud,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
@@ -929,7 +929,7 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_tipologia As dropdown:
-                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada),true,false)
+                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada.tipologia),true,false)
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -937,7 +937,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(IsBlank(especificacion_convenio_recuperada),"1",LookUp(lista_tipologia,valor=especificacion_convenio_recuperada.tipologia,valor))
+                            Default: =If(IsBlank(especificacion_convenio_recuperada.tipologia),"1",LookUp(lista_tipologia,valor=especificacion_convenio_recuperada.tipologia,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
