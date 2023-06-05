@@ -124,12 +124,12 @@ Datos_contraparte_internacional As screen:
                 If(IsBlank(nombre_responsable_institucional_in_input.Text), UpdateContext({sin_nombre_responsable_institucional_in:true}), UpdateContext({sin_nombre_responsable_institucional_in:false}));
                 If(IsBlank(cargo_responsable_institucional_in_input.Text), UpdateContext({sin_cargo_in:true}), UpdateContext({sin_cargo_in:false}));
                 If(IsBlank(correo_electronico_in_input.Text),UpdateContext({correo_in_vacio:true}),UpdateContext({correo_in_vacio:false}));
-                //If(sin_correo_in.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
+                If(sin_correo_in.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
                 
                 //firma digital
                 If(IsBlank(firma_digiral_in_button),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
                 
-                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in && !correo_in_vacio,
+                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in && !correo_in_vacio && !correo_in_invalido,
                 If(IsBlank(
                         LookUp(
                             contrapartes_internacionales, 
@@ -346,7 +346,7 @@ Datos_contraparte_internacional As screen:
                         Visible: |-
                             =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-                            || correo_in_invalido) && !hide_border_correo_in || correo_in_vacio
+                            || correo_in_vacio) && !hide_border_correo_in
                             ,true,false)
                         Width: =290
                         X: =2
@@ -749,7 +749,10 @@ Datos_contraparte_internacional As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =If(sin_nombre_representante_legal_in || sin_nombre_responsable_institucional_in || sin_cargo_in || correo_in_invalido, true)
+        Visible: |-
+            =If((sin_nombre_representante_legal_in || sin_nombre_responsable_institucional_in || sin_cargo_in || correo_in_invalido) && (Len(nombre_representante_legal_in_input.Text)=0 || Len(nombre_responsable_institucional_in_input.Text)=0 ||  Len(cargo_responsable_institucional_in_input.Text)=0 || (IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
+            || correo_in_vacio) || IsBlank(firma_digiral_in_button)), true)
         Width: =676
         X: =278
         Y: =680
