@@ -882,6 +882,7 @@ Entidad_contraparte As screen:
             btn_registro_4_e_agregar As button:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
+                DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: =RGBA(139, 195, 74, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =42

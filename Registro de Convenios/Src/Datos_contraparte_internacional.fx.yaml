@@ -287,6 +287,7 @@ Datos_contraparte_internacional As screen:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     Color: =RGBA(17, 61, 107, 1)
                     Default: =If(nueva_contraparte,"",contraparte.firma_digital)
+                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Height: =40
                     HoverColor: =RGBA(17, 61, 107, 1)
                     Items: =["Sí","No"]
@@ -346,6 +347,7 @@ Datos_contraparte_internacional As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(nueva_contraparte,contraparte_in.correo_responsable_institucional,contraparte.correo_responsable_institucional)
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =39
@@ -396,6 +398,7 @@ Datos_contraparte_internacional As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(nueva_contraparte,contraparte_in.cargo_responsable_institucional,contraparte.cargo_responsable_institucional)
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
@@ -465,6 +468,7 @@ Datos_contraparte_internacional As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(nueva_contraparte,contraparte_in.nombre_responsable_institucional,contraparte.nombre_responsable_institucional)
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
@@ -534,6 +538,7 @@ Datos_contraparte_internacional As screen:
                     Color: =RGBA(17, 61, 107, 1)
                     Default: =If(nueva_contraparte,contraparte_in.nombre_representante_legal,contraparte.nombre_representante_legal)
                     DisabledColor: =RGBA(111, 139, 167, 1)
+                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
                     Height: =36

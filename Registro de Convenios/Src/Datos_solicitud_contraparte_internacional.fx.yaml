@@ -248,7 +248,7 @@ Datos_solicitud_contraparte_internacional As screen:
 
                     fondo_registro_4 As image:
                         Height: =25
-                        Image: ='background-input'
+                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -275,6 +275,8 @@ Datos_solicitud_contraparte_internacional As screen:
 
                     Icon2_1 As icon.Document:
                         Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =20
                         Icon: =Icon.Document
                         OnSelect: =Select(Parent)
@@ -284,6 +286,9 @@ Datos_solicitud_contraparte_internacional As screen:
 
                     Icon2_2 As icon.Document:
                         Color: =RGBA(17, 61, 107, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 0.4)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =20
                         Icon: =Icon.Cancel
                         OnSelect: |-
@@ -327,6 +332,7 @@ Datos_solicitud_contraparte_internacional As screen:
                 btn_adjuntar_doc As button:
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
+                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(139, 195, 74, 1)
                     FontWeight: =FontWeight.Bold
                     Height: =20
@@ -396,6 +402,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     Color: =RGBA(17, 61, 107, 1)
                     Default: =If(nueva_solicitud_contraparte,contraparte_s.nombre,contraparte.nombre)
                     DisabledColor: =RGBA(111, 139, 167, 1)
+                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
                     HintText: =""
@@ -447,7 +454,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: ='background-input'
+                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -489,6 +496,7 @@ Datos_solicitud_contraparte_internacional As screen:
                             =//"1"
                             If(nueva_solicitud_contraparte,contraparte_s.pais,contraparte.pais)
                         DisabledColor: =RGBA(111, 139, 167, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38

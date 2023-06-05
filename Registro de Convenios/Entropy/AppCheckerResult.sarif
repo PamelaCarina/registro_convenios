@@ -16888,36 +16888,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.fondo_deshabilitado"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.fondo_deshabilitado",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "fondo_deshabilitado",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.group-2-copy"
                 }
               ],

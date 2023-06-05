@@ -161,7 +161,9 @@ Mostar_solicitudes As screen:
                     OnSelect: |-
                         =Select(Parent);
                         Set(nueva_solicitud, false);
-                    Visible: =If(ThisItem.estado<>"Registrada",true,false)
+                    Visible: |-
+                        =//If(ThisItem.estado<>"Registrada";true;false)
+                        true
                     Width: =14
                     X: =1130
                     ZIndex: =2
@@ -324,9 +326,9 @@ Mostar_solicitudes As screen:
                         
                         Set(ods_recuperada,solicitud_convenio_recuperada.ods_registrada);
                         
-                        If(ThisItem.estado<>"Registrada",Navigate(Unidad_solicitante,ScreenTransition.Fade));
+                        //If(ThisItem.estado<>"Registrada";Navigate(Unidad_solicitante;ScreenTransition.Fade));;
                         
-                        
+                        Navigate(Unidad_solicitante,ScreenTransition.Fade)
                         
                     PaddingBottom: =0
                     PaddingLeft: =0
@@ -336,7 +338,9 @@ Mostar_solicitudes As screen:
                     PressedFill: =RGBA(0, 0, 0, 0)
                     TabIndex: =3
                     Text: =""
-                    Visible: =If(ThisItem.estado<>"Registrada",true,false)
+                    Visible: |-
+                        =//If(ThisItem.estado<>"Registrada";true;false)
+                        true
                     Width: =14
                     X: =1130
                     ZIndex: =3
