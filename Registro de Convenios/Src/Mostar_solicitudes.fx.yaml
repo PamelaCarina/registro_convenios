@@ -34,8 +34,9 @@ Mostar_solicitudes As screen:
                 Clear(lista_doc_off_subidos);
                 Clear(lista_doc_ext_subidos);
                 
+                Clear(contrib_interna_checkboxes);
                 
-                Navigate(Unidad_solicitante);
+                Navigate(Unidad_solicitante,ScreenTransition.Fade);
                 
                 Reset(tipo_alcance);
                 Reset(nombre_unidad_solicitante);
@@ -154,12 +155,25 @@ Mostar_solicitudes As screen:
                     FocusedBorderThickness: =2
                     Height: =80
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    OnSelect: |
+                    OnSelect: |+
                         =Set(id_convenio,ThisItem.id_convenio);
                         Set(id_estado,ThisItem.id_estado);
                         Set(nuevo,false);
                         
-                        Set(primera_vez_entidad_contraparte,true);
+                        Set(autoridad,{});
+                        Set(responsable,{});
+                        Set(especificacion_convenio_recuperada,Blank());
+                        
+                        Clear(unidades_promotoras);
+                        
+                        Clear(contrapartes_nacionales);
+                        Clear(contrapartes_internacionales);
+                        Clear(lista_doc_contr_subidos);
+                        
+                        Clear(lista_doc_off_subidos);
+                        Clear(lista_doc_ext_subidos);
+                        
+                        Clear(contrib_interna_checkboxes);
                         
                         Set(solicitud_convenio_recuperada,
                             'Convenio-PATraerestadosolicitudporpantalla'.Run(
@@ -250,10 +264,19 @@ Mostar_solicitudes As screen:
                             })
                         );
                         
+                        Navigate(Unidad_solicitante,ScreenTransition.Fade);
+                        
+                        Reset(tipo_alcance);
+                        Reset(nombre_unidad_solicitante);
+                        Reset(tipo_tipologia);
+                        Reset(pais);
+                        Reset(tipo_solicitud);
+                        Reset(tipo_modalidades);
+                        Reset(convenio_tipo);
+                        Reset(sector_politica);
+                        Reset(ambito_politica);
                         
                         
-                        
-                        Navigate(Unidad_solicitante);
                     PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
