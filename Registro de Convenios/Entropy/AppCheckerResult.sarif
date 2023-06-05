@@ -8586,18 +8586,6 @@
               "message": {
                 "text": "Error al ejecutar la regla app-InefficientDelayLoading."
               }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 6
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
-              }
             }
           ]
         }
@@ -16659,66 +16647,6 @@
               },
               "properties": {
                 "member": "nueva_solicitud",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.primera_vez_entidad_contraparte"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.primera_vez_entidad_contraparte",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "primera_vez_entidad_contraparte",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.primera_vez_especificacion_convenio"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.primera_vez_especificacion_convenio",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "primera_vez_especificacion_convenio",
                 "module": "App",
                 "type": "App"
               }
