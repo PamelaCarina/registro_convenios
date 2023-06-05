@@ -1,20 +1,22 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DTI-PAGuardarpolíticaVRIM" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="DTI - PA Guardar política VRIM" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Convenio-PAGuardarcategoríaVRIM" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Convenio - PA Guardar categoría VRIM" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_text_def" />
       <string name="ManualTriggerInput_text_1_def" />
       <string name="ManualTriggerInput_text_2_def" />
-      <string name="ManualTriggerInput_text_3_def" />
+      <number name="ManualTriggerInput_number_def" />
+      <number name="ManualTriggerInput_number_1_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
         <property name="text_2" type="string" />
-        <property name="text_3" type="string" />
+        <property name="number" type="number" />
+        <property name="number_1" type="number" />
       </object>
-      <string name="ResponseActionOutput_id_estado_def" />
+      <integer name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
-        <property name="id_estado" type="string" />
+        <property name="id_estado" type="integer" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
@@ -30,16 +32,19 @@
           </param>
           <representation mediaType="application/json">
             <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="Contribucion interna" />
+              <doc title="tipo" />
             </param>
             <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
-              <doc title="Contribucion externa" />
+              <doc title="sector" />
             </param>
             <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
-              <doc title="id" />
+              <doc title="ambito" />
             </param>
-            <param style="plain" name="text_3" path="/text_3" type="xs:string" required="true">
-              <doc title="estado" />
+            <param style="plain" name="number" path="/number" type="xs:double" required="true">
+              <doc title="id_convenio" />
+            </param>
+            <param style="plain" name="number_1" path="/number_1" type="xs:double" required="true">
+              <doc title="id_estado" />
             </param>
           </representation>
         </request>

@@ -2,7 +2,7 @@
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
     "FlowNameId": "b2b2850f-ab6c-4e1b-a1a8-81feca03e03b",
-    "Name": "DTI-PAGuardarcategoríaVRIM",
+    "Name": "Convenio-PAGuardarcategoríaVRIM",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": "7f8dc524-c8f9-ed11-8849-6045bd006f89"

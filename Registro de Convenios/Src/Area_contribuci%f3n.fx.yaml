@@ -96,15 +96,15 @@ Area_contribución As screen:
                 
                     Set(cargando, true);
                 
-                    //If(id_estado=10;Set(id_estado;11));;//pasa a Política VRIM registrada
-                    /*
-                    Set(id_estado;'DTI-PAGuardarpolíticaVRIM'.Run(
-                                                    JSON(datos_contribucion_interna);
-                                                    JSON(datos_contribucion_externa);
-                                                    id_convenio; 
+                    If(id_estado=10,Set(id_estado,11));//pasa a Política VRIM registrada
+                    
+                    Set(id_estado,'Convenio-PAGuardarpolíticaVRIM'.Run(
+                                                    JSON(datos_contribucion_interna),
+                                                    JSON(datos_contribucion_externa),
+                                                    id_convenio, 
                                                     id_estado
-                    ).id_estado);;
-                    */
+                    ).id_estado);
+                    
                     Set(cargando, false);
                 
                     Navigate(Contribución_desarrollo, ScreenTransition.Fade);

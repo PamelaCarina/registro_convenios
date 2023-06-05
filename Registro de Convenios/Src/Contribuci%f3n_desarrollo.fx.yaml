@@ -81,14 +81,14 @@ Contribución_desarrollo As screen:
                     );
                  
                     Set(cargando,true);
-                    //If(id_estado=11;Set(id_estado;12));;//pasa a ODS registrada
-                    /*
-                    Set(id_estado;'DTI-PAGuardarODS'.Run(
-                                                        JSON(datos_ods_cargados);
-                                                        id_convenio;
+                    If(id_estado=11,Set(id_estado,12));//pasa a ODS registrada
+                    
+                    Set(id_estado,'Convenio-PAGuardarODS'.Run(
+                                                        JSON(datos_ods_cargados),
+                                                        id_convenio,
                                                         id_estado
-                    ).id_estado);;
-                    */
+                    ).id_estado);
+                    
                     Set(cargando,false);
                 
                     Set(popup_confirmacion, true);
