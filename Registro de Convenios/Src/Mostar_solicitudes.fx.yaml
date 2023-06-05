@@ -225,36 +225,20 @@ Mostar_solicitudes As screen:
                         
                         Set(especificacion_convenio_recuperada,solicitud_convenio_recuperada.especificacion_registrada);
                         
-                        
-                        
-                        /*
-                        
-                        ForAll(especificacion_convenio_recuperada.;
-                            Collect(borrador_convenio_recuperado;{
-                                file:{
-                                    Name: Name;
-                                    Value: Value
-                                }
+                        ForAll(especificacion_convenio_recuperada.borrador_convenio,
+                            Collect(borrador_convenio_recuperado,{
+                                file:file
                             })
-                        );;
+                        );
                         
-                                //Set(borrador_convenio_recuperado;especificacion_convenio_recuperada.borrador_convenio);;
-                                Set(documentacion_extra_recuperada;especificacion_convenio_recuperada.documentos_extra);;
-                          
-                                ForAll(especificacion_convenio_recuperada;
-                                
-                                    Collect(solicitudes_añadir_contraparte;{
-                                        id_contraparte: id;
-                                        nombre: nombre;
-                                        pais: pais;
-                                        estado: estado;
-                                        file: file
-                                    })
-                                //);;
+                        ForAll(especificacion_convenio_recuperada.documentos_extra,
+                            Collect(documentacion_extra_recuperada,{
+                                file:file
+                            })
+                        );
                         
-                                Set(primera_vez_especificacion_convenio;false);;
-                            );;
-                        */
+                        
+                        
                         
                         Navigate(Unidad_solicitante);
                     PaddingBottom: =0

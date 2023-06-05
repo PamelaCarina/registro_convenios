@@ -112,6 +112,16 @@
       <string name="ResponseActionOutput_especificacion_registrada_def_tipo_solicitud_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_modalidad_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_proposito_central_def" />
+      <string name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_file_def_Name_def" />
+      <string name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_file_def_Value_def" />
+      <object name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_file_def">
+        <property name="Name" type="string" />
+        <property name="Value" type="string" />
+      </object>
+      <object name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def">
+        <property name="file" typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_file_def" />
+      </object>
+      <array typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def" name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def_Name_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def_Value_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def">
@@ -127,6 +137,7 @@
         <property name="tipo_solicitud" type="string" />
         <property name="modalidad" type="string" />
         <property name="proposito_central" type="string" />
+        <property name="borrador_convenio" typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def" />
         <property name="documentos_extra" typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def" />
       </object>
       <string name="ResponseActionOutput_categoria_vrim_registrada_def_convenio_de_tipo_def" />
