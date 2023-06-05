@@ -1257,6 +1257,7 @@ Datos_convenio As screen:
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
             Height: =72
+            Size: =11
             Text: ="Tipo de archivo no permitido"
             Visible: =archivo_invalido_extra
             Width: =img_registro_10_popup_bg_1.Width
@@ -1427,6 +1428,7 @@ Datos_convenio As screen:
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
             Height: =72
+            Size: =11
             Text: ="Tipo de archivo no permitido"
             Visible: =archivo_invalido
             Width: =img_registro_10_popup_bg.Width
