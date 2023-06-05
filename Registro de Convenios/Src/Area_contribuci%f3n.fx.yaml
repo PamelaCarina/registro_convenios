@@ -28,6 +28,7 @@ Area_contribución As screen:
         );
         
         UpdateContext({campos_faltantes:false});
+        UpdateContext({cambio_detectado:false})
 
     Botones_atras_siguiente_6 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -94,6 +95,7 @@ Area_contribución As screen:
                     If(cb_interculturalidad.Value=true,Collect(datos_contribucion_externa,
                     lbl_registro_9_interculturalidad.Text));
                 
+                    If(cambio_detectado,
                     Set(cargando, true);
                 
                     If(id_estado=10,Set(id_estado,11));//pasa a Política VRIM registrada
@@ -106,6 +108,7 @@ Area_contribución As screen:
                     ).id_estado);
                     
                     Set(cargando, false);
+                    );
                 
                     Navigate(Contribución_desarrollo, ScreenTransition.Fade);
                     , 
@@ -212,6 +215,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -253,6 +258,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -294,6 +301,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -335,6 +344,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -375,6 +386,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -415,6 +428,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -455,6 +470,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -495,6 +512,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -535,6 +554,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -575,6 +596,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_externa")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -648,6 +671,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -688,6 +713,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -728,6 +755,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                             	{falta:false}
                             ))
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8
@@ -768,6 +797,8 @@ Area_contribución As screen:
                             Patch(datosArea_contribucion,First(Filter(datosArea_contribucion, dato="contrib_interna")),
                             	{falta:false}
                             ));
+                        OnSelect: |-
+                            =UpdateContext({cambio_detectado:true})
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Size: =8

@@ -131,6 +131,7 @@ Datos_contraparte_internacional As screen:
                             Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input.Text)
                         )
                     ),
+                    If(cambio_detectado,
                     Set(cargando, true);
                     If(id_estado=1,Set(id_estado,2));//pasa a contraparte registrada
                     Set(nueva_contraparte_internacional,
@@ -157,7 +158,9 @@ Datos_contraparte_internacional As screen:
                             id: nueva_contraparte_internacional.id_contraparte
                     });
                     Set(cargando, false)
+                    );
                     ,
+                    If(cambio_detectado,
                     Set(cargando, true);
                     'Convenio-PAEditarcontraparteregistrada'.Run(
                         nombre_unidad_contraparte_in_input.Text,
@@ -184,7 +187,8 @@ Datos_contraparte_internacional As screen:
                             firma_digital: firma_digiral_in_button.Selected.Value
                         }
                     );
-                    Set(cargando, false)
+                    Set(cargando, false);
+                    );
                 );
                 Navigate(Entidad_contraparte, ScreenTransition.Fade);
                 );

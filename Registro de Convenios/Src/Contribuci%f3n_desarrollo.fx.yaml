@@ -29,6 +29,7 @@ Contribución_desarrollo As screen:
         );
         
         UpdateContext({campos_faltantes:false});
+        UpdateContext({cambio_detectado:false})
 
     Botones_atras_siguiente_7 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -80,7 +81,8 @@ Contribución_desarrollo As screen:
                         If(cb_ods_16.Value=true,Collect(datos_ods_cargados,"16. Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles."));
                         If(cb_ods_17.Value=true,Collect(datos_ods_cargados,"17. Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."));
                     );
-                 
+                    
+                    If(cambio_detectado,
                     Set(cargando,true);
                     If(id_estado=11,Set(id_estado,12));//pasa a ODS registrada
                     
@@ -91,6 +93,7 @@ Contribución_desarrollo As screen:
                     ).id_estado);
                     
                     Set(cargando,false);
+                    );
                 
                     Set(popup_confirmacion, true);
                     UpdateContext({popup_enviar:true});
@@ -192,6 +195,8 @@ Contribución_desarrollo As screen:
                             Reset(ThisRecord.cb)
                         )
                         */
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -246,6 +251,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -308,6 +315,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -370,6 +379,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -432,6 +443,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -556,6 +569,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -618,6 +633,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -680,6 +697,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -743,6 +762,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -806,6 +827,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -869,6 +892,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -931,6 +956,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -993,6 +1020,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -1055,6 +1084,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -1117,6 +1148,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -1180,6 +1213,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
@@ -1243,6 +1278,8 @@ Contribución_desarrollo As screen:
                     OnCheck: |-
                         =If(faltan_datos_notif=true, UpdateContext({faltan_datos_notif:false}));
                         Reset(cb_ods_ninguno)
+                    OnSelect: |-
+                        =UpdateContext({cambio_detectado:true})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Size: =8
