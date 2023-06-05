@@ -8661,47 +8661,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 73,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "'Convenio-PAEliminarcontrapartenoregistrada'.Run(ThisItem.id_contraparte)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Entidad_contraparte",
-                "type": "Entidad_contraparte.Entidades_contraparte.Contenedor_e_c.cont_solicitudes.gal_solicitudes.Icon1_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "1",
-              "2"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrBadArity",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Contribución_desarrollo.Contribución_al_desarrollo.Contenedor_c_d_s.cont_ods_1.cb_ods_1.TabIndex"
                 }
               ],

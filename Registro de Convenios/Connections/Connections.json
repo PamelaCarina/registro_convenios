@@ -53,10 +53,13 @@
     },
     "datasets": {},
     "dataSources": [
-      "Convenio-PAEliminarcontrapartenoregistrada",
-      "Convenio-PAEliminarcontrapartenoregistrada_1"
+      "Convenio-PAEliminarcontrapartenoregistrada_1",
+      "Convenio-PAEliminarcontrapartenoregistrada"
     ],
-    "dependencies": {},
+    "dependencies": {
+      "shared_office365": "a0cfc48e-daa5-45be-9f07-a10e7a164161",
+      "shared_sharepointonline": "34ec091f-afa3-468e-adb4-1b8abdcecd45"
+    },
     "dependents": [],
     "id": "024c9e41-55fc-425a-863b-0bd0d9cc9fac"
   },
@@ -330,6 +333,20 @@
     "dependents": [],
     "id": "3465d341-63ea-4404-8725-b30184dd3101"
   },
+  "34ec091f-afa3-468e-adb4-1b8abdcecd45": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "024c9e41-55fc-425a-863b-0bd0d9cc9fac"
+    ],
+    "id": "34ec091f-afa3-468e-adb4-1b8abdcecd45"
+  },
   "4502c82b-ba45-4b57-a53c-b93b726b9f1f": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -599,6 +616,20 @@
     "dependencies": {},
     "dependents": [],
     "id": "97aee764-e3f2-4ac0-a1c0-cb53c8856e0f"
+  },
+  "a0cfc48e-daa5-45be-9f07-a10e7a164161": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "024c9e41-55fc-425a-863b-0bd0d9cc9fac"
+    ],
+    "id": "a0cfc48e-daa5-45be-9f07-a10e7a164161"
   },
   "a38a9045-4d74-498a-95d2-812a9c60f721": {
     "connectionRef": {
