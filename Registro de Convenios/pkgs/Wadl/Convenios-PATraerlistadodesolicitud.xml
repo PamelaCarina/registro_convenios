@@ -8,12 +8,14 @@
       </object>
       <integer name="ResponseActionOutput_items_def_id_convenio_def" />
       <integer name="ResponseActionOutput_items_def_id_estado_def" />
-      <string name="ResponseActionOutput_items_def_estado_def" />
+      <string name="ResponseActionOutput_items_def_ticket_def" />
+      <string name="ResponseActionOutput_items_def_alcance_territorial_def" />
       <string name="ResponseActionOutput_items_def_fecha_def" />
       <object name="ResponseActionOutput_items_def">
         <property name="id_convenio" type="integer" />
         <property name="id_estado" type="integer" />
-        <property name="estado" type="string" />
+        <property name="ticket" type="string" />
+        <property name="alcance_territorial" type="string" />
         <property name="fecha" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_items_def" name="ResponseActionOutput" />

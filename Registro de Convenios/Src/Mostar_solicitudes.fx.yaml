@@ -120,8 +120,8 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
-                Text: ="Estado"
-                Width: =125
+                Text: ="Estado Solicitud"
+                Width: =155
                 X: =557
                 Y: =44
                 ZIndex: =6
@@ -136,7 +136,7 @@ Mostar_solicitudes As screen:
                     Search(
                         listado_solicitudes,
                         inp_search.Text,
-                        "estado"    
+                        "alcance_territorial"    
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
@@ -359,7 +359,7 @@ Mostar_solicitudes As screen:
                     Size: =13
                     Text: |-
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
-                        ThisItem.estado
+                        ThisItem.alcance_territorial
                     Width: =335
                     X: =510
                     ZIndex: =4
@@ -371,7 +371,7 @@ Mostar_solicitudes As screen:
                     OnSelect: =Select(Parent)
                     Size: =13
                     Text: |+
-                        =DateValue(ThisItem.fecha)
+                        =DateTimeValue(ThisItem.fecha)
                         
                     Width: =282
                     X: =63
