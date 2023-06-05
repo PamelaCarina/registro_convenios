@@ -767,7 +767,7 @@ Unidad_solicitante As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_responsable_input_2.Height+2
+                        Height: =nombre_responsable_input_2.Height+1
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -778,7 +778,7 @@ Unidad_solicitante As screen:
                         Visible: |
                             =sin_autoridad
                         Width: =334
-                        X: =nombre_responsable_input_2.X
+                        X: =nombre_responsable_input_2.X+1
                         Y: =18
                         ZIndex: =3
 
@@ -837,7 +837,7 @@ Unidad_solicitante As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =nombre_responsable_input_2.Height+2
+                        Height: =nombre_responsable_input_2.Height+1
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -848,7 +848,7 @@ Unidad_solicitante As screen:
                         Visible: |
                             =sin_autoridad
                         Width: =334
-                        X: =nombre_responsable_input_2.X
+                        X: =nombre_responsable_input_2.X+1
                         Y: =18
                         ZIndex: =3
 
