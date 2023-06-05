@@ -1,7 +1,7 @@
 Datos_contraparte_internacional As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |-
-        =UpdateContext({tab_seleccionada:2});
+        =Set(tab_seleccionada, 2);
         UpdateContext({popup_faltanombre:false});
         UpdateContext({popup_institucionnoencontrada:false});
         UpdateContext({sin_nombre_representante_legal_in:false});

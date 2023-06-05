@@ -1,8 +1,7 @@
 Entidad_contraparte As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |-
-        =UpdateContext({tab_seleccionada:1});
-        UpdateContext({sin_contraparte:false});
+        =UpdateContext({sin_contraparte:false});
         UpdateContext({contrapartes_por_revisar:false});
 
     Botones_atras_siguiente_2 As groupContainer.manualLayoutContainer:
@@ -43,23 +42,6 @@ Entidad_contraparte As screen:
                         UpdateContext({contrapartes_por_revisar:false}),UpdateContext({contrapartes_por_revisar:true}));
                 
                 If(!sin_contraparte,
-                
-                    Set(cargando, true);
-                
-                    //If(id_estado=1;Set(id_estado;2));;//pasa a contraparte registrada
-                    
-                    /*
-                    Set(id_estado;'DTI-PAGuardarcontrapartesregistradas'.Run(
-                                                                JSON(entidades_contraparte_na_cargadas);
-                                                                JSON(entidades_contraparte_in_cargadas);
-                                                                id_convenio;
-                                                                id_estado                                                
-                    ).id_estado);;
-                    */
-                
-                
-                
-                    Set(cargando, false);
                 
                     If(!contrapartes_por_revisar,Navigate(Datos_convenio,ScreenTransition.Fade));
                     
@@ -844,7 +826,8 @@ Entidad_contraparte As screen:
                     HoverColor: =Self.Color
                     HoverFill: =Self.Fill
                     OnSelect: |-
-                        =UpdateContext({tab_seleccionada: ThisItem.id})
+                        =//UpdateContext({tab_seleccionada: ThisItem.id})
+                        Set(tab_seleccionada, ThisItem.id);
                     PaddingBottom: =0
                     PaddingTop: =0
                     RadiusBottomLeft: =0

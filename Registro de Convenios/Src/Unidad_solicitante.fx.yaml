@@ -81,7 +81,7 @@ Unidad_solicitante As screen:
                 
                         Set(cargando, false);
                     );
-                
+                    Set(tab_seleccionada,1);
                     Navigate(Entidad_contraparte,ScreenTransition.Fade));
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)

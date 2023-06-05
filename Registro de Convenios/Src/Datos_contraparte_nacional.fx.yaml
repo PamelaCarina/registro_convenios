@@ -12,6 +12,7 @@ Datos_contraparte_nacional As screen:
         UpdateContext({hide_border_correo_na:true});
         Reset(inp_contraparte_na_popup_search);
         UpdateContext({cambio_detectado:false});
+        Set(tab_seleccionada, 1);
 
     Botones_atras_siguiente_3 As groupContainer.manualLayoutContainer:
         Height: =44

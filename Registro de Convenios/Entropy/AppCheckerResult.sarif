@@ -16948,36 +16948,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.tab_seleccionada"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.tab_seleccionada",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "tab_seleccionada",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_convenio.sacar_archivo_oficial"
                 }
               ],

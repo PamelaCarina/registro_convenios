@@ -14,6 +14,7 @@ Datos_solicitud_contraparte_internacional As screen:
         );
         Set(existe_adjunto, true);
         Set(num_max_doc_contr,1-CountRows(lista_doc_contr_subidos));
+        Set(tab_seleccionada, 3);
 
     Botones_atras_siguiente_10 As groupContainer.manualLayoutContainer:
         Height: =44
