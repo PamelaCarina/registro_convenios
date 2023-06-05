@@ -840,7 +840,7 @@ Datos_solicitud_contraparte_internacional As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || IsBlank(pais)) && !sin_nombre_entidad && !sin_pais_entidad,true,false)
+        Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
         Width: =676
         X: =470
         Y: =684
