@@ -851,10 +851,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =
-                            
-                            If(nombre_autoridad_solicitante_input_2)>0, ,
-                            sin_autoridad)
+                            =sin_autoridad
                         Width: =334
                         X: =nombre_responsable_input_2.X+1
                         Y: =18
