@@ -23,6 +23,7 @@ Mostar_solicitudes As screen:
                 Set(autoridad,{});
                 Set(responsable,{});
                 Set(especificacion_convenio_recuperada,Blank());
+                Set(tab_seleccionada,1);
                 
                 Clear(unidades_promotoras);
                 
@@ -327,6 +328,7 @@ Mostar_solicitudes As screen:
                         Set(ods_recuperada,solicitud_convenio_recuperada.ods_registrada);
                         
                         //If(ThisItem.estado<>"Registrada";Navigate(Unidad_solicitante;ScreenTransition.Fade));;
+                        Set(tab_seleccionada,1);
                         
                         Navigate(Unidad_solicitante,ScreenTransition.Fade)
                         
