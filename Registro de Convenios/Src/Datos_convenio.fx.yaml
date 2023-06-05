@@ -131,14 +131,15 @@ Datos_convenio As screen:
                 ZIndex: =1
 
             Documentacion As groupContainer.manualLayoutContainer:
-                Height: =294
-                Width: =575
-                X: =666
+                Height: =300
+                Width: =625
+                X: =636
                 ZIndex: =2
 
                 Adjuntar_documento_oficial As groupContainer.manualLayoutContainer:
-                    Height: =78
-                    Width: =575
+                    Height: =82
+                    Width: =585
+                    X: =25
                     Y: =62
                     ZIndex: =1
 
@@ -149,7 +150,7 @@ Datos_convenio As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =78
+                        Height: =38
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -157,10 +158,10 @@ Datos_convenio As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =sin_documentacion_oficial
+                        Visible: =If(IsBlank(Gallery1_1) && sin_documentacion_oficial, true, false)
                         Width: =fondo_registro_1.Width+1
-                        X: =fondo_registro_1.X
-                        Y: =fondo_registro_1.Y
+                        X: =5
+                        Y: =40
                         ZIndex: =1
 
                     img_subir_1 As image:
@@ -213,7 +214,8 @@ Datos_convenio As screen:
                         TemplatePadding: =0
                         TemplateSize: =30
                         Width: =575
-                        Y: =51
+                        X: =5
+                        Y: =44
                         ZIndex: =6
 
                         fondo_registro_1 As image:
@@ -351,8 +353,9 @@ Datos_convenio As screen:
                     ZIndex: =2
 
                 Adjuntar_documento_extra As groupContainer.manualLayoutContainer:
-                    Height: =140
-                    Width: =575
+                    Height: =143
+                    Width: =605
+                    X: =25
                     Y: =154
                     ZIndex: =3
 
@@ -363,7 +366,7 @@ Datos_convenio As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =140
+                        Height: =120
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -371,10 +374,11 @@ Datos_convenio As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =sin_documentacion_extra
+                        Visible: =If(IsBlank(Gallery1_2) && sin_documentacion_extra, true, false)
                         Width: =fondo_registro_2.Width+1
-                        X: =fondo_registro_2.X
-                        Y: =fondo_registro_2.Y
+                        X: |
+                            =5
+                        Y: =20
                         ZIndex: =1
 
                     img_subir_2 As image:
@@ -427,6 +431,7 @@ Datos_convenio As screen:
                         TemplateSize: =30
                         Width: =575
                         WrapCount: =0
+                        X: =5
                         Y: =25
                         ZIndex: =6
 
@@ -541,8 +546,8 @@ Datos_convenio As screen:
                         ZIndex: =7
 
             Propósito As groupContainer.manualLayoutContainer:
-                Height: =164
-                Width: =1199
+                Height: =180
+                Width: =1230
                 X: =42
                 Y: =294
                 ZIndex: =3
@@ -562,11 +567,11 @@ Datos_convenio As screen:
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
                     TabIndex: =-1
-                    Visible: =If(sin_proposito_central, true, false)
-                    Width: =1194
-                    X: =descripcion_proposito_1.X
+                    Visible: =If(Len(descripcion_proposito_1.Text)=0 && sin_proposito_central, true, false)
+                    Width: =1200
+                    X: =5
                     Y: |
-                        =descripcion_proposito_1.Y-1
+                        =62
                     ZIndex: =1
 
                 descripcion_proposito_1 As text:
@@ -597,8 +602,8 @@ Datos_convenio As screen:
                     Size: =14
                     TabIndex: =
                     Width: =1194
-                    X: =5
-                    Y: =62
+                    X: =7
+                    Y: =63
                     ZIndex: =2
 
                 propósito_central As label:

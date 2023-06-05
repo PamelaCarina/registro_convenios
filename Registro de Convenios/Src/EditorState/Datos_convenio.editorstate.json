@@ -301,7 +301,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "adjuntar_documento_label_1",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -647,7 +647,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "adjuntar_documento_label_2",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4936,7 +4936,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_adjuntar_2",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5371,7 +5371,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_adjuntar_doc_1",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5826,7 +5826,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_adjuntar_doc_2",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14572,7 +14572,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "formatos_permitidos_lb_8",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17660,7 +17660,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "img_subir_2",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20772,7 +20772,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_documento_extra",
-      "ParentIndex": 0,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21152,7 +21152,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "sin_documento_oficial",
-      "ParentIndex": 0,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
