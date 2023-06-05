@@ -1080,7 +1080,7 @@ Datos_convenio As screen:
         FontWeight: =FontWeight.Bold
         Height: =72
         Text: ="Debe completar los campos faltantes."
-        Visible: =If(sin_alcance_territorial || sin_tipologia || sin_solicitud || sin_modalidad, true)
+        Visible: =If((Len(descripcion_proposito_1.Text)=0 || IsBlank(Gallery1_1) || IsBlank(Gallery1_2)) && (sin_proposito_central || sin_documentacion_oficial || sin_documentacion_extra), true)
         Width: =856
         X: =278
         Y: =684

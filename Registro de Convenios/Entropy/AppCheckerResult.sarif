@@ -16966,6 +16966,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_convenio.sin_alcance_territorial"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_convenio.sin_alcance_territorial",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "sin_alcance_territorial",
+                "module": "Datos_convenio",
+                "type": "Datos_convenio"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Area_contribución.faltan_datos_notif"
                 }
               ],
