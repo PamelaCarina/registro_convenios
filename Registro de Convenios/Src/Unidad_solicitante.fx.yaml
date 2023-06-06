@@ -40,7 +40,9 @@ Unidad_solicitante As screen:
                 
                 //SIN PROMOTOR
                 If(CountRows(unidades_promotoras)>0, 
-                        UpdateContext({sin_unidad_promotora:false}), UpdateContext({sin_promotor:true}));
+                        UpdateContext({sin_unidad_promotora:false}), 
+                        UpdateContext({sin_unidad_promotora:true})
+                );
                 
                 //SIN AUTORIDAD
                 If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_nombre_autoridad_solicitante:true}), UpdateContext({sin_nombre_autoridad_solicitante:false}));
