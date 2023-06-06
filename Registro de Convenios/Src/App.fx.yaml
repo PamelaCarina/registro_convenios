@@ -16,6 +16,8 @@ App As appinfo:
         ClearCollect(listado_solicitudes, 
                 Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha, SortOrder.Descending));
         
+        ClearCollect(detalle_contrapartes_internacionales,'Convenio-PATraerestadosolicitudporpantalla'.Run(id_convenio));
+        
         //NOMBRES REPARTICIONES
         Set(reparticiones, Sort('DTI-PATraerreparticiones'.Run(), Nombre1));
         
