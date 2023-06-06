@@ -356,6 +356,13 @@ Mostar_solicitudes As screen:
                     X: =744
                     ZIndex: =7
 
+                Button2 As button:
+                    OnSelect: =ClearCollect(detalle_contrapartes_internacionales,'Convenio-PATraerestadosolicitudporpantalla'.Run(ThisItem.id_convenio).contrapartes_internacionales);
+                    Text: ="Button"
+                    X: =45
+                    Y: =20
+                    ZIndex: =8
+
         buscar_solicitudes As groupContainer.manualLayoutContainer:
             Height: =127
             Width: =1281
