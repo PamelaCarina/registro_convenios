@@ -943,7 +943,7 @@ Entidad_contraparte As screen:
             PaddingRight: =0
             PaddingTop: =42
             Size: =20
-            Text: ="Entidades contraparte de la Universidad de Concepción"
+            Text: ="Entidades contraparte de la Universidad de Concepción*"
             Width: =1366
             ZIndex: =3
 

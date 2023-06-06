@@ -629,7 +629,7 @@ Area_contribución As screen:
                     PaddingRight: =0
                     PaddingTop: =24
                     Size: =16
-                    Text: ="Área de contribución externa"
+                    Text: ="Área de contribución externa*"
                     Width: =626
                     ZIndex: =12
 

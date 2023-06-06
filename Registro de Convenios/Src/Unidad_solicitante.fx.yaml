@@ -39,8 +39,8 @@ Unidad_solicitante As screen:
                 );
                 
                 //SIN PROMOTOR
-                If(CountRows(unidades_promotoras)=0, 
-                        UpdateContext({sin_unidad_promotora:true}), UpdateContext({sin_promotor:false}));
+                If(CountRows(unidades_promotoras)>0, 
+                        UpdateContext({sin_unidad_promotora:false}), UpdateContext({sin_promotor:true}));
                 
                 //SIN AUTORIDAD
                 If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_nombre_autoridad_solicitante:true}), UpdateContext({sin_nombre_autoridad_solicitante:false}));
@@ -561,7 +561,7 @@ Unidad_solicitante As screen:
                         Size: =22
                         Text: ="Sin unidad promotora"
                         Width: =322
-                        X: =10
+                        X: =5
                         Y: =190
                         ZIndex: =4
 
@@ -862,7 +862,7 @@ Unidad_solicitante As screen:
                 PaddingRight: =0
                 PaddingTop: =24
                 Size: =16
-                Text: ="Unidad(es) Promotora(s)"
+                Text: ="Unidad(es) Promotora(s)*"
                 Width: =337.3
                 X: =904
                 Y: =84

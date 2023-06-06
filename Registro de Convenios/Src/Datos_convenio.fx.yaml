@@ -213,7 +213,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="BORRADOR CONVENIO"
+                        Text: ="BORRADOR CONVENIO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =274
                         ZIndex: =5
@@ -361,6 +361,7 @@ Datos_convenio As screen:
                     Size: =16
                     Text: ="Adjuntar documentación"
                     Width: =389
+                    X: =25
                     ZIndex: =2
 
                 Adjuntar_documento_extra As groupContainer.manualLayoutContainer:
@@ -429,7 +430,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="DOCUMENTOS ADICIONALES"
+                        Text: ="DOCUMENTOS ADICIONALES*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =276
                         ZIndex: =5
@@ -626,7 +627,7 @@ Datos_convenio As screen:
                     PaddingRight: =0
                     PaddingTop: =24
                     Size: =16
-                    Text: ="Propósito central"
+                    Text: ="Propósito central*"
                     Width: =500
                     X: =2
                     ZIndex: =3
