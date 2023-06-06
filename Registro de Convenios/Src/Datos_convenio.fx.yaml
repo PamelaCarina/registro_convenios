@@ -652,7 +652,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="MODALIDAD"
+                        Text: ="MODALIDAD*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =584
                         ZIndex: =1
@@ -915,7 +915,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="TIPO SOLICITUD"
+                        Text: ="TIPO SOLICITUD*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =584
                         ZIndex: =3
@@ -1054,7 +1054,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="TIPOLOGÍA"
+                        Text: ="TIPOLOGÍA*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =584
                         ZIndex: =3

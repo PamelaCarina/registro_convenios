@@ -268,7 +268,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CORREO ELECTRÓNICO"
+                        Text: ="CORREO ELECTRÓNICO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
@@ -337,7 +337,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CARGO"
+                        Text: ="CARGO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
@@ -407,7 +407,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="NOMBRE"
+                        Text: ="NOMBRE*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
@@ -709,7 +709,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CORREO ELECTRÓNICO"
+                        Text: ="CORREO ELECTRÓNICO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
@@ -778,7 +778,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CARGO"
+                        Text: ="CARGO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
@@ -848,7 +848,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="NOMBRE"
+                        Text: ="NOMBRE*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =337.3
                         ZIndex: =2
@@ -1086,7 +1086,7 @@ Unidad_solicitante As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="NOMBRE UNIDAD SOLICITANTE"
+                    Text: ="NOMBRE UNIDAD SOLICITANTE*"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
                     ZIndex: =4
@@ -1380,7 +1380,7 @@ Unidad_solicitante As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="ALCANCE TERRITORIAL"
+                    Text: ="ALCANCE TERRITORIAL*"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
                     ZIndex: =2
