@@ -449,7 +449,7 @@ Datos_solicitud_contraparte_internacional As screen:
                 Contenedor_seleccionar_pais As groupContainer.manualLayoutContainer:
                     Height: =54
                     Width: =310
-                    Y: =15
+                    Y: =13
                     ZIndex: =1
 
                     fondo_celeste_7 As image:
@@ -474,7 +474,6 @@ Datos_solicitud_contraparte_internacional As screen:
                         DisabledFill: =RGBA(0, 0, 0, 0)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =45
                         HoverBorderColor: =RGBA(238, 110, 126, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =12
@@ -485,7 +484,7 @@ Datos_solicitud_contraparte_internacional As screen:
                         Visible: =If(IsBlank(pais) && sin_pais_entidad,true,false)
                         Width: =284
                         X: =8
-                        Y: =2
+                        Y: =6
                         ZIndex: =2
 
                     pais As dropdown:

@@ -13570,66 +13570,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_solicitud_contraparte_internacional",
-                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Datos_solicitud_contraparte_internacional",
-                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.buscador_pais_input.AccessibleLabel"
                 }
               ],
@@ -13714,6 +13654,66 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Datos_solicitud_contraparte_internacional",
+                "type": "Datos_solicitud_contraparte_internacional.Datos_solicitud_entidad_contraparte_in.Contenedor_s_e_c_in.Contenedor_pais.Contenedor_seleccionar_pais.pais"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -16570,36 +16570,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Unidad_solicitante.Botones_atras_siguiente.Siguiente.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.Botones_atras_siguiente.Siguiente.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Unidad_solicitante",
-                "type": "Unidad_solicitante.Botones_atras_siguiente.Siguiente"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Unidad_solicitante.Datos_unidad_solicitante.Contenedor_d_u_s_op3.Promotor_unidad_2.Unidades_promotoras.Icon1.AccessibleLabel"
                 }
               ],
@@ -16654,6 +16624,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Unidad_solicitante.Botones_atras_siguiente.Siguiente.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Unidad_solicitante.Botones_atras_siguiente.Siguiente.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Unidad_solicitante",
+                "type": "Unidad_solicitante.Botones_atras_siguiente.Siguiente"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 0
         },
         {
           "locations": [
