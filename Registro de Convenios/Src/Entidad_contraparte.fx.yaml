@@ -42,7 +42,17 @@ Entidad_contraparte As screen:
                 
                 If(!sin_contraparte,
                 
-                    If(!contrapartes_por_revisar,Navigate(Datos_convenio,ScreenTransition.Fade));
+                    If(!contrapartes_por_revisar,
+                    Navigate(Datos_convenio,ScreenTransition.Fade);
+                
+                        If(reset_primera_vez_especificacion,    
+                            If(IsBlank(especificacion_convenio_recuperada.tipologia),Reset(tipo_tipologia));
+                            If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud),Reset(tipo_solicitud));
+                            If(IsBlank(especificacion_convenio_recuperada.modalidad),Reset(tipo_modalidades));
+                            Set(reset_primera_vez_especificacion,false)
+                        );
+                
+                    );
                     
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)

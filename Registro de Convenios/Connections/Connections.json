@@ -35,6 +35,12 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "34ec091f-afa3-468e-adb4-1b8abdcecd45": {
+          "value": "shared_sharepointonline"
+        },
+        "a0cfc48e-daa5-45be-9f07-a10e7a164161": {
+          "value": "shared_office365"
+        },
         "workflowEntityId": {
           "value": "bd22631f-ce00-ee11-8f6e-6045bd006f89"
         },
@@ -43,6 +49,12 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "a0cfc48e-daa5-45be-9f07-a10e7a164161"
+        },
+        "shared_sharepointonline": {
+          "value": "34ec091f-afa3-468e-adb4-1b8abdcecd45"
+        },
         "workflowEntityId": {
           "value": "bd22631f-ce00-ee11-8f6e-6045bd006f89"
         },
@@ -53,7 +65,6 @@
     },
     "datasets": {},
     "dataSources": [
-      "Convenio-PAEliminarcontrapartenoregistrada_1",
       "Convenio-PAEliminarcontrapartenoregistrada"
     ],
     "dependencies": {

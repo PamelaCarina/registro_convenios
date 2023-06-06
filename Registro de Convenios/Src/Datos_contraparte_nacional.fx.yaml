@@ -324,7 +324,7 @@ Datos_contraparte_nacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CORREO ELECTRÓNICO"
+                        Text: ="CORREO ELECTRÓNICO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
                         ZIndex: =3
@@ -396,7 +396,7 @@ Datos_contraparte_nacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CARGO"
+                        Text: ="CARGO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
                         ZIndex: =3
@@ -466,7 +466,7 @@ Datos_contraparte_nacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL"
+                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =418
                         ZIndex: =3
@@ -525,7 +525,7 @@ Datos_contraparte_nacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="FIRMA DIGITAL"
+                    Text: ="FIRMA DIGITAL*"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =170
                     ZIndex: =3
@@ -619,7 +619,7 @@ Datos_contraparte_nacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="NOMBRE REPRESENTANTE LEGAL"
+                    Text: ="NOMBRE REPRESENTANTE LEGAL*"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
                     ZIndex: =3

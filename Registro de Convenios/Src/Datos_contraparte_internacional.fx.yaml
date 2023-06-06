@@ -288,7 +288,7 @@ Datos_contraparte_internacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="FIRMA DIGITAL"
+                    Text: ="FIRMA DIGITAL*"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =170
                     ZIndex: =3
@@ -394,7 +394,7 @@ Datos_contraparte_internacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CORREO ELECTRÓNICO"
+                        Text: ="CORREO ELECTRÓNICO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
                         ZIndex: =3
@@ -466,7 +466,7 @@ Datos_contraparte_internacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CARGO"
+                        Text: ="CARGO*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
                         ZIndex: =3
@@ -538,7 +538,7 @@ Datos_contraparte_internacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL"
+                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL*"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =418
                         ZIndex: =3
@@ -612,7 +612,7 @@ Datos_contraparte_internacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="NOMBRE REPRESENTANTE LEGAL"
+                    Text: ="NOMBRE REPRESENTANTE LEGAL*"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
                     ZIndex: =3
@@ -943,7 +943,7 @@ Datos_contraparte_internacional As screen:
             ZIndex: =10
 
         btn_registro_10_politica_2 As button:
-            OnSelect: |
+            OnSelect: |-
                 =Set(nueva_solicitud_contraparte,true);
                 Set(id_contraparte,Blank());
                 Clear(lista_doc_contr_subidos);
@@ -952,11 +952,12 @@ Datos_contraparte_internacional As screen:
                     pais: "",
                     file: ""
                 });
+                
+                Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
+                
+                Reset(pais);
                 Reset(att_attach_doc_sin);
                 Reset(nombre_solicitud_unidad_contraparte_in_input);
-                //Reset(pais_solicitud_in_input);;
-                Reset(pais);
-                Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
             Size: =14
             Text: ="SOLICITAR CONTRAPARTE"
             Width: =260
