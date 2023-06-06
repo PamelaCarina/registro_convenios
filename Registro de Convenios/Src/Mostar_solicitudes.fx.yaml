@@ -127,9 +127,9 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
-                Text: ="Estado Solicitud"
-                Width: =155
-                X: =431
+                Text: ="Contraparte Nacional"
+                Width: =255
+                X: =343
                 Y: =44
                 ZIndex: =4
 
@@ -322,9 +322,9 @@ Mostar_solicitudes As screen:
                     Size: =13
                     Text: |-
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
-                        If(IsBlank(ThisItem.ticket), "Solicitud incompleta", "Registrada")
+                        ThisItem.nombres_contrapartes_nacionales
                     Width: =236
-                    X: =384
+                    X: =296
                     ZIndex: =4
 
                 lbl_gal_fecha As label:
