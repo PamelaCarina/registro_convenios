@@ -2023,7 +2023,6 @@ Unidad_solicitante As screen:
         FontWeight: =FontWeight.Semibold
         Height: =72
         Text: ="*Campo obligatorio"
-        Visible: =If((IsBlank(tipo_alcance) || Len(nombre_autoridad_solicitante_input_2.Text)=0 || IsBlank(nombre_responsable_input_2.Text) || CountRows(unidades_promotoras)=0) && (sin_alcance || sin_nombre_autoridad_solicitante|| sin_nombre_responsable || sin_unidad_promotora), true, false)
         Width: =856
         X: =278
         Y: =684
