@@ -78,6 +78,7 @@ Datos_contraparte_nacional As screen:
             Size: =14
             TabIndex: =-1
             Text: ="ELIMINAR"
+            Visible: =If(nueva_contraparte,false,true)
             X: =936
             Y: =2
             ZIndex: =2
