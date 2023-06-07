@@ -110,7 +110,7 @@ Mostar_solicitudes As screen:
                 Height: =38
                 Text: ="Alcance Territorial"
                 Width: =200
-                X: =630
+                X: =608
                 Y: =44
                 ZIndex: =2
 
@@ -130,7 +130,7 @@ Mostar_solicitudes As screen:
                 Height: =38
                 Text: ="Contraparte asociada"
                 Width: =255
-                X: =283
+                X: =275
                 Y: =44
                 ZIndex: =4
 
@@ -350,7 +350,7 @@ Mostar_solicitudes As screen:
                             )
                         )
                     Width: =290
-                    X: =236
+                    X: =228
                     ZIndex: =4
 
                 lbl_gal_fecha As label:
@@ -362,7 +362,7 @@ Mostar_solicitudes As screen:
                     Text: |+
                         =DateTimeValue(ThisItem.fecha)
                         
-                    Width: =282
+                    Width: =180
                     X: =33
                     ZIndex: =6
 
@@ -376,8 +376,8 @@ Mostar_solicitudes As screen:
                     PaddingTop: =0
                     Size: =13
                     Text: =Upper(ThisItem.alcance_territorial)
-                    Width: =236
-                    X: =580
+                    Width: =260
+                    X: =558
                     ZIndex: =7
 
                 lbl_gal_estado As label:
@@ -395,7 +395,7 @@ Mostar_solicitudes As screen:
                             "SOLICITUD INCOMPLETA"
                         )
                     Width: =236
-                    X: =840
+                    X: =850
                     ZIndex: =8
 
             lbl_estado_solicitud As label:
@@ -404,7 +404,7 @@ Mostar_solicitudes As screen:
                 Height: =38
                 Text: ="Estado solicitud"
                 Width: =200
-                X: =888
+                X: =898
                 Y: =44
                 ZIndex: =6
 
