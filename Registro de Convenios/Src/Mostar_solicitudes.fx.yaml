@@ -120,7 +120,7 @@ Mostar_solicitudes As screen:
                 Height: =38
                 Text: ="Fecha"
                 Width: =120
-                X: =107
+                X: =77
                 Y: =44
                 ZIndex: =3
 
@@ -128,9 +128,9 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
-                Text: ="Contraparte Nacional"
+                Text: ="Contraparte asociada"
                 Width: =255
-                X: =343
+                X: =283
                 Y: =44
                 ZIndex: =4
 
@@ -322,15 +322,35 @@ Mostar_solicitudes As screen:
                     Size: =13
                     Text: |-
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
-                        Index(ThisItem.nombres_contrapartes_nacionales, 1).Value
+                        //Index(ThisItem.nombres_contrapartes_nacionales; 1).Value
                         //Index(ThisItem.nombres_contrapartes_internacionales, 1).Value
                         
                         /*If(Len(Index(ThisItem.nombres_contrapartes_internacionales, 1).Value) = 0,
                         Index(ThisItem.nombres_contrapartes_nacionales, 1).Value,
                         Index(ThisItem.nombres_contrapartes_internacionales, 1).Value
                         );*/
-                    Width: =236
-                    X: =296
+                        
+                        If(CountRows(ThisItem.nombres_contrapartes_internacionales)>0,
+                            If(CountRows(ThisItem.nombres_contrapartes_nacionales)>0,
+                                //si hay contrapartes internacionales y nacionales
+                                    First(ThisItem.nombres_contrapartes_internacionales).Value
+                                    //"internacional si, nacional si"
+                                ,
+                                //si hay contrapartes internacionales y no nacionales
+                                    First(ThisItem.nombres_contrapartes_internacionales).Value
+                                    //"internacional si, nacional no"
+                            ),
+                            If(CountRows(ThisItem.nombres_contrapartes_nacionales)>0,
+                                //si no hay contrapartes internacionales y pero si nacionales
+                                    First(ThisItem.nombres_contrapartes_nacionales).Value
+                                    //"internacional no, nacional si"
+                                ,
+                                //si no hay contrapartes internacionales ni nacionales
+                                    "Sin contrapartes asociadas"
+                            )
+                        )
+                    Width: =290
+                    X: =236
                     ZIndex: =4
 
                 lbl_gal_fecha As label:
@@ -343,7 +363,7 @@ Mostar_solicitudes As screen:
                         =DateTimeValue(ThisItem.fecha)
                         
                     Width: =282
-                    X: =63
+                    X: =33
                     ZIndex: =6
 
                 lbl_gal_alcance As label:
@@ -361,14 +381,6 @@ Mostar_solicitudes As screen:
                     Width: =236
                     X: =744
                     ZIndex: =7
-
-                Button2 As button:
-                    OnSelect: =ClearCollect(detalle_contrapartes_internacionales,'Convenio-PATraerestadosolicitudporpantalla'.Run(ThisItem.id_convenio).contrapartes_internacionales);
-                    Text: ="Button"
-                    Visible: =false
-                    X: =45
-                    Y: =20
-                    ZIndex: =8
 
         buscar_solicitudes As groupContainer.manualLayoutContainer:
             Height: =127
