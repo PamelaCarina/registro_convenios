@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "nombre_contraparte_para_filtro",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

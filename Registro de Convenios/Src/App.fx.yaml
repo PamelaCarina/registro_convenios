@@ -22,6 +22,39 @@ App As appinfo:
         //AUTORIDADES MÁXIMAS
         Set(autoridades_maximas,Sort('DTI-PATraerautoridadesmáximas'.Run(), field_3));
         
+        //MOSTRAR SOLICITUDES
+        Clear(nombre_contraparte_para_filtro);
+        Clear(listado_solicitudes_recuperadas);
+        ForAll(listado_solicitudes,
+        If(CountRows(nombres_contrapartes_internacionales)>0,
+            If(CountRows(nombres_contrapartes_nacionales)>0,
+                //si hay contrapartes internacionales y nacionales
+                Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
+            ,
+                //si hay contrapartes internacionales y no nacionales
+                Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
+            ),
+            If(CountRows(nombres_contrapartes_nacionales)>0,
+                //si no hay contrapartes internacionales y pero si nacionales
+                Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_nacionales).Value)
+                ,
+                //si no hay contrapartes internacionales ni nacionales
+                Collect(nombre_contraparte_para_filtro,"SIN CONTRAPARTES ASOCIADAS")
+                    
+            )
+        );
+            Collect(listado_solicitudes_recuperadas,{
+                alcance_territorial:alcance_territorial,
+                fecha:fecha,
+                id_convenio:id_convenio,
+                id_estado:id_estado,
+                nombres_contrapartes_nacionales:nombres_contrapartes_nacionales,
+                nombres_contrapartes_internacionales:nombres_contrapartes_internacionales,
+                ticket:ticket,
+                nombre_contraparte_para_filtro:Last(nombre_contraparte_para_filtro).Value
+            })
+        );
+        
         Set(cargando, false);
         
         //NOMBRES CONTRAPARTES INTERNACIONALES
@@ -31,6 +64,7 @@ App As appinfo:
         Set(paises,Sort('DTI-PATraerpaíses'.Run().paises,Nombre_x0020_Pa_x00ed_s));
         
         //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
+        
         
         //UNIDAD SOLICITANTE
         ClearCollect(organismos_actividad, 
