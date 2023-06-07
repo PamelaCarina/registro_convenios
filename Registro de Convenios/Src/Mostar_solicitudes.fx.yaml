@@ -320,8 +320,15 @@ Mostar_solicitudes As screen:
                     PaddingRight: =12
                     PaddingTop: =0
                     Size: =13
-                    Text: |
+                    Text: |-
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
+                        Index(ThisItem.nombres_contrapartes_nacionales, 1).Value
+                        //Index(ThisItem.nombres_contrapartes_internacionales, 1).Value
+                        
+                        /*If(Len(Index(ThisItem.nombres_contrapartes_internacionales, 1).Value) = 0,
+                        Index(ThisItem.nombres_contrapartes_nacionales, 1).Value,
+                        Index(ThisItem.nombres_contrapartes_internacionales, 1).Value
+                        );*/
                     Width: =236
                     X: =296
                     ZIndex: =4
@@ -455,13 +462,6 @@ Mostar_solicitudes As screen:
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
-
-    Button3 As button:
-        OnSelect: =
-        Text: ="Button"
-        X: =320
-        Y: =324
-        ZIndex: =7
 
     grp_registro_main_loading As group:
         Height: =5
