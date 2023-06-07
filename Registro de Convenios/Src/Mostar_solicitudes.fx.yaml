@@ -140,8 +140,7 @@ Mostar_solicitudes As screen:
                 FocusedBorderThickness: =0
                 Height: =226
                 Items: |-
-                    =//listado_solicitudes
-                    Search(
+                    =Search(
                         listado_solicitudes,
                         inp_search.Text,
                         "alcance_territorial"    
@@ -321,9 +320,8 @@ Mostar_solicitudes As screen:
                     PaddingRight: =12
                     PaddingTop: =0
                     Size: =13
-                    Text: |-
+                    Text: |
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
-                        //ThisItem.nombres_contrapartes_nacionales
                     Width: =236
                     X: =296
                     ZIndex: =4
@@ -457,6 +455,13 @@ Mostar_solicitudes As screen:
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
+
+    Button3 As button:
+        OnSelect: =
+        Text: ="Button"
+        X: =320
+        Y: =324
+        ZIndex: =7
 
     grp_registro_main_loading As group:
         Height: =5
