@@ -1447,7 +1447,7 @@ Contribución_desarrollo As screen:
             RadiusTopRight: =12
             Size: =14
             TabIndex: =If(popup_confirmacion,1,-1)
-            Text: ="ENVIAR"
+            Text: ="ACEPTAR"
             Visible: =popup_confirmacion
             X: =844
             Y: =488

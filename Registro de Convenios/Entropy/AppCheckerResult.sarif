@@ -8718,6 +8718,90 @@
               "message": {
                 "text": "Error al ejecutar la regla app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 6
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -9298,36 +9382,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.sin_convenio_tipo.AccessibleLabel"
                 }
               ],
@@ -9382,6 +9436,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_c_d_t.Contenedor_seleccionable_5.buscador_c_t_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -9448,36 +9532,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.buscador_s_p_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.buscador_s_p_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.buscador_s_p_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.sin_sector_politica.AccessibleLabel"
                 }
               ],
@@ -9532,6 +9586,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.buscador_s_p_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.buscador_s_p_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_s_d_p.Contenedor_seleccionable_7.buscador_s_p_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -9658,36 +9742,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.buscador_a_p_input.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.buscador_a_p_input.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Información_convenio",
-                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.buscador_a_p_input"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.sin_ambito_politica.AccessibleLabel"
                 }
               ],
@@ -9742,6 +9796,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.buscador_a_p_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.buscador_a_p_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Información_convenio",
+                "type": "Información_convenio.Información_de_convenio.Contenedor_d_i_c.Contenedor_a_d_p.Contenedor_seleccionable_6.buscador_a_p_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [

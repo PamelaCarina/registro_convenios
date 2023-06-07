@@ -15,6 +15,7 @@ Datos_solicitud_contraparte_internacional As screen:
         Set(existe_adjunto, true);
         Set(num_max_doc_contr,1-CountRows(lista_doc_contr_subidos));
         Set(tab_seleccionada, 3);
+        Set(popup_confirmacion,false);
 
     Botones_atras_siguiente_10 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -79,53 +80,14 @@ Datos_solicitud_contraparte_internacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
-                =
-                UpdateContext({máximo_solicitudes:false});
+                =UpdateContext({máximo_solicitudes:false});
                 
                 If(CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0,UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
                 If(IsBlank(pais.Selected),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 
-                //If(CountRows(att_attach_doc_sin.Attachments)=0,UpdateContext({sin_documento:true}),UpdateContext({sin_documento:false}));
-                /*
-                Set(doc_contraparte;{
-                        file:{//doc1
-                            name: First(Contenido_doc_sin).Name;
-                            contentBytes: First(Contenido_doc_sin).Value
-                        }
-                });;
-                */
                 If(!sin_nombre_entidad && !sin_pais_entidad,
-                    Set(cargando, true);
-                    If(id_estado=1,Set(id_estado,4));//pasa a contraparte internacional solicitada
-                    If(id_estado=2,Set(id_estado,4));//pasa a contraparte internacional solicitada
-                
-                    If(IsBlank(id_contraparte),
-                        Set(id_contraparte,
-                        'Convenio-PACrearsolicitudcontrapartenoregistrada'.Run(id_convenio).id_contraparte)
-                    );
-                
-                    Set(nueva_contrapartes_no_registradas_in,'Convenio-PAGuardarcontrapartenoregistrada'.Run(
-                                                            Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
-                                                            pais.Selected.pais,
-                                                            id_convenio,
-                                                            id_estado,
-                                                            id_contraparte
-                    ));
-                
-                    Set(id_estado,nueva_contrapartes_no_registradas_in.id_estado);
-                
-                    Collect(solicitudes_añadir_contraparte,{
-                        id_contraparte: id_contraparte,
-                        nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
-                        pais: pais.Selected.pais,
-                        estado: "En espera",
-                        file: First(lista_doc_contr_subidos).file
-                    });
-                    
-                    Set(cargando, false);
-                
-                    Navigate(Entidad_contraparte,ScreenTransition.Fade);
+                    Set(popup_confirmacion,true);
                 
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
@@ -870,12 +832,147 @@ Datos_solicitud_contraparte_internacional As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =9
+            ZIndex: =15
 
         img_loading_8 As image:
             Image: =loading
             Visible: =cargando
             X: =633
             Y: =334
+            ZIndex: =16
+
+    grp_registro_5_popup_2 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =16
+
+        fig_registro_5_popup_bg_6 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =popup_confirmacion
+            Width: =1366
+            ZIndex: =9
+
+        img_registro_5_popup_bg_2 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Visible: =popup_confirmacion
+            Width: =709
+            X: =327
+            Y: =208
             ZIndex: =10
+
+        lbl_registro_popup_5_titulo_2 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Confirmación"
+            Visible: =popup_confirmacion
+            Width: =412
+            X: =359
+            Y: =234
+            ZIndex: =11
+
+        lbl_registro_popup_5_correo_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(17, 61, 107, 1)
+            Height: =117
+            Size: =14
+            Text: ="Su solicitud será ingresada y no podrá ser modificada."
+            Visible: =popup_confirmacion
+            Width: =645
+            X: =359
+            Y: =314
+            ZIndex: =12
+
+        btn_registro_5_popup_enviar_1 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(cargando, true);
+                If(id_estado=1,Set(id_estado,4));//pasa a contraparte internacional solicitada
+                If(id_estado=2,Set(id_estado,4));//pasa a contraparte internacional solicitada
+                
+                If(IsBlank(id_contraparte),
+                    Set(id_contraparte,
+                    'Convenio-PACrearsolicitudcontrapartenoregistrada'.Run(id_convenio).id_contraparte)
+                );
+                
+                Set(nueva_contrapartes_no_registradas_in,'Convenio-PAGuardarcontrapartenoregistrada'.Run(
+                                                        Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                                                        pais.Selected.pais,
+                                                        id_convenio,
+                                                        id_estado,
+                                                        id_contraparte
+                ));
+                
+                Set(id_estado,nueva_contrapartes_no_registradas_in.id_estado);
+                
+                Collect(solicitudes_añadir_contraparte,{
+                    id_contraparte: id_contraparte,
+                    nombre: Upper(nombre_solicitud_unidad_contraparte_in_input.Text),
+                    pais: pais.Selected.pais,
+                    estado: "En espera",
+                    file: First(lista_doc_contr_subidos).file
+                });
+                
+                Set(cargando, false);
+                Set(popup_confirmacion,false);
+                
+                Navigate(Entidad_contraparte,ScreenTransition.Fade);
+                //
+                
+                
+                
+                //Navigate(Mostar_solicitudes;ScreenTransition.Fade);;
+                //Set(cargando;false);;
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,1,-1)
+            Text: ="ACEPTAR"
+            Visible: =popup_confirmacion
+            X: =844
+            Y: =488
+            ZIndex: =13
+
+        btn_registro_5_popup_atras_2 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Set(popup_confirmacion, false)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,0,-1)
+            Text: ="CANCELAR"
+            Visible: =popup_confirmacion
+            X: =652
+            Y: =488
+            ZIndex: =14
 
