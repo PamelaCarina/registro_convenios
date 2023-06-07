@@ -14,6 +14,7 @@ Unidad_solicitante As screen:
         UpdateContext({sin_unidad_promotora:false});
         
         UpdateContext({cambio_detectado:false});
+        UpdateContext({sin_unidad:false});
 
     Botones_atras_siguiente As groupContainer.manualLayoutContainer:
         Height: =44
@@ -1055,6 +1056,27 @@ Unidad_solicitante As screen:
                     Width: =300
                     ZIndex: =4
 
+                sin_nombre_unidad_1 As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =fondo_celeste_8.Height-2
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    TabIndex: =-1
+                    Visible: =sin_unidad && IsBlank(nombre_unidad_input)
+                    Width: =fondo_celeste_8.Width-4
+                    X: =3
+                    Y: =21
+                    ZIndex: =5
+
             buscar_1 As image:
                 Height: =20
                 Image: =ico_search
@@ -1481,6 +1503,7 @@ Unidad_solicitante As screen:
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
+                        If(!IsBlank(nombre_unidad_input),
                         Set(cargando, true);
                 
                         If(IsBlank(id_convenio),
@@ -1506,7 +1529,7 @@ Unidad_solicitante As screen:
                         })
                     );
                     
-                    Set(cargando, false);
+                    Set(cargando, false));
                     UpdateContext({popup_promotor: false});
                 );
                 
