@@ -874,8 +874,23 @@ Datos_contraparte_internacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
                 =UpdateContext({popup_faltanombre:false, popup_institucionnoencontrada:false});
+                Set(popup_in_ya_ingresada,false);
                 
                 If(IsBlank(inp_contraparte_in_popup_search.Text)=false,
+                
+                //
+                If(!IsBlank(
+                        LookUp(
+                            contrapartes_internacionales, 
+                            Lower(nombre_entidad_contraparte) = Lower(inp_contraparte_in_popup_search.Text)
+                        )
+                    ),
+                    //mostrar error
+                    Set(popup_in_ya_ingresada,true)
+                ,    
+                
+                //
+                
                     Set(cargando, true);
                     Set(datos_contraparte, 'DTI-PATraerinstitucióninternacional'.Run(inp_contraparte_in_popup_search.Text));
                     Set(contraparte_in,{
@@ -892,7 +907,9 @@ Datos_contraparte_internacional As screen:
                     Set(cargando, false);
                     If(IsBlank(contraparte_in.nombre_entidad_contraparte),
                         UpdateContext({popup_institucionnoencontrada:true}),
-                        Set(popup_contraparte_in,false))
+                        Set(popup_contraparte_in,false)
+                    )
+                );
                     ,
                     UpdateContext({popup_faltanombre:true})
                 )
@@ -977,12 +994,23 @@ Datos_contraparte_internacional As screen:
             Y: =488
             ZIndex: =11
 
+        lbl_contraparte_in_existente_popup As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Institución ya registrada"
+            Visible: =popup_in_ya_ingresada
+            Width: =540
+            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =12
+
         Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_c_in
             Width: =620
             X: =370
             Y: =397
-            ZIndex: =12
+            ZIndex: =13
 
             opciones_nombre_c_in As gallery.galleryVertical:
                 DelayItemLoading: =true

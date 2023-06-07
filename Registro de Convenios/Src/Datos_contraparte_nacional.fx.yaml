@@ -1165,8 +1165,22 @@ Datos_contraparte_nacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
                 =UpdateContext({popup_faltarut:false, popup_institucionnoencontrada:false});
+                Set(popup_na_ya_ingresada,false);
                 
                 If(IsBlank(inp_contraparte_na_popup_search.Text)=false,
+                //
+                If(
+                    !IsBlank(
+                        LookUp(
+                            contrapartes_nacionales, 
+                            Lower(rut_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
+                        )
+                    ),
+                    Set(popup_na_ya_ingresada,true)
+                //    "mostrar error"
+                ,
+                
+                    //
                     Set(cargando, true);
                     Set(datos_contraparte, 'DTI-PATraeinstituciónnacional'.Run(inp_contraparte_na_popup_search.Text));
                     Set(contraparte_na,{
@@ -1190,7 +1204,9 @@ Datos_contraparte_nacional As screen:
                     Set(cargando, false);
                     If(IsBlank(contraparte_na.nombre_entidad_contraparte),
                         UpdateContext({popup_institucionnoencontrada:true}),
-                        Set(popup_contraparte_na,false))
+                        Set(popup_contraparte_na,false)
+                    )
+                );
                     ,
                     UpdateContext({popup_faltarut:true})
                 )
@@ -1277,6 +1293,17 @@ Datos_contraparte_nacional As screen:
             X: =360
             Y: =488
             ZIndex: =13
+
+        lbl_contraparte_na_existente_popup As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Text: ="Institución ya registrada"
+            Visible: =popup_na_ya_ingresada
+            Width: =540
+            X: =(fondo_blanco_4.X+fondo_blanco_4.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =14
 
     cont_loading_1 As group:
         Height: =5

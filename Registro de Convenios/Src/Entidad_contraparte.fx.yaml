@@ -884,6 +884,9 @@ Entidad_contraparte As screen:
                 HoverFill: =RGBA(139, 195, 74, 0.4)
                 OnSelect: |
                     =Set(contraparte, {});
+                    Set(popup_na_ya_ingresada,false);
+                    Set(popup_in_ya_ingresada,false);
+                    
                     If(tab_seleccionada=1,
                         Navigate(Datos_contraparte_nacional,ScreenTransition.Fade);
                         Set(contraparte_na, {});

@@ -17,6 +17,8 @@ Mostar_solicitudes As screen:
         
         //PANTALLA - ENTIDAD CONTRAPARTE
         Set(tab_seleccionada,1);
+        Set(contraparte_na,Blank());
+        Set(contraparte_in,Blank());
         Clear(contrapartes_nacionales);
         Clear(contrapartes_internacionales);
         Clear(solicitudes_añadir_contraparte);
