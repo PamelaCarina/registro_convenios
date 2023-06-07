@@ -852,6 +852,16 @@ Area_contribución As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
+    lbl_campo_obligatorio_7 As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Text: ="*Campo obligatorio"
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =6
+
     cont_loading_7 As group:
         Height: =5
         Width: =5
@@ -872,5 +882,5 @@ Area_contribución As screen:
             Visible: =cargando
             X: =632
             Y: =323
-            ZIndex: =6
+            ZIndex: =7
 

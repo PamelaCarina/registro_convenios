@@ -963,7 +963,7 @@ Entidad_contraparte As screen:
         Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
-        ZIndex: =7
+        ZIndex: =4
 
     lbl_contrapartes_por_revisar As label:
         Align: =Align.Right
@@ -975,7 +975,17 @@ Entidad_contraparte As screen:
         Width: =856
         X: =278
         Y: =684
-        ZIndex: =9
+        ZIndex: =5
+
+    lbl_campo_obligatorio_1 As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Text: ="*Campo obligatorio"
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =6
 
     cont_loading_4 As group:
         Height: =5
@@ -990,12 +1000,12 @@ Entidad_contraparte As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =12
+            ZIndex: =7
 
         img_loading_4 As image:
             Image: =loading
             Visible: =cargando
             X: =632
             Y: =323
-            ZIndex: =13
+            ZIndex: =8
 

@@ -26,6 +26,7 @@ Mostar_solicitudes As screen:
         Set(especificacion_convenio_recuperada,Blank());
         Clear(lista_doc_off_subidos);
         Clear(lista_doc_ext_subidos);
+        Reset(descripcion_proposito_1);
         
         //PANTALLA - INFORMACIÓN CONVENIO
         Set(categoria_vrim_recuperada,Blank());
@@ -322,7 +323,7 @@ Mostar_solicitudes As screen:
                     Size: =13
                     Text: |-
                         =//If(ThisItem.estado="Registrada";ThisItem.estado;"Solicitud incompleta")
-                        ThisItem.nombres_contrapartes_nacionales
+                        //ThisItem.nombres_contrapartes_nacionales
                     Width: =236
                     X: =296
                     ZIndex: =4

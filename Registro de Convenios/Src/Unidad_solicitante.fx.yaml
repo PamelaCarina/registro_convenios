@@ -1380,11 +1380,21 @@ Unidad_solicitante As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
+    lbl_campo_obligatorio As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Text: ="*Campo obligatorio"
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =5
+
     promotor_popup As groupContainer.manualLayoutContainer:
         Height: =Unidad_solicitante.Height
         Visible: =popup_promotor
         Width: =Unidad_solicitante.Width
-        ZIndex: =5
+        ZIndex: =6
 
         fig_registro_5_popup_bg As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1618,7 +1628,7 @@ Unidad_solicitante As screen:
         Height: =Unidad_solicitante.Height
         Visible: =popup_responsable
         Width: =Unidad_solicitante.Width
-        ZIndex: =6
+        ZIndex: =7
 
         fig_registro_5_popup_bg_1 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1796,7 +1806,7 @@ Unidad_solicitante As screen:
             =//popup_contraparte_in
             popup_autoridad
         Width: =Unidad_solicitante.Width
-        ZIndex: =7
+        ZIndex: =8
 
         fig_registro_5_popup_bg_5 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -2009,22 +2019,12 @@ Unidad_solicitante As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =8
+            ZIndex: =9
 
         img_loading As image:
             Image: =loading
             Visible: =cargando
             X: =633
             Y: =334
-            ZIndex: =9
-
-    lbl_faltan_datos_7 As label:
-        Color: =RGBA(17, 61, 107, 1)
-        FontWeight: =FontWeight.Semibold
-        Height: =72
-        Text: ="*Campo obligatorio"
-        Width: =856
-        X: =278
-        Y: =684
-        ZIndex: =10
+            ZIndex: =10
 

@@ -1104,11 +1104,21 @@ Datos_convenio As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
+    lbl_campo_obligatorio_5 As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Text: ="*Campo obligatorio"
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =5
+
     Adjuntar_popup_extra As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_extra
         Width: =Datos_convenio.Width
-        ZIndex: =5
+        ZIndex: =6
 
         fig_registro_10_popup_bg_1 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1309,7 +1319,7 @@ Datos_convenio As screen:
         Height: =Datos_convenio.Height
         Visible: =show_popup_oficial
         Width: =Datos_convenio.Width
-        ZIndex: =6
+        ZIndex: =7
 
         fig_registro_10_popup_bg As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1522,12 +1532,12 @@ Datos_convenio As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =7
+            ZIndex: =8
 
         img_loading_5 As image:
             Image: =loading
             Visible: =cargando
             X: =632
             Y: =323
-            ZIndex: =8
+            ZIndex: =9
 

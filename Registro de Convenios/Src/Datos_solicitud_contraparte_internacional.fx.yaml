@@ -615,11 +615,45 @@ Datos_solicitud_contraparte_internacional As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
+    lbl_faltan_datos_10 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Ha alcanzado el máximo de solicitudes."
+        Visible: =If(máximo_solicitudes, true)
+        Width: =676
+        X: =278
+        Y: =684
+        ZIndex: =5
+
+    lbl_faltan_datos_12 As label:
+        Align: =Align.Right
+        Color: =RGBA(238, 110, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Text: ="Debe completar los campos faltantes."
+        Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
+        Width: =676
+        X: =470
+        Y: =684
+        ZIndex: =6
+
+    lbl_campo_obligatorio_4 As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Text: ="*Campo obligatorio"
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =7
+
     Adjuntar_popup_documentacion_sin As groupContainer.manualLayoutContainer:
         Height: =Datos_convenio.Height
         Visible: =show_popup_documentacion
         Width: =Datos_convenio.Width
-        ZIndex: =5
+        ZIndex: =8
 
         fig_registro_10_popup_bg_3 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -822,30 +856,6 @@ Datos_solicitud_contraparte_internacional As screen:
             X: =360
             Y: =418
             ZIndex: =9
-
-    lbl_faltan_datos_10 As label:
-        Align: =Align.Right
-        Color: =RGBA(238, 110, 126, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =72
-        Text: ="Ha alcanzado el máximo de solicitudes."
-        Visible: =If(máximo_solicitudes, true)
-        Width: =676
-        X: =278
-        Y: =684
-        ZIndex: =7
-
-    lbl_faltan_datos_12 As label:
-        Align: =Align.Right
-        Color: =RGBA(238, 110, 126, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =72
-        Text: ="Debe completar los campos faltantes."
-        Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
-        Width: =676
-        X: =470
-        Y: =684
-        ZIndex: =8
 
     cont_loading_8 As group:
         Height: =5

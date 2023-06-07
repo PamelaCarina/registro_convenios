@@ -284,7 +284,7 @@ Datos_contraparte_nacional As screen:
                         TabIndex: =-1
                         Visible: |
                             =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
-                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && !hide_border_correo_na
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_vacio
                             ,true,false)
                         Width: =correo_electronico_na_input.Width
                         X: =2
@@ -358,7 +358,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =If(sin_cargo_na,true,false)
+                        Visible: =If(CountRows(Split(Trim(cargo_responsable_institucional_na_input.Text),""))=0 && sin_cargo_na,true,false)
                         Width: =424
                         X: =2
                         Y: =20
@@ -428,7 +428,7 @@ Datos_contraparte_nacional As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =If(sin_nombre_responsable_institucional_na,true,false)
+                        Visible: =If(CountRows(Split(Trim(nombre_responsable_institucional_na_input.Text),""))=0 && sin_nombre_responsable_institucional_na,true,false)
                         Width: =424
                         X: =2
                         Y: =20
@@ -582,7 +582,7 @@ Datos_contraparte_nacional As screen:
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
                     TabIndex: =-1
-                    Visible: =If(sin_nombre_representante_legal_na ,true,false)
+                    Visible: =If(CountRows(Split(Trim(nombre_representante_legal_na_input.Text),""))=0 && sin_nombre_representante_legal_na ,true,false)
                     Width: =872
                     X: =2
                     Y: =22
@@ -1069,11 +1069,21 @@ Datos_contraparte_nacional As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =5
 
+    lbl_campo_obligatorio_2 As label:
+        Color: =RGBA(17, 61, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Text: ="*Campo obligatorio"
+        Width: =856
+        X: =278
+        Y: =684
+        ZIndex: =6
+
     contraparte_nacional_popup As groupContainer.manualLayoutContainer:
         Height: =Unidad_solicitante.Height
         Visible: =popup_contraparte_na
         Width: =Unidad_solicitante.Width
-        ZIndex: =6
+        ZIndex: =7
 
         fig_registro_5_popup_bg_2 As rectangle:
             BorderStyle: =BorderStyle.None
@@ -1280,12 +1290,12 @@ Datos_contraparte_nacional As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =7
+            ZIndex: =8
 
         img_loading_1 As image:
             Image: =loading
             Visible: =cargando
             X: =633
             Y: =334
-            ZIndex: =8
+            ZIndex: =9
 
