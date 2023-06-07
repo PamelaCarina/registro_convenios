@@ -1503,7 +1503,7 @@ Unidad_solicitante As screen:
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
-                        If(!IsBlank(nombre_unidad_input),
+                        //If(!IsBlank(nombre_unidad_input);
                         Set(cargando, true);
                 
                         If(IsBlank(id_convenio),
@@ -1529,7 +1529,7 @@ Unidad_solicitante As screen:
                         })
                     );
                     
-                    Set(cargando, false));
+                    Set(cargando, false);
                     UpdateContext({popup_promotor: false});
                 );
                 
