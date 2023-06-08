@@ -6,8 +6,8 @@ App As appinfo:
         //////////////////////////////////LLAMADOS A FLUJOS//////////////////////////////////////
         
         //USUARIO LOGEADO
-        //Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run(User().Email));
-        Set(persona_solicitante; 'VRIM-PATraedatosdeusuario'.Run("melissa@udec.cl"));
+        Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run(User().Email));
+        //Set(persona_solicitante; 'VRIM-PATraedatosdeusuario'.Run("melissa@udec.cl"));
         
         //LISTAS DESPLEGABLES
         Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
