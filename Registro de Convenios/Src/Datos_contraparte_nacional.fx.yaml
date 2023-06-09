@@ -1312,7 +1312,7 @@ Datos_contraparte_nacional As screen:
             PaddingLeft: =12
             Size: =10
             Text: ="Si la institución no es encontrada por nombre, digite su RUT"
-            Width: =640
+            Width: =620
             X: =374
             Y: =399
             ZIndex: =15
