@@ -17374,6 +17374,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.es_rut"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.es_rut",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "es_rut",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_convenio.sacar_archivo_oficial"
                 }
               ],

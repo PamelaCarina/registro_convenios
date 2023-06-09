@@ -1822,7 +1822,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_contraparte_na_popup_buscar",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2211,7 +2211,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_contraparte_na_popup_cancelar",
-      "ParentIndex": 10,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2508,7 +2508,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_registro_10_politica_1",
-      "ParentIndex": 9,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9546,7 +9546,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "formatos_permitidos_lb_6",
-      "ParentIndex": 11,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10181,7 +10181,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon1_2",
-      "ParentIndex": 13,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11324,7 +11324,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_contraparte_na_existente_popup",
-      "ParentIndex": 7,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11634,7 +11634,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_contraparte_na_popup_faltandatos",
-      "ParentIndex": 6,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11944,7 +11944,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_contraparte_na_popup_noencontrado",
-      "ParentIndex": 8,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

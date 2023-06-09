@@ -1167,6 +1167,23 @@ Datos_contraparte_nacional As screen:
                 =UpdateContext({popup_faltarut:false, popup_institucionnoencontrada:false});
                 Set(popup_na_ya_ingresada,false);
                 
+                If(
+                    //con dígito verificador
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}.\d{3}.\d{3}-[a-z0-9]") ||
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}.\d{3}.\d{3}-[a-z0-9]") ||
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}\d{3}\d{3}-[a-z0-9]") ||
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}\d{3}\d{3}-[a-z0-9]") //||
+                
+                    //sin dígito verificador
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}.\d{3}.\d{3}") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}.\d{3}.\d{3}") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}\d{3}\d{3}") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}\d{3}\d{3}") 
+                ,
+                    UpdateContext({es_rut:true}),
+                    UpdateContext({es_rut:false})
+                );
+                
                 If(IsBlank(inp_contraparte_na_popup_search.Text)=false,
                 //
                 If(
