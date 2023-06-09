@@ -1165,6 +1165,7 @@ Datos_contraparte_nacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
                 =UpdateContext({popup_faltarut:false, popup_institucionnoencontrada:false});
+                UpdateContext({es_rut:false});
                 Set(popup_na_ya_ingresada,false);
                 
                 If(
