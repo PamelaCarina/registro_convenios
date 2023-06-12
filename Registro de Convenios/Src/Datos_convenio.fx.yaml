@@ -977,7 +977,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(IsBlank(especificacion_convenio_recuperada.tipologia),"1",LookUp(lista_tipologia,valor=especificacion_convenio_recuperada.tipologia,valor))
+                            Default: =If(nuevo||IsBlank(especificacion_convenio_recuperada.tipologia),"1",LookUp(lista_tipologia,valor=especificacion_convenio_recuperada.tipologia,valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
