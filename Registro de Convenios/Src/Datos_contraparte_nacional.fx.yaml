@@ -127,13 +127,15 @@ Datos_contraparte_nacional As screen:
                         UpdateContext({sin_cargo_na:true}), 
                         UpdateContext({sin_cargo_na:false}));
                 
-                If(IsBlank(correo_electronico_na_input.Text),UpdateContext({correo_na_vacio:true}),UpdateContext({correo_na_vacio:false}));
-                If(sin_correo_na.Visible,UpdateContext({correo_na_invalido:true}),UpdateContext({correo_na_invalido:false}) );
+                If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+                "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false),
+                        UpdateContext({correo_na_invalido:true}),
+                        UpdateContext({correo_na_invalido:false}) );
                 
                 //firma digital
                 If(IsBlank(firma_digiral_na_button),UpdateContext({sin_firma_na:true}),UpdateContext({sin_firma_na:false}));
                 
-                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !sin_firma_na && !correo_na_vacio && !correo_na_invalido,
+                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !sin_firma_na && !correo_na_invalido,
                     If(IsBlank(
                             LookUp(
                                 contrapartes_nacionales, 
@@ -283,9 +285,13 @@ Datos_contraparte_nacional As screen:
                         RadiusTopLeft: =13
                         RadiusTopRight: =13
                         TabIndex: =-1
-                        Visible: |
-                            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+                        Visible: |-
+                            =/*If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text));
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_vacio
+                            ;true;false)
+                            */
+                            If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_invalido
                             ,true,false)
                         Width: =correo_electronico_na_input.Width
                         X: =2
@@ -1042,9 +1048,9 @@ Datos_contraparte_nacional As screen:
         Size: =9
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
-            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+            =/*If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text));
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && !hide_border_correo_na
-            ,true,false)
+            ;true;false)*/
         Width: =676
         X: =600
         Y: =626
@@ -1054,14 +1060,16 @@ Datos_contraparte_nacional As screen:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        PaddingRight: =90
+        Size: =11
         Text: ="Debe completar los campos faltantes."
         Visible: |-
             =If((sin_nombre_representante_legal_na || sin_nombre_responsable_institucional_na || sin_cargo_na || correo_na_invalido) && (Len(nombre_representante_legal_na_input.Text)=0 || CountRows(Split(Trim(descripcion_proposito_1.Text),""))=0 || Len(nombre_responsable_institucional_na_input.Text)=0 || CountRows(Split(Trim(nombre_responsable_institucional_na_input.Text),""))=0 || Len(cargo_responsable_institucional_na_input.Text)=0 || (IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && !hide_border_correo_na || IsBlank(firma_digiral_na_button)), true)
         Width: =676
-        X: =278
-        Y: =680
+        X: =690
+        Y: =657
         ZIndex: =4
 
     BannerUdeC_3 As HeaderUdeC:
@@ -1073,11 +1081,13 @@ Datos_contraparte_nacional As screen:
     lbl_campo_obligatorio_2 As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =72
-        Text: ="*Campo obligatorio"
+        Height: =20
+        PaddingLeft: =45
+        Size: =11
+        Text: ="*Campos obligatorios."
         Width: =856
-        X: =278
-        Y: =684
+        X: =45
+        Y: =657
         ZIndex: =6
 
     contraparte_nacional_popup As groupContainer.manualLayoutContainer:
@@ -1268,6 +1278,7 @@ Datos_contraparte_nacional As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Institución no encontrada. Por favor intente nuevamente"
             Visible: =popup_institucionnoencontrada
             Width: =481
@@ -1279,6 +1290,7 @@ Datos_contraparte_nacional As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Ingresar nombre o RUT institución"
             Visible: =popup_faltarut
             Width: =540
@@ -1316,6 +1328,7 @@ Datos_contraparte_nacional As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Institución ya registrada"
             Visible: =popup_na_ya_ingresada
             Width: =540

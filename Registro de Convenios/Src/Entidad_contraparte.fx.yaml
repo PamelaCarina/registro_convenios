@@ -977,7 +977,7 @@ Entidad_contraparte As screen:
         Height: =20
         PaddingRight: =90
         Size: =10
-        Text: ="No puede continuar con solicitudes de contraparte en revisión"
+        Text: ="No puede continuar con solicitudes de contraparte en revisión."
         Visible: =contrapartes_por_revisar
         Width: =600
         X: =766
@@ -990,7 +990,7 @@ Entidad_contraparte As screen:
         Height: =20
         PaddingLeft: =45
         Size: =11
-        Text: ="*Campos obligatorios"
+        Text: ="*Campos obligatorios."
         Width: =280
         X: =42
         Y: =657
