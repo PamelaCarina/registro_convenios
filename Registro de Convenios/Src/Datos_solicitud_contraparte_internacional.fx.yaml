@@ -4,7 +4,6 @@ Datos_solicitud_contraparte_internacional As screen:
         =UpdateContext({sin_nombre_entidad:false});
         UpdateContext({sin_pais_entidad:false});
         //UpdateContext({sin_documento:false});
-        UpdateContext({máximo_solicitudes:false});
         If(nueva_solicitud_contraparte,
             UpdateContext({mostrar_lista_archivos:false});
             Set(existe_adjunto, false);
@@ -80,9 +79,7 @@ Datos_solicitud_contraparte_internacional As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
-                =UpdateContext({máximo_solicitudes:false});
-                
-                If(CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0,UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
+                =If(CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0,UpdateContext({sin_nombre_entidad:true}),UpdateContext({sin_nombre_entidad:false}));
                 
                 If(IsBlank(pais.Selected),UpdateContext({sin_pais_entidad:true}),UpdateContext({sin_pais_entidad:false}));
                 
@@ -559,56 +556,35 @@ Datos_solicitud_contraparte_internacional As screen:
             Width: =1366
             ZIndex: =2
 
-    lbl_faltan_datos_9 As label:
-        Align: =Align.Right
-        Color: =RGBA(238, 110, 126, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =72
-        Text: ="Debe completar los campos faltantes."
-        Visible: =//If(sin_nombre_representante_legal_na || sin_nombre_responsable_institucional_na || sin_cargo_na || correo_na_invalido; true)
-        Width: =676
-        X: =278
-        Y: =680
-        ZIndex: =3
-
     BannerUdeC_10 As HeaderUdeC:
         Bienvenido: =If(persona_solicitante.sexo_social="F","Bienvenida,","Bienvenido,")
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
-    lbl_faltan_datos_10 As label:
-        Align: =Align.Right
-        Color: =RGBA(238, 110, 126, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =72
-        Text: ="Ha alcanzado el máximo de solicitudes."
-        Visible: =If(máximo_solicitudes, true)
-        Width: =676
-        X: =278
-        Y: =684
-        ZIndex: =5
-
     lbl_faltan_datos_12 As label:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        PaddingRight: =90
         Text: ="Debe completar los campos faltantes."
         Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
         Width: =676
-        X: =470
-        Y: =684
+        X: =690
+        Y: =657
         ZIndex: =6
 
     lbl_campo_obligatorio_4 As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =72
+        Height: =20
+        PaddingLeft: =45
+        Size: =11
         Text: ="*Campo obligatorio"
         Width: =856
-        X: =278
-        Y: =684
+        X: =45
+        Y: =657
         ZIndex: =7
 
     Adjuntar_popup_documentacion_sin As groupContainer.manualLayoutContainer:

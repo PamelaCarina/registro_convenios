@@ -119,18 +119,28 @@ Datos_contraparte_internacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =//REPRESENTANTE LEGAL
-                If(CountRows(Split(Trim(nombre_representante_legal_in_input.Text),""))=0, UpdateContext({sin_nombre_representante_legal_in:true}), UpdateContext({sin_nombre_representante_legal_in:false}));
+                If(CountRows(Split(Trim(nombre_representante_legal_in_input.Text),""))=0, 
+                        UpdateContext({sin_nombre_representante_legal_in:true}), 
+                        UpdateContext({sin_nombre_representante_legal_in:false}));
                 
                 //RESPONSABLE INSTITUCIONAL
-                If(CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text),""))=0, UpdateContext({sin_nombre_responsable_institucional_in:true}), UpdateContext({sin_nombre_responsable_institucional_in:false}));
-                If(CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text),""))=0, UpdateContext({sin_cargo_in:true}), UpdateContext({sin_cargo_in:false}));
-                If(IsBlank(correo_electronico_in_input.Text),UpdateContext({correo_in_vacio:true}),UpdateContext({correo_in_vacio:false}));
-                If(sin_correo_in.Visible,UpdateContext({correo_in_invalido:true}),UpdateContext({correo_in_invalido:false}) );
+                If(CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text),""))=0, 
+                        UpdateContext({sin_nombre_responsable_institucional_in:true}), 
+                        UpdateContext({sin_nombre_responsable_institucional_in:false}));
+                
+                If(CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text),""))=0, 
+                        UpdateContext({sin_cargo_in:true}), 
+                        UpdateContext({sin_cargo_in:false}));
+                
+                If(IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+                "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false ,
+                        UpdateContext({correo_in_invalido:true}),
+                        UpdateContext({correo_in_invalido:false}) );
                 
                 //firma digital
                 If(IsBlank(firma_digiral_in_button),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
                 
-                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in && !correo_in_vacio && !correo_in_invalido,
+                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in && !correo_in_invalido,
                 If(IsBlank(
                         LookUp(
                             contrapartes_internacionales, 
@@ -348,7 +358,7 @@ Datos_contraparte_internacional As screen:
                         Visible: |-
                             =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
                             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-                            && correo_in_vacio)
+                            && correo_in_invalido)
                             ,true,false)
                         Width: =290
                         X: =2
@@ -736,10 +746,10 @@ Datos_contraparte_internacional As screen:
         Size: =9
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
-            =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+            =/*If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text));
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
             && correo_in_vacio) 
-            ,true,false)
+            ;true;false)*/
         Width: =676
         X: =608
         Y: =424
@@ -749,7 +759,9 @@ Datos_contraparte_internacional As screen:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        PaddingRight: =90
+        Size: =11
         Text: ="Debe completar los campos faltantes."
         Visible: |-
             =If((sin_nombre_representante_legal_in || sin_nombre_responsable_institucional_in || sin_cargo_in || correo_in_invalido) && 
@@ -761,9 +773,9 @@ Datos_contraparte_internacional As screen:
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
             || correo_in_vacio) || 
             IsBlank(firma_digiral_in_button)), true)
-        Width: =676
-        X: =278
-        Y: =680
+        Width: =600
+        X: =766
+        Y: =657
         ZIndex: =4
 
     BannerUdeC_4 As HeaderUdeC:
@@ -775,11 +787,13 @@ Datos_contraparte_internacional As screen:
     lbl_campo_obligatorio_3 As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =72
-        Text: ="*Campo obligatorio"
-        Width: =856
-        X: =278
-        Y: =684
+        Height: =20
+        PaddingLeft: =45
+        Size: =11
+        Text: ="*Campos obligatorios"
+        Width: =500
+        X: =45
+        Y: =657
         ZIndex: =6
 
     contraparte_internacional_popup As groupContainer.manualLayoutContainer:
@@ -953,6 +967,7 @@ Datos_contraparte_internacional As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Institución no encontrada. Por favor intente nuevamente"
             Visible: =popup_institucionnoencontrada
             Width: =481
@@ -964,6 +979,7 @@ Datos_contraparte_internacional As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Ingresar nombre institución"
             Visible: =popup_faltanombre
             Width: =540
@@ -998,6 +1014,7 @@ Datos_contraparte_internacional As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Institución ya registrada"
             Visible: =popup_in_ya_ingresada
             Width: =540
