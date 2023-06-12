@@ -1388,12 +1388,13 @@ Unidad_solicitante As screen:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        Size: =10
         Text: ="Debe completar los campos faltantes."
         Visible: =If((IsBlank(tipo_alcance) || Len(nombre_autoridad_solicitante_input_2.Text)=0 || IsBlank(nombre_responsable_input_2.Text) || CountRows(unidades_promotoras)=0) && (sin_alcance || sin_nombre_autoridad_solicitante|| sin_nombre_responsable || sin_unidad_promotora), true, false)
-        Width: =856
-        X: =278
-        Y: =684
+        Width: =280
+        X: =1003
+        Y: =657
         ZIndex: =3
 
     BannerUdeC As HeaderUdeC:
@@ -1405,11 +1406,13 @@ Unidad_solicitante As screen:
     lbl_campo_obligatorio As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =72
-        Text: ="*Campo obligatorio"
-        Width: =856
-        X: =278
-        Y: =684
+        Height: =20
+        PaddingLeft: =45
+        Size: =10
+        Text: ="*Campos obligatorios."
+        Width: =280
+        X: =42
+        Y: =657
         ZIndex: =5
 
     promotor_popup As groupContainer.manualLayoutContainer:
@@ -1732,7 +1735,7 @@ Unidad_solicitante As screen:
             OnSelect: |
                 =UpdateContext({popup_usuarionoencontrado:false, popup_faltacorreo:false,popup_correonoudec:false});
                 
-                If(IsMatch(inp_responsable_popup_search.Text,Match.Email)=true&&IsEmpty(inp_responsable_popup_search.Text)=false,
+                If(IsMatch(inp_responsable_popup_search.Text,Match.Email)=true&&false=false,
                     Set(dominio_correo,Lower(Last(ForAll(Split(inp_responsable_popup_search.Text,"@"), {Result: ThisRecord.Value})).Result));
                     If(dominio_correo="udec.cl",
                         UpdateContext({popup_correonoudec:false}),

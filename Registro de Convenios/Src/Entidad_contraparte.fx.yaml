@@ -954,12 +954,13 @@ Entidad_contraparte As screen:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        Size: =10
         Text: ="Debe ingresar al menos una contraparte."
         Visible: =sin_contraparte
-        Width: =856
-        X: =278
-        Y: =684
+        Width: =310
+        X: =972
+        Y: =657
         ZIndex: =3
 
     BannerUdeC_2 As HeaderUdeC:
@@ -972,22 +973,25 @@ Entidad_contraparte As screen:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        Size: =10
         Text: ="No puede continuar con solicitudes de contraparte en revisión"
         Visible: =contrapartes_por_revisar
-        Width: =856
-        X: =278
-        Y: =684
+        Width: =450
+        X: =828
+        Y: =657
         ZIndex: =5
 
     lbl_campo_obligatorio_1 As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =72
-        Text: ="*Campo obligatorio"
-        Width: =856
-        X: =278
-        Y: =684
+        Height: =20
+        PaddingLeft: =45
+        Size: =10
+        Text: ="*Campos obligatorios"
+        Width: =280
+        X: =42
+        Y: =657
         ZIndex: =6
 
     cont_loading_4 As group:
