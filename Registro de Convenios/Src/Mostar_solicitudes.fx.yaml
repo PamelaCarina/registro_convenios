@@ -65,6 +65,7 @@ Mostar_solicitudes As screen:
                 
                 Navigate(Unidad_solicitante,ScreenTransition.Fade);
                 
+                Set(nuevo,true);
                 Reset(nombre_unidad_solicitante);
                 Reset(tipo_alcance);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
