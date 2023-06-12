@@ -1389,11 +1389,12 @@ Unidad_solicitante As screen:
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
         Height: =20
-        Size: =10
+        PaddingRight: =90
+        Size: =11
         Text: ="Debe completar los campos faltantes."
         Visible: =If((IsBlank(tipo_alcance) || Len(nombre_autoridad_solicitante_input_2.Text)=0 || IsBlank(nombre_responsable_input_2.Text) || CountRows(unidades_promotoras)=0) && (sin_alcance || sin_nombre_autoridad_solicitante|| sin_nombre_responsable || sin_unidad_promotora), true, false)
-        Width: =280
-        X: =1003
+        Width: =383
+        X: =983
         Y: =657
         ZIndex: =3
 
@@ -1408,7 +1409,7 @@ Unidad_solicitante As screen:
         FontWeight: =FontWeight.Semibold
         Height: =20
         PaddingLeft: =45
-        Size: =10
+        Size: =11
         Text: ="*Campos obligatorios."
         Width: =280
         X: =42
