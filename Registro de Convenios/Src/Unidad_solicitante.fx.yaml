@@ -1,6 +1,6 @@
 Unidad_solicitante As screen:
     Fill: =RGBA(235, 238, 251, 1)
-    OnVisible: |
+    OnVisible: |-
         =UpdateContext({sin_alcance:false});
         
         UpdateContext({sin_nombre_autoridad_solicitante:false});
@@ -30,33 +30,64 @@ Unidad_solicitante As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =//ESPECIFICACIONES
-                If(IsBlank(tipo_alcance), UpdateContext({sin_alcance:true}), UpdateContext({sin_alcance:false}));
+                If(IsBlank(tipo_alcance), 
+                    UpdateContext({sin_alcance:true}), 
+                    UpdateContext({sin_alcance:false})
+                );
                 
                 //SIN NOMBRE UNIDAD SOLICITANTE
                 If(CountRows(organismos_actividad)>1,
-                    If(IsBlank(nombre_unidad_solicitante),UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}))
+                    If(IsBlank(nombre_unidad_solicitante),
+                        UpdateContext({sin_unidad:true}), 
+                        UpdateContext({sin_unidad:false}))
                 ,
-                    If(IsBlank(nombre_unidad_input),UpdateContext({sin_unidad:true}), UpdateContext({sin_unidad:false}))
+                    If(IsBlank(nombre_unidad_input),
+                        UpdateContext({sin_unidad:true}), 
+                        UpdateContext({sin_unidad:false}))
                 );
                 
                 //SIN PROMOTOR
                 If(CountRows(unidades_promotoras)>0, 
-                        UpdateContext({sin_unidad_promotora:false}), 
-                        UpdateContext({sin_unidad_promotora:true})
+                    UpdateContext({sin_unidad_promotora:false}), 
+                    UpdateContext({sin_unidad_promotora:true})
                 );
                 
                 //SIN AUTORIDAD
-                If(IsBlank(nombre_autoridad_solicitante_input_2.Text), UpdateContext({sin_nombre_autoridad_solicitante:true}), UpdateContext({sin_nombre_autoridad_solicitante:false}));
-                If(IsBlank(cargo_autoridad_input_2.Text), UpdateContext({sin_cargo_autoridad_solicitante:true}), UpdateContext({sin_cargo_autoridad_solicitante:false}));
-                If(IsBlank(correo_autoridad_input_2.Text), UpdateContext({sin_correo_autoridad_solicitante:true}), UpdateContext({sin_correo_autoridad_solicitante:false}));
+                If(IsBlank(nombre_autoridad_solicitante_input_2.Text), 
+                    UpdateContext({sin_nombre_autoridad_solicitante:true}), 
+                    UpdateContext({sin_nombre_autoridad_solicitante:false})
+                );
+                If(IsBlank(cargo_autoridad_input_2.Text), 
+                    UpdateContext({sin_cargo_autoridad_solicitante:true}), 
+                    UpdateContext({sin_cargo_autoridad_solicitante:false})
+                );
+                If(IsBlank(correo_autoridad_input_2.Text), 
+                    UpdateContext({sin_correo_autoridad_solicitante:true}), 
+                    UpdateContext({sin_correo_autoridad_solicitante:false})
+                );
+                If(IsBlank(telefono_autoridad_input_2.Text),
+                    UpdateContext({tel:"0"}),
+                    UpdateContext({tel:telefono_autoridad_input_2.Text})
+                );
                 
                 //SIN RESPONSABLE
-                If(IsBlank(nombre_responsable_input_2.Text), UpdateContext({sin_nombre_responsable:true}), UpdateContext({sin_nombre_responsable:false}));
-                If(IsBlank(cargo_responsable_input_2.Text), UpdateContext({sin_cargo_responsable:true}), UpdateContext({sin_cargo_responsable:false}));
-                If(IsBlank(correo_responsable_input_2.Text), UpdateContext({sin_correo_responsable:true}), UpdateContext({sin_correo_responsable:false}));
+                If(IsBlank(nombre_responsable_input_2.Text), 
+                    UpdateContext({sin_nombre_responsable:true}), 
+                    UpdateContext({sin_nombre_responsable:false})
+                );
+                If(IsBlank(cargo_responsable_input_2.Text), 
+                    UpdateContext({sin_cargo_responsable:true}), 
+                    UpdateContext({sin_cargo_responsable:false})
+                );
+                If(IsBlank(correo_responsable_input_2.Text), 
+                    UpdateContext({sin_correo_responsable:true}), 
+                    UpdateContext({sin_correo_responsable:false})
+                );
                 
-                If(CountRows(organismos_actividad)=1,UpdateContext({uni:First(organismos_actividad).Reparticion}), UpdateContext({
-                uni: nombre_unidad_solicitante.Selected.Reparticion}));
+                If(CountRows(organismos_actividad)=1,
+                    UpdateContext({uni:First(organismos_actividad).Reparticion}), 
+                    UpdateContext({uni: nombre_unidad_solicitante.Selected.Reparticion})
+                );
                 
                 If(!sin_alcance && !sin_nombre_autoridad_solicitante && !sin_cargo_autoridad_solicitante && !sin_correo_autoridad_solicitante && !sin_nombre_responsable && !sin_cargo_responsable && !sin_correo_responsable && !sin_unidad_promotora && !sin_unidad, 
                 
@@ -78,7 +109,8 @@ Unidad_solicitante As screen:
                                                                 nombre_autoridad_solicitante_input_2.Text,
                                                                 cargo_autoridad_input_2.Text,
                                                                 correo_autoridad_input_2.Text,
-                                                                telefono_autoridad_input_2.Text,
+                                                                tel,
+                                                                //telefono_autoridad_input_2.Text;
                                                                 nombre_responsable_input_2.Text,
                                                                 cargo_responsable_input_2.Text,
                                                                 correo_responsable_input_2.Text,
