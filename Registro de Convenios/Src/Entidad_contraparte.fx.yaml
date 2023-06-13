@@ -19,7 +19,7 @@ Entidad_contraparte As screen:
             OnSelect: |-
                 =If(Value(tipo_alcance.Selected.id)=2,
                     //si es nacional
-                        If(CountRows(contrapartes_nacionales)>0,
+                        If(CountRows(contrapartes_nacionales)>0 || CountRows(solicitudes_añadir_contraparte)>0,
                             //si es nacional y existen contrapartes nacionales
                             UpdateContext({sin_contraparte:false});
                         ,
@@ -28,7 +28,7 @@ Entidad_contraparte As screen:
                         )
                     ,
                     //si no es nacional, es internacional
-                        If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0,
+                        If(CountRows(contrapartes_nacionales)>0 || CountRows(contrapartes_internacionales)>0 || CountRows(solicitudes_añadir_contraparte)>0,
                             //si es internacional y existe alguna contraparte
                             UpdateContext({sin_contraparte:false});
                         ,
