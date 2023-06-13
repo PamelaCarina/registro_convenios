@@ -1164,7 +1164,9 @@ Datos_convenio As screen:
                     Set(test_attachment,First(att_registro_10_attach_extra.Attachments).Value);
                     If(attachment_extension="jpg" || attachment_extension="jpeg" || attachment_extension="pdf" ||
                         attachment_extension="doc" || attachment_extension="docx" ||
-                        attachment_extension="xls" || attachment_extension="xlsx",
+                        attachment_extension="xls" || attachment_extension="xlsx" || attachment_extension="JPG" || attachment_extension="JPEG" || attachment_extension="PDF" ||
+                        attachment_extension="DOC" || attachment_extension="DOCX" ||
+                        attachment_extension="XLS" || attachment_extension="XLSX",
                 
                         Set(existe_adjunto_extra, true);
                         UpdateContext({archivo_invalido_extra:false});
