@@ -2089,11 +2089,12 @@ Unidad_solicitante As screen:
             Y: =334
             ZIndex: =10
 
-    Label3 As label:
+    Label_debug As label:
         Height: =60
         Text: |-
             =Concatenate("id_convenio: ",id_convenio," - ","id_estado: ",id_estado,"
             ","cambio_detectado: ",cambio_detectado)
+        Visible: =false
         Width: =290
         X: =983
         Y: =110
