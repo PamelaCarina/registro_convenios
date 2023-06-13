@@ -1161,8 +1161,8 @@ Datos_contraparte_nacional As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="NOMBRE/RUT INSTITUCIÓN"
-            Width: =250
+            Text: ="NOMBRE/RUT INSTITUCIÓN (CON DÍGITO VERIFICADOR)"
+            Width: =450
             X: =360
             Y: =314
             ZIndex: =7
