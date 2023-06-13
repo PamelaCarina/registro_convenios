@@ -2087,3 +2087,13 @@ Unidad_solicitante As screen:
             Y: =334
             ZIndex: =10
 
+    Label3 As label:
+        Height: =60
+        Text: |-
+            =Concatenate("id_convenio: ",id_convenio," - ","id_estado: ",id_estado,"
+            ","cambio_detectado: ",cambio_detectado)
+        Width: =290
+        X: =983
+        Y: =110
+        ZIndex: =11
+
