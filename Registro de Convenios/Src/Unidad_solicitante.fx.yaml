@@ -1789,6 +1789,7 @@ Unidad_solicitante As screen:
                             UpdateContext({popup_responsable:false}),
                             UpdateContext({popup_usuarionoencontrado:true})
                         );
+                        UpdateContext({cambio_detectado:true});
                         Set(cargando, false),
                         //If(IsBlank(responsable.id_persona),
                         //    UpdateContext({popup_usuarionoencontrado:true}),
@@ -1965,6 +1966,7 @@ Unidad_solicitante As screen:
                             correo: autoridad_seleccionada.correo,
                             telefono: autoridad_seleccionada.telefono
                         });
+                        UpdateContext({cambio_detectado:true})
                     );
                     
                     UpdateContext({popup_autoridad: false});
