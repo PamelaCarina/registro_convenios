@@ -1310,14 +1310,6 @@ Contribución_desarrollo As screen:
                     Y: =100
                     ZIndex: =4
 
-        btn_registro_11_agenda As button:
-            OnSelect: |-
-                =Launch("http://www.chileagenda2030.gob.cl")
-            Text: ="Agenda 2030"
-            X: =585
-            Y: =28
-            ZIndex: =2
-
         contribución_al_desarrollo As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
@@ -1329,6 +1321,14 @@ Contribución_desarrollo As screen:
             Size: =20
             Text: ="Contribución al desarrollo sustentable*"
             Width: =1366
+            ZIndex: =2
+
+        btn_registro_11_agenda As button:
+            OnSelect: |-
+                =Launch("http://www.chileagenda2030.gob.cl")
+            Text: ="Agenda 2030"
+            X: =585
+            Y: =28
             ZIndex: =3
 
     BannerUdeC_7 As HeaderUdeC:
