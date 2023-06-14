@@ -448,7 +448,7 @@ Mostar_solicitudes As screen:
                 FocusedBorderColor: |-
                     =ColorValue("#6F8BA7")
                 FocusedBorderThickness: =2
-                HintText: ="Buscar contraparte asociada..."
+                HintText: ="Buscar primera contraparte asociada..."
                 HoverBorderColor: =RGBA(255, 255, 255, 0)
                 HoverFill: =RGBA(241, 244, 255, 1)
                 MaxLength: =50
