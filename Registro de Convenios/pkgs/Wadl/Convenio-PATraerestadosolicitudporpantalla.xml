@@ -17,9 +17,11 @@
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_cargo_responsable_def" />
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_correo_responsable_def" />
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_telefono_responsable_def" />
+      <integer name="ResponseActionOutput_unidad_solicitante_registrada_def_unidades_promotoras_def_items_def_id_unidad_promotora_def" />
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_unidades_promotoras_def_items_def_reparticion_def" />
       <string name="ResponseActionOutput_unidad_solicitante_registrada_def_unidades_promotoras_def_items_def_codigo_reparticion_def" />
       <object name="ResponseActionOutput_unidad_solicitante_registrada_def_unidades_promotoras_def_items_def">
+        <property name="id_unidad_promotora" type="integer" />
         <property name="reparticion" type="string" />
         <property name="codigo_reparticion" type="string" />
       </object>
