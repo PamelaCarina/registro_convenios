@@ -2090,13 +2090,15 @@ Unidad_solicitante As screen:
             ZIndex: =10
 
     Label_debug As label:
-        Height: =60
+        Height: =114
         Text: |-
             =Concatenate("id_convenio: ",id_convenio," - ","id_estado: ",id_estado,"
-            ","cambio_detectado: ",cambio_detectado)
+            ","cambio_detectado: ",cambio_detectado,"
+            ","default: ",If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),"",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor)),"
+            ","AllowEmpty: ",If(nuevo,true,false))
         Visible: =false
-        Width: =290
-        X: =983
-        Y: =110
+        Width: =350
+        X: =922
+        Y: =96
         ZIndex: =11
 

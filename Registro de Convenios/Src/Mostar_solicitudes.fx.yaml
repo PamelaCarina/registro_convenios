@@ -14,6 +14,8 @@ Mostar_solicitudes As screen:
         Set(autoridad,Blank());
         Set(responsable,Blank());
         Clear(unidades_promotoras);
+        Reset(nombre_unidad_solicitante);
+        Reset(tipo_alcance);
         
         //PANTALLA - ENTIDAD CONTRAPARTE
         Set(tab_seleccionada,1);
@@ -62,9 +64,6 @@ Mostar_solicitudes As screen:
                 =Set(id_convenio,Blank());
                 Set(id_estado,1);
                 Set(nuevo,true);
-                
-                Reset(nombre_unidad_solicitante);
-                Reset(tipo_alcance);
                 
                 Navigate(Unidad_solicitante,ScreenTransition.Fade);
                 
