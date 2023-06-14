@@ -215,7 +215,9 @@ Información_convenio As screen:
                         ZIndex: =2
 
                     ambito_politica As dropdown:
-                        AllowEmptySelection: =If(IsBlank(categoria_vrim_recuperada.ambito_politica),true,false)
+                        AllowEmptySelection: |-
+                            =//If(IsBlank(categoria_vrim_recuperada.ambito_politica);true;false)
+                            true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -372,7 +374,9 @@ Información_convenio As screen:
                         ZIndex: =2
 
                     sector_politica As dropdown:
-                        AllowEmptySelection: =If(nuevo||IsBlank(categoria_vrim_recuperada.sector_politica),true,false)
+                        AllowEmptySelection: |-
+                            =//If(nuevo||IsBlank(categoria_vrim_recuperada.sector_politica);true;false)
+                            true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -501,7 +505,9 @@ Información_convenio As screen:
                         ZIndex: =2
 
                     convenio_tipo As dropdown:
-                        AllowEmptySelection: =If(IsBlank(categoria_vrim_recuperada.convenio_de_tipo),true,false)
+                        AllowEmptySelection: |-
+                            =//If(IsBlank(categoria_vrim_recuperada.convenio_de_tipo);true;false)
+                            true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)

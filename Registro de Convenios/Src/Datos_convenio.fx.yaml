@@ -678,7 +678,9 @@ Datos_convenio As screen:
                             ZIndex: =1
 
                         tipo_modalidades As dropdown:
-                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada.modalidad),true,false)
+                            AllowEmptySelection: |-
+                                =//If(IsBlank(especificacion_convenio_recuperada.modalidad);true;false)
+                                true
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -830,7 +832,9 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_solicitud As dropdown:
-                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud),true,false)
+                            AllowEmptySelection: |-
+                                =//If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud);true;false)
+                                true
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -969,7 +973,9 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                         tipo_tipologia As dropdown:
-                            AllowEmptySelection: =If(IsBlank(especificacion_convenio_recuperada.tipologia),true,false)
+                            AllowEmptySelection: |-
+                                =//If(IsBlank(especificacion_convenio_recuperada.tipologia);true;false)
+                                true
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =0
                             ChevronBackground: =RGBA(241, 244, 255, 1)

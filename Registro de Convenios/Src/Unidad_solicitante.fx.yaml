@@ -1312,7 +1312,9 @@ Unidad_solicitante As screen:
                         ZIndex: =2
 
                     tipo_alcance As dropdown:
-                        AllowEmptySelection: =If(nuevo||IsBlank(unidad_solicitante_recuperada.alcance_territorial),true,false)
+                        AllowEmptySelection: |-
+                            =//If(nuevo||IsBlank(unidad_solicitante_recuperada.alcance_territorial);true;false)
+                            true
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -1320,7 +1322,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),"",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor))
+                        Default: =If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),Blank(),LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
@@ -2088,16 +2090,4 @@ Unidad_solicitante As screen:
             X: =633
             Y: =334
             ZIndex: =10
-
-    Label_debug As label:
-        Height: =114
-        Text: |-
-            =Concatenate("id_convenio: ",id_convenio," - ","id_estado: ",id_estado,"
-            ","cambio_detectado: ",cambio_detectado,"
-            ","default: ",If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),"",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor)),"
-            ","AllowEmpty: ",If(nuevo,true,false))
-        Width: =350
-        X: =922
-        Y: =96
-        ZIndex: =11
 
