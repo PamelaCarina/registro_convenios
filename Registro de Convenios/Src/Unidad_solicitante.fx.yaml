@@ -2096,7 +2096,6 @@ Unidad_solicitante As screen:
             ","cambio_detectado: ",cambio_detectado,"
             ","default: ",If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),"",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor)),"
             ","AllowEmpty: ",If(nuevo,true,false))
-        Visible: =false
         Width: =350
         X: =922
         Y: =96
