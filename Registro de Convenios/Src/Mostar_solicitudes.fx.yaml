@@ -123,9 +123,9 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
-                Text: ="Fecha"
-                Width: =120
-                X: =77
+                Text: ="Última modificación"
+                Width: =200
+                X: =51
                 Y: =44
                 ZIndex: =3
 
@@ -133,8 +133,8 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
-                Text: ="Contraparte asociada"
-                Width: =255
+                Text: ="Primera contraparte asociada"
+                Width: =300
                 X: =275
                 Y: =44
                 ZIndex: =4
@@ -377,7 +377,7 @@ Mostar_solicitudes As screen:
                         =DateTimeValue(ThisItem.fecha)
                         
                     Width: =180
-                    X: =33
+                    X: =10
                     ZIndex: =6
 
                 lbl_gal_alcance As label:
@@ -448,7 +448,7 @@ Mostar_solicitudes As screen:
                 FocusedBorderColor: |-
                     =ColorValue("#6F8BA7")
                 FocusedBorderThickness: =2
-                HintText: ="Buscar"
+                HintText: ="Buscar contraparte asociada..."
                 HoverBorderColor: =RGBA(255, 255, 255, 0)
                 HoverFill: =RGBA(241, 244, 255, 1)
                 MaxLength: =50
