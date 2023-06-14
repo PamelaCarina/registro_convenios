@@ -1320,7 +1320,7 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nuevo,"1",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor))
+                        Default: =If(nuevo,"",LookUp(lista_alcance,valor=unidad_solicitante_recuperada.alcance_territorial,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
