@@ -920,7 +920,7 @@ Unidad_solicitante As screen:
 
             Nombre_unidad_solicitante_2 As groupContainer.manualLayoutContainer:
                 Height: =60
-                Width: =862
+                Width: =822
                 X: =42
                 Y: =24
                 ZIndex: =10
@@ -949,14 +949,14 @@ Unidad_solicitante As screen:
                     Size: =14
                     TabIndex: =
                     Visible: =If(CountRows(organismos_actividad)>1,false,true)
-                    Width: =862
+                    Width: =820
                     Y: =20
                     ZIndex: =1
 
                 Contenedor_seleccionable_4 As groupContainer.manualLayoutContainer:
                     Height: =40
                     Visible: =If(CountRows(organismos_actividad)>1,true,false)
-                    Width: =862
+                    Width: =822
                     Y: =20
                     ZIndex: =2
 
@@ -970,7 +970,7 @@ Unidad_solicitante As screen:
                         RadiusBottomRight: =12
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
-                        Width: =862
+                        Width: =820
                         ZIndex: =1
 
                     sin_nombre_unidad As text:
@@ -1071,7 +1071,7 @@ Unidad_solicitante As screen:
                         PaddingRight: =10
                         PaddingTop: =0
                         Size: =14
-                        Width: =810
+                        Width: =770
                         ZIndex: =5
 
                 nombre_unidad_label_2 As label:
@@ -1266,14 +1266,14 @@ Unidad_solicitante As screen:
 
             Contenedor_a_t As groupContainer.manualLayoutContainer:
                 Height: =64
-                Width: =300
-                X: =941
+                Width: =337
+                X: =904
                 Y: =24
                 ZIndex: =18
 
                 Contenedor_seleccionable_1 As groupContainer.manualLayoutContainer:
                     Height: =44
-                    Width: =300
+                    Width: =337
                     Y: =20
                     ZIndex: =1
 
@@ -1287,7 +1287,7 @@ Unidad_solicitante As screen:
                         RadiusBottomRight: =12
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
-                        Width: =300
+                        Width: =335
                         ZIndex: =1
 
                     sin_alcance_territorial As text:
@@ -1306,7 +1306,7 @@ Unidad_solicitante As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: =If(IsBlank(tipo_alcance) && sin_alcance,true,false)
-                        Width: =298
+                        Width: =335
                         X: =1
                         Y: =fondo_celeste_8.Y+1
                         ZIndex: =2
