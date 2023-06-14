@@ -300,9 +300,9 @@ Datos_contraparte_internacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="FIRMA DIGITAL*"
+                    Text: ="¿POSEE FIRMA ELECTRÓNICA AVANZADA?*"
                     VerticalAlign: =VerticalAlign.Top
-                    Width: =170
+                    Width: =350
                     ZIndex: =3
 
                 firma_digiral_in_button As radio:
