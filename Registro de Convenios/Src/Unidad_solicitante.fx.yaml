@@ -1312,7 +1312,7 @@ Unidad_solicitante As screen:
                         ZIndex: =2
 
                     tipo_alcance As dropdown:
-                        AllowEmptySelection: =If(nuevo,true,false)
+                        AllowEmptySelection: =If(nuevo||IsBlank(unidad_solicitante_recuperada.alcance_territorial),true,false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
