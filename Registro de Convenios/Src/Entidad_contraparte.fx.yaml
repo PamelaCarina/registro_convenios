@@ -666,8 +666,13 @@ Entidad_contraparte As screen:
                             =Select(Parent);
                             Set(contraparte, ThisItem);
                             Set(popup_contraparte_na,false);
-                            Set(contraparte_na, {});
+                            Set(contraparte_na, Blank());
                             Set(nueva_contraparte,false);
+                            
+                            Reset(cargo_responsable_institucional_na_input);
+                            Reset(nombre_representante_legal_na_input);
+                            Reset(firma_digiral_na_button);
+                            
                             Navigate(Datos_contraparte_nacional,ScreenTransition.Fade)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -883,20 +888,20 @@ Entidad_contraparte As screen:
                 HoverBorderColor: =RGBA(139, 195, 74, 1)
                 HoverFill: =RGBA(139, 195, 74, 0.4)
                 OnSelect: |
-                    =Set(contraparte, {});
+                    =Set(contraparte, Blank());
                     Set(popup_na_ya_ingresada,false);
                     Set(popup_in_ya_ingresada,false);
                     
                     If(tab_seleccionada=1,
                         Navigate(Datos_contraparte_nacional,ScreenTransition.Fade);
-                        Set(contraparte_na, {});
+                        Set(contraparte_na, Blank());
                         Set(popup_contraparte_na,true);
                         Set(nueva_contraparte,true);
                         Reset(firma_digiral_na_button);
                     );
                     If(tab_seleccionada=2,
                         Navigate(Datos_contraparte_internacional, ScreenTransition.Fade);
-                        Set(contraparte_in, {});
+                        Set(contraparte_in, Blank());
                         Set(popup_contraparte_in,true);
                         Set(nueva_contraparte,true);
                         Set(n_c_in_seleccionada,"");
