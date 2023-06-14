@@ -113,7 +113,7 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =38
-                Text: ="Alcance Territorial"
+                Text: ="Alcance territorial"
                 Width: =200
                 X: =608
                 Y: =44
