@@ -672,6 +672,8 @@ Entidad_contraparte As screen:
                             Reset(cargo_responsable_institucional_na_input);
                             Reset(nombre_representante_legal_na_input);
                             Reset(firma_digiral_na_button);
+                            Reset(nombre_responsable_institucional_na_input);
+                            Reset(correo_electronico_na_input);
                             
                             Navigate(Datos_contraparte_nacional,ScreenTransition.Fade)
                         PaddingBottom: =0
