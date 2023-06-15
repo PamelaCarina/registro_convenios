@@ -1135,7 +1135,7 @@ Datos_contraparte_nacional As screen:
             Fill: =RGBA(241, 244, 255, 1)
             Format: =TextFormat.Number
             Height: =46
-            HintText: ="Ingresar nombre o RUT con dígito verificador"
+            HintText: ="Ingresar nombre o RUT sin puntos y con dígito verificador"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
             RadiusBottomLeft: =12
@@ -1161,7 +1161,7 @@ Datos_contraparte_nacional As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="NOMBRE/RUT INSTITUCIÓN (CON DÍGITO VERIFICADOR)"
+            Text: ="NOMBRE/RUT INSTITUCIÓN"
             Width: =450
             X: =360
             Y: =314
@@ -1342,7 +1342,7 @@ Datos_contraparte_nacional As screen:
             Italic: =true
             PaddingLeft: =12
             Size: =10
-            Text: ="Si la institución no es encontrada por nombre, digite su RUT"
+            Text: ="Si la institución no es encontrada por nombre, digite su RUT sin puntos y con dígito verificador"
             Width: =620
             X: =374
             Y: =399
