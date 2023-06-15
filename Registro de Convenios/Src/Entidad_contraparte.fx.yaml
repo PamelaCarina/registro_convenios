@@ -811,7 +811,7 @@ Entidad_contraparte As screen:
             "gal_tabs As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
                 Height: =45
                 Items: |-
-                    =If(tipo_alcance.Selected.valor="Convenio nacional",//solicitudes_añadir_contraparte
+                    =If(tipo_alcance.Selected.valor="CONVENIO NACIONAL",//solicitudes_añadir_contraparte
                         Table({id:1,nombre: Concatenate("Nacional (",CountRows(contrapartes_nacionales),")")})
                     ,
                         Table({id:1,nombre: Concatenate("Nacional (",CountRows(contrapartes_nacionales),")")},
