@@ -568,6 +568,7 @@ Datos_solicitud_contraparte_internacional As screen:
         FontWeight: =FontWeight.Bold
         Height: =20
         PaddingRight: =90
+        Size: =11
         Text: ="Debe completar los campos faltantes."
         Visible: =If((Len(nombre_solicitud_unidad_contraparte_in_input.Text)=0 || CountRows(Split(Trim(nombre_solicitud_unidad_contraparte_in_input.Text),""))=0 || IsBlank(pais)) && (sin_nombre_entidad && sin_pais_entidad),true,false)
         Width: =676
@@ -581,9 +582,9 @@ Datos_solicitud_contraparte_internacional As screen:
         Height: =20
         PaddingLeft: =45
         Size: =11
-        Text: ="*Campo obligatorio"
+        Text: ="*Campos obligatorios."
         Width: =856
-        X: =45
+        X: =42
         Y: =657
         ZIndex: =7
 

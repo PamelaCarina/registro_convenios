@@ -1096,12 +1096,14 @@ Datos_convenio As screen:
         Align: =Align.Right
         Color: =RGBA(238, 110, 126, 1)
         FontWeight: =FontWeight.Bold
-        Height: =72
+        Height: =20
+        PaddingRight: =90
+        Size: =11
         Text: ="Debe completar los campos faltantes."
         Visible: =If((Len(descripcion_proposito_1.Text)=0 || IsBlank(Gallery1_1) || IsBlank(Gallery1_2)) && (sin_proposito_central || sin_documentacion_oficial || sin_documentacion_extra), true)
         Width: =856
-        X: =278
-        Y: =684
+        X: =510
+        Y: =657
         ZIndex: =3
 
     BannerUdeC_1 As HeaderUdeC:
@@ -1113,11 +1115,13 @@ Datos_convenio As screen:
     lbl_campo_obligatorio_5 As label:
         Color: =RGBA(17, 61, 107, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =72
-        Text: ="*Campo obligatorio"
+        Height: =20
+        PaddingLeft: =45
+        Size: =11
+        Text: ="*Campos obligatorios."
         Width: =856
-        X: =278
-        Y: =684
+        X: =42
+        Y: =657
         ZIndex: =5
 
     Adjuntar_popup_extra As groupContainer.manualLayoutContainer:

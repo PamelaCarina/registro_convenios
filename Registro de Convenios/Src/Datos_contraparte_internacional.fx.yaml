@@ -790,9 +790,9 @@ Datos_contraparte_internacional As screen:
         Height: =20
         PaddingLeft: =45
         Size: =11
-        Text: ="*Campos obligatorios"
+        Text: ="*Campos obligatorios."
         Width: =500
-        X: =45
+        X: =42
         Y: =657
         ZIndex: =6
 

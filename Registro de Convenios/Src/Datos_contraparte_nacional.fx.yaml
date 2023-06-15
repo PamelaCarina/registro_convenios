@@ -1086,7 +1086,7 @@ Datos_contraparte_nacional As screen:
         Size: =11
         Text: ="*Campos obligatorios."
         Width: =856
-        X: =45
+        X: =42
         Y: =657
         ZIndex: =6
 

@@ -990,7 +990,7 @@ Entidad_contraparte As screen:
         FontWeight: =FontWeight.Bold
         Height: =20
         PaddingRight: =90
-        Size: =10
+        Size: =11
         Text: ="No puede continuar con solicitudes de contraparte en revisión."
         Visible: =contrapartes_por_revisar
         Width: =600

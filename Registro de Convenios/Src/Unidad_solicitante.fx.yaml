@@ -1844,6 +1844,7 @@ Unidad_solicitante As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Usuario no encontrado. Por favor intente nuevamente"
             Visible: =popup_usuarionoencontrado
             Width: =481
@@ -1855,6 +1856,7 @@ Unidad_solicitante As screen:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
+            Size: =11
             Text: ="Ingresar correo electrónico UdeC"
             Visible: =popup_faltacorreo
             Width: =540
