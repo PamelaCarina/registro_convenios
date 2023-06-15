@@ -545,6 +545,13 @@ Entidad_contraparte As screen:
                             Set(popup_contraparte_in,false);
                             Set(contraparte_in, {});
                             Set(nueva_contraparte,false);
+                            
+                            Reset(nombre_representante_legal_in_input);
+                            Reset(firma_digiral_in_button);
+                            Reset(nombre_responsable_institucional_in_input);
+                            Reset(cargo_responsable_institucional_in_input);
+                            Reset(correo_electronico_in_input);
+                            
                             Navigate(Datos_contraparte_internacional,ScreenTransition.Fade)
                         PaddingBottom: =0
                         PaddingLeft: =0
