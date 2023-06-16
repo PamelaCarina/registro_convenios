@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "fe39f7d2-482a-4a9a-947a-52579a9fb96e",
+    "Name": "VRIM-PABuscarPersonaJurídicapornombreoRut",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "b3c7c8a2-af0b-ee11-8f6e-6045bd006f89"
+  }
+]

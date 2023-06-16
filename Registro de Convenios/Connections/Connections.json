@@ -719,6 +719,36 @@
     "dependents": [],
     "id": "b34b123f-193e-4b42-9e16-dedc18fae42c"
   },
+  "ba4fc2da-4b29-4306-b4a4-5bae1db3dafb": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "b3c7c8a2-af0b-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2eea744f-bbd6-7556-35a0-eccf519b972c"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "b3c7c8a2-af0b-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2eea744f-bbd6-7556-35a0-eccf519b972c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "VRIM-PABuscarPersonaJurídicapornombreoRut"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "ba4fc2da-4b29-4306-b4a4-5bae1db3dafb"
+  },
   "c7e657fe-25ab-41d4-9cc6-fc5a22d91433": {
     "connectionRef": {
       "displayName": "Logic flows",
