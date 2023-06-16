@@ -76,6 +76,11 @@ Datos_contraparte_nacional As screen:
                         )
                     )
                 );
+                'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                    JSON(id_contrapartes_nacionales),
+                    "contraparte nacional",
+                    id_convenio
+                );
                 //Back(ScreenTransition.CoverRight);;
                 Navigate(Entidad_contraparte, ScreenTransition.Fade);
             PressedBorderColor: =RGBA(238, 110, 126, 1)
@@ -1148,7 +1153,11 @@ Datos_contraparte_nacional As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
             Color: =RGBA(17, 61, 107, 1)
-            Default: =If(desplegar_buscador_juridica,"",pj_seleccionada)
+            Default: |
+                =If(mostrar_lista_persona_juridica,
+                    If(desplegar_buscador_juridica,"",pj_seleccionada),
+                    ""
+                )
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
@@ -1276,6 +1285,7 @@ Datos_contraparte_nacional As screen:
             Size: =14
             TabIndex: =1
             Text: ="BUSCAR"
+            Visible: =IsBlank(pj_seleccionada)
             X: =845+0
             Y: =488+0
             ZIndex: =7

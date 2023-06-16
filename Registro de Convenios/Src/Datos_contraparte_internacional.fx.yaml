@@ -72,6 +72,20 @@ Datos_contraparte_internacional As screen:
                         )
                     )
                 );
+                Remove(
+                    id_contrapartes_internacionales,
+                    First(
+                        Filter(
+                            id_contrapartes_internacionales,
+                            Lower(ID) = Lower(contraparte.id)
+                        )
+                    )
+                );
+                'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                    JSON(id_contrapartes_internacionales),
+                    "contraparte internacional",
+                    id_convenio
+                );
                 Back(ScreenTransition.CoverRight);
             PressedBorderColor: =RGBA(238, 110, 126, 1)
             PressedColor: =RGBA(238, 110, 126, 1)
@@ -173,6 +187,14 @@ Datos_contraparte_internacional As screen:
                             firma_digital: firma_digiral_in_button.Selected.Value,
                             id: nueva_contraparte_internacional.id_contraparte
                     });
+                    Collect(id_contrapartes_internacionales,{
+                            ID: nueva_contraparte_internacional.id_contraparte
+                    });
+                    'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                        JSON(id_contrapartes_internacionales),
+                        "contraparte internacional",
+                        id_convenio
+                    );
                     Set(cargando, false)
                     );
                     ,
