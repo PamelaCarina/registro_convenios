@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "id_contrapartes_nacionales",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

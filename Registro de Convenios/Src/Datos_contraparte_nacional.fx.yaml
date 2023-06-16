@@ -67,6 +67,15 @@ Datos_contraparte_nacional As screen:
                         )
                     )
                 );
+                Remove(
+                    id_contrapartes_nacionales,
+                    First(
+                        Filter(
+                            id_contrapartes_nacionales,
+                            Lower(ID) = Lower(contraparte.id)
+                        )
+                    )
+                );
                 //Back(ScreenTransition.CoverRight);;
                 Navigate(Entidad_contraparte, ScreenTransition.Fade);
             PressedBorderColor: =RGBA(238, 110, 126, 1)
@@ -183,6 +192,14 @@ Datos_contraparte_nacional As screen:
                             firma_digital: firma_digiral_na_button.Selected.Value,
                             id: nueva_contraparte_nacional.id_contraparte
                         });
+                        Collect(id_contrapartes_nacionales,{
+                            ID: nueva_contraparte_nacional.id_contraparte
+                        });
+                        'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                            JSON(id_contrapartes_nacionales),
+                            "contraparte nacional",
+                            id_convenio
+                        );
                         Set(cargando, false)
                         );
                         ,

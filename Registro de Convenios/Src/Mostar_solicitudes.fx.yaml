@@ -236,7 +236,7 @@ Mostar_solicitudes As screen:
                                 nombre_unidad_promotora: reparticion,
                                 codigo_reparticion: codigo_reparticion
                             });
-                            Collect(id_unidades_promotoras,id_unidad_promotora)
+                            Collect(id_unidades_promotoras,{ID:id_unidad_promotora})
                         );
                         
                         ForAll(solicitud_convenio_recuperada.contrapartes_nacionales,

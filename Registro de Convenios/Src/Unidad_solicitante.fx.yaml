@@ -543,9 +543,14 @@ Unidad_solicitante As screen:
                                 First(
                                     Filter(
                                         id_unidades_promotoras,
-                                        Lower(Value) = Lower(ThisItem.id_unidad_promotora)
+                                        Lower(ID) = Lower(ThisItem.id_unidad_promotora)
                                     )
                                 )
+                            );
+                            'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                                JSON(id_unidades_promotoras),
+                                "unidad promotora",
+                                id_convenio
                             );
                         Width: =20
                         X: =290
@@ -1574,7 +1579,7 @@ Unidad_solicitante As screen:
                             codigo_reparticion: promotor_seleccionado.codigo,
                             id_unidad_promotora: id_unidad_promotora        
                         });
-                        Collect(id_unidades_promotoras,id_unidad_promotora);
+                        Collect(id_unidades_promotoras,{ID:id_unidad_promotora});
                         'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
                             JSON(id_unidades_promotoras),
                             "unidad promotora",
