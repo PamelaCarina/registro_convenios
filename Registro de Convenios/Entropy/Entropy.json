@@ -751,7 +751,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "06/16/2023 17:36:15",
+  "HeaderLastSavedDateTimeUTC": "06/16/2023 18:01:49",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "018d6baf-646d-4dcf-b17b-4663a52f97fb": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/ab6c6ba5373516db3cde0a6b1af5cb6a-a174438b0269b008\"",
@@ -908,6 +908,7 @@
     "DTI-PATraernombrescontrapartesinternacionales": 16,
     "DTI-PATraerpaíses": 17,
     "DTI-PATraerreparticiones": 18,
+    "id_unidades_promotoras": 69,
     "lista_alcance": 57,
     "lista_doc_contr_subidos": 62,
     "lista_doc_ext_subidos": 66,

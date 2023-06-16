@@ -527,7 +527,7 @@ Unidad_solicitante As screen:
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Height: =20
                         Icon: =Icon.Cancel
-                        OnSelect: |
+                        OnSelect: |-
                             ='Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);
                             Remove(
                                 unidades_promotoras,
@@ -535,6 +535,15 @@ Unidad_solicitante As screen:
                                     Filter(
                                         unidades_promotoras,
                                         Lower(nombre_unidad_promotora) = Lower(ThisItem.nombre_unidad_promotora)
+                                    )
+                                )
+                            );
+                            Remove(
+                                id_unidades_promotoras,
+                                First(
+                                    Filter(
+                                        id_unidades_promotoras,
+                                        Lower(Value) = Lower(ThisItem.id_unidad_promotora)
                                     )
                                 )
                             );
@@ -1541,7 +1550,7 @@ Unidad_solicitante As screen:
                             Lower(nombre_unidad_promotora) = Lower(inp_promotor_popup_search.Text)
                         )
                     ),
-                        //If(!IsBlank(nombre_unidad_input);
+                
                         Set(cargando, true);
                 
                         If(IsBlank(id_convenio),
@@ -1565,6 +1574,12 @@ Unidad_solicitante As screen:
                             codigo_reparticion: promotor_seleccionado.codigo,
                             id_unidad_promotora: id_unidad_promotora        
                         });
+                        Collect(id_unidades_promotoras,id_unidad_promotora);
+                        'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                            JSON(id_unidades_promotoras),
+                            "unidad promotora",
+                            id_convenio
+                        );
                     );
                     
                     Set(cargando, false);

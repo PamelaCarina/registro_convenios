@@ -14,6 +14,7 @@ Mostar_solicitudes As screen:
         Set(autoridad,Blank());
         Set(responsable,Blank());
         Clear(unidades_promotoras);
+        Clear(id_unidades_promotoras);
         Reset(nombre_unidad_solicitante);
         Reset(tipo_alcance);
         
@@ -234,7 +235,8 @@ Mostar_solicitudes As screen:
                                 id_unidad_promotora:id_unidad_promotora,
                                 nombre_unidad_promotora: reparticion,
                                 codigo_reparticion: codigo_reparticion
-                            })
+                            });
+                            Collect(id_unidades_promotoras,id_unidad_promotora)
                         );
                         
                         ForAll(solicitud_convenio_recuperada.contrapartes_nacionales,
