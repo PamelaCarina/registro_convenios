@@ -527,7 +527,7 @@ Unidad_solicitante As screen:
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Height: =20
                         Icon: =Icon.Cancel
-                        OnSelect: |-
+                        OnSelect: |
                             ='Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);
                             Remove(
                                 unidades_promotoras,
@@ -1564,7 +1564,7 @@ Unidad_solicitante As screen:
                             nombre_unidad_promotora: promotor_seleccionado.reparticion,
                             codigo_reparticion: promotor_seleccionado.codigo,
                             id_unidad_promotora: id_unidad_promotora        
-                        })
+                        });
                     );
                     
                     Set(cargando, false);
