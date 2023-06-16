@@ -17200,6 +17200,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.persona_juridica"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.persona_juridica",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "persona_juridica",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.group-2-copy"
                 }
               ],
@@ -17361,36 +17391,6 @@
               },
               "properties": {
                 "member": "correo_na_vacio",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.es_rut"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.es_rut",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "es_rut",
                 "module": "Datos_contraparte_nacional",
                 "type": "Datos_contraparte_nacional"
               }
@@ -18411,6 +18411,36 @@
               },
               "properties": {
                 "member": "Convenio-PAEliminardocumentoconvenio",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-NotOfflineConnectors",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.VRIM-PABuscarPersonaJurídicapornombreoRut"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.VRIM-PABuscarPersonaJurídicapornombreoRut",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "VRIM-PABuscarPersonaJurídicapornombreoRut",
                 "module": "App",
                 "type": "App"
               }

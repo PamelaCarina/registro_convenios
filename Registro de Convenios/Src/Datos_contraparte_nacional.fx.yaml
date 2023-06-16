@@ -1198,18 +1198,34 @@ Datos_contraparte_nacional As screen:
                 If(IsBlank(inp_contraparte_na_popup_search.Text)=false,
                 //
                 If(
-                    !IsBlank(
+                    !IsBlank(//busca si el rut ya ha sido ingresado
                         LookUp(
                             contrapartes_nacionales, 
                             Lower(rut_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
                         )
-                    ),
+                    )
+                    ||
+                    !IsBlank(//busca si el nombre ya ha sido ingresado
+                        LookUp(
+                            contrapartes_nacionales, 
+                            Lower(nombre_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
+                        )
+                    )
+                    ,
                     Set(popup_na_ya_ingresada,true)
                 //    "mostrar error"
                 ,
                 
                     //
                     Set(cargando, true);
+                    If(es_rut,
+                        Set(persona_juridica,
+                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Rut")
+                        ),
+                        Set(persona_juridica,
+                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
+                        )
+                    );
                     Set(datos_contraparte, 'DTI-PATraeinstituciónnacional'.Run(inp_contraparte_na_popup_search.Text));
                     Set(contraparte_na,{
                         nombre_entidad_contraparte: First(datos_contraparte).razon_social,
@@ -1229,6 +1245,7 @@ Datos_contraparte_nacional As screen:
                         id: First(datos_contraparte).id,
                         firma_digital:""
                     });
+                    
                     Set(cargando, false);
                     If(IsBlank(contraparte_na.nombre_entidad_contraparte),
                         UpdateContext({popup_institucionnoencontrada:true}),
