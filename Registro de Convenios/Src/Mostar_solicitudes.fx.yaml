@@ -256,7 +256,8 @@ Mostar_solicitudes As screen:
                                 actividad: actividad,
                                 id: id,
                                 firma_digital: firma_digital
-                            })
+                            });
+                            Collect(id_contrapartes_nacionales,{ID: id})
                         );
                         
                         ForAll(solicitud_convenio_recuperada.contrapartes_internacionales,
@@ -269,7 +270,8 @@ Mostar_solicitudes As screen:
                                 correo_responsable_institucional: correo_responsable_institucional,
                                 id: id,
                                 firma_digital: firma_digital
-                            })
+                            });
+                            Collect(id_contrapartes_internacionales,{ID: id})
                         );
                         
                         ForAll(solicitud_convenio_recuperada.solicitudes_contraparte_internacional,
@@ -279,7 +281,8 @@ Mostar_solicitudes As screen:
                                 pais: pais,
                                 estado: estado,
                                 file: file
-                            })
+                            });
+                            Collect(solicitudes_añadir_contraparte,{ID: id})
                         );
                         
                         Set(especificacion_convenio_recuperada,solicitud_convenio_recuperada.especificacion_registrada);
