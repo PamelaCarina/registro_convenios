@@ -1,7 +1,7 @@
 Mostar_solicitudes As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |+
-        =///////////////////////////REINICIAR VALORES DE PARÁMETROS///////////////////////////
+        =///////////////////////////REINICIAR VALORES DE PARÁMETROS///////////////////////////16-06-2023
         
         Set(reset_primera_vez_especificacion,true);
         Set(reset_primera_vez_categoria_vrim,true);
