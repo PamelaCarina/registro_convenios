@@ -1408,7 +1408,10 @@ Datos_contraparte_nacional As screen:
                     OnSelect: |-
                         =Select(Parent);
                         /*
-                        If(desplegar_buscador_a;UpdateContext({desplegar_buscador_a:false});UpdateContext({desplegar_buscador_a:true}));;
+                        If(desplegar_buscador_a;
+                            UpdateContext({desplegar_buscador_a:false});
+                            UpdateContext({desplegar_buscador_a:true})
+                        );;
                         Set(a_seleccionada;ThisItem.nombre);;
                         
                         Set(autoridad_seleccionada;{
