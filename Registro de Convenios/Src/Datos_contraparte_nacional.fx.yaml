@@ -1226,6 +1226,8 @@ Datos_contraparte_nacional As screen:
                             'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
                         )
                     );
+                
+                    
                     Set(datos_contraparte, 'DTI-PATraeinstituciónnacional'.Run(inp_contraparte_na_popup_search.Text));
                     Set(contraparte_na,{
                         nombre_entidad_contraparte: First(datos_contraparte).razon_social,
@@ -1373,6 +1375,62 @@ Datos_contraparte_nacional As screen:
             X: =365
             Y: =402
             ZIndex: =16
+
+        Contenedor_persona_juridica As groupContainer.manualLayoutContainer:
+            Visible: =//desplegar_buscador_a
+            Width: =620
+            X: =371+0
+            Y: =397+0
+            ZIndex: =17
+
+            opciones_persona_juridica As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =200
+                Items: =Filter(Nombres_autoridades, inp_autoridad_popup_search.Text in nombre)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |
+                    =false
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =620
+                WrapCount: =0
+                ZIndex: =1
+
+                fondo_celeste_14 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =52
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =620
+                    ZIndex: =1
+
+                Label1_4 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    DisabledFill: =RGBA(241, 244, 255, 1)
+                    Height: =50
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    HoverFill: =RGBA(207, 210, 232, 1)
+                    OnSelect: |-
+                        =Select(Parent);
+                        If(desplegar_buscador_a,UpdateContext({desplegar_buscador_a:false}),UpdateContext({desplegar_buscador_a:true}));
+                        Set(a_seleccionada,ThisItem.nombre);
+                        
+                        Set(autoridad_seleccionada,{
+                            nombre: ThisItem.nombre,
+                            cargo: ThisItem.cargo,
+                            correo: ThisItem.correo,
+                            telefono: ThisItem.telefono
+                        })
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =10
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.nombre
+                    Width: =599
+                    ZIndex: =3
 
     cont_loading_1 As group:
         Height: =5

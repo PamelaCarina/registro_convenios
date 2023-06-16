@@ -2018,8 +2018,8 @@ Unidad_solicitante As screen:
         Contenedor_a As groupContainer.manualLayoutContainer:
             Visible: =desplegar_buscador_a
             Width: =620
-            X: =371
-            Y: =397
+            X: =371+0
+            Y: =397+0
             ZIndex: =13
 
             opciones_nombre_a As gallery.galleryVertical:
