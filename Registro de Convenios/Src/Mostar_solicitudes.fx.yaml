@@ -551,12 +551,6 @@ Mostar_solicitudes As screen:
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
 
-    Button2 As button:
-        Text: ="Botón"
-        X: =915
-        Y: =126
-        ZIndex: =7
-
     grp_registro_main_loading As group:
         Height: =5
         Width: =5
