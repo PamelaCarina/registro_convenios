@@ -903,7 +903,14 @@ Datos_solicitud_contraparte_internacional As screen:
                     estado: "En espera",
                     file: First(lista_doc_contr_subidos).file
                 });
-                
+                Collect(id_solicitudes_añadir_contraparte,{
+                    ID: id_contraparte
+                });
+                'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                    JSON(id_solicitudes_añadir_contraparte),
+                    "solicitud contraparte internacional",
+                    id_convenio
+                );
                 Set(cargando, false);
                 Set(popup_confirmacion,false);
                 

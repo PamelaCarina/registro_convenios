@@ -378,7 +378,7 @@ Entidad_contraparte As screen:
                         Size: =16
                         Text: =ThisItem.estado
                         Width: =188
-                        X: =930
+                        X: =992
                         Y: =52
                         ZIndex: =7
 
@@ -415,6 +415,7 @@ Entidad_contraparte As screen:
                         OnSelect: |-
                             ='Convenio-PAEliminarcontrapartenoregistrada'.Run(ThisItem.id_contraparte);
                             Remove(solicitudes_añadir_contraparte,ThisItem)
+                        Visible: =false
                         Width: =47
                         X: =1133
                         Y: =55

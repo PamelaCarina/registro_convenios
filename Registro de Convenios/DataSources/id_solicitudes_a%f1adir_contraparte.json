@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "id_solicitudes_añadir_contraparte",
+    "Type": "CollectionDataSourceInfo"
+  }
+]
