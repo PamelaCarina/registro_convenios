@@ -13,6 +13,7 @@ Datos_contraparte_nacional As screen:
         Reset(inp_contraparte_na_popup_search);
         UpdateContext({cambio_detectado:false});
         Set(tab_seleccionada, 1);
+        UpdateContext({mostrar_lista_persona_juridica:false});
 
     Botones_atras_siguiente_3 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -1133,11 +1134,18 @@ Datos_contraparte_nacional As screen:
             Default: =""
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
-            Format: =TextFormat.Number
             Height: =46
             HintText: ="Ingresar nombre o RUT sin puntos y con dígito verificador"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
+            OnSelect: |
+                =If(mostrar_lista_persona_juridica,
+                    Reset(inp_contraparte_na_popup_search);
+                    If(desplegar_buscador_juridica,
+                        UpdateContext({desplegar_buscador_juridica:false}),
+                        UpdateContext({desplegar_buscador_juridica:true})
+                    )
+                );
             RadiusBottomLeft: =12
             RadiusBottomRight: =12
             RadiusTopLeft: =12
@@ -1176,6 +1184,8 @@ Datos_contraparte_nacional As screen:
             OnSelect: |
                 =UpdateContext({popup_faltarut:false, popup_institucionnoencontrada:false});
                 UpdateContext({es_rut:false});
+                UpdateContext({mostrar_lista_persona_juridica:false});
+                UpdateContext({desplegar_buscador_juridica:false});
                 Set(popup_na_ya_ingresada,false);
                 
                 If(
@@ -1213,46 +1223,27 @@ Datos_contraparte_nacional As screen:
                     )
                     ,
                     Set(popup_na_ya_ingresada,true)
-                //    "mostrar error"
                 ,
-                
-                    //
                     Set(cargando, true);
                     If(es_rut,
                         Set(persona_juridica,
                             'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Rut")
-                        ),
+                        )
+                    ,
                         Set(persona_juridica,
                             'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
                         )
                     );
                 
-                    
-                    Set(datos_contraparte, 'DTI-PATraeinstituciónnacional'.Run(inp_contraparte_na_popup_search.Text));
-                    Set(contraparte_na,{
-                        nombre_entidad_contraparte: First(datos_contraparte).razon_social,
-                        rut_entidad_contraparte: First(datos_contraparte).rut,
-                        dv_entidad_contraparte: First(datos_contraparte).dv,
-                        nombre_representante_legal: "",
-                        nombre_responsable_institucional:"",
-                        cargo_responsable_institucional:"",
-                        pais:"CHILE",
-                        correo_responsable_institucional:"",
-                        publica:First(datos_contraparte).publica,
-                        tipo_empresa: First(datos_contraparte).tipo_empresa,
-                        comuna: Upper(First(datos_contraparte).comuna),
-                        tipo_contribuyente: First(datos_contraparte).tipo_de_contribuyente,
-                        rubro: First(datos_contraparte).rubro_economico,
-                        actividad: First(datos_contraparte).actividad_economica,
-                        id: First(datos_contraparte).id,
-                        firma_digital:""
-                    });
+                    If(persona_juridica.status,//si encuentra la persona jurídica
+                        Set(lista_persona_juridica,persona_juridica.data);
+                        UpdateContext({mostrar_lista_persona_juridica:true});
+                        UpdateContext({desplegar_buscador_juridica:true})
+                    ,
+                        UpdateContext({popup_institucionnoencontrada:true})
+                    );
                     
                     Set(cargando, false);
-                    If(IsBlank(contraparte_na.nombre_entidad_contraparte),
-                        UpdateContext({popup_institucionnoencontrada:true}),
-                        Set(popup_contraparte_na,false)
-                    )
                 );
                     ,
                     UpdateContext({popup_faltarut:true})
@@ -1377,7 +1368,9 @@ Datos_contraparte_nacional As screen:
             ZIndex: =16
 
         Contenedor_persona_juridica As groupContainer.manualLayoutContainer:
-            Visible: =//desplegar_buscador_a
+            Visible: |-
+                =//desplegar_buscador_a
+                mostrar_lista_persona_juridica && desplegar_buscador_juridica
             Width: =620
             X: =371+0
             Y: =397+0
@@ -1386,7 +1379,7 @@ Datos_contraparte_nacional As screen:
             opciones_persona_juridica As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(Nombres_autoridades, inp_autoridad_popup_search.Text in nombre)
+                Items: =Filter(lista_persona_juridica, inp_contraparte_na_popup_search.Text in razonSocial)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -1414,21 +1407,51 @@ Datos_contraparte_nacional As screen:
                     HoverFill: =RGBA(207, 210, 232, 1)
                     OnSelect: |-
                         =Select(Parent);
-                        If(desplegar_buscador_a,UpdateContext({desplegar_buscador_a:false}),UpdateContext({desplegar_buscador_a:true}));
-                        Set(a_seleccionada,ThisItem.nombre);
+                        /*
+                        If(desplegar_buscador_a;UpdateContext({desplegar_buscador_a:false});UpdateContext({desplegar_buscador_a:true}));;
+                        Set(a_seleccionada;ThisItem.nombre);;
                         
-                        Set(autoridad_seleccionada,{
-                            nombre: ThisItem.nombre,
-                            cargo: ThisItem.cargo,
-                            correo: ThisItem.correo,
+                        Set(autoridad_seleccionada;{
+                            nombre: ThisItem.nombre;
+                            cargo: ThisItem.cargo;
+                            correo: ThisItem.correo;
                             telefono: ThisItem.telefono
                         })
+                        */
+                        
+                        /*
+                        
+                            Set(contraparte_na;{
+                                nombre_entidad_contraparte: "-";
+                                rut_entidad_contraparte: "-";
+                                dv_entidad_contraparte: "-";
+                                nombre_representante_legal: "";
+                                nombre_responsable_institucional:"";
+                                cargo_responsable_institucional:"";
+                                pais:"CHILE";
+                                correo_responsable_institucional:"";
+                                publica:"-";
+                                tipo_empresa: "-";
+                                comuna: "-";
+                                tipo_contribuyente: "-";
+                                rubro: "-";
+                                actividad: "-";
+                                //id: First(datos_contraparte).id;
+                                firma_digital:""
+                            });;
+                        
+                            If(IsBlank(contraparte_na.nombre_entidad_contraparte);
+                                UpdateContext({popup_institucionnoencontrada:true});
+                                Set(popup_contraparte_na;false)
+                            )
+                        
+                        */
                     PaddingBottom: =0
                     PaddingLeft: =12
                     PaddingRight: =10
                     PaddingTop: =0
                     Size: =14
-                    Text: =ThisItem.nombre
+                    Text: =ThisItem.razonSocial
                     Width: =599
                     ZIndex: =3
 
