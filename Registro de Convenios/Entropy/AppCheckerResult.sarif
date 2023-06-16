@@ -11080,6 +11080,126 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar.TabIndex"
                 }
               ],
@@ -17020,126 +17140,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.Contenedor_persona_juridica.opciones_persona_juridica.Label1_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.ods"
                 }
               ],
@@ -17151,6 +17151,36 @@
               },
               "properties": {
                 "member": "ods",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.persona_juridica"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.persona_juridica",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "persona_juridica",
                 "module": "App",
                 "type": "App"
               }
@@ -17361,36 +17391,6 @@
               },
               "properties": {
                 "member": "areas_externas",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.persona_juridica"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.persona_juridica",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "persona_juridica",
                 "module": "App",
                 "type": "App"
               }

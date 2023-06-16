@@ -12,9 +12,9 @@
       <string name="ManualTriggerInput_text_7_def" />
       <string name="ManualTriggerInput_text_8_def" />
       <string name="ManualTriggerInput_text_9_def" />
-      <string name="ManualTriggerInput_text_13_def" />
       <number name="ManualTriggerInput_number_def" />
       <number name="ManualTriggerInput_number_1_def" />
+      <number name="ManualTriggerInput_number_2_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -26,9 +26,9 @@
         <property name="text_7" type="string" />
         <property name="text_8" type="string" />
         <property name="text_9" type="string" />
-        <property name="text_13" type="string" />
         <property name="number" type="number" />
         <property name="number_1" type="number" />
+        <property name="number_2" type="number" />
       </object>
       <integer name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
@@ -77,14 +77,14 @@
             <param style="plain" name="text_9" path="/text_9" type="xs:string" required="true">
               <doc title="Telefono responsable" />
             </param>
-            <param style="plain" name="text_13" path="/text_13" type="xs:string" required="true">
-              <doc title="Alcance territorial" />
-            </param>
             <param style="plain" name="number" path="/number" type="xs:double" required="true">
               <doc title="id_convenio" />
             </param>
             <param style="plain" name="number_1" path="/number_1" type="xs:double" required="true">
               <doc title="id_estado" />
+            </param>
+            <param style="plain" name="number_2" path="/number_2" type="xs:double" required="true">
+              <doc title="Alcance territorial" />
             </param>
           </representation>
         </request>

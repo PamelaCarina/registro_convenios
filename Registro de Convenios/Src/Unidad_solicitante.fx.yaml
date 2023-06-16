@@ -115,9 +115,9 @@ Unidad_solicitante As screen:
                                                                 cargo_responsable_input_2.Text,
                                                                 correo_responsable_input_2.Text,
                                                                 telefono_responsable_input_2.Text,
-                                                                tipo_alcance.Selected.valor,
                                                                 id_convenio,
-                                                                id_estado
+                                                                id_estado,
+                                                                tipo_alcance.Selected.id
                         ).id_estado);
                 
                         Set(cargando, false);
