@@ -11242,6 +11242,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_contraparte_nacional.Datos_entidad_contraparte_na.Contenedor_d_e_c_na.Nombre_unidad_contraparte_na.nombre_unidad_contraparte_na_input.AccessibleLabel"
                 }
               ],
@@ -17135,36 +17165,6 @@
                 "member": "TabIndex",
                 "module": "Unidad_solicitante",
                 "type": "Unidad_solicitante.Botones_atras_siguiente.Siguiente"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-TabOrderShouldBeChecked",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.btn_contraparte_na_popup_buscar_1"
               }
             }
           ],

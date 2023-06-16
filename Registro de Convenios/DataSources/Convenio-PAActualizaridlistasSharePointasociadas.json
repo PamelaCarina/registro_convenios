@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "bde37603-908a-4575-9654-da9654eb1ee3",
+    "Name": "Convenio-PAActualizaridlistasSharePointasociadas",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "64f8196c-6a0c-ee11-8f6e-6045bd006f89"
+  }
+]

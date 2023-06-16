@@ -909,8 +909,8 @@ Datos_contraparte_internacional As screen:
                     Set(datos_contraparte, 'DTI-PATraerinstitucióninternacional'.Run(inp_contraparte_in_popup_search.Text));
                     Set(contraparte_in,{
                         nombre_entidad_contraparte: First(datos_contraparte).razon_social,
-                        rut_entidad_contraparte: First(datos_contraparte).rut,
-                        dv_entidad_contraparte: First(datos_contraparte).dv,
+                        //rut_entidad_contraparte: First(datos_contraparte).rut;
+                        //dv_entidad_contraparte: First(datos_contraparte).dv;
                         nombre_representante_legal: "",
                         nombre_responsable_institucional:"",
                         cargo_responsable_institucional:"",

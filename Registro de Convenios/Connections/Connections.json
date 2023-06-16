@@ -779,6 +779,36 @@
     "dependents": [],
     "id": "c7e657fe-25ab-41d4-9cc6-fc5a22d91433"
   },
+  "d4a5f5e3-656b-469d-b95b-1d6e120875d5": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "64f8196c-6a0c-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "6c5d6949-975a-940e-1bc5-c7dad3454fbe"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "64f8196c-6a0c-ee11-8f6e-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "6c5d6949-975a-940e-1bc5-c7dad3454fbe"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAActualizaridlistasSharePointasociadas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d4a5f5e3-656b-469d-b95b-1d6e120875d5"
+  },
   "d8909894-2c2d-4270-9af8-fe47d05e2a5d": {
     "connectionRef": {
       "displayName": "Logic flows",
