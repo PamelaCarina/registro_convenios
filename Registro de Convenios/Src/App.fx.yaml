@@ -1,259 +1,400 @@
 App As appinfo:
     BackEnabled: =false
     OnStart: |
-        =Set(cargando, true);
-        
+        =Set(
+            cargando,
+            true
+        );
         //////////////////////////////////LLAMADOS A FLUJOS//////////////////////////////////////
-        
         //USUARIO LOGEADO
         //Set(persona_solicitante; 'VRIM-PATraedatosdeusuario'.Run(User().Email));;
-        Set(persona_solicitante, 'VRIM-PATraedatosdeusuario'.Run("pcareaga@udec.cl"));
-        
+        Set(
+            persona_solicitante,
+            'VRIM-PATraedatosdeusuario'.Run("pcareaga@udec.cl")
+        );
         //LISTAS DESPLEGABLES
-        Set(datos,'DTI-PAListaespecificacionesconvenio'.Run());
-        
+        Set(
+            datos,
+            'DTI-PAListaespecificacionesconvenio'.Run()
+        );
         //LISTADO SOLICITUDES
-        ClearCollect(listado_solicitudes, 
-                Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha, SortOrder.Descending));
-        
+        ClearCollect(
+            listado_solicitudes,
+            Sort(
+                'Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec),
+                fecha,
+                SortOrder.Descending
+            )
+        );
         //NOMBRES REPARTICIONES
-        Set(reparticiones, Sort('DTI-PATraerreparticiones'.Run(), Nombre1));
-        
+        Set(
+            reparticiones,
+            Sort(
+                'DTI-PATraerreparticiones'.Run(),
+                Nombre1
+            )
+        );
         //AUTORIDADES MÁXIMAS
-        Set(autoridades_maximas,Sort('DTI-PATraerautoridadesmáximas'.Run(), field_3));
-        
+        Set(
+            autoridades_maximas,
+            Sort(
+                'DTI-PATraerautoridadesmáximas'.Run(),
+                field_3
+            )
+        );
         //MOSTRAR SOLICITUDES
         Clear(nombre_contraparte_para_filtro);
         Clear(listado_solicitudes_recuperadas);
-        ForAll(listado_solicitudes,
-        If(CountRows(nombres_contrapartes_internacionales)>0,
-            If(CountRows(nombres_contrapartes_nacionales)>0,
+        ForAll(
+            listado_solicitudes,
+            If(
+                CountRows(nombres_contrapartes_internacionales) > 0,
+                If(
+                    CountRows(nombres_contrapartes_nacionales) > 0,
                 //si hay contrapartes internacionales y nacionales
-                Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
-            ,
+                    Collect(
+                        nombre_contraparte_para_filtro,
+                        First(nombres_contrapartes_internacionales).Value
+                    ),
                 //si hay contrapartes internacionales y no nacionales
-                Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
-            ),
-            If(CountRows(nombres_contrapartes_nacionales)>0,
+                    Collect(
+                        nombre_contraparte_para_filtro,
+                        First(nombres_contrapartes_internacionales).Value
+                    )
+                ),
+                If(
+                    CountRows(nombres_contrapartes_nacionales) > 0,
                 //si no hay contrapartes internacionales y pero si nacionales
-                Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_nacionales).Value)
-                ,
+                    Collect(
+                        nombre_contraparte_para_filtro,
+                        First(nombres_contrapartes_nacionales).Value
+                    ),
                 //si no hay contrapartes internacionales ni nacionales
-                Collect(nombre_contraparte_para_filtro,"SIN CONTRAPARTES ASOCIADAS")
-                    
-            )
+                    Collect(
+                        nombre_contraparte_para_filtro,
+                        "SIN CONTRAPARTES ASOCIADAS"
+                    )
+                )
+            );
+            Collect(
+                listado_solicitudes_recuperadas,
+                {
+                    alcance_territorial: alcance_territorial,
+                    fecha: fecha,
+                    id_convenio: id_convenio,
+                    id_estado: id_estado,
+                    nombres_contrapartes_nacionales: nombres_contrapartes_nacionales,
+                    nombres_contrapartes_internacionales: nombres_contrapartes_internacionales,
+                    ticket: ticket,
+                    nombre_contraparte_para_filtro: Last(nombre_contraparte_para_filtro).Value
+                }
+            )
         );
-            Collect(listado_solicitudes_recuperadas,{
-                alcance_territorial:alcance_territorial,
-                fecha:fecha,
-                id_convenio:id_convenio,
-                id_estado:id_estado,
-                nombres_contrapartes_nacionales:nombres_contrapartes_nacionales,
-                nombres_contrapartes_internacionales:nombres_contrapartes_internacionales,
-                ticket:ticket,
-                nombre_contraparte_para_filtro:Last(nombre_contraparte_para_filtro).Value
-            })
+        Set(
+            cargando,
+            false
         );
-        
-        Set(cargando, false);
-        
         //NOMBRES CONTRAPARTES INTERNACIONALES
-        Set(Contrapartes_inter,Sort('DTI-PATraernombrescontrapartesinternacionales'.Run(), RAZON_SOCIAL));
-        
+        Set(
+            Contrapartes_inter,
+            Sort(
+                'DTI-PATraernombrescontrapartesinternacionales'.Run(),
+                RAZON_SOCIAL
+            )
+        );
         //PAISES
-        Set(paises,Sort('DTI-PATraerpaíses'.Run().paises,Nombre_x0020_Pa_x00ed_s));
-        
+        Set(
+            paises,
+            Sort(
+                'DTI-PATraerpaíses'.Run().paises,
+                Nombre_x0020_Pa_x00ed_s
+            )
+        );
         //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
-        
-        
         //UNIDAD SOLICITANTE
-        ClearCollect(organismos_actividad, 
-                SortByColumns(persona_solicitante.'array organismo actividad',"Reparticion"));
-        
+        ClearCollect(
+            organismos_actividad,
+            SortByColumns(
+                persona_solicitante.'array organismo actividad',
+                "Reparticion"
+            )
+        );
         //ALCANCE TERRITORIAL
         Clear(lista_alcance);
-        ForAll(datos.alcance_territorial,
-            Collect(lista_alcance,{
-                id: ItemInternalId,
-                valor: Title
-            })
+        ForAll(
+            datos.alcance_territorial,
+            Collect(
+                lista_alcance,
+                {
+                    id: ItemInternalId,
+                    valor: Title
+                }
+            )
         );
-        ClearCollect(lista_alcance,Sort(lista_alcance,valor));
-        
+        ClearCollect(
+            lista_alcance,
+            Sort(
+                lista_alcance,
+                valor
+            )
+        );
         //TIPOLOGÍA
         Clear(lista_tipologia);
-        ForAll(datos.tipologia,
-            Collect(lista_tipologia,{
-                id: ItemInternalId,
-                valor: Title
-            })
+        ForAll(
+            datos.tipologia,
+            Collect(
+                lista_tipologia,
+                {
+                    id: ItemInternalId,
+                    valor: Upper(Title)
+                }
+            )
         );
-        ClearCollect(lista_tipologia,Sort(lista_tipologia,valor));
-        
+        ClearCollect(
+            lista_tipologia,
+            Sort(
+                lista_tipologia,
+                valor
+            )
+        );
         //TIPO SOLICITUD
         Clear(lista_tipo_solicitud);
-        ForAll(datos.tipo_solicitud,
-            Collect(lista_tipo_solicitud,{
-                id: ItemInternalId,
-                valor: Title
-            })
+        ForAll(
+            datos.tipo_solicitud,
+            Collect(
+                lista_tipo_solicitud,
+                {
+                    id: ItemInternalId,
+                    valor: Upper(Title)
+                }
+            )
         );
-        ClearCollect(lista_tipo_solicitud,Sort(lista_tipo_solicitud,valor));
-        
+        ClearCollect(
+            lista_tipo_solicitud,
+            Sort(
+                lista_tipo_solicitud,
+                valor
+            )
+        );
         //MODALIDAD
         Clear(lista_modalidad);
-        ForAll(datos.modalidad,
-            Collect(lista_modalidad,{
-                id: ItemInternalId,
-                valor: Title
-            })
+        ForAll(
+            datos.modalidad,
+            Collect(
+                lista_modalidad,
+                {
+                    id: ItemInternalId,
+                    valor: Upper(Title)
+                }
+            )
         );
-        ClearCollect(lista_modalidad,Sort(lista_modalidad,valor));
-        
+        ClearCollect(
+            lista_modalidad,
+            Sort(
+                lista_modalidad,
+                valor
+            )
+        );
         //NOMBRES REPARTICIONES
         Clear(Nombres_reparticiones1);
-        ForAll(reparticiones,
-            Collect(Nombres_reparticiones1,{
-                reparticion: Nombre1,
-                codigo: Title
-            })
+        ForAll(
+            reparticiones,
+            Collect(
+                Nombres_reparticiones1,
+                {
+                    reparticion: Nombre1,
+                    codigo: Title
+                }
+            )
         );
-        
-        ClearCollect(reparticion_no_repetida,Distinct(Nombres_reparticiones1,reparticion));
-        
+        ClearCollect(
+            reparticion_no_repetida,
+            Distinct(
+                Nombres_reparticiones1,
+                reparticion
+            )
+        );
         Clear(Nombres_reparticiones);
-        ForAll(reparticion_no_repetida,
-            Collect(Nombres_reparticiones,
-                First(Filter(Nombres_reparticiones1,reparticion=Value))));
-        
-        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Reparticion 9000"));
-        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Repartición Antigua Inexistente (Crear)"));
-        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Reparticion Hija 2"));
-        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Valido"));
-        
+        ForAll(
+            reparticion_no_repetida,
+            Collect(
+                Nombres_reparticiones,
+                First(
+                    Filter(
+                        Nombres_reparticiones1,
+                        reparticion = Value
+                    )
+                )
+            )
+        );
+        Remove(
+            Nombres_reparticiones,
+            LookUp(
+                Nombres_reparticiones,
+                reparticion = "Reparticion 9000"
+            )
+        );
+        Remove(
+            Nombres_reparticiones,
+            LookUp(
+                Nombres_reparticiones,
+                reparticion = "Repartición Antigua Inexistente (Crear)"
+            )
+        );
+        Remove(
+            Nombres_reparticiones,
+            LookUp(
+                Nombres_reparticiones,
+                reparticion = "Reparticion Hija 2"
+            )
+        );
+        Remove(
+            Nombres_reparticiones,
+            LookUp(
+                Nombres_reparticiones,
+                reparticion = "Valido"
+            )
+        );
         //AUTORIDADES MÁXIMAS
         Clear(Nombres_autoridades);
-        ForAll(autoridades_maximas,
-            Collect(Nombres_autoridades,{
-                nombre:Upper(Concatenate(field_3," ",field_4,", ",field_5)),
-                cargo: Upper(CARGO),
-                correo: Upper(CORREO_UDEC),
-                telefono: TELEFONO
-            })
+        ForAll(
+            autoridades_maximas,
+            Collect(
+                Nombres_autoridades,
+                {
+                    nombre: Upper(
+                        Concatenate(
+                            field_3,
+                            " ",
+                            field_4,
+                            ", ",
+                            field_5
+                        )
+                    ),
+                    cargo: Upper(CARGO),
+                    correo: Upper(CORREO_UDEC),
+                    telefono: TELEFONO
+                }
+            )
         );
-        
         //LIMPIAR NACIONALES
         Clear(contrapartes_nacionales);
-        
         //LIMPIAR INTERNACIONALES
         Clear(contrapartes_internacionales);
-        
         //LIMPIAR SOLICITUDES AÑADIR CONTRAPARTE
         Clear(solicitudes_añadir_contraparte);
-        
         //NOMBRES CONTRAPARTES INTERNACIONALES
         Clear(Nombres_contrapartes_internacionales);
-        ForAll(Contrapartes_inter,
-            Collect(Nombres_contrapartes_internacionales,{
-                nombre: RAZON_SOCIAL
-            })
+        ForAll(
+            Contrapartes_inter,
+            Collect(
+                Nombres_contrapartes_internacionales,
+                {nombre: RAZON_SOCIAL}
+            )
         );
-        
         //PAISES
         Clear(lista_paises);
-        ForAll(paises,
-            Collect(lista_paises,{
-                pais: Upper(ThisRecord.Nombre_x0020_Pa_x00ed_s)
-            })
+        ForAll(
+            paises,
+            Collect(
+                lista_paises,
+                {pais: Upper(ThisRecord.Nombre_x0020_Pa_x00ed_s)}
+            )
         );
-        Remove(lista_paises, LookUp( lista_paises, pais="NO DEFINIDO" ));
-        
+        Remove(
+            lista_paises,
+            LookUp(
+                lista_paises,
+                pais = "NO DEFINIDO"
+            )
+        );
         //opciones seleccionables política del convenio
-        ClearCollect(dd_tipo,
+        ClearCollect(
+            dd_tipo,
             {
-                valor: "Formación (pregrado, postgrado, formación permanente)",
+                valor: Upper("Formación (pregrado, postgrado, formación permanente)"),
                 id: "formacion"
             },
             {
-                valor: "Extensión Académica",
+                valor: Upper("Extensión Académica"),
                 id: "extension_academica"
             },
             {
-                valor: "Extensión Cultural",
+                valor: Upper("Extensión Cultural"),
                 id: "extension_cultural"
             },
             {
-                valor: "Bidireccional",
+                valor: Upper("Bidireccional"),
                 id: "bidireccional"
             },
             {
-                valor: "Otra",
+                valor: Upper("Otra"),
                 id: "otra"
             }
         );
-        
-        ClearCollect(dd_sectores,
+        ClearCollect(
+            dd_sectores,
             {
-                valor: "Público - Político",
+                valor: Upper("Público - Político"),
                 id: "publico_politico"
             },
             {
-                valor: "Social Comunitario",
+                valor: Upper("Social Comunitario"),
                 id: "social_comunitario"
             },
             {
-                valor: "Cultural",
+                valor: Upper("Cultural"),
                 id: "cultural"
             },
             {
-                valor: "Productivo",
+                valor: Upper("Productivo"),
                 id: "productivo"
             },
             {
-                valor: "Comunidad Universitaria",
+                valor: Upper("Comunidad Universitaria"),
                 id: "comunidad_uni"
             }
         );
-        
-        ClearCollect(dd_ambito,
+        ClearCollect(
+            dd_ambito,
             {
-                valor: "Extensión",
+                valor: Upper("Extensión"),
                 id: "extension"
             },
             {
-                valor: "Comunicaciones",
+                valor: Upper("Comunicaciones"),
                 id: "comunicaciones"
             },
             {
-                valor: "Emprendimiento",
+                valor: Upper("Emprendimiento"),
                 id: "emprendimiento"
             },
             {
-                valor: "Transferencia tecnológica",
+                valor: Upper("Transferencia tecnológica"),
                 id: "transferencia_tecnologica"
             },
             {
-                valor: "Asistencia técnica",
+                valor: Upper("Asistencia técnica"),
                 id: "asistencia_tecnica"
             },
             {
-                valor: "Interacción con red alumni",
+                valor: Upper("Interacción con red alumni"),
                 id: "red_alumni"
             },
             {
-                valor: "Relaciones institucionales",
+                valor: Upper("Relaciones institucionales"),
                 id: "rel_institucionales"
             },
             {
-                valor: "Relaciones internacionales",
+                valor: Upper("Relaciones internacionales"),
                 id: "rel_internacionales"
             },
             {
-                valor: "Prácticas profesionales, pasantías estudiantiles y académicas",
+                valor: Upper("Prácticas profesionales, pasantías estudiantiles y académicas"),
                 id: "practicas_pasantia"
             },
             {
-                valor: "Servicios",
+                valor: Upper("Servicios"),
                 id: "servicios"
             }
         );
