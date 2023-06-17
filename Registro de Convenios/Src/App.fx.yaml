@@ -126,6 +126,11 @@ App As appinfo:
             Collect(Nombres_reparticiones,
                 First(Filter(Nombres_reparticiones1,reparticion=Value))));
         
+        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Reparticion 9000"));
+        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Repartición Antigua Inexistente (Crear)"));
+        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Reparticion Hija 2"));
+        Remove(Nombres_reparticiones, LookUp(Nombres_reparticiones, reparticion="Valido"));
+        
         //AUTORIDADES MÁXIMAS
         Clear(Nombres_autoridades);
         ForAll(autoridades_maximas,
