@@ -525,6 +525,7 @@ Unidad_solicitante As screen:
                     Icon1 As icon.Trash:
                         Color: =RGBA(111, 139, 167, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =20
                         Icon: =Icon.Cancel
                         OnSelect: |-
