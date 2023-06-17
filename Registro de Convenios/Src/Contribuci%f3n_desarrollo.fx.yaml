@@ -213,7 +213,7 @@ Contribución_desarrollo As screen:
                     RadiusBottomRight: =12
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
-                    Tooltip: ="Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible."
+                    Tooltip: ="Ninguna alternativa"
                     Transparency: =If(cb_ods_ninguno.Value=true,0,0.3)
                     X: =38
                     Y: =5
