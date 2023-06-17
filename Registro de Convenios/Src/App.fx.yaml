@@ -111,13 +111,20 @@ App As appinfo:
         ClearCollect(lista_modalidad,Sort(lista_modalidad,valor));
         
         //NOMBRES REPARTICIONES
-        Clear(Nombres_reparticiones);
+        Clear(Nombres_reparticiones1);
         ForAll(reparticiones,
-            Collect(Nombres_reparticiones,{
+            Collect(Nombres_reparticiones1,{
                 reparticion: Nombre1,
                 codigo: Title
             })
         );
+        
+        ClearCollect(reparticion_no_repetida,Distinct(Nombres_reparticiones1,reparticion));
+        
+        Clear(Nombres_reparticiones);
+        ForAll(reparticion_no_repetida,
+            Collect(Nombres_reparticiones,
+                First(Filter(Nombres_reparticiones1,reparticion=Value))));
         
         //AUTORIDADES MÁXIMAS
         Clear(Nombres_autoridades);
