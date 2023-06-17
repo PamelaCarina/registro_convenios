@@ -6,11 +6,11 @@ Datos_contraparte_internacional As screen:
         UpdateContext({popup_faltanombre:false});
         UpdateContext({popup_institucionnoencontrada:false});
         
-        UpdateContext({sin_nombre_representante_legal_in:false});
-        UpdateContext({sin_firma_in:false});
+        //UpdateContext({sin_nombre_representante_legal_in:false});;
+        //UpdateContext({sin_firma_in:false});;
         
-        UpdateContext({sin_nombre_responsable_institucional_in:false});
-        UpdateContext({sin_cargo_in:false});
+        //UpdateContext({sin_nombre_responsable_institucional_in:false});;
+        //UpdateContext({sin_cargo_in:false});;
         UpdateContext({correo_in_invalido:false});
         UpdateContext({correo_in_vacio:false});
         UpdateContext({hide_border_correo_in:true});
@@ -133,18 +133,18 @@ Datos_contraparte_internacional As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =//REPRESENTANTE LEGAL
-                If(CountRows(Split(Trim(nombre_representante_legal_in_input.Text),""))=0, 
-                        UpdateContext({sin_nombre_representante_legal_in:true}), 
-                        UpdateContext({sin_nombre_representante_legal_in:false}));
+                /*If(CountRows(Split(Trim(nombre_representante_legal_in_input.Text);""))=0; 
+                        UpdateContext({sin_nombre_representante_legal_in:true}); 
+                        UpdateContext({sin_nombre_representante_legal_in:false}));;
                 
                 //RESPONSABLE INSTITUCIONAL
-                If(CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text),""))=0, 
-                        UpdateContext({sin_nombre_responsable_institucional_in:true}), 
-                        UpdateContext({sin_nombre_responsable_institucional_in:false}));
+                If(CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text);""))=0; 
+                        UpdateContext({sin_nombre_responsable_institucional_in:true}); 
+                        UpdateContext({sin_nombre_responsable_institucional_in:false}));;
                 
-                If(CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text),""))=0, 
-                        UpdateContext({sin_cargo_in:true}), 
-                        UpdateContext({sin_cargo_in:false}));
+                If(CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text);""))=0; 
+                        UpdateContext({sin_cargo_in:true}); 
+                        UpdateContext({sin_cargo_in:false}));;*/
                 
                 If(IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
                 "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false ,
@@ -152,9 +152,9 @@ Datos_contraparte_internacional As screen:
                         UpdateContext({correo_in_invalido:false}) );
                 
                 //firma digital
-                If(IsBlank(firma_digiral_in_button),UpdateContext({sin_firma_in:true}),UpdateContext({sin_firma_in:false}));
+                //If(IsBlank(firma_digiral_in_button);UpdateContext({sin_firma_in:true});UpdateContext({sin_firma_in:false}));;
                 
-                If(!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in && !correo_in_invalido,
+                If(/*!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in &&*/ !correo_in_invalido,
                 If(IsBlank(
                         LookUp(
                             contrapartes_internacionales, 
@@ -322,7 +322,7 @@ Datos_contraparte_internacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="¿POSEE FIRMA ELECTRÓNICA AVANZADA?*"
+                    Text: ="¿POSEE FIRMA ELECTRÓNICA AVANZADA?"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =350
                     ZIndex: =3
@@ -500,7 +500,7 @@ Datos_contraparte_internacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="CARGO*"
+                        Text: ="CARGO"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
                         ZIndex: =3
@@ -572,7 +572,7 @@ Datos_contraparte_internacional As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL*"
+                        Text: ="NOMBRE RESPONSABLE INSTITUCIONAL"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =418
                         ZIndex: =3
@@ -646,7 +646,7 @@ Datos_contraparte_internacional As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =10
-                    Text: ="NOMBRE REPRESENTANTE LEGAL*"
+                    Text: ="NOMBRE REPRESENTANTE LEGAL"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =300
                     ZIndex: =3
@@ -786,15 +786,15 @@ Datos_contraparte_internacional As screen:
         Size: =11
         Text: ="Debe completar los campos faltantes."
         Visible: |-
-            =If((sin_nombre_representante_legal_in || sin_nombre_responsable_institucional_in || sin_cargo_in || correo_in_invalido) && 
+            =If((/*sin_nombre_representante_legal_in || sin_nombre_responsable_institucional_in || sin_cargo_in ||*/ correo_in_invalido) && 
             
-            (Len(nombre_representante_legal_in_input.Text)=0 || CountRows(Split(Trim(nombre_representante_legal_in_input.Text),""))=0 || 
-            Len(nombre_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text),""))=0 || 
-            Len(cargo_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text),""))=0 || 
+            (/*Len(nombre_representante_legal_in_input.Text)=0 || CountRows(Split(Trim(nombre_representante_legal_in_input.Text);""))=0 || 
+            Len(nombre_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text);""))=0 || 
+            Len(cargo_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text);""))=0 ||*/ 
             (IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-            || correo_in_vacio) || 
-            IsBlank(firma_digiral_in_button)), true)
+            || correo_in_vacio)/* || 
+            IsBlank(firma_digiral_in_button)*/), true)
         Width: =600
         X: =766
         Y: =657
