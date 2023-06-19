@@ -15,6 +15,9 @@ Unidad_solicitante As screen:
         
         UpdateContext({cambio_detectado:false});
         UpdateContext({sin_unidad:false});
+        
+        UpdateContext({popup_confirmar_eliminacion:false});
+        UpdateContext({desea_eliminar:false});
 
     Botones_atras_siguiente As groupContainer.manualLayoutContainer:
         Height: =44
@@ -669,8 +672,9 @@ Unidad_solicitante As screen:
                         DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =20
                         Icon: =Icon.Cancel
-                        OnSelect: |-
-                            ='Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);
+                        OnSelect: |
+                            =//UpdateContext({popup_confirmar_eliminacion:true});;
+                            'Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);
                             Remove(
                                 unidades_promotoras,
                                 First(
@@ -693,7 +697,7 @@ Unidad_solicitante As screen:
                                 JSON(id_unidades_promotoras),
                                 "unidad promotora",
                                 id_convenio
-                            );
+                                );
                         Width: =20
                         X: =290
                         Y: =25
@@ -2255,4 +2259,107 @@ Unidad_solicitante As screen:
             X: =633
             Y: =334
             ZIndex: =10
+
+    grp_eliminar_popup As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =16
+
+        fig_eliminar_popup_bg_7 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =popup_confirmar_eliminacion
+            Width: =1366
+            ZIndex: =11
+
+        img_eliminar_popup As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Visible: =popup_confirmar_eliminacion
+            Width: =709
+            X: =327
+            Y: =208
+            ZIndex: =12
+
+        lbl_eliminar_popup_titulo As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="ELIMINACIÓN UNIDAD(ES) PROMOTORA(S)"
+            Visible: =popup_confirmar_eliminacion
+            Width: =612
+            X: =359
+            Y: =234
+            ZIndex: =13
+
+        lbl_desea_eliminar As label:
+            Align: =Align.Center
+            Color: =RGBA(17, 61, 107, 1)
+            Height: =117
+            Size: =14
+            Text: |-
+                ="La unidad promotora seleccionada será eliminada
+                ¿Desea continuar?"
+            Visible: =popup_confirmar_eliminacion
+            Width: =645
+            X: =359
+            Y: =314
+            ZIndex: =14
+
+        btn_eliminar_popup As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =UpdateContext({desea_eliminar:true});
+                UpdateContext({popup_confirmar_eliminacion:false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,1,-1)
+            Text: ="ELIMINAR"
+            Visible: =popup_confirmar_eliminacion
+            X: =844
+            Y: =488
+            ZIndex: =15
+
+        btn_eliminar_popup_atras_3 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_confirmar_eliminacion:false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,0,-1)
+            Text: ="CANCELAR"
+            Visible: =popup_confirmar_eliminacion
+            X: =652
+            Y: =488
+            ZIndex: =17
 
