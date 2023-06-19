@@ -1843,7 +1843,7 @@ Unidad_solicitante As screen:
                     PaddingRight: =10
                     PaddingTop: =0
                     Size: =14
-                    Text: =ThisItem.reparticion
+                    Text: =Upper(ThisItem.reparticion)
                     Width: =599
                     ZIndex: =3
 
