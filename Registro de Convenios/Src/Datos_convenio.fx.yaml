@@ -1210,6 +1210,14 @@ Datos_convenio As screen:
                             Collect(lista_doc_ext_subidos,{
                                 file: Last(documento_extra_subido).file
                             });
+                            Collect(id_lista_doc_ext_subidos,{
+                                file: Last(documento_extra_subido).id
+                            });
+                        );
+                        'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                            JSON(id_lista_doc_ext_subidos),
+                            "documentación adicional",
+                            id_convenio
                         );
                         Set(cargando, false);
                         Reset(att_registro_10_attach_extra);
@@ -1406,6 +1414,14 @@ Datos_convenio As screen:
                             Collect(lista_doc_off_subidos,{
                                 file: Last(documento_oficial_subido).file
                             });
+                            Collect(id_lista_doc_off_subidos,{
+                                ID: Last(documento_oficial_subido).id
+                            });
+                        );
+                        'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                            JSON(id_lista_doc_off_subidos),
+                            "borrador convenio",
+                            id_convenio
                         );
                         Set(cargando, false);
                         Reset(att_registro_10_attach_oficial);

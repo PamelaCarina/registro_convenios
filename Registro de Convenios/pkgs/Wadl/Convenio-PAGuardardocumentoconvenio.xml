@@ -23,8 +23,10 @@
         <property name="Name" type="string" />
         <property name="Value" type="string" />
       </object>
+      <integer name="ResponseActionOutput_id_def" />
       <object name="ResponseActionOutput">
         <property name="file" typeRef="ResponseActionOutput_file_def" />
+        <property name="id" type="integer" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>

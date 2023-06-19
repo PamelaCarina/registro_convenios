@@ -342,6 +342,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         BorderThickness: =0
                         Color: =RGBA(17, 61, 107, 1)
+                        ContentLanguage: =If(CountRows(responsable.cargos)>1,true,false)
                         Default: =responsable.cargo
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =DisplayMode.Disabled
@@ -367,6 +368,7 @@ Unidad_solicitante As screen:
 
                     cargo_responsable_label_2 As label:
                         Color: =RGBA(111, 139, 167, 1)
+                        ContentLanguage: =If(CountRows(responsable.cargos)>1,true,false)
                         FontWeight: =FontWeight.Bold
                         Height: =20
                         PaddingBottom: =4
@@ -381,6 +383,7 @@ Unidad_solicitante As screen:
 
                     sin_cargo_responsable As text:
                         BorderColor: =RGBA(238, 110, 126, 1)
+                        ContentLanguage: =If(CountRows(responsable.cargos)>1,true,false)
                         Default: =""
                         DisabledBorderColor: =RGBA(238, 110, 126, 1)
                         DisabledFill: =RGBA(0, 0, 0, 0)
@@ -400,6 +403,129 @@ Unidad_solicitante As screen:
                         X: =nombre_responsable_input_2.X+1
                         Y: =nombre_responsable_input_2.Y-1
                         ZIndex: =3
+
+                    Contenedor_seleccionable_cargo As groupContainer.manualLayoutContainer:
+                        ContentLanguage: =
+                        Height: =44
+                        Visible: =If(CountRows(responsable.cargos)>1,true,false)
+                        Width: =337
+                        X: =0.30000000000001137
+                        Y: =19
+                        ZIndex: =4
+
+                        fondo_celeste_15 As image:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            Height: =40
+                            HoverFill: =RGBA(186, 202, 226, 1)
+                            Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =335
+                            ZIndex: =1
+
+                        sin_cargo_resp_select As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: =If(IsBlank(cargo) && sin_alcance,true,false)
+                            Width: =335
+                            X: =1
+                            Y: =fondo_celeste_8.Y+1
+                            ZIndex: =2
+
+                        cargo As dropdown:
+                            AllowEmptySelection: |-
+                                =//If(nuevo||IsBlank(unidad_solicitante_recuperada.alcance_territorial);true;false)
+                                true
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(241, 244, 255, 1)
+                            ChevronFill: =RGBA(111, 139, 167, 1)
+                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                            Color: =RGBA(17, 61, 107, 1)
+                            Default: =If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),Blank(),LookUp(lista_alcance,valor=Upper(unidad_solicitante_recuperada.alcance_territorial),valor))
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            Height: =38
+                            HoverBorderColor: =RGBA(241,244,255,1)
+                            HoverColor: =RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(207, 210, 232, 1)
+                            Items: =responsable.cargos
+                            OnChange: |-
+                                =Reset(buscador_cargo_input);
+                                UpdateContext({cambio_detectado:true})
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingTop: =12
+                            PressedColor: =RGBA(17, 61, 107, 1)
+                            PressedFill: =RGBA(241, 244, 255, 1)
+                            SelectionColor: =RGBA(111, 139, 167, 1)
+                            SelectionFill: =RGBA(241, 244, 255, 1)
+                            Size: =14
+                            TabIndex: =
+                            Width: =fondo_celeste_15.Width-24
+                            X: =fondo_celeste_15.X+12
+                            Y: =fondo_celeste_15.Y+2
+                            ZIndex: =3
+
+                        tapar_cargo As rectangle:
+                            BorderStyle: =BorderStyle.None
+                            Fill: =RGBA(244, 244, 244, 1)
+                            Height: =40
+                            Visible: =false
+                            Width: =40
+                            X: =cargo.X+cargo.Width-Self.Width+1
+                            Y: =fondo_celeste_15.Y
+                            ZIndex: =4
+
+                        buscador_cargo_input As text:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =0
+                            Color: |-
+                                =//RGBA(17; 61; 107; 1)
+                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                                RGBA(17, 61, 107, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(17, 61, 107, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            HintText: =If(IsBlank(cargo.SelectedText),"Seleccionar...","")
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: |-
+                                =//RGBA(17; 61; 107; 1)
+                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                                RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            OnChange: =
+                            OnSelect: |-
+                                =Reset(cargo);
+                                Reset(buscador_cargo_input)
+                            PaddingBottom: =1
+                            PaddingLeft: =24
+                            PaddingRight: =10
+                            PaddingTop: =0
+                            Size: =14
+                            Width: =250
+                            ZIndex: =5
 
                 Nombre_responsable_2 As groupContainer.manualLayoutContainer:
                     Height: =60
@@ -968,12 +1094,47 @@ Unidad_solicitante As screen:
                     Y: =20
                     ZIndex: =1
 
+                nombre_unidad_label_2 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    PaddingBottom: =4
+                    PaddingLeft: =12
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: ="NOMBRE UNIDAD SOLICITANTE*"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =300
+                    ZIndex: =2
+
+                sin_nombre_unidad_1 As text:
+                    BorderColor: =RGBA(238, 110, 126, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =fondo_celeste_8.Height-2
+                    HoverBorderColor: =RGBA(238, 110, 126, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =12
+                    RadiusBottomRight: =12
+                    RadiusTopLeft: =12
+                    RadiusTopRight: =12
+                    TabIndex: =-1
+                    Visible: =sin_unidad && IsBlank(nombre_unidad_input) && If(CountRows(organismos_actividad)=1,true,false)
+                    Width: =fondo_celeste_8.Width-4
+                    X: =3
+                    Y: =21
+                    ZIndex: =3
+
                 Contenedor_seleccionable_4 As groupContainer.manualLayoutContainer:
                     Height: =40
                     Visible: =If(CountRows(organismos_actividad)>1,true,false)
                     Width: =822
                     Y: =20
-                    ZIndex: =2
+                    ZIndex: =4
 
                     fondo_celeste_8 As image:
                         BorderColor: =RGBA(255, 255, 255, 1)
@@ -1003,14 +1164,14 @@ Unidad_solicitante As screen:
                         RadiusTopLeft: =12
                         RadiusTopRight: =12
                         TabIndex: =-1
-                        Visible: =sin_unidad
+                        Visible: =sin_unidad && IsBlank(nombre_unidad_solicitante)
                         Width: =fondo_celeste_8.Width-3
                         X: =fondo_celeste_8.X+2
                         Y: =fondo_celeste_8.Y+1
                         ZIndex: =2
 
                     nombre_unidad_solicitante As dropdown:
-                        AllowEmptySelection: =If(nuevo,true,false)
+                        AllowEmptySelection: =true//If(nuevo;true;false)
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =0
                         ChevronBackground: =RGBA(241, 244, 255, 1)
@@ -1088,41 +1249,6 @@ Unidad_solicitante As screen:
                         Size: =14
                         Width: =770
                         ZIndex: =5
-
-                nombre_unidad_label_2 As label:
-                    Color: =RGBA(111, 139, 167, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =20
-                    PaddingBottom: =4
-                    PaddingLeft: =12
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Size: =10
-                    Text: ="NOMBRE UNIDAD SOLICITANTE*"
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =300
-                    ZIndex: =4
-
-                sin_nombre_unidad_1 As text:
-                    BorderColor: =RGBA(238, 110, 126, 1)
-                    Default: =""
-                    DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    DisplayMode: =DisplayMode.Disabled
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =fondo_celeste_8.Height-2
-                    HoverBorderColor: =RGBA(238, 110, 126, 1)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    RadiusBottomLeft: =12
-                    RadiusBottomRight: =12
-                    RadiusTopLeft: =12
-                    RadiusTopRight: =12
-                    TabIndex: =-1
-                    Visible: =sin_unidad && IsBlank(nombre_unidad_input)
-                    Width: =fondo_celeste_8.Width-4
-                    X: =3
-                    Y: =21
-                    ZIndex: =5
 
             buscar_1 As image:
                 Height: =20
@@ -1806,6 +1932,7 @@ Unidad_solicitante As screen:
                             id_persona: Text(Value(datos_responsable.id_persona)),
                             nombre: datos_responsable.nombre_completo,
                             cargo: datos_responsable.cargo,
+                            cargos: datos_responsable.'array personal',
                             correo: datos_responsable.correo_udec,
                             telefono: datos_responsable.telefono
                             });
