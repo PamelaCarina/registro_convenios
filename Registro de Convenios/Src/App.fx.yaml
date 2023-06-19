@@ -147,7 +147,7 @@ App As appinfo:
                 lista_tipologia,
                 {
                     id: ItemInternalId,
-                    valor: Upper(Title)
+                    valor: Title
                 }
             )
         );
@@ -155,7 +155,7 @@ App As appinfo:
             lista_tipologia,
             Sort(
                 lista_tipologia,
-                valor
+                Upper(valor)
             )
         );
         //TIPO SOLICITUD
@@ -166,7 +166,7 @@ App As appinfo:
                 lista_tipo_solicitud,
                 {
                     id: ItemInternalId,
-                    valor: Upper(Title)
+                    valor: Title
                 }
             )
         );
@@ -174,7 +174,7 @@ App As appinfo:
             lista_tipo_solicitud,
             Sort(
                 lista_tipo_solicitud,
-                valor
+                Upper(valor)
             )
         );
         //MODALIDAD
@@ -185,7 +185,7 @@ App As appinfo:
                 lista_modalidad,
                 {
                     id: ItemInternalId,
-                    valor: Upper(Title)
+                    valor: Title
                 }
             )
         );
@@ -193,7 +193,7 @@ App As appinfo:
             lista_modalidad,
             Sort(
                 lista_modalidad,
-                valor
+                Upper(valor)
             )
         );
         //NOMBRES REPARTICIONES
@@ -204,7 +204,7 @@ App As appinfo:
                 Nombres_reparticiones1,
                 {
                     reparticion: Nombre1,
-                    codigo: Upper(Title)
+                    codigo: Title
                 }
             )
         );
@@ -233,24 +233,15 @@ App As appinfo:
             LookUp(
                 Nombres_reparticiones,
                 reparticion = "Reparticion 9000"
-            )
-        );
-        Remove(
-            Nombres_reparticiones,
+            );
             LookUp(
                 Nombres_reparticiones,
                 reparticion = "Repartición Antigua Inexistente (Crear)"
-            )
-        );
-        Remove(
-            Nombres_reparticiones,
+            );
             LookUp(
                 Nombres_reparticiones,
                 reparticion = "Reparticion Hija 2"
-            )
-        );
-        Remove(
-            Nombres_reparticiones,
+            );
             LookUp(
                 Nombres_reparticiones,
                 reparticion = "Valido"
