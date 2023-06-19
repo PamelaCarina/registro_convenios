@@ -56,12 +56,15 @@ Datos_convenio As screen:
                     Set(cargando, true);
                     
                     Set(id_estado,'Convenio-PAGuardarespecificaciónconvenio'.Run(
-                                                                            tipo_tipologia.Selected.valor,
-                                                                            tipo_solicitud.Selected.valor,
-                                                                            tipo_modalidades.Selected.Value,
+                                                                            //tipo_tipologia.Selected.valor;
+                                                                            //tipo_solicitud.Selected.valor;
+                                                                            //tipo_modalidades.Selected.Value;
                                                                             descripcion_proposito_1.Text,
                                                                             id_convenio,
-                                                                            id_estado
+                                                                            id_estado,
+                                                                            tipo_tipologia.Selected.id,
+                                                                            tipo_solicitud.Selected.id,
+                                                                            tipo_modalidades.Selected.id
                     ).id_estado);
                     
                     Set(cargando, false);
@@ -709,7 +712,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.modalidad),"",LookUp(lista_modalidad,valor=especificacion_convenio_recuperada.modalidad,valor))
+                            Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.modalidad),"",LookUp(lista_modalidad,valor=Upper(especificacion_convenio_recuperada.modalidad),valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
@@ -720,12 +723,13 @@ Datos_convenio As screen:
                             HoverFill: =RGBA(207, 210, 232, 1)
                             Items: |-
                                 =//lista_modalidad
-                                //Filter(lista_modalidad; buscador_t_m_input.Text in valor)
-                                
+                                Filter(lista_modalidad, buscador_t_m_input.Text in valor)
+                                /*
                                 Distinct(
-                                    lista_modalidad,
+                                    lista_modalidad;
                                     valor
                                 )
+                                */
                             OnChange: |-
                                 =Reset(buscador_t_m_input);
                                 UpdateContext({cambio_detectado:true})
@@ -842,7 +846,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.tipo_solicitud),"",LookUp(lista_tipo_solicitud,valor=especificacion_convenio_recuperada.tipo_solicitud,valor))
+                            Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.tipo_solicitud),"",LookUp(lista_tipo_solicitud,valor=Upper(especificacion_convenio_recuperada.tipo_solicitud),valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
@@ -983,7 +987,7 @@ Datos_convenio As screen:
                             ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                             ChevronHoverFill: =RGBA(17, 61, 107, 1)
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(nuevo||IsBlank(especificacion_convenio_recuperada.tipologia),"",LookUp(lista_tipologia,valor=especificacion_convenio_recuperada.tipologia,valor))
+                            Default: =If(nuevo||IsBlank(especificacion_convenio_recuperada.tipologia),"",LookUp(lista_tipologia,valor=Upper(especificacion_convenio_recuperada.tipologia),valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
