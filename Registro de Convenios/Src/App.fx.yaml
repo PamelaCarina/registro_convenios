@@ -127,7 +127,7 @@ App As appinfo:
                 lista_alcance,
                 {
                     id: ItemInternalId,
-                    valor: Title
+                    valor: Upper(Title)
                 }
             )
         );
@@ -203,7 +203,7 @@ App As appinfo:
                 Nombres_reparticiones1,
                 {
                     reparticion: Nombre1,
-                    codigo: Title
+                    codigo: Upper(Title)
                 }
             )
         );
