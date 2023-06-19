@@ -75,10 +75,24 @@ Unidad_solicitante As screen:
                     UpdateContext({sin_nombre_responsable:true}), 
                     UpdateContext({sin_nombre_responsable:false})
                 );
-                If(IsBlank(cargo_responsable_input_2.Text), 
-                    UpdateContext({sin_cargo_responsable:true}), 
-                    UpdateContext({sin_cargo_responsable:false})
+                
+                If(CountRows(responsable.cargos)>1,
+                    If(IsBlank(cargo),
+                        UpdateContext({sin_cargo_responsable:true}), 
+                        UpdateContext({sin_cargo_responsable:false})
+                    ),
+                    If(IsBlank(cargo_responsable_input_2.Text), 
+                        UpdateContext({sin_cargo_responsable:true}), 
+                        UpdateContext({sin_cargo_responsable:false})
+                    )
                 );
+                
+                If(CountRows(responsable.cargos)=1,
+                    UpdateContext({cargo_resp:cargo_responsable_input_2.Text}), 
+                    UpdateContext({cargo_resp: cargo.Selected.Cargo})
+                );
+                
+                
                 If(IsBlank(correo_responsable_input_2.Text), 
                     UpdateContext({sin_correo_responsable:true}), 
                     UpdateContext({sin_correo_responsable:false})
@@ -112,7 +126,8 @@ Unidad_solicitante As screen:
                                                                 tel,
                                                                 //telefono_autoridad_input_2.Text;
                                                                 nombre_responsable_input_2.Text,
-                                                                cargo_responsable_input_2.Text,
+                                                                //cargo_responsable_input_2.Text;
+                                                                cargo_resp,
                                                                 correo_responsable_input_2.Text,
                                                                 telefono_responsable_input_2.Text,
                                                                 id_convenio,
@@ -333,7 +348,7 @@ Unidad_solicitante As screen:
                         ZIndex: =3
 
                 Cargo_responsable_2 As groupContainer.manualLayoutContainer:
-                    Height: =60
+                    Height: =62
                     Width: =337.3
                     Y: =84
                     ZIndex: =4
@@ -441,7 +456,7 @@ Unidad_solicitante As screen:
                             RadiusTopLeft: =12
                             RadiusTopRight: =12
                             TabIndex: =-1
-                            Visible: =If(IsBlank(cargo) && sin_alcance,true,false)
+                            Visible: =If(IsBlank(cargo) && sin_cargo_responsable,true,false)
                             Width: =335
                             X: =1
                             Y: =fondo_celeste_8.Y+1
