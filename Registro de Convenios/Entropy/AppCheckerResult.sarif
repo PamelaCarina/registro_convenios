@@ -10372,6 +10372,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.nombre_representante_legal_in_input.AccessibleLabel"
                 }
               ],
@@ -10522,36 +10582,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in.AccessibleLabel"
                 }
               ],
@@ -10576,6 +10606,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Nombre_responsable_institucional_in.sin_nombre_responsable_institucional_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -10642,36 +10702,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.AccessibleLabel"
                 }
               ],
@@ -10696,6 +10726,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Promotor_unidad_solicitante_in.Cargo_responsable_institucional_in.sin_cargo_in"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -17116,66 +17176,6 @@
           },
           "ruleId": "acc-TabOrderShouldBeChecked",
           "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.Datos_entidad_contraparte_in.Contenedor_d_e_c_in.Nombre_representante_legal_in.sin_nombre_representante_legal_in"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
         },
         {
           "locations": [
