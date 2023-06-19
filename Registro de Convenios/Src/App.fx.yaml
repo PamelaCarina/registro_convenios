@@ -147,7 +147,7 @@ App As appinfo:
                 lista_tipologia,
                 {
                     id: ItemInternalId,
-                    valor: Title
+                    valor: Upper(Title)
                 }
             )
         );
@@ -155,7 +155,7 @@ App As appinfo:
             lista_tipologia,
             Sort(
                 lista_tipologia,
-                Upper(valor)
+                valor
             )
         );
         //TIPO SOLICITUD
@@ -166,7 +166,7 @@ App As appinfo:
                 lista_tipo_solicitud,
                 {
                     id: ItemInternalId,
-                    valor: Title
+                    valor: Upper(Title)
                 }
             )
         );
@@ -174,7 +174,7 @@ App As appinfo:
             lista_tipo_solicitud,
             Sort(
                 lista_tipo_solicitud,
-                Upper(valor)
+                valor
             )
         );
         //MODALIDAD
@@ -185,7 +185,7 @@ App As appinfo:
                 lista_modalidad,
                 {
                     id: ItemInternalId,
-                    valor: Title
+                    valor: Upper(Title)
                 }
             )
         );
@@ -193,7 +193,7 @@ App As appinfo:
             lista_modalidad,
             Sort(
                 lista_modalidad,
-                Upper(valor)
+                valor
             )
         );
         //NOMBRES REPARTICIONES

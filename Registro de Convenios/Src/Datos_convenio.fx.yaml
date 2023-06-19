@@ -722,8 +722,8 @@ Datos_convenio As screen:
                             HoverColor: =RGBA(17, 61, 107, 1)
                             HoverFill: =RGBA(207, 210, 232, 1)
                             Items: |-
-                                =//lista_modalidad
-                                Filter(lista_modalidad, buscador_t_m_input.Text in valor)
+                                =lista_modalidad
+                                //Filter(lista_modalidad; buscador_t_m_input.Text in valor)
                                 /*
                                 Distinct(
                                     lista_modalidad;
