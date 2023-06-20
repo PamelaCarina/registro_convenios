@@ -31,8 +31,8 @@ App As appinfo:
         Set(
             reparticiones,
             Sort(
-                'DTI-PATraerreparticiones'.Run(),
-                Nombre1
+                'DTI-PAReparticionesUdeC'.Run(),
+                NOMBRE
             )
         );
         //AUTORIDADES MÁXIMAS
@@ -203,8 +203,8 @@ App As appinfo:
             Collect(
                 Nombres_reparticiones1,
                 {
-                    reparticion: Nombre1,
-                    codigo: Title
+                    reparticion: NOMBRE,
+                    codigo: CODIGO
                 }
             )
         );

@@ -18993,36 +18993,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.DTI-PATraerreparticiones"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.DTI-PATraerreparticiones",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "DTI-PATraerreparticiones",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-NotOfflineConnectors",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.VRIM-PATraedatosdeusuario"
                 }
               ],
@@ -19424,6 +19394,36 @@
               },
               "properties": {
                 "member": "Convenio-PAActualizaridlistasSharePointasociadas",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-NotOfflineConnectors",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.DTI-PAReparticionesUdeC"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.DTI-PAReparticionesUdeC",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "DTI-PAReparticionesUdeC",
                 "module": "App",
                 "type": "App"
               }

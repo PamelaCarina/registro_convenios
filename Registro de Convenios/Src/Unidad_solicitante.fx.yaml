@@ -1652,7 +1652,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(17, 61, 107, 1)
             Default: |-
                 =//""
-                If(desplegar_buscador_p,"",p_seleccionado)
+                If(desplegar_buscador_p,"",Upper(p_seleccionado))
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
@@ -1711,7 +1711,7 @@ Unidad_solicitante As screen:
                         );
                 
                         Set(nueva_unidad_promotora,'Convenio-PAGuardarunidadpromotora'.Run(
-                            promotor_seleccionado.reparticion,
+                            Upper(promotor_seleccionado.reparticion),
                             promotor_seleccionado.codigo,
                             id_convenio,
                             id_estado
@@ -1721,7 +1721,7 @@ Unidad_solicitante As screen:
                         Set(id_estado,nueva_unidad_promotora.id_estado);
                 
                         Collect(unidades_promotoras,{
-                            nombre_unidad_promotora: promotor_seleccionado.reparticion,
+                            nombre_unidad_promotora: Upper(promotor_seleccionado.reparticion),
                             codigo_reparticion: promotor_seleccionado.codigo,
                             id_unidad_promotora: id_unidad_promotora        
                         });

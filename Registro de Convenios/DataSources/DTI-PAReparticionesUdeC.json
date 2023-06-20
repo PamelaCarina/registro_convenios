@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "15d78a04-84d0-4222-87ac-ea4e950d7638",
+    "Name": "DTI-PAReparticionesUdeC",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "691a68de-d40e-ee11-8f6d-6045bd006f89"
+  }
+]

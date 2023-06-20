@@ -21,7 +21,14 @@ Screen1 As screen:
 
         Button2 As button:
             Height: =27
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Set(
+                    reparticiones,
+                    Sort(
+                        'DTI-PAReparticionesUdeC'.Run(),
+                        NOMBRE
+                    )
+                );
             Text: ="Botón"
             X: =470
             ZIndex: =2

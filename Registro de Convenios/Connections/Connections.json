@@ -269,6 +269,36 @@
     "dependents": [],
     "id": "2da60731-008f-4b35-818b-ce1958aec84f"
   },
+  "32cb976a-bdd4-41c9-8063-d2fc1632a0cb": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "691a68de-d40e-ee11-8f6d-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "730a3ec6-bbde-435c-55a5-ae594f70aca2"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "691a68de-d40e-ee11-8f6d-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "730a3ec6-bbde-435c-55a5-ae594f70aca2"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAReparticionesUdeC"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "32cb976a-bdd4-41c9-8063-d2fc1632a0cb"
+  },
   "3465d341-63ea-4404-8725-b30184dd3101": {
     "connectionRef": {
       "displayName": "Logic flows",
