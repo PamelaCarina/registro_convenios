@@ -18447,6 +18447,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.cumple_minimo_caracteres"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.cumple_minimo_caracteres",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "cumple_minimo_caracteres",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_convenio.sacar_archivo_oficial"
                 }
               ],

@@ -988,8 +988,14 @@ Datos_contraparte_nacional As screen:
                     //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}\d{3}\d{3}") ||
                     //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}\d{3}\d{3}") 
                 ,
-                    UpdateContext({es_rut:true}),
-                    UpdateContext({es_rut:false})
+                    UpdateContext({es_rut:true});
+                    UpdateContext({cumple_minimo_caracteres:true})
+                    ,
+                    UpdateContext({es_rut:false});
+                    If(Len(inp_contraparte_na_popup_search.Text)>=3,
+                        UpdateContext({cumple_minimo_caracteres:true}),
+                        UpdateContext({cumple_minimo_caracteres:false})
+                    )
                 );
                 
                 If(IsBlank(inp_contraparte_na_popup_search.Text)=false,
