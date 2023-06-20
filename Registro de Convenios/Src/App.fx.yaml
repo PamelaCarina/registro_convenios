@@ -228,25 +228,27 @@ App As appinfo:
                 )
             )
         );
+        /*
         Remove(
-            Nombres_reparticiones,
+            Nombres_reparticiones;
             LookUp(
-                Nombres_reparticiones,
+                Nombres_reparticiones;
                 reparticion = "Reparticion 9000"
-            );
+            );;
             LookUp(
-                Nombres_reparticiones,
+                Nombres_reparticiones;
                 reparticion = "Repartición Antigua Inexistente (Crear)"
-            );
+            );;
             LookUp(
-                Nombres_reparticiones,
+                Nombres_reparticiones;
                 reparticion = "Reparticion Hija 2"
-            );
+            );;
             LookUp(
-                Nombres_reparticiones,
+                Nombres_reparticiones;
                 reparticion = "Valido"
             )
-        );
+        );;
+        */
         //AUTORIDADES MÁXIMAS
         Clear(Nombres_autoridades);
         ForAll(
@@ -298,6 +300,13 @@ App As appinfo:
             LookUp(
                 lista_paises,
                 pais = "NO DEFINIDO"
+            )
+        );
+        Remove(
+            lista_paises,
+            LookUp(
+                lista_paises,
+                pais = "CHILE"
             )
         );
         //opciones seleccionables política del convenio

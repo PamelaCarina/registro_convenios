@@ -1492,9 +1492,12 @@ Unidad_solicitante As screen:
                         HoverColor: =RGBA(17, 61, 107, 1)
                         HoverFill: =RGBA(207, 210, 232, 1)
                         Items: =lista_alcance
-                        OnChange: |-
+                        OnChange: |
                             =Reset(buscador_a_t_input);
-                            UpdateContext({cambio_detectado:true})
+                            UpdateContext({cambio_detectado:true});
+                            If(tipo_alcance.Selected.id="2" && CountRows(contrapartes_internacionales)>0,//si ahora el alcance es nacional
+                                UpdateContext({popup_cambiar_alcance:true})
+                            );
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingTop: =12
@@ -2251,14 +2254,14 @@ Unidad_solicitante As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =9
+            ZIndex: =21
 
         img_loading As image:
             Image: =loading
             Visible: =cargando
             X: =633
             Y: =334
-            ZIndex: =10
+            ZIndex: =22
 
     grp_eliminar_popup As group:
         Height: =5
@@ -2273,7 +2276,7 @@ Unidad_solicitante As screen:
             Height: =768
             Visible: =popup_confirmar_eliminacion
             Width: =1366
-            ZIndex: =11
+            ZIndex: =9
 
         img_eliminar_popup As image:
             Height: =352
@@ -2287,7 +2290,7 @@ Unidad_solicitante As screen:
             Width: =709
             X: =327
             Y: =208
-            ZIndex: =12
+            ZIndex: =10
 
         lbl_eliminar_popup_titulo As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -2298,7 +2301,7 @@ Unidad_solicitante As screen:
             Width: =612
             X: =359
             Y: =234
-            ZIndex: =13
+            ZIndex: =11
 
         lbl_desea_eliminar As label:
             Align: =Align.Center
@@ -2312,7 +2315,7 @@ Unidad_solicitante As screen:
             Width: =645
             X: =359
             Y: =314
-            ZIndex: =14
+            ZIndex: =12
 
         btn_eliminar_popup As button:
             BorderThickness: =1
@@ -2336,7 +2339,7 @@ Unidad_solicitante As screen:
             Visible: =popup_confirmar_eliminacion
             X: =844
             Y: =488
-            ZIndex: =15
+            ZIndex: =13
 
         btn_eliminar_popup_atras_3 As button:
             BorderColor: =RGBA(247, 158, 64, 1)
@@ -2361,5 +2364,150 @@ Unidad_solicitante As screen:
             Visible: =popup_confirmar_eliminacion
             X: =652
             Y: =488
+            ZIndex: =14
+
+    popup_advertencia_cambair_alcance As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =23
+
+        fig_registro_5_popup_bg_7 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =popup_cambiar_alcance
+            Width: =1366
+            ZIndex: =15
+
+        img_registro_5_popup_bg_3 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Visible: =popup_cambiar_alcance
+            Width: =709
+            X: =327
+            Y: =208
+            ZIndex: =16
+
+        lbl_registro_popup_5_titulo_3 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="CAMBIO ALCANCE TERRITORIAL"
+            Visible: =popup_cambiar_alcance
+            Width: =412
+            X: =359
+            Y: =234
             ZIndex: =17
+
+        lbl_registro_popup_5_correo_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(17, 61, 107, 1)
+            Height: =117
+            Size: =14
+            Text: |-
+                ="Se cambiará a CONVENIO NACIONAL
+                Las contrapartes internacionales asociadas serán eliminadas
+                ¿Desea continuar?"
+            Visible: =popup_cambiar_alcance
+            Width: =645
+            X: =359
+            Y: =314
+            ZIndex: =18
+
+        btn_registro_5_popup_enviar_2 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(cargando,true);
+                
+                ForAll(
+                    contrapartes_internacionales,
+                    'Convenio-PAEliminarcontraparteregistrada'.Run(
+                        "INTERNACIONAL",
+                        id
+                    )
+                );
+                
+                Clear(contrapartes_internacionales);
+                Clear(id_contrapartes_internacionales);
+                
+                /*
+                'Convenio-PAEliminarcontraparteregistrada'.Run(
+                    "INTERNACIONAL";
+                    contraparte.id
+                );;
+                Remove(
+                    contrapartes_internacionales;
+                    First(
+                        Filter(
+                            contrapartes_internacionales;
+                            Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input.Text)
+                        )
+                    )
+                );;
+                Remove(
+                    id_contrapartes_internacionales;
+                    First(
+                        Filter(
+                            id_contrapartes_internacionales;
+                            Lower(ID) = Lower(contraparte.id)
+                        )
+                    )
+                );;
+                'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                    JSON(id_contrapartes_internacionales);
+                    "contraparte internacional";
+                    id_convenio
+                );;
+                */
+                Set(cargando,false);
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,1,-1)
+            Text: ="ACEPTAR"
+            Visible: =popup_cambiar_alcance
+            X: =844
+            Y: =488
+            ZIndex: =19
+
+        btn_registro_5_popup_atras_3 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_cambiar_alcance:false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,0,-1)
+            Text: ="CANCELAR"
+            Visible: =popup_cambiar_alcance
+            X: =652
+            Y: =488
+            ZIndex: =20
 
