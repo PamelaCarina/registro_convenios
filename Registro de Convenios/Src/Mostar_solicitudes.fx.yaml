@@ -23,8 +23,11 @@ Mostar_solicitudes As screen:
         Set(contraparte_na,Blank());
         Set(contraparte_in,Blank());
         Clear(contrapartes_nacionales);
+        Clear(id_contrapartes_nacionales);
         Clear(contrapartes_internacionales);
+        Clear(id_contrapartes_internacionales);
         Clear(solicitudes_añadir_contraparte);
+        Clear(id_solicitudes_añadir_contraparte);
         Clear(lista_doc_contr_subidos);
         
         //PANTALLA - DATOS CONVENIO
@@ -282,7 +285,7 @@ Mostar_solicitudes As screen:
                                 estado: estado,
                                 file: file
                             });
-                            Collect(solicitudes_añadir_contraparte,{ID: id})
+                            Collect(id_solicitudes_añadir_contraparte,{ID: id})
                         );
                         
                         Set(especificacion_convenio_recuperada,solicitud_convenio_recuperada.especificacion_registrada);
