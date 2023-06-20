@@ -973,6 +973,7 @@ Datos_contraparte_nacional As screen:
                 UpdateContext({es_rut:false});
                 UpdateContext({mostrar_lista_persona_juridica:false});
                 UpdateContext({desplegar_buscador_juridica:false});
+                UpdateContext({error_minimo_caracteres:true});
                 Set(popup_na_ya_ingresada,false);
                 
                 If(
@@ -1026,7 +1027,8 @@ Datos_contraparte_nacional As screen:
                         If(cumple_minimo_caracteres,
                             Set(persona_juridica,
                                 'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
-                            )
+                            ),
+                            UpdateContext({error_minimo_caracteres:false})
                         )
                     );
                 
@@ -1139,7 +1141,7 @@ Datos_contraparte_nacional As screen:
             Visible: =popup_na_ya_ingresada
             Width: =540
             X: =(fondo_blanco_4.X+fondo_blanco_4.Width/2)-Self.Width/2
-            Y: =418
+            Y: =418+0
             ZIndex: =12
 
         formatos_permitidos_lb_6 As label:
@@ -1187,6 +1189,18 @@ Datos_contraparte_nacional As screen:
             Y: =488+0
             ZIndex: =15
 
+        lbl_contraparte_na_min_caracteres_popup As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Introduzca un mínimo de 3 caracteres"
+            Visible: =error_minimo_caracteres && !lbl_contraparte_na_popup_faltandatos.Visible
+            Width: =540
+            X: =(fondo_blanco_4.X+fondo_blanco_4.Width/2)-Self.Width/2
+            Y: =418+0
+            ZIndex: =16
+
         Contenedor_persona_juridica As groupContainer.manualLayoutContainer:
             Visible: |-
                 =//desplegar_buscador_a
@@ -1194,7 +1208,7 @@ Datos_contraparte_nacional As screen:
             Width: =620
             X: =371+0
             Y: =397+0
-            ZIndex: =16
+            ZIndex: =17
 
             opciones_persona_juridica As gallery.galleryVertical:
                 DelayItemLoading: =true
