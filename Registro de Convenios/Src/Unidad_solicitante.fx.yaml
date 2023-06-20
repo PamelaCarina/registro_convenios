@@ -18,6 +18,8 @@ Unidad_solicitante As screen:
         
         UpdateContext({popup_confirmar_eliminacion:false});
         UpdateContext({desea_eliminar:false});
+        Set(id_unidad_popup, 0);
+        Set(nombre_unidad_popup, "");
 
     Botones_atras_siguiente As groupContainer.manualLayoutContainer:
         Height: =44
@@ -679,31 +681,33 @@ Unidad_solicitante As screen:
                         Height: =20
                         Icon: =Icon.Cancel
                         OnSelect: |
-                            =//UpdateContext({popup_confirmar_eliminacion:true});;
-                            'Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);
+                            =Set(id_unidad_popup, ThisItem.id_unidad_promotora);
+                            Set(nombre_unidad_popup, ThisItem.nombre_unidad_promotora);
+                            UpdateContext({popup_confirmar_eliminacion:true});
+                            /*'Convenio-PAEliminarunidadpromotora'.Run(ThisItem.id_unidad_promotora);;
                             Remove(
-                                unidades_promotoras,
+                                unidades_promotoras;
                                 First(
                                     Filter(
-                                        unidades_promotoras,
+                                        unidades_promotoras;
                                         Lower(nombre_unidad_promotora) = Lower(ThisItem.nombre_unidad_promotora)
                                     )
                                 )
-                            );
+                            );;
                             Remove(
-                                id_unidades_promotoras,
+                                id_unidades_promotoras;
                                 First(
                                     Filter(
-                                        id_unidades_promotoras,
+                                        id_unidades_promotoras;
                                         Lower(ID) = Lower(ThisItem.id_unidad_promotora)
                                     )
                                 )
-                            );
+                            );;
                             'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
-                                JSON(id_unidades_promotoras),
-                                "unidad promotora",
+                                JSON(id_unidades_promotoras);
+                                "unidad promotora";
                                 id_convenio
-                                );
+                                );;*/
                         Width: =20
                         X: =290
                         Y: =25
@@ -2330,8 +2334,35 @@ Unidad_solicitante As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =UpdateContext({desea_eliminar:true});
-                UpdateContext({popup_confirmar_eliminacion:false})
+                =Set(cargando,true);
+                
+                'Convenio-PAEliminarunidadpromotora'.Run(id_unidad_popup);
+                Remove(
+                    unidades_promotoras,
+                    First(
+                        Filter(
+                            unidades_promotoras,
+                            Lower(nombre_unidad_promotora) = Lower(nombre_unidad_popup)
+                        )
+                    )
+                );
+                Remove(
+                    id_unidades_promotoras,
+                    First(
+                        Filter(
+                            id_unidades_promotoras,
+                            Lower(ID) = Lower(id_unidad_promotora)
+                        )
+                    )
+                );
+                'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
+                    JSON(id_unidades_promotoras),
+                    "unidad promotora",
+                    id_convenio
+                    );
+                
+                UpdateContext({popup_confirmar_eliminacion:false});
+                Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
