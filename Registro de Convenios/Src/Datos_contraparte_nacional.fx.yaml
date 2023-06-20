@@ -1023,8 +1023,10 @@ Datos_contraparte_nacional As screen:
                             'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Rut")
                         )
                     ,
-                        Set(persona_juridica,
-                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
+                        If(cumple_minimo_caracteres,
+                            Set(persona_juridica,
+                                'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
+                            )
                         )
                     );
                 
