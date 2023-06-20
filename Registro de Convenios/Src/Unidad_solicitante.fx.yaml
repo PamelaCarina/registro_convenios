@@ -79,16 +79,20 @@ Unidad_solicitante As screen:
                     UpdateContext({sin_nombre_responsable:false})
                 );
                 
-                If(CountRows(responsable.cargos)>1,
-                    If(IsBlank(cargo),
-                        UpdateContext({sin_cargo_responsable:true}), 
-                        UpdateContext({sin_cargo_responsable:false})
-                    ),
-                    If(IsBlank(cargo_responsable_input_2.Text), 
-                        UpdateContext({sin_cargo_responsable:true}), 
-                        UpdateContext({sin_cargo_responsable:false})
-                    )
+                If(IsBlank(responsable.cargos),
+                    UpdateContext({cargo_resp:cargo_responsable_input_2.Text}), 
+                    If(CountRows(responsable.cargos)>1,
+                        If(IsBlank(cargo),
+                            UpdateContext({sin_cargo_responsable:true}), 
+                            UpdateContext({sin_cargo_responsable:false})
+                        ),
+                        If(IsBlank(cargo_responsable_input_2.Text), 
+                            UpdateContext({sin_cargo_responsable:true}), 
+                            UpdateContext({sin_cargo_responsable:false})
+                        )
+                    );
                 );
+                
                 
                 If(CountRows(responsable.cargos)=1,
                     UpdateContext({cargo_resp:cargo_responsable_input_2.Text}), 
