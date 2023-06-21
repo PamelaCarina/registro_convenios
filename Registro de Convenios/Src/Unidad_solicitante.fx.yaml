@@ -2403,7 +2403,7 @@ Unidad_solicitante As screen:
             Y: =488
             ZIndex: =14
 
-    popup_advertencia_cambair_alcance As group:
+    popup_advertencia_cambiar_alcance As group:
         Height: =5
         Width: =5
         X: =60
@@ -2477,36 +2477,8 @@ Unidad_solicitante As screen:
                 
                 Clear(contrapartes_internacionales);
                 Clear(id_contrapartes_internacionales);
+                UpdateContext({popup_cambiar_alcance:false});
                 
-                /*
-                'Convenio-PAEliminarcontraparteregistrada'.Run(
-                    "INTERNACIONAL";
-                    contraparte.id
-                );;
-                Remove(
-                    contrapartes_internacionales;
-                    First(
-                        Filter(
-                            contrapartes_internacionales;
-                            Lower(nombre_entidad_contraparte) = Lower(nombre_unidad_contraparte_in_input.Text)
-                        )
-                    )
-                );;
-                Remove(
-                    id_contrapartes_internacionales;
-                    First(
-                        Filter(
-                            id_contrapartes_internacionales;
-                            Lower(ID) = Lower(contraparte.id)
-                        )
-                    )
-                );;
-                'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
-                    JSON(id_contrapartes_internacionales);
-                    "contraparte internacional";
-                    id_convenio
-                );;
-                */
                 Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
