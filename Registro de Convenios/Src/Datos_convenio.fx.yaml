@@ -12,7 +12,15 @@ Datos_convenio As screen:
         UpdateContext({mostrar_lista_archivos_oficiales:false});
         Set(num_max_doc_official,1-CountRows(lista_doc_off_subidos));
         Set(num_max_doc_extra,15 - CountRows(lista_doc_ext_subidos));
-        UpdateContext({cambio_detectado:false})
+        UpdateContext({cambio_detectado:false});
+        
+        UpdateContext({popup_eliminar_oficial:false});
+        Set(lista_documentos_popup_oficial, {});
+        Set(nombre_documento_popup_oficial, "");
+        
+        UpdateContext({popup_eliminar_extra:false});
+        Set(lista_documentos_popup_extra, {});
+        Set(nombre_documento_popup_extra, "");
 
     Botones_atras_siguiente_1 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -277,11 +285,15 @@ Datos_convenio As screen:
                             Height: =20
                             Icon: =Icon.Cancel
                             OnSelect: |
-                                =Remove(lista_doc_off_subidos,ThisItem);
-                                Set(num_max_doc_official,1-CountRows(lista_doc_off_subidos));
+                                =Set(lista_documentos_popup_oficial, ThisItem);
+                                Set(nombre_documento_popup_oficial, ThisItem.file.Name);
+                                UpdateContext({popup_eliminar_oficial:true});
+                                
+                                /*Remove(lista_doc_off_subidos;ThisItem);;
+                                Set(num_max_doc_official;1-CountRows(lista_doc_off_subidos));;
                                 'Convenio-PAEliminardocumentoconvenio'.Run(
                                     ThisItem.file.Name
-                                ); 
+                                );;*/ 
                             Width: =34
                             X: =541
                             Y: =3
@@ -495,12 +507,17 @@ Datos_convenio As screen:
                             DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Height: =20
                             Icon: =Icon.Cancel
-                            OnSelect: |
-                                =Remove(lista_doc_ext_subidos,ThisItem);
-                                Set(num_max_doc_extra,1-CountRows(lista_doc_ext_subidos));
+                            OnSelect: |-
+                                =Set(lista_documentos_popup_extra, ThisItem);
+                                Set(nombre_documento_popup_extra, ThisItem.file.Name);
+                                UpdateContext({popup_eliminar_extra:true});
+                                /*
+                                Remove(lista_doc_ext_subidos;ThisItem);;
+                                Set(num_max_doc_extra;1-CountRows(lista_doc_ext_subidos));;
                                 'Convenio-PAEliminardocumentoconvenio'.Run(
                                     ThisItem.file.Name
-                                ); 
+                                );;
+                                */
                             Width: =34
                             X: =541
                             Y: =3
@@ -1571,5 +1588,227 @@ Datos_convenio As screen:
             Visible: =cargando
             X: =632
             Y: =323
+            ZIndex: =21
+
+    grp_eliminar_oficial_popup As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =16
+
+        fig_eliminar_popup_bg_8 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =popup_eliminar_oficial
+            Width: =1366
             ZIndex: =9
+
+        img_eliminar_popup_1 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Visible: =popup_eliminar_oficial
+            Width: =709
+            X: =327
+            Y: =208
+            ZIndex: =10
+
+        lbl_eliminar_popup_titulo_1 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="ELIMINACIÓN BORRADOR DE CONVENIO"
+            Visible: =popup_eliminar_oficial
+            Width: =612
+            X: =359
+            Y: =234
+            ZIndex: =11
+
+        lbl_desea_eliminar_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(17, 61, 107, 1)
+            Height: =117
+            Size: =14
+            Text: |-
+                ="El documento del borrador de convenio será eliminado
+                ¿Desea continuar?"
+            Visible: =popup_eliminar_oficial
+            Width: =645
+            X: =359
+            Y: =314
+            ZIndex: =12
+
+        btn_eliminar_popup_1 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(cargando,true);
+                
+                Remove(lista_doc_off_subidos,lista_documentos_popup_oficial);
+                Set(num_max_doc_official,1-CountRows(lista_doc_off_subidos));
+                'Convenio-PAEliminardocumentoconvenio'.Run(
+                    nombre_documento_popup_oficial
+                );
+                
+                UpdateContext({popup_eliminar_oficial:false});
+                Set(cargando,false);
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,1,-1)
+            Text: ="ELIMINAR"
+            Visible: =popup_eliminar_oficial
+            X: =844
+            Y: =488
+            ZIndex: =13
+
+        btn_eliminar_popup_atras_4 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_eliminar_oficial:false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,0,-1)
+            Text: ="CANCELAR"
+            Visible: =popup_eliminar_oficial
+            X: =652
+            Y: =488
+            ZIndex: =14
+
+    grp_eliminar_extra_popup As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =22
+
+        fig_eliminar_popup_bg_9 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Visible: =popup_eliminar_extra
+            Width: =1366
+            ZIndex: =15
+
+        img_eliminar_popup_2 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Visible: =popup_eliminar_extra
+            Width: =709
+            X: =327
+            Y: =208
+            ZIndex: =16
+
+        lbl_eliminar_popup_titulo_2 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="ELIMINACIÓN DOCUMENTO ADICIONAL"
+            Visible: =popup_eliminar_extra
+            Width: =612
+            X: =359
+            Y: =234
+            ZIndex: =17
+
+        lbl_desea_eliminar_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(17, 61, 107, 1)
+            Height: =117
+            Size: =14
+            Text: |-
+                ="El documento seleccionado será eliminado
+                ¿Desea continuar?"
+            Visible: =popup_eliminar_extra
+            Width: =645
+            X: =359
+            Y: =314
+            ZIndex: =18
+
+        btn_eliminar_popup_2 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(cargando,true);
+                
+                Remove(lista_doc_ext_subidos,lista_documentos_popup_extra);
+                Set(num_max_doc_extra,1-CountRows(lista_doc_ext_subidos));
+                'Convenio-PAEliminardocumentoconvenio'.Run(
+                    nombre_documento_popup_extra
+                );
+                
+                UpdateContext({popup_eliminar_extra:false});
+                Set(cargando,false);
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,1,-1)
+            Text: ="ELIMINAR"
+            Visible: =popup_eliminar_extra
+            X: =844
+            Y: =488
+            ZIndex: =19
+
+        btn_eliminar_popup_atras_5 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: |-
+                =UpdateContext({popup_eliminar_extra:false})
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =If(popup_confirmacion,0,-1)
+            Text: ="CANCELAR"
+            Visible: =popup_eliminar_extra
+            X: =652
+            Y: =488
+            ZIndex: =20
 
