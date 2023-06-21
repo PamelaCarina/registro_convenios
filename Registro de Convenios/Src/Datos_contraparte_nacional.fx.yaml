@@ -15,6 +15,7 @@ Datos_contraparte_nacional As screen:
         Set(tab_seleccionada, 1);
         UpdateContext({mostrar_lista_persona_juridica:false});
         UpdateContext({popup_eliminar_contraparte_na:false});
+        UpdateContext({error_minimo_caracteres:false});
 
     Botones_atras_siguiente_3 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -1308,7 +1309,7 @@ Datos_contraparte_nacional As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =8
+            ZIndex: =14
 
         img_loading_1 As image:
             Image: =loading
@@ -1330,7 +1331,7 @@ Datos_contraparte_nacional As screen:
             Height: =768
             Visible: =popup_eliminar_contraparte_na
             Width: =1366
-            ZIndex: =9
+            ZIndex: =8
 
         img_eliminar_popup_3 As image:
             Height: =352
@@ -1344,7 +1345,7 @@ Datos_contraparte_nacional As screen:
             Width: =709
             X: =327
             Y: =208
-            ZIndex: =10
+            ZIndex: =9
 
         lbl_eliminar_popup_titulo_3 As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -1355,7 +1356,7 @@ Datos_contraparte_nacional As screen:
             Width: =612
             X: =359
             Y: =234
-            ZIndex: =11
+            ZIndex: =10
 
         lbl_desea_eliminar_3 As label:
             Align: =Align.Center
@@ -1369,7 +1370,7 @@ Datos_contraparte_nacional As screen:
             Width: =645
             X: =359
             Y: =314
-            ZIndex: =12
+            ZIndex: =11
 
         btn_eliminar_popup_3 As button:
             BorderThickness: =1
@@ -1425,7 +1426,7 @@ Datos_contraparte_nacional As screen:
             Visible: =popup_eliminar_contraparte_na
             X: =844
             Y: =488
-            ZIndex: =13
+            ZIndex: =12
 
         btn_eliminar_popup_atras_6 As button:
             BorderColor: =RGBA(247, 158, 64, 1)
@@ -1450,5 +1451,5 @@ Datos_contraparte_nacional As screen:
             Visible: =popup_eliminar_contraparte_na
             X: =652
             Y: =488
-            ZIndex: =14
+            ZIndex: =13
 
