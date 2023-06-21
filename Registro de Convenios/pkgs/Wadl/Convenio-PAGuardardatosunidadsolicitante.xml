@@ -14,7 +14,7 @@
       <string name="ManualTriggerInput_text_9_def" />
       <number name="ManualTriggerInput_number_def" />
       <number name="ManualTriggerInput_number_1_def" />
-      <number name="ManualTriggerInput_number_2_def" />
+      <string name="ManualTriggerInput_text_10_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -28,7 +28,7 @@
         <property name="text_9" type="string" />
         <property name="number" type="number" />
         <property name="number_1" type="number" />
-        <property name="number_2" type="number" />
+        <property name="text_10" type="string" />
       </object>
       <integer name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
@@ -83,7 +83,7 @@
             <param style="plain" name="number_1" path="/number_1" type="xs:double" required="true">
               <doc title="id_estado" />
             </param>
-            <param style="plain" name="number_2" path="/number_2" type="xs:double" required="true">
+            <param style="plain" name="text_10" path="/text_10" type="xs:string" required="true">
               <doc title="Alcance territorial" />
             </param>
           </representation>

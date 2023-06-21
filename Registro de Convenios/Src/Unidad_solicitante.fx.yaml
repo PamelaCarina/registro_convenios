@@ -146,7 +146,7 @@ Unidad_solicitante As screen:
                                                                 telefono_responsable_input_2.Text,
                                                                 id_convenio,
                                                                 id_estado,
-                                                                tipo_alcance.Selected.id
+                                                                tipo_alcance.Selected.valor
                         ).id_estado);
                 
                         Set(cargando, false);
