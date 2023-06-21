@@ -975,7 +975,7 @@ Datos_contraparte_nacional As screen:
                 UpdateContext({es_rut:false});
                 UpdateContext({mostrar_lista_persona_juridica:false});
                 UpdateContext({desplegar_buscador_juridica:false});
-                UpdateContext({error_minimo_caracteres:true});
+                UpdateContext({error_minimo_caracteres:false});
                 Set(popup_na_ya_ingresada,false);
                 
                 If(
@@ -1030,7 +1030,7 @@ Datos_contraparte_nacional As screen:
                             Set(persona_juridica,
                                 'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
                             ),
-                            UpdateContext({error_minimo_caracteres:false})
+                            UpdateContext({error_minimo_caracteres:true})
                         )
                     );
                 
@@ -1039,7 +1039,9 @@ Datos_contraparte_nacional As screen:
                         UpdateContext({mostrar_lista_persona_juridica:true});
                         UpdateContext({desplegar_buscador_juridica:true})
                     ,
-                        UpdateContext({popup_institucionnoencontrada:true})
+                        If(!error_minimo_caracteres,
+                            UpdateContext({popup_institucionnoencontrada:true})
+                        )
                     );
                     
                     Set(cargando, false);
