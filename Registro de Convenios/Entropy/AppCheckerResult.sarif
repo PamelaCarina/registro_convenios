@@ -9666,6 +9666,18 @@
               "message": {
                 "text": "Error al ejecutar la regla app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -18945,17 +18957,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Convenios-PATraerlistadodesolicitud"
+                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Convenios-PATraerlistadodesolicitud",
+                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Convenios-PATraerlistadodesolicitud",
+                "member": "Convenio-PATraerestadosolicitudporpantalla",
                 "module": "App",
                 "type": "App"
               }
@@ -19305,17 +19317,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla"
+                  "fullyQualifiedName": "App.Convenios-PATraerlistadodesolicitud"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla",
+                  "fullyQualifiedName": "App.Convenios-PATraerlistadodesolicitud",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Convenio-PATraerestadosolicitudporpantalla",
+                "member": "Convenios-PATraerlistadodesolicitud",
                 "module": "App",
                 "type": "App"
               }

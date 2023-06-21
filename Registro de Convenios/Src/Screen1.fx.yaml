@@ -381,3 +381,9 @@ Screen1 As screen:
                 Width: =160
                 ZIndex: =2
 
+    Button3 As button:
+        Text: ="Botón"
+        X: =471
+        Y: =627
+        ZIndex: =4
+
