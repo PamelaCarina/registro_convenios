@@ -82,7 +82,10 @@ Unidad_solicitante As screen:
                 );
                 
                 If(IsBlank(responsable.cargos),
-                    UpdateContext({cargo_resp:cargo_responsable_input_2.Text}), 
+                    If(IsBlank(cargo_responsable_input_2.Text),
+                        UpdateContext({sin_cargo_responsable:true}),
+                        UpdateContext({cargo_resp:cargo_responsable_input_2.Text})
+                    ), 
                     If(CountRows(responsable.cargos)>1,
                         If(IsBlank(cargo),
                             UpdateContext({sin_cargo_responsable:true}), 
