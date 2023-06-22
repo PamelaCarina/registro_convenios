@@ -635,7 +635,7 @@ Información_convenio As screen:
         PaddingRight: =90
         Size: =11
         Text: ="Debe completar los campos faltantes."
-        Visible: =If(sin_convenio_tipo || sin_sector_politica || sin_ambito_politica, true)
+        Visible: =If((sin_convenio_tipo && IsBlank(convenio_tipo))|| (sin_sector_politica && IsBlank(sector_politica)) || (sin_ambito_politica && IsBlank(ambito_politica)), true)
         Width: =856
         X: =510
         Y: =657
