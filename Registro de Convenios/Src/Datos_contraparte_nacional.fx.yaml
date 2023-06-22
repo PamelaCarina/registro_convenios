@@ -149,11 +149,14 @@ Datos_contraparte_nacional As screen:
                 "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false),
                         UpdateContext({correo_na_invalido:true}),
                         UpdateContext({correo_na_invalido:false}) );
+                If(IsBlank(correo_electronico_na_input.Text),
+                    UpdateContext({correo_na_vacio:true}),
+                    UpdateContext({correo_na_vacio:false}));
                 
                 //firma digital
                 If(IsBlank(firma_digiral_na_button),UpdateContext({sin_firma_na:true}),UpdateContext({sin_firma_na:false}));
                 
-                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !sin_firma_na && !correo_na_invalido,
+                If(!sin_nombre_representante_legal_na && !sin_nombre_responsable_institucional_na && !sin_cargo_na && !sin_firma_na && !correo_na_invalido && !correo_na_vacio,
                     If(IsBlank(
                             LookUp(
                                 contrapartes_nacionales, 
@@ -317,7 +320,7 @@ Datos_contraparte_nacional As screen:
                             ;true;false)
                             */
                             If(((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
-                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_invalido) ||
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_invalido) || (IsBlank(correo_electronico_na_input.Text) && correo_na_vacio)
                             ,true,false)
                         Width: =correo_electronico_na_input.Width
                         X: =2
@@ -834,8 +837,8 @@ Datos_contraparte_nacional As screen:
         Size: =9
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
-            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
-            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_vacio
+            =If(correo_na_invalido && (IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false)
             ,true,false)
         Width: =676
         X: =608
