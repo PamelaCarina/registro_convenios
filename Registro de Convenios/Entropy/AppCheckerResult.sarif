@@ -18957,17 +18957,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla"
+                  "fullyQualifiedName": "App.Convenio-PAGuardarespecificaciónconvenio"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla",
+                  "fullyQualifiedName": "App.Convenio-PAGuardarespecificaciónconvenio",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Convenio-PATraerestadosolicitudporpantalla",
+                "member": "Convenio-PAGuardarespecificaciónconvenio",
                 "module": "App",
                 "type": "App"
               }
@@ -19167,17 +19167,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Convenio-PAGuardarespecificaciónconvenio"
+                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Convenio-PAGuardarespecificaciónconvenio",
+                  "fullyQualifiedName": "App.Convenio-PATraerestadosolicitudporpantalla",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Convenio-PAGuardarespecificaciónconvenio",
+                "member": "Convenio-PATraerestadosolicitudporpantalla",
                 "module": "App",
                 "type": "App"
               }

@@ -5,16 +5,16 @@
       <string name="ManualTriggerInput_text_3_def" />
       <number name="ManualTriggerInput_number_def" />
       <number name="ManualTriggerInput_number_1_def" />
-      <number name="ManualTriggerInput_number_2_def" />
-      <number name="ManualTriggerInput_number_3_def" />
-      <number name="ManualTriggerInput_number_4_def" />
+      <string name="ManualTriggerInput_text_def" />
+      <string name="ManualTriggerInput_text_1_def" />
+      <string name="ManualTriggerInput_text_2_def" />
       <object name="ManualTriggerInput">
         <property name="text_3" type="string" />
         <property name="number" type="number" />
         <property name="number_1" type="number" />
-        <property name="number_2" type="number" />
-        <property name="number_3" type="number" />
-        <property name="number_4" type="number" />
+        <property name="text" type="string" />
+        <property name="text_1" type="string" />
+        <property name="text_2" type="string" />
       </object>
       <integer name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
@@ -42,14 +42,14 @@
             <param style="plain" name="number_1" path="/number_1" type="xs:double" required="true">
               <doc title="id_estado" />
             </param>
-            <param style="plain" name="number_2" path="/number_2" type="xs:double" required="true">
-              <doc title="id_tipologia" />
+            <param style="plain" name="text" path="/text" type="xs:string" required="true">
+              <doc title="tipologia" />
             </param>
-            <param style="plain" name="number_3" path="/number_3" type="xs:double" required="true">
-              <doc title="id_tipo" />
+            <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
+              <doc title="tipo" />
             </param>
-            <param style="plain" name="number_4" path="/number_4" type="xs:double" required="true">
-              <doc title="id_modalidad" />
+            <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
+              <doc title="modalidad" />
             </param>
           </representation>
         </request>

@@ -70,9 +70,9 @@ Datos_convenio As screen:
                                                                             descripcion_proposito_1.Text,
                                                                             id_convenio,
                                                                             id_estado,
-                                                                            tipo_tipologia.Selected.id,
-                                                                            tipo_solicitud.Selected.id,
-                                                                            tipo_modalidades.Selected.id
+                                                                            tipo_tipologia.Selected.valor,
+                                                                            tipo_solicitud.Selected.valor,
+                                                                            tipo_modalidades.Selected.valor
                     ).id_estado);
                     
                     Set(cargando, false);
@@ -287,6 +287,7 @@ Datos_convenio As screen:
                             OnSelect: |
                                 =Set(lista_documentos_popup_oficial, ThisItem);
                                 Set(nombre_documento_popup_oficial, ThisItem.file.Name);
+                                //Set(id_documento_popup_oficial; ThisItem.id);;
                                 UpdateContext({popup_eliminar_oficial:true});
                                 
                                 /*Remove(lista_doc_off_subidos;ThisItem);;
@@ -1225,10 +1226,11 @@ Datos_convenio As screen:
                                 )
                             );
                             Collect(lista_doc_ext_subidos,{
-                                file: Last(documento_extra_subido).file
+                                file: Last(documento_extra_subido).file,
+                                id:Last(documento_extra_subido).id
                             });
                             Collect(id_lista_doc_ext_subidos,{
-                                file: Last(documento_extra_subido).id
+                                ID: Last(documento_extra_subido).id
                             });
                         );
                         'Convenio-PAActualizaridlistasSharePointasociadas'.Run(
@@ -1429,7 +1431,8 @@ Datos_convenio As screen:
                                 )
                             );
                             Collect(lista_doc_off_subidos,{
-                                file: Last(documento_oficial_subido).file
+                                file: Last(documento_oficial_subido).file,
+                                id:Last(documento_oficial_subido).id
                             });
                             Collect(id_lista_doc_off_subidos,{
                                 ID: Last(documento_oficial_subido).id
@@ -1658,7 +1661,15 @@ Datos_convenio As screen:
                 'Convenio-PAEliminardocumentoconvenio'.Run(
                     nombre_documento_popup_oficial
                 );
-                
+                Remove(
+                    id_lista_doc_off_subidos,
+                    First(
+                        Filter(
+                            id_lista_doc_off_subidos,
+                            Lower(ID) = Lower(lista_documentos_popup_oficial.id)
+                        )
+                    )
+                );
                 UpdateContext({popup_eliminar_oficial:false});
                 Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
@@ -1765,9 +1776,18 @@ Datos_convenio As screen:
                 =Set(cargando,true);
                 
                 Remove(lista_doc_ext_subidos,lista_documentos_popup_extra);
-                Set(num_max_doc_extra,1-CountRows(lista_doc_ext_subidos));
+                Set(num_max_doc_extra,15-CountRows(lista_doc_ext_subidos));
                 'Convenio-PAEliminardocumentoconvenio'.Run(
                     nombre_documento_popup_extra
+                );
+                Remove(
+                    id_lista_doc_ext_subidos,
+                    First(
+                        Filter(
+                            id_lista_doc_ext_subidos,
+                            Lower(ID) = Lower(lista_documentos_popup_extra.id)
+                        )
+                    )
                 );
                 
                 UpdateContext({popup_eliminar_extra:false});

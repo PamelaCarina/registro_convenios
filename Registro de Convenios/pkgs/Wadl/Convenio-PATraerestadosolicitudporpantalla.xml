@@ -120,8 +120,10 @@
         <property name="Name" type="string" />
         <property name="Value" type="string" />
       </object>
+      <integer name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_id_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def">
         <property name="file" typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def_file_def" />
+        <property name="id" type="integer" />
       </object>
       <array typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def_items_def" name="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def" />
       <string name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def_Name_def" />
@@ -130,8 +132,10 @@
         <property name="Name" type="string" />
         <property name="Value" type="string" />
       </object>
+      <integer name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_id_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def">
         <property name="file" typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def_file_def" />
+        <property name="id" type="integer" />
       </object>
       <array typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def" name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def">

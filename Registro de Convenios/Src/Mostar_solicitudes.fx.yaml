@@ -33,7 +33,9 @@ Mostar_solicitudes As screen:
         //PANTALLA - DATOS CONVENIO
         Set(especificacion_convenio_recuperada,Blank());
         Clear(lista_doc_off_subidos);
+        Clear(id_lista_doc_off_subidos);
         Clear(lista_doc_ext_subidos);
+        Clear(id_lista_doc_ext_subidos);
         Reset(descripcion_proposito_1);
         
         //PANTALLA - INFORMACIÓN CONVENIO
@@ -293,12 +295,18 @@ Mostar_solicitudes As screen:
                         ForAll(especificacion_convenio_recuperada.borrador_convenio,
                             Collect(lista_doc_off_subidos,{
                                 file:file
+                            });
+                            Collect(id_lista_doc_off_subidos,{
+                                ID:id
                             })
                         );
                         
                         ForAll(especificacion_convenio_recuperada.documentos_extra,
                             Collect(lista_doc_ext_subidos,{
                                 file:file
+                            });
+                            Collect(id_lista_doc_ext_subidos,{
+                                ID:id
                             })
                         );
                         
