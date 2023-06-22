@@ -11,7 +11,7 @@ App As appinfo:
         Set(
             persona_solicitante,
             //'VRIM-PATraedatosdeusuario'.Run("pcareaga@udec.cl")
-            'VRIM-PATraedatosdeusuario'.Run("ccarderon@udec.cl")
+            'VRIM-PATraedatosdeusuario'.Run("jaimecontreras@udec.cl")
         );
         //LISTAS DESPLEGABLES
         Set(

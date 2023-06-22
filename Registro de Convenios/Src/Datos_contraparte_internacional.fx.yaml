@@ -806,8 +806,7 @@ Datos_contraparte_internacional As screen:
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
             =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
-            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-            && correo_in_invalido)
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_in_invalido
             ,true,false)
         Width: =676
         X: =608
