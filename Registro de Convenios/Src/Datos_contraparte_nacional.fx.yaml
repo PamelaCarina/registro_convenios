@@ -834,12 +834,12 @@ Datos_contraparte_nacional As screen:
         Size: =9
         Text: ="Ingrese una dirección de correo válida."
         Visible: |-
-            =/*If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text));
-            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && !hide_border_correo_na
-            ;true;false)*/
+            =If((IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && correo_na_vacio
+            ,true,false)
         Width: =676
-        X: =600
-        Y: =626
+        X: =608
+        Y: =510
         ZIndex: =3
 
     lbl_faltan_datos_2 As label:
@@ -850,9 +850,7 @@ Datos_contraparte_nacional As screen:
         PaddingRight: =90
         Size: =11
         Text: ="Debe completar los campos faltantes."
-        Visible: |-
-            =If((sin_nombre_representante_legal_na || sin_nombre_responsable_institucional_na || sin_cargo_na || correo_na_invalido) && (Len(nombre_representante_legal_na_input.Text)=0 || CountRows(Split(Trim(descripcion_proposito_1.Text),""))=0 || Len(nombre_responsable_institucional_na_input.Text)=0 || CountRows(Split(Trim(nombre_responsable_institucional_na_input.Text),""))=0 || Len(cargo_responsable_institucional_na_input.Text)=0 || (IsMatch(TrimEnds(Lower(correo_electronico_na_input.Text)),
-            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false) && !hide_border_correo_na || IsBlank(firma_digiral_na_button)), true)
+        Visible: =If((sin_nombre_representante_legal_na || sin_firma_na || sin_nombre_responsable_institucional_na || sin_cargo_na || correo_na_invalido || correo_na_vacio) && (IsBlank(nombre_representante_legal_na_input.Text) || CountRows(Split(Trim(nombre_representante_legal_na_input.Text),""))=0 || IsBlank(nombre_responsable_institucional_na_input.Text) || CountRows(Split(Trim(nombre_responsable_institucional_na_input.Text),""))=0 || IsBlank(cargo_responsable_institucional_na_input.Text) || CountRows(Split(Trim(cargo_responsable_institucional_na_input.Text),""))=0 || IsBlank(correo_electronico_na_input.Text) || IsBlank(firma_digiral_na_button)), true)
         Width: =676
         X: =690
         Y: =657

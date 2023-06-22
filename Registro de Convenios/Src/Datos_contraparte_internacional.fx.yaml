@@ -13,12 +13,10 @@ Datos_contraparte_internacional As screen:
         //UpdateContext({sin_cargo_in:false});;
         UpdateContext({correo_in_invalido:false});
         UpdateContext({correo_in_vacio:false});
-        UpdateContext({hide_border_correo_in:true});
         
         UpdateContext({popup_nueva_contraparte_in:false});
         //Reset(inp_contraparte_in_popup_search);;
         //Set(c_n_seleccionada;"");;
-        UpdateContext({cambio_detectado:false});
         UpdateContext({popup_eliminar_contraparte_in:false});
 
     Botones_atras_siguiente_4 As groupContainer.manualLayoutContainer:
@@ -153,11 +151,14 @@ Datos_contraparte_internacional As screen:
                 "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false ,
                         UpdateContext({correo_in_invalido:true}),
                         UpdateContext({correo_in_invalido:false}) );
+                If(IsBlank(correo_electronico_in_input.Text),
+                    UpdateContext({correo_in_vacio:true}),
+                    UpdateContext({correo_in_vacio:false}));
                 
                 //firma digital
                 //If(IsBlank(firma_digiral_in_button);UpdateContext({sin_firma_in:true});UpdateContext({sin_firma_in:false}));;
                 
-                If(/*!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in &&*/ !correo_in_invalido,
+                If(/*!sin_nombre_representante_legal_in && !sin_nombre_responsable_institucional_in && !sin_cargo_in && !sin_firma_in &&*/ !correo_in_invalido && !correo_in_vacio,
                     If(IsBlank(
                             LookUp(
                                 contrapartes_internacionales, 
@@ -387,10 +388,9 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =13
                         TabIndex: =-1
                         Visible: |-
-                            =If((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
-                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
-                            && correo_in_invalido)
-                            ,true,false)
+                            =If(correo_in_vacio && ((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false )
+                            || IsBlank(correo_electronico_in_input.Text)),true,false)
                         Width: =290
                         X: =2
                         Y: =correo_electronico_in_input.Y 
@@ -463,7 +463,9 @@ Datos_contraparte_internacional As screen:
                         RadiusTopLeft: =13
                         RadiusTopRight: =13
                         TabIndex: =-1
-                        Visible: =If((Len(cargo_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text),""))=0) && sin_cargo_in,true,false)
+                        Visible: |-
+                            =//If((Len(cargo_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(cargo_responsable_institucional_in_input.Text);""))=0) && sin_cargo_in;true;false)
+                            false
                         Width: =424
                         X: =4
                         Y: =cargo_responsable_institucional_na_input.Y
@@ -536,7 +538,8 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =12
                         TabIndex: =-1
                         Visible: |
-                            =If((Len(nombre_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text),""))=0)&& sin_nombre_responsable_institucional_in,true,false)
+                            =//If((Len(nombre_responsable_institucional_in_input.Text)=0 || CountRows(Split(Trim(nombre_responsable_institucional_in_input.Text);""))=0)&& sin_nombre_responsable_institucional_in;true;false)
+                            false
                         Width: =422
                         X: =1
                         Y: =21
@@ -609,7 +612,9 @@ Datos_contraparte_internacional As screen:
                     RadiusTopLeft: =12
                     RadiusTopRight: =12
                     TabIndex: =-1
-                    Visible: =If((Len(nombre_representante_legal_in_input.Text)=0 || CountRows(Split(Trim(nombre_representante_legal_in_input.Text),""))=0) && sin_nombre_representante_legal_in,true,false)
+                    Visible: |-
+                        =//If((Len(nombre_representante_legal_in_input.Text)=0 || CountRows(Split(Trim(nombre_representante_legal_in_input.Text);""))=0) && sin_nombre_representante_legal_in;true;false)
+                        false
                     Width: =868
                     X: =2
                     Y: =24
@@ -671,7 +676,8 @@ Datos_contraparte_internacional As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
                     Color: =RGBA(17, 61, 107, 1)
-                    Default: =If(nueva_contraparte,contraparte_in.pais,contraparte.pais)
+                    Default: |
+                        =If(nueva_contraparte,contraparte_in.pais,contraparte.pais)
                     DisabledColor: =RGBA(111, 139, 167, 1)
                     DisplayMode: =DisplayMode.Disabled
                     Fill: =RGBA(241, 244, 255, 1)
@@ -826,6 +832,8 @@ Datos_contraparte_internacional As screen:
             "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false 
             || correo_in_vacio) || 
             IsBlank(firma_digiral_in_button)); true)*/
+            
+            If(correo_in_vacio && IsBlank(correo_electronico_in_input.Text), true, false)
         Width: =600
         X: =766
         Y: =657

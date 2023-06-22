@@ -18687,36 +18687,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.correo_in_vacio"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.correo_in_vacio",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "correo_in_vacio",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.hide_border_correo_in"
                 }
               ],
@@ -18777,17 +18747,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.correo_na_vacio"
+                  "fullyQualifiedName": "Datos_contraparte_nacional.hide_border_correo_na"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.correo_na_vacio",
+                  "fullyQualifiedName": "Datos_contraparte_nacional.hide_border_correo_na",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "correo_na_vacio",
+                "member": "hide_border_correo_na",
                 "module": "Datos_contraparte_nacional",
                 "type": "Datos_contraparte_nacional"
               }
