@@ -2507,7 +2507,8 @@ Unidad_solicitante As screen:
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
             OnSelect: |-
-                =UpdateContext({popup_cambiar_alcance:false})
+                =UpdateContext({popup_cambiar_alcance:false});
+                Reset(tipo_alcance);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
