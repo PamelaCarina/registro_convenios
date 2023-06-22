@@ -1211,7 +1211,11 @@ Unidad_solicitante As screen:
                         ChevronHoverBackground: =RGBA(241, 244, 255, 1)
                         ChevronHoverFill: =RGBA(17, 61, 107, 1)
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nuevo,"1",LookUp(Filter(organismos_actividad, buscador_n_u_s_input.Text in Reparticion),Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante,'Codigo Reparticion'))
+                        Default: |
+                            =//If(nuevo;"1";LookUp(Filter(organismos_actividad; buscador_n_u_s_input.Text in Reparticion);Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante;'Codigo Reparticion'))
+                            
+                            
+                            If(nuevo || IsBlank(unidad_solicitante_recuperada.nombre_unidad_solicitante),Blank(),LookUp(organismos_actividad,Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante,Reparticion))
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)

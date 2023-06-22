@@ -325,6 +325,8 @@ Mostar_solicitudes As screen:
                         If(IsBlank(unidad_solicitante_recuperada.alcance_territorial),Reset(tipo_alcance));
                         
                         
+                        
+                        
                     PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
