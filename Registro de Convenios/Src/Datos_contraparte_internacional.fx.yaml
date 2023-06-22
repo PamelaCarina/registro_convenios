@@ -388,9 +388,9 @@ Datos_contraparte_internacional As screen:
                         RadiusTopRight: =13
                         TabIndex: =-1
                         Visible: |-
-                            =If(correo_in_vacio && ((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
-                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false )
-                            || IsBlank(correo_electronico_in_input.Text)),true,false)
+                            =If((correo_in_invalido && ((IsMatch(TrimEnds(Lower(correo_electronico_in_input.Text)),
+                            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$") = false )))
+                            || (IsBlank(correo_electronico_in_input.Text) && correo_in_vacio),true,false)
                         Width: =290
                         X: =2
                         Y: =correo_electronico_in_input.Y 

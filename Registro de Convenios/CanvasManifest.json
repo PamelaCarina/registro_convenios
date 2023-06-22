@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 0,
+    "BindingErrorCount": 3,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -117,7 +117,7 @@
     "ManualOfflineProfileId": "",
     "Name": "Registro de Convenios",
     "OriginatingVersion": "1.330",
-    "ParserErrorCount": 0
+    "ParserErrorCount": 6
   },
   "PublishInfo": {
     "AppName": "Registro de Convenios",
