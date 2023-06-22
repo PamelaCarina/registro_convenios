@@ -714,7 +714,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             TabIndex: =-1
                             Visible: |
-                                =sin_modalidad
+                                =If(sin_modalidad &&IsBlank(tipo_modalidades), true, false)
                             Width: =584
                             Y: =1
                             ZIndex: =2
@@ -848,7 +848,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             TabIndex: =-1
                             Visible: |
-                                =sin_solicitud
+                                =If(sin_solicitud && IsBlank(tipo_solicitud), true, false)
                             Width: =584
                             Y: =1
                             ZIndex: =2
@@ -988,7 +988,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             TabIndex: =-1
                             Visible: |+
-                                =sin_tipologia
+                                =If(sin_tipologia && IsBlank(tipo_tipologia),true, false)
                                 
                             Width: =584
                             Y: =1
