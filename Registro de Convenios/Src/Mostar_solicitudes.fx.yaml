@@ -421,7 +421,14 @@ Mostar_solicitudes As screen:
                     Text: |-
                         =If(ThisItem.id_estado=13,
                             "SOLICITUD REGISTRADA",
-                            "SOLICITUD INCOMPLETA"
+                            If(ThisItem.id_estado=14,
+                                "APROBADA POR LA AUTORIDAD",
+                                If(ThisItem.id_estado=15,
+                                    "RECHAZADA POR LA AUTORIDAD",
+                                    "SOLICITUD INCOMPLETA"
+                                )
+                            )
+                            //"SOLICITUD INCOMPLETA"
                         )
                     Width: =236
                     X: =850
