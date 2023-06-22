@@ -175,7 +175,10 @@ Datos_contraparte_internacional As screen:
                                                             Upper(cargo_responsable_institucional_in_input.Text),
                                                             pais_in_input.Text,
                                                             Upper(correo_electronico_in_input.Text),
-                                                            firma_digiral_in_button.Selected.Value,
+                                                            If(IsBlank(firma_digiral_in_button.Selected),
+                                                                "N/A",
+                                                                firma_digiral_in_button.Selected.Value
+                                                            ),
                                                             id_convenio,
                                                             id_estado
                         ));
@@ -187,7 +190,10 @@ Datos_contraparte_internacional As screen:
                                 cargo_responsable_institucional: Upper(cargo_responsable_institucional_in_input.Text),
                                 pais: pais_in_input.Text,
                                 correo_responsable_institucional: Upper(correo_electronico_in_input.Text),
-                                firma_digital: firma_digiral_in_button.Selected.Value,
+                                firma_digital: If(IsBlank(firma_digiral_in_button.Selected),
+                                    "N/A",
+                                    firma_digiral_in_button.Selected.Value
+                                ),
                                 id: nueva_contraparte_internacional.id_contraparte
                         });
                         Collect(id_contrapartes_internacionales,{
