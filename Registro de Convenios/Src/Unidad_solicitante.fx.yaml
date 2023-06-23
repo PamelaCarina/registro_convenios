@@ -1966,12 +1966,22 @@ Unidad_solicitante As screen:
                     If(popup_correonoudec=false,
                         Set(cargando, true);
                         Set(datos_responsable, 'VRIM-PATraedatosdeusuario'.Run(inp_responsable_popup_search));
+                        Clear(lista_cargos);
+                        ForAll(
+                            datos_responsable.'array personal',
+                            Collect(
+                                lista_cargos,
+                                {
+                                    cargo_personal: Upper(Cargo)
+                                }
+                            )
+                        );
                         If(datos_responsable.status = "encontrado",
                             Set(responsable,{
                             id_persona: Text(Value(datos_responsable.id_persona)),
                             nombre: datos_responsable.nombre_completo,
                             cargo: datos_responsable.cargo,
-                            cargos: datos_responsable.'array personal',
+                            cargos: lista_cargos,
                             correo: datos_responsable.correo_udec,
                             telefono: datos_responsable.telefono
                             });
@@ -2313,7 +2323,7 @@ Unidad_solicitante As screen:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
             Size: =18
-            Text: ="ELIMINACIÓN UNIDAD(ES) PROMOTORA(S)"
+            Text: ="ELIMINACIÓN DE UNIDAD PROMOTORA"
             Visible: =popup_confirmar_eliminacion
             Width: =612
             X: =359
