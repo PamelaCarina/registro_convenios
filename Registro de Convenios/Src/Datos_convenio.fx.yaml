@@ -242,7 +242,7 @@ Datos_convenio As screen:
 
                         fondo_registro_1 As image:
                             Height: =25
-                            Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                             ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =12
                             RadiusBottomRight: =12
@@ -281,7 +281,7 @@ Datos_convenio As screen:
                         Icon2_4 As icon.Document:
                             Color: =RGBA(17, 61, 107, 1)
                             DisabledColor: =RGBA(166, 166, 166, 1)
-                            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Height: =20
                             Icon: =Icon.Cancel
                             OnSelect: |
@@ -342,7 +342,7 @@ Datos_convenio As screen:
                     btn_adjuntar_doc_1 As button:
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =1
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(139, 195, 74, 1)
                         FontWeight: =FontWeight.Bold
                         Height: =20
@@ -465,7 +465,7 @@ Datos_convenio As screen:
 
                         fondo_registro_2 As image:
                             Height: =25
-                            Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                             ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =12
                             RadiusBottomRight: =12
@@ -505,7 +505,7 @@ Datos_convenio As screen:
                         Icon2_6 As icon.Document:
                             Color: =RGBA(17, 61, 107, 1)
                             DisabledColor: =RGBA(166, 166, 166, 1)
-                            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Height: =20
                             Icon: =Icon.Cancel
                             OnSelect: |-
@@ -554,7 +554,7 @@ Datos_convenio As screen:
                     btn_adjuntar_doc_2 As button:
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =1
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(139, 195, 74, 1)
                         FontWeight: =FontWeight.Bold
                         Height: =20
@@ -613,7 +613,7 @@ Datos_convenio As screen:
                     Color: =RGBA(17, 61, 107, 1)
                     Default: =If(IsBlank(especificacion_convenio_recuperada.proposito_central),"",especificacion_convenio_recuperada.proposito_central)
                     DisabledColor: =RGBA(111, 139, 167, 1)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
                     Height: =102
@@ -689,7 +689,7 @@ Datos_convenio As screen:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             Height: =40
                             HoverFill: =RGBA(186, 202, 226, 1)
-                            Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                             ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =12
                             RadiusBottomRight: =12
@@ -732,7 +732,7 @@ Datos_convenio As screen:
                             Color: =RGBA(17, 61, 107, 1)
                             Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.modalidad),"",LookUp(lista_modalidad,valor=Upper(especificacion_convenio_recuperada.modalidad),valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
-                            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
                             Height: =38
@@ -823,7 +823,7 @@ Datos_convenio As screen:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             Height: =40
                             HoverFill: =RGBA(186, 202, 226, 1)
-                            Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                             ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =12
                             RadiusBottomRight: =12
@@ -866,7 +866,7 @@ Datos_convenio As screen:
                             Color: =RGBA(17, 61, 107, 1)
                             Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.tipo_solicitud),"",LookUp(lista_tipo_solicitud,valor=Upper(especificacion_convenio_recuperada.tipo_solicitud),valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
-                            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
                             Height: =38
@@ -963,7 +963,7 @@ Datos_convenio As screen:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             Height: =40
                             HoverFill: =RGBA(186, 202, 226, 1)
-                            Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                             ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =12
                             RadiusBottomRight: =12

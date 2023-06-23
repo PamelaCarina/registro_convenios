@@ -39,7 +39,7 @@ Contribución_desarrollo As screen:
         ZIndex: =1
 
         Siguiente_7 As button:
-            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
@@ -184,7 +184,7 @@ Contribución_desarrollo As screen:
                     Default: |-
                         =//If(CountRows(Search(ods_recuperada;"";"Value"))>0;true;false)
                         false
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -244,7 +244,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"17. Fortalecer los medios de ejecución y reavivar la alianza mundial para el desarrollo sostenible.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -308,7 +308,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"16. Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar acceso a la justicia para todos y crear instituciones eficaces, responsables e inclusivas a todos los niveles.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -372,7 +372,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"15. Proteger, restaurar y promover la utilización sostenible de los ecosistemas terrestres, gestionar de manera sostenible los bosques, combatir la desertificación y detener y revertir la degradación de la tierra, y frenar la pérdida de diversidad biológica.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -436,7 +436,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"14. Conservar y utilizar de forma sostenible los océanos, mares y recursos marinos para lograr el desarrollo sostenible.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -500,7 +500,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"13. Tomar medidas urgentes para combatir el cambio climático y sus efectos.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -562,7 +562,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"12. Garantizar las pautas de consumo y de producción sostenibles.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -626,7 +626,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"11. Conseguir que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -690,7 +690,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"10. Reducir las desigualdades entre países y dentro de ellos.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -755,7 +755,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"9. Desarrollar infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -820,7 +820,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"8. Fomentar el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo, y el trabajo decente para todos.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -885,7 +885,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"7. Asegurar el acceso a energías asequibles, fiables, sostenibles y modernas para todos.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -949,7 +949,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"6. Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -1013,7 +1013,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"5. Alcanzar la igualdad entre los géneros y empoderar a todas las mujeres y niñas.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -1077,7 +1077,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"4. Garantizar una educación de calidad inclusiva y equitativa, y promover las oportunidades de aprendizaje permanente para todos.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -1141,7 +1141,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"3. Garantizar una vida saludable y promover el bienestar para todos y todas en todas las edades.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -1206,7 +1206,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"2. Poner fin al hambre, conseguir la seguridad alimentaria y una mejor nutrición, y promover la agricultura sostenible.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-
@@ -1271,7 +1271,7 @@ Contribución_desarrollo As screen:
                     CheckmarkFill: =RGBA(152, 208, 70, 1)
                     Color: =RGBA(139, 195, 74, 1)
                     Default: =If(CountRows(Search(ods_recuperada,"1. Erradicar la pobreza en todas sus formas en todo el mundo.","Value"))>0,true,false)
-                    DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     FocusedBorderColor: =Self.CheckboxBorderColor
                     Height: =30
                     OnCheck: |-

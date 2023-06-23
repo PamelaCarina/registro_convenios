@@ -183,7 +183,7 @@ Información_convenio As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                        Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -228,7 +228,7 @@ Información_convenio As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(nuevo||IsBlank(categoria_vrim_recuperada.ambito_politica),"",LookUp(dd_ambito,valor=categoria_vrim_recuperada.ambito_politica,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
@@ -342,7 +342,7 @@ Información_convenio As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                        Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -387,7 +387,7 @@ Información_convenio As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(nuevo||IsBlank(categoria_vrim_recuperada.sector_politica),"",LookUp(dd_sectores,valor=categoria_vrim_recuperada.sector_politica,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
@@ -473,7 +473,7 @@ Información_convenio As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                        Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -519,7 +519,7 @@ Información_convenio As screen:
                         Default: |
                             =If(nuevo || IsBlank(categoria_vrim_recuperada.convenio_de_tipo),"",LookUp(dd_tipo,valor=categoria_vrim_recuperada.convenio_de_tipo,valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38

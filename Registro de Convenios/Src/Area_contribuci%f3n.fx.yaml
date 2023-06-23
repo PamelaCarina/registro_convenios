@@ -222,7 +222,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Interculturalidad","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -265,7 +265,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Desarrollo cultural","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -308,7 +308,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Patrimonio","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -351,7 +351,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Desarrollo e implementación de políticas públicas","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -393,7 +393,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Salud y bienestar","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -435,7 +435,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Inclusión, equidad de género, diversidad y disidencias sexuales","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -477,7 +477,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Educación","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -519,7 +519,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Desarrollo socio-territorial y comunitario","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -561,7 +561,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Desarrollo productivo, económico y tecnológico","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -603,7 +603,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_externa,"Conservación del medioambiente y su biodiversidad","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_externa").falta=true,
@@ -678,7 +678,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_interna,"Formación permanente","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
@@ -720,7 +720,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_interna,"Investigación y creación artística","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
@@ -762,7 +762,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_interna,"Formación de postgrado","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
@@ -804,7 +804,7 @@ Area_contribución As screen:
                         Color: =RGBA(139, 195, 74, 1)
                         Default: =If(CountRows(Search(area_contribucion_recuperada.contribucion_interna,"Formación de pregrado","Value"))>0,true,false)
                         DisabledColor: =RGBA(0, 0, 0, 0)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =30
                         OnCheck: |-
                             =If(LookUp(datosArea_contribucion,dato="contrib_interna").falta=true,
