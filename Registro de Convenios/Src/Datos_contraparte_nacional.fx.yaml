@@ -927,7 +927,7 @@ Datos_contraparte_nacional As screen:
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
-            HintText: ="Ingresar nombre o RUT sin puntos y con guion"
+            HintText: ="Ingresar nombre o RUT sin puntos y con guión"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
             OnSelect: |
@@ -1158,7 +1158,7 @@ Datos_contraparte_nacional As screen:
             Italic: =true
             PaddingLeft: =12
             Size: =10
-            Text: ="Si la institución no es encontrada por nombre, digite su RUT sin puntos y con guion"
+            Text: ="Si la institución no es encontrada por nombre, digite su RUT sin puntos y con guión"
             Width: =620
             X: =374
             Y: =399
