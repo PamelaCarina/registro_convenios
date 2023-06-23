@@ -1972,7 +1972,7 @@ Unidad_solicitante As screen:
                             Collect(
                                 lista_cargos,
                                 {
-                                    cargo_personal: Upper(Cargo)
+                                    Cargo: Upper(Cargo)
                                 }
                             )
                         );

@@ -9798,7 +9798,7 @@
         },
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"cargo_personal\"}",
+          "NameMap": "{\"Value\":\"Cargo\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
