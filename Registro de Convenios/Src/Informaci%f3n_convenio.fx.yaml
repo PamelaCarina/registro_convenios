@@ -44,27 +44,28 @@ Información_convenio As screen:
                     );
                 
                     Navigate(Area_contribución,ScreenTransition.Fade);
-                    If(reset_primera_vez_area_contribucion,
-                        If(IsBlank(area_contribucion_recuperada.contribucion_interna),
-                            Reset(cb_formacion_pregrado);
-                            Reset(cb_formacion_postgrado);
-                            Reset(cb_formacion_investigacion);
-                            Reset(cb_formacion_permanente);
-                        );
-                        If(IsBlank(area_contribucion_recuperada.contribucion_externa),
-                            Reset(cb_desarrollo_ambiental);
-                            Reset(cb_desarrollo_productivo);
-                            Reset(cb_desarrollo_social);
-                            Reset(cb_educacion);
-                            Reset(cb_inclusion);
-                            Reset(cb_salud);
-                            Reset(cb_sector_publico);
-                            Reset(cb_patrimonio);
-                            Reset(cb_desarrollo_cultural);
-                            Reset(cb_interculturalidad);
-                        );
-                        Set(reset_primera_vez_area_contribucion,false);
-                    );
+                    /*
+                    If(reset_primera_vez_area_contribucion;
+                        If(IsBlank(area_contribucion_recuperada.contribucion_interna);
+                            Reset(cb_formacion_pregrado);;
+                            Reset(cb_formacion_postgrado);;
+                            Reset(cb_formacion_investigacion);;
+                            Reset(cb_formacion_permanente);;
+                        );;
+                        If(IsBlank(area_contribucion_recuperada.contribucion_externa);
+                            Reset(cb_desarrollo_ambiental);;
+                            Reset(cb_desarrollo_productivo);;
+                            Reset(cb_desarrollo_social);;
+                            Reset(cb_educacion);;
+                            Reset(cb_inclusion);;
+                            Reset(cb_salud);;
+                            Reset(cb_sector_publico);;
+                            Reset(cb_patrimonio);;
+                            Reset(cb_desarrollo_cultural);;
+                            Reset(cb_interculturalidad);;
+                        );;
+                        Set(reset_primera_vez_area_contribucion;false);;
+                    );;*/
                 );
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)

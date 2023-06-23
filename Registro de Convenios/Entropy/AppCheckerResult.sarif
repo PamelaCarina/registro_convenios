@@ -18357,6 +18357,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.reset_primera_vez_area_contribucion"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.reset_primera_vez_area_contribucion",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reset_primera_vez_area_contribucion",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.reset_primera_vez_especificacion"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.reset_primera_vez_especificacion",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reset_primera_vez_especificacion",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.areas_internas"
                 }
               ],
@@ -18447,17 +18507,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.reset_primera_vez_especificacion"
+                  "fullyQualifiedName": "App.reset_primera_vez_ods"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.reset_primera_vez_especificacion",
+                  "fullyQualifiedName": "App.reset_primera_vez_ods",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "reset_primera_vez_especificacion",
+                "member": "reset_primera_vez_ods",
                 "module": "App",
                 "type": "App"
               }
