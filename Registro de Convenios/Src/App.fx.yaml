@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: |
+    OnStart: |-
         =Set(
             cargando,
             true
@@ -317,8 +317,26 @@ App As appinfo:
         //opciones seleccionables política del convenio
         Clear(dd_tipo);
         ForAll(
-            listas_categoria_vrim.tipo_actividad,
+            listas_categoria_vrim.categorias,
             Collect(dd_tipo,
+                {
+                    valor: Upper(Title),
+                    id: ID
+                })
+        );
+        Clear(dd_sectores);
+        ForAll(
+            listas_categoria_vrim.sectores,
+            Collect(dd_sectores,
+                {
+                    valor: Upper(Title),
+                    id: ID
+                })
+        );
+        Clear(dd_ambito);
+        ForAll(
+            listas_categoria_vrim.ambitos,
+            Collect(dd_ambito,
                 {
                     valor: Upper(Title),
                     id: ID
@@ -348,73 +366,73 @@ App As appinfo:
                 id: "otra"
             }
         );;
-        */
         ClearCollect(
-            dd_sectores,
+            dd_sectores;
             {
-                valor: Upper("Público - Político"),
+                valor: Upper("Público - Político");
                 id: "publico_politico"
-            },
+            };
             {
-                valor: Upper("Social Comunitario"),
+                valor: Upper("Social Comunitario");
                 id: "social_comunitario"
-            },
+            };
             {
-                valor: Upper("Cultural"),
+                valor: Upper("Cultural");
                 id: "cultural"
-            },
+            };
             {
-                valor: Upper("Productivo"),
+                valor: Upper("Productivo");
                 id: "productivo"
-            },
+            };
             {
-                valor: Upper("Comunidad Universitaria"),
+                valor: Upper("Comunidad Universitaria");
                 id: "comunidad_uni"
             }
-        );
+        );;
         ClearCollect(
-            dd_ambito,
+            dd_ambito;
             {
-                valor: Upper("Extensión"),
+                valor: Upper("Extensión");
                 id: "extension"
-            },
+            };
             {
-                valor: Upper("Comunicaciones"),
+                valor: Upper("Comunicaciones");
                 id: "comunicaciones"
-            },
+            };
             {
-                valor: Upper("Emprendimiento"),
+                valor: Upper("Emprendimiento");
                 id: "emprendimiento"
-            },
+            };
             {
-                valor: Upper("Transferencia tecnológica"),
+                valor: Upper("Transferencia tecnológica");
                 id: "transferencia_tecnologica"
-            },
+            };
             {
-                valor: Upper("Asistencia técnica"),
+                valor: Upper("Asistencia técnica");
                 id: "asistencia_tecnica"
-            },
+            };
             {
-                valor: Upper("Interacción con red alumni"),
+                valor: Upper("Interacción con red alumni");
                 id: "red_alumni"
-            },
+            };
             {
-                valor: Upper("Relaciones institucionales"),
+                valor: Upper("Relaciones institucionales");
                 id: "rel_institucionales"
-            },
+            };
             {
-                valor: Upper("Relaciones internacionales"),
+                valor: Upper("Relaciones internacionales");
                 id: "rel_internacionales"
-            },
+            };
             {
-                valor: Upper("Prácticas profesionales, pasantías estudiantiles y académicas"),
+                valor: Upper("Prácticas profesionales, pasantías estudiantiles y académicas");
                 id: "practicas_pasantia"
-            },
+            };
             {
-                valor: Upper("Servicios"),
+                valor: Upper("Servicios");
                 id: "servicios"
             }
-        );
+        );;
+        */
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false
