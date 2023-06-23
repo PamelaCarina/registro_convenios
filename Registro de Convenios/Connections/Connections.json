@@ -449,6 +449,36 @@
     "dependents": [],
     "id": "6246db45-09af-4d4f-a997-bae176286d44"
   },
+  "6d63fbb6-5133-4b7d-ba5c-e8d92406edb1": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "691a68de-d40e-ee11-8f6d-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "730a3ec6-bbde-435c-55a5-ae594f70aca2"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "691a68de-d40e-ee11-8f6d-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "730a3ec6-bbde-435c-55a5-ae594f70aca2"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DTI-PAReparticionesUdeC"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6d63fbb6-5133-4b7d-ba5c-e8d92406edb1"
+  },
   "70187145-fa57-436c-bf57-fc8ae9b508af": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -568,36 +598,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "8b5733a8-de05-480f-8af9-55b54a79be8d"
-  },
-  "8c9b56f2-de1d-484c-aace-8c154d9c5c0e": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "691a68de-d40e-ee11-8f6d-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "730a3ec6-bbde-435c-55a5-ae594f70aca2"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "691a68de-d40e-ee11-8f6d-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "730a3ec6-bbde-435c-55a5-ae594f70aca2"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "DTI-PAReparticionesUdeC"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "8c9b56f2-de1d-484c-aace-8c154d9c5c0e"
   },
   "8fda6672-21eb-4ab8-9040-c18f177a802b": {
     "connectionRef": {
