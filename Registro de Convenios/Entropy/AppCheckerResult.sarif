@@ -18447,6 +18447,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.reset_primera_vez_especificacion"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.reset_primera_vez_especificacion",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reset_primera_vez_especificacion",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.reset_primera_vez_categoria_vrim"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.reset_primera_vez_categoria_vrim",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reset_primera_vez_categoria_vrim",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.nueva_solicitud"
                 }
               ],
@@ -19868,6 +19928,36 @@
               },
               "properties": {
                 "member": "VRIM-PATraedatosdeusuario",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-NotOfflineConnectors",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Convenio-PACambiaralcanceterritorial"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Convenio-PACambiaralcanceterritorial",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Convenio-PACambiaralcanceterritorial",
                 "module": "App",
                 "type": "App"
               }

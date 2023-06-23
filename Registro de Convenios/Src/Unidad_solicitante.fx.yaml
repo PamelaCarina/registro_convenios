@@ -2491,7 +2491,10 @@ Unidad_solicitante As screen:
                         id
                     )
                 );
-                
+                'Convenio-PACambiaralcanceterritorial'.Run(
+                    tipo_alcance.Selected.valor,
+                    id_convenio
+                );
                 Clear(contrapartes_internacionales);
                 Clear(id_contrapartes_internacionales);
                 UpdateContext({popup_cambiar_alcance:false});

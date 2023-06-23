@@ -79,15 +79,15 @@ Datos_convenio As screen:
                     );
                 
                     Navigate(Información_convenio,ScreenTransition.Fade);
+                /*
+                    If(reset_primera_vez_categoria_vrim;    
+                        If(IsBlank(categoria_vrim_recuperada.convenio_de_tipo);Reset(convenio_tipo));;
+                        If(IsBlank(categoria_vrim_recuperada.sector_politica);Reset(sector_politica));;
+                        If(IsBlank(categoria_vrim_recuperada.ambito_politica);Reset(ambito_politica));;        
                 
-                    If(reset_primera_vez_categoria_vrim,    
-                        If(IsBlank(categoria_vrim_recuperada.convenio_de_tipo),Reset(convenio_tipo));
-                        If(IsBlank(categoria_vrim_recuperada.sector_politica),Reset(sector_politica));
-                        If(IsBlank(categoria_vrim_recuperada.ambito_politica),Reset(ambito_politica));        
-                
-                        Set(reset_primera_vez_categoria_vrim,false)
-                    );
-                 
+                        Set(reset_primera_vez_categoria_vrim;false)
+                    );;
+                */ 
                 
                 );
                 

@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "b735da18-8e4c-42e5-8b76-d2b4339ea608",
+    "Name": "Convenio-PACambiaralcanceterritorial",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "2f371e80-e411-ee11-8f6d-6045bd006f89"
+  }
+]

@@ -31,6 +31,9 @@ Mostar_solicitudes As screen:
         Clear(lista_doc_contr_subidos);
         
         //PANTALLA - DATOS CONVENIO
+        Reset(tipo_tipologia);
+        Reset(tipo_solicitud);
+        Reset(tipo_modalidades);
         Set(especificacion_convenio_recuperada,Blank());
         Clear(lista_doc_off_subidos);
         Clear(id_lista_doc_off_subidos);
@@ -39,6 +42,9 @@ Mostar_solicitudes As screen:
         Reset(descripcion_proposito_1);
         
         //PANTALLA - INFORMACIÓN CONVENIO
+        Reset(convenio_tipo);
+        Reset(sector_politica);
+        Reset(ambito_politica);
         Set(categoria_vrim_recuperada,Blank());
         
         //PANTALLA - ÁREA CONTRIBUCIÓN
@@ -485,7 +491,7 @@ Mostar_solicitudes As screen:
                 RadiusTopRight: =12
                 Size: =14
                 TabIndex: =1
-                Width: =986
+                Width: =976
                 X: =35
                 Y: =43
                 ZIndex: =2
@@ -494,7 +500,7 @@ Mostar_solicitudes As screen:
                 Height: =20
                 Image: =ico_search
                 Width: =20
-                X: =988
+                X: =978
                 Y: =53
                 ZIndex: =3
 
