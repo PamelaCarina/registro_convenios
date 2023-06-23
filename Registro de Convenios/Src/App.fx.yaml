@@ -208,9 +208,8 @@ App As appinfo:
             Collect(
                 Nombres_reparticiones,
                 {
-                    reparticion: NOMBRE,
-                    codigo: CODIGO,
-                    cod_nombre:COD_NOMBRE
+                    reparticion: Upper(NOMBRE),
+                    codigo: CODIGO
                 }
             )
         );
