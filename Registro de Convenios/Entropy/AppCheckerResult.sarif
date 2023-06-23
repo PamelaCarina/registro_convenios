@@ -19851,6 +19851,36 @@
           },
           "ruleId": "app-NotOfflineConnectors",
           "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.VRIM-PA-Traerlistasaplicación"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.VRIM-PA-Traerlistasaplicación",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "VRIM-PA-Traerlistasaplicación",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-NotOfflineConnectors",
+          "ruleIndex": 7
         }
       ],
       "tool": {

@@ -1,0 +1,142 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="VRIM-PA-Traerlistasaplicación" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="VRIM - PA - Traer listas aplicación" />
+  <grammars>
+    <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <object name="ManualTriggerInput" />
+      <integer name="ResponseActionOutput_tipo_institucion_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_tipo_institucion_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_tipo_institucion_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_tipo_institucion_def_items_def" name="ResponseActionOutput_tipo_institucion_def" />
+      <integer name="ResponseActionOutput_cat_tipo_institucion_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_cat_tipo_institucion_def_items_def_Title_def" />
+      <integer name="ResponseActionOutput_cat_tipo_institucion_def_items_def_Tipoinstituci_x00f3_n_ux23_Id_def" />
+      <object name="ResponseActionOutput_cat_tipo_institucion_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Tipoinstituci_x00f3_n#Id" type="integer" />
+      </object>
+      <array typeRef="ResponseActionOutput_cat_tipo_institucion_def_items_def" name="ResponseActionOutput_cat_tipo_institucion_def" />
+      <integer name="ResponseActionOutput_cat_tipo_institucion_natural_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_cat_tipo_institucion_natural_def_items_def_Title_def" />
+      <integer name="ResponseActionOutput_cat_tipo_institucion_natural_def_items_def_Tipoinstituci_x00f3_n_ux23_Id_def" />
+      <object name="ResponseActionOutput_cat_tipo_institucion_natural_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Tipoinstituci_x00f3_n#Id" type="integer" />
+      </object>
+      <array typeRef="ResponseActionOutput_cat_tipo_institucion_natural_def_items_def" name="ResponseActionOutput_cat_tipo_institucion_natural_def" />
+      <integer name="ResponseActionOutput_tipo_actividad_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_tipo_actividad_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_tipo_actividad_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_tipo_actividad_def_items_def" name="ResponseActionOutput_tipo_actividad_def" />
+      <integer name="ResponseActionOutput_categorias_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_categorias_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_categorias_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_categorias_def_items_def" name="ResponseActionOutput_categorias_def" />
+      <integer name="ResponseActionOutput_detalle_tipo_actividad_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_detalle_tipo_actividad_def_items_def_Title_def" />
+      <integer name="ResponseActionOutput_detalle_tipo_actividad_def_items_def_Tipoactividad_ux23_Id_def" />
+      <object name="ResponseActionOutput_detalle_tipo_actividad_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="Tipoactividad#Id" type="integer" />
+      </object>
+      <array typeRef="ResponseActionOutput_detalle_tipo_actividad_def_items_def" name="ResponseActionOutput_detalle_tipo_actividad_def" />
+      <integer name="ResponseActionOutput_tipo_proyecto_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_tipo_proyecto_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_tipo_proyecto_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_tipo_proyecto_def_items_def" name="ResponseActionOutput_tipo_proyecto_def" />
+      <integer name="ResponseActionOutput_financiamiento_externo_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_financiamiento_externo_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_financiamiento_externo_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_financiamiento_externo_def_items_def" name="ResponseActionOutput_financiamiento_externo_def" />
+      <integer name="ResponseActionOutput_publicos_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_publicos_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_publicos_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_publicos_def_items_def" name="ResponseActionOutput_publicos_def" />
+      <integer name="ResponseActionOutput_sectores_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_sectores_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_sectores_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_sectores_def_items_def" name="ResponseActionOutput_sectores_def" />
+      <integer name="ResponseActionOutput_ambitos_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_ambitos_def_items_def_Title_def" />
+      <object name="ResponseActionOutput_ambitos_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_ambitos_def_items_def" name="ResponseActionOutput_ambitos_def" />
+      <integer name="ResponseActionOutput_estados_def_items_def_ID_def" />
+      <string name="ResponseActionOutput_estados_def_items_def_Title_def" />
+      <string name="ResponseActionOutput_estados_def_items_def_bg_color_def" />
+      <string name="ResponseActionOutput_estados_def_items_def_font_color_def" />
+      <object name="ResponseActionOutput_estados_def_items_def">
+        <property name="ID" type="integer" />
+        <property name="Title" type="string" />
+        <property name="bg_color" type="string" />
+        <property name="font_color" type="string" />
+      </object>
+      <array typeRef="ResponseActionOutput_estados_def_items_def" name="ResponseActionOutput_estados_def" />
+      <object name="ResponseActionOutput">
+        <property name="tipo_institucion" typeRef="ResponseActionOutput_tipo_institucion_def" />
+        <property name="cat_tipo_institucion" typeRef="ResponseActionOutput_cat_tipo_institucion_def" />
+        <property name="cat_tipo_institucion_natural" typeRef="ResponseActionOutput_cat_tipo_institucion_natural_def" />
+        <property name="tipo_actividad" typeRef="ResponseActionOutput_tipo_actividad_def" />
+        <property name="categorias" typeRef="ResponseActionOutput_categorias_def" />
+        <property name="detalle_tipo_actividad" typeRef="ResponseActionOutput_detalle_tipo_actividad_def" />
+        <property name="tipo_proyecto" typeRef="ResponseActionOutput_tipo_proyecto_def" />
+        <property name="financiamiento_externo" typeRef="ResponseActionOutput_financiamiento_externo_def" />
+        <property name="publicos" typeRef="ResponseActionOutput_publicos_def" />
+        <property name="sectores" typeRef="ResponseActionOutput_sectores_def" />
+        <property name="ambitos" typeRef="ResponseActionOutput_ambitos_def" />
+        <property name="estados" typeRef="ResponseActionOutput_estados_def" />
+      </object>
+      <object name="Run_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
