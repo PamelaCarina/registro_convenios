@@ -315,6 +315,7 @@ App As appinfo:
             )
         );
         //opciones seleccionables política del convenio
+        Clear(dd_tipo);
         ForAll(
             listas_categoria_vrim.tipo_actividad,
             Collect(dd_tipo,
