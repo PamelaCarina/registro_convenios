@@ -111,6 +111,11 @@ App As appinfo:
                 Nombre_x0020_Pa_x00ed_s
             )
         );
+        //LISTAS CATEGORÍAS VRIM
+        Set(listas_categoria_vrim,
+            'VRIM-PA-Traerlistasaplicación'.Run()
+        );
+        
         //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
         //UNIDAD SOLICITANTE
         ClearCollect(
@@ -310,29 +315,40 @@ App As appinfo:
             )
         );
         //opciones seleccionables política del convenio
+        Clear(dd_tipo);
+        ForAll(
+            listas_categoria_vrim.tipo_actividad,
+            Collect(dd_tipo,
+                {
+                    valor: Upper(Title),
+                    id: ID
+                })
+        );
+        /*
         ClearCollect(
-            dd_tipo,
+            dd_tipo;
             {
-                valor: Upper("Formación (pregrado, postgrado, formación permanente)"),
+                valor: Upper("Formación (pregrado, postgrado, formación permanente)");
                 id: "formacion"
-            },
+            };
             {
-                valor: Upper("Extensión Académica"),
+                valor: Upper("Extensión Académica");
                 id: "extension_academica"
-            },
+            };
             {
-                valor: Upper("Extensión Cultural"),
+                valor: Upper("Extensión Cultural");
                 id: "extension_cultural"
-            },
+            };
             {
-                valor: Upper("Bidireccional"),
+                valor: Upper("Bidireccional");
                 id: "bidireccional"
-            },
+            };
             {
-                valor: Upper("Otra"),
+                valor: Upper("Otra");
                 id: "otra"
             }
-        );
+        );;
+        */
         ClearCollect(
             dd_sectores,
             {

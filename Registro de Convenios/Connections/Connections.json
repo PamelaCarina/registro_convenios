@@ -629,6 +629,36 @@
     "dependents": [],
     "id": "8fda6672-21eb-4ab8-9040-c18f177a802b"
   },
+  "90ef3c26-aa7d-42be-b971-6d794163e9ce": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "0d98e633-4a11-ee11-8f6d-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "07ee2eca-cd4c-b65f-943d-65a68d175a21"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "0d98e633-4a11-ee11-8f6d-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "07ee2eca-cd4c-b65f-943d-65a68d175a21"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "VRIM-PA-Traerlistasaplicación"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "90ef3c26-aa7d-42be-b971-6d794163e9ce"
+  },
   "97aee764-e3f2-4ac0-a1c0-cb53c8856e0f": {
     "connectionRef": {
       "displayName": "Logic flows",

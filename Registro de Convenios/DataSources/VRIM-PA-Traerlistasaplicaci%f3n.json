@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "2f135029-c0a6-4380-8adc-ad5372c582d5",
+    "Name": "VRIM-PA-Traerlistasaplicación",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "0d98e633-4a11-ee11-8f6d-6045bd006f89"
+  }
+]
