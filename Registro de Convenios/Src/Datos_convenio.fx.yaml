@@ -1007,7 +1007,7 @@ Datos_convenio As screen:
                             Color: =RGBA(17, 61, 107, 1)
                             Default: =If(nuevo||IsBlank(especificacion_convenio_recuperada.tipologia),"",LookUp(lista_tipologia,valor=Upper(especificacion_convenio_recuperada.tipologia),valor))
                             DisabledColor: =RGBA(111, 139, 167, 1)
-                            DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
                             Height: =38

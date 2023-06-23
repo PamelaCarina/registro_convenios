@@ -719,7 +719,7 @@ Unidad_solicitante As screen:
                     Icon1 As icon.Trash:
                         Color: =RGBA(111, 139, 167, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Height: =20
                         Icon: =Icon.Cancel
                         OnSelect: |
@@ -1211,7 +1211,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                        Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -1256,7 +1256,7 @@ Unidad_solicitante As screen:
                             
                             If(nuevo || IsBlank(unidad_solicitante_recuperada.nombre_unidad_solicitante),Blank(),LookUp(organismos_actividad,Reparticion=unidad_solicitante_recuperada.nombre_unidad_solicitante,Reparticion))
                         DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =36
@@ -1378,7 +1378,7 @@ Unidad_solicitante As screen:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DisabledFill: =RGBA(244, 244, 244, 0.4)
-                DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: =RGBA(0, 0, 0, 0)
                 FontWeight: =FontWeight.Bold
                 Height: =30
@@ -1419,7 +1419,7 @@ Unidad_solicitante As screen:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DisabledFill: =RGBA(244, 244, 244, 0.4)
-                DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: =RGBA(0, 0, 0, 0)
                 FontWeight: =FontWeight.Bold
                 Height: =30
@@ -1451,7 +1451,7 @@ Unidad_solicitante As screen:
             btn_registro_4_e_agregar_1 As button:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
-                DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: =RGBA(139, 195, 74, 1)
                 FontWeight: =FontWeight.Bold
                 Height: =30
@@ -1497,7 +1497,7 @@ Unidad_solicitante As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         Height: =40
                         HoverFill: =RGBA(186, 202, 226, 1)
-                        Image: =If(id_estado=13,fondo_deshabilitado,'background-input')
+                        Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
                         ImagePosition: =ImagePosition.Fill
                         RadiusBottomLeft: =12
                         RadiusBottomRight: =12
@@ -1540,7 +1540,7 @@ Unidad_solicitante As screen:
                         Color: =RGBA(17, 61, 107, 1)
                         Default: =If(nuevo || IsBlank(unidad_solicitante_recuperada.alcance_territorial),Blank(),LookUp(lista_alcance,valor=Upper(unidad_solicitante_recuperada.alcance_territorial),valor))
                         DisabledColor: =RGBA(111, 139, 167, 1)
-                        DisplayMode: =If(id_estado=13,DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                         Fill: =RGBA(241, 244, 255, 1)
                         FocusedBorderThickness: =0
                         Height: =38
