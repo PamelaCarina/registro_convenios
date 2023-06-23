@@ -5,13 +5,13 @@
       <object name="ManualTriggerInput" />
       <string name="ResponseActionOutput_items_def_CODIGO_def" />
       <string name="ResponseActionOutput_items_def_NOMBRE_def" />
-      <integer name="ResponseActionOutput_items_def_NIVEL_def" />
-      <string name="ResponseActionOutput_items_def_REP_CODIGO_def" />
+      <string name="ResponseActionOutput_items_def_FECHA_DESACT_def" />
+      <string name="ResponseActionOutput_items_def_COD_NOMBRE_def" />
       <object name="ResponseActionOutput_items_def">
         <property name="CODIGO" type="string" />
         <property name="NOMBRE" type="string" />
-        <property name="NIVEL" type="integer" />
-        <property name="REP_CODIGO" type="string" />
+        <property name="FECHA_DESACT" type="string" />
+        <property name="COD_NOMBRE" type="string" />
       </object>
       <array typeRef="ResponseActionOutput_items_def" name="ResponseActionOutput" />
       <object name="Run_responses_default_def" />

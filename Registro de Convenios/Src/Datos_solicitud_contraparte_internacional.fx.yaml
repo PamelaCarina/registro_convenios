@@ -911,6 +911,7 @@ Datos_solicitud_contraparte_internacional As screen:
                     "solicitud contraparte internacional",
                     id_convenio
                 );
+                Set(guardado,true);
                 Set(cargando, false);
                 Set(popup_confirmacion,false);
                 

@@ -205,6 +205,7 @@ Datos_contraparte_internacional As screen:
                             "contraparte internacional",
                             id_convenio
                         );
+                        Set(guardado,true);
                         Set(cargando, false)
                         );
                         ,
@@ -236,6 +237,7 @@ Datos_contraparte_internacional As screen:
                                 firma_digital: firma_digiral_in_button.Selected.Value
                             }
                         );
+                        Set(guardado,true);
                         Set(cargando, false);
                         ));
                     );
@@ -1224,6 +1226,7 @@ Datos_contraparte_internacional As screen:
                 //Back(ScreenTransition.CoverRight);;
                 
                 UpdateContext({popup_eliminar_contraparte_in:false});
+                Set(guardado,true);
                 Set(cargando,false);
                 Navigate(Entidad_contraparte, ScreenTransition.Fade);
             PressedBorderColor: =RGBA(247, 158, 64, 1)

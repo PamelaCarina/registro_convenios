@@ -148,7 +148,7 @@ Unidad_solicitante As screen:
                                                                 id_estado,
                                                                 tipo_alcance.Selected.valor
                         ).id_estado);
-                
+                        Set(guardado,true);
                         Set(cargando, false);
                     );
                     Navigate(Entidad_contraparte,ScreenTransition.Fade));
@@ -174,8 +174,47 @@ Unidad_solicitante As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: |
+            OnSelect: |+
                 =Navigate(Mostar_solicitudes,ScreenTransition.Fade);
+                If(guardado,
+                Set(cargando, true);
+                ClearCollect(listado_solicitudes, 
+                        Sort('Convenios-PATraerlistadodesolicitud'.Run(persona_solicitante.correo_udec), fecha, SortOrder.Descending));
+                        //MOSTRAR SOLICITUDES
+                Clear(nombre_contraparte_para_filtro);
+                Clear(listado_solicitudes_recuperadas);
+                ForAll(listado_solicitudes,
+                If(CountRows(nombres_contrapartes_internacionales)>0,
+                    If(CountRows(nombres_contrapartes_nacionales)>0,
+                        //si hay contrapartes internacionales y nacionales
+                        Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
+                    ,
+                        //si hay contrapartes internacionales y no nacionales
+                        Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
+                    ),
+                    If(CountRows(nombres_contrapartes_nacionales)>0,
+                        //si no hay contrapartes internacionales y pero si nacionales
+                        Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_nacionales).Value)
+                        ,
+                        //si no hay contrapartes internacionales ni nacionales
+                        Collect(nombre_contraparte_para_filtro,"SIN CONTRAPARTES ASOCIADAS")
+                            
+                    )
+                );
+                    Collect(listado_solicitudes_recuperadas,{
+                        alcance_territorial:alcance_territorial,
+                        fecha:fecha,
+                        id_convenio:id_convenio,
+                        id_estado:id_estado,
+                        nombres_contrapartes_nacionales:nombres_contrapartes_nacionales,
+                        nombres_contrapartes_internacionales:nombres_contrapartes_internacionales,
+                        ticket:ticket,
+                        nombre_contraparte_para_filtro:Last(nombre_contraparte_para_filtro).Value
+                    })
+                );
+                Set(cargando, false);
+                );
+                
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
@@ -1752,7 +1791,7 @@ Unidad_solicitante As screen:
                             id_convenio
                         );
                     );
-                    
+                    Set(guardado,true);
                     Set(cargando, false);
                     UpdateContext({popup_promotor: false});
                 );
@@ -2379,6 +2418,7 @@ Unidad_solicitante As screen:
                     );
                 
                 UpdateContext({popup_confirmar_eliminacion:false});
+                Set(guardado,true);
                 Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -2495,6 +2535,7 @@ Unidad_solicitante As screen:
                     tipo_alcance.Selected.valor,
                     id_convenio
                 );
+                Set(guardado,true);
                 Clear(contrapartes_internacionales);
                 Clear(id_contrapartes_internacionales);
                 UpdateContext({popup_cambiar_alcance:false});

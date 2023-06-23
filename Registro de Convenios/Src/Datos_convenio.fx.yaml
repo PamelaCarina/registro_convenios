@@ -74,7 +74,7 @@ Datos_convenio As screen:
                                                                             tipo_solicitud.Selected.valor,
                                                                             tipo_modalidades.Selected.valor
                     ).id_estado);
-                    
+                    Set(guardado,true);
                     Set(cargando, false);
                     );
                 
@@ -1238,6 +1238,7 @@ Datos_convenio As screen:
                             "documentación adicional",
                             id_convenio
                         );
+                        Set(guardado,true);
                         Set(cargando, false);
                         Reset(att_registro_10_attach_extra);
                         Set(num_max_doc_extra,15 - CountRows(lista_doc_ext_subidos));
@@ -1443,6 +1444,7 @@ Datos_convenio As screen:
                             "borrador convenio",
                             id_convenio
                         );
+                        Set(guardado,true);
                         Set(cargando, false);
                         Reset(att_registro_10_attach_oficial);
                         Set(num_max_doc_official,1 - CountRows(lista_doc_off_subidos));

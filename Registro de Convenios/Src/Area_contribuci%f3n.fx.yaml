@@ -106,7 +106,7 @@ Area_contribución As screen:
                                                     id_convenio, 
                                                     id_estado
                     ).id_estado);
-                    
+                    Set(guardado,true);
                     Set(cargando, false);
                     );
                 

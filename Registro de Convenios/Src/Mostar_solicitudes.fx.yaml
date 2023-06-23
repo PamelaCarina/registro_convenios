@@ -2,11 +2,14 @@ Mostar_solicitudes As screen:
     Fill: =RGBA(235, 238, 251, 1)
     OnVisible: |+
         =///////////////////////////REINICIAR VALORES DE PARÁMETROS///////////////////////////16-06-2023
+        /*
+        Set(reset_primera_vez_especificacion;true);;
+        Set(reset_primera_vez_categoria_vrim;true);;
+        Set(reset_primera_vez_area_contribucion;true);;
+        Set(reset_primera_vez_ods;true);;
+        */
         
-        Set(reset_primera_vez_especificacion,true);
-        Set(reset_primera_vez_categoria_vrim,true);
-        Set(reset_primera_vez_area_contribucion,true);
-        Set(reset_primera_vez_ods,true);
+        Set(guardado,false);
         
         //PANTALLA - UNIDAD SOLICITANTE
         Set(solicitud_convenio_recuperada,Blank());
