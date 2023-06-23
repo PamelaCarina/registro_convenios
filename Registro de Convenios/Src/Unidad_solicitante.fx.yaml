@@ -1866,7 +1866,7 @@ Unidad_solicitante As screen:
             opciones_nombre_p As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(Nombres_reparticiones, inp_promotor_popup_search.Text in reparticion)
+                Items: =Filter(Nombres_reparticiones, inp_promotor_popup_search.Text in cod_nombre)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -1895,10 +1895,10 @@ Unidad_solicitante As screen:
                     OnSelect: |
                         =Select(Parent);
                         If(desplegar_buscador_p,UpdateContext({desplegar_buscador_p:false}),UpdateContext({desplegar_buscador_p:true}));
-                        Set(p_seleccionado,ThisItem.reparticion);
+                        Set(p_seleccionado,ThisItem.cod_nombre);
                         
                         Set(promotor_seleccionado,{
-                            reparticion: ThisItem.reparticion,
+                            reparticion: ThisItem.cod_nombre,
                             codigo: ThisItem.codigo
                         })
                     PaddingBottom: =0
@@ -1906,7 +1906,7 @@ Unidad_solicitante As screen:
                     PaddingRight: =10
                     PaddingTop: =0
                     Size: =14
-                    Text: =Upper(ThisItem.reparticion)
+                    Text: =Upper(ThisItem.cod_nombre)
                     Width: =599
                     ZIndex: =3
 

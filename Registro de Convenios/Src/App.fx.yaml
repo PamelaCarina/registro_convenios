@@ -209,7 +209,8 @@ App As appinfo:
                 Nombres_reparticiones,
                 {
                     reparticion: Upper(NOMBRE),
-                    codigo: CODIGO
+                    codigo: CODIGO,
+                    cod_nombre: Upper(COD_NOMBRE)
                 }
             )
         );
