@@ -394,7 +394,7 @@ Entidad_contraparte As screen:
                         Height: =26
                         Icon: =Icon.Document
                         OnSelect: =Select(Parent)
-                        Visible: =If(IsBlank(ThisItem.file.Name),false,true)
+                        Visible: =If(IsBlank(ThisItem.file),false,true)
                         Width: =34
                         X: =757
                         Y: =61
