@@ -968,17 +968,30 @@ Datos_contraparte_internacional As screen:
                 //
                 
                     Set(cargando, true);
-                    Set(datos_contraparte, 'DTI-PATraerinstitucióninternacional'.Run(inp_contraparte_in_popup_search.Text));
+                    //LookUp(Nombres_contrapartes_internacionales;nombre=Upper(inp_contraparte_in_popup_search.Text);pais);;
+                    //Set(datos_contraparte; 'DTI-PATraerinstitucióninternacional'.Run(inp_contraparte_in_popup_search.Text));;
                     Set(contraparte_in,{
-                        nombre_entidad_contraparte: First(datos_contraparte).razon_social,
+                        nombre_entidad_contraparte:LookUp(
+                            Nombres_contrapartes_internacionales,
+                            nombre=Upper(inp_contraparte_in_popup_search.Text),
+                            nombre),
+                        //nombre_entidad_contraparte: First(datos_contraparte).razon_social;
                         //rut_entidad_contraparte: First(datos_contraparte).rut;
                         //dv_entidad_contraparte: First(datos_contraparte).dv;
                         nombre_representante_legal: "",
                         nombre_responsable_institucional:"",
                         cargo_responsable_institucional:"",
-                        pais:Upper(First(datos_contraparte).pais),
+                        pais:LookUp(
+                            Nombres_contrapartes_internacionales,
+                            nombre=Upper(inp_contraparte_in_popup_search.Text),
+                            pais),
+                        //pais:Upper(First(datos_contraparte).pais);
                         correo_responsable_institucional:"",
-                        id: First(datos_contraparte).id
+                        id:LookUp(
+                            Nombres_contrapartes_internacionales,
+                            nombre=Upper(inp_contraparte_in_popup_search.Text),
+                            id)
+                        //id: First(datos_contraparte).id
                     });
                     Set(cargando, false);
                     If(IsBlank(contraparte_in.nombre_entidad_contraparte),

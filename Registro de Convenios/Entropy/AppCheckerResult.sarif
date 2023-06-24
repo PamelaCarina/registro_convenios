@@ -18850,36 +18850,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.DTI-PATraerinstitucióninternacional"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.DTI-PATraerinstitucióninternacional",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "DTI-PATraerinstitucióninternacional",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-NotOfflineConnectors",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.DTI-PATraernombrescontrapartesinternacionales"
                 }
               ],

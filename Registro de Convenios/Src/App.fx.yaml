@@ -293,7 +293,8 @@ App As appinfo:
                 Nombres_contrapartes_internacionales,
                 {
                     nombre: Upper(RAZON_SOCIAL),
-                    pais: Upper(NOMBRE_PAIS)
+                    pais: Upper(NOMBRE_PAIS),
+                    id: IDENTIFICADOR
                 }
             )
         );
