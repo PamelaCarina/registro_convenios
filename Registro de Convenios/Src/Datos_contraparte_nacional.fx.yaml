@@ -583,7 +583,7 @@ Datos_contraparte_nacional As screen:
                     DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Height: =40
                     HoverColor: =RGBA(17, 61, 107, 1)
-                    Items: =["Sí","No"]
+                    Items: =["SÍ","NO"]
                     Layout: =Layout.Horizontal
                     OnChange: |-
                         =UpdateContext({cambio_detectado:true})
