@@ -42,17 +42,9 @@ Entidad_contraparte As screen:
                 
                 If(!sin_contraparte,
                     
-                    If(tipo_alcance.Selected.id="2",//si es internacional revisa que esten todas las solicitudes revisadas
+                    If(tipo_alcance.Selected.id="1",//si es internacional revisa que esten todas las solicitudes revisadas
                         If(!contrapartes_por_revisar,
                             Navigate(Datos_convenio,ScreenTransition.Fade);
-                            /*
-                            If(reset_primera_vez_especificacion;    
-                                If(IsBlank(especificacion_convenio_recuperada.tipologia);Reset(tipo_tipologia));;
-                                If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud);Reset(tipo_solicitud));;
-                                If(IsBlank(especificacion_convenio_recuperada.modalidad);Reset(tipo_modalidades));;
-                                Set(reset_primera_vez_especificacion;false)
-                            );;
-                            */
                         ),
                         Navigate(Datos_convenio,ScreenTransition.Fade);
                     )
