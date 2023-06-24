@@ -291,7 +291,10 @@ App As appinfo:
             Contrapartes_inter,
             Collect(
                 Nombres_contrapartes_internacionales,
-                {nombre: RAZON_SOCIAL}
+                {
+                    nombre: Upper(RAZON_SOCIAL),
+                    pais: Upper(NOMBRE_PAIS)
+                }
             )
         );
         //PAISES
