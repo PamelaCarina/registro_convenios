@@ -687,7 +687,7 @@ Datos_contraparte_nacional As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         BorderThickness: =0
                         Color: =RGBA(17, 61, 107, 1)
-                        Default: =If(nueva_contraparte,contraparte_na.publica,contraparte.publica)
+                        Default: =If(nueva_contraparte,If(IsBlank(contraparte_na.publica),""),contraparte.publica)
                         DisabledColor: =RGBA(111, 139, 167, 1)
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(241, 244, 255, 1)
