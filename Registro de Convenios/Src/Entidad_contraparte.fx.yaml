@@ -565,7 +565,7 @@ Entidad_contraparte As screen:
                         Align: =Align.Right
                         Color: =RGBA(17, 61, 107, 1)
                         Size: =16
-                        Text: =If(ThisItem.firma_digital="Sí", "Con firma digital", "Sin firma digital")
+                        Text: =If(ThisItem.firma_digital="SÍ", "Con firma digital", "Sin firma digital")
                         Width: =188
                         X: =930
                         Y: =52
