@@ -175,7 +175,7 @@ Datos_contraparte_nacional As screen:
                                                     Upper(nombre_responsable_institucional_na_input.Text),
                                                     Upper(cargo_responsable_institucional_na_input.Text),
                                                     Upper(correo_electronico_na_input.Text),
-                                                    publica_na_input.Text,
+                                                    If(IsBlank(publica_na_input.Text),""),
                                                     //tipo_empresa_na_input.Text;
                                                     //comuna_na_input.Text;
                                                     //tipo_contribuyente_na_input.Text;
