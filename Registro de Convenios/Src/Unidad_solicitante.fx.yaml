@@ -1552,6 +1552,7 @@ Unidad_solicitante As screen:
                         OnChange: |
                             =Reset(buscador_a_t_input);
                             UpdateContext({cambio_detectado:true});
+                            If(tipo_alcance.Selected.id="2",Set(tab_seleccionada,1));
                             If(tipo_alcance.Selected.id="2" && CountRows(contrapartes_internacionales)>0,//si ahora el alcance es nacional
                                 UpdateContext({popup_cambiar_alcance:true})
                             );
