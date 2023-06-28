@@ -2159,6 +2159,16 @@ Unidad_solicitante As screen:
             Y: =314
             ZIndex: =5
 
+        fig_registro_5_popup_bg_8 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({desplegar_buscador_a:false});
+                Reset(inp_autoridad_popup_search)
+            Width: =1366
+            ZIndex: =6
+
         inp_autoridad_popup_search As text:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
