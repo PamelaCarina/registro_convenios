@@ -894,35 +894,6 @@ Datos_contraparte_internacional As screen:
             Y: =234
             ZIndex: =3
 
-        inp_contraparte_in_popup_search As text:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            Color: =RGBA(17, 61, 107, 1)
-            Default: |-
-                =//""
-                If(desplegar_buscador_c_in,"",n_c_in_seleccionada)
-            DisabledColor: =RGBA(111, 139, 167, 1)
-            Fill: =RGBA(241, 244, 255, 1)
-            Height: =46
-            HintText: ="Ingresar nombre institución"
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(241, 244, 255, 1)
-            OnSelect: |-
-                =Reset(inp_contraparte_in_popup_search);
-                Reset(opciones_nombre_c_in);
-                Set(n_c_in_seleccionada,"");
-                If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}))
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Size: =14
-            TabIndex: =1
-            Width: =645
-            X: =360
-            Y: =353
-            ZIndex: =4
-
         buscar_5 As image:
             Height: =20
             Image: =ico_search
@@ -930,7 +901,7 @@ Datos_contraparte_internacional As screen:
             Width: =20
             X: =970
             Y: =366
-            ZIndex: =5
+            ZIndex: =4
 
         lbl_contraparte_in_popup_rut As label:
             Color: =RGBA(111, 139, 167, 1)
@@ -940,7 +911,99 @@ Datos_contraparte_internacional As screen:
             Width: =250
             X: =360
             Y: =314
+            ZIndex: =5
+
+        lbl_contraparte_in_popup_noencontrado As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Institución no encontrada. Por favor intente nuevamente"
+            Visible: =popup_institucionnoencontrada
+            Width: =481
+            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
+            Y: =418
             ZIndex: =6
+
+        lbl_contraparte_in_popup_faltandatos As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Ingresar nombre institución"
+            Visible: =popup_faltanombre
+            Width: =540
+            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =7
+
+        lbl_contraparte_in_existente_popup As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Institución ya registrada"
+            Visible: =popup_in_ya_ingresada
+            Width: =540
+            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =8
+
+        fig_registro_5_popup_bg_11 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({desplegar_buscador_c_in:false});
+                Reset(inp_contraparte_in_popup_search)
+            Width: =1366
+            ZIndex: =9
+
+        btn_contraparte_in_popup_cancelar As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            Text: ="CANCELAR"
+            X: =653
+            Y: =488
+            ZIndex: =10
+
+        btn_registro_10_politica_2 As button:
+            OnSelect: |-
+                =Set(nueva_solicitud_contraparte,true);
+                Set(id_contraparte,Blank());
+                Clear(lista_doc_contr_subidos);
+                Set(contraparte_s,{
+                    nombre:"",
+                    pais: "",
+                    file: ""
+                });
+                
+                Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
+                
+                Reset(pais);
+                Reset(att_attach_doc_sin);
+                Reset(nombre_solicitud_unidad_contraparte_in_input);
+            Size: =14
+            Text: ="SOLICITAR CONTRAPARTE"
+            Visible: =If(CountRows(opciones_nombre_c_in.AllItems)=0,true)
+            Width: =260
+            X: =360
+            Y: =488
+            ZIndex: =11
 
         btn_contraparte_in_popup_buscar As button:
             BorderThickness: =1
@@ -1014,96 +1077,43 @@ Datos_contraparte_internacional As screen:
             Text: ="ACEPTAR"
             X: =845
             Y: =488
-            ZIndex: =7
+            ZIndex: =12
 
-        btn_contraparte_in_popup_cancelar As button:
-            BorderColor: =RGBA(247, 158, 64, 1)
-            Color: =RGBA(247, 158, 64, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            HoverBorderColor: =RGBA(247, 158, 64, 1)
-            HoverColor: =RGBA(247, 158, 64, 1)
-            HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
-            PressedBorderColor: =RGBA(247, 158, 64, 1)
-            PressedColor: =RGBA(247, 158, 64, 1)
-            PressedFill: =RGBA(247, 158, 64, 0.3)
+        inp_contraparte_in_popup_search As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(17, 61, 107, 1)
+            Default: |-
+                =//""
+                If(desplegar_buscador_c_in,"",n_c_in_seleccionada)
+            DisabledColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(241, 244, 255, 1)
+            Height: =46
+            HintText: ="Ingresar nombre institución"
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(241, 244, 255, 1)
+            OnSelect: |-
+                =Reset(inp_contraparte_in_popup_search);
+                Reset(opciones_nombre_c_in);
+                Set(n_c_in_seleccionada,"");
+                If(desplegar_buscador_c_in,UpdateContext({desplegar_buscador_c_in:false}),UpdateContext({desplegar_buscador_c_in:true}))
             RadiusBottomLeft: =12
             RadiusBottomRight: =12
             RadiusTopLeft: =12
             RadiusTopRight: =12
             Size: =14
-            Text: ="CANCELAR"
-            X: =653
-            Y: =488
-            ZIndex: =8
-
-        lbl_contraparte_in_popup_noencontrado As label:
-            Align: =Align.Center
-            Color: =RGBA(238, 110, 126, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =11
-            Text: ="Institución no encontrada. Por favor intente nuevamente"
-            Visible: =popup_institucionnoencontrada
-            Width: =481
-            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
-            Y: =418
-            ZIndex: =9
-
-        lbl_contraparte_in_popup_faltandatos As label:
-            Align: =Align.Center
-            Color: =RGBA(238, 110, 126, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =11
-            Text: ="Ingresar nombre institución"
-            Visible: =popup_faltanombre
-            Width: =540
-            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
-            Y: =418
-            ZIndex: =10
-
-        btn_registro_10_politica_2 As button:
-            OnSelect: |-
-                =Set(nueva_solicitud_contraparte,true);
-                Set(id_contraparte,Blank());
-                Clear(lista_doc_contr_subidos);
-                Set(contraparte_s,{
-                    nombre:"",
-                    pais: "",
-                    file: ""
-                });
-                
-                Navigate(Datos_solicitud_contraparte_internacional,ScreenTransition.Fade);
-                
-                Reset(pais);
-                Reset(att_attach_doc_sin);
-                Reset(nombre_solicitud_unidad_contraparte_in_input);
-            Size: =14
-            Text: ="SOLICITAR CONTRAPARTE"
-            Visible: =If(CountRows(opciones_nombre_c_in.AllItems)=0,true)
-            Width: =260
+            TabIndex: =1
+            Width: =645
             X: =360
-            Y: =488
-            ZIndex: =11
-
-        lbl_contraparte_in_existente_popup As label:
-            Align: =Align.Center
-            Color: =RGBA(238, 110, 126, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =11
-            Text: ="Institución ya registrada"
-            Visible: =popup_in_ya_ingresada
-            Width: =540
-            X: =(fondo_blanco_8.X+fondo_blanco_8.Width/2)-Self.Width/2
-            Y: =418
-            ZIndex: =12
+            Y: =353
+            ZIndex: =13
 
         Contenedor_o_n_c_in As groupContainer.manualLayoutContainer:
-            Visible: =desplegar_buscador_c_in
+            Visible: =desplegar_buscador_c_in && CountRows(opciones_nombre_c_in.AllItems)>0
             Width: =620
             X: =370
             Y: =397
-            ZIndex: =13
+            ZIndex: =14
 
             opciones_nombre_c_in As gallery.galleryVertical:
                 DelayItemLoading: =true
