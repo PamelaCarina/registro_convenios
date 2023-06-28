@@ -910,6 +910,7 @@ Entidad_contraparte As screen:
                         Set(nueva_contraparte,true);
                         Set(n_c_in_seleccionada,"");
                         Reset(firma_digiral_in_button);
+                        Reset(inp_contraparte_in_popup_search)
                     );
                     
                     If(tab_seleccionada=3,

@@ -1080,6 +1080,7 @@ Datos_contraparte_internacional As screen:
                 Reset(nombre_solicitud_unidad_contraparte_in_input);
             Size: =14
             Text: ="SOLICITAR CONTRAPARTE"
+            Visible: =If(CountRows(opciones_nombre_c_in.AllItems)=0,true)
             Width: =260
             X: =360
             Y: =488
