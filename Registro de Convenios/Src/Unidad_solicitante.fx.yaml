@@ -1859,7 +1859,7 @@ Unidad_solicitante As screen:
             ZIndex: =12
 
         Contenedor_p As groupContainer.manualLayoutContainer:
-            Visible: =desplegar_buscador_p
+            Visible: =desplegar_buscador_p && CountRows(opciones_nombre_p.AllItems)>0
             Width: =620
             X: =371
             Y: =397
