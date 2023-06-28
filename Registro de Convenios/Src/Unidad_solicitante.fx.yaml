@@ -2524,7 +2524,6 @@ Unidad_solicitante As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
                 =Set(cargando,true);
-                
                 ForAll(
                     contrapartes_internacionales,
                     'Convenio-PAEliminarcontraparteregistrada'.Run(
@@ -2540,7 +2539,7 @@ Unidad_solicitante As screen:
                 Clear(contrapartes_internacionales);
                 Clear(id_contrapartes_internacionales);
                 UpdateContext({popup_cambiar_alcance:false});
-                
+                Set(tab_seleccionada,1);
                 Set(cargando,false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
