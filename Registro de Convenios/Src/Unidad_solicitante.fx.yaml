@@ -2140,6 +2140,25 @@ Unidad_solicitante As screen:
             Y: =234
             ZIndex: =3
 
+        buscar_7 As image:
+            Height: =20
+            Image: =ico_search
+            Visible: =false
+            Width: =20
+            X: =970
+            Y: =366
+            ZIndex: =4
+
+        lbl_autoridad_popup_rut As label:
+            Color: =RGBA(111, 139, 167, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NOMBRE AUTORIDAD"
+            Width: =250
+            X: =360
+            Y: =314
+            ZIndex: =5
+
         inp_autoridad_popup_search As text:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -2167,25 +2186,6 @@ Unidad_solicitante As screen:
             Width: =645
             X: =360
             Y: =353
-            ZIndex: =5
-
-        buscar_7 As image:
-            Height: =20
-            Image: =ico_search
-            Visible: =false
-            Width: =20
-            X: =970
-            Y: =366
-            ZIndex: =6
-
-        lbl_autoridad_popup_rut As label:
-            Color: =RGBA(111, 139, 167, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="NOMBRE AUTORIDAD"
-            Width: =250
-            X: =360
-            Y: =314
             ZIndex: =7
 
         btn_autoridad_popup_buscar As button:
@@ -2254,11 +2254,11 @@ Unidad_solicitante As screen:
             ZIndex: =9
 
         Contenedor_a As groupContainer.manualLayoutContainer:
-            Visible: =desplegar_buscador_a
+            Visible: =desplegar_buscador_a && CountRows(opciones_nombre_a.AllItems)>0
             Width: =620
             X: =371+0
             Y: =397+0
-            ZIndex: =13
+            ZIndex: =10
 
             opciones_nombre_a As gallery.galleryVertical:
                 DelayItemLoading: =true
