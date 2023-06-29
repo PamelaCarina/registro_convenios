@@ -50,11 +50,11 @@ Datos_convenio As screen:
                 If(IsBlank(Gallery1_1), UpdateContext({sin_documentacion_oficial:true}), UpdateContext({sin_documentacion_oficial:false}));
                 
                 //SIN DOCUMENTACION EXTRA
-                If(IsBlank(Gallery1_2), UpdateContext({sin_documentacion_extra:true}), UpdateContext({sin_documentacion_extra:false}));
+                //If(IsBlank(Gallery1_2); UpdateContext({sin_documentacion_extra:true}); UpdateContext({sin_documentacion_extra:false}));;
                 
                 //CONDICION DE APROBACION
                 If(!sin_tipologia && !sin_solicitud && !sin_modalidad && !sin_proposito_central && 
-                    !sin_documentacion_extra &&!sin_documentacion_oficial,
+                    /*!sin_documentacion_extra &&*/ !sin_documentacion_oficial,
                 
                 
                     If(id_estado=2,Set(id_estado,9));//pasa a especificacion convenio registrada
@@ -446,7 +446,7 @@ Datos_convenio As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =10
-                        Text: ="DOCUMENTOS ADICIONALES*"
+                        Text: ="DOCUMENTOS ADICIONALES"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =276
                         ZIndex: =5
