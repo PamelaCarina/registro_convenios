@@ -92,32 +92,6 @@ App As appinfo:
                 }
             )
         );
-        Set(
-            cargando,
-            false
-        );
-        //NOMBRES CONTRAPARTES INTERNACIONALES
-        Set(
-            Contrapartes_inter,
-            Sort(
-                'DTI-PATraernombrescontrapartesinternacionales'.Run(),
-                RAZON_SOCIAL
-            )
-        );
-        //PAISES
-        Set(
-            paises,
-            Sort(
-                'DTI-PATraerpaíses'.Run().paises,
-                Nombre_x0020_Pa_x00ed_s
-            )
-        );
-        //LISTAS CATEGORÍAS VRIM
-        Set(listas_categoria_vrim,
-            'VRIM-PA-Traerlistasaplicación'.Run()
-        );
-        
-        //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
         //UNIDAD SOLICITANTE
         ClearCollect(
             organismos_actividad,
@@ -145,6 +119,69 @@ App As appinfo:
                 valor
             )
         );
+        
+        //AUTORIDADES MÁXIMAS
+        Clear(Nombres_autoridades);
+        ForAll(
+            autoridades_maximas,
+            Collect(
+                Nombres_autoridades,
+                {
+                    nombre: Upper(
+                        Concatenate(
+                            field_3,
+                            " ",
+                            field_4,
+                            ", ",
+                            field_5
+                        )
+                    ),
+                    cargo: Upper(CARGO),
+                    correo: Upper(CORREO_UDEC),
+                    telefono: TELEFONO
+                }
+            )
+        );
+        //NOMBRES REPARTICIONES
+        Clear(Nombres_reparticiones);
+        ForAll(
+            reparticiones,
+            Collect(
+                Nombres_reparticiones,
+                {
+                    reparticion: Upper(NOMBRE),
+                    codigo: CODIGO,
+                    cod_nombre: Upper(COD_NOMBRE)
+                }
+            )
+        );
+        Set(
+            cargando,
+            false
+        );
+        //NOMBRES CONTRAPARTES INTERNACIONALES
+        Set(
+            Contrapartes_inter,
+            Sort(
+                'DTI-PATraernombrescontrapartesinternacionales'.Run(),
+                RAZON_SOCIAL
+            )
+        );
+        //PAISES
+        Set(
+            paises,
+            Sort(
+                'DTI-PATraerpaíses'.Run().paises,
+                Nombre_x0020_Pa_x00ed_s
+            )
+        );
+        //LISTAS CATEGORÍAS VRIM
+        Set(listas_categoria_vrim,
+            'VRIM-PA-Traerlistasaplicación'.Run()
+        );
+        
+        //////////////////////////////////COMPLETAR VARIABLES Y COLECCIONES//////////////////////////////////////
+        
         //TIPOLOGÍA
         Clear(lista_tipologia);
         ForAll(
@@ -202,84 +239,7 @@ App As appinfo:
                 valor
             )
         );
-        //NOMBRES REPARTICIONES
-        Clear(Nombres_reparticiones);
-        ForAll(
-            reparticiones,
-            Collect(
-                Nombres_reparticiones,
-                {
-                    reparticion: Upper(NOMBRE),
-                    codigo: CODIGO,
-                    cod_nombre: Upper(COD_NOMBRE)
-                }
-            )
-        );
-        /*
-        ClearCollect(
-            reparticion_no_repetida;
-            Distinct(
-                Nombres_reparticiones1;
-                reparticion
-            )
-        );;
-        Clear(Nombres_reparticiones);;
-        ForAll(
-            reparticion_no_repetida;
-            Collect(
-                Nombres_reparticiones;
-                First(
-                    Filter(
-                        Nombres_reparticiones1;
-                        reparticion = Value
-                    )
-                )
-            )
-        );;
-        */
-        /*
-        Remove(
-            Nombres_reparticiones;
-            LookUp(
-                Nombres_reparticiones;
-                reparticion = "Reparticion 9000"
-            );;
-            LookUp(
-                Nombres_reparticiones;
-                reparticion = "Repartición Antigua Inexistente (Crear)"
-            );;
-            LookUp(
-                Nombres_reparticiones;
-                reparticion = "Reparticion Hija 2"
-            );;
-            LookUp(
-                Nombres_reparticiones;
-                reparticion = "Valido"
-            )
-        );;
-        */
-        //AUTORIDADES MÁXIMAS
-        Clear(Nombres_autoridades);
-        ForAll(
-            autoridades_maximas,
-            Collect(
-                Nombres_autoridades,
-                {
-                    nombre: Upper(
-                        Concatenate(
-                            field_3,
-                            " ",
-                            field_4,
-                            ", ",
-                            field_5
-                        )
-                    ),
-                    cargo: Upper(CARGO),
-                    correo: Upper(CORREO_UDEC),
-                    telefono: TELEFONO
-                }
-            )
-        );
+        
         //LIMPIAR NACIONALES
         Clear(contrapartes_nacionales);
         //LIMPIAR INTERNACIONALES
@@ -350,97 +310,6 @@ App As appinfo:
                     id: ID
                 })
         );
-        /*
-        ClearCollect(
-            dd_tipo;
-            {
-                valor: Upper("Formación (pregrado, postgrado, formación permanente)");
-                id: "formacion"
-            };
-            {
-                valor: Upper("Extensión Académica");
-                id: "extension_academica"
-            };
-            {
-                valor: Upper("Extensión Cultural");
-                id: "extension_cultural"
-            };
-            {
-                valor: Upper("Bidireccional");
-                id: "bidireccional"
-            };
-            {
-                valor: Upper("Otra");
-                id: "otra"
-            }
-        );;
-        ClearCollect(
-            dd_sectores;
-            {
-                valor: Upper("Público - Político");
-                id: "publico_politico"
-            };
-            {
-                valor: Upper("Social Comunitario");
-                id: "social_comunitario"
-            };
-            {
-                valor: Upper("Cultural");
-                id: "cultural"
-            };
-            {
-                valor: Upper("Productivo");
-                id: "productivo"
-            };
-            {
-                valor: Upper("Comunidad Universitaria");
-                id: "comunidad_uni"
-            }
-        );;
-        ClearCollect(
-            dd_ambito;
-            {
-                valor: Upper("Extensión");
-                id: "extension"
-            };
-            {
-                valor: Upper("Comunicaciones");
-                id: "comunicaciones"
-            };
-            {
-                valor: Upper("Emprendimiento");
-                id: "emprendimiento"
-            };
-            {
-                valor: Upper("Transferencia tecnológica");
-                id: "transferencia_tecnologica"
-            };
-            {
-                valor: Upper("Asistencia técnica");
-                id: "asistencia_tecnica"
-            };
-            {
-                valor: Upper("Interacción con red alumni");
-                id: "red_alumni"
-            };
-            {
-                valor: Upper("Relaciones institucionales");
-                id: "rel_institucionales"
-            };
-            {
-                valor: Upper("Relaciones internacionales");
-                id: "rel_internacionales"
-            };
-            {
-                valor: Upper("Prácticas profesionales, pasantías estudiantiles y académicas");
-                id: "practicas_pasantia"
-            };
-            {
-                valor: Upper("Servicios");
-                id: "servicios"
-            }
-        );;
-        */
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false
