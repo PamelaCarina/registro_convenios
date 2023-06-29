@@ -9388,6 +9388,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Unidad_solicitante",
+                "type": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Unidad_solicitante",
+                "type": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Unidad_solicitante.promotor_popup.inp_promotor_popup_search.AccessibleLabel"
                 }
               ],
@@ -12778,6 +12838,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_internacional",
+                "type": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.inp_contraparte_in_popup_search.AccessibleLabel"
                 }
               ],
@@ -13751,6 +13871,66 @@
                 "member": "TabIndex",
                 "module": "Datos_contraparte_internacional",
                 "type": "Datos_contraparte_internacional.Botones_atras_siguiente_4.Guardar_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Datos_contraparte_nacional",
+                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10"
               }
             }
           ],
@@ -17602,186 +17782,6 @@
           },
           "ruleId": "acc-TabOrderShouldBeChecked",
           "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Unidad_solicitante",
-                "type": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Unidad_solicitante",
-                "type": "Unidad_solicitante.promotor_popup.fig_registro_5_popup_bg_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_nacional",
-                "type": "Datos_contraparte_nacional.contraparte_nacional_popup.fig_registro_5_popup_bg_10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Datos_contraparte_internacional",
-                "type": "Datos_contraparte_internacional.contraparte_internacional_popup.fig_registro_5_popup_bg_11"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
         },
         {
           "locations": [
