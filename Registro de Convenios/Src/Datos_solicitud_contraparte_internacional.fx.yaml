@@ -713,6 +713,7 @@ Datos_solicitud_contraparte_internacional As screen:
                 UpdateContext({show_popup_documentacion: false});
                 //UpdateContext({sacar_archivo_oficial:false});;
                 Reset(att_attach_doc_sin);
+                UpdateContext({archivo_invalido:false});
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)

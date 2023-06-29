@@ -1504,11 +1504,13 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: |+
+            OnSelect: |-
                 =//UpdateContext({sacar_archivo_oficial:true});;
                 UpdateContext({show_popup_oficial: false});
                 //UpdateContext({sacar_archivo_oficial:false});;
-                
+                UpdateContext({archivo_invalido:false});
+                Reset(att_registro_10_attach_oficial);
+                Set(existe_adjunto, false);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
