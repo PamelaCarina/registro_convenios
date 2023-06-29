@@ -127,7 +127,7 @@ Datos_contraparte_nacional As screen:
         Guardar As button:
             DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(247, 158, 64, 1)
-            FontWeight: =FontWeight.Normal
+            FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-

@@ -32,7 +32,7 @@ Datos_convenio As screen:
         Siguiente_1 As button:
             BorderThickness: =1
             Fill: =RGBA(247, 158, 64, 1)
-            FontWeight: =FontWeight.Normal
+            FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |+
