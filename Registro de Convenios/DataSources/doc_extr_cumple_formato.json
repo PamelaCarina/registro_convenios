@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "doc_extr_cumple_formato",
+    "Type": "CollectionDataSourceInfo"
+  }
+]
