@@ -616,7 +616,7 @@ Datos_convenio As screen:
                     DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
-                    Height: =103
+                    Height: =100
                     HintText: ="Describa el propósito central de su convenio..."
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
@@ -682,7 +682,7 @@ Datos_convenio As screen:
                             DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
-                            Height: =75
+                            Height: =72
                             HintText: =""
                             HoverBorderColor: =RGBA(255, 255, 255, 1)
                             HoverFill: =RGBA(241, 244, 255, 1)
