@@ -580,8 +580,8 @@ Datos_convenio As screen:
 
             Propósito As groupContainer.manualLayoutContainer:
                 Height: =180
-                Width: =1230
-                X: =42
+                Width: =625
+                X: =661
                 Y: =294
                 ZIndex: =3
 
@@ -601,7 +601,7 @@ Datos_convenio As screen:
                     RadiusTopRight: =12
                     TabIndex: =-1
                     Visible: =If(Len(descripcion_proposito_1.Text)=0 && sin_proposito_central, true, false)
-                    Width: =1200
+                    Width: =575
                     X: =5
                     Y: |
                         =62
@@ -634,7 +634,7 @@ Datos_convenio As screen:
                     RadiusTopRight: =12
                     Size: =14
                     TabIndex: =
-                    Width: =1194
+                    Width: =572
                     X: =7
                     Y: =63
                     ZIndex: =2
@@ -662,7 +662,7 @@ Datos_convenio As screen:
                 Contenedor_m_c As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
-                    Y: =230
+                    Y: =146
                     ZIndex: =1
 
                     modalidades As label:
@@ -810,7 +810,7 @@ Datos_convenio As screen:
                 Contenedor_t_s As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
-                    Y: =146
+                    Y: =230
                     ZIndex: =2
 
                     Contenedor_seleccionable_tipo_solicitud As groupContainer.manualLayoutContainer:
