@@ -1769,14 +1769,14 @@ Datos_convenio As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =8
+            ZIndex: =21
 
         img_loading_5 As image:
             Image: =loading
             Visible: =cargando
             X: =632
             Y: =323
-            ZIndex: =21
+            ZIndex: =22
 
     grp_eliminar_oficial_popup As group:
         Height: =5
@@ -1791,7 +1791,7 @@ Datos_convenio As screen:
             Height: =768
             Visible: =popup_eliminar_oficial
             Width: =1366
-            ZIndex: =9
+            ZIndex: =8
 
         img_eliminar_popup_1 As image:
             Height: =352
@@ -1805,7 +1805,7 @@ Datos_convenio As screen:
             Width: =709
             X: =327
             Y: =208
-            ZIndex: =10
+            ZIndex: =9
 
         lbl_eliminar_popup_titulo_1 As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -1816,7 +1816,7 @@ Datos_convenio As screen:
             Width: =612
             X: =359
             Y: =234
-            ZIndex: =11
+            ZIndex: =10
 
         lbl_desea_eliminar_1 As label:
             Align: =Align.Center
@@ -1830,7 +1830,7 @@ Datos_convenio As screen:
             Width: =645
             X: =359
             Y: =314
-            ZIndex: =12
+            ZIndex: =11
 
         btn_eliminar_popup_1 As button:
             BorderThickness: =1
@@ -1870,7 +1870,7 @@ Datos_convenio As screen:
             Visible: =popup_eliminar_oficial
             X: =844
             Y: =488
-            ZIndex: =13
+            ZIndex: =12
 
         btn_eliminar_popup_atras_4 As button:
             BorderColor: =RGBA(247, 158, 64, 1)
@@ -1895,7 +1895,438 @@ Datos_convenio As screen:
             Visible: =popup_eliminar_oficial
             X: =652
             Y: =488
+            ZIndex: =13
+
+    convenio_existente_popup As groupContainer.manualLayoutContainer:
+        Height: =Unidad_solicitante.Height
+        Visible: =//popup_contraparte_na
+        Width: =Unidad_solicitante.Width
+        ZIndex: =20
+
+        fig_registro_5_popup_bg_12 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        fondo_blanco_14 As image:
+            Height: =352
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =709
+            X: =328
+            Y: =208
+            ZIndex: =2
+
+        lbl_contraparte_na_popup_titulo_1 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Búsqueda de contraparte nacional"
+            Width: =650
+            X: =360
+            Y: =234
+            ZIndex: =3
+
+        buscar_9 As image:
+            Height: =20
+            Image: =ico_search
+            Width: =20
+            X: =970
+            Y: =366
+            ZIndex: =4
+
+        lbl_contraparte_na_popup_rut_1 As label:
+            Color: =RGBA(111, 139, 167, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =10
+            Text: ="NOMBRE/RUT INSTITUCIÓN"
+            Width: =450
+            X: =360
+            Y: =314
+            ZIndex: =5
+
+        lbl_contraparte_na_popup_noencontrado_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Institución no encontrada. Por favor intente nuevamente"
+            Visible: =popup_institucionnoencontrada
+            Width: =481
+            X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =6
+
+        lbl_contraparte_na_popup_faltandatos_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Ingresar nombre o RUT institución"
+            Visible: =popup_faltarut
+            Width: =540
+            X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
+            Y: =418
+            ZIndex: =7
+
+        btn_registro_10_politica_3 As button:
+            OnSelect: |
+                =/*
+                Set(nueva_solicitud_contraparte;true);;
+                Set(contraparte_s;{
+                    nombre:"";
+                    rut: "";
+                    dv: "";
+                    pais: "";
+                    tipo: "";
+                    doc: ""
+                });;
+                Reset(att_attach_doc_sna);;
+                Reset(nombre_solicitud_unidad_contraparte_na_input);;
+                Reset(rut_solicitud_na_input);;
+                Reset(dv_solicitud_na_input);;
+                Navigate(Datos_solicitud_contraparte_nacional;ScreenTransition.Fade);;
+                */
+            Size: =14
+            Text: ="SOLICITAR CONTRAPARTE"
+            Visible: =false
+            Width: =260
+            X: =360
+            Y: =488
+            ZIndex: =8
+
+        lbl_contraparte_na_existente_popup_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Institución ya registrada"
+            Visible: =popup_na_ya_ingresada
+            Width: =540
+            X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
+            Y: =418+0
+            ZIndex: =9
+
+        formatos_permitidos_lb_7 As label:
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =20
+            Italic: =true
+            PaddingLeft: =12
+            Size: =10
+            Text: ="Si la institución no es encontrada por nombre, digite su RUT sin puntos y con guión"
+            Width: =620
+            X: =374
+            Y: =399
+            ZIndex: =10
+
+        Icon1_3 As icon.Help:
+            Color: =RGBA(111, 139, 167, 1)
+            Height: =15
+            Icon: =Icon.Help
+            Width: =15
+            X: =365
+            Y: =402
+            ZIndex: =11
+
+        lbl_contraparte_na_min_caracteres_popup_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(238, 110, 126, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =11
+            Text: ="Introduzca un mínimo de 3 caracteres"
+            Visible: =error_minimo_caracteres && !lbl_contraparte_na_popup_faltandatos_1.Visible
+            Width: =540
+            X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
+            Y: =418+0
+            ZIndex: =12
+
+        fig_registro_5_popup_bg_13 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({desplegar_buscador_juridica:false});
+                Reset(inp_contraparte_na_popup_search_1);
+                //Set(pj_seleccionada;Blank());;
+            Width: =1366
+            ZIndex: =13
+
+        btn_contraparte_na_popup_cancelar_1 As button:
+            BorderColor: =RGBA(247, 158, 64, 1)
+            Color: =RGBA(247, 158, 64, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.1)
+            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(247, 158, 64, 1)
+            PressedFill: =RGBA(247, 158, 64, 0.3)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            Text: ="CANCELAR"
+            X: =653
+            Y: =488
             ZIndex: =14
+
+        btn_contraparte_na_popup_buscar_2 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |
+                =UpdateContext({popup_faltarut:false, popup_institucionnoencontrada:false});
+                UpdateContext({es_rut:false});
+                UpdateContext({mostrar_lista_persona_juridica:false});
+                UpdateContext({desplegar_buscador_juridica:false});
+                UpdateContext({error_minimo_caracteres:false});
+                Set(popup_na_ya_ingresada,false);
+                
+                If(
+                    //con dígito verificador
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}.\d{3}.\d{3}-[a-z0-9]") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}.\d{3}.\d{3}-[a-z0-9]") ||
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}\d{3}\d{3}-[a-z0-9]") ||
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}\d{3}\d{3}-[a-z0-9]") //||
+                
+                    //sin dígito verificador
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}.\d{3}.\d{3}") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}.\d{3}.\d{3}") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}\d{3}\d{3}") ||
+                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}\d{3}\d{3}") 
+                ,
+                    UpdateContext({es_rut:true});
+                    UpdateContext({cumple_minimo_caracteres:true})
+                    ,
+                    UpdateContext({es_rut:false});
+                    If(Len(inp_contraparte_na_popup_search.Text)>=3,
+                        UpdateContext({cumple_minimo_caracteres:true}),
+                        UpdateContext({cumple_minimo_caracteres:false})
+                    )
+                );
+                
+                If(IsBlank(inp_contraparte_na_popup_search.Text)=false,
+                //
+                If(
+                    !IsBlank(//busca si el rut ya ha sido ingresado
+                        LookUp(
+                            contrapartes_nacionales, 
+                            Lower(rut_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
+                        )
+                    )
+                    ||
+                    !IsBlank(//busca si el nombre ya ha sido ingresado
+                        LookUp(
+                            contrapartes_nacionales, 
+                            Lower(nombre_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
+                        )
+                    )
+                    ,
+                    Set(popup_na_ya_ingresada,true)
+                ,
+                    Set(cargando, true);
+                    If(es_rut,
+                        Set(persona_juridica,
+                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Rut")
+                        )
+                    ,
+                        If(cumple_minimo_caracteres,
+                            Set(persona_juridica,
+                                'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
+                            ),
+                            UpdateContext({error_minimo_caracteres:true})
+                        )
+                    );
+                
+                    If(persona_juridica.status,//si encuentra la persona jurídica
+                        Set(lista_persona_juridica,persona_juridica.data);
+                        UpdateContext({mostrar_lista_persona_juridica:true});
+                        UpdateContext({desplegar_buscador_juridica:true})
+                    ,
+                        If(!error_minimo_caracteres,
+                            UpdateContext({popup_institucionnoencontrada:true})
+                        )
+                    );
+                    
+                    Set(cargando, false);
+                );
+                    ,
+                    UpdateContext({popup_faltarut:true})
+                )
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="BUSCAR"
+            Visible: =IsBlank(pj_seleccionada)
+            X: =845+0
+            Y: =488+0
+            ZIndex: =15
+
+        btn_contraparte_na_popup_buscar_3 As button:
+            BorderThickness: =1
+            Fill: =RGBA(247, 158, 64, 1)
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(247, 158, 64, 1)
+            HoverFill: =RGBA(247, 158, 64, 0.4)
+            OnSelect: |-
+                =Set(contraparte_na,pj_detalle);
+                Set(popup_contraparte_na,false)
+            PressedBorderColor: =RGBA(247, 158, 64, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(249, 133, 11, 1)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Text: ="ACEPTAR"
+            Visible: =!IsBlank(pj_seleccionada)
+            X: =845+0
+            Y: =488+0
+            ZIndex: =16
+
+        inp_contraparte_na_popup_search_1 As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(17, 61, 107, 1)
+            Default: |
+                =If(mostrar_lista_persona_juridica,
+                    If(desplegar_buscador_juridica,"",pj_seleccionada),
+                    ""
+                )
+            DisabledColor: =RGBA(111, 139, 167, 1)
+            Fill: =RGBA(241, 244, 255, 1)
+            Height: =46
+            HintText: ="Ingresar nombre o RUT sin puntos y con guión"
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(241, 244, 255, 1)
+            OnSelect: |
+                =Set(pj_seleccionada,Blank());
+                If(mostrar_lista_persona_juridica,
+                    Reset(inp_contraparte_na_popup_search_1);
+                    If(desplegar_buscador_juridica,
+                        UpdateContext({desplegar_buscador_juridica:false}),
+                        UpdateContext({desplegar_buscador_juridica:true})
+                    )
+                );
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =14
+            TabIndex: =1
+            Width: =645
+            X: =360
+            Y: =353
+            ZIndex: =17
+
+        Contenedor_persona_juridica_1 As groupContainer.manualLayoutContainer:
+            Visible: |-
+                =//desplegar_buscador_a
+                mostrar_lista_persona_juridica && desplegar_buscador_juridica && CountRows(opciones_persona_juridica_1.AllItems)>0
+            Width: =620
+            X: =371+0
+            Y: =397+0
+            ZIndex: =18
+
+            opciones_persona_juridica_1 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =200
+                Items: =Filter(lista_persona_juridica, inp_contraparte_na_popup_search_1.Text in razonSocial)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                OnSelect: |
+                    =false
+                TemplatePadding: =0
+                TemplateSize: =50
+                Width: =620
+                WrapCount: =0
+                ZIndex: =1
+
+                fondo_celeste_16 As image:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Height: =52
+                    HoverFill: =RGBA(186, 202, 226, 1)
+                    Image: ='background-input'
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =620
+                    ZIndex: =1
+
+                Label1_5 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    DisabledFill: =RGBA(241, 244, 255, 1)
+                    Height: =50
+                    HoverColor: =RGBA(17, 61, 107, 1)
+                    HoverFill: =RGBA(207, 210, 232, 1)
+                    OnSelect: |-
+                        =Select(Parent);
+                        /*
+                        
+                        Set(a_seleccionada;ThisItem.nombre);;
+                        
+                        Set(autoridad_seleccionada;{
+                            nombre: ThisItem.nombre;
+                            cargo: ThisItem.cargo;
+                            correo: ThisItem.correo;
+                            telefono: ThisItem.telefono
+                        })
+                        */
+                        If(desplegar_buscador_juridica,
+                            UpdateContext({desplegar_buscador_juridica:false}),
+                            UpdateContext({desplegar_buscador_juridica:true})
+                        );
+                        Set(pj_detalle,{
+                            nombre_entidad_contraparte: ThisItem.razonSocial,
+                            rut_entidad_contraparte: Text(ThisItem.rut),
+                            dv_entidad_contraparte: ThisItem.dv,
+                            nombre_representante_legal: "",
+                            nombre_responsable_institucional:"",
+                            cargo_responsable_institucional:"",
+                            pais:"CHILE",
+                            correo_responsable_institucional:"",
+                            publica:ThisItem.publica,
+                            tipo_empresa: "-",
+                            comuna: "-",
+                            tipo_contribuyente: "-",
+                            rubro: "-",
+                            actividad: "-",
+                            //id: First(datos_contraparte).id;
+                            firma_digital:""
+                        });
+                        Set(pj_seleccionada,ThisItem.razonSocial);
+                        /*
+                        
+                        
+                        
+                        
+                        
+                        */
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =10
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.razonSocial
+                    Width: =599
+                    ZIndex: =3
 
     grp_eliminar_extra_popup As group:
         Height: =5
@@ -1910,7 +2341,7 @@ Datos_convenio As screen:
             Height: =768
             Visible: =popup_eliminar_extra
             Width: =1366
-            ZIndex: =15
+            ZIndex: =14
 
         img_eliminar_popup_2 As image:
             Height: =352
@@ -1924,7 +2355,7 @@ Datos_convenio As screen:
             Width: =709
             X: =327
             Y: =208
-            ZIndex: =16
+            ZIndex: =15
 
         lbl_eliminar_popup_titulo_2 As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -1935,7 +2366,7 @@ Datos_convenio As screen:
             Width: =612
             X: =359
             Y: =234
-            ZIndex: =17
+            ZIndex: =16
 
         lbl_desea_eliminar_2 As label:
             Align: =Align.Center
@@ -1949,7 +2380,7 @@ Datos_convenio As screen:
             Width: =645
             X: =359
             Y: =314
-            ZIndex: =18
+            ZIndex: =17
 
         btn_eliminar_popup_2 As button:
             BorderThickness: =1
@@ -1990,7 +2421,7 @@ Datos_convenio As screen:
             Visible: =popup_eliminar_extra
             X: =844
             Y: =488
-            ZIndex: =19
+            ZIndex: =18
 
         btn_eliminar_popup_atras_5 As button:
             BorderColor: =RGBA(247, 158, 64, 1)
@@ -2015,5 +2446,5 @@ Datos_convenio As screen:
             Visible: =popup_eliminar_extra
             X: =652
             Y: =488
-            ZIndex: =20
+            ZIndex: =19
 
