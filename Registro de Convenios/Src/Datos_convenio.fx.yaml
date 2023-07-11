@@ -654,7 +654,7 @@ Datos_convenio As screen:
                     ZIndex: =3
 
             Especificaciones_convenio As groupContainer.manualLayoutContainer:
-                Height: =294
+                Height: =460
                 Width: =590
                 X: =42
                 ZIndex: =4
