@@ -1217,7 +1217,7 @@ Datos_convenio As screen:
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     DisabledFill: =RGBA(244, 244, 244, 0.4)
-                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado<13 && tipo_solicitud.Selected.id="1",DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(0, 0, 0, 0)
                     FontWeight: =FontWeight.Bold
                     Height: =30
