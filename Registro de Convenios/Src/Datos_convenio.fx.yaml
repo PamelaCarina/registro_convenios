@@ -153,7 +153,7 @@ Datos_convenio As screen:
                 ZIndex: =1
 
             Documentacion As groupContainer.manualLayoutContainer:
-                Height: =300
+                Height: =270
                 Width: =625
                 X: =636
                 ZIndex: =2
@@ -381,7 +381,7 @@ Datos_convenio As screen:
                     ZIndex: =2
 
                 Adjuntar_documento_extra As groupContainer.manualLayoutContainer:
-                    Height: =143
+                    Height: =113
                     Width: =605
                     X: =25
                     Y: =154
@@ -452,7 +452,7 @@ Datos_convenio As screen:
                         ZIndex: =5
 
                     "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-                        Height: =120
+                        Height: =90
                         Items: =lista_doc_ext_subidos
                         Layout: =Layout.Vertical
                         TemplatePadding: =0
@@ -579,7 +579,7 @@ Datos_convenio As screen:
                         ZIndex: =7
 
             Propósito As groupContainer.manualLayoutContainer:
-                Height: =180
+                Height: =166
                 Width: =625
                 X: =661
                 Y: =294
@@ -616,7 +616,7 @@ Datos_convenio As screen:
                     DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(241, 244, 255, 1)
                     FocusedBorderThickness: =0
-                    Height: =102
+                    Height: =103
                     HintText: ="Describa el propósito central de su convenio..."
                     HoverBorderColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(241, 244, 255, 1)
@@ -659,11 +659,254 @@ Datos_convenio As screen:
                 X: =42
                 ZIndex: =4
 
+                Contenedor_detalle_convenio As groupContainer.manualLayoutContainer:
+                    Height: =64
+                    Width: =590
+                    Y: =365
+                    ZIndex: =1
+
+                    nombre_convenio As groupContainer.manualLayoutContainer:
+                        Height: =60
+                        Width: =408
+                        X: =182
+                        ZIndex: =1
+
+                        rut_na_input_2 As text:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(17, 61, 107, 1)
+                            Default: |-
+                                =//If(nueva_contraparte;Concatenate(contraparte_na.rut_entidad_contraparte;"-";contraparte_na.dv_entidad_contraparte);Concatenate(contraparte.rut_entidad_contraparte;"-";contraparte.dv_entidad_contraparte))
+                                ""
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            HintText: =""
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverFill: =RGBA(241, 244, 255, 1)
+                            MaxLength: =60
+                            PaddingBottom: =12
+                            PaddingLeft: =24
+                            PaddingRight: =24
+                            PaddingTop: =12
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Size: =14
+                            TabIndex: =
+                            Width: =403
+                            Y: =20
+                            ZIndex: =1
+
+                        nombre_convenio_label As label:
+                            Color: =RGBA(111, 139, 167, 1)
+                            FontWeight: =FontWeight.Bold
+                            Height: =20
+                            PaddingBottom: =4
+                            PaddingLeft: =12
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =10
+                            Text: ="NOMBRE CONVENIO"
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =160
+                            ZIndex: =2
+
+                    codigo_convenio As groupContainer.manualLayoutContainer:
+                        Height: =60
+                        Width: =160
+                        ZIndex: =2
+
+                        rut_na_input_1 As text:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(17, 61, 107, 1)
+                            Default: |-
+                                =//If(nueva_contraparte;Concatenate(contraparte_na.rut_entidad_contraparte;"-";contraparte_na.dv_entidad_contraparte);Concatenate(contraparte.rut_entidad_contraparte;"-";contraparte.dv_entidad_contraparte))
+                                ""
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            HintText: =""
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverFill: =RGBA(241, 244, 255, 1)
+                            MaxLength: =60
+                            PaddingBottom: =12
+                            PaddingLeft: =24
+                            PaddingRight: =24
+                            PaddingTop: =12
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Size: =14
+                            TabIndex: =
+                            Width: =160
+                            Y: =20
+                            ZIndex: =1
+
+                        cod_convenio_label As label:
+                            Color: =RGBA(111, 139, 167, 1)
+                            FontWeight: =FontWeight.Bold
+                            Height: =20
+                            PaddingBottom: =4
+                            PaddingLeft: =12
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =10
+                            Text: ="CÓDIGO CONVENIO"
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =160
+                            ZIndex: =2
+
+                Contenedor_t_s As groupContainer.manualLayoutContainer:
+                    Height: =64
+                    Width: =590
+                    Y: =230
+                    ZIndex: =4
+
+                    Contenedor_seleccionable_tipo_solicitud As groupContainer.manualLayoutContainer:
+                        Height: =44
+                        Width: =584
+                        Y: =20
+                        ZIndex: =2
+
+                        fondo_celeste_3 As image:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            Height: =40
+                            HoverFill: =RGBA(186, 202, 226, 1)
+                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
+                            ImagePosition: =ImagePosition.Fill
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            Width: =584
+                            ZIndex: =1
+
+                        sin_solicitud As text:
+                            BorderColor: =RGBA(238, 110, 126, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =fondo_celeste_8.Height
+                            HoverBorderColor: =RGBA(238, 110, 126, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            RadiusBottomLeft: =12
+                            RadiusBottomRight: =12
+                            RadiusTopLeft: =12
+                            RadiusTopRight: =12
+                            TabIndex: =-1
+                            Visible: |
+                                =If(sin_solicitud && IsBlank(tipo_solicitud), true, false)
+                            Width: =584
+                            Y: =1
+                            ZIndex: =2
+
+                        tipo_solicitud As dropdown:
+                            AllowEmptySelection: |-
+                                =//If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud);true;false)
+                                true
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(241, 244, 255, 1)
+                            ChevronFill: =RGBA(111, 139, 167, 1)
+                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
+                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
+                            Color: =RGBA(17, 61, 107, 1)
+                            Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.tipo_solicitud),"",LookUp(lista_tipo_solicitud,valor=Upper(especificacion_convenio_recuperada.tipo_solicitud),valor))
+                            DisabledColor: =RGBA(111, 139, 167, 1)
+                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
+                            Fill: =RGBA(241, 244, 255, 1)
+                            FocusedBorderThickness: =0
+                            Height: =38
+                            HoverBorderColor: =RGBA(241,244,255,1)
+                            HoverColor: =RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(207, 210, 232, 1)
+                            Items: =lista_tipo_solicitud
+                            OnChange: |-
+                                =Reset(buscador_t_s_input);
+                                UpdateContext({cambio_detectado:true})
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingTop: =12
+                            PressedColor: =RGBA(17, 61, 107, 1)
+                            PressedFill: =RGBA(241, 244, 255, 1)
+                            SelectionColor: =RGBA(111, 139, 167, 1)
+                            SelectionFill: =RGBA(241, 244, 255, 1)
+                            Size: =14
+                            TabIndex: =
+                            Width: =fondo_celeste_3.Width-24
+                            X: =fondo_celeste_3.X+12
+                            Y: =fondo_celeste_3.Y+2
+                            ZIndex: =3
+
+                        tapar_tipo_solicitud As rectangle:
+                            BorderStyle: =BorderStyle.None
+                            Fill: =RGBA(244, 244, 244, 1)
+                            Height: =40
+                            Visible: =false
+                            Width: =40
+                            X: =533
+                            Y: =fondo_celeste_3.Y
+                            ZIndex: =4
+
+                        buscador_t_s_input As text:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =0
+                            Color: |-
+                                =//RGBA(17; 61; 107; 1)
+                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                                RGBA(17, 61, 107, 1)
+                            Default: =""
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(17, 61, 107, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            DisplayMode: =DisplayMode.Disabled
+                            Fill: =RGBA(0, 0, 0, 0)
+                            HintText: =If(IsBlank(tipo_solicitud.SelectedText),"Seleccionar...","")
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: |-
+                                =//RGBA(17; 61; 107; 1)
+                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
+                                RGBA(17, 61, 107, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            OnChange: =
+                            OnSelect: |-
+                                =Reset(tipo_solicitud);
+                                Reset(buscador_t_s_input)
+                            PaddingBottom: =1
+                            PaddingLeft: =24
+                            PaddingRight: =10
+                            PaddingTop: =0
+                            Size: =14
+                            Width: =530
+                            ZIndex: =5
+
+                    solicitud As label:
+                        Color: =RGBA(111, 139, 167, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        PaddingBottom: =4
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: ="TIPO SOLICITUD*"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =584
+                        ZIndex: =3
+
                 Contenedor_m_c As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
                     Y: =146
-                    ZIndex: =1
+                    ZIndex: =5
 
                     modalidades As label:
                         Color: =RGBA(111, 139, 167, 1)
@@ -807,151 +1050,11 @@ Datos_convenio As screen:
                             Width: =530
                             ZIndex: =5
 
-                Contenedor_t_s As groupContainer.manualLayoutContainer:
-                    Height: =64
-                    Width: =590
-                    Y: =230
-                    ZIndex: =2
-
-                    Contenedor_seleccionable_tipo_solicitud As groupContainer.manualLayoutContainer:
-                        Height: =44
-                        Width: =584
-                        Y: =20
-                        ZIndex: =2
-
-                        fondo_celeste_3 As image:
-                            BorderColor: =RGBA(255, 255, 255, 1)
-                            Height: =40
-                            HoverFill: =RGBA(186, 202, 226, 1)
-                            Image: =If(id_estado>=13,fondo_deshabilitado,'background-input')
-                            ImagePosition: =ImagePosition.Fill
-                            RadiusBottomLeft: =12
-                            RadiusBottomRight: =12
-                            RadiusTopLeft: =12
-                            RadiusTopRight: =12
-                            Width: =584
-                            ZIndex: =1
-
-                        sin_solicitud As text:
-                            BorderColor: =RGBA(238, 110, 126, 1)
-                            Default: =""
-                            DisabledBorderColor: =RGBA(238, 110, 126, 1)
-                            DisabledFill: =RGBA(0, 0, 0, 0)
-                            DisplayMode: =DisplayMode.Disabled
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =fondo_celeste_8.Height
-                            HoverBorderColor: =RGBA(238, 110, 126, 1)
-                            HoverFill: =RGBA(0, 0, 0, 0)
-                            RadiusBottomLeft: =12
-                            RadiusBottomRight: =12
-                            RadiusTopLeft: =12
-                            RadiusTopRight: =12
-                            TabIndex: =-1
-                            Visible: |
-                                =If(sin_solicitud && IsBlank(tipo_solicitud), true, false)
-                            Width: =584
-                            Y: =1
-                            ZIndex: =2
-
-                        tipo_solicitud As dropdown:
-                            AllowEmptySelection: |-
-                                =//If(IsBlank(especificacion_convenio_recuperada.tipo_solicitud);true;false)
-                                true
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =0
-                            ChevronBackground: =RGBA(241, 244, 255, 1)
-                            ChevronFill: =RGBA(111, 139, 167, 1)
-                            ChevronHoverBackground: =RGBA(241, 244, 255, 1)
-                            ChevronHoverFill: =RGBA(17, 61, 107, 1)
-                            Color: =RGBA(17, 61, 107, 1)
-                            Default: =If(nuevo || IsBlank(especificacion_convenio_recuperada.tipo_solicitud),"",LookUp(lista_tipo_solicitud,valor=Upper(especificacion_convenio_recuperada.tipo_solicitud),valor))
-                            DisabledColor: =RGBA(111, 139, 167, 1)
-                            DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
-                            Fill: =RGBA(241, 244, 255, 1)
-                            FocusedBorderThickness: =0
-                            Height: =38
-                            HoverBorderColor: =RGBA(241,244,255,1)
-                            HoverColor: =RGBA(17, 61, 107, 1)
-                            HoverFill: =RGBA(207, 210, 232, 1)
-                            Items: =lista_tipo_solicitud
-                            OnChange: |-
-                                =Reset(buscador_t_s_input);
-                                UpdateContext({cambio_detectado:true})
-                            PaddingBottom: =12
-                            PaddingLeft: =12
-                            PaddingTop: =12
-                            PressedColor: =RGBA(17, 61, 107, 1)
-                            PressedFill: =RGBA(241, 244, 255, 1)
-                            SelectionColor: =RGBA(111, 139, 167, 1)
-                            SelectionFill: =RGBA(241, 244, 255, 1)
-                            Size: =14
-                            TabIndex: =
-                            Width: =fondo_celeste_3.Width-24
-                            X: =fondo_celeste_3.X+12
-                            Y: =fondo_celeste_3.Y+2
-                            ZIndex: =3
-
-                        tapar_tipo_solicitud As rectangle:
-                            BorderStyle: =BorderStyle.None
-                            Fill: =RGBA(244, 244, 244, 1)
-                            Height: =40
-                            Visible: =false
-                            Width: =40
-                            X: =533
-                            Y: =fondo_celeste_3.Y
-                            ZIndex: =4
-
-                        buscador_t_s_input As text:
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderThickness: =0
-                            Color: |-
-                                =//RGBA(17; 61; 107; 1)
-                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
-                                RGBA(17, 61, 107, 1)
-                            Default: =""
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(17, 61, 107, 1)
-                            DisabledFill: =RGBA(0, 0, 0, 0)
-                            DisplayMode: =DisplayMode.Disabled
-                            Fill: =RGBA(0, 0, 0, 0)
-                            HintText: =If(IsBlank(tipo_solicitud.SelectedText),"Seleccionar...","")
-                            HoverBorderColor: =RGBA(0, 0, 0, 0)
-                            HoverColor: |-
-                                =//RGBA(17; 61; 107; 1)
-                                //If(CountRows(Filter(lista_tipologia; TextInput1.Text in valor))>0;RGBA(0;0;0;0);RGBA(17; 61; 107; 1))
-                                RGBA(17, 61, 107, 1)
-                            HoverFill: =RGBA(0, 0, 0, 0)
-                            OnChange: =
-                            OnSelect: |-
-                                =Reset(tipo_solicitud);
-                                Reset(buscador_t_s_input)
-                            PaddingBottom: =1
-                            PaddingLeft: =24
-                            PaddingRight: =10
-                            PaddingTop: =0
-                            Size: =14
-                            Width: =530
-                            ZIndex: =5
-
-                    solicitud As label:
-                        Color: =RGBA(111, 139, 167, 1)
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        PaddingBottom: =4
-                        PaddingLeft: =12
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =10
-                        Text: ="TIPO SOLICITUD*"
-                        VerticalAlign: =VerticalAlign.Top
-                        Width: =584
-                        ZIndex: =3
-
                 Contenedor_t_c As groupContainer.manualLayoutContainer:
                     Height: =64
                     Width: =590
                     Y: =62
-                    ZIndex: =3
+                    ZIndex: =6
 
                     Contenedor_seleccionable_tipología As groupContainer.manualLayoutContainer:
                         Height: =44
@@ -1099,7 +1202,49 @@ Datos_convenio As screen:
                     Size: =16
                     Text: ="Especificaciones"
                     Width: =626
-                    ZIndex: =5
+                    ZIndex: =7
+
+                buscar_8 As image:
+                    Height: =20
+                    Image: =ico_search
+                    Width: =20
+                    X: =554
+                    Y: =319
+                    ZIndex: =8
+
+                btn_buscar_autoridad_1 As button:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    DisabledFill: =RGBA(244, 244, 244, 0.4)
+                    DisplayMode: =If(id_estado>=13,DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(207, 210, 232, 0.4)
+                    OnSelect: |-
+                        =/*
+                        UpdateContext({popup_autoridad: true});;
+                        Set(a_seleccionada;"");;
+                        Reset(inp_autoridad_popup_search);;
+                        */
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(207, 210, 232, 0.4)
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Size: =20
+                    TabIndex: =
+                    Text: =""
+                    Width: =30
+                    X: =549
+                    Y: =314
+                    ZIndex: =9
 
         datos_convenio_solicitado As label:
             Color: =RGBA(17, 61, 107, 1)
