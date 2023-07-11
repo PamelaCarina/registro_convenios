@@ -660,13 +660,13 @@ Datos_convenio As screen:
                 ZIndex: =4
 
                 Contenedor_detalle_convenio As groupContainer.manualLayoutContainer:
-                    Height: =64
+                    Height: =95
                     Width: =590
                     Y: =365
                     ZIndex: =1
 
                     nombre_convenio As groupContainer.manualLayoutContainer:
-                        Height: =60
+                        Height: =95
                         Width: =408
                         X: =182
                         ZIndex: =1
@@ -682,6 +682,7 @@ Datos_convenio As screen:
                             DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
+                            Height: =75
                             HintText: =""
                             HoverBorderColor: =RGBA(255, 255, 255, 1)
                             HoverFill: =RGBA(241, 244, 255, 1)
@@ -709,13 +710,13 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =10
-                            Text: ="NOMBRE CONVENIO"
+                            Text: ="NOMBRE"
                             VerticalAlign: =VerticalAlign.Top
                             Width: =160
                             ZIndex: =2
 
                     codigo_convenio As groupContainer.manualLayoutContainer:
-                        Height: =60
+                        Height: =95
                         Width: =160
                         ZIndex: =2
 
@@ -757,7 +758,7 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =10
-                            Text: ="CÓDIGO CONVENIO"
+                            Text: ="CÓDIGO"
                             VerticalAlign: =VerticalAlign.Top
                             Width: =160
                             ZIndex: =2
@@ -1208,7 +1209,7 @@ Datos_convenio As screen:
                     Height: =20
                     Image: =ico_search
                     Width: =20
-                    X: =554
+                    X: =557
                     Y: =319
                     ZIndex: =8
 
@@ -1242,9 +1243,23 @@ Datos_convenio As screen:
                     TabIndex: =
                     Text: =""
                     Width: =30
-                    X: =549
+                    X: =552
                     Y: =314
                     ZIndex: =9
+
+                propósito_central_1 As label:
+                    Color: =RGBA(17, 61, 107, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =24
+                    Size: =16
+                    Text: ="Convenio existente"
+                    Width: =500
+                    Y: =294
+                    ZIndex: =10
 
         datos_convenio_solicitado As label:
             Color: =RGBA(17, 61, 107, 1)
