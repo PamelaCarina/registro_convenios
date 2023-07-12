@@ -671,34 +671,33 @@ Datos_convenio As screen:
                         Y: =70
                         ZIndex: =1
 
-                        rut_na_input_2 As text:
-                            BorderColor: =RGBA(255, 255, 255, 1)
-                            BorderThickness: =0
-                            Color: =RGBA(17, 61, 107, 1)
-                            Default: |-
-                                =//If(nueva_contraparte;Concatenate(contraparte_na.rut_entidad_contraparte;"-";contraparte_na.dv_entidad_contraparte);Concatenate(contraparte.rut_entidad_contraparte;"-";contraparte.dv_entidad_contraparte))
-                                ""
-                            DisabledColor: =RGBA(111, 139, 167, 1)
-                            DisplayMode: =DisplayMode.Disabled
-                            Fill: =RGBA(241, 244, 255, 1)
-                            FocusedBorderThickness: =0
-                            HintText: =""
-                            HoverBorderColor: =RGBA(255, 255, 255, 1)
-                            HoverFill: =RGBA(241, 244, 255, 1)
-                            MaxLength: =60
-                            PaddingBottom: =12
-                            PaddingLeft: =24
-                            PaddingRight: =24
-                            PaddingTop: =12
+                        Image2 As image:
+                            Height: =40
+                            Image: =fondo_deshabilitado
+                            ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =12
                             RadiusBottomRight: =12
                             RadiusTopLeft: =12
                             RadiusTopRight: =12
-                            Size: =14
-                            TabIndex: =
                             Width: =590
                             Y: =20
                             ZIndex: =1
+
+                        nombre_convenio_input As label:
+                            Color: =RGBA(111, 139, 167, 1)
+                            Height: =20
+                            PaddingBottom: =0
+                            PaddingLeft: =12
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =14
+                            Text: ="EL CENTRO DE INVESTIGACIÓN EN AGROSISTEMAS INTENSIVOS MEDITERRÁNEOS Y BIOTECNOLOGÍA AGROALIMENTARIA DE LA UNIVERSIDAD DE ALMERÍA DE LA UNIVERSIDAD DE ALMERÍA, ESPAÑA Y LA UNIVERSIDAD DE CONCEPCIÓN "
+                            Tooltip: ="EL CENTRO DE INVESTIGACIÓN EN AGROSISTEMAS INTENSIVOS MEDITERRÁNEOS Y BIOTECNOLOGÍA AGROALIMENTARIA DE LA UNIVERSIDAD DE ALMERÍA DE LA UNIVERSIDAD DE ALMERÍA, ESPAÑA Y LA UNIVERSIDAD DE CONCEPCIÓN "
+                            Width: =560
+                            Wrap: =false
+                            X: =12
+                            Y: =30
+                            ZIndex: =3
 
                         nombre_convenio_label As label:
                             Color: =RGBA(111, 139, 167, 1)
@@ -712,7 +711,7 @@ Datos_convenio As screen:
                             Text: ="NOMBRE"
                             VerticalAlign: =VerticalAlign.Top
                             Width: =160
-                            ZIndex: =2
+                            ZIndex: =4
 
                     codigo_convenio As groupContainer.manualLayoutContainer:
                         Height: =60
@@ -744,7 +743,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             Size: =14
                             TabIndex: =
-                            Width: =540
+                            Width: =295
                             Y: =20
                             ZIndex: =1
 
@@ -1208,8 +1207,8 @@ Datos_convenio As screen:
                     Height: =20
                     Image: =ico_search
                     Width: =20
-                    X: =557
-                    Y: =319
+                    X: =556
+                    Y: =329
                     ZIndex: =8
 
                 btn_buscar_autoridad_1 As button:
@@ -1242,9 +1241,30 @@ Datos_convenio As screen:
                     TabIndex: =
                     Text: =""
                     Width: =30
-                    X: =552
-                    Y: =314
+                    X: =553
+                    Y: =324
                     ZIndex: =9
+
+                formatos_permitidos_lb_9 As label:
+                    Color: =RGBA(111, 139, 167, 1)
+                    Height: =20
+                    Italic: =true
+                    PaddingLeft: =12
+                    Size: =10
+                    Text: ="Sólo para solicitudes de anexo o renovación de convenio existente"
+                    Width: =560
+                    X: =15
+                    Y: =434
+                    ZIndex: =10
+
+                Icon1_4 As icon.Help:
+                    Color: =RGBA(111, 139, 167, 1)
+                    Height: =15
+                    Icon: =Icon.Help
+                    Width: =15
+                    X: =6
+                    Y: =437
+                    ZIndex: =11
 
         datos_convenio_solicitado As label:
             Color: =RGBA(17, 61, 107, 1)
