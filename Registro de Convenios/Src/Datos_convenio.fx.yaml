@@ -2002,7 +2002,7 @@ Datos_convenio As screen:
             Y: =402
             ZIndex: =11
 
-        lbl_contraparte_na_min_caracteres_popup_1 As label:
+        lbl_convenio_min_caracteres_popup As label:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
@@ -2019,13 +2019,13 @@ Datos_convenio As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =768
             OnSelect: |-
-                =UpdateContext({desplegar_buscador_juridica:false});
-                Reset(inp_contraparte_na_popup_search_1);
+                =UpdateContext({desplegar_buscador_convenio:false});
+                Reset(inp_convenio_existente_popup_search);
                 //Set(pj_seleccionada;Blank());;
             Width: =1366
             ZIndex: =13
 
-        btn_contraparte_na_popup_cancelar_1 As button:
+        btn_convenio_existente_popup_cancelar As button:
             BorderColor: =RGBA(247, 158, 64, 1)
             Color: =RGBA(247, 158, 64, 1)
             Fill: =RGBA(255, 255, 255, 1)
@@ -2048,7 +2048,7 @@ Datos_convenio As screen:
             Y: =488
             ZIndex: =14
 
-        btn_contraparte_na_popup_buscar_2 As button:
+        btn_convenio_existente_popup_buscar As button:
             BorderThickness: =1
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Bold
@@ -2056,28 +2056,20 @@ Datos_convenio As screen:
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |
                 =UpdateContext({popup_faltanombre:false, popup_convenionoencontrado:false});
-                UpdateContext({es_rut:false});
-                UpdateContext({mostrar_lista_persona_juridica:false});
-                UpdateContext({desplegar_buscador_juridica:false});
+                UpdateContext({es_codigo:false});
+                UpdateContext({mostrar_lista_convenio_existente:false});
+                UpdateContext({desplegar_buscador_convenio:false});
                 UpdateContext({error_minimo_caracteres:false});
                 
                 If(
-                    //con dígito verificador
-                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}.\d{3}.\d{3}-[a-z0-9]") ||
-                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}.\d{3}.\d{3}-[a-z0-9]") ||
+                    //verificar si cumple con formato de código
                     IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}\d{3}\d{3}-[a-z0-9]") ||
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}\d{3}\d{3}-[a-z0-9]") //||
-                
-                    //sin dígito verificador
-                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}.\d{3}.\d{3}") ||
-                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}.\d{3}.\d{3}") ||
-                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{2}\d{3}\d{3}") ||
-                    //IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)); "\d{1}\d{3}\d{3}") 
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}\d{3}\d{3}-[a-z0-9]") 
                 ,
-                    UpdateContext({es_rut:true});
+                    UpdateContext({es_codigo:true});
                     UpdateContext({cumple_minimo_caracteres:true})
                     ,
-                    UpdateContext({es_rut:false});
+                    UpdateContext({es_codigo:false});
                     If(Len(inp_contraparte_na_popup_search.Text)>=3,
                         UpdateContext({cumple_minimo_caracteres:true}),
                         UpdateContext({cumple_minimo_caracteres:false})
@@ -2102,7 +2094,7 @@ Datos_convenio As screen:
                     )
                 ,
                     Set(cargando, true);
-                    If(es_rut,
+                    If(es_codigo,
                         Set(persona_juridica,
                             'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Rut")
                         )
@@ -2117,8 +2109,8 @@ Datos_convenio As screen:
                 
                     If(persona_juridica.status,//si encuentra la persona jurídica
                         Set(lista_persona_juridica,persona_juridica.data);
-                        UpdateContext({mostrar_lista_persona_juridica:true});
-                        UpdateContext({desplegar_buscador_juridica:true})
+                        UpdateContext({mostrar_lista_convenio_existente:true});
+                        UpdateContext({desplegar_buscador_convenio:true})
                     ,
                         If(!error_minimo_caracteres,
                             UpdateContext({popup_convenionoencontrado:true})
@@ -2145,7 +2137,7 @@ Datos_convenio As screen:
             Y: =488+0
             ZIndex: =15
 
-        btn_contraparte_na_popup_buscar_3 As button:
+        btn_convenio_existente_popup_aceptar As button:
             BorderThickness: =1
             Fill: =RGBA(247, 158, 64, 1)
             FontWeight: =FontWeight.Bold
@@ -2169,13 +2161,13 @@ Datos_convenio As screen:
             Y: =488+0
             ZIndex: =16
 
-        inp_contraparte_na_popup_search_1 As text:
+        inp_convenio_existente_popup_search As text:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
             Color: =RGBA(17, 61, 107, 1)
             Default: |
-                =If(mostrar_lista_persona_juridica,
-                    If(desplegar_buscador_juridica,"",pj_seleccionada),
+                =If(mostrar_lista_convenio_existente,
+                    If(desplegar_buscador_convenio,"",pj_seleccionada),
                     ""
                 )
             DisabledColor: =RGBA(111, 139, 167, 1)
@@ -2186,8 +2178,8 @@ Datos_convenio As screen:
             HoverFill: =RGBA(241, 244, 255, 1)
             OnSelect: |
                 =Set(pj_seleccionada,Blank());
-                If(mostrar_lista_persona_juridica,
-                    Reset(inp_contraparte_na_popup_search_1);
+                If(mostrar_lista_convenio_existente,
+                    Reset(inp_convenio_existente_popup_search);
                     If(desplegar_buscador_juridica,
                         UpdateContext({desplegar_buscador_juridica:false}),
                         UpdateContext({desplegar_buscador_juridica:true})
@@ -2204,10 +2196,10 @@ Datos_convenio As screen:
             Y: =353
             ZIndex: =17
 
-        Contenedor_persona_juridica_1 As groupContainer.manualLayoutContainer:
+        Contenedor_convenio_existente As groupContainer.manualLayoutContainer:
             Visible: |-
                 =//desplegar_buscador_a
-                mostrar_lista_persona_juridica && desplegar_buscador_juridica && CountRows(opciones_persona_juridica_1.AllItems)>0
+                mostrar_lista_convenio_existente && desplegar_buscador_convenio && CountRows(opciones_persona_juridica_1.AllItems)>0
             Width: =620
             X: =371+0
             Y: =397+0
@@ -2216,7 +2208,7 @@ Datos_convenio As screen:
             opciones_persona_juridica_1 As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(lista_persona_juridica, inp_contraparte_na_popup_search_1.Text in razonSocial)
+                Items: =Filter(lista_persona_juridica, inp_convenio_existente_popup_search.Text in razonSocial)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |

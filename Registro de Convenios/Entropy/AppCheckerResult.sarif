@@ -13960,19 +13960,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_contraparte_na_popup_search_1.AccessibleLabel"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_convenio_existente_popup_search.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_contraparte_na_popup_search_1.AccessibleLabel",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_convenio_existente_popup_search.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.inp_contraparte_na_popup_search_1"
+                "type": "Datos_convenio.convenio_existente_popup.inp_convenio_existente_popup_search"
               }
             }
           ],
@@ -13990,19 +13990,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_contraparte_na_popup_search_1.TabIndex"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_convenio_existente_popup_search.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_contraparte_na_popup_search_1.TabIndex",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.inp_convenio_existente_popup_search.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.inp_contraparte_na_popup_search_1"
+                "type": "Datos_convenio.convenio_existente_popup.inp_convenio_existente_popup_search"
               }
             }
           ],
@@ -14020,19 +14020,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.AccessibleLabel"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.AccessibleLabel",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1"
+                "type": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1"
               }
             }
           ],
@@ -14050,19 +14050,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.TabIndex"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.TabIndex",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1"
+                "type": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1"
               }
             }
           ],
@@ -14080,19 +14080,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.Label1_5.FocusedBorderThickness"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.Label1_5.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.Label1_5.FocusedBorderThickness",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.Label1_5.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.Label1_5"
+                "type": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.Label1_5"
               }
             }
           ],
@@ -14110,19 +14110,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.Label1_5.TabIndex"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.Label1_5.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.Label1_5.TabIndex",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.Label1_5.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.Contenedor_persona_juridica_1.opciones_persona_juridica_1.Label1_5"
+                "type": "Datos_convenio.convenio_existente_popup.Contenedor_convenio_existente.opciones_persona_juridica_1.Label1_5"
               }
             }
           ],
@@ -14140,19 +14140,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_contraparte_na_popup_buscar_2.TabIndex"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_convenio_existente_popup_buscar.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_contraparte_na_popup_buscar_2.TabIndex",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_convenio_existente_popup_buscar.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.btn_contraparte_na_popup_buscar_2"
+                "type": "Datos_convenio.convenio_existente_popup.btn_convenio_existente_popup_buscar"
               }
             }
           ],
@@ -14170,19 +14170,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_contraparte_na_popup_buscar_3.TabIndex"
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_convenio_existente_popup_aceptar.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_contraparte_na_popup_buscar_3.TabIndex",
+                  "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.btn_convenio_existente_popup_aceptar.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.convenio_existente_popup.btn_contraparte_na_popup_buscar_3"
+                "type": "Datos_convenio.convenio_existente_popup.btn_convenio_existente_popup_aceptar"
               }
             }
           ],
