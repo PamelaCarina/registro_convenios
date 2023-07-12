@@ -151,6 +151,7 @@ Screen1 As screen:
                 ZIndex: =3
 
         Rectangle1 As rectangle:
+            Fill: =RGBA(151, 0, 0, 1)
             X: =303
             Y: =189
             ZIndex: =4
