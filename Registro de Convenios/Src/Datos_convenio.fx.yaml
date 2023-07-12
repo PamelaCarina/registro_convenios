@@ -485,7 +485,6 @@ Datos_convenio As screen:
                             PaddingTop: =0
                             Size: =10
                             Text: =Upper(ThisItem.file.Name)
-                            VerticalAlign: =VerticalAlign.Top
                             Width: =507
                             Wrap: =false
                             X: =34
