@@ -660,15 +660,15 @@ Datos_convenio As screen:
                 ZIndex: =4
 
                 Contenedor_detalle_convenio As groupContainer.manualLayoutContainer:
-                    Height: =95
+                    Height: =133
                     Width: =590
-                    Y: =365
+                    Y: =299
                     ZIndex: =1
 
                     nombre_convenio As groupContainer.manualLayoutContainer:
-                        Height: =95
+                        Height: =60
                         Width: =408
-                        X: =182
+                        Y: =70
                         ZIndex: =1
 
                         rut_na_input_2 As text:
@@ -682,7 +682,6 @@ Datos_convenio As screen:
                             DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(241, 244, 255, 1)
                             FocusedBorderThickness: =0
-                            Height: =72
                             HintText: =""
                             HoverBorderColor: =RGBA(255, 255, 255, 1)
                             HoverFill: =RGBA(241, 244, 255, 1)
@@ -716,7 +715,7 @@ Datos_convenio As screen:
                             ZIndex: =2
 
                     codigo_convenio As groupContainer.manualLayoutContainer:
-                        Height: =95
+                        Height: =60
                         Width: =160
                         ZIndex: =2
 
@@ -1246,20 +1245,6 @@ Datos_convenio As screen:
                     X: =552
                     Y: =314
                     ZIndex: =9
-
-                propósito_central_1 As label:
-                    Color: =RGBA(17, 61, 107, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =50
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =24
-                    Size: =16
-                    Text: ="Convenio existente"
-                    Width: =500
-                    Y: =294
-                    ZIndex: =10
 
         datos_convenio_solicitado As label:
             Color: =RGBA(17, 61, 107, 1)
