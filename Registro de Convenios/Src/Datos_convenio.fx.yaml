@@ -707,14 +707,14 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =10
-                            Text: ="NOMBRE"
+                            Text: ="NOMBRE CONVENIO ASOCIADO"
                             VerticalAlign: =VerticalAlign.Top
-                            Width: =160
+                            Width: =300
                             ZIndex: =4
 
                     codigo_convenio As groupContainer.manualLayoutContainer:
                         Height: =60
-                        Width: =540
+                        Width: =590
                         ZIndex: =2
 
                         rut_na_input_1 As text:
@@ -742,7 +742,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             Size: =14
                             TabIndex: =
-                            Width: =292
+                            Width: =584
                             Y: =20
                             ZIndex: =1
 
@@ -755,9 +755,9 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =10
-                            Text: ="CÓDIGO"
+                            Text: ="CÓDIGO CONVENIO ASOCIADO"
                             VerticalAlign: =VerticalAlign.Top
-                            Width: =160
+                            Width: =300
                             ZIndex: =2
 
                 Contenedor_t_s As groupContainer.manualLayoutContainer:
@@ -1206,7 +1206,7 @@ Datos_convenio As screen:
                     Height: =20
                     Image: =ico_search
                     Width: =20
-                    X: =560
+                    X: =544
                     Y: =315
                     ZIndex: =8
 
@@ -1240,7 +1240,7 @@ Datos_convenio As screen:
                     TabIndex: =
                     Text: =""
                     Width: =30
-                    X: =555
+                    X: =539
                     Y: =310
                     ZIndex: =9
 

@@ -613,7 +613,7 @@ Mostar_solicitudes As screen:
             =//menu_opciones
             true
         Width: =1366
-        ZIndex: =7
+        ZIndex: =5
 
         Rectangle3_1 As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -842,12 +842,12 @@ Mostar_solicitudes As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =5
+            ZIndex: =6
 
         img_registro_5_loading_1 As image:
             Image: =loading
             Visible: =cargando
             X: =631
             Y: =384
-            ZIndex: =6
+            ZIndex: =7
 
