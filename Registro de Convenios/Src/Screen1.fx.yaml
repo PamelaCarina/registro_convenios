@@ -150,8 +150,3 @@ Screen1 As screen:
                 Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                 ZIndex: =3
 
-        Rectangle4 As rectangle:
-            X: =311
-            Y: =269
-            ZIndex: =4
-
