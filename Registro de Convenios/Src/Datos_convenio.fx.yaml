@@ -1221,8 +1221,8 @@ Datos_convenio As screen:
                     HoverBorderColor: =RGBA(0, 0, 0, 0)
                     HoverFill: =RGBA(207, 210, 232, 0.4)
                     OnSelect: |-
-                        =/*
-                        UpdateContext({popup_autoridad: true});;
+                        =UpdateContext({popup_convenio_existente: true});
+                        /*
                         Set(a_seleccionada;"");;
                         Reset(inp_autoridad_popup_search);;
                         */
@@ -1903,7 +1903,7 @@ Datos_convenio As screen:
 
     convenio_existente_popup As groupContainer.manualLayoutContainer:
         Height: =Unidad_solicitante.Height
-        Visible: =//popup_contraparte_na
+        Visible: =popup_convenio_existente
         Width: =Unidad_solicitante.Width
         ZIndex: =20
 
@@ -1927,11 +1927,11 @@ Datos_convenio As screen:
             Y: =208
             ZIndex: =2
 
-        lbl_contraparte_na_popup_titulo_1 As label:
+        lbl_convenio_existente_popup_titulo As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
             Size: =18
-            Text: ="Búsqueda de contraparte nacional"
+            Text: ="Búsqueda de convenio existente"
             Width: =650
             X: =360
             Y: =234
@@ -1945,22 +1945,22 @@ Datos_convenio As screen:
             Y: =366
             ZIndex: =4
 
-        lbl_contraparte_na_popup_rut_1 As label:
+        lbl_convenio_existente_popup_nombre As label:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="NOMBRE/RUT INSTITUCIÓN"
+            Text: ="NOMBRE/CÓDIGO CONVENIO"
             Width: =450
             X: =360
             Y: =314
             ZIndex: =5
 
-        lbl_contraparte_na_popup_noencontrado_1 As label:
+        lbl_convenio_existente_popup_noencontrado As label:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
             Size: =11
-            Text: ="Institución no encontrada. Por favor intente nuevamente"
+            Text: ="Convenio no encontrado. Por favor intente nuevamente"
             Visible: =popup_institucionnoencontrada
             Width: =481
             X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
@@ -1972,7 +1972,7 @@ Datos_convenio As screen:
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
             Size: =11
-            Text: ="Ingresar nombre o RUT institución"
+            Text: ="Ingresar nombre o código convenio"
             Visible: =popup_faltarut
             Width: =540
             X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
@@ -2069,7 +2069,8 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.1)
-            OnSelect: =Navigate(Entidad_contraparte,ScreenTransition.Fade)
+            OnSelect: |-
+                =UpdateContext({popup_convenio_existente: false});
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(247, 158, 64, 1)
             PressedFill: =RGBA(247, 158, 64, 0.3)
