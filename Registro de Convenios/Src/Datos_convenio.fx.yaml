@@ -667,7 +667,7 @@ Datos_convenio As screen:
 
                     nombre_convenio As groupContainer.manualLayoutContainer:
                         Height: =60
-                        Width: =408
+                        Width: =590
                         Y: =70
                         ZIndex: =1
 
@@ -696,7 +696,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             Size: =14
                             TabIndex: =
-                            Width: =403
+                            Width: =590
                             Y: =20
                             ZIndex: =1
 
@@ -716,7 +716,7 @@ Datos_convenio As screen:
 
                     codigo_convenio As groupContainer.manualLayoutContainer:
                         Height: =60
-                        Width: =160
+                        Width: =540
                         ZIndex: =2
 
                         rut_na_input_1 As text:
@@ -744,7 +744,7 @@ Datos_convenio As screen:
                             RadiusTopRight: =12
                             Size: =14
                             TabIndex: =
-                            Width: =160
+                            Width: =540
                             Y: =20
                             ZIndex: =1
 
