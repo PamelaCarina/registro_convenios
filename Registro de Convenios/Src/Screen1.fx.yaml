@@ -1,0 +1,152 @@
+Screen1 As screen:
+
+    cont_menu_opciones As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: |-
+            =//menu_opciones
+            true
+        Width: =1366
+        ZIndex: =1
+
+        Rectangle3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =cont_menu_opciones.Height
+            OnSelect: |-
+                =UpdateContext({menu_opciones:false});
+            Width: =cont_menu_opciones.Width
+            ZIndex: =1
+
+        menu_opciones_boxshadow As htmlViewer:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =menu_opciones_solicitud.Height+20
+            HtmlText: |-
+                ="<div style='background-color:black; width:362px;height:175px; opacity:0.20; box-shadow: inset 0 0 8px 8px white'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =menu_opciones_solicitud.Width+20
+            X: =menu_opciones_solicitud.X-6
+            Y: =menu_opciones_solicitud.Y-6
+            ZIndex: =2
+
+        "menu_opciones_solicitud As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Self.TemplateHeight*4
+            Items: |-
+                =Table({icon: Icon.View, text:"Ver detalles"},
+                {icon: Icon.Edit, text:"Editar"},
+                {icon: Icon.History, text:"Historial de modificaciones"},
+                {icon: Icon.DocumentWithContent, text:"Emitir constancia"})
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =40
+            Width: =350
+            X: =856
+            Y: =438
+            ZIndex: =3
+
+            gal_menu_opciones_bg As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =Parent.TemplateHeight
+                HoverFill: =RGBA(241, 244, 255, 1)
+                OnSelect: =Select(Parent)
+                Width: =Parent.Width
+                ZIndex: =1
+
+            gal_menu_opciones_label As label:
+                BorderColor: =RGBA(17, 61, 107, 1)
+                Color: =RGBA(17, 61, 107, 1)
+                DisplayMode: |-
+                    =/*
+                    If(And(puede_editar=false;ThisItem.text="Editar");
+                        DisplayMode.Disabled;
+                        And(gal_solicitud_seleccionada.estado<>"Admisible";ThisItem.text="Emitir constancia");
+                        DisplayMode.Disabled;
+                        ThisItem.text="Historial de modificaciones";
+                        DisplayMode.Disabled;
+                        DisplayMode.Edit)
+                    */
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Parent.TemplateHeight
+                HoverFill: =RGBA(241, 244, 255, 1)
+                OnSelect: |-
+                    =/*
+                    
+                    Set(nueva_solicitud; false);;
+                    Set(ha_guardado;true);;
+                    Set(cargando;true);;
+                    Set(id_solicitud; Value(gal_solicitud_seleccionada.id));;
+                    
+                    UpdateContext({menu_opciones:false});;
+                    Set(solicitud_seleccionada; First('VRIM-PATraedetalledesolicituddeactividad'.Run(gal_solicitud_seleccionada.id)));;
+                    Set(rol_solicitante;solicitud_seleccionada.calidad);;
+                    If(IsBlank(solicitud_seleccionada.correo_responsable);
+                        Set(falta_responsable;true);
+                        Set(falta_responsable;false);;
+                        Set(persona_responsable;'VRIM-PATraedatosdeusuario'.Run(solicitud_seleccionada.correo_responsable));;
+                        Set(responsable_lista_organismos;persona_responsable.'array organismo actividad');;
+                        ClearCollect(organismos_responsable;responsable_lista_organismos);;
+                        ClearCollect(asignaturas;{ASIGNATURA:"Seleccionar...";busqueda:"";CODIGO_ASIGNATURA:1});;
+                        Set(lista_asignaturas;'VRIM-PA-BuscadordeAsignaturas'.Run(persona_responsable.id_persona));;
+                        Collect(asignaturas;lista_asignaturas);;
+                    );;
+                    Set(proyecto_seleccionado;{cod_proyecto:solicitud_seleccionada.'codigo proyecto';identificacion_proyecto:solicitud_seleccionada.'identificador proyecto';financiamiento:solicitud_seleccionada.financiamiento});;
+                    Set(programa_seleccionado;{nombre_programa:solicitud_seleccionada.programa});;
+                    ClearCollect(colaboradores_externos; solicitud_seleccionada.col_externos);;
+                    ClearCollect(colaboradores_internos; solicitud_seleccionada.col_internos);;
+                    ClearCollect(ce_personas_juridicas;solicitud_seleccionada.col_externo_juridica);;
+                    ClearCollect(tipos_publico_solicitud;solicitud_seleccionada.publicos_objetivos);;
+                    Reset(dd_calidad);;
+                    If(ThisItem.text="Ver detalles";
+                        Set(editar_solicitud;false);;
+                        Set(cargando;false);;
+                        Navigate(Registro_Actividad);;
+                    ;ThisItem.text="Editar";
+                        Set(editar_solicitud;true);;
+                        If(Lower(gal_solicitud_seleccionada.estado="solicita modificar");
+                            'VRIM-PADuplicarSolicitudParaModificar'.Run(id_solicitud)
+                        );;
+                        Set(cargando;false);;
+                        Navigate(Registro_Actividad);;
+                    ThisItem.text="Emitir certificado";
+                        Set(link_constancia; 'VRIM-PACrearArchivoConstancia'.Run(id_solicitud; User().Email).enlace);;
+                        If(link_constancia = "Participante no existe" Or link_constancia = "Actividad aun no esta en estado Admisible"; Notify(link_constancia;NotificationType.Error);
+                        Download(link_constancia));;
+                        Set(cargando;false);;
+                    ;ThisItem.text="Historial de modificaciones";
+                        Set(cargando;false);;
+                        Navigate(Registro_Actividad);;
+                    );;
+                    
+                    */
+                PaddingBottom: =0
+                PaddingLeft: =43
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =12
+                Text: =ThisItem.text
+                Width: =Parent.Width
+                ZIndex: =2
+
+            gal_menu_opciones_icon As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(17, 61, 107, 1)
+                DisabledColor: =RGBA(186, 186, 186, 1)
+                DisplayMode: =gal_menu_opciones_label.DisplayMode
+                Height: =Parent.TemplateHeight
+                Icon: =ThisItem.icon
+                OnSelect: =Select(gal_menu_opciones_label)
+                PaddingBottom: =7
+                PaddingLeft: =7
+                PaddingRight: =7
+                PaddingTop: =7
+                Tooltip: ="View item details"
+                Width: =Parent.TemplateHeight
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
