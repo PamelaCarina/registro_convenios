@@ -635,7 +635,7 @@ Mostar_solicitudes As screen:
             PaddingTop: =0
             Width: =menu_opciones_solicitud_1.Width+20
             X: =menu_opciones_solicitud_1.X-6
-            Y: =menu_opciones_solicitud_1.Y-6
+            Y: =454
             ZIndex: =2
 
         "menu_opciones_solicitud_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -653,7 +653,7 @@ Mostar_solicitudes As screen:
             TemplateSize: =40
             Width: =350
             X: =844
-            Y: =446
+            Y: =460
             ZIndex: =3
 
             gal_menu_opciones_bg_1 As rectangle:
