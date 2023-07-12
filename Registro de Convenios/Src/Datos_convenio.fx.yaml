@@ -1967,7 +1967,7 @@ Datos_convenio As screen:
             Y: =418
             ZIndex: =6
 
-        lbl_contraparte_na_popup_faltandatos_1 As label:
+        lbl_convenio_existente_popup_faltandatos As label:
             Align: =Align.Center
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
@@ -1979,44 +1979,6 @@ Datos_convenio As screen:
             Y: =418
             ZIndex: =7
 
-        btn_registro_10_politica_3 As button:
-            OnSelect: |
-                =/*
-                Set(nueva_solicitud_contraparte;true);;
-                Set(contraparte_s;{
-                    nombre:"";
-                    rut: "";
-                    dv: "";
-                    pais: "";
-                    tipo: "";
-                    doc: ""
-                });;
-                Reset(att_attach_doc_sna);;
-                Reset(nombre_solicitud_unidad_contraparte_na_input);;
-                Reset(rut_solicitud_na_input);;
-                Reset(dv_solicitud_na_input);;
-                Navigate(Datos_solicitud_contraparte_nacional;ScreenTransition.Fade);;
-                */
-            Size: =14
-            Text: ="SOLICITAR CONTRAPARTE"
-            Visible: =false
-            Width: =260
-            X: =360
-            Y: =488
-            ZIndex: =8
-
-        lbl_contraparte_na_existente_popup_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(238, 110, 126, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =11
-            Text: ="Institución ya registrada"
-            Visible: =popup_na_ya_ingresada
-            Width: =540
-            X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
-            Y: =418+0
-            ZIndex: =9
-
         formatos_permitidos_lb_7 As label:
             Color: =RGBA(111, 139, 167, 1)
             Height: =20
@@ -2024,6 +1986,7 @@ Datos_convenio As screen:
             PaddingLeft: =12
             Size: =10
             Text: ="Si la institución no es encontrada por nombre, digite su RUT sin puntos y con guión"
+            Visible: =false
             Width: =620
             X: =374
             Y: =399
@@ -2033,6 +1996,7 @@ Datos_convenio As screen:
             Color: =RGBA(111, 139, 167, 1)
             Height: =15
             Icon: =Icon.Help
+            Visible: =false
             Width: =15
             X: =365
             Y: =402
@@ -2044,7 +2008,7 @@ Datos_convenio As screen:
             FontWeight: =FontWeight.Bold
             Size: =11
             Text: ="Introduzca un mínimo de 3 caracteres"
-            Visible: =error_minimo_caracteres && !lbl_contraparte_na_popup_faltandatos_1.Visible
+            Visible: =error_minimo_caracteres && !lbl_convenio_existente_popup_faltandatos.Visible
             Width: =540
             X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
             Y: =418+0
@@ -2096,7 +2060,6 @@ Datos_convenio As screen:
                 UpdateContext({mostrar_lista_persona_juridica:false});
                 UpdateContext({desplegar_buscador_juridica:false});
                 UpdateContext({error_minimo_caracteres:false});
-                Set(popup_na_ya_ingresada,false);
                 
                 If(
                     //con dígito verificador
@@ -2137,8 +2100,6 @@ Datos_convenio As screen:
                             Lower(nombre_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
                         )
                     )
-                    ,
-                    Set(popup_na_ya_ingresada,true)
                 ,
                     Set(cargando, true);
                     If(es_rut,
@@ -2220,7 +2181,7 @@ Datos_convenio As screen:
             DisabledColor: =RGBA(111, 139, 167, 1)
             Fill: =RGBA(241, 244, 255, 1)
             Height: =46
-            HintText: ="Ingresar nombre o RUT sin puntos y con guión"
+            HintText: ="Ingresar nombre o código"
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
             OnSelect: |
