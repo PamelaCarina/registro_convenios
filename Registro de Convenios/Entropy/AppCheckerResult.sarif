@@ -9906,6 +9906,114 @@
               "message": {
                 "text": "Error al ejecutar la regla app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 8
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error al ejecutar la regla app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -13486,6 +13594,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_extra.att_registro_10_attach_extra.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_extra.att_registro_10_attach_extra.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_convenio",
+                "type": "Datos_convenio.Adjuntar_popup_extra.att_registro_10_attach_extra"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_oficial.att_registro_10_attach_oficial.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_oficial.att_registro_10_attach_oficial.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Datos_convenio",
+                "type": "Datos_convenio.Adjuntar_popup_oficial.att_registro_10_attach_oficial"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Datos_convenio.convenio_existente_popup.fig_registro_5_popup_bg_13.AccessibleLabel"
                 }
               ],
@@ -13780,66 +13948,6 @@
           },
           "ruleId": "acc-TabOrderShouldBeChecked",
           "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_extra.att_registro_10_attach_extra.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_extra.att_registro_10_attach_extra.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_convenio",
-                "type": "Datos_convenio.Adjuntar_popup_extra.att_registro_10_attach_extra"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_oficial.att_registro_10_attach_oficial.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_convenio.Adjuntar_popup_oficial.att_registro_10_attach_oficial.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Datos_convenio",
-                "type": "Datos_convenio.Adjuntar_popup_oficial.att_registro_10_attach_oficial"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
         },
         {
           "locations": [
@@ -14296,36 +14404,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Datos_convenio",
-                "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.AccessibleLabel"
                 }
               ],
@@ -14350,6 +14428,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Datos_convenio",
+                "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -18915,6 +19023,276 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Mostar_solicitudes.mostrar_solicitudes.Container2.gal_listado_solicitudes.btn_historial.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.mostrar_solicitudes.Container2.gal_listado_solicitudes.btn_historial.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.mostrar_solicitudes.Container2.gal_listado_solicitudes.btn_historial"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.mostrar_solicitudes.Container2.gal_listado_solicitudes.btn_historial.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.mostrar_solicitudes.Container2.gal_listado_solicitudes.btn_historial.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.mostrar_solicitudes.Container2.gal_listado_solicitudes.btn_historial"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_label_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_label_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_label_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_label_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_label_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_label_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.Rectangle3_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.Rectangle3_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.Rectangle3_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.Rectangle3_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.Rectangle3_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.Rectangle3_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_icon_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_icon_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes.cont_menu_opciones_1.menu_opciones_solicitud_1.gal_menu_opciones_icon_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.ods"
                 }
               ],
@@ -19318,6 +19696,36 @@
                 "member": "hide_border_correo_na",
                 "module": "Datos_contraparte_nacional",
                 "type": "Datos_contraparte_nacional"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Mostar_solicitudes.menu_opciones"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Mostar_solicitudes.menu_opciones",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "menu_opciones",
+                "module": "Mostar_solicitudes",
+                "type": "Mostar_solicitudes"
               }
             }
           ],

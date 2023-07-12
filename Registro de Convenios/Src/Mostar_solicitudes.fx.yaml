@@ -215,11 +215,9 @@ Mostar_solicitudes As screen:
                     OnSelect: |-
                         =Select(Parent);
                         Set(nueva_solicitud, false);
-                    Visible: |-
-                        =//If(ThisItem.estado<>"Registrada";true;false)
-                        true
+                    Visible: =false
                     Width: =14
-                    X: =1130
+                    X: =1146
                     ZIndex: =2
 
                 btn_detalle As button:
@@ -363,12 +361,22 @@ Mostar_solicitudes As screen:
                     PressedFill: =RGBA(0, 0, 0, 0)
                     TabIndex: =3
                     Text: =""
-                    Visible: |-
-                        =//If(ThisItem.estado<>"Registrada";true;false)
-                        true
+                    Visible: =false
                     Width: =14
-                    X: =1130
+                    X: =1146
                     ZIndex: =3
+
+                btn_historial As icon.More:
+                    Height: =37
+                    Icon: =Icon.More
+                    OnSelect: |
+                        =Set(IDconvenio, ThisItem.id_convenio);
+                        Set(IDestado, ThisItem.id_estado);
+                        UpdateContext({menu_opciones:true});
+                    Width: =27
+                    X: =1102
+                    Y: =21
+                    ZIndex: =4
 
                 lbl_gal_contraparte As label:
                     Color: =RGBA(17, 61, 107, 1)
@@ -410,7 +418,7 @@ Mostar_solicitudes As screen:
                         )
                     Width: =290
                     X: =228
-                    ZIndex: =4
+                    ZIndex: =5
 
                 lbl_gal_fecha As label:
                     Color: =RGBA(17, 61, 107, 1)
@@ -598,6 +606,228 @@ Mostar_solicitudes As screen:
         Subtitulo: ="VINCULACIÓN CON EL MEDIO"
         Titulo: ="Solicitud de Tramitación de Convenios"
         ZIndex: =4
+
+    cont_menu_opciones_1 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: |-
+            =//menu_opciones
+            true
+        Width: =1366
+        ZIndex: =7
+
+        Rectangle3_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =cont_menu_opciones_1.Height
+            OnSelect: |-
+                =UpdateContext({menu_opciones:false});
+            Width: =cont_menu_opciones_1.Width
+            ZIndex: =1
+
+        menu_opciones_boxshadow_1 As htmlViewer:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =menu_opciones_solicitud_1.Height+20
+            HtmlText: |-
+                ="<div style='background-color:black; width:362px;height:175px; opacity:0.20; box-shadow: inset 0 0 8px 8px white'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =menu_opciones_solicitud_1.Width+20
+            X: =menu_opciones_solicitud_1.X-6
+            Y: =menu_opciones_solicitud_1.Y-6
+            ZIndex: =2
+
+        "menu_opciones_solicitud_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Self.TemplateHeight*4
+            Items: |-
+                =Table({icon: Icon.View, text:"Ver detalles"},
+                {icon: Icon.Edit, text:"Editar"},
+                {icon: Icon.History, text:"Historial de modificaciones"},
+                {icon: Icon.DocumentWithContent, text:"Emitir constancia"})
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =40
+            Width: =350
+            X: =844
+            Y: =446
+            ZIndex: =3
+
+            gal_menu_opciones_bg_1 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =Parent.TemplateHeight
+                HoverFill: =RGBA(241, 244, 255, 1)
+                OnSelect: =Select(Parent)
+                Width: =Parent.Width
+                ZIndex: =1
+
+            gal_menu_opciones_label_1 As label:
+                BorderColor: =RGBA(17, 61, 107, 1)
+                Color: =RGBA(17, 61, 107, 1)
+                DisplayMode: |-
+                    =/*
+                    If(And(puede_editar=false;ThisItem.text="Editar");
+                        DisplayMode.Disabled;
+                        And(gal_solicitud_seleccionada.estado<>"Admisible";ThisItem.text="Emitir constancia");
+                        DisplayMode.Disabled;
+                        ThisItem.text="Historial de modificaciones";
+                        DisplayMode.Disabled;
+                        DisplayMode.Edit)
+                    */
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Parent.TemplateHeight
+                HoverFill: =RGBA(241, 244, 255, 1)
+                OnSelect: |-
+                    =If(ThisItem.text="Ver detalles",
+                    Set(id_convenio,IDconvenio);
+                    Set(id_estado,IDestado);
+                    Set(nuevo,false);
+                    
+                    Set(cargando,true);
+                    
+                    Set(solicitud_convenio_recuperada,
+                        'Convenio-PATraerestadosolicitudporpantalla'.Run(
+                                                                    id_convenio
+                        )
+                    );
+                    
+                    Set(unidad_solicitante_recuperada,solicitud_convenio_recuperada.unidad_solicitante_registrada);
+                    
+                    Set(autoridad,{
+                        nombre: unidad_solicitante_recuperada.nombre_autoridad,
+                        cargo: unidad_solicitante_recuperada.cargo_autoridad,
+                        correo: unidad_solicitante_recuperada.correo_autoridad,
+                        telefono: unidad_solicitante_recuperada.telefono_autoridad
+                    });
+                    
+                    Set(responsable,{
+                        id_persona: "",
+                        nombre: unidad_solicitante_recuperada.nombre_responsable,
+                        cargo: unidad_solicitante_recuperada.cargo_responsable,
+                        correo: unidad_solicitante_recuperada.correo_responsable,
+                        telefono: unidad_solicitante_recuperada.telefono_responsable
+                    });
+                    
+                    Set(cargando,false);
+                    
+                    ForAll(unidad_solicitante_recuperada.unidades_promotoras,
+                        Collect(unidades_promotoras,{
+                            id_unidad_promotora:id_unidad_promotora,
+                            nombre_unidad_promotora: reparticion,
+                            codigo_reparticion: codigo_reparticion
+                        });
+                        Collect(id_unidades_promotoras,{ID:id_unidad_promotora})
+                    );
+                    
+                    ForAll(solicitud_convenio_recuperada.contrapartes_nacionales,
+                        Collect(contrapartes_nacionales,{
+                            nombre_entidad_contraparte: nombre_entidad_contraparte,
+                            rut_entidad_contraparte: rut_entidad_contraparte,
+                            dv_entidad_contraparte: dv_entidad_contraparte,
+                            nombre_representante_legal: nombre_representante_legal,
+                            nombre_responsable_institucional: nombre_responsable_institucional,
+                            cargo_responsable_institucional: cargo_responsable_institucional,
+                            correo_responsable_institucional: correo_responsable_institucional,
+                            publica: publica,
+                            tipo_empresa: tipo_empresa,
+                            comuna: comuna,
+                            tipo_contribuyente: tipo_contribuyente,
+                            rubro: rubro,
+                            actividad: actividad,
+                            id: id,
+                            firma_digital: firma_digital
+                        });
+                        Collect(id_contrapartes_nacionales,{ID: id})
+                    );
+                    
+                    ForAll(solicitud_convenio_recuperada.contrapartes_internacionales,
+                        Collect(contrapartes_internacionales,{
+                            nombre_entidad_contraparte: nombre_entidad_contraparte,
+                            nombre_representante_legal: nombre_representante_legal,
+                            nombre_responsable_institucional: nombre_responsable_institucional,
+                            cargo_responsable_institucional: cargo_responsable_institucional,
+                            pais: pais,
+                            correo_responsable_institucional: correo_responsable_institucional,
+                            id: id,
+                            firma_digital: firma_digital
+                        });
+                        Collect(id_contrapartes_internacionales,{ID: id})
+                    );
+                    
+                    ForAll(solicitud_convenio_recuperada.solicitudes_contraparte_internacional,
+                        Collect(solicitudes_añadir_contraparte,{
+                            id_contraparte: id,
+                            nombre: nombre_entidad_contraparte,
+                            pais: pais,
+                            estado: estado,
+                            file: file
+                        });
+                        Collect(id_solicitudes_añadir_contraparte,{ID: id})
+                    );
+                    
+                    Set(especificacion_convenio_recuperada,solicitud_convenio_recuperada.especificacion_registrada);
+                    
+                    ForAll(especificacion_convenio_recuperada.borrador_convenio,
+                        Collect(lista_doc_off_subidos,{
+                            file:file
+                        });
+                        Collect(id_lista_doc_off_subidos,{
+                            ID:id
+                        })
+                    );
+                    
+                    ForAll(especificacion_convenio_recuperada.documentos_extra,
+                        Collect(lista_doc_ext_subidos,{
+                            file:file
+                        });
+                        Collect(id_lista_doc_ext_subidos,{
+                            ID:id
+                        })
+                    );
+                    
+                    Set(categoria_vrim_recuperada,solicitud_convenio_recuperada.categoria_vrim_registrada);
+                    
+                    Set(area_contribucion_recuperada,solicitud_convenio_recuperada.area_contribucion_registrada);
+                    
+                    Set(ods_recuperada,solicitud_convenio_recuperada.ods_registrada);
+                    
+                    //If(ThisItem.estado<>"Registrada";Navigate(Unidad_solicitante;ScreenTransition.Fade));;
+                    Set(tab_seleccionada,1);
+                    
+                    Navigate(Unidad_solicitante,ScreenTransition.Fade);
+                    
+                    If(IsBlank(unidad_solicitante_recuperada.nombre_unidad_solicitante),Reset(nombre_unidad_solicitante));
+                    If(IsBlank(unidad_solicitante_recuperada.alcance_territorial),Reset(tipo_alcance))
+                    )
+                PaddingBottom: =0
+                PaddingLeft: =43
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =12
+                Text: =ThisItem.text
+                Width: =Parent.Width
+                ZIndex: =2
+
+            gal_menu_opciones_icon_1 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(17, 61, 107, 1)
+                DisabledColor: =RGBA(186, 186, 186, 1)
+                DisplayMode: =gal_menu_opciones_label_1.DisplayMode
+                Height: =Parent.TemplateHeight
+                Icon: =ThisItem.icon
+                OnSelect: =Select(gal_menu_opciones_label_1)
+                PaddingBottom: =7
+                PaddingLeft: =7
+                PaddingRight: =7
+                PaddingTop: =7
+                Tooltip: ="View item details"
+                Width: =Parent.TemplateHeight
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
 
     grp_registro_main_loading As group:
         Height: =5
