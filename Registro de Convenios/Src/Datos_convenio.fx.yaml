@@ -2072,7 +2072,9 @@ Datos_convenio As screen:
                     IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}/\d{2}") ||//1111/11
                 
                     //combinaciones de 3 digitos
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}-\d{1}") //1-1
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}-\d{1}") || //1-1
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}/\d{1}") || //1/1
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}-") //11-
                 ,
                     UpdateContext({es_codigo:true});
                     UpdateContext({cumple_minimo_caracteres:true})
