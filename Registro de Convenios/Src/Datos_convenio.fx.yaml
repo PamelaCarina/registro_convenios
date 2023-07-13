@@ -1214,7 +1214,7 @@ Datos_convenio As screen:
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     DisabledFill: =RGBA(244, 244, 244, 0.4)
-                    DisplayMode: =If(id_estado<13 && tipo_solicitud.Selected.id="1",DisplayMode.Disabled,DisplayMode.Edit)
+                    DisplayMode: =If(id_estado<13 && (tipo_solicitud.Selected.id="1" || IsBlank(tipo_solicitud.Selected.id)),DisplayMode.Disabled,DisplayMode.Edit)
                     Fill: =RGBA(0, 0, 0, 0)
                     FontWeight: =FontWeight.Bold
                     Height: =30
@@ -2062,9 +2062,17 @@ Datos_convenio As screen:
                 UpdateContext({error_minimo_caracteres:false});
                 
                 If(
-                    //verificar si cumple con formato de código
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}\d{3}\d{3}-[a-z0-9]") ||
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}\d{3}\d{3}-[a-z0-9]") 
+                    //formatos códigos existentes
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}-\d{4}") || //11-1111
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{3}-\d{4}") || //111-1111
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}-\d{1}") || //1111-1
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}-\d{2}") || //1111-11
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}-\d{3}") || //1111-111
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "[a-z]\d{4}-\d{1}") || //X1111-11
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}/\d{2}") ||//1111/11
+                
+                    //combinaciones de 3 digitos
+                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}-\d{1}") //1-1
                 ,
                     UpdateContext({es_codigo:true});
                     UpdateContext({cumple_minimo_caracteres:true})

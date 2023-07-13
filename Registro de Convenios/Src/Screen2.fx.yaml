@@ -1,0 +1,26 @@
+Screen2 As screen:
+
+    Label2 As label:
+        Text: |-
+            =If(
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "\d{2}-\d{4}") || //11-1111
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "\d{3}-\d{4}") || //111-1111
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "\d{4}-\d{1}") || //1111-1
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "\d{4}-\d{2}") || //1111-11
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "\d{4}-\d{3}") || //1111-111
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "[a-z]\d{4}-\d{1}") || //X1111-11
+                IsMatch(TrimEnds(Trim(TextInput1.Text)), "\d{4}/\d{2}") //1111/11
+                ,
+                true
+            
+            )
+        X: =504
+        Y: =210
+        ZIndex: =1
+
+    TextInput1 As text:
+        Default: =""
+        X: =888
+        Y: =354
+        ZIndex: =2
+
