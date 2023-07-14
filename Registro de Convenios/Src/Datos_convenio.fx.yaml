@@ -721,9 +721,7 @@ Datos_convenio As screen:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             BorderThickness: =0
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: |-
-                                =//If(nueva_contraparte;Concatenate(contraparte_na.rut_entidad_contraparte;"-";contraparte_na.dv_entidad_contraparte);Concatenate(contraparte.rut_entidad_contraparte;"-";contraparte.dv_entidad_contraparte))
-                                ""
+                            Default: ="11111111"
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(241, 244, 255, 1)
