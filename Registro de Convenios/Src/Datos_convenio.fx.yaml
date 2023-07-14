@@ -755,7 +755,7 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =10
-                            Text: ="CÓDIGO CONVENIO ASOCIADO"
+                            Text: ="IDENTIFICADOR CONVENIO ASOCIADO"
                             VerticalAlign: =VerticalAlign.Top
                             Width: =300
                             ZIndex: =2
@@ -1949,7 +1949,7 @@ Datos_convenio As screen:
             Color: =RGBA(111, 139, 167, 1)
             FontWeight: =FontWeight.Bold
             Size: =10
-            Text: ="NOMBRE/CÓDIGO CONVENIO"
+            Text: ="NOMBRE/IDENTIFICADOR CONVENIO"
             Width: =450
             X: =360
             Y: =314
@@ -1985,8 +1985,7 @@ Datos_convenio As screen:
             Italic: =true
             PaddingLeft: =12
             Size: =10
-            Text: ="Si la institución no es encontrada por nombre, digite su RUT sin puntos y con guión"
-            Visible: =false
+            Text: ="Si el convenio no es encontrada por nombre, digite su identificador"
             Width: =620
             X: =374
             Y: =399
@@ -1996,7 +1995,6 @@ Datos_convenio As screen:
             Color: =RGBA(111, 139, 167, 1)
             Height: =15
             Icon: =Icon.Help
-            Visible: =false
             Width: =15
             X: =365
             Y: =402
