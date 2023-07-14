@@ -2062,74 +2062,66 @@ Datos_convenio As screen:
                 UpdateContext({error_minimo_caracteres:false});
                 
                 If(
-                    //formatos códigos existentes
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}-\d{4}") || //11-1111
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{3}-\d{4}") || //111-1111
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}-\d{1}") || //1111-1
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}-\d{2}") || //1111-11
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}-\d{3}") || //1111-111
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "[a-z]\d{4}-\d{1}") || //X1111-11
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{4}/\d{2}") ||//1111/11
-                
-                    //combinaciones de 3 digitos
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}-\d{1}") || //1-1
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{1}/\d{1}") || //1/1
-                    IsMatch(TrimEnds(Trim(inp_contraparte_na_popup_search.Text)), "\d{2}-") //11-
-                ,
-                    UpdateContext({es_codigo:true});
-                    UpdateContext({cumple_minimo_caracteres:true})
+                    //si es por nombre
+                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z][a-z]").FullMatch) || //"xx"
+                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z0-9]\.").FullMatch) || //"x."
+                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z0-9] ").FullMatch) //"x "
                     ,
-                    UpdateContext({es_codigo:false});
-                    If(Len(inp_contraparte_na_popup_search.Text)>=3,
-                        UpdateContext({cumple_minimo_caracteres:true}),
-                        UpdateContext({cumple_minimo_caracteres:false})
-                    )
+                    UpdateContext({es_codigo:false})
+                    ,
+                    UpdateContext({es_codigo:true})
                 );
                 
-                If(IsBlank(inp_contraparte_na_popup_search.Text)=false,
+                If(Len(inp_convenio_existente_popup_search.Text)>=3,
+                    UpdateContext({cumple_minimo_caracteres:true}),
+                    UpdateContext({cumple_minimo_caracteres:false})
+                );
+                
+                If(IsBlank(inp_convenio_existente_popup_search.Text),
+                /*
                 //
                 If(
                     !IsBlank(//busca si el rut ya ha sido ingresado
                         LookUp(
-                            contrapartes_nacionales, 
+                            contrapartes_nacionales; 
                             Lower(rut_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
                         )
                     )
                     ||
                     !IsBlank(//busca si el nombre ya ha sido ingresado
                         LookUp(
-                            contrapartes_nacionales, 
+                            contrapartes_nacionales; 
                             Lower(nombre_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
                         )
                     )
-                ,
-                    Set(cargando, true);
-                    If(es_codigo,
-                        Set(persona_juridica,
-                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Rut")
+                ;
+                    Set(cargando; true);;
+                    If(es_codigo;
+                        Set(persona_juridica;
+                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text;"Rut")
                         )
-                    ,
-                        If(cumple_minimo_caracteres,
-                            Set(persona_juridica,
-                                'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text,"Nombre")
-                            ),
+                    ;
+                        If(cumple_minimo_caracteres;
+                            Set(persona_juridica;
+                                'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text;"Nombre")
+                            );
                             UpdateContext({error_minimo_caracteres:true})
                         )
-                    );
+                    );;
                 
-                    If(persona_juridica.status,//si encuentra la persona jurídica
-                        Set(lista_persona_juridica,persona_juridica.data);
-                        UpdateContext({mostrar_lista_convenio_existente:true});
+                    If(persona_juridica.status;//si encuentra la persona jurídica
+                        Set(lista_persona_juridica;persona_juridica.data);;
+                        UpdateContext({mostrar_lista_convenio_existente:true});;
                         UpdateContext({desplegar_buscador_convenio:true})
-                    ,
-                        If(!error_minimo_caracteres,
+                    ;
+                        If(!error_minimo_caracteres;
                             UpdateContext({popup_convenionoencontrado:true})
                         )
-                    );
+                    );;
                     
-                    Set(cargando, false);
-                );
-                    ,
+                    Set(cargando; false);;
+                );;
+                    ;*/
                     UpdateContext({popup_faltanombre:true})
                 )
             PressedBorderColor: =RGBA(247, 158, 64, 1)

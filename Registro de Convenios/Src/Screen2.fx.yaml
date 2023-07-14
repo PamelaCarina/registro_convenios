@@ -2,7 +2,14 @@ Screen2 As screen:
 
     Label2 As label:
         Fill: =RGBA(209, 232, 178, 1)
-        Text: =coleccion_prueba
+        Text: |-
+            =If(
+                !IsBlank(Match(TrimEnds(Trim(TextInput1.Text)), "[a-z][a-z]").FullMatch) || //"xx"
+                !IsBlank(Match(TrimEnds(Trim(TextInput1.Text)), "[a-z0-9]\.").FullMatch) || //"x."
+                !IsBlank(Match(TrimEnds(Trim(TextInput1.Text)), "[a-z0-9] ").FullMatch) //"x "
+            ,
+                true
+            )
         X: =504
         Y: =210
         ZIndex: =1
