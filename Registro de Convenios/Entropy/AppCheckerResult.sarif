@@ -19826,36 +19826,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Mostar_solicitudes.menu_opciones"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Mostar_solicitudes.menu_opciones",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "menu_opciones",
-                "module": "Mostar_solicitudes",
-                "type": "Mostar_solicitudes"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Datos_convenio.cumple_minimo_caracteres"
                 }
               ],

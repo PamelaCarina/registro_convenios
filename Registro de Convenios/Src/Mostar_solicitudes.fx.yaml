@@ -367,13 +367,13 @@ Mostar_solicitudes As screen:
                     ZIndex: =3
 
                 btn_historial As icon.More:
-                    Height: =37
+                    Height: =30
                     Icon: =Icon.More
                     OnSelect: |
                         =Set(IDconvenio, ThisItem.id_convenio);
                         Set(IDestado, ThisItem.id_estado);
                         UpdateContext({menu_opciones:true});
-                    Width: =27
+                    Width: =44
                     X: =1102
                     Y: =21
                     ZIndex: =4
@@ -609,9 +609,7 @@ Mostar_solicitudes As screen:
 
     cont_menu_opciones_1 As groupContainer.manualLayoutContainer:
         Height: =768
-        Visible: |-
-            =//menu_opciones
-            true
+        Visible: =menu_opciones
         Width: =1366
         ZIndex: =5
 
