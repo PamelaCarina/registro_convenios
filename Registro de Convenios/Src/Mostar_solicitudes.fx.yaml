@@ -624,35 +624,35 @@ Mostar_solicitudes As screen:
 
         menu_opciones_boxshadow_1 As htmlViewer:
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =menu_opciones_solicitud_1.Height+20
+            Height: =158
             HtmlText: |-
                 ="<div style='background-color:black; width:362px;height:175px; opacity:0.20; box-shadow: inset 0 0 8px 8px white'></div>"
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Width: =menu_opciones_solicitud_1.Width+20
-            X: =menu_opciones_solicitud_1.X-6
-            Y: =454
+            Width: =360
+            X: =844
+            Y: =462
             ZIndex: =2
 
         "menu_opciones_solicitud_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =Self.TemplateHeight*4
+            Height: =149
             Items: |-
                 =Table({icon: Icon.View, text:"Ver detalles"},
                 {icon: Icon.Edit, text:"Editar"},
-                {icon: Icon.History, text:"Historial de modificaciones"},
-                {icon: Icon.DocumentWithContent, text:"Emitir constancia"})
+                {icon: Icon.History, text:"Historial de modificaciones"})
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
             TemplatePadding: =0
-            TemplateSize: =40
+            TemplateSize: =50
             Width: =350
-            X: =844
-            Y: =460
-            ZIndex: =3
+            X: =854
+            Y: =468
+            ZIndex: =4
 
             gal_menu_opciones_bg_1 As rectangle:
                 BorderColor: =RGBA(0, 0, 0, 0)
@@ -676,11 +676,16 @@ Mostar_solicitudes As screen:
                         DisplayMode.Disabled;
                         DisplayMode.Edit)
                     */
+                    
+                    If(And(id_estado>=13, ThisItem.text="Editar"),
+                    DisplayMode.Disabled,
+                    And(id_estado<13, ThisItem.text="Ver detalles"),
+                    DisplayMode.Disabled)
                 FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Parent.TemplateHeight
+                Height: =50
                 HoverFill: =RGBA(241, 244, 255, 1)
                 OnSelect: |-
-                    =If(ThisItem.text="Ver detalles",
+                    =If(ThisItem.text="Ver detalles" || ThisItem.text="Editar",
                     Set(id_convenio,IDconvenio);
                     Set(id_estado,IDestado);
                     Set(nuevo,false);
@@ -796,6 +801,7 @@ Mostar_solicitudes As screen:
                     //If(ThisItem.estado<>"Registrada";Navigate(Unidad_solicitante;ScreenTransition.Fade));;
                     Set(tab_seleccionada,1);
                     
+                    UpdateContext({menu_opciones:false});
                     Navigate(Unidad_solicitante,ScreenTransition.Fade);
                     
                     If(IsBlank(unidad_solicitante_recuperada.nombre_unidad_solicitante),Reset(nombre_unidad_solicitante));
@@ -815,7 +821,7 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 DisabledColor: =RGBA(186, 186, 186, 1)
                 DisplayMode: =gal_menu_opciones_label_1.DisplayMode
-                Height: =Parent.TemplateHeight
+                Height: =40
                 Icon: =ThisItem.icon
                 OnSelect: =Select(gal_menu_opciones_label_1)
                 PaddingBottom: =7
@@ -823,7 +829,7 @@ Mostar_solicitudes As screen:
                 PaddingRight: =7
                 PaddingTop: =7
                 Tooltip: ="View item details"
-                Width: =Parent.TemplateHeight
+                Width: =40
                 Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                 ZIndex: =3
 
