@@ -78,7 +78,14 @@ Mostar_solicitudes As screen:
         //////////////////////////////////////////////////////////////////////////////////////
         
         
-        
+        //para pruebas con auditoria
+        Collect(log_auditoria,{
+            fecha_modif: "14-07-2023",
+            Actividad: "nombre actividad",
+            Estado: "estado x",
+            operacion_modif: "operacion x",
+            usuario_modif:"usuario x"
+        })
         
         
 
@@ -685,7 +692,8 @@ Mostar_solicitudes As screen:
                 Height: =50
                 HoverFill: =RGBA(241, 244, 255, 1)
                 OnSelect: |-
-                    =If(ThisItem.text="Ver detalles" || ThisItem.text="Editar",
+                    =If(ThisItem.text="Historial de modificaciones",UpdateContext({popup_historial:true}));
+                    If(ThisItem.text="Ver detalles" || ThisItem.text="Editar",
                     Set(id_convenio,IDconvenio);
                     Set(id_estado,IDestado);
                     Set(nuevo,false);
@@ -833,6 +841,182 @@ Mostar_solicitudes As screen:
                 Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                 ZIndex: =3
 
+    cont_registro_main_auditoria As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: =popup_historial
+        Width: =1366
+        ZIndex: =6
+
+        fig_registro_main_bg_4 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0.20)
+            Height: =768
+            Width: =1366
+            ZIndex: =1
+
+        img_registro_main_popup_bg_9 As image:
+            Height: =600
+            Image: ='background-section'
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =1200
+            X: =83
+            Y: =84
+            ZIndex: =2
+
+        gal_main_auditoria As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =400
+            Items: =log_auditoria
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =log_auditoria
+            TemplatePadding: =0
+            TemplateSize: =100
+            Width: =1090
+            X: =138
+            Y: =234
+            ZIndex: =3
+
+            lbl_gal_auditoria_fecha As label:
+                Color: =RGBA(17, 61, 107, 1)
+                Height: =Parent.TemplateHeight
+                Text: |-
+                    =Text(ThisItem.fecha_modif,"d/m/yyyy hh:mm:ss")
+                Width: =180
+                ZIndex: =1
+
+            lbl_gal_auditoria_operacion As label:
+                Color: =RGBA(17, 61, 107, 1)
+                Height: =Parent.TemplateHeight
+                Text: =ThisItem.operacion_modif
+                Width: =180
+                X: =180*4
+                ZIndex: =2
+
+            lbl_gal_auditoria_actividad As label:
+                Color: =RGBA(17, 61, 107, 1)
+                Height: =Parent.TemplateHeight
+                Text: =ThisItem.Actividad
+                Width: =360
+                X: =180
+                ZIndex: =3
+
+            lbl_gal_auditoria_modificadopor As label:
+                Color: =RGBA(17, 61, 107, 1)
+                Height: =Parent.TemplateHeight
+                Text: =ThisItem.usuario_modif
+                Width: =180
+                X: =180*5
+                ZIndex: =6
+
+            fig_separador_main_1 As rectangle:
+                Fill: =RGBA(112, 139, 166, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth - 50   
+                X: =15
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =7
+
+            lbl_gal_auditoria_estado As label:
+                Color: =RGBA(17, 61, 107, 1)
+                Height: =Parent.TemplateHeight
+                Text: =ThisItem.Estado
+                Width: =180
+                X: =180*3
+                ZIndex: =9
+
+        lbl_titulo_main_3 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            PaddingBottom: =34
+            PaddingLeft: =42
+            PaddingRight: =0
+            PaddingTop: =42
+            Size: =20
+            Text: ="Historial de modificaciones"
+            Width: =img_registro_main_popup_bg_9.Width
+            X: =img_registro_main_popup_bg_9.X
+            Y: =img_registro_main_popup_bg_9.Y
+            ZIndex: =4
+
+        icn_registro_main_popup_cerrar As icon.CancelBadge:
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =30
+            Icon: =Icon.Cancel
+            Width: =30
+            X: =img_registro_main_popup_bg_9.X+img_registro_main_popup_bg_9.Width-Self.Width-42
+            Y: =img_registro_main_popup_bg_9.Y+30
+            ZIndex: =5
+
+        btn_registro_main_popup_cerrar As button:
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =icn_registro_main_popup_cerrar.Height
+            HoverFill: =Self.Fill
+            OnSelect: |-
+                =UpdateContext({popup_historial:false})
+            Text: =""
+            Width: =icn_registro_main_popup_cerrar.Width
+            X: =icn_registro_main_popup_cerrar.X
+            Y: =icn_registro_main_popup_cerrar.Y
+            ZIndex: =6
+
+        lbl_fecha_main_popup As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Fecha"
+            Width: =120
+            X: =gal_main_auditoria.X
+            Y: =gal_main_auditoria.Y-Self.Height-5
+            ZIndex: =7
+
+        lbl_operacion_main_popup As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Operación"
+            Width: =120
+            X: =gal_main_auditoria.X+180*4
+            Y: =gal_main_auditoria.Y-Self.Height-5
+            ZIndex: =8
+
+        lbl_actividad_main_popup As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Actividad"
+            Width: =120
+            X: =gal_main_auditoria.X+180
+            Y: =gal_main_auditoria.Y-Self.Height-5
+            ZIndex: =9
+
+        lbl_estado_main_popup As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Estado"
+            Width: =120
+            X: =gal_main_auditoria.X+180*3
+            Y: =gal_main_auditoria.Y-Self.Height-5
+            ZIndex: =10
+
+        lbl_modificadopor_main_popup As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Modificado por"
+            Width: =180
+            X: =gal_main_auditoria.X+180*5
+            Y: =gal_main_auditoria.Y-Self.Height-5
+            ZIndex: =12
+
     grp_registro_main_loading As group:
         Height: =5
         Width: =5
@@ -846,12 +1030,12 @@ Mostar_solicitudes As screen:
             Height: =768
             Visible: =cargando
             Width: =1366
-            ZIndex: =6
+            ZIndex: =7
 
         img_registro_5_loading_1 As image:
             Image: =loading
             Visible: =cargando
             X: =631
             Y: =384
-            ZIndex: =7
+            ZIndex: =8
 
