@@ -16,14 +16,14 @@ Screen2 As screen:
 
     TextInput1 As text:
         Default: =""
-        X: =888
-        Y: =354
+        X: =860
+        Y: =422
         ZIndex: =2
 
     Button2 As button:
         OnSelect: =Set(coleccion_prueba,Match(TrimEnds(Trim(TextInput1.Text)), "[a-z][a-z] ").FullMatch);
         Text: ="Botón"
-        X: =564
-        Y: =410
+        X: =174
+        Y: =550
         ZIndex: =3
 
