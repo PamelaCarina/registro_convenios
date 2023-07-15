@@ -22,9 +22,10 @@ Screen2 As screen:
 
     Button2 As button:
         Fill: =RGBA(141, 198, 63, 1)
+        Height: =128
         OnSelect: =Set(coleccion_prueba,Match(TrimEnds(Trim(TextInput1.Text)), "[a-z][a-z] ").FullMatch);
         Text: ="Botón"
-        X: =174
-        Y: =550
+        X: =465
+        Y: =495
         ZIndex: =3
 

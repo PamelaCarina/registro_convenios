@@ -79,7 +79,7 @@ Mostar_solicitudes As screen:
         
         
         //para pruebas con auditoria
-        Collect(log_auditoria,{
+        ClearCollect(log_auditoria,{
             fecha_modif: "14-07-2023",
             Actividad: "nombre actividad",
             Estado: "estado x",
