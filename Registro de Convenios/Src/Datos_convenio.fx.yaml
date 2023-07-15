@@ -2059,9 +2059,9 @@ Datos_convenio As screen:
                 
                 If(
                     //si es por nombre
-                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z][a-z]").FullMatch) || //"xx"
-                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z0-9]\.").FullMatch) || //"x."
-                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z0-9] ").FullMatch) //"x "
+                    //!IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)); "[a-z][a-z]").FullMatch) || //"xx"
+                    //!IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)); "[a-z0-9]\.").FullMatch) || //"x."
+                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z]").FullMatch) //"si tiene letras"
                     ,
                     UpdateContext({es_codigo:false})
                     ,
