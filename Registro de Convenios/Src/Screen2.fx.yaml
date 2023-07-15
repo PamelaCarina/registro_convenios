@@ -10,8 +10,8 @@ Screen2 As screen:
             ,
                 true
             )
-        X: =504
-        Y: =210
+        X: =184
+        Y: =360
         ZIndex: =1
 
     TextInput1 As text:
