@@ -1078,5 +1078,35 @@
     "dependencies": {},
     "dependents": [],
     "id": "fa8d0bed-0a5a-43d7-b69b-d27b389993dc"
+  },
+  "fbdf84a2-7f9b-4497-8038-cc8ca4f22db7": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "a948c554-c624-ee11-9cbe-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2f1d368e-f630-070b-4664-aabc2a2a766b"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "a948c554-c624-ee11-9cbe-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "2f1d368e-f630-070b-4664-aabc2a2a766b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PATraerdatosdeauditoría"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fbdf84a2-7f9b-4497-8038-cc8ca4f22db7"
   }
 }

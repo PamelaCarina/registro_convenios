@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "1866c1e7-22b3-4b0b-bf1f-7a6f1c01636e",
+    "Name": "Convenio-PATraerdatosdeauditoría",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "a948c554-c624-ee11-9cbe-6045bd006f89"
+  }
+]

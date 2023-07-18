@@ -692,7 +692,20 @@ Mostar_solicitudes As screen:
                 Height: =50
                 HoverFill: =RGBA(241, 244, 255, 1)
                 OnSelect: |-
-                    =If(ThisItem.text="Historial de modificaciones",UpdateContext({popup_historial:true}));
+                    =If(ThisItem.text="Historial de modificaciones",
+                        Set(cargando,true);
+                        /*ClearCollect(
+                        listado_auditoria;
+                        Sort(
+                            'Convenio-PATraerdatosdeauditoría'.Run(IDconvenio);
+                            fecha;
+                            SortOrder.Descending
+                        )
+                        );;*/
+                        Set(listado_auditoria,'Convenio-PATraerdatosdeauditoría'.Run(IDconvenio));
+                        UpdateContext({popup_historial:true});
+                        Set(cargando,false)
+                    );
                     If(ThisItem.text="Ver detalles" || ThisItem.text="Editar",
                     Set(id_convenio,IDconvenio);
                     Set(id_estado,IDestado);
@@ -870,7 +883,7 @@ Mostar_solicitudes As screen:
         gal_main_auditoria As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =400
-            Items: =log_auditoria
+            Items: =listado_auditoria
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =log_auditoria
@@ -884,33 +897,38 @@ Mostar_solicitudes As screen:
             lbl_gal_auditoria_fecha As label:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
+                Size: =12
                 Text: |-
-                    =Text(ThisItem.fecha_modif,"d/m/yyyy hh:mm:ss")
-                Width: =180
+                    =//Text(ThisItem.fecha;"d/m/yyyy hh:mm:ss")
+                    ThisItem.fecha
+                Width: =96
                 ZIndex: =1
 
             lbl_gal_auditoria_operacion As label:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
+                Size: =12
                 Text: =ThisItem.operacion_modif
-                Width: =180
-                X: =180*4
+                Width: =141
+                X: =758
                 ZIndex: =2
 
             lbl_gal_auditoria_actividad As label:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
-                Text: =ThisItem.Actividad
-                Width: =360
-                X: =180
+                Size: =12
+                Text: =
+                Width: =257
+                X: =112
                 ZIndex: =3
 
             lbl_gal_auditoria_modificadopor As label:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
+                Size: =12
                 Text: =ThisItem.usuario_modif
-                Width: =180
-                X: =180*5
+                Width: =177
+                X: =912
                 ZIndex: =6
 
             fig_separador_main_1 As rectangle:
@@ -925,10 +943,20 @@ Mostar_solicitudes As screen:
             lbl_gal_auditoria_estado As label:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
-                Text: =ThisItem.Estado
-                Width: =180
-                X: =180*3
+                Size: =12
+                Text: =
+                Width: =166
+                X: =573
                 ZIndex: =9
+
+            lbl_gal_auditoria_estado_1 As label:
+                Color: =RGBA(17, 61, 107, 1)
+                Height: =Parent.TemplateHeight
+                Size: =12
+                Text: =ThisItem.alcance_territorial
+                Width: =162
+                X: =384
+                ZIndex: =10
 
         lbl_titulo_main_3 As label:
             Color: =RGBA(17, 61, 107, 1)
@@ -983,28 +1011,28 @@ Mostar_solicitudes As screen:
             Height: =38
             Text: ="Operación"
             Width: =120
-            X: =gal_main_auditoria.X+180*4
-            Y: =gal_main_auditoria.Y-Self.Height-5
+            X: =893
+            Y: =191
             ZIndex: =8
 
         lbl_actividad_main_popup As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
-            Height: =38
-            Text: ="Actividad"
-            Width: =120
-            X: =gal_main_auditoria.X+180
-            Y: =gal_main_auditoria.Y-Self.Height-5
+            Height: =20
+            Text: ="Primera contraparte asociada"
+            Width: =290
+            X: =241
+            Y: =200
             ZIndex: =9
 
         lbl_estado_main_popup As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
             Height: =38
-            Text: ="Estado"
-            Width: =120
-            X: =gal_main_auditoria.X+180*3
-            Y: =gal_main_auditoria.Y-Self.Height-5
+            Text: ="Estado solicitud"
+            Width: =154
+            X: =707
+            Y: =191
             ZIndex: =10
 
         lbl_modificadopor_main_popup As label:
@@ -1016,6 +1044,16 @@ Mostar_solicitudes As screen:
             X: =gal_main_auditoria.X+180*5
             Y: =gal_main_auditoria.Y-Self.Height-5
             ZIndex: =12
+
+        lbl_estado_main_popup_1 As label:
+            Color: =RGBA(17, 61, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Alcance territorial"
+            Width: =171
+            X: =517
+            Y: =191
+            ZIndex: =13
 
     grp_registro_main_loading As group:
         Height: =5
