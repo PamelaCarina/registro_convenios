@@ -690,8 +690,8 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =14
-                            Text: ="EL CENTRO DE INVESTIGACIÓN EN AGROSISTEMAS INTENSIVOS MEDITERRÁNEOS Y BIOTECNOLOGÍA AGROALIMENTARIA DE LA UNIVERSIDAD DE ALMERÍA DE LA UNIVERSIDAD DE ALMERÍA, ESPAÑA Y LA UNIVERSIDAD DE CONCEPCIÓN "
-                            Tooltip: ="EL CENTRO DE INVESTIGACIÓN EN AGROSISTEMAS INTENSIVOS MEDITERRÁNEOS Y BIOTECNOLOGÍA AGROALIMENTARIA DE LA UNIVERSIDAD DE ALMERÍA DE LA UNIVERSIDAD DE ALMERÍA, ESPAÑA Y LA UNIVERSIDAD DE CONCEPCIÓN "
+                            Text: =convenio_existente_seleccionado.CONVENIO
+                            Tooltip: =convenio_existente_seleccionado.CONVENIO
                             Width: =560
                             Wrap: =false
                             X: =12
@@ -721,7 +721,7 @@ Datos_convenio As screen:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             BorderThickness: =0
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: ="11111111"
+                            Default: =convenio_existente_seleccionado.ID_CONVENIO
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(241, 244, 255, 1)
@@ -1220,6 +1220,9 @@ Datos_convenio As screen:
                     HoverFill: =RGBA(207, 210, 232, 0.4)
                     OnSelect: |-
                         =UpdateContext({popup_convenio_existente: true});
+                        Reset(inp_convenio_existente_popup_search);
+                        Set(cvn_seleccionada,Blank());
+                        Set(lista_convenio_existente,Blank())
                         /*
                         Set(a_seleccionada;"");;
                         Reset(inp_autoridad_popup_search);;
@@ -1970,7 +1973,7 @@ Datos_convenio As screen:
             Color: =RGBA(238, 110, 126, 1)
             FontWeight: =FontWeight.Bold
             Size: =11
-            Text: ="Ingresar nombre o código convenio"
+            Text: ="Ingresar nombre o identificador convenio"
             Visible: =popup_faltanombre
             Width: =540
             X: =(fondo_blanco_14.X+fondo_blanco_14.Width/2)-Self.Width/2
@@ -2017,7 +2020,6 @@ Datos_convenio As screen:
             OnSelect: |-
                 =UpdateContext({desplegar_buscador_convenio:false});
                 Reset(inp_convenio_existente_popup_search);
-                //Set(pj_seleccionada;Blank());;
             Width: =1366
             ZIndex: =13
 
@@ -2057,11 +2059,8 @@ Datos_convenio As screen:
                 UpdateContext({desplegar_buscador_convenio:false});
                 UpdateContext({error_minimo_caracteres:false});
                 
-                If(
-                    //si es por nombre
-                    //!IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)); "[a-z][a-z]").FullMatch) || //"xx"
-                    //!IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)); "[a-z0-9]\.").FullMatch) || //"x."
-                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z]").FullMatch) //"si tiene letras"
+                If( //si es nombre
+                    !IsBlank(Match(TrimEnds(Trim(inp_convenio_existente_popup_search.Text)), "[a-z]").FullMatch)
                     ,
                     UpdateContext({es_codigo:false})
                     ,
@@ -2073,51 +2072,31 @@ Datos_convenio As screen:
                     UpdateContext({cumple_minimo_caracteres:false})
                 );
                 
-                If(IsBlank(inp_convenio_existente_popup_search.Text),
-                /*
-                //
-                If(
-                    !IsBlank(//busca si el rut ya ha sido ingresado
-                        LookUp(
-                            contrapartes_nacionales; 
-                            Lower(rut_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
+                If(!IsBlank(inp_convenio_existente_popup_search.Text) && cumple_minimo_caracteres,
+                    Set(cargando, true);
+                    If(es_codigo,
+                        Set(convenio_existente,
+                            'DTI-PATraerConvenio'.Run(inp_convenio_existente_popup_search.Text,"codigo")
                         )
-                    )
-                    ||
-                    !IsBlank(//busca si el nombre ya ha sido ingresado
-                        LookUp(
-                            contrapartes_nacionales; 
-                            Lower(nombre_entidad_contraparte) = Lower(inp_contraparte_na_popup_search.Text)
+                    ,
+                        Set(convenio_existente,
+                            'DTI-PATraerConvenio'.Run(inp_convenio_existente_popup_search.Text,"nombre")
                         )
-                    )
-                ;
-                    Set(cargando; true);;
-                    If(es_codigo;
-                        Set(persona_juridica;
-                            'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text;"Rut")
-                        )
-                    ;
-                        If(cumple_minimo_caracteres;
-                            Set(persona_juridica;
-                                'VRIM-PABuscarPersonaJurídicapornombreoRut'.Run(inp_contraparte_na_popup_search.Text;"Nombre")
-                            );
-                            UpdateContext({error_minimo_caracteres:true})
-                        )
-                    );;
+                    );
                 
-                    If(persona_juridica.status;//si encuentra la persona jurídica
-                        Set(lista_persona_juridica;persona_juridica.data);;
-                        UpdateContext({mostrar_lista_convenio_existente:true});;
+                    If(convenio_existente.salida = "1",//si encuentra la persona jurídica
+                        Set(lista_convenio_existente,convenio_existente.datos);
+                        UpdateContext({mostrar_lista_convenio_existente:true});
                         UpdateContext({desplegar_buscador_convenio:true})
-                    ;
-                        If(!error_minimo_caracteres;
+                    ,
+                        If(!error_minimo_caracteres,
                             UpdateContext({popup_convenionoencontrado:true})
                         )
-                    );;
+                    );
                     
-                    Set(cargando; false);;
-                );;
-                    ;*/
+                    Set(cargando, false);
+                
+                    ,
                     UpdateContext({popup_faltanombre:true})
                 )
             PressedBorderColor: =RGBA(247, 158, 64, 1)
@@ -2130,7 +2109,7 @@ Datos_convenio As screen:
             Size: =14
             TabIndex: =1
             Text: ="BUSCAR"
-            Visible: =IsBlank(pj_seleccionada)
+            Visible: =IsBlank(cvn_seleccionada)
             X: =845+0
             Y: =488+0
             ZIndex: =15
@@ -2142,8 +2121,8 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(247, 158, 64, 1)
             HoverFill: =RGBA(247, 158, 64, 0.4)
             OnSelect: |-
-                =Set(contraparte_na,pj_detalle);
-                Set(popup_contraparte_na,false)
+                =UpdateContext({popup_convenio_existente: false});
+                Set(convenio_existente_seleccionado,cvn_seleccionada);
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)
@@ -2154,7 +2133,7 @@ Datos_convenio As screen:
             Size: =14
             TabIndex: =1
             Text: ="ACEPTAR"
-            Visible: =!IsBlank(pj_seleccionada)
+            Visible: =!IsBlank(cvn_seleccionada)
             X: =845+0
             Y: =488+0
             ZIndex: =16
@@ -2165,7 +2144,7 @@ Datos_convenio As screen:
             Color: =RGBA(17, 61, 107, 1)
             Default: |
                 =If(mostrar_lista_convenio_existente,
-                    If(desplegar_buscador_convenio,"",pj_seleccionada),
+                    If(desplegar_buscador_convenio,"",cvn_seleccionada.CONVENIO),
                     ""
                 )
             DisabledColor: =RGBA(111, 139, 167, 1)
@@ -2175,12 +2154,12 @@ Datos_convenio As screen:
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(241, 244, 255, 1)
             OnSelect: |
-                =Set(pj_seleccionada,Blank());
+                =Set(cnv_seleccionada,Blank());
                 If(mostrar_lista_convenio_existente,
                     Reset(inp_convenio_existente_popup_search);
-                    If(desplegar_buscador_juridica,
-                        UpdateContext({desplegar_buscador_juridica:false}),
-                        UpdateContext({desplegar_buscador_juridica:true})
+                    If(desplegar_buscador_convenio,
+                        UpdateContext({desplegar_buscador_convenio:false}),
+                        UpdateContext({desplegar_buscador_convenio:true})
                     )
                 );
             RadiusBottomLeft: =12
@@ -2206,7 +2185,7 @@ Datos_convenio As screen:
             opciones_persona_juridica_1 As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(lista_persona_juridica, inp_convenio_existente_popup_search.Text in razonSocial)
+                Items: =Filter(lista_convenio_existente, inp_convenio_existente_popup_search.Text in CONVENIO)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -2232,55 +2211,20 @@ Datos_convenio As screen:
                     Height: =50
                     HoverColor: =RGBA(17, 61, 107, 1)
                     HoverFill: =RGBA(207, 210, 232, 1)
-                    OnSelect: |-
+                    OnSelect: |
                         =Select(Parent);
-                        /*
                         
-                        Set(a_seleccionada;ThisItem.nombre);;
-                        
-                        Set(autoridad_seleccionada;{
-                            nombre: ThisItem.nombre;
-                            cargo: ThisItem.cargo;
-                            correo: ThisItem.correo;
-                            telefono: ThisItem.telefono
-                        })
-                        */
-                        If(desplegar_buscador_juridica,
-                            UpdateContext({desplegar_buscador_juridica:false}),
-                            UpdateContext({desplegar_buscador_juridica:true})
+                        If(desplegar_buscador_convenio,
+                            UpdateContext({desplegar_buscador_convenio:false}),
+                            UpdateContext({desplegar_buscador_convenio:true})
                         );
-                        Set(pj_detalle,{
-                            nombre_entidad_contraparte: ThisItem.razonSocial,
-                            rut_entidad_contraparte: Text(ThisItem.rut),
-                            dv_entidad_contraparte: ThisItem.dv,
-                            nombre_representante_legal: "",
-                            nombre_responsable_institucional:"",
-                            cargo_responsable_institucional:"",
-                            pais:"CHILE",
-                            correo_responsable_institucional:"",
-                            publica:ThisItem.publica,
-                            tipo_empresa: "-",
-                            comuna: "-",
-                            tipo_contribuyente: "-",
-                            rubro: "-",
-                            actividad: "-",
-                            //id: First(datos_contraparte).id;
-                            firma_digital:""
-                        });
-                        Set(pj_seleccionada,ThisItem.razonSocial);
-                        /*
-                        
-                        
-                        
-                        
-                        
-                        */
+                        Set(cvn_seleccionada,ThisItem);
                     PaddingBottom: =0
                     PaddingLeft: =12
                     PaddingRight: =10
                     PaddingTop: =0
                     Size: =14
-                    Text: =ThisItem.razonSocial
+                    Text: =ThisItem.CONVENIO
                     Width: =599
                     ZIndex: =3
 

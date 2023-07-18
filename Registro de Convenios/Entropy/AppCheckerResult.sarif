@@ -19958,6 +19958,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.cnv_seleccionada"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.cnv_seleccionada",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "cnv_seleccionada",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.group-2-copy"
                 }
               ],
@@ -20121,66 +20151,6 @@
                 "member": "hide_border_correo_na",
                 "module": "Datos_contraparte_nacional",
                 "type": "Datos_contraparte_nacional"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_convenio.cumple_minimo_caracteres"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_convenio.cumple_minimo_caracteres",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "cumple_minimo_caracteres",
-                "module": "Datos_convenio",
-                "type": "Datos_convenio"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Datos_convenio.es_codigo"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Datos_convenio.es_codigo",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "es_codigo",
-                "module": "Datos_convenio",
-                "type": "Datos_convenio"
               }
             }
           ],
@@ -21349,6 +21319,36 @@
               },
               "properties": {
                 "member": "Convenio-PATraerdatosdeauditoría",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-NotOfflineConnectors",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.DTI-PATraerConvenio"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.DTI-PATraerConvenio",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "DTI-PATraerConvenio",
                 "module": "App",
                 "type": "App"
               }

@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "5d49f070-49ce-47a6-a8aa-2a049bc9a419",
+    "Name": "DTI-PATraerConvenio",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "7e91afae-a525-ee11-9cbe-6045bd006f89"
+  }
+]
