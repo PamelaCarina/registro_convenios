@@ -704,8 +704,46 @@ Mostar_solicitudes As screen:
                         )
                         );;*/
                         Set(listado_auditoria,'Convenio-PATraerdatosdeauditoría'.Run(IDconvenio));
+                    
+                    Clear(nombre_contraparte_para_filtro);
+                    Clear(listado_auditoria_recuperadas);
+                    
+                    ForAll(listado_auditoria,
+                    If(CountRows(nombres_contrapartes_internacionales)>0,
+                        If(CountRows(nombres_contrapartes_nacionales)>0,
+                            //si hay contrapartes internacionales y nacionales
+                            Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
+                        ,
+                            //si hay contrapartes internacionales y no nacionales
+                            Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_internacionales).Value)
+                        ),
+                        If(CountRows(nombres_contrapartes_nacionales)>0,
+                            //si no hay contrapartes internacionales y pero si nacionales
+                            Collect(nombre_contraparte_para_filtro,First(nombres_contrapartes_nacionales).Value)
+                            ,
+                            //si no hay contrapartes internacionales ni nacionales
+                            Collect(nombre_contraparte_para_filtro,"SIN CONTRAPARTES ASOCIADAS")
+                                
+                        )
+                    );
+                        Collect(listado_auditoria_recuperadas,{
+                            alcance_territorial:alcance_territorial,
+                            fecha:fecha,
+                            estado:estado,
+                            nombre_contraparte_para_filtro:Last(nombre_contraparte_para_filtro).Value,
+                            usuario_modif: usuario_modif,
+                            operacion_modif:operacion_modif
+                        })
+                    );
+                    
+                    
+                    
                         UpdateContext({popup_historial:true});
                         Set(cargando,false)
+                    
+                    
+                    
+                    
                     );
                     If(ThisItem.text="Ver detalles" || ThisItem.text="Editar",
                     Set(id_convenio,IDconvenio);
@@ -884,14 +922,14 @@ Mostar_solicitudes As screen:
         gal_main_auditoria As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =400
-            Items: =listado_auditoria
+            Items: =listado_auditoria_recuperadas//listado_auditoria
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =//log_auditoria
             TemplatePadding: =0
-            TemplateSize: =100
-            Width: =1090
-            X: =138
+            TemplateSize: =70
+            Width: =1130
+            X: =118
             Y: =234
             ZIndex: =3
 
@@ -901,8 +939,8 @@ Mostar_solicitudes As screen:
                 Size: =12
                 Text: |-
                     =//Text(ThisItem.fecha;"d/m/yyyy hh:mm:ss")
-                    ThisItem.fecha
-                Width: =96
+                    DateTimeValue(ThisItem.fecha)
+                Width: =180
                 ZIndex: =1
 
             lbl_gal_auditoria_operacion As label:
@@ -910,17 +948,17 @@ Mostar_solicitudes As screen:
                 Height: =Parent.TemplateHeight
                 Size: =12
                 Text: =ThisItem.operacion_modif
-                Width: =141
-                X: =758
+                Width: =120
+                X: =lbl_operacion_main_popup.X-118
                 ZIndex: =2
 
             lbl_gal_auditoria_actividad As label:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
                 Size: =12
-                Text: =
-                Width: =257
-                X: =112
+                Text: =ThisItem.nombre_contraparte_para_filtro
+                Width: =270
+                X: =lbl_actividad_main_popup.X-118
                 ZIndex: =3
 
             lbl_gal_auditoria_modificadopor As label:
@@ -928,16 +966,16 @@ Mostar_solicitudes As screen:
                 Height: =Parent.TemplateHeight
                 Size: =12
                 Text: =ThisItem.usuario_modif
-                Width: =177
-                X: =912
+                Width: =180
+                X: =lbl_modificadopor_main_popup.X-118
                 ZIndex: =6
 
             fig_separador_main_1 As rectangle:
                 Fill: =RGBA(112, 139, 166, 1)
                 Height: =1
                 OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth - 50   
-                X: =15
+                Width: =1115
+                X: =8
                 Y: =Parent.TemplateHeight - 1
                 ZIndex: =7
 
@@ -945,9 +983,9 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
                 Size: =12
-                Text: =ThisItem.estado
-                Width: =166
-                X: =573
+                Text: =Upper(ThisItem.estado)
+                Width: =154
+                X: =lbl_estado_main_popup.X-118
                 ZIndex: =9
 
             lbl_gal_auditoria_estado_1 As label:
@@ -955,8 +993,8 @@ Mostar_solicitudes As screen:
                 Height: =Parent.TemplateHeight
                 Size: =12
                 Text: =ThisItem.alcance_territorial
-                Width: =162
-                X: =384
+                Width: =171
+                X: =lbl_estado_main_popup_1.X-118
                 ZIndex: =10
 
         lbl_titulo_main_3 As label:
@@ -989,7 +1027,8 @@ Mostar_solicitudes As screen:
             Height: =icn_registro_main_popup_cerrar.Height
             HoverFill: =Self.Fill
             OnSelect: |-
-                =UpdateContext({popup_historial:false})
+                =UpdateContext({popup_historial:false});
+                UpdateContext({menu_opciones:false});
             Text: =""
             Width: =icn_registro_main_popup_cerrar.Width
             X: =icn_registro_main_popup_cerrar.X
@@ -1000,8 +1039,8 @@ Mostar_solicitudes As screen:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
             Height: =38
-            Text: ="Fecha"
-            Width: =120
+            Text: ="Fecha modificación"
+            Width: =180
             X: =gal_main_auditoria.X
             Y: =gal_main_auditoria.Y-Self.Height-5
             ZIndex: =7
@@ -1012,18 +1051,18 @@ Mostar_solicitudes As screen:
             Height: =38
             Text: ="Operación"
             Width: =120
-            X: =893
+            X: =933
             Y: =191
             ZIndex: =8
 
         lbl_actividad_main_popup As label:
             Color: =RGBA(17, 61, 107, 1)
             FontWeight: =FontWeight.Bold
-            Height: =20
+            Height: =38
             Text: ="Primera contraparte asociada"
-            Width: =290
-            X: =241
-            Y: =200
+            Width: =270
+            X: =308
+            Y: =gal_main_auditoria.Y-Self.Height-5
             ZIndex: =9
 
         lbl_estado_main_popup As label:
@@ -1032,7 +1071,7 @@ Mostar_solicitudes As screen:
             Height: =38
             Text: ="Estado solicitud"
             Width: =154
-            X: =707
+            X: =769
             Y: =191
             ZIndex: =10
 
@@ -1042,7 +1081,7 @@ Mostar_solicitudes As screen:
             Height: =38
             Text: ="Modificado por"
             Width: =180
-            X: =gal_main_auditoria.X+180*5
+            X: =1063
             Y: =gal_main_auditoria.Y-Self.Height-5
             ZIndex: =12
 
@@ -1052,7 +1091,7 @@ Mostar_solicitudes As screen:
             Height: =38
             Text: ="Alcance territorial"
             Width: =171
-            X: =517
+            X: =588
             Y: =191
             ZIndex: =13
 
