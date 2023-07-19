@@ -1004,7 +1004,7 @@ Mostar_solicitudes As screen:
             PaddingBottom: =34
             PaddingLeft: =42
             PaddingRight: =0
-            PaddingTop: =42
+            PaddingTop: =52
             Size: =20
             Text: ="Historial de modificaciones"
             Width: =img_registro_main_popup_bg_9.Width
