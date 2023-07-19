@@ -19778,6 +19778,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.cnv_seleccionada"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.cnv_seleccionada",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "cnv_seleccionada",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.areas_internas"
                 }
               ],
@@ -19939,36 +19969,6 @@
               },
               "properties": {
                 "member": "coleccion_prueba",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.cnv_seleccionada"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.cnv_seleccionada",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "cnv_seleccionada",
                 "module": "App",
                 "type": "App"
               }

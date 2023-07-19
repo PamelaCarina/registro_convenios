@@ -945,7 +945,7 @@ Mostar_solicitudes As screen:
                 Color: =RGBA(17, 61, 107, 1)
                 Height: =Parent.TemplateHeight
                 Size: =12
-                Text: =
+                Text: =ThisItem.id_estado
                 Width: =166
                 X: =573
                 ZIndex: =9
