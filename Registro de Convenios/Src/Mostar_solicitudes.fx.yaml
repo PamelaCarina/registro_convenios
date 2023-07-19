@@ -38,6 +38,7 @@ Mostar_solicitudes As screen:
         Reset(tipo_solicitud);
         Reset(tipo_modalidades);
         Set(especificacion_convenio_recuperada,Blank());
+        Set(convenio_existente_seleccionado,Blank());
         Clear(lista_doc_off_subidos);
         Clear(id_lista_doc_off_subidos);
         Clear(lista_doc_ext_subidos);

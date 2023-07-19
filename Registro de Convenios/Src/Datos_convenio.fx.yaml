@@ -692,7 +692,9 @@ Datos_convenio As screen:
                             PaddingRight: =0
                             PaddingTop: =0
                             Size: =14
-                            Text: =convenio_existente_seleccionado.CONVENIO
+                            Text: |-
+                                =//convenio_existente_seleccionado.CONVENIO
+                                If(IsBlank(especificacion_convenio_recuperada.nombre_convenio_asociado),convenio_existente_seleccionado.CONVENIO,especificacion_convenio_recuperada.nombre_convenio_asociado)
                             Tooltip: =convenio_existente_seleccionado.CONVENIO
                             Width: =560
                             Wrap: =false
@@ -723,7 +725,9 @@ Datos_convenio As screen:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             BorderThickness: =0
                             Color: =RGBA(17, 61, 107, 1)
-                            Default: =convenio_existente_seleccionado.ID_CONVENIO
+                            Default: |-
+                                =//convenio_existente_seleccionado.ID_CONVENIO
+                                If(IsBlank(especificacion_convenio_recuperada.identificador_convenio_asociado),convenio_existente_seleccionado.ID_CONVENIO,Int(First(Split(especificacion_convenio_recuperada.identificador_convenio_asociado,".")).Value))
                             DisabledColor: =RGBA(111, 139, 167, 1)
                             DisplayMode: =DisplayMode.Disabled
                             Fill: =RGBA(241, 244, 255, 1)
@@ -829,7 +833,8 @@ Datos_convenio As screen:
                             Items: =lista_tipo_solicitud
                             OnChange: |-
                                 =Reset(buscador_t_s_input);
-                                UpdateContext({cambio_detectado:true})
+                                UpdateContext({cambio_detectado:true});
+                                If(tipo_solicitud.Selected.id="1",Set(convenio_existente_seleccionado,Blank()))
                             PaddingBottom: =12
                             PaddingLeft: =12
                             PaddingTop: =12

@@ -138,6 +138,8 @@
         <property name="id" type="integer" />
       </object>
       <array typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def_items_def" name="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def" />
+      <string name="ResponseActionOutput_especificacion_registrada_def_identificador_convenio_asociado_def" />
+      <string name="ResponseActionOutput_especificacion_registrada_def_nombre_convenio_asociado_def" />
       <object name="ResponseActionOutput_especificacion_registrada_def">
         <property name="tipologia" type="string" />
         <property name="tipo_solicitud" type="string" />
@@ -145,6 +147,8 @@
         <property name="proposito_central" type="string" />
         <property name="borrador_convenio" typeRef="ResponseActionOutput_especificacion_registrada_def_borrador_convenio_def" />
         <property name="documentos_extra" typeRef="ResponseActionOutput_especificacion_registrada_def_documentos_extra_def" />
+        <property name="identificador_convenio_asociado" type="string" />
+        <property name="nombre_convenio_asociado" type="string" />
       </object>
       <string name="ResponseActionOutput_categoria_vrim_registrada_def_convenio_de_tipo_def" />
       <string name="ResponseActionOutput_categoria_vrim_registrada_def_sector_politica_def" />
