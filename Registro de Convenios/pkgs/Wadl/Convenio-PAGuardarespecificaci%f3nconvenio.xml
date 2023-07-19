@@ -8,6 +8,8 @@
       <string name="ManualTriggerInput_text_def" />
       <string name="ManualTriggerInput_text_1_def" />
       <string name="ManualTriggerInput_text_2_def" />
+      <number name="ManualTriggerInput_number_2_def" />
+      <string name="ManualTriggerInput_text_4_def" />
       <object name="ManualTriggerInput">
         <property name="text_3" type="string" />
         <property name="number" type="number" />
@@ -15,6 +17,8 @@
         <property name="text" type="string" />
         <property name="text_1" type="string" />
         <property name="text_2" type="string" />
+        <property name="number_2" type="number" />
+        <property name="text_4" type="string" />
       </object>
       <integer name="ResponseActionOutput_id_estado_def" />
       <object name="ResponseActionOutput">
@@ -50,6 +54,12 @@
             </param>
             <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
               <doc title="modalidad" />
+            </param>
+            <param style="plain" name="number_2" path="/number_2" type="xs:double" required="true">
+              <doc title="identificador_convenio_asociado" />
+            </param>
+            <param style="plain" name="text_4" path="/text_4" type="xs:string" required="true">
+              <doc title="nombre_convenio_asociado" />
             </param>
           </representation>
         </request>

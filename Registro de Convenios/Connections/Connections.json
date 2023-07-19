@@ -329,6 +329,36 @@
     "dependents": [],
     "id": "4502c82b-ba45-4b57-a53c-b93b726b9f1f"
   },
+  "45bcf519-df0c-4efd-a756-bbee48270f89": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1645/1.0.1645.3345/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
+        },
+        "workflowName": {
+          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Convenio-PAGuardarespecificaciónconvenio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "45bcf519-df0c-4efd-a756-bbee48270f89"
+  },
   "4ec9d103-16f8-4750-a0c3-6b54170a425d": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -508,36 +538,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "6d63fbb6-5133-4b7d-ba5c-e8d92406edb1"
-  },
-  "70187145-fa57-436c-bf57-fc8ae9b508af": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "75b57507-92f6-ed11-8848-6045bd006f89"
-        },
-        "workflowName": {
-          "value": "88917d64-a852-30d4-2764-ebfa394520fc"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "Convenio-PAGuardarespecificaciónconvenio"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "70187145-fa57-436c-bf57-fc8ae9b508af"
   },
   "763628c3-ac03-4ed2-accb-6225dc5e4208": {
     "connectionRef": {

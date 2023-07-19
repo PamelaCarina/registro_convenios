@@ -72,7 +72,9 @@ Datos_convenio As screen:
                                                                             id_estado,
                                                                             tipo_tipologia.Selected.valor,
                                                                             tipo_solicitud.Selected.valor,
-                                                                            tipo_modalidades.Selected.valor
+                                                                            tipo_modalidades.Selected.valor,
+                                                                            identificador_convenio_input,
+                                                                            nombre_convenio_input
                     ).id_estado);
                     Set(guardado,true);
                     Set(cargando, false);
@@ -717,7 +719,7 @@ Datos_convenio As screen:
                         Width: =590
                         ZIndex: =2
 
-                        rut_na_input_1 As text:
+                        identificador_convenio_input As text:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             BorderThickness: =0
                             Color: =RGBA(17, 61, 107, 1)

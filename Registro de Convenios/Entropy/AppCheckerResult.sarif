@@ -15010,19 +15010,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.AccessibleLabel"
+                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.identificador_convenio_input.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.AccessibleLabel",
+                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.identificador_convenio_input.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1"
+                "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.identificador_convenio_input"
               }
             }
           ],
@@ -15040,19 +15040,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.identificador_convenio_input.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.identificador_convenio_input.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Datos_convenio",
-                "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.rut_na_input_1"
+                "type": "Datos_convenio.Contenedor_datos_convenio.Contenedor_d_c_s.Especificaciones_convenio.Contenedor_detalle_convenio.codigo_convenio.identificador_convenio_input"
               }
             }
           ],
