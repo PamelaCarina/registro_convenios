@@ -10,14 +10,14 @@ Screen2 As screen:
             ,
                 true
             )
-        X: =184
-        Y: =360
+        X: =114
+        Y: =296
         ZIndex: =1
 
     TextInput1 As text:
         Default: =""
-        X: =860
-        Y: =422
+        X: =326
+        Y: =296
         ZIndex: =2
 
     Button2 As button:
@@ -25,7 +25,7 @@ Screen2 As screen:
         Height: =128
         OnSelect: =Set(coleccion_prueba,Match(TrimEnds(Trim(TextInput1.Text)), "[a-z][a-z] ").FullMatch);
         Text: ="Botón"
-        X: =465
-        Y: =495
+        X: =758
+        Y: =252
         ZIndex: =3
 
