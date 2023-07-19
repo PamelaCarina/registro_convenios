@@ -1,6 +1,6 @@
 Mostar_solicitudes As screen:
     Fill: =RGBA(235, 238, 251, 1)
-    OnVisible: |+
+    OnVisible: |
         =///////////////////////////REINICIAR VALORES DE PARÁMETROS///////////////////////////16-06-2023
         /*
         Set(reset_primera_vez_especificacion;true);;
@@ -78,17 +78,17 @@ Mostar_solicitudes As screen:
         
         //////////////////////////////////////////////////////////////////////////////////////
         
-        
+        /*
         //para pruebas con auditoria
-        ClearCollect(log_auditoria,{
-            fecha_modif: "14-07-2023",
-            Actividad: "nombre actividad",
-            Estado: "estado x",
-            operacion_modif: "operacion x",
+        ClearCollect(log_auditoria;{
+            fecha_modif: "14-07-2023";
+            Actividad: "nombre actividad";
+            Estado: "estado x";
+            operacion_modif: "operacion x";
             usuario_modif:"usuario x"
         })
         
-        
+        */
 
     Botones_atras_siguiente_8 As groupContainer.manualLayoutContainer:
         Height: =44
@@ -887,7 +887,7 @@ Mostar_solicitudes As screen:
             Items: =listado_auditoria
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            OnSelect: =log_auditoria
+            OnSelect: =//log_auditoria
             TemplatePadding: =0
             TemplateSize: =100
             Width: =1090
