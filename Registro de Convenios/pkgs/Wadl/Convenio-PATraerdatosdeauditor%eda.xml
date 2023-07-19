@@ -8,6 +8,7 @@
       </object>
       <integer name="ResponseActionOutput_items_def_id_auditoria_def" />
       <integer name="ResponseActionOutput_items_def_id_estado_def" />
+      <string name="ResponseActionOutput_items_def_estado_def" />
       <string name="ResponseActionOutput_items_def_ticket_def" />
       <string name="ResponseActionOutput_items_def_alcance_territorial_def" />
       <string name="ResponseActionOutput_items_def_usuario_modif_def" />
@@ -20,6 +21,7 @@
       <object name="ResponseActionOutput_items_def">
         <property name="id_auditoria" type="integer" />
         <property name="id_estado" type="integer" />
+        <property name="estado" type="string" />
         <property name="ticket" type="string" />
         <property name="alcance_territorial" type="string" />
         <property name="usuario_modif" type="string" />
