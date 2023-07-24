@@ -1993,7 +1993,7 @@ Datos_convenio As screen:
             Italic: =true
             PaddingLeft: =12
             Size: =10
-            Text: ="Si el convenio no es encontrada por nombre, digite su identificador"
+            Text: ="Si el convenio no es encontrado por nombre, digite su identificador"
             Width: =620
             X: =374
             Y: =399
