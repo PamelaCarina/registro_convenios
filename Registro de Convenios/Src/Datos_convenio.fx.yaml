@@ -2192,7 +2192,9 @@ Datos_convenio As screen:
             opciones_persona_juridica_1 As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Height: =200
-                Items: =Filter(lista_convenio_existente, inp_convenio_existente_popup_search.Text in CONVENIO)
+                Items: |-
+                    =Filter(Sort(lista_convenio_existente,CONVENIO)
+                    , inp_convenio_existente_popup_search.Text in CONVENIO)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 OnSelect: |
@@ -2232,7 +2234,9 @@ Datos_convenio As screen:
                     PaddingTop: =0
                     Size: =14
                     Text: =ThisItem.CONVENIO
+                    Tooltip: =ThisItem.CONVENIO
                     Width: =599
+                    Wrap: =false
                     ZIndex: =3
 
     grp_eliminar_extra_popup As group:
