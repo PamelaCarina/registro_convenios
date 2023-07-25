@@ -2382,7 +2382,7 @@
       "Subtitulo",
       "Bienvenido"
     ],
-    "LastModifiedTimestamp": "638258931364904230",
+    "LastModifiedTimestamp": "638259092484651489",
     "Name": "HeaderUdeC",
     "Rules": [
       {
@@ -2458,7 +2458,7 @@
       "Name": "Titulo",
       "PropertyDataTypeKey": "String",
       "Tooltip": "Título de la cabecera",
-      "Type": "{\"Version\":\"1.333\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
     },
     {
       "Category": 0,
@@ -2467,7 +2467,7 @@
       "Name": "Subtitulo",
       "PropertyDataTypeKey": "String",
       "Tooltip": "Subtítulo de la cabecera",
-      "Type": "{\"Version\":\"1.333\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
     },
     {
       "Category": 0,
@@ -2476,7 +2476,7 @@
       "Name": "Bienvenido",
       "PropertyDataTypeKey": "String",
       "Tooltip": "Bienvenido/a",
-      "Type": "{\"Version\":\"1.333\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
     }
   ],
   "FirstParty": true,
@@ -2487,7 +2487,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638258931364904230",
+  "LastModifiedTimestamp": "638259092484651489",
   "Name": "561f66e7d0a2482e9212edb43132f4a8",
   "OverridableProperties": {},
   "TemplateOriginalName": "3c4cfc3a7f754a9ea5fb1d2e7cfc0cc0",

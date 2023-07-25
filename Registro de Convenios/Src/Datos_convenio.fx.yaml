@@ -2231,12 +2231,12 @@ Datos_convenio As screen:
                     PaddingBottom: =0
                     PaddingLeft: =12
                     PaddingRight: =10
-                    PaddingTop: =0
+                    PaddingTop: =3
                     Size: =14
                     Text: =ThisItem.CONVENIO
                     Tooltip: =ThisItem.CONVENIO
+                    VerticalAlign: =VerticalAlign.Top
                     Width: =599
-                    Wrap: =false
                     ZIndex: =3
 
     grp_eliminar_extra_popup As group:
