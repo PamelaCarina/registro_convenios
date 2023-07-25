@@ -922,7 +922,10 @@ Mostar_solicitudes As screen:
         gal_main_auditoria As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =400
-            Items: =listado_auditoria_recuperadas//listado_auditoria
+            Items: |-
+                =//listado_auditoria
+                //listado_auditoria_recuperadas
+                Sort(listado_auditoria_recuperadas, fecha, SortOrder.Descending)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =//log_auditoria
