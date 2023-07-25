@@ -696,6 +696,7 @@ Datos_convenio As screen:
                                 =//convenio_existente_seleccionado.CONVENIO
                                 If(IsBlank(especificacion_convenio_recuperada.nombre_convenio_asociado),convenio_existente_seleccionado.CONVENIO,especificacion_convenio_recuperada.nombre_convenio_asociado)
                             Tooltip: =convenio_existente_seleccionado.CONVENIO
+                            VerticalAlign: =VerticalAlign.Top
                             Width: =560
                             Wrap: =false
                             X: =12
