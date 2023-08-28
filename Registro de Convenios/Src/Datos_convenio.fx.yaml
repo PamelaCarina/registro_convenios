@@ -739,6 +739,8 @@ Datos_convenio As screen:
                             HoverBorderColor: =RGBA(255, 255, 255, 1)
                             HoverFill: =RGBA(241, 244, 255, 1)
                             MaxLength: =60
+                            OnChange: |-
+                                =UpdateContext({cambio_detectado:true})
                             PaddingBottom: =12
                             PaddingLeft: =24
                             PaddingRight: =24
@@ -2133,6 +2135,7 @@ Datos_convenio As screen:
             OnSelect: |-
                 =UpdateContext({popup_convenio_existente: false});
                 Set(convenio_existente_seleccionado,cvn_seleccionada);
+                UpdateContext({cambio_detectado:true})
             PressedBorderColor: =RGBA(247, 158, 64, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(249, 133, 11, 1)

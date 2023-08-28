@@ -23222,7 +23222,14 @@
           "NameMapSourceSchema": "?"
         },
         "TabIndex",
-        "OnChange",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "false",
+          "InvariantPropertyName": "OnChange",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip"
       ],
       "HasDynamicProperties": false,
