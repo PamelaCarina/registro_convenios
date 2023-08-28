@@ -73,8 +73,10 @@ Datos_convenio As screen:
                                                                             tipo_tipologia.Selected.valor,
                                                                             tipo_solicitud.Selected.valor,
                                                                             tipo_modalidades.Selected.valor,
-                                                                            identificador_convenio_input,
-                                                                            nombre_convenio_input
+                                                                            {number_2: identificador_convenio_input,
+                                                                            text_4:nombre_convenio_input}
+                                                                            //identificador_convenio_input;
+                                                                            //nombre_convenio_input
                     ).id_estado);
                     Set(guardado,true);
                     Set(cargando, false);

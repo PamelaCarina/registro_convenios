@@ -311,6 +311,7 @@ App As appinfo:
                     id: ID
                 })
         );
+    Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
         OnCancel: =false

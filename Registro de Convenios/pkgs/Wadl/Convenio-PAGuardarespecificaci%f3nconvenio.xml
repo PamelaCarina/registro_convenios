@@ -55,10 +55,10 @@
             <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
               <doc title="modalidad" />
             </param>
-            <param style="plain" name="number_2" path="/number_2" type="xs:double" required="true">
+            <param style="plain" name="number_2" path="/number_2" type="xs:double">
               <doc title="identificador_convenio_asociado" />
             </param>
-            <param style="plain" name="text_4" path="/text_4" type="xs:string" required="true">
+            <param style="plain" name="text_4" path="/text_4" type="xs:string">
               <doc title="nombre_convenio_asociado" />
             </param>
           </representation>
