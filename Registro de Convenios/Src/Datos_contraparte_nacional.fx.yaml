@@ -1278,7 +1278,7 @@ Datos_contraparte_nacional As screen:
                         Set(pj_detalle,{
                             nombre_entidad_contraparte: ThisItem.razonSocial,
                             rut_entidad_contraparte: Text(ThisItem.rut),
-                            dv_entidad_contraparte: ThisItem.dv,
+                            dv_entidad_contraparte: 'DTI-CalcularDV'.Run(Text(ThisItem.rut)).DV,
                             nombre_representante_legal: "",
                             nombre_responsable_institucional:"",
                             cargo_responsable_institucional:"",

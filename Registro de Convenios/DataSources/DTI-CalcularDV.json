@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "33d17160-6e10-409e-b545-c29459183eb2",
+    "Name": "DTI-CalcularDV",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "ecfb1e90-d845-ee11-be6d-6045bd006f89"
+  }
+]
